@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="OpenFOAM 계산 중 수치와 이미지를 로컬 Gemma 모델에 전달하는 PythonFOAM 연결 실험. 2026년 10월 17일 시험 결과와 원본 자료.">
-<title>PythonFOAM — Gemma 연결 실험</title>
+<title>PythonFOAM 한국어판 — Gemma 연결 실험</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f6f5ef;color:#183431;font:18px/1.75 system-ui,"Noto Sans CJK KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}main{max-width:1050px;margin:auto;padding:44px 25px}h1{font-size:clamp(31px,4vw,47px);line-height:1.35;letter-spacing:-1px}h2{font-size:25px;line-height:1.5;margin-top:0}h3{font-size:20px;margin:0 0 10px}p{margin:0 0 18px}a{color:#24568b;text-underline-offset:4px}a:focus-visible{outline:3px solid #bf891f;outline-offset:4px}.eyebrow{font-size:14px;color:#526f61;letter-spacing:.6px}header{padding:12px 0 24px}.links{display:flex;gap:12px;flex-wrap:wrap}.links a{border:1px solid #b8cec0;padding:8px 16px;border-radius:9px;background:white;text-decoration:none}.links a.primary{background:#176e59;border-color:#176e59;color:white;font-weight:700}.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}article,section{background:white;border:1px solid #d6e2d8;border-radius:18px;padding:26px;margin-bottom:22px}article p{font-size:17px}.tag{font-size:14px;color:#496d58}.latest{border:2px solid #176e59}.small{font-size:15px;color:#52675e}.note{border-left:4px solid #aa5b31;padding:12px 18px;background:#fff0e6}.table{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:16px}caption{text-align:left;font-weight:700;padding:0 0 12px}td,th{text-align:left;padding:12px;border-bottom:1px solid #d5e0d6}th{background:#f1f6ee}code{font-size:.88em}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;list-style-position:inside;padding:0;margin:22px 0}.flow li{padding:15px;background:#edf5ef;border-radius:12px;font-size:16px}.flow strong{display:block;margin-top:6px}figure{margin:18px 0}figure img{width:100%;max-width:800px;height:auto;display:block;margin:auto}figcaption{font-size:15px;color:#52675e;margin-top:12px}footer{font-size:14px;color:#52675e}@media(max-width:650px){main{padding:23px 15px}.cards{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}article,section{padding:21px}table{min-width:510px}}
 </style>
 </head>
 <body><main>
 <header>
-<p class="eyebrow">PythonFOAM · 2026-10-17 실행 기록</p>
+<p class="eyebrow">PythonFOAM 한국어판 · 2026-10-17 실행 기록</p>
 <h1>PythonFOAM에서 Gemma로<br>계산 상태 읽기</h1>
 <p>OpenFOAM이 계산하는 도중에 수치와 속도·압력 그림을 로컬 Gemma 모델에 보냅니다. PythonFOAM의 콜백 함수가 이 일을 맡으며, 모델의 답변을 파일에 저장한 뒤 나머지 계산을 이어갑니다.</p>
-<div class="links"><a class="primary" href="results-20261017.html">시험 결과 읽기</a><a href="https://github.com/seungminyome/PythonFOAM">GitHub 저장소</a><a href="https://github.com/seungminyome/PythonFOAM/blob/pod-insitu-llm/docs/results.md">영문 보고서</a></div>
+<div class="links"><a class="primary" href="results-20261017.html">시험 결과 읽기</a><a href="https://github.com/seungminyome/PythonFOAM-Korean">GitHub 저장소</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results.md">한국어 보고서</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/github-guide.ko.md">GitHub 읽는 법</a></div>
 </header>
 
 <section class="latest" aria-labelledby="latest-result">
-<p class="tag">OpenFOAM v2106 · Gemma 4 E2B · 시험한 코드 <a href="https://github.com/seungminyome/PythonFOAM/commit/23089bb"><code>23089bb</code></a></p>
+<p class="tag">OpenFOAM v2106 · Gemma 4 E2B · 시험한 코드 <a href="https://github.com/seungminyome/PythonFOAM-Korean/commit/23089bb"><code>23089bb</code></a></p>
 <h2 id="latest-result">계산 중 모델 호출 시험</h2>
 <p><strong>5개 조건 모두 10단계 계산을 마쳤습니다.</strong> 모델 요청을 넣은 조건은 5단계에서 호출한 뒤 6~10단계까지 진행했습니다. 요청하지 않은 기준 실행과 나머지 네 실행을 비교했고, <strong>각각 저장 파일 45개가 바이트 단위로 같았습니다.</strong></p>
 <div class="table"><table><caption>Python 콜백이 시작해서 돌아올 때까지 걸린 시간</caption><thead><tr><th scope="col">조건</th><th scope="col">요청 결과</th><th scope="col">콜백 시간</th></tr></thead><tbody>
@@ -46,18 +46,18 @@
 <ol class="flow"><li>자료 준비<strong>같은 시점의 수치와 그림</strong></li><li>모델 호출<strong>PythonFOAM에서 Gemma로 전달</strong></li><li>파일 저장<strong>답변 또는 실패 사유 기록</strong></li><li>계산 재개<strong>남은 단계 진행</strong></li></ol>
 <p>모델의 답변은 사용자가 읽도록 저장하며, 계산값이나 솔버 설정을 바꾸는 데 쓰지 않습니다. 다음에는 여러 계산 상태에서 답변이 얼마나 정확한지 확인하고, 모델을 기다리는 동안 계산을 계속할 수 있도록 바꿀 계획입니다.</p>
 <figure><img src="evidence/2026-10-17/pod-llm-demo.LRfJBN/fixed-pod/llm_observation/state.png" width="640" height="360" alt="10월 17일 실행의 5단계에서 모델에 전달한 속도 크기와 운동학적 압력 지도"><figcaption>10월 17일 시험에서 모델에 보낸 그림입니다. 위는 속력 |U|, 아래는 운동학적 압력 p입니다. 세로를 늘려 표시했으므로 실제 길이 비율과 다릅니다.</figcaption></figure>
-<a href="https://github.com/seungminyome/PythonFOAM/tree/pod-insitu-llm/Solver_Examples/PODFoam/llm_demo">코드와 실행 방법 →</a>
+<a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/Solver_Examples/PODFoam/llm_demo">코드와 실행 방법 →</a>
 </section>
 
 <section aria-labelledby="latest-evidence">
 <h2 id="latest-evidence">시험 자료</h2>
 <p>실행 로그, 모델에 보낸 요청과 답변, 답변을 원본 자료와 대조한 기록을 볼 수 있습니다.</p>
-<div class="links"><a href="results-20261017.html">결과와 원문 링크</a><a href="https://github.com/seungminyome/PythonFOAM/tree/pod-insitu-llm/docs/evidence/2026-10-17">10월 17일 원본 폴더</a></div>
+<div class="links"><a href="results-20261017.html">결과와 원문 링크</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-17">10월 17일 원본 폴더</a></div>
 </section>
 
 <h2>연결 원리를 이해하는 이전 실행 해설</h2>
 <p class="small">아래 두 문서는 2026-10-13 실행 <code>SwwR2e</code>를 설명합니다. 본문의 시간·답변·오차는 그 실행의 기록이며, 최신 결과는 위 보고서에서 확인할 수 있습니다.</p>
 <div class="cards"><article><p class="tag">2026-10-13 기록 · 쉬운 개요</p><h3>계산과 AI의 연결</h3><p>누가 계산하고, 어떤 자료를 전달하며, 답을 받은 뒤 어떻게 계산을 이어가는지 그림으로 설명합니다.</p><a href="overview.ko.html">이전 실행의 쉬운 설명 →</a></article><article><p class="tag">2026-10-13 기록 · 상세 해설</p><h3>입력 자료와 답변을 확인하는 방법</h3><p>연결 구조, 실제 입력·응답, 위치 오류와 비용을 설명합니다. 수치 요약의 용어 해설과 당시 원본 자료도 보존했습니다.</p><a href="guide.ko.html">이전 실행의 상세 해설 →</a></article></div>
 <section aria-labelledby="archive-downloads"><h2 id="archive-downloads">이전 실행 자료 내려받기 · 2026-10-13</h2><p><a href="guide.ko.html#raw-library">이전 원본을 문서 안에서 보기</a> 또는 아래 보관본을 내려받을 수 있습니다.</p><ul><li><a href="https://github.com/seungminyome/PythonFOAM/releases/download/pod-insitu-demo-2026-10-13/explanations-ko.zip">이전 설명 문서 ZIP</a></li><li><a href="https://github.com/seungminyome/PythonFOAM/releases/download/pod-insitu-demo-2026-10-13/evidence-swwr2e.zip">이전 주요 근거 ZIP</a></li><li><a href="https://github.com/seungminyome/PythonFOAM/releases/download/pod-insitu-demo-2026-10-13/run-archive-SwwR2e.tar.gz">이전 5조건 전체 실행 기록</a></li><li><a href="https://github.com/seungminyome/PythonFOAM/releases/download/pod-insitu-demo-2026-10-13/SHA256SUMS.txt">다운로드 파일 체크섬</a></li></ul><p class="small">실행 <code>pod-llm-demo.SwwR2e</code>: 2026-10-13. 설명 작성·재검사: 2026-10-15. 모델 가중치는 포함하지 않습니다.</p></section>
-<footer><a href="https://github.com/argonne-lcf/PythonFOAM">argonne-lcf/PythonFOAM</a>을 바탕으로 한 포크입니다. <a href="https://github.com/seungminyome/PythonFOAM/blob/pod-insitu-llm/LICENSE">라이선스</a></footer>
+<footer><a href="https://github.com/argonne-lcf/PythonFOAM">argonne-lcf/PythonFOAM</a>을 바탕으로 한 포크입니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/LICENSE">라이선스</a></footer>
 </main></body></html>

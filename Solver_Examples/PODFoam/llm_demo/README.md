@@ -1,19 +1,14 @@
-# PODFoam in-situ observer/logger
+# PODFoam 계산 중 관찰·기록 기능
 
-At a chosen time step, PODFoam sends a numerical summary and an image of its
-velocity and pressure fields to Gemma 4 E2B. PythonFOAM provides the callback;
-llama.cpp serves the model locally on the CPU. The callback saves a structured
-reply, then returns control to the solver. Model output does not change U, p,
-solver settings or control algorithms.
+PODFoam은 선택한 계산 단계에서 속도·압력장의 수치 요약과 그림을 Gemma 4 E2B에 보냅니다. PythonFOAM의 콜백 함수가 전달을 맡고, llama.cpp가 로컬 CPU(Central Processing Unit, 중앙처리장치)에서 모델을 실행합니다. 콜백은 정해진 형식의 답변을 저장한 뒤 솔버로 돌아옵니다. 모델의 답변은 U, p, 솔버 설정이나 제어 알고리즘을 바꾸는 데 사용하지 않습니다.
 
-The callback is synchronous: the solver waits for a reply or timeout.
-The [October 17 report](../../../docs/results.md) covers the latest five-case
-solver test and the separate comparison with and without an image.
+현재 콜백은 **동기식**입니다. 솔버는 답변을 받거나 시간 제한에 걸릴 때까지 기다립니다. [10월 17일 보고서](../../../docs/results.md)에서 최근 5조건 솔버 시험과 별도로 진행한 그림 유무 비교를 볼 수 있습니다.
 
-This extends the stock PODFoam example with an optional callback. Modules that
-only define `snapshot_func` and `svd_func` keep working as before.
+기존 POD(Proper Orthogonal Decomposition, 적합직교분해) 예제인 PODFoam에 선택적으로 사용할 수 있는 콜백을 추가했습니다. `snapshot_func`와 `svd_func`만 정의한 기존 모듈도 전과 같이 동작합니다.
 
-## How it fits into the solver
+## 솔버 안에서 호출되는 순서
+
+아래는 시작할 때와 각 계산 단계에서 호출하는 함수입니다. SVD는 Singular Value Decomposition(특이값 분해)을 뜻합니다.
 
 ```
 PythonCreate.H   startup    mesh_func(centres, volumes, solutionD, rank, cell polygons)   optional, once
@@ -21,45 +16,24 @@ PythonComm.H     each step  snapshot_func(U), svd_func(rank) at the SVD interval
 PythonAnalysis.H each step  analysis_func(state)                                           optional
 ```
 
-`state` holds the step's time, dt, residuals from `solverPerformanceDict`
-(first/last initial residual, final residual, solve and iteration counts for
-Ux, Uy, p), Courant and continuity values recomputed from the completed
-step's `phi`, and `p_cells`, a copy of the kinematic pressure. U of the same
-step already arrived through `snapshot_func`. All arrays are copies; Python
-never sees solver storage directly. The callback runs on rank 0 and is
-disabled for MPI runs.
+`state`에는 해당 단계의 시간, 시간 간격 dt, `solverPerformanceDict`에서 가져온 잔차가 들어 있습니다. 잔차 기록은 Ux, Uy, p 각각의 첫 번째·마지막 초기 잔차, 최종 잔차, 선형 방정식 풀이 횟수와 반복 횟수입니다. 계산을 마친 단계의 `phi`로 다시 구한 Courant(쿠랑) 수와 연속성 오차, 운동학적 압력의 복사본인 `p_cells`도 전달합니다. 같은 단계의 U는 이미 `snapshot_func`를 통해 전달된 상태입니다.
 
-`llm_demo/python_module.py` is the callback. At one chosen step (default 5)
-it forks a worker that:
+배열은 모두 복사본입니다. Python이 솔버의 원래 저장 공간을 직접 보지 않습니다. 콜백은 rank 0에서 실행하며, MPI(Message Passing Interface, 메시지 전달 인터페이스)를 쓰는 병렬 실행에서는 비활성화합니다.
 
-1. Writes the telemetry and computes a componentwise SVD summary of the
-   snapshots collected so far.
-2. Renders `llm_observation/state.png` (640×360, |U| on top, p below). For 2D
-   cases, the C++ side passes faces of the `empty` patch, so each cell is
-   drawn as a polygon without interpolation. The underlying arrays go to
-   `fields.npz`, and their SHA-256 goes into the PNG metadata.
-3. POSTs the summary and PNG data URL to `/v1/chat/completions`. The response
-   schema requires three string fields: `observations`,
-   `possible_interpretation`, and `checks`.
-4. Records the request, exact HTTP body, raw response and timings.
+콜백 구현은 `llm_demo/python_module.py`에 있습니다. 선택한 한 단계(기본값 5)에서 별도 작업 프로세스를 만들어 다음 작업을 수행합니다.
 
-The parent waits on a length-framed pipe with an absolute deadline
-(`LLM_CALLBACK_DEADLINE_S`, default 120 s), kills the worker if it is late,
-and does no I/O of its own. Another short-lived child writes the final result
-files with a 0.2 s budget. The HTTP client accepts local loopback endpoints,
-limits request and response sizes, and has separate connect,
-read-inactivity and whole-call timeouts.
+1. 단계별 측정 기록을 저장하고, 그때까지 모은 스냅샷을 속도 성분별로 나누어 SVD 요약을 계산합니다.
+2. `llm_observation/state.png`를 만듭니다. PNG(Portable Network Graphics) 그림의 크기는 640×360이며, 위에는 속력 |U|, 아래에는 p를 표시합니다. 2차원 사례에서는 C++가 `empty` 경계 패치의 면 정보를 넘겨주므로, 값을 보간하지 않고 각 셀을 다각형으로 그립니다. 그림에 사용한 배열은 `fields.npz`에 저장하고, 그 파일의 SHA-256 해시는 PNG 메타데이터에 넣습니다.
+3. 요약과 PNG 데이터 URL을 `/v1/chat/completions`로 POST 요청합니다. 응답 형식에는 `observations`, `possible_interpretation`, `checks`라는 문자열 항목 3개가 필요합니다.
+4. 요청 기록, 실제 HTTP(Hypertext Transfer Protocol) 요청 본문, 원본 응답과 소요 시간을 저장합니다.
 
-Rendering needs matplotlib; the 3D fallback (nearest-cell raster) also needs
-scipy. matplotlib is imported once at startup inside `mesh_func`, not in the
-time loop.
+부모 프로세스는 메시지 길이를 표시한 파이프로 결과를 기다립니다. 전체 대기 기한은 `LLM_CALLBACK_DEADLINE_S`로 정하며 기본값은 120초입니다. 기한을 넘기면 작업 프로세스를 종료하도록 처리합니다. 부모가 결과 파일을 직접 쓰지는 않습니다. 별도의 짧게 실행되는 자식 프로세스가 0.2초의 시간 한도 안에서 최종 결과 파일을 씁니다. HTTP 클라이언트는 같은 컴퓨터의 루프백 주소만 허용하고 요청·응답 크기를 제한합니다. 연결, 응답 데이터가 오지 않는 시간, 전체 호출에 각각 시간 제한을 둡니다.
 
-## Running it
+그림 생성에는 matplotlib이 필요합니다. 3차원 대체 방식인 최근접 셀 기반 래스터 그림에는 scipy도 필요합니다. matplotlib은 시작할 때 `mesh_func`에서 한 번 불러오며, 매 계산 단계에서 다시 불러오지 않습니다.
 
-You need OpenFOAM v2106, Python 3 with numpy and matplotlib, a passed
-[bridge validation](../validation/README.md) run (it provides the reference
-case), about 3.4 GB of disk for the model files and a few GB of RAM for the
-server.
+## 실행 방법
+
+OpenFOAM v2106, numpy와 matplotlib이 설치된 Python 3, [C++·Python 연결 검증](../validation/README.md)을 통과한 실행 자료가 필요합니다. 통과한 실행 자료는 기준 사례로 사용합니다. 모델 파일에는 약 3.4 GB의 디스크 공간이, 서버에는 수 GB의 RAM(Random Access Memory, 실행 중 자료를 보관하는 메모리)이 필요합니다.
 
 ```bash
 cd Solver_Examples/PODFoam
@@ -70,62 +44,51 @@ python3 llm_demo/runtime.py standalone # optional: one request with a synthetic 
 python3 llm_demo/runtime.py stop       # when the server is no longer needed
 ```
 
-Environment variables: `OPENFOAM_BASHRC`, `PYTHON`, `POD_WORKSPACE`,
-`POD_LLM_RUNTIME` (model directory, default `../llm-runtime` beside the
-checkout), `POD_LLM_PORT` (8088), `POD_REFERENCE_RUN` (newest passed
-validation run by default), `LLM_ANALYSIS_STEP`, `LLM_IMAGE_INPUT` (1/0),
-`LLM_CALLBACK_DEADLINE_S`, `LLM_CONNECT_TIMEOUT_S`, `LLM_READ_TIMEOUT_S`,
-`LLM_MAX_TOKENS` (up to 192).
+사용할 수 있는 환경 변수는 다음과 같습니다.
 
-`run_demo.sh` builds the solver into `llm-demo-work/bin/` in the workspace,
-creates `pod-llm-demo.XXXXXX` and runs five cases, each for ten steps:
+- `OPENFOAM_BASHRC`, `PYTHON`, `POD_WORKSPACE`
+- `POD_LLM_RUNTIME`: 모델 폴더. 기본값은 저장소 작업 폴더 옆의 `../llm-runtime`
+- `POD_LLM_PORT`: 기본 포트 8088
+- `POD_REFERENCE_RUN`: 기준 실행 자료. 기본값은 검증을 통과한 가장 최근 실행
+- `LLM_ANALYSIS_STEP`, `LLM_IMAGE_INPUT`(1/0)
+- `LLM_CALLBACK_DEADLINE_S`, `LLM_CONNECT_TIMEOUT_S`, `LLM_READ_TIMEOUT_S`
+- `LLM_MAX_TOKENS`: 최대 192
 
-| Case | Model request | Image | Expected result |
+`run_demo.sh`는 작업 공간의 `llm-demo-work/bin/`에 솔버를 빌드하고, `pod-llm-demo.XXXXXX` 폴더를 만든 뒤 아래 5개 사례를 각각 10단계씩 실행합니다.
+
+| 사례 | 모델 요청 | 그림 | 예상 결과 |
 |---|---|---|---|
-| `fixed-pod-no-llm` | Off | Rendered, not sent | Baseline fields |
-| `fixed-pod` | On | Sent | `ok` |
-| `fixed-pod-text-only` | On | Not sent | `ok` |
-| `fixed-pod-server-error` | To a closed port | Sent | `error`, 4 s deadline |
-| `fixed-pod-timeout` | To a trickling fixture | Sent | `timeout`, 4 s deadline |
+| `fixed-pod-no-llm` | 사용 안 함 | 생성만 하고 보내지 않음 | 기준 결과 필드 |
+| `fixed-pod` | 사용 | 요청에 첨부 | `ok` |
+| `fixed-pod-text-only` | 사용 | 첨부하지 않음 | `ok` |
+| `fixed-pod-server-error` | 닫힌 포트로 요청 시도 | 요청에 첨부 | `error`, 기한 4초 |
+| `fixed-pod-timeout` | 조금씩 응답하는 시험 서버로 요청 | 요청에 첨부 | `timeout`, 기한 4초 |
 
-`verify_demo.py` checks that residuals, Courant numbers and continuity values
-in the telemetry match the solver log; that the callback returned before
-step 6 and within its deadline plus cleanup allowance; and that all 45 saved
-field files match the baseline byte for byte.
+`verify_demo.py`는 단계별 기록의 잔차·Courant 수·연속성 오차가 솔버 로그와 맞는지 확인합니다. 콜백이 6단계 전에 돌아왔는지, 전체 기한과 정리 여유 시간을 합친 제한 안에 끝났는지도 확인합니다. 저장된 필드 파일 45개는 기준 실행과 바이트 단위로 비교합니다.
 
-For image cases, it also checks that `fields.npz` matches `5e-07/U` and `p`,
-that the PNG matches the image encoded in the request, and that the request
-text matches the saved summary. It prints `PASS` when all checks pass.
-`pack_run.py` then saves sources, run records, requests and responses in
-`run-archive.tar.gz`. This archive omits intermediate time steps; the
-[October 17 download guide](../../../docs/evidence/2026-10-17/README.md#download-the-complete-run)
-links to that test's complete solver archive.
+그림을 사용하는 사례에서는 `fields.npz`가 `5e-07/U`와 `p`에 맞는지, PNG가 요청에 실제로 들어간 그림과 같은지, 요청 문장이 저장된 요약과 같은지도 확인합니다. 모든 검사를 통과하면 `PASS`를 출력합니다.
 
-Unit tests (no model needed):
+이어서 `pack_run.py`가 소스, 실행 기록, 요청과 응답을 `run-archive.tar.gz`에 저장합니다. 이 압축 파일은 중간 시간 단계를 일부 제외합니다. [10월 17일 전체 실행 자료 안내](../../../docs/evidence/2026-10-17/README.md#전체-실행-자료-내려받기)에는 그 시험의 모든 시간 단계를 담은 별도 솔버 압축 파일이 연결되어 있습니다.
+
+모델 없이 단위 테스트를 실행하려면 다음 명령을 사용합니다.
 
 ```bash
 cd Solver_Examples/PODFoam/llm_demo
 python3 -m unittest test_llm_client test_callback test_ablation_runner -v
 ```
 
-## Controlled replay benchmark
+## 조건을 통제한 저장 자료 재생 시험
 
-`ablation_runner.py` compares two requests made from one saved step:
+`ablation_runner.py`는 저장된 한 단계의 자료로 두 종류의 요청을 비교합니다.
 
-| Condition | Question and numerical summary | PNG |
+| 조건 | 질문과 수치 요약 | PNG |
 |---|---|---|
-| `numeric_only` | Same frozen text | Omitted |
-| `numeric_plus_image` | Same frozen text | Included |
+| `numeric_only` | 동일하게 고정한 문장 | 제외 |
+| `numeric_plus_image` | 동일하게 고정한 문장 | 포함 |
 
-Within each pair, the requests have the same instructions, model, seed and
-generation settings. Only the image content part differs. Both receive the
-image ranges and domain extents recorded in the numerical summary. Reference
-coordinates come from the saved arrays and are used only for scoring.
-The runner checks the PNG, metadata, arrays and summary before preparing
-requests.
+각 쌍 안에서는 지시문, 모델, 난수 시드와 생성 설정이 같습니다. 이미지가 들어가는 부분만 다릅니다. 두 조건 모두 수치 요약에 기록된 그림의 값 범위와 영역 크기를 받습니다. 정답 좌표는 저장된 배열에서 구하고 채점에만 사용합니다. 실행기는 요청을 준비하기 전에 PNG, 메타데이터, 배열과 요약을 대조합니다.
 
-From `llm_demo`, this example prepares requests from the published October 17
-snapshot without contacting a server:
+다음 명령은 `llm_demo` 폴더에서 실행하는 예입니다. 공개된 10월 17일 스냅샷으로 요청을 준비하며, 서버에는 접속하지 않습니다.
 
 ```bash
 python3 ablation_runner.py \
@@ -134,9 +97,7 @@ python3 ablation_runner.py \
   --repeats 3 --seed 20261017
 ```
 
-Use a new output directory each time. You can also pass a saved run's
-`fixed-pod` directory as `--case`. With the local server running, this example
-sends the three pairs:
+출력 폴더는 실행할 때마다 새 경로를 사용하세요. 저장된 다른 실행의 `fixed-pod` 폴더를 `--case`로 지정할 수도 있습니다. 로컬 서버가 실행 중일 때 다음 명령을 사용하면 3쌍의 요청을 실제로 보냅니다.
 
 ```bash
 python3 ablation_runner.py \
@@ -145,97 +106,60 @@ python3 ablation_runner.py \
   --repeats 3 --seed 20261017 --timeout-s 120 --execute
 ```
 
-These are rerun examples. The [recorded manifest](../../../docs/evidence/2026-10-17/ablation/manifest.json)
-lists the original requests and their execution order: pair 1 used seed
-`20261017`, followed by `20261018` and `20261019`. The runner alternates
-which condition goes first. Keep the server build, model weights, projector,
-thread count and context size fixed, and record them with `--server-note`.
+위 명령은 재실행 예입니다. [기록된 실행 목록](../../../docs/evidence/2026-10-17/ablation/manifest.json)에서 원래 요청과 실행 순서를 확인할 수 있습니다. 1번 쌍의 시드는 `20261017`이며, 다음 쌍은 `20261018`, `20261019`를 사용했습니다. 실행기는 각 쌍에서 먼저 실행할 조건을 번갈아 바꿉니다. 서버 빌드, 모델 가중치, 이미지 프로젝터, 스레드 수와 문맥 길이는 고정하고, `--server-note`로 그 설정을 기록하세요.
 
-Each trial saves requests, responses, hashes, status and metrics:
+각 요청마다 요청·응답·해시·상태·측정값을 저장합니다.
 
-- **Location:** an x-only answer gets an x-axis error; two axes give a
-  projected distance; all three give a 3D distance. Missing or ambiguous
-  coordinates remain unscored. The summary includes scoring coverage.
-- **Grounding:** automatic rules check selected numerical claims and
-  unsupported assertions. Keep their output alongside a review of the
-  answers; the October 17 [response review](../../../docs/evidence/2026-10-17/independent-ablation-review.json)
-  records claims these rules missed.
-- **Time:** `replay_callback_wall_s` covers sending a prepared request,
-  waiting, evaluating and saving the result. HTTP/client wait is also logged
-  separately. The replay does not rerun the solver, SVD or image rendering.
-  If a matching solver log is present, `original_cpp_callback_wall_s` records
-  that earlier callback time separately.
+- **위치:** x만 답하면 x축 오차를, 두 축을 답하면 그 평면에 투영한 거리를, 세 축을 모두 답하면 3차원 거리를 계산합니다. 좌표가 없거나 뜻이 모호하면 점수를 매기지 않습니다. 요약에는 채점할 수 있었던 답변의 비율도 기록합니다.
+- **근거 확인:** 자동 규칙으로 일부 수치 주장과 근거 없는 단정을 검사합니다. 자동 결과와 실제 답변을 함께 검토해야 합니다. 10월 17일 [답변 검수 기록](../../../docs/evidence/2026-10-17/independent-ablation-review.json)에는 자동 규칙이 놓친 주장이 적혀 있습니다.
+- **시간:** `replay_callback_wall_s`는 준비된 요청을 보내고, 기다리고, 평가하고, 저장하는 시간을 측정합니다. HTTP 요청과 응답을 기다린 시간도 따로 기록합니다. 이 재생 시험은 솔버, SVD, 그림 생성을 다시 실행하지 않습니다. 같은 실행의 솔버 로그가 있으면 `original_cpp_callback_wall_s`에 당시 콜백 시간을 별도로 기록합니다.
 
-See the report's [limitations](../../../docs/results.md#limitations) when
-comparing errors, repeated answers and timings. To check the callback in
-OpenFOAM itself, run the five-case demo and `verify_demo.py`; replay and unit
-tests exercise different parts of the system.
+오차, 반복된 답변과 시간을 비교할 때는 보고서의 [한계](../../../docs/results.md#한계)를 함께 확인하세요. OpenFOAM 안에서 콜백이 동작하는지 확인하려면 5조건 데모와 `verify_demo.py`를 실행해야 합니다. 재생 시험과 단위 테스트는 시스템의 서로 다른 부분을 확인합니다.
 
-## Earlier run on this machine — October 13
+## 이 컴퓨터에서 진행한 이전 실행 — 10월 13일
 
-The measurements below are from `pod-llm-demo.SwwR2e`. The
-[latest report](../../../docs/results.md) covers the October 17 execution.
+아래 측정값은 `pod-llm-demo.SwwR2e`의 기록입니다. 10월 17일 실행은 [최신 보고서](../../../docs/results.md)에 정리했습니다.
 
-8 vCPU, 7.7 GiB RAM, no GPU, llama.cpp b11429 with 4 threads, context 2048.
-Callback times were measured by C++ around `analysis_func`.
+가상 CPU 8개(8 vCPU), RAM 7.7 GiB이며 GPU(Graphics Processing Unit, 그래픽 처리장치)는 사용하지 않았습니다. llama.cpp b11429를 스레드 4개, 문맥 길이 2048로 실행했습니다. 콜백 시간은 C++에서 `analysis_func` 호출 전후를 측정한 값입니다.
 
-| Case | Status | Callback | HTTP | Request | Prompt tokens |
+| 사례 | 상태 | 콜백 | HTTP | 요청 크기 | 입력 토큰 수 |
 |---|---|---:|---:|---:|---:|
-| No request | disabled | 0.8 s | - | - | - |
-| Numbers + image | ok | 70.6 s | 70.1 s | 50.5 KB | 1516 |
-| Numbers only | ok | 41.4 s | 41.4 s | 3.7 KB | 1062 |
-| Connection refused | error | 0.4 s | - | - | - |
-| Trickling server | timeout | 4.0 s | - | - | - |
+| 요청 없음 | 사용 안 함 (`disabled`) | 0.8초 | - | - | - |
+| 수치 + 그림 | 정상 응답 (`ok`) | 70.6초 | 70.1초 | 50.5 KB | 1516 |
+| 수치만 | 정상 응답 (`ok`) | 41.4초 | 41.4초 | 3.7 KB | 1062 |
+| 연결 거부 | 오류 (`error`) | 0.4초 | - | - | - |
+| 조금씩 응답하는 서버 | 시간 초과 (`timeout`) | 4.0초 | - | - | - |
 
-All five runs completed ten steps and wrote identical fields. The maximum
-difference in final U and p against the no-request run was zero. Rendering
-took 0.4 s inside the worker. Of the image request's 70 s, about 58 s went
-into prompt processing and 11 s into generating 92 tokens. The recorded
-image-run server peak PSS was about 2.22 GiB.
+5개 실행 모두 10단계를 마쳤고, 같은 결과 필드를 저장했습니다. 요청하지 않은 실행과 비교한 최종 U와 p의 최대 차이는 0이었습니다. 작업 프로세스 안에서 그림을 그리는 데는 0.4초가 걸렸습니다. 그림을 포함한 요청의 약 70초 중 약 58초는 입력 처리에, 11초는 출력 토큰 92개 생성에 사용됐습니다. 그림을 포함한 실행에서 기록한 서버의 최대 PSS(Proportional Set Size, 공유 메모리를 비율대로 나누어 계산한 상주 메모리)는 약 2.22 GiB였습니다.
 
-Answers at step 5 (t = 5e-7 s), as returned:
+### 5단계의 원본 응답
 
-numbers + image
+계산 시간 t = 5e-7초에서 받은 답변을 그대로 옮겼습니다.
+
+**원본 응답 — 수치 + 그림**
 
 > observations: The velocity magnitude |U| shows a high value near x=0.25 m, with a maximum of 82.5 m/s.
 > possible_interpretation: The flow exhibits a localized high-speed region in the central x-domain.
 > checks: The pressure field shows a significant pressure gradient near the high-velocity region.
 
-numbers only
+**원본 응답 — 수치만**
 
 > observations: Residuals show small values, e.g., p final last is 9.19188e-07. Courant mean is 0.000337189.
 > possible_interpretation: The simulation appears to be progressing with small residuals. Velocity SVD shows high leading energy fractions.
 > checks: Check if linear-solver residuals are physical force balance. Verify velocity SVD centering.
 
-The quoted values match the supplied JSON: maximum speed about 82.5 m/s,
-pressure residual 9.19e-07, mean Courant number 3.4e-4, and leading fractions
-above 0.9999. The spatial part is weaker. The maximum-speed cell is near
-the step corner at x ≈ 0.0005 m, y ≈ 0.013 m. The answer's x = 0.25 m gives
-an **x-axis error of about 25 cm**. The October 17 comparison reports XY
-distances, so the two error measures are not directly comparable.
+인용한 숫자는 입력 JSON(JavaScript Object Notation, 구조화된 텍스트 자료 형식)과 맞습니다. 최대 속력은 약 82.5 m/s, 압력 잔차는 9.19e-07, 평균 Courant 수는 3.4e-4이며, 첫 모드 비율은 0.9999보다 높습니다. 다만 위치에 관한 답변은 틀렸습니다. 실제 최대속도 셀은 계단 모서리 근처인 x ≈ 0.0005 m, y ≈ 0.013 m에 있습니다. AI가 답한 x = 0.25 m는 **x축 기준 약 25 cm의 오차**입니다. 10월 17일 비교는 XY 평면 거리를 사용하므로 두 오차를 직접 비교할 수 없습니다.
 
-The minimum-pressure and maximum-speed cells are close but distinct:
-zero-based indices 10409 and 12090. Their proximity does not establish the
-claimed pressure gradient; no quantitative gradient check was made.
+압력이 가장 낮은 셀과 속력이 가장 높은 셀은 가깝지만 서로 다릅니다. 0부터 세는 셀 번호는 각각 10409와 12090입니다. 두 셀이 가깝다는 사실만으로 AI가 주장한 압력 기울기를 확인할 수는 없습니다. 압력 기울기를 수치로 검증하지 않았습니다.
 
-This October 13 comparison used different instructions and additional
-numerical metadata for the image request. It therefore does not isolate
-the effect of adding an image. The numeric-only reply also asked about force
-balance and SVD centering, although the input already stated that residuals
-are not force balance and that the SVD was uncentered.
+10월 13일 비교에서는 두 요청의 지시문이 달랐고, 그림 요청에 추가 수치 정보도 들어갔습니다. 따라서 그림만 추가했을 때의 효과를 분리해서 확인한 시험이 아닙니다. 수치만 받은 답변도 힘의 평형과 SVD의 평균 제거 여부를 확인하라고 했지만, 입력에는 이미 잔차가 힘의 평형이 아니며 SVD에서 평균을 제거하지 않았다고 적혀 있었습니다.
 
-SVD means **Singular Value Decomposition**. The legacy key
-`leading_energy_fraction` is retained for compatibility. It is sigma_1
-squared divided by the sum of squared singular values: the leading pattern's
-share of the numerical snapshot table. For Ux in this run it is about
-99.997%. That is a data-summary ratio, not an AI accuracy or physical-energy
-measurement. The component matrices are uncentered, without cell-volume or
-density weighting.
+### SVD 요약의 의미
 
-The normal worker deadline was 120 s. The deliberate timeout test used a
-4 s deadline and a 4.27 s overall acceptance limit; it tested recovery from
-a delayed response.
+SVD는 앞에서 설명한 **Singular Value Decomposition(특이값 분해)**입니다. 기존 키 `leading_energy_fraction`은 호환성을 위해 유지합니다. 이 값은 sigma_1의 제곱을 모든 특이값 제곱의 합으로 나눈 값입니다. 수치 스냅샷 표에서 첫 번째 패턴이 차지하는 비율을 나타내며, 이 실행의 Ux에서는 약 99.997%입니다. 자료 요약 비율일 뿐 AI 정확도나 물리적 에너지의 측정값은 아닙니다. 성분별 행렬은 평균을 제거하지 않았고, 셀 부피나 밀도에 따른 가중치도 적용하지 않았습니다.
 
-See the [October 13 evidence](../../../docs/evidence/README.md), its
-[Korean illustrated guide](https://seungminyome.github.io/PythonFOAM/guide.ko.html),
-and the current report's [limitations](../../../docs/results.md#limitations).
+정상 요청의 작업 프로세스 기한은 120초였습니다. 일부러 지연시킨 시험에는 4초 기한과 정리 여유 시간을 포함한 4.27초의 전체 허용 한도를 적용했습니다. 지연 응답에서 계산으로 돌아올 수 있는지 확인한 시험입니다.
+
+[10월 13일 근거 자료](../../../docs/evidence/README.md), [그림을 곁들인 한국어 해설](../../../docs/guide.ko.html), 최신 보고서의 [한계](../../../docs/results.md#한계)를 함께 볼 수 있습니다.
+
+[영문 원문](https://github.com/seungminyome/PythonFOAM/blob/main/Solver_Examples/PODFoam/llm_demo/README.md)

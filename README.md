@@ -23,4 +23,4 @@ PODFoam의 5단계 계산 직후 Python 콜백에서 잔차, Courant 수, 연속
 
 [상세 기록](docs/progress.ko.md) · [요청·응답·로그](docs/evidence/2026-10-17/README.md) · [전체 실행 자료](https://github.com/seungminyome/PythonFOAM-Korean/releases/tag/korean-docs-2026-10-18)
 
-[Argonne PythonFOAM](https://github.com/argonne-lcf/PythonFOAM)의 PODFoam 예제를 확장했습니다. 원본 안내는 [여기](docs/upstream-project.md)에 보관했습니다.
+[Argonne PythonFOAM](https://github.com/argonne-lcf/PythonFOAM)의 PODFoam 예제를 확장했습니다.

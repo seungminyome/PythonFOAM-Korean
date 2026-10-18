@@ -1,0 +1,234 @@
+{
+  "fixed-pod-no-llm": {
+    "steps": 10,
+    "residuals_match_solver_log": true,
+    "files_identical_to_model_run": 45,
+    "model_status": "disabled",
+    "normal_exit": true,
+    "ordered_request_response_return_next_step_end": true,
+    "cpp_measured_full_callback_s": 0.025163942,
+    "callback_limit_s": 120.27,
+    "worker_deadline_s": 120.0,
+    "timeout_kind": null,
+    "final_U_p_comparison": {
+      "U": {
+        "scope": "all 20540 internal cells; flattened components",
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "criterion": "abs(actual-reference) <= atol + rtol*abs(reference)",
+        "units": "m/s",
+        "all_stored_boundary_data_identical": true
+      },
+      "p": {
+        "scope": "all 20540 internal cells; flattened components",
+        "values": 20540,
+        "reference_L2": 192168.1965986271,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "criterion": "abs(actual-reference) <= atol + rtol*abs(reference)",
+        "units": "m^2/s^2 (kinematic pressure)",
+        "all_stored_boundary_data_identical": true
+      }
+    }
+  },
+  "fixed-pod": {
+    "steps": 10,
+    "residuals_match_solver_log": true,
+    "files_identical_to_model_run": 45,
+    "model_status": "ok",
+    "normal_exit": true,
+    "ordered_request_response_return_next_step_end": true,
+    "cpp_measured_full_callback_s": 44.382169324,
+    "callback_limit_s": 120.27,
+    "worker_deadline_s": 120.0,
+    "timeout_kind": null,
+    "final_U_p_comparison": {
+      "U": {
+        "scope": "all 20540 internal cells; flattened components",
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "criterion": "abs(actual-reference) <= atol + rtol*abs(reference)",
+        "units": "m/s",
+        "all_stored_boundary_data_identical": true
+      },
+      "p": {
+        "scope": "all 20540 internal cells; flattened components",
+        "values": 20540,
+        "reference_L2": 192168.1965986271,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "criterion": "abs(actual-reference) <= atol + rtol*abs(reference)",
+        "units": "m^2/s^2 (kinematic pressure)",
+        "all_stored_boundary_data_identical": true
+      }
+    }
+  },
+  "fixed-pod-server-error": {
+    "steps": 10,
+    "residuals_match_solver_log": true,
+    "files_identical_to_model_run": 45,
+    "model_status": "error",
+    "normal_exit": true,
+    "ordered_request_response_return_next_step_end": true,
+    "cpp_measured_full_callback_s": 0.047401407,
+    "callback_limit_s": 2.27,
+    "worker_deadline_s": 2.0,
+    "timeout_kind": null,
+    "final_U_p_comparison": {
+      "U": {
+        "scope": "all 20540 internal cells; flattened components",
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "criterion": "abs(actual-reference) <= atol + rtol*abs(reference)",
+        "units": "m/s",
+        "all_stored_boundary_data_identical": true
+      },
+      "p": {
+        "scope": "all 20540 internal cells; flattened components",
+        "values": 20540,
+        "reference_L2": 192168.1965986271,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "criterion": "abs(actual-reference) <= atol + rtol*abs(reference)",
+        "units": "m^2/s^2 (kinematic pressure)",
+        "all_stored_boundary_data_identical": true
+      }
+    }
+  },
+  "fixed-pod-timeout": {
+    "steps": 10,
+    "residuals_match_solver_log": true,
+    "files_identical_to_model_run": 45,
+    "model_status": "timeout",
+    "normal_exit": true,
+    "ordered_request_response_return_next_step_end": true,
+    "cpp_measured_full_callback_s": 1.516998099,
+    "callback_limit_s": 1.77,
+    "worker_deadline_s": 1.5,
+    "timeout_kind": "callback_deadline",
+    "final_U_p_comparison": {
+      "U": {
+        "scope": "all 20540 internal cells; flattened components",
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "criterion": "abs(actual-reference) <= atol + rtol*abs(reference)",
+        "units": "m/s",
+        "all_stored_boundary_data_identical": true
+      },
+      "p": {
+        "scope": "all 20540 internal cells; flattened components",
+        "values": 20540,
+        "reference_L2": 192168.1965986271,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "criterion": "abs(actual-reference) <= atol + rtol*abs(reference)",
+        "units": "m^2/s^2 (kinematic pressure)",
+        "all_stored_boundary_data_identical": true
+      }
+    }
+  },
+  "timings": {
+    "without_llm_seconds": 1.4610937450052006,
+    "with_llm_seconds": 45.603766710002674,
+    "added_wall_seconds": 44.14267296499747,
+    "inference_wall_seconds": 44.3525890269957,
+    "analysis_wait_seconds": 44.375016681995476,
+    "cpp_full_callback_seconds": 44.382169324,
+    "single_run_comparison_not_a_benchmark": true
+  },
+  "resources": {
+    "fixed-pod-no-llm": {
+      "wall_seconds": 1.4610937450052006,
+      "exit_status": 0,
+      "solver_pid": 3803036,
+      "llama_server_pid": 3748631,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 148792,
+      "cfd_python_peak_pss_sum_kib": 106195,
+      "llama_server_peak_rss_kib": 2989728,
+      "llama_server_peak_pss_kib": 2984603,
+      "concurrent_samples": 11,
+      "rss_sum_double_counts_shared_pages": true
+    },
+    "fixed-pod": {
+      "wall_seconds": 45.603766710002674,
+      "exit_status": 0,
+      "solver_pid": 3803043,
+      "llama_server_pid": 3748631,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 171304,
+      "cfd_python_peak_pss_sum_kib": 106148,
+      "llama_server_peak_rss_kib": 3020724,
+      "llama_server_peak_pss_kib": 3015557,
+      "concurrent_samples": 275,
+      "rss_sum_double_counts_shared_pages": true
+    },
+    "fixed-pod-server-error": {
+      "wall_seconds": 1.370679582003504,
+      "exit_status": 0,
+      "solver_pid": 3807450,
+      "llama_server_pid": 3748631,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 111256,
+      "cfd_python_peak_pss_sum_kib": 104691,
+      "llama_server_peak_rss_kib": 3020724,
+      "llama_server_peak_pss_kib": 3015595,
+      "concurrent_samples": 7,
+      "rss_sum_double_counts_shared_pages": true
+    },
+    "fixed-pod-timeout": {
+      "wall_seconds": 2.8360233230050653,
+      "exit_status": 0,
+      "solver_pid": 3807456,
+      "llama_server_pid": 3748631,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 152772,
+      "cfd_python_peak_pss_sum_kib": 106054,
+      "llama_server_peak_rss_kib": 3020724,
+      "llama_server_peak_pss_kib": 3015593,
+      "concurrent_samples": 22,
+      "rss_sum_double_counts_shared_pages": true
+    }
+  },
+  "model": "gemma-4-E2B-it-Q4_0",
+  "analysis_time_s": 5e-07,
+  "actual_output": {
+    "observations": "Residuals show small values. Mean Courant is very low at 0.000337189.",
+    "possible_interpretation": "The simulation appears numerically stable. Velocity SVD suggests dominant energy is high.",
+    "checks": "Check if linear-solver residuals are physical force balance. Verify velocity SVD centering."
+  },
+  "text_input_only": true,
+  "status": "PASS"
+}

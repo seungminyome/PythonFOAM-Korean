@@ -1,0 +1,38 @@
+{
+  "baseline": {
+    "normal_exit": true,
+    "steps": 2,
+    "time_of_call": 1,
+    "next_step_after_response": 2,
+    "wall_s": 1.121617503988091,
+    "full_cpp_callback_s": 0.875841824,
+    "inference_wall_s": 0,
+    "status": "disabled",
+    "server_pid": 4177294,
+    "server_peak_pss_kib": 3620711,
+    "solid_python_peak_pss_kib": 121201,
+    "concurrent_samples": 8,
+    "field_files": 6,
+    "all_finite": true,
+    "fields_byte_identical_to_baseline": true
+  },
+  "actual-model": {
+    "normal_exit": true,
+    "steps": 2,
+    "time_of_call": 1,
+    "next_step_after_response": 2,
+    "wall_s": 38.561094944001525,
+    "full_cpp_callback_s": 38.166099234,
+    "inference_wall_s": 37.2185906930099,
+    "status": "ok",
+    "server_pid": 4177294,
+    "server_peak_pss_kib": 3669636,
+    "solid_python_peak_pss_kib": 122847,
+    "concurrent_samples": 218,
+    "field_files": 6,
+    "all_finite": true,
+    "fields_byte_identical_to_baseline": true
+  },
+  "status": "PASS",
+  "scope": "Live solid text+one-image observation, not unloading or scientific accuracy validation"
+}

@@ -6,6 +6,8 @@
 
 시험에서는 모델의 답변을 받은 뒤 계산이 다시 진행됐습니다. 유동을 얼마나 정확하게 설명하는지는 더 확인해야 합니다.
 
+이 작업은 **10월 8일** 교수님이 제안한 질문에서 시작했습니다. 공개된 경량 멀티모달 모델이 PythonFOAM 안에서 계산 중인 솔버 자료를 읽고 사용자에게 도움이 되는 분석을 줄 수 있을까요? 현재는 **연결과 기록을 확인한 첫 시제품**까지 왔습니다. [교수님 제안과 실제 결과를 항목별로 대조한 기록](docs/professor-alignment.ko.md)에 아직 부족한 부분도 적었습니다.
+
 ## 내가 구현하고 시험한 것
 
 원본 [PythonFOAM](https://github.com/argonne-lcf/PythonFOAM)은 OpenFOAM과 Python을 연결하는 기능과 PODFoam 예제를 제공합니다. 내가 만든 코드와 검증한 내용은 다음과 같습니다.
@@ -25,11 +27,16 @@
 
 ## 날짜별 진행 기록 (2026년 10월)
 
-첫 연결부터 한국어판 공개까지의 작업을 날짜순으로 정리했습니다. [날짜별 근거와 자세한 내용](docs/progress.ko.md)도 볼 수 있습니다.
+제안을 받은 날부터 한국어판 공개까지 날짜순으로 적었습니다. [날짜별 근거와 자세한 내용](docs/progress.ko.md)도 볼 수 있습니다.
 
 | 날짜 | 한 일 |
 |---|---|
-| 10/13 | [OpenFOAM v2106과 Python의 연결을 확인](https://github.com/seungminyome/PythonFOAM-Korean/commit/e9b3598)하고, 계산 중 수치·그림을 Gemma에 보내 답을 저장하는 [첫 예제](https://github.com/seungminyome/PythonFOAM-Korean/commit/f053736)를 만들었습니다. |
+| 10/8 | 교수님이 PythonFOAM과 공개된 경량 멀티모달 모델을 연결해 계산 중 상태를 분석해 보자고 제안했습니다. [제안과 현재 결과의 대조](docs/professor-alignment.ko.md) |
+| 10/9 | 원본 PythonFOAM 저장소를 로컬에 복제했습니다. 이 날의 코드 구현이나 실험 결과는 확인되지 않습니다. |
+| 10/10 | PODFoam에서 [수치만 보낸 첫 로컬 모델 실행](docs/progress-evidence/2026-10-10-pod-text-verification.json)을 확인했습니다. 이때 이미지는 보내지 않았습니다. |
+| 10/11 | [별도 고체 솔버 예제](docs/progress-evidence/2026-10-11-solid-image-verification.json)에서 수치와 이미지 전달을 시험했습니다. 이 결과를 PODFoam 내부 연동 결과로 세지 않습니다. |
+| 10/12 | PODFoam 안에 수치와 이미지 전달 코드를 작성했습니다. 당시에는 그 경로의 실제 이미지 요청을 검증하지 못했습니다. |
+| 10/13 | [PODFoam 연결 코드](https://github.com/seungminyome/PythonFOAM-Korean/commit/e9b3598)와 [이미지 요청 예제](https://github.com/seungminyome/PythonFOAM-Korean/commit/f053736)를 정리하고, 솔버 안에서 이미지 요청 후 계산이 이어지는 실행을 확인했습니다. |
 | 10/14 | 13일 결과를 쉽게 설명하는 [그림 해설 초안](https://seungminyome.github.io/PythonFOAM-Korean/progress-evidence/2026-10-14-overview-draft.html)을 작성하고 1차 확인했습니다. |
 | 10/15 | 저장된 계산값과 AI의 위치 답변을 다시 확인하고, [실행 기록과 설명 자료](https://github.com/seungminyome/PythonFOAM-Korean/commit/034577e)를 정리했습니다. |
 | 10/16 | 숫자만 보내는 경우와 그림도 보내는 경우의 요청 6개를 준비하고 [오프라인 검사](docs/progress-evidence/2026-10-16-offline-check.json)를 했습니다. 이때 모델에 다시 요청하지는 않았습니다. |

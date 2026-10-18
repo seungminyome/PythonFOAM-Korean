@@ -23,18 +23,18 @@
 
 현재 시제품을 실시간 분석에 활용하려면 추가 검증이 필요합니다. 다음에는 더 다양한 유동 상태에서 답변을 확인하고, 모델이 저장된 자료를 분석하는 동안 계산을 계속할 수 있도록 바꿀 계획입니다.
 
-## 날짜별 진행 기록
+## 날짜별 진행 기록 (2026년 10월)
 
 아래는 첫 연결부터 한국어판 공개까지, 날짜가 확인되는 작업을 순서대로 적은 것입니다. 교수님께 발표한 날짜를 뜻하지는 않습니다. [각 날짜의 근거와 범위](docs/progress.ko.md)도 볼 수 있습니다.
 
 | 날짜 | 한 일 |
 |---|---|
-| 10월 13일 | [OpenFOAM v2106과 Python의 연결을 확인](https://github.com/seungminyome/PythonFOAM-Korean/commit/e9b3598)하고, 계산 중 수치·그림을 Gemma에 보내 답을 저장하는 [첫 예제](https://github.com/seungminyome/PythonFOAM-Korean/commit/f053736)를 만들었습니다. |
-| 10월 14일 | 13일 결과를 쉽게 설명하는 [그림 해설 초안](https://seungminyome.github.io/PythonFOAM-Korean/progress-evidence/2026-10-14-overview-draft.html)을 작성하고 1차 확인했습니다. |
-| 10월 15일 | 저장된 계산값과 AI의 위치 답변을 다시 확인하고, [실행 기록과 설명 자료](https://github.com/seungminyome/PythonFOAM-Korean/commit/034577e)를 정리했습니다. |
-| 10월 16일 | 숫자만 보내는 경우와 그림도 보내는 경우의 요청 6개를 준비하고 [오프라인 검사](docs/progress-evidence/2026-10-16-offline-check.json)를 했습니다. 이때 모델에 다시 요청하지는 않았습니다. |
-| 10월 17일 | 요청 실패 처리와 비교 실행기를 완성한 뒤 [솔버 다섯 실행과 그림 유무 비교](docs/results.md)를 시험했습니다. |
-| 10월 18일 | 시험 결과의 표현을 다듬고 [한국어 저장소와 자료 묶음](https://github.com/seungminyome/PythonFOAM-Korean/releases/tag/korean-docs-2026-10-18)을 공개했습니다. |
+| 10/13 | [OpenFOAM v2106과 Python의 연결을 확인](https://github.com/seungminyome/PythonFOAM-Korean/commit/e9b3598)하고, 계산 중 수치·그림을 Gemma에 보내 답을 저장하는 [첫 예제](https://github.com/seungminyome/PythonFOAM-Korean/commit/f053736)를 만들었습니다. |
+| 10/14 | 13일 결과를 쉽게 설명하는 [그림 해설 초안](https://seungminyome.github.io/PythonFOAM-Korean/progress-evidence/2026-10-14-overview-draft.html)을 작성하고 1차 확인했습니다. |
+| 10/15 | 저장된 계산값과 AI의 위치 답변을 다시 확인하고, [실행 기록과 설명 자료](https://github.com/seungminyome/PythonFOAM-Korean/commit/034577e)를 정리했습니다. |
+| 10/16 | 숫자만 보내는 경우와 그림도 보내는 경우의 요청 6개를 준비하고 [오프라인 검사](docs/progress-evidence/2026-10-16-offline-check.json)를 했습니다. 이때 모델에 다시 요청하지는 않았습니다. |
+| 10/17 | 요청 실패 처리와 비교 실행기를 완성한 뒤 [솔버 다섯 실행과 그림 유무 비교](docs/results.md)를 시험했습니다. |
+| 10/18 | 시험 결과의 표현을 다듬고 [한국어 저장소와 자료 묶음](https://github.com/seungminyome/PythonFOAM-Korean/releases/tag/korean-docs-2026-10-18)을 공개했습니다. |
 
 ## 더 자세히 보기
 

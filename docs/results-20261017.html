@@ -3,20 +3,19 @@
 <title>PythonFOAM 실제 시험 결과 · 2026-10-17</title>
 <style>body{max-width:1050px;margin:40px auto;padding:0 20px;font:17px/1.75 system-ui,sans-serif;color:#172c30;background:#f7f6f1}h1{font-size:29px;line-height:1.4}h2{font-size:23px;margin-top:38px}a{color:#155e69}table{border-collapse:collapse;width:100%;background:white;font-size:15px}th,td{text-align:left;padding:10px;border-bottom:1px solid #d5dedb}th{background:#e6eeea}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.6}details{padding:12px;background:#fff;margin:8px 0;border:1px solid #d5dedb}.notice{padding:18px 24px;background:#e7f0e9;border-left:5px solid #34724f}.caution{padding:18px 24px;background:#fff1db;border-left:5px solid #b77823}.scroll{overflow-x:auto}.small{font-size:14px;color:#536366}code{overflow-wrap:anywhere}</style>
 <nav><a href="index.html">프로젝트 첫 화면</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results.md">한국어 보고서</a></nav>
-<h1>실제 계산은 끝까지 진행됐고,<br>AI의 위치 답변에는 큰 오차가 남았다.</h1>
-<p>2026-10-17 · 검증한 코드 <code>23089bb</code> · 실제 OpenFOAM + 로컬 Gemma 모델</p>
-<div class="notice"><strong>확인한 성과</strong><br>5개 계산 조건 모두 10단계를 완주했다. 네 비교 조건 각각의 결과 파일 45개는 AI를 호출하지 않은 기준 계산과 바이트 단위로 같았다. 연결 실패와 시간 초과 뒤에도 계산이 계속됐다.</div>
-<p>목표는 PythonFOAM을 통해 계산 중 상태를 공개 멀티모달 모델에 전달하고, 사용자를 위한 관찰을 기록하는 것이다. 현재는 AI 답변을 기다리는 동기식 구조다. 계산과 AI 분석을 동시에 진행하는 비동기 기능은 아직 구현·검증하지 않았다.</p>
-<h2>1. 실제 계산과 실패 복귀</h2>
+<h1>PODFoam–Gemma 연동 시험:<br>저장 결과 일치, 위치 답변 오답</h1>
+<p>2026-10-17 · OpenFOAM v2106 · Gemma 4 E2B · 실행 코드 <code>23089bb</code></p>
+<div class="notice">5개 조건 모두 10단계를 완료했다. 기준 외 네 실행의 저장 파일은 각각 45/45개가 기준과 같았다. 연결 실패와 시간 초과 뒤에도 솔버는 진행했다.</div>
+<h2>1. 솔버 실행과 실패 처리</h2>
 <p>이 표의 시간은 C++에서 Python 분석 함수를 호출하기 직전부터 돌아온 직후까지 잰 값이다. 그보다 앞서 C++에서 수행한 계산값 복사와 진단 수치 준비는 포함하지 않는다. 두 정상 AI 호출은 기존 데모 방식이며 질문과 입력 정보가 달라서, 그림의 효과를 판정하는 통제 비교로 쓰지 않는다.</p>
 <div class="scroll"><table><thead><tr><th>조건</th><th>호출 결과</th><th>완료 단계</th><th>일치 파일</th><th>Python 분석 콜백</th></tr></thead><tbody><tr><td>AI 호출 없음</td><td>호출하지 않음</td><td>10</td><td>비교 기준</td><td>0.493초</td></tr><tr><td>수치 + 그림</td><td>답변 저장</td><td>10</td><td>45/45</td><td>78.256초</td></tr><tr><td>수치만</td><td>답변 저장</td><td>10</td><td>45/45</td><td>39.672초</td></tr><tr><td>연결 거부</td><td>오류 저장</td><td>10</td><td>45/45</td><td>0.509초</td></tr><tr><td>일부러 늦춘 응답</td><td>시간 초과 저장</td><td>10</td><td>45/45</td><td>4.013초</td></tr></tbody></table></div>
 <p class="small">파일 일치는 이 실행에서 저장된 계산 결과가 바뀌지 않았다는 뜻이다. 일반적인 물리적 안정성이나 AI 정확도를 증명하지 않는다.</p>
-<h2>2. 그림만 바꾼 실제 비교 시험</h2>
+<h2>2. PNG 포함 여부 비교</h2>
 <p>같은 질문·같은 수치·같은 모델 설정에서 PNG 첨부만 바꿨다. 한 시점의 자료로 3쌍, 총 6회 요청했다. 정답 좌표는 채점에만 사용했다.</p>
 <p>실제 최대속도 셀 중심: <strong>x≈0.000538m, y≈0.012714m</strong>. 최대속도는 약82.53m/s이며 이 속도 숫자는 두 조건 모두 입력에 들어 있다.</p>
 <div class="scroll"><table><thead><tr><th>쌍</th><th>조건</th><th>AI 좌표 (x,y), m</th><th>평면 위치 오차</th><th>HTTP 대기</th><th>재사용 입력 토큰</th></tr></thead><tbody><tr><td>1</td><td>수치만</td><td>(0.601225, 0.114295)</td><td>60.92cm</td><td>55.63초</td><td>1</td></tr><tr><td>1</td><td>수치 + 그림</td><td>(0.500000, 0.114295)</td><td>50.97cm</td><td>20.81초</td><td>1457</td></tr><tr><td>2</td><td>수치 + 그림</td><td>(0.500000, 0.114295)</td><td>50.97cm</td><td>13.20초</td><td>1567</td></tr><tr><td>2</td><td>수치만</td><td>(0.601225, 0.114295)</td><td>60.92cm</td><td>14.70초</td><td>1456</td></tr><tr><td>3</td><td>수치만</td><td>(0.601225, 0.114295)</td><td>60.92cm</td><td>14.55초</td><td>1461</td></tr><tr><td>3</td><td>수치 + 그림</td><td>(0.500000, 0.114295)</td><td>50.97cm</td><td>20.72초</td><td>1456</td></tr></tbody></table></div>
 <p>수치만 받은 답변은 영역의 오른쪽 위 끝 좌표를 최대속도 위치로 잘못 연결했다. 그림을 받은 답변도 x=0.5m와 영역 위쪽 끝을 지목했다. 이 한 시점에서 오차는 약61cm와51cm이며, 두 조건 모두 실제 최대속도 위치를 잘못 지목했다.</p>
-<div class="caution"><strong>오해하면 안 되는 점</strong><br>이전 약25cm는 x방향만의 오차이고, 이번61cm·51cm는 x와y를 합친 평면 거리다. 직접적인 개선·악화 비율로 비교할 수 없다.<br>응답 시간에는 서버가 이전 입력을 재사용한 효과가 크다. 그림을 넣으면 더 빠르다는 결론을 내릴 수 없다.</div>
+<div class="caution"><strong>비교 범위</strong><br>10월 13일의 약25cm는 x축 오차이고, 위 수치는 x-y 평면 거리다. 응답 시간은 프롬프트 캐시 조건도 달라 이미지의 추가 비용으로 해석할 수 없다.</div>
 <h2>3. 자동 채점과 원본 대조 검토</h2>
 <p>위치 오차 계산은 6개 답변 모두 정상 작동했다. 별도의 자동 근거 검사에서는 6개 모두 표시가 없었지만, 독립 검수에서는 잘못된 위치 주장과 추가 문제를 확인했다. 따라서 “자동 표시 없음”을 “환각 없음”으로 해석하면 안 된다.</p>
 <p>일부 답변은 수치가 주어졌는데도 Courant 수의 근거가 없다고 말하거나, 위치를 단정한 뒤 그 위치의 근거가 부족하다고 적었다. 정확한 답변은 아래 원문과 <a href="evidence/2026-10-17/independent-ablation-review.json">독립 답변 검수</a>에서 확인할 수 있다.</p>

@@ -1,8 +1,6 @@
 # 2026년 10월 13일 실행 자료 · `pod-llm-demo.SwwR2e`
 
-이 폴더에는 **10월 13일 실행 기록**을 보관했습니다. 이후 수정한 코드의 실행과 그림 유무를 통제한 비교는 [10월 17일 자료](../2026-10-17/README.md)와 [최신 시험 보고서](../../results.md)에서 확인할 수 있습니다.
-
-계산과 AI 호출은 2026-10-13에 실행했습니다. 2026-10-15에는 저장된 자료를 다시 검사하고 설명을 작성했습니다. 재검사 과정에서 유체 계산이나 AI 추론을 새로 실행하지는 않았습니다.
+코드 `9ae54d0`, 실행일 2026-10-13. 10월 15일의 재확인 파일은 저장된 자료만 다시 읽은 것입니다. 고친 코드로 다시 돌린 실행과 쌍 비교는 [2026-10-17](../2026-10-17/README.md)에 있습니다.
 
 [10월 13일 보고서](../../results-20261013.md) · [문서 안에서 원본 보기](https://seungminyome.github.io/PythonFOAM-Korean/guide.ko.html#raw-library) · [전체 실행 기록 내려받기](https://github.com/seungminyome/PythonFOAM/releases/download/pod-insitu-demo-2026-10-13/run-archive-SwwR2e.tar.gz) · [영어 문서](https://github.com/seungminyome/PythonFOAM/blob/main/docs/evidence/2026-10-13/README.md)
 
@@ -44,8 +42,6 @@
 
 릴리스의 전체 실행 압축 파일에는 다섯 조건의 폴더와 계산 필드가 들어 있습니다. 더 작은 근거 자료 ZIP은 일부 파일을 모은 것으로, 전체 실행 기록과 구분됩니다. 모델 가중치는 포함하지 않습니다.
 
-## 파일을 여는 방법
+## 참고
 
-JSON, JSONL, RAW, 솔버 로그는 텍스트 파일입니다. NPZ에는 NumPy 배열이 저장되어 있습니다. 스프레드시트로 보려면 CSV를 사용하면 됩니다.
-
-그림 해설 문서에서는 주변 폴더 없이도 포함된 원본을 열거나 내려받을 수 있습니다. GitHub 파일 화면에서 HTML을 열면 소스 코드가 보이므로, 위의 공개 문서 링크를 열거나 HTML을 내려받아 브라우저로 여세요.
+JSON, JSONL, RAW, 솔버 로그는 텍스트입니다. NPZ는 NumPy 배열이고, 표로 보려면 CSV를 쓰면 됩니다.

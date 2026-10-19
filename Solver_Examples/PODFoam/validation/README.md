@@ -2,8 +2,6 @@
 
 20,540개 셀로 구성된 PODFoam 사례를 직렬로 10단계 실행해 C++와 Python 사이의 자료 왕복 전달을 확인합니다. 각 스냅샷이 독립된 배열로 Python에 도착하는지, NumPy가 속도 성분마다 SVD 모드 5개를 반환하는지, 그 모드가 OpenFOAM 필드로 돌아오는지, 솔버가 정상 종료하는지를 검사합니다. `Run_Case` 자체는 바꾸지 않고 복사본에서 실행합니다.
 
-POD는 Proper Orthogonal Decomposition(적합직교분해), SVD는 Singular Value Decomposition(특이값 분해)을 뜻합니다. 여기서 모드는 스냅샷 자료에서 찾은 대표적인 공간 패턴입니다.
-
 ```bash
 cd Solver_Examples/PODFoam
 ./validation/run_v2106.sh                      # new directory ../../../pod-v2106.XXXXXX
@@ -14,7 +12,7 @@ cd Solver_Examples/PODFoam
 
 ## 스크립트가 하는 일
 
-1. 함께 제공된 원래 사례를 표준 `pimpleFoam`으로 실행해, 기존 설정에서 확인된 발산을 재현합니다. 설정은 `deltaT=1e-5`와 LES(Large Eddy Simulation, 대와류 모사)이며, 최대 Courant(쿠랑) 수는 약 21이고 두 번째 단계에 NaN(숫자로 표현할 수 없는 값)이 나타납니다. `checkMesh`는 가로·세로 비율이 큰 셀 192개와 비직교 각도가 70도를 넘는 면 16개를 보고합니다. 이 복사본의 이름은 `baseline-pimple`이며, 부동소수점 오류 감지 기능을 끄고 실행합니다.
+1. 함께 제공된 원래 사례를 표준 `pimpleFoam`으로 실행해, 기존 설정에서 확인된 발산을 재현합니다. 설정은 `deltaT=1e-5`와 LES이며, 최대 Courant 수는 약 21이고 두 번째 단계에 NaN이 나타납니다. `checkMesh`는 가로·세로 비율이 큰 셀 192개와 비직교 각도가 70도를 넘는 면 16개를 보고합니다. 이 복사본의 이름은 `baseline-pimple`이며, 부동소수점 오류 감지 기능을 끄고 실행합니다.
 2. 짧은 시험에서 발산하지 않도록 설정한 복사본 `fixed-pimple`을 준비하고 `pimpleFoam`으로 실행합니다. 층류, 초기 U = (32.2 0 0), `deltaT=1e-7`, Euler 시간 적분, 상류 차분 대류항, 제한된 비직교 보정, 압력 풀이의 `DICGaussSeidel` 완화기를 사용합니다.
 3. 같은 사례의 다른 복사본에 이 폴더의 `python_module.py`를 넣어 `fixed-pod`를 준비합니다. 다시 빌드한 PODFoam을 `podSvdInterval 10`으로 10단계 실행하고 `fixed-pimple`과 비교합니다.
 
@@ -33,11 +31,11 @@ cd Solver_Examples/PODFoam
 
 관련 파일은 `PODFoam.C`, `PythonCreate.H`, `PythonComm.H`, `pEqn.H`입니다.
 
-- v2106의 인자 처리 방식인 `setRootCaseLists.H`를 사용합니다. NumPy C API(Application Programming Interface, 응용 프로그램 인터페이스)를 불러올 때 오류를 확인하고, `-case`가 동작하도록 사례 폴더를 `sys.path`에 넣습니다.
+- v2106의 인자 처리 방식인 `setRootCaseLists.H`를 사용합니다. NumPy C API를 불러올 때 오류를 확인하고, `-case`가 동작하도록 사례 폴더를 `sys.path`에 넣습니다.
 - 스냅샷을 Python이 소유하는 NumPy 배열에 복사합니다. `PyArray_SimpleNewFromData`로 솔버 메모리를 직접 보는 방식은 사용하지 않습니다. 호출 전에 U와 p가 유한한 값인지 확인합니다.
 - 반환값이 시스템의 기본 바이트 순서를 쓰는 float64 ndarray인지, 모양이 `(3*cells, min(truncation, snapshots))`인지, 값이 유한한지 검사합니다. 결과는 `zeroGradient` 필드로 저장합니다.
 - `pEqn.solve()`는 v2106의 `pimpleFoam`과 같이 마지막 보정에서 `pFinal` 솔버를 사용합니다. 이를 적용하지 않으면 POD 솔버의 결과가 기준 실행과 달라집니다.
-- Python 초기화·호출·종료 구간을 `sigFpe::ignore`로 감쌉니다. NumPy는 불러오는 과정에서 컴퓨터의 수치 한계를 알아보려고 의도적으로 오버플로를 일으킵니다. 이를 구분하지 않으면 OpenFOAM의 FPE(Floating Point Exception, 부동소수점 예외) 감지 기능이 솔버 발산으로 보고합니다.
+- Python 초기화·호출·종료 구간을 `sigFpe::ignore`로 감쌉니다. NumPy는 불러오는 과정에서 컴퓨터의 수치 한계를 알아보려고 의도적으로 오버플로를 일으킵니다. 이를 구분하지 않으면 OpenFOAM의 부동소수점 예외 감지이 솔버 발산으로 보고합니다.
 - 끝에서는 함수 객체를 먼저 해제한 뒤 `Py_FinalizeEx()`를 호출합니다.
 - `controlDict`의 선택 항목으로 `podSvdInterval`을 추가했습니다. 0이면 원래처럼 결과를 저장하는 시점에 SVD를 실행합니다.
 

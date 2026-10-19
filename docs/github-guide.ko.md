@@ -1,52 +1,24 @@
-# 이 GitHub 저장소 읽는 법
+# 저장소 읽는 순서
 
-[첫 화면](../README.md) · [실험 보고서](results.md) · [그림 설명](https://seungminyome.github.io/PythonFOAM-Korean/)
+[첫 화면](../README.md) · [시험 보고서](results.md) · [그림으로 보기](https://seungminyome.github.io/PythonFOAM-Korean/)
 
-`PythonFOAM-Korean`은 PythonFOAM과 Gemma를 연결한 작업을 한국어로 읽기 위한 별도 저장소입니다. [영문 저장소](https://github.com/seungminyome/PythonFOAM)와 코드·시험 원본을 공유하고, 소개와 사용 안내를 한국어로 정리했습니다.
+`PythonFOAM-Korean`은 [영문 저장소](https://github.com/seungminyome/PythonFOAM)와 같은 코드와 시험 기록에 한국어 문서를 붙인 것입니다.
 
-## 어디부터 보면 되는가
-
-1. **첫 화면의 README**에서 목적, 구현 내용과 핵심 결과를 읽습니다.
-2. **[실험 보고서](results.md)**에서 어떤 조건을 시험했고 무엇을 확인했는지 봅니다.
-3. 직접 검수하려면 **[근거 자료 목록](evidence/2026-10-17/README.md)**에서 요청, 답변, 측정값을 엽니다.
-4. 직접 실행하려면 **[연결 검증](../Solver_Examples/PODFoam/validation/README.md)**과 **[모델 연동 예제](../Solver_Examples/PODFoam/llm_demo/README.md)**를 따라갑니다.
-
-파일 목록 아래에 보이는 긴 소개가 `README.md`입니다. 폴더 이름을 누르면 그 안으로 들어가고, 파일 이름을 누르면 내용을 볼 수 있습니다. 코드 파일을 연다고 프로그램이 실행되지는 않습니다.
-
-## 화면에 보이는 영어 메뉴
-
-GitHub 자체의 메뉴 이름은 그대로 표시됩니다. 이 저장소의 문서와 설명은 한국어로 읽을 수 있습니다.
-
-| 화면의 이름 | 뜻과 용도 |
-|---|---|
-| Repositories | 계정에 있는 저장소 목록입니다. `PythonFOAM`과 `PythonFOAM-Korean`이 각각 표시됩니다. |
-| Code | 폴더, 파일, README를 보는 기본 화면입니다. 초록색 Code 버튼에서는 주소 복사와 ZIP 다운로드를 할 수 있습니다. |
-| main | 처음 표시되는 기본 브랜치입니다. 브랜치는 작업 내용을 나누어 보관하는 갈래입니다. |
-| commits | 변경 기록입니다. 언제 어떤 파일을 바꿨는지 볼 수 있습니다. 변경 기록 자체가 시험 통과를 뜻하지는 않습니다. |
-| About | 오른쪽의 짧은 프로젝트 소개입니다. 여기에 그림 설명 페이지 주소도 있습니다. |
-| Releases | 묶어서 공개한 자료를 내려받는 곳입니다. 실행 원본과 검증 기록을 확인할 때 사용합니다. |
-| Issues | 오류나 질문을 남기는 곳입니다. |
-| Pull requests | 코드나 문서 변경을 제안하고 검토하는 곳입니다. |
-| Actions | 자동 작업의 실행 기록입니다. Pages 배포 성공과 유체 계산 시험 통과는 서로 다른 기록입니다. |
-| Star | 관심 있는 저장소를 표시하는 기능입니다. |
-| Fork | 다른 계정으로 저장소를 복사해 작업할 때 사용하는 기능입니다. |
-
-## 폴더에는 무엇이 들어 있는가
+1. [README](../README.md): 무엇을 만들었고 무엇을 쟀는지.
+2. [시험 보고서](results.md): 조건, 숫자, 한계.
+3. [근거 자료](evidence/2026-10-17/README.md): 요청·답·로그 원문. 직접 대조할 때.
+4. [연결 검증](../Solver_Examples/PODFoam/validation/README.md)과 [모델 연동 예제](../Solver_Examples/PODFoam/llm_demo/README.md): 직접 돌려 볼 때.
 
 | 위치 | 내용 |
 |---|---|
-| `Solver_Examples/PODFoam/` | 시험에 사용한 유체 계산 예제와 Python 연결 코드 |
-| `Solver_Examples/PODFoam/llm_demo/` | 모델 요청, 답변 저장, 오류 처리, 비교 시험 코드 |
-| `Solver_Examples/PODFoam/validation/` | OpenFOAM과 Python 사이에 자료가 제대로 오가는지 확인하는 코드 |
-| `docs/results.md` | 10월 17일 시험 보고서 |
-| `docs/evidence/2026-10-17/` | 해당 시험의 요청·답변·로그·측정값 원본 |
-| `docs/`의 HTML 파일 | 브라우저에서 읽는 그림 설명과 결과 페이지 |
-| 나머지 솔버·난류 모델 예제 | 원본 PythonFOAM에서 제공한 다른 예제 |
+| `Solver_Examples/PODFoam/` | 시험에 쓴 솔버와 Python 연결 코드 |
+| `Solver_Examples/PODFoam/llm_demo/` | 모델 요청, 답 저장, 오류 처리, 비교 시험, 단위 테스트 |
+| `Solver_Examples/PODFoam/validation/` | OpenFOAM과 Python 사이 자료 왕복 검증 |
+| `docs/results.md` | 10월 17일 보고서 |
+| `docs/evidence/` | 날짜별 원본 기록 |
+| `docs/*.html` | 브라우저용 그림 설명 |
+| 나머지 솔버·난류 모델 예제 | 원본 PythonFOAM 그대로 |
 
-## 결과를 읽을 때 구분할 것
-
-이 저장소에서 확인한 것은 계산 도중 모델에 자료를 보내고, 답변을 기록한 뒤 계산을 이어가는 연결입니다. 모델의 위치 판단과 응답 대기 시간에는 문제가 남아 있습니다. 따라서 저장소는 현재의 구현과 시험 과정을 보여주는 연구 기록으로 읽으면 됩니다.
-
-문서에 있는 **실행한 코드 버전**은 그 시험에 사용한 소스의 식별자입니다. 한국어 설명을 정리한 저장소의 최신 변경 기록은 시험에 사용한 코드 버전과 다릅니다. 문서를 고치면서 시험을 다시 실행한 것은 아닙니다.
-
-코드의 함수명, 실행 명령, JSON 항목 이름, 원본 모델 응답과 라이선스는 원문을 보존했습니다. 설명을 번역하면서 실행 방법이나 시험 증거가 바뀌지 않도록 하기 위한 것입니다.
+문서의 **코드 버전**은 그 시험에 쓴 소스를 가리킵니다. 그 뒤의 커밋은 문서만
+바꾼 것이고 시험을 다시 돌리지 않았습니다. 함수 이름, 명령, JSON 키, 모델의
+원문 답, 라이선스는 번역하지 않았습니다.

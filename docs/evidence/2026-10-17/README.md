@@ -1,10 +1,10 @@
 # 2026년 10월 17일 시험 자료
 
-이 폴더는 [10월 17일 보고서](../../results.md)의 근거 자료를 담고 있습니다. 솔버 실행 이름은 `pod-llm-demo.LRfJBN`이며, 사용한 코드 버전은 `23089bbf3447731852fa960d7d25ea18767a3f51`입니다.
+[10월 17일 보고서](../../results.md)의 원본 기록입니다. 솔버 실행 `pod-llm-demo.LRfJBN`, 코드 `23089bbf3447731852fa960d7d25ea18767a3f51`.
 
 [브라우저에서 결과 읽기](https://seungminyome.github.io/PythonFOAM-Korean/results-20261017.html) · [파일 내려받기](https://github.com/seungminyome/PythonFOAM-Korean/releases/tag/korean-docs-2026-10-18) · [영어 문서](https://github.com/seungminyome/PythonFOAM/blob/main/docs/evidence/2026-10-17/README.md)
 
-## 필요한 기록 찾기
+## 파일
 
 | 파일 | 담긴 내용 |
 |---|---|
@@ -23,16 +23,12 @@
 | [답변 검수](independent-ablation-review.json) | 답변을 별도로 검토하고 자동 검사가 놓친 주장을 정리한 기록 |
 | [기준 좌표](ablation/ground_truth.private.json) | 채점에 사용한 최대속도 위치. 모델에는 전달하지 않았습니다. |
 
-[ablation](ablation/) 폴더에는 저장된 상태를 사용한 세 쌍의 비교가 있습니다. 각 `pair-*` 폴더에는 요청, 응답 원문, 파싱한 응답, 처리 결과와 측정값이 들어 있습니다. 솔버가 계산하는 도중 보낸 요청과는 별도의 시험입니다. 점수와 시간의 의미는 보고서의 [해석 범위와 한계](../../results.md#한계)를 참고하세요.
+[ablation/](ablation/)에는 세 쌍의 재생 요청이 `pair-*` 폴더 하나씩으로 있습니다. 보낸 본문, 받은 원문과 파싱한 답, 결과, 측정값. 솔버 실행이 끝난 뒤 저장된 5단계 상태로 보낸 것입니다.
 
-## 전체 실행 자료 내려받기
+## 전체 실행
 
-이 폴더에는 주요 기록을 선별해 두었습니다. 릴리스의 `solver-evidence-LRfJBN.tar.gz`에는 다섯 조건 각각의 10개 저장 시각 폴더, 기준이 되는 pimpleFoam 사례, 검증 코드까지 들어 있습니다. 압축을 풀면 `README.txt`에서 솔버나 모델을 다시 실행하지 않고 저장 파일을 검사하는 방법을 볼 수 있습니다.
+여기에는 읽을 만한 기록만 두었습니다. 릴리스의 `solver-evidence-LRfJBN.tar.gz`에는 다섯 실행의 시각 폴더 전부, pimpleFoam 기준 사례, 검증 코드가 있고, 안의 `README.txt`에 아무것도 다시 실행하지 않고 파일을 검사하는 방법이 있습니다. `SHA256SUMS.txt`는 릴리스 파일의 체크섬입니다. 데모 스크립트가 만드는 작은 `run-archive.tar.gz`는 중간 시각을 빼므로 전체 기록은 릴리스 쪽을 쓰세요.
 
-근거 자료 ZIP에는 한국어 결과 페이지와 연결된 파일이 함께 들어 있어 오프라인에서도 읽을 수 있습니다. `SHA256SUMS.txt`에는 두 압축 파일의 체크섬이 있습니다. 자동으로 생성된 이전 `run-archive.tar.gz`에는 중간 시각 일부가 빠져 있으므로, 전체 솔버 기록은 `solver-evidence-LRfJBN.tar.gz`를 사용하세요.
+## 참고
 
-## 저장된 파일에 관하여
-
-요청, 응답, 배열, 로그는 기록 당시의 바이트를 유지했습니다. `runtime-summary.json`은 실행 환경 정보를 줄여 정리한 자료이며, 목록 파일에도 변환 자료로 표시했습니다.
-
-원본 기록에 남아 있는 로컬 경로 대신 위의 상대 링크를 사용하면 공개된 파일을 열 수 있습니다. `remote_writes` 항목은 자료를 게시하기 전의 시험 세션을 설명합니다.
+요청, 답, 배열, 로그는 기록 당시 바이트 그대로입니다. `runtime-summary.json`은 실행 환경 기록을 줄인 사본이고 manifest에 변환 자료로 표시했습니다. 일부 기록에 시험 컴퓨터의 경로가 남아 있는데, 공개된 위치는 위 링크입니다.

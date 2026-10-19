@@ -12,7 +12,7 @@
 
 ### 10월 14~16일 · 답변 검토와 비교 준비
 
-14일에는 [그림 해설 초안](progress-evidence/2026-10-14-overview-draft.html)을 만들었습니다. 15일에는 저장된 계산값으로 AI의 위치 답변을 [재검사](evidence/numeric_audit_20261015.json)했습니다. 16일에는 질문과 수치를 고정하고 PNG 포함 여부만 바꾸는 요청 6개를 준비해 [오프라인 검사](progress-evidence/2026-10-16-offline-check.json)를 했습니다.
+14일에는 [그림 해설 초안](progress-evidence/2026-10-14-overview-draft.html)을 만들었습니다. 15일에는 저장된 계산값으로 AI의 위치 답변을 [재검사](evidence/2026-10-13/numeric_audit_20261015.json)했습니다. 16일에는 질문과 수치를 고정하고 PNG 포함 여부만 바꾸는 요청 6개를 준비해 [오프라인 검사](progress-evidence/2026-10-16-offline-check.json)를 했습니다.
 
 ### 10월 17~18일 · 통제 실행과 자료 공개
 

@@ -116,50 +116,14 @@ python3 ablation_runner.py \
 
 오차, 반복된 답변과 시간을 비교할 때는 보고서의 [한계](../../../docs/results.md#한계)를 함께 확인하세요. OpenFOAM 안에서 콜백이 동작하는지 확인하려면 5조건 데모와 `verify_demo.py`를 실행해야 합니다. 재생 시험과 단위 테스트는 시스템의 서로 다른 부분을 확인합니다.
 
-## 이 컴퓨터에서 진행한 이전 실행 — 10월 13일
+## 이전 실행 — 10월 13일
 
-아래 측정값은 `pod-llm-demo.SwwR2e`의 기록입니다. 10월 17일 실행은 [최신 보고서](../../../docs/results.md)에 정리했습니다.
+`pod-llm-demo.SwwR2e`(솔버 버전 `9ae54d0`)의 측정값과 답변은 [10월 13일 보고서](../../../docs/results-20261013.md)와 [근거 자료](../../../docs/evidence/2026-10-13/README.md)에 있습니다. 당시 그림 요청과 수치만 요청은 지시문이 달라서 그림의 효과를 분리하지 못했습니다. 그 역할은 10월 17일의 재생 비교가 합니다.
 
-가상 CPU 8개(8 vCPU), RAM 7.7 GiB이며 GPU(Graphics Processing Unit, 그래픽 처리장치)는 사용하지 않았습니다. llama.cpp b11429를 스레드 4개, 문맥 길이 2048로 실행했습니다. 콜백 시간은 C++에서 `analysis_func` 호출 전후를 측정한 값입니다.
-
-| 사례 | 상태 | 콜백 | HTTP | 요청 크기 | 입력 토큰 수 |
-|---|---|---:|---:|---:|---:|
-| 요청 없음 | 사용 안 함 (`disabled`) | 0.8초 | - | - | - |
-| 수치 + 그림 | 정상 응답 (`ok`) | 70.6초 | 70.1초 | 50.5 KB | 1516 |
-| 수치만 | 정상 응답 (`ok`) | 41.4초 | 41.4초 | 3.7 KB | 1062 |
-| 연결 거부 | 오류 (`error`) | 0.4초 | - | - | - |
-| 조금씩 응답하는 서버 | 시간 초과 (`timeout`) | 4.0초 | - | - | - |
-
-5개 실행 모두 10단계를 마쳤고, 같은 결과 필드를 저장했습니다. 요청하지 않은 실행과 비교한 최종 U와 p의 최대 차이는 0이었습니다. 작업 프로세스 안에서 그림을 그리는 데는 0.4초가 걸렸습니다. 그림을 포함한 요청의 약 70초 중 약 58초는 입력 처리에, 11초는 출력 토큰 92개 생성에 사용됐습니다. 그림을 포함한 실행에서 기록한 서버의 최대 PSS(Proportional Set Size, 공유 메모리를 비율대로 나누어 계산한 상주 메모리)는 약 2.22 GiB였습니다.
-
-### 5단계의 원본 응답
-
-계산 시간 t = 5e-7초에서 받은 답변을 그대로 옮겼습니다.
-
-**원본 응답 — 수치 + 그림**
-
-> observations: The velocity magnitude |U| shows a high value near x=0.25 m, with a maximum of 82.5 m/s.
-> possible_interpretation: The flow exhibits a localized high-speed region in the central x-domain.
-> checks: The pressure field shows a significant pressure gradient near the high-velocity region.
-
-**원본 응답 — 수치만**
-
-> observations: Residuals show small values, e.g., p final last is 9.19188e-07. Courant mean is 0.000337189.
-> possible_interpretation: The simulation appears to be progressing with small residuals. Velocity SVD shows high leading energy fractions.
-> checks: Check if linear-solver residuals are physical force balance. Verify velocity SVD centering.
-
-인용한 숫자는 입력 JSON(JavaScript Object Notation, 구조화된 텍스트 자료 형식)과 맞습니다. 최대 속력은 약 82.5 m/s, 압력 잔차는 9.19e-07, 평균 Courant 수는 3.4e-4이며, 첫 모드 비율은 0.9999보다 높습니다. 다만 위치에 관한 답변은 틀렸습니다. 실제 최대속도 셀은 계단 모서리 근처인 x ≈ 0.0005 m, y ≈ 0.013 m에 있습니다. AI가 답한 x = 0.25 m는 **x축 기준 약 25 cm의 오차**입니다. 10월 17일 비교는 XY 평면 거리를 사용하므로 두 오차를 직접 비교할 수 없습니다.
-
-압력이 가장 낮은 셀과 속력이 가장 높은 셀은 가깝지만 서로 다릅니다. 0부터 세는 셀 번호는 각각 10409와 12090입니다. 두 셀이 가깝다는 사실만으로 AI가 주장한 압력 기울기를 확인할 수는 없습니다. 압력 기울기를 수치로 검증하지 않았습니다.
-
-10월 13일 비교에서는 두 요청의 지시문이 달랐고, 그림 요청에 추가 수치 정보도 들어갔습니다. 따라서 그림만 추가했을 때의 효과를 분리해서 확인한 시험이 아닙니다. 수치만 받은 답변도 힘의 평형과 SVD의 평균 제거 여부를 확인하라고 했지만, 입력에는 이미 잔차가 힘의 평형이 아니며 SVD에서 평균을 제거하지 않았다고 적혀 있었습니다.
-
-### SVD 요약의 의미
+## SVD 요약의 의미
 
 SVD는 앞에서 설명한 **Singular Value Decomposition(특이값 분해)**입니다. 기존 키 `leading_energy_fraction`은 호환성을 위해 유지합니다. 이 값은 sigma_1의 제곱을 모든 특이값 제곱의 합으로 나눈 값입니다. 수치 스냅샷 표에서 첫 번째 패턴이 차지하는 비율을 나타내며, 이 실행의 Ux에서는 약 99.997%입니다. 자료 요약 비율일 뿐 AI 정확도나 물리적 에너지의 측정값은 아닙니다. 성분별 행렬은 평균을 제거하지 않았고, 셀 부피나 밀도에 따른 가중치도 적용하지 않았습니다.
 
-정상 요청의 작업 프로세스 기한은 120초였습니다. 일부러 지연시킨 시험에는 4초 기한과 정리 여유 시간을 포함한 4.27초의 전체 허용 한도를 적용했습니다. 지연 응답에서 계산으로 돌아올 수 있는지 확인한 시험입니다.
+정상 요청의 작업 프로세스 기한은 120초입니다. 일부러 실패시키는 조건에는 4초 기한과 정리 시간을 포함한 4.27초의 허용 한도를 적용합니다.
 
-[10월 13일 근거 자료](../../../docs/evidence/README.md), [그림을 곁들인 한국어 해설](../../../docs/guide.ko.html), 최신 보고서의 [한계](../../../docs/results.md#한계)를 함께 볼 수 있습니다.
-
-[영문 원문](https://github.com/seungminyome/PythonFOAM/blob/main/Solver_Examples/PODFoam/llm_demo/README.md)
+[그림을 곁들인 한국어 해설](../../../docs/guide.ko.html) · [영문 원문](https://github.com/seungminyome/PythonFOAM/blob/main/Solver_Examples/PODFoam/llm_demo/README.md)

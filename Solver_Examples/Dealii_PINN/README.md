@@ -21,4 +21,4 @@
 
 원본에서는 격자점 수가 적어 matplotlib의 등고선 그림이 매끄럽지 않다고 설명합니다. 격자를 더 촘촘하게 만들고 그에 맞춰 `Python_Module`의 신경망 설정을 조정하면 개선할 수 있다는 안내입니다.
 
-[영문 문서](https://github.com/seungminyome/PythonFOAM/blob/pod-insitu-llm/Solver_Examples/Dealii_PINN/README.md)
+[영문 문서](https://github.com/seungminyome/PythonFOAM/blob/main/Solver_Examples/Dealii_PINN/README.md)

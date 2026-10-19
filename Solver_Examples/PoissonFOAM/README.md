@@ -6,4 +6,4 @@ OpenFOAM이 포아송 방정식의 계수 행렬 `A`를 Python에 전달하면, 
 
 이 설명은 기존 예제의 영문 안내를 옮긴 것입니다. 한국어판을 만들며 이 예제를 새로 실행하거나 성능을 검증하지는 않았습니다.
 
-[영문 문서](https://github.com/seungminyome/PythonFOAM/blob/pod-insitu-llm/Solver_Examples/PoissonFOAM/README.md)
+[영문 문서](https://github.com/seungminyome/PythonFOAM/blob/main/Solver_Examples/PoissonFOAM/README.md)

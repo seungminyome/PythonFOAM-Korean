@@ -24,4 +24,4 @@ RANS(Reynolds-Averaged Navier–Stokes)는 레이놀즈 평균 나비에–스�
 
 이 절차는 난류 모델 안에서 Python과 OpenFOAM을 연결하는 예제입니다. 원본은 이를 데이터 기반 난류 모델링에 활용하는 출발점으로 제시합니다. 문의는 [원본 프로젝트 안내](../docs/upstream-project.md)의 연락처를 참고하세요.
 
-[영문 문서](https://github.com/seungminyome/PythonFOAM/blob/pod-insitu-llm/TurbulenceModel_Examples/README.md)
+[영문 문서](https://github.com/seungminyome/PythonFOAM/blob/main/TurbulenceModel_Examples/README.md)

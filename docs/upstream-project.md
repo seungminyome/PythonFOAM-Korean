@@ -4,7 +4,7 @@
 
 PythonFOAM은 [OpenFOAM](https://www.openfoam.com) 계산 도중 Python 모듈로 자료를 분석하는 프로젝트입니다. OpenFOAM 사례 실행을 자동화하는 도구인 PyFOAM과는 다릅니다. 여기서는 OpenFOAM이 Python 함수와 클래스를 직접 호출합니다. Python의 기계학습 도구를 이용하거나 알고리즘을 빠르게 시험하는 등, 계산 작업 일부를 Python에 맡길 수 있습니다.
 
-이 문서는 [영문 참고 문서](https://github.com/seungminyome/PythonFOAM/blob/pod-insitu-llm/docs/upstream-project.md)를 옮긴 것입니다. 아래 버전·설치·디버깅·Docker 안내는 원본 작성 당시 기준입니다. 한국어판에서 명령을 새로 검증하거나 최신 환경에 맞춰 바꾸지 않았습니다. `PODFoam/validation/`과 `PODFoam/llm_demo/`는 원본 예제를 바탕으로 이 분기에서 추가한 검증·모델 연결 안내입니다.
+이 문서는 [영문 참고 문서](https://github.com/seungminyome/PythonFOAM/blob/main/docs/upstream-project.md)를 옮긴 것입니다. 아래 버전·설치·디버깅·Docker 안내는 원본 작성 당시 기준입니다. 한국어판에서 명령을 새로 검증하거나 최신 환경에 맞춰 바꾸지 않았습니다. `PODFoam/validation/`과 `PODFoam/llm_demo/`는 원본 예제를 바탕으로 이 분기에서 추가한 검증·모델 연결 안내입니다.
 
 원본에서 별도 수정 없이 컴파일할 수 있을 것으로 안내한 OpenFOAM 버전은 다음과 같습니다.
 

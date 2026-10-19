@@ -22,4 +22,4 @@ Python에서 얻는 잔차 그래프의 예시는 다음과 같습니다. 잔차
 
 ![원본 예제의 잔차 그래프](https://github.com/SumedhSCU/PythonFOAM/assets/143654947/f0e4269e-4aa8-4614-a900-858695a6262c)
 
-[영문 문서](https://github.com/seungminyome/PythonFOAM/blob/pod-insitu-llm/Solver_Examples/linalgFoam/README.md)
+[영문 문서](https://github.com/seungminyome/PythonFOAM/blob/main/Solver_Examples/linalgFoam/README.md)

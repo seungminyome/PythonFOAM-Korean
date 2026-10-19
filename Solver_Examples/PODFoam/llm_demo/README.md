@@ -33,7 +33,7 @@ PythonAnalysis.H each step  analysis_func(state)                                
 
 ## 실행 방법
 
-OpenFOAM v2106, numpy와 matplotlib이 설치된 Python 3, [C++·Python 연결 검증](../validation/README.md)을 통과한 실행 자료가 필요합니다. 통과한 실행 자료는 기준 사례로 사용합니다. 모델 파일에는 약 3.4 GB의 디스크 공간이, 서버에는 RAM 몇 GB가 필요합니다.
+OpenFOAM v2106, numpy와 matplotlib이 설치된 Python 3, [C++·Python 연결 검증](../validation/README.md)을 통과한 실행 자료가 필요합니다. 통과한 실행 자료는 기준 사례로 사용합니다. 모델 파일에는 약 3.4 GB의 디스크 공간이, 서버는 최대 약 2.2 GiB를 쓰므로 RAM 8 GB 정도면 됩니다.
 
 ```bash
 cd Solver_Examples/PODFoam

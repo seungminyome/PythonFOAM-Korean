@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"observations\": \"Max speed |U| is 82.52751611538334 m/s at x=0.6012246511046805 m, y=0.11429523559299273 m.\",\n  \"possible_interpretation\": \"The maximum velocity is found at the upper-right corner of the domain.\",\n  \"checks\": \"Missing evidence for other locations. SVD shows dominant Ux component.\"\n}"
+      }
+    }
+  ],
+  "created": 1792396263,
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "system_fingerprint": "b11429-d81235049",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 130,
+    "prompt_tokens": 1463,
+    "total_tokens": 1593,
+    "prompt_tokens_details": {
+      "cached_tokens": 1457
+    }
+  },
+  "id": "chatcmpl-HNMD5TtFDppDVcn2XWjuqjAP2p31iERq",
+  "timings": {
+    "cache_n": 1457,
+    "prompt_n": 6,
+    "prompt_ms": 422.81,
+    "prompt_per_token_ms": 70.46833333333333,
+    "prompt_per_second": 14.19077126841844,
+    "predicted_n": 130,
+    "predicted_ms": 14608.989,
+    "predicted_per_token_ms": 113.24797674418605,
+    "predicted_per_second": 8.830179829692527
+  }
+}

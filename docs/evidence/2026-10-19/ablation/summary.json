@@ -1,0 +1,53 @@
+{
+  "numeric_only": {
+    "attempted": 3,
+    "successful": 3,
+    "failed_or_invalid": 0,
+    "location_scored": 3,
+    "location_errors_m_by_axes": {
+      "xy": [
+        0.6092149866192987,
+        0.6092149866192987,
+        0.6092149866192987
+      ]
+    },
+    "latency_s_all_attempts": [
+      55.92420497792773,
+      15.091324352077208,
+      14.8122081089532
+    ],
+    "latency_s_successful": [
+      55.92420497792773,
+      15.091324352077208,
+      14.8122081089532
+    ],
+    "responses_with_review_flags": 0,
+    "grounding_denominator_successful_responses": 3
+  },
+  "numeric_plus_image": {
+    "attempted": 3,
+    "successful": 3,
+    "failed_or_invalid": 0,
+    "location_scored": 3,
+    "location_errors_m_by_axes": {
+      "xy": [
+        0.5096869338922574,
+        0.5096869338922574,
+        0.5096869338922574
+      ]
+    },
+    "latency_s_all_attempts": [
+      20.415951658971608,
+      13.060616723960266,
+      21.03665051900316
+    ],
+    "latency_s_successful": [
+      20.415951658971608,
+      13.060616723960266,
+      21.03665051900316
+    ],
+    "responses_with_review_flags": 0,
+    "grounding_denominator_successful_responses": 3
+  },
+  "interpretation": "Compare errors only with the same answered axes and report coverage. Refusal/unknown is not zero error. Repeated one-snapshot trials are not independent physical cases. Alternating order reduces but does not remove server warm-cache effects. Seed is requested, not proof of backend determinism. Human grounding review remains required."
+}

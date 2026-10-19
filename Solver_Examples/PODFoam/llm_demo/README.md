@@ -54,6 +54,13 @@ python3 llm_demo/runtime.py stop       # when the server is no longer needed
 - `LLM_CALLBACK_DEADLINE_S`, `LLM_CONNECT_TIMEOUT_S`, `LLM_READ_TIMEOUT_S`
 - `LLM_MAX_TOKENS`: 최대 192
 
+`run_cases.py`는 `LLM_ENDPOINT` 뒤의 서버가 `$POD_LLM_RUNTIME/server.pid`에
+기록된 프로세스인지 확인합니다. 서버를 다른 런타임 폴더에서 띄웠다면
+`POD_LLM_RUNTIME`을 그 폴더로 지정하세요.
+
+클러스터 GPU에서 Gemma 4 12B로 같은 측정을 되풀이하려면
+[hpc/README.md](hpc/README.md)를 보세요.
+
 `run_demo.sh`는 작업 공간의 `llm-demo-work/bin/`에 솔버를 빌드하고, `pod-llm-demo.XXXXXX` 폴더를 만든 뒤 아래 5개 사례를 각각 10단계씩 실행합니다.
 
 | 사례 | 모델 요청 | 그림 | 예상 결과 |

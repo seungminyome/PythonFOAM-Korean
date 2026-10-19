@@ -1,0 +1,235 @@
+cd Solver_Examples/PODFoam/llm_demo && python3 -m unittest test_llm_client test_callback test_ablation_runner -v
+test_communicate_failure_kills_child_and_closes_pipes (test_llm_client.ClientTests) ... ok
+test_connect_timeout (test_llm_client.ClientTests) ... ok
+test_connection_close_error_preserves_connect_timeout (test_llm_client.ClientTests) ... ok
+test_connection_lost_before_response (test_llm_client.ClientTests) ... ok
+test_extra_key_in_response (test_llm_client.ClientTests) ... ok
+test_http_error_is_not_a_successful_observation (test_llm_client.ClientTests) ... ok
+test_http_worker_start_failure_is_returned (test_llm_client.ClientTests) ... ok
+test_image_request (test_llm_client.ClientTests) ... ok
+test_malformed_response (test_llm_client.ClientTests) ... ok
+test_oversize_response (test_llm_client.ClientTests) ... ok
+test_read_timeout (test_llm_client.ClientTests) ... ok
+test_refused_connection (test_llm_client.ClientTests) ... ok
+test_response_format (test_llm_client.ClientTests) ... ok
+test_success (test_llm_client.ClientTests) ... ok
+test_timeout_status_survives_cleanup_failure (test_llm_client.ClientTests) ... ok
+test_trickle_deadline (test_llm_client.ClientTests) ... ok
+test_validate_structured (test_llm_client.ClientTests) ... ok
+test_acknowledgment_failure_reaps_waiting_worker (test_callback.CallbackTests) ... PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:12.972152+00:00","parent_pid":4137267,"writer_pid":4137301,"run_id":"tmpoylgkeg9","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:12.983402+00:00","parent_pid":4137267,"writer_pid":4137302,"run_id":"tmpoylgkeg9","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=False analysis_wait=0.011291s
+ok
+test_disabled (test_callback.CallbackTests) ... PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:12.997146+00:00","parent_pid":4137267,"writer_pid":4137303,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-19T07:54:13.002059+00:00","parent_pid":4137267,"writer_pid":4137303,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:13.006070+00:00","parent_pid":4137267,"writer_pid":4137304,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.008957s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+ok
+test_explicit_process_interrupt_is_not_swallowed (test_callback.CallbackTests) ... ok
+test_failed_marker_stdout_does_not_stop_caller (test_callback.CallbackTests) ... ok
+test_failed_result_files_still_report_error_over_pipe (test_callback.CallbackTests) ... PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:13.041540+00:00","parent_pid":4137267,"writer_pid":4137308,"run_id":"tmpae_jlhbd","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:13.047314+00:00","parent_pid":4137267,"writer_pid":4137309,"run_id":"tmpae_jlhbd","step":5,"time_s":5e-07}
+ok
+test_fallback_error_reporter_cannot_rethrow_fork_failure (test_callback.CallbackTests) ... ok
+test_image_disabled_by_environment (test_callback.CallbackTests) ... PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=0.541
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:13.607258+00:00","parent_pid":4137267,"writer_pid":4137313,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-19T07:54:13.613515+00:00","parent_pid":4137267,"writer_pid":4137313,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:13.617670+00:00","parent_pid":4137267,"writer_pid":4137314,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.010448s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+ok
+test_image_rendered_when_request_disabled (test_callback.CallbackTests) ... PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=0.541
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:13.641573+00:00","parent_pid":4137267,"writer_pid":4137316,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-19T07:54:13.963015+00:00","parent_pid":4137267,"writer_pid":4137316,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:13.971661+00:00","parent_pid":4137267,"writer_pid":4137324,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=True analysis_wait=0.330132s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+ok
+test_invalid_socket_timeout_is_reported_without_nonfinite_context (test_callback.CallbackTests) ... PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+ok
+test_no_geometry_falls_back_to_text (test_callback.CallbackTests) ... PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:14.056031+00:00","parent_pid":4137267,"writer_pid":4137332,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-19T07:54:14.061552+00:00","parent_pid":4137267,"writer_pid":4137332,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:14.064691+00:00","parent_pid":4137267,"writer_pid":4137333,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.008688s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+ok
+test_nonfinite_feature_becomes_null (test_callback.CallbackTests) ... PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:14.083147+00:00","parent_pid":4137267,"writer_pid":4137335,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-19T07:54:14.087564+00:00","parent_pid":4137267,"writer_pid":4137335,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:14.090566+00:00","parent_pid":4137267,"writer_pid":4137336,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.007448s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+ok
+test_nonfinite_pressure (test_callback.CallbackTests) ... PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=0.541
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:14.108518+00:00","parent_pid":4137267,"writer_pid":4137338,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:14.116355+00:00","parent_pid":4137267,"writer_pid":4137339,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=None analysis_wait=0.007877s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+ok
+test_nonfinite_snapshot_rejected (test_callback.CallbackTests) ... ok
+test_reader_setup_failure_reaps_started_worker (test_callback.CallbackTests) ... PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:14.141253+00:00","parent_pid":4137267,"writer_pid":4137342,"run_id":"tmpgne1gr5e","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=None analysis_wait=0.005681s
+ok
+test_second_pipe_failure_closes_first_pipe (test_callback.CallbackTests) ... PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:14.152954+00:00","parent_pid":4137267,"writer_pid":4137343,"run_id":"tmptgy7f1cw","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=None analysis_wait=0.000090s
+ok
+test_slow_marker_stdout_is_bounded (test_callback.CallbackTests) ... ok
+test_slow_result_write_is_killed (test_callback.CallbackTests) ... PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:14.627201+00:00","parent_pid":4137267,"writer_pid":4137346,"run_id":"tmpf12855wf","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-19T07:54:14.634675+00:00","parent_pid":4137267,"writer_pid":4137346,"run_id":"tmpf12855wf","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:14.640200+00:00","parent_pid":4137267,"writer_pid":4137347,"run_id":"tmpf12855wf","step":5,"time_s":5e-07}
+ok
+test_slow_summary_hits_deadline (test_callback.CallbackTests) ... PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:14.848287+00:00","parent_pid":4137267,"writer_pid":4137348,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:15.053550+00:00","parent_pid":4137267,"writer_pid":4137349,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=timeout image_input=None analysis_wait=0.205310s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+ok
+test_slow_telemetry_is_bounded (test_callback.CallbackTests) ... PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:15.069635+00:00","parent_pid":4137267,"writer_pid":4137351,"run_id":"tmpf7iow8ut","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:15.324031+00:00","parent_pid":4137267,"writer_pid":4137352,"run_id":"tmpf7iow8ut","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=timeout image_input=None analysis_wait=0.254450s
+ok
+test_trickling_http_hits_deadline (test_callback.CallbackTests) ... PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:15.550629+00:00","parent_pid":4137267,"writer_pid":4137355,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-19T07:54:15.562701+00:00","parent_pid":4137267,"writer_pid":4137355,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:15.806730+00:00","parent_pid":4137267,"writer_pid":4137357,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=timeout image_input=False analysis_wait=0.256170s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+ok
+test_unreachable_endpoint (test_callback.CallbackTests) ... PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:16.077630+00:00","parent_pid":4137267,"writer_pid":4137360,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-19T07:54:16.083845+00:00","parent_pid":4137267,"writer_pid":4137360,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:16.089554+00:00","parent_pid":4137267,"writer_pid":4137361,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=error image_input=False analysis_wait=0.011960s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+ok
+test_worker_and_reporter_fork_failure_fail_open (test_callback.CallbackTests) ... ok
+test_worker_start_does_not_flush_parent_stdout (test_callback.CallbackTests) ... PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:54:16.115715+00:00","parent_pid":4137267,"writer_pid":4137363,"run_id":"tmp1m025f3j","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-19T07:54:16.120557+00:00","parent_pid":4137267,"writer_pid":4137363,"run_id":"tmp1m025f3j","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:54:16.123700+00:00","parent_pid":4137267,"writer_pid":4137364,"run_id":"tmp1m025f3j","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.008021s
+ok
+test_ambiguous_missing_and_unsupported_locations_stay_null (test_ablation_runner.AblationTests) ... ok
+test_assertions_in_checks_flagged_and_overflow_serializable (test_ablation_runner.AblationTests) ... ok
+test_bundled_case_and_tied_maximum (test_ablation_runner.AblationTests) ... ok
+test_default_offline_and_alternating_pairs (test_ablation_runner.AblationTests) ... ok
+test_failures_and_timeouts_are_logged_not_successes (test_ablation_runner.AblationTests) ... ok
+test_grounding_flags_only_assertions_and_keeps_manual_review (test_ablation_runner.AblationTests) ... ok
+test_image_changed_after_verification_is_rejected (test_ablation_runner.AblationTests) ... ok
+test_leaked_extrema_removed_and_unknown_schema_rejected (test_ablation_runner.AblationTests) ... ok
+test_mock_execution_exact_bodies_response_hashes_and_latency_scope (test_ablation_runner.AblationTests) ... ok
+test_payloads_differ_only_by_png_and_do_not_leak_truth (test_ablation_runner.AblationTests) ... ok
+test_projected_and_full_distances_do_not_fill_missing_axes (test_ablation_runner.AblationTests) ... ok
+test_refused_connection_is_logged (test_ablation_runner.AblationTests) ... ok
+test_snapshot_mismatch_rejected (test_ablation_runner.AblationTests) ... ok
+test_tampered_fields_and_png_provenance_rejected (test_ablation_runner.AblationTests) ... ok
+test_units_signed_scientific_and_axis_only_distance (test_ablation_runner.AblationTests) ... ok
+test_wrong_image_units_or_extent_are_rejected (test_ablation_runner.AblationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 56 tests in 9.847s
+
+OK
+{
+  "output": "/tmp/tmpf_s2014k/prepared",
+  "mode": "offline_preparation",
+  "prepared_requests": 4,
+  "executed_requests": 0
+}
+{
+  "output": "/tmp/tmp2yiu6v1x/executed",
+  "mode": "execute",
+  "prepared_requests": 2,
+  "executed_requests": 2
+}

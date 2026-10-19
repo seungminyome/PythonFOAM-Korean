@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "server_pid": 4177294,
+  "mmproj_loaded": true,
+  "steps": 10,
+  "analysis_step": 5,
+  "analysis_time_s": 5e-07,
+  "timings": {
+    "without_request_seconds": 2.876489865942858,
+    "with_image_request_seconds": 74.22493784595281,
+    "with_text_request_seconds": 42.670676553971134,
+    "added_wall_seconds_image": 71.34844798000995,
+    "added_wall_seconds_text": 39.794186688028276,
+    "inference_wall_seconds_image": 71.59889592404943,
+    "inference_wall_seconds_text": 40.549822855973616,
+    "cpp_full_callback_seconds_image": 72.255898214,
+    "cpp_full_callback_seconds_text": 40.586828927
+  },
+  "structured_output": {
+    "image": {
+      "observations": "The velocity magnitude |U| shows a high value near x=0.0, with a maximum of 82.5 m/s.",
+      "possible_interpretation": "The flow exhibits a localized high-speed region near the center of the domain.",
+      "checks": "The pressure field shows a significant pressure gradient near the high-velocity region."
+    },
+    "text_only": {
+      "observations": "Residuals show small values for Ux and Uy. The mean Courant number is very low at 0.000337189.",
+      "possible_interpretation": "The simulation is in a transient phase with low numerical residuals. Velocity SVD indicates high energy concentration.",
+      "checks": "Check for missing force equilibrium data. Verify the leading fraction in SVD."
+    }
+  },
+  "source_HEAD": "41876594e79c1bf4246c01675fb995699301464f",
+  "files": {
+    "request": "fixed-pod/llm_request.json",
+    "request_body": "fixed-pod/llm_request_body.json",
+    "image": "fixed-pod/llm_observation/state.png",
+    "response": "fixed-pod/llm_response.json",
+    "raw_http_body": "fixed-pod/llm_http_response.raw",
+    "text_only_request": "fixed-pod-text-only/llm_request.json",
+    "text_only_response": "fixed-pod-text-only/llm_response.json"
+  }
+}

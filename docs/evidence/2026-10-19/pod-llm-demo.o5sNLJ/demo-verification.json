@@ -1,0 +1,430 @@
+{
+  "fixed-pod-no-llm": {
+    "steps": 10,
+    "files_identical_to_no_request_baseline": 45,
+    "model_status": "disabled",
+    "image_input": true,
+    "cpp_measured_full_callback_s": 0.516621878,
+    "callback_limit_s": 120.27,
+    "worker_deadline_s": 120.0,
+    "timeout_kind": null,
+    "image": {
+      "png_sha256": "05a876ff878efd6ba4249dc7c82572f9e472a7524dbb9eb37cb1d539c7e16c70",
+      "png_bytes": 34437,
+      "fields_sha256": "14b64e399c39de9b2a6ccd8de7cc631e3b56814827bf642a7b15eed8008b12e5",
+      "width": 640,
+      "height": 360,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "aspect": {
+        "mode": "auto",
+        "x_span_over_y_span": 18.851541158812854
+      },
+      "ranges": {
+        "speed_m_per_s": [
+          2.753965220748645,
+          82.52751611538334
+        ],
+        "p_m2_per_s2": [
+          -9362.826066967049,
+          12901.930047757134
+        ]
+      },
+      "render_wall_s": 0.48300028999801725
+    },
+    "final_U_p_comparison": {
+      "U": {
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      },
+      "p": {
+        "values": 20540,
+        "reference_L2": 192168.1965986271,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      }
+    }
+  },
+  "fixed-pod": {
+    "steps": 10,
+    "files_identical_to_no_request_baseline": 45,
+    "model_status": "ok",
+    "image_input": true,
+    "cpp_measured_full_callback_s": 72.255898214,
+    "callback_limit_s": 120.27,
+    "worker_deadline_s": 120.0,
+    "timeout_kind": null,
+    "image": {
+      "png_sha256": "05a876ff878efd6ba4249dc7c82572f9e472a7524dbb9eb37cb1d539c7e16c70",
+      "png_bytes": 34437,
+      "fields_sha256": "14b64e399c39de9b2a6ccd8de7cc631e3b56814827bf642a7b15eed8008b12e5",
+      "width": 640,
+      "height": 360,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "aspect": {
+        "mode": "auto",
+        "x_span_over_y_span": 18.851541158812854
+      },
+      "ranges": {
+        "speed_m_per_s": [
+          2.753965220748645,
+          82.52751611538334
+        ],
+        "p_m2_per_s2": [
+          -9362.826066967049,
+          12901.930047757134
+        ]
+      },
+      "render_wall_s": 0.5552362620364875
+    },
+    "final_U_p_comparison": {
+      "U": {
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      },
+      "p": {
+        "values": 20540,
+        "reference_L2": 192168.1965986271,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      }
+    }
+  },
+  "fixed-pod-text-only": {
+    "steps": 10,
+    "files_identical_to_no_request_baseline": 45,
+    "model_status": "ok",
+    "image_input": false,
+    "cpp_measured_full_callback_s": 40.586828927,
+    "callback_limit_s": 120.27,
+    "worker_deadline_s": 120.0,
+    "timeout_kind": null,
+    "image": null,
+    "final_U_p_comparison": {
+      "U": {
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      },
+      "p": {
+        "values": 20540,
+        "reference_L2": 192168.1965986271,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      }
+    }
+  },
+  "fixed-pod-server-error": {
+    "steps": 10,
+    "files_identical_to_no_request_baseline": 45,
+    "model_status": "error",
+    "image_input": true,
+    "cpp_measured_full_callback_s": 0.812639386,
+    "callback_limit_s": 4.27,
+    "worker_deadline_s": 4.0,
+    "timeout_kind": null,
+    "image": {
+      "png_sha256": "05a876ff878efd6ba4249dc7c82572f9e472a7524dbb9eb37cb1d539c7e16c70",
+      "png_bytes": 34437,
+      "fields_sha256": "14b64e399c39de9b2a6ccd8de7cc631e3b56814827bf642a7b15eed8008b12e5",
+      "width": 640,
+      "height": 360,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "aspect": {
+        "mode": "auto",
+        "x_span_over_y_span": 18.851541158812854
+      },
+      "ranges": {
+        "speed_m_per_s": [
+          2.753965220748645,
+          82.52751611538334
+        ],
+        "p_m2_per_s2": [
+          -9362.826066967049,
+          12901.930047757134
+        ]
+      },
+      "render_wall_s": 0.7544886720133945
+    },
+    "final_U_p_comparison": {
+      "U": {
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      },
+      "p": {
+        "values": 20540,
+        "reference_L2": 192168.1965986271,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      }
+    }
+  },
+  "fixed-pod-timeout": {
+    "steps": 10,
+    "files_identical_to_no_request_baseline": 45,
+    "model_status": "timeout",
+    "image_input": true,
+    "cpp_measured_full_callback_s": 4.025694293,
+    "callback_limit_s": 4.27,
+    "worker_deadline_s": 4.0,
+    "timeout_kind": "callback_deadline",
+    "image": {
+      "png_sha256": "05a876ff878efd6ba4249dc7c82572f9e472a7524dbb9eb37cb1d539c7e16c70",
+      "png_bytes": 34437,
+      "fields_sha256": "14b64e399c39de9b2a6ccd8de7cc631e3b56814827bf642a7b15eed8008b12e5",
+      "width": 640,
+      "height": 360,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "aspect": {
+        "mode": "auto",
+        "x_span_over_y_span": 18.851541158812854
+      },
+      "ranges": {
+        "speed_m_per_s": [
+          2.753965220748645,
+          82.52751611538334
+        ],
+        "p_m2_per_s2": [
+          -9362.826066967049,
+          12901.930047757134
+        ]
+      },
+      "render_wall_s": 0.49345509603153914
+    },
+    "final_U_p_comparison": {
+      "U": {
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      },
+      "p": {
+        "values": 20540,
+        "reference_L2": 192168.1965986271,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      }
+    }
+  },
+  "timings": {
+    "without_request_seconds": 2.876489865942858,
+    "with_image_request_seconds": 74.22493784595281,
+    "with_text_request_seconds": 42.670676553971134,
+    "added_wall_seconds_image": 71.34844798000995,
+    "added_wall_seconds_text": 39.794186688028276,
+    "inference_wall_seconds_image": 71.59889592404943,
+    "inference_wall_seconds_text": 40.549822855973616,
+    "cpp_full_callback_seconds_image": 72.255898214,
+    "cpp_full_callback_seconds_text": 40.586828927
+  },
+  "resources": {
+    "fixed-pod-no-llm": {
+      "wall_seconds": 2.876489865942858,
+      "exit_status": 0,
+      "solver_pid": 4104367,
+      "llama_server_pid": 4177294,
+      "image_input_requested": true,
+      "model_request_enabled": false,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 238136,
+      "cfd_python_peak_pss_sum_kib": 175835,
+      "llama_server_peak_rss_kib": 2311112,
+      "llama_server_peak_pss_kib": 2306018,
+      "concurrent_samples": 23
+    },
+    "fixed-pod": {
+      "wall_seconds": 74.22493784595281,
+      "exit_status": 0,
+      "solver_pid": 4104375,
+      "llama_server_pid": 4177294,
+      "image_input_requested": true,
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 241592,
+      "cfd_python_peak_pss_sum_kib": 178916,
+      "llama_server_peak_rss_kib": 2348672,
+      "llama_server_peak_pss_kib": 2343488,
+      "concurrent_samples": 109
+    },
+    "fixed-pod-text-only": {
+      "wall_seconds": 42.670676553971134,
+      "exit_status": 0,
+      "solver_pid": 4108785,
+      "llama_server_pid": 4177294,
+      "image_input_requested": false,
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 206528,
+      "cfd_python_peak_pss_sum_kib": 137065,
+      "llama_server_peak_rss_kib": 2371052,
+      "llama_server_peak_pss_kib": 2365868,
+      "concurrent_samples": 52
+    },
+    "fixed-pod-server-error": {
+      "wall_seconds": 3.0467762460466474,
+      "exit_status": 0,
+      "solver_pid": 4109081,
+      "llama_server_pid": 4177294,
+      "image_input_requested": true,
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 239240,
+      "cfd_python_peak_pss_sum_kib": 176973,
+      "llama_server_peak_rss_kib": 2371052,
+      "llama_server_peak_pss_kib": 2365958,
+      "concurrent_samples": 23
+    },
+    "fixed-pod-timeout": {
+      "wall_seconds": 6.292083177017048,
+      "exit_status": 0,
+      "solver_pid": 4109097,
+      "llama_server_pid": 4177294,
+      "image_input_requested": true,
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 241636,
+      "cfd_python_peak_pss_sum_kib": 178761,
+      "llama_server_peak_rss_kib": 2371052,
+      "llama_server_peak_pss_kib": 2365923,
+      "concurrent_samples": 47
+    }
+  },
+  "resident_server": {
+    "pid": 4177294,
+    "mmproj_loaded": true,
+    "models": [
+      "gemma-4-E2B-it-Q4_0-vision"
+    ]
+  },
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "analysis_time_s": 5e-07,
+  "input_comparison": {
+    "image": {
+      "model": "gemma-4-E2B-it-Q4_0-vision",
+      "image_input": true,
+      "request_bytes": 50654,
+      "request_sha256": "b0ba19ed595cb5fa082a1d9a405b8db58de623015e469919c81b69c8eb6292b3",
+      "usage": {
+        "completion_tokens": 90,
+        "prompt_tokens": 1542,
+        "total_tokens": 1632,
+        "prompt_tokens_details": {
+          "cached_tokens": 1
+        }
+      },
+      "server_timings": {
+        "cache_n": 1,
+        "prompt_n": 1541,
+        "prompt_ms": 58568.973,
+        "prompt_per_token_ms": 38.00712070084361,
+        "prompt_per_second": 26.31085916428823,
+        "predicted_n": 90,
+        "predicted_ms": 10501.424,
+        "predicted_per_token_ms": 117.99352808988765,
+        "predicted_per_second": 8.475041099188072
+      },
+      "inference_wall_s": 71.59889592404943,
+      "callback_elapsed_s": 72.24915537191555,
+      "summary_wall_s": 0.06846887397114187,
+      "image_render_wall_s": 0.5552362620364875,
+      "structured_output": {
+        "observations": "The velocity magnitude |U| shows a high value near x=0.0, with a maximum of 82.5 m/s.",
+        "possible_interpretation": "The flow exhibits a localized high-speed region near the center of the domain.",
+        "checks": "The pressure field shows a significant pressure gradient near the high-velocity region."
+      }
+    },
+    "text_only": {
+      "model": "gemma-4-E2B-it-Q4_0-vision",
+      "image_input": false,
+      "request_bytes": 3767,
+      "request_sha256": "3262453814a83814100b4815ed3bd4030b77cef2c92d90e523730f7bb38484f2",
+      "usage": {
+        "completion_tokens": 96,
+        "prompt_tokens": 1081,
+        "total_tokens": 1177,
+        "prompt_tokens_details": {
+          "cached_tokens": 1
+        }
+      },
+      "server_timings": {
+        "cache_n": 1,
+        "prompt_n": 1080,
+        "prompt_ms": 30220.659,
+        "prompt_per_token_ms": 27.982091666666665,
+        "prompt_per_second": 35.73714259507047,
+        "predicted_n": 96,
+        "predicted_ms": 10207.82,
+        "predicted_per_token_ms": 107.45073684210526,
+        "predicted_per_second": 9.306590437527309
+      },
+      "inference_wall_s": 40.549822855973616,
+      "callback_elapsed_s": 40.57762389990967,
+      "summary_wall_s": 0.00895611708983779,
+      "image_render_wall_s": null,
+      "structured_output": {
+        "observations": "Residuals show small values for Ux and Uy. The mean Courant number is very low at 0.000337189.",
+        "possible_interpretation": "The simulation is in a transient phase with low numerical residuals. Velocity SVD indicates high energy concentration.",
+        "checks": "Check for missing force equilibrium data. Verify the leading fraction in SVD."
+      }
+    }
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,63 @@
+{
+  "parent_pid": 4108785,
+  "run_id": "pod-llm-demo.o5sNLJ/fixed-pod-text-only",
+  "step": 5,
+  "time_s": 5e-07,
+  "image_requested": false,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.02,
+  "scheduling_tolerance_s": 0.05,
+  "callback_started_at": "2026-10-19T07:47:37.303236+00:00",
+  "summary_wall_s": 0.00895611708983779,
+  "image_input": false,
+  "text_input_only": true,
+  "request_before_at": "2026-10-19T07:47:37.325646+00:00",
+  "image_skipped": {
+    "reason": "LLM_IMAGE_INPUT=0; numeric summary only"
+  },
+  "worker_reaped": true,
+  "ipc_select_calls": 4,
+  "response_after_at": "2026-10-19T07:48:17.880639+00:00",
+  "callback_elapsed_s": 40.57762389990967,
+  "elapsed_since_request_s": 40.55509677610826,
+  "worker_wait_elapsed_s": 40.575136335915886,
+  "cleanup_elapsed_before_result_write_s": 0.00838100805412978,
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Residuals show small values for Ux and Uy. The mean Courant number is very low at 0.000337189.\",\n  \"possible_interpretation\": \"The simulation is in a transient phase with low numerical residuals. Velocity SVD indicates high energy concentration.\",\n  \"checks\": \"Check for missing force equilibrium data. Verify the leading fraction in SVD.\"\n}",
+  "request_sha256": "3262453814a83814100b4815ed3bd4030b77cef2c92d90e523730f7bb38484f2",
+  "request_bytes": 3767,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1029,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 96,
+    "prompt_tokens": 1081,
+    "total_tokens": 1177,
+    "prompt_tokens_details": {
+      "cached_tokens": 1
+    }
+  },
+  "server_timings": {
+    "cache_n": 1,
+    "prompt_n": 1080,
+    "prompt_ms": 30220.659,
+    "prompt_per_token_ms": 27.982091666666665,
+    "prompt_per_second": 35.73714259507047,
+    "predicted_n": 96,
+    "predicted_ms": 10207.82,
+    "predicted_per_token_ms": 107.45073684210526,
+    "predicted_per_second": 9.306590437527309
+  },
+  "structured_output": {
+    "observations": "Residuals show small values for Ux and Uy. The mean Courant number is very low at 0.000337189.",
+    "possible_interpretation": "The simulation is in a transient phase with low numerical residuals. Velocity SVD indicates high energy concentration.",
+    "checks": "Check for missing force equilibrium data. Verify the leading fraction in SVD."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 40.549822855973616
+}

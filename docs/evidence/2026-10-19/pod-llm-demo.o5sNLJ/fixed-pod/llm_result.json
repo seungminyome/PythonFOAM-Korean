@@ -1,0 +1,78 @@
+{
+  "parent_pid": 4104375,
+  "run_id": "pod-llm-demo.o5sNLJ/fixed-pod",
+  "step": 5,
+  "time_s": 5e-07,
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.02,
+  "scheduling_tolerance_s": 0.05,
+  "callback_started_at": "2026-10-19T07:46:22.926725+00:00",
+  "summary_wall_s": 0.06846887397114187,
+  "image_input": true,
+  "text_input_only": false,
+  "request_before_at": "2026-10-19T07:46:23.564248+00:00",
+  "image_render_wall_s": 0.5552362620364875,
+  "image": {
+    "path": "/home/syome/pythonfoam-llm/pod-llm-demo.o5sNLJ/fixed-pod/llm_observation/state.png",
+    "sha256": "05a876ff878efd6ba4249dc7c82572f9e472a7524dbb9eb37cb1d539c7e16c70",
+    "bytes": 34437,
+    "fields_npz": "/home/syome/pythonfoam-llm/pod-llm-demo.o5sNLJ/fixed-pod/llm_observation/fields.npz",
+    "fields_sha256": "14b64e399c39de9b2a6ccd8de7cc631e3b56814827bf642a7b15eed8008b12e5",
+    "time_s": 5e-07,
+    "step": 5,
+    "cells": 20540,
+    "width": 640,
+    "height": 360,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "render_wall_s": 0.5552362620364875
+  },
+  "worker_reaped": true,
+  "ipc_select_calls": 4,
+  "response_after_at": "2026-10-19T07:47:35.175438+00:00",
+  "callback_elapsed_s": 72.24915537191555,
+  "elapsed_since_request_s": 71.61151117796544,
+  "worker_wait_elapsed_s": 72.24245425499976,
+  "cleanup_elapsed_before_result_write_s": 0.010750300949439406,
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"The velocity magnitude |U| shows a high value near x=0.0, with a maximum of 82.5 m/s.\",\n  \"possible_interpretation\": \"The flow exhibits a localized high-speed region near the center of the domain.\",\n  \"checks\": \"The pressure field shows a significant pressure gradient near the high-velocity region.\"\n}",
+  "request_sha256": "b0ba19ed595cb5fa082a1d9a405b8db58de623015e469919c81b69c8eb6292b3",
+  "request_bytes": 50654,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 990,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 90,
+    "prompt_tokens": 1542,
+    "total_tokens": 1632,
+    "prompt_tokens_details": {
+      "cached_tokens": 1
+    }
+  },
+  "server_timings": {
+    "cache_n": 1,
+    "prompt_n": 1541,
+    "prompt_ms": 58568.973,
+    "prompt_per_token_ms": 38.00712070084361,
+    "prompt_per_second": 26.31085916428823,
+    "predicted_n": 90,
+    "predicted_ms": 10501.424,
+    "predicted_per_token_ms": 117.99352808988765,
+    "predicted_per_second": 8.475041099188072
+  },
+  "structured_output": {
+    "observations": "The velocity magnitude |U| shows a high value near x=0.0, with a maximum of 82.5 m/s.",
+    "possible_interpretation": "The flow exhibits a localized high-speed region near the center of the domain.",
+    "checks": "The pressure field shows a significant pressure gradient near the high-velocity region."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 71.59889592404943
+}

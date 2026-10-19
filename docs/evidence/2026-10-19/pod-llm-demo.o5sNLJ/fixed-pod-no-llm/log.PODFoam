@@ -1,0 +1,247 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2106                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _4a824ac2-20260127 OPENFOAM=2106 patch=260127
+Arch   : "LSB;label=32;scalar=64"
+Exec   : /home/syome/pythonfoam-llm/llm-demo-work/bin/PODFoam -case /home/syome/pythonfoam-llm/pod-llm-demo.o5sNLJ/fixed-pod-no-llm
+Date   : Oct 19 2026
+Time   : 01:46:18
+Host   : ubuntu
+PID    : 4104367
+I/O    : uncollated
+Case   : /home/syome/pythonfoam-llm/pod-llm-demo.o5sNLJ/fixed-pod-no-llm
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PIMPLE: Operating solver in PISO mode
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type laminar
+Selecting laminar stress model Stokes
+No MRF models present
+
+No finite volume options present
+PYTHON LLM mesh geometry received: cells=20540 cell_polygons=20540 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=0.706
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540
+Python and NumPy initialized successfully
+Courant Number mean: 0.000356225646264 max: 0.00442386026374
+
+Starting time loop
+
+Courant Number mean: 0.000356225646264 max: 0.00442386026374
+Time = 1e-07 deltaT = 1e-07
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.999999921309, Final residual = 2.52502587766e-09, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 1, Final residual = 7.26995924524e-10, No Iterations 2
+GAMG:  Solving for p, Initial residual = 1, Final residual = 0.0877391871003, No Iterations 10
+GAMG:  Solving for p, Initial residual = 0.0639658648536, Final residual = 0.0047095242805, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.046681231839, Final residual = 0.00268864558236, No Iterations 2
+time step continuity errors : sum local = 1.74262570431e-08, global = -5.69603464571e-11, cumulative = -5.69603464571e-11
+GAMG:  Solving for p, Initial residual = 0.0420704809634, Final residual = 0.00185018104716, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.0373913882317, Final residual = 0.00370820123396, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0327132237562, Final residual = 9.51005827217e-07, No Iterations 33
+time step continuity errors : sum local = 6.27688199764e-12, global = -7.31206145065e-13, cumulative = -5.76915526022e-11
+PYTHON snapshot=1 shape=(20540, 3) finite=true
+PDE Compute wall time: 124.69 ms
+POD snapshot accepted: 1 time=1e-07 cells=20540
+POD analysis callback returned: step=1 wall_seconds=7.4922e-05
+IO wall time: 32.99 ms
+Courant Number mean: 0.000337213941401 max: 0.210371609352
+Time = 2e-07 deltaT = 1e-07
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.189056277872, Final residual = 4.15233526903e-08, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.0596758201888, Final residual = 1.46108422315e-07, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0697276648139, Final residual = 0.00575503250994, No Iterations 8
+GAMG:  Solving for p, Initial residual = 0.52467321386, Final residual = 0.0396317879574, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.0771434631158, Final residual = 0.00555829432616, No Iterations 6
+time step continuity errors : sum local = 3.05532392935e-09, global = -1.86883571245e-10, cumulative = -2.44575123847e-10
+GAMG:  Solving for p, Initial residual = 0.0885474279006, Final residual = 0.00681133451086, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.0118824442133, Final residual = 0.00115729852706, No Iterations 6
+GAMG:  Solving for p, Initial residual = 0.00710561394542, Final residual = 9.08210126526e-07, No Iterations 40
+time step continuity errors : sum local = 3.57178249947e-13, global = -3.59843877191e-14, cumulative = -2.44611108235e-10
+PYTHON snapshot=2 shape=(20540, 3) finite=true
+PDE Compute wall time: 111.90 ms
+POD snapshot accepted: 2 time=2e-07 cells=20540
+POD analysis callback returned: step=2 wall_seconds=8.1116e-05
+IO wall time: 30.88 ms
+Courant Number mean: 0.000337200147669 max: 0.211076243341
+Time = 3e-07 deltaT = 1e-07
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.000354649905484, Final residual = 9.46332143506e-10, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.00294568316152, Final residual = 1.20312070662e-09, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.532359030306, Final residual = 0.00654169858697, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0303065494392, Final residual = 0.00174849847406, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.00805992778493, Final residual = 0.000462469145358, No Iterations 2
+time step continuity errors : sum local = 6.53641460486e-11, global = 1.77718219807e-12, cumulative = -2.42833926037e-10
+GAMG:  Solving for p, Initial residual = 0.00632760260586, Final residual = 0.000331150532868, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.00430603809604, Final residual = 0.000206455783135, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.00403144252875, Final residual = 7.75918755872e-07, No Iterations 19
+time step continuity errors : sum local = 1.09480802938e-13, global = -8.27961949745e-15, cumulative = -2.42842205656e-10
+PYTHON snapshot=3 shape=(20540, 3) finite=true
+PDE Compute wall time: 50.32 ms
+POD snapshot accepted: 3 time=3e-07 cells=20540
+POD analysis callback returned: step=3 wall_seconds=7.0857e-05
+IO wall time: 29.97 ms
+Courant Number mean: 0.000337195541016 max: 0.210459216521
+Time = 4e-07 deltaT = 1e-07
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.000184675783442, Final residual = 6.5207012653e-10, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.00125892801964, Final residual = 5.51722380655e-10, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.213558577232, Final residual = 0.00724094614386, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0179924287116, Final residual = 0.00127742655903, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.0082892473256, Final residual = 0.000606119759888, No Iterations 1
+time step continuity errors : sum local = 5.98758767436e-11, global = 1.15823035635e-12, cumulative = -2.416839753e-10
+GAMG:  Solving for p, Initial residual = 0.00758069572343, Final residual = 0.000401797215509, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.00735448871339, Final residual = 0.000246615703733, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.00730690964178, Final residual = 9.39724734049e-07, No Iterations 13
+time step continuity errors : sum local = 9.28160878539e-14, global = 7.14821703464e-15, cumulative = -2.41676827083e-10
+PYTHON snapshot=4 shape=(20540, 3) finite=true
+PDE Compute wall time: 42.31 ms
+POD snapshot accepted: 4 time=4e-07 cells=20540
+POD analysis callback returned: step=4 wall_seconds=7.2891e-05
+IO wall time: 29.23 ms
+Courant Number mean: 0.000337191766485 max: 0.209561408796
+Time = 5e-07 deltaT = 1e-07
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.000140440406086, Final residual = 5.51307604366e-10, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.00102259120164, Final residual = 4.94540829132e-10, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.162039600649, Final residual = 0.00481818503579, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0171651724318, Final residual = 0.000942029761546, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.0108620941193, Final residual = 0.000414343816515, No Iterations 1
+time step continuity errors : sum local = 3.02186480868e-11, global = 4.63039859501e-13, cumulative = -2.41213787223e-10
+GAMG:  Solving for p, Initial residual = 0.00980197624529, Final residual = 0.00026339988616, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.00919948448157, Final residual = 0.000195204116841, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.00892505843344, Final residual = 9.1918789094e-07, No Iterations 18
+time step continuity errors : sum local = 6.69830936977e-14, global = -7.92062830465e-15, cumulative = -2.41221707852e-10
+PYTHON snapshot=5 shape=(20540, 3) finite=true
+PDE Compute wall time: 49.36 ms
+POD snapshot accepted: 5 time=5e-07 cells=20540
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-19T07:46:20.473841+00:00","parent_pid":4104367,"writer_pid":4104372,"run_id":"pod-llm-demo.o5sNLJ/fixed-pod-no-llm","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-19T07:46:20.975542+00:00","parent_pid":4104367,"writer_pid":4104372,"run_id":"pod-llm-demo.o5sNLJ/fixed-pod-no-llm","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-19T07:46:20.984280+00:00","parent_pid":4104367,"writer_pid":4104373,"run_id":"pod-llm-demo.o5sNLJ/fixed-pod-no-llm","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=True analysis_wait=0.510554s
+POD analysis callback returned: step=5 wall_seconds=0.516621878
+IO wall time: 29.20 ms
+Courant Number mean: 0.000337188626265 max: 0.208697126067
+Time = 6e-07 deltaT = 1e-07
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.00011692924038, Final residual = 5.00680061995e-10, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.000865193771887, Final residual = 4.43061596682e-10, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.12327469558, Final residual = 0.00570463109995, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0176380898079, Final residual = 0.00108330040846, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.0108911613626, Final residual = 0.000444832335148, No Iterations 1
+time step continuity errors : sum local = 2.61175550247e-11, global = 1.41995359901e-13, cumulative = -2.41079712492e-10
+GAMG:  Solving for p, Initial residual = 0.00969415682693, Final residual = 0.000249741800618, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.00911588422407, Final residual = 0.0001826615823, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.00874167894866, Final residual = 9.90718651428e-07, No Iterations 18
+time step continuity errors : sum local = 5.81353353147e-14, global = -6.85094121118e-15, cumulative = -2.41086563433e-10
+PYTHON snapshot=6 shape=(20540, 3) finite=true
+PDE Compute wall time: 49.61 ms
+POD snapshot accepted: 6 time=6e-07 cells=20540
+POD analysis callback returned: step=6 wall_seconds=0.000217555
+IO wall time: 30.96 ms
+Courant Number mean: 0.000337185989486 max: 0.207912813964
+Time = 7e-07 deltaT = 1e-07
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 0.000101551965916, Final residual = 4.62259799415e-10, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.000746612038477, Final residual = 3.92585845216e-10, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0991024547852, Final residual = 0.00521264806124, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.016634279576, Final residual = 0.000975220222421, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.0118590077842, Final residual = 0.000417778000187, No Iterations 1
+time step continuity errors : sum local = 2.07480890272e-11, global = 1.69621738183e-13, cumulative = -2.40916941695e-10
+GAMG:  Solving for p, Initial residual = 0.0109746181735, Final residual = 0.000253101077939, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.010231925062, Final residual = 0.000189907792798, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0101848461947, Final residual = 9.51322609852e-07, No Iterations 18
+time step continuity errors : sum local = 4.72219447866e-14, global = -5.44393408721e-15, cumulative = -2.40922385629e-10
+PYTHON snapshot=7 shape=(20540, 3) finite=true
+PDE Compute wall time: 57.53 ms
+POD snapshot accepted: 7 time=7e-07 cells=20540
+POD analysis callback returned: step=7 wall_seconds=8.2849e-05
+IO wall time: 29.45 ms
+Courant Number mean: 0.000337183726022 max: 0.207196424542
+Time = 8e-07 deltaT = 1e-07
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 9.01801306063e-05, Final residual = 4.31813437864e-10, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.000655616746708, Final residual = 3.53090448272e-10, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0833604970582, Final residual = 0.00472127053242, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0169161565207, Final residual = 0.000859536816495, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.0117596216995, Final residual = 0.000366003810868, No Iterations 1
+time step continuity errors : sum local = 1.5850149512e-11, global = 1.36794262174e-13, cumulative = -2.40785591367e-10
+GAMG:  Solving for p, Initial residual = 0.0111658896033, Final residual = 0.000221654420972, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0104089613684, Final residual = 0.000173778182086, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0104601790553, Final residual = 9.92746297048e-07, No Iterations 17
+time step continuity errors : sum local = 4.29775124811e-14, global = 5.50583146669e-15, cumulative = -2.40780085535e-10
+PYTHON snapshot=8 shape=(20540, 3) finite=true
+PDE Compute wall time: 49.76 ms
+POD snapshot accepted: 8 time=8e-07 cells=20540
+POD analysis callback returned: step=8 wall_seconds=8.19e-05
+IO wall time: 29.07 ms
+Courant Number mean: 0.000337181753046 max: 0.206535737126
+Time = 9e-07 deltaT = 1e-07
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 8.13832301994e-05, Final residual = 4.08167035292e-10, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.000582883885337, Final residual = 3.20997453462e-10, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.07217974778, Final residual = 0.00430600622247, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0165934794171, Final residual = 0.00076838168856, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.0122099460511, Final residual = 0.000344297588978, No Iterations 1
+time step continuity errors : sum local = 1.32728493974e-11, global = 2.04438718127e-13, cumulative = -2.40575646817e-10
+GAMG:  Solving for p, Initial residual = 0.0114481684779, Final residual = 0.000220483115208, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0109552471659, Final residual = 0.000177979296165, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0107730062193, Final residual = 9.45330516573e-07, No Iterations 17
+time step continuity errors : sum local = 3.64313089267e-14, global = 4.66627322732e-15, cumulative = -2.40570980544e-10
+PYTHON snapshot=9 shape=(20540, 3) finite=true
+PDE Compute wall time: 45.54 ms
+POD snapshot accepted: 9 time=9e-07 cells=20540
+POD analysis callback returned: step=9 wall_seconds=7.5171e-05
+IO wall time: 29.59 ms
+Courant Number mean: 0.000337180012223 max: 0.20592128094
+Time = 1e-06 deltaT = 1e-07
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 7.43521050369e-05, Final residual = 3.88683464942e-10, No Iterations 1
+smoothSolver:  Solving for Uy, Initial residual = 0.000523297986564, Final residual = 2.95973246883e-10, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0638460821243, Final residual = 0.00394864070717, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0164721747112, Final residual = 0.00158803762296, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0132460359301, Final residual = 0.000723402586709, No Iterations 1
+time step continuity errors : sum local = 2.52269439294e-11, global = 1.43180396802e-13, cumulative = -2.40427800147e-10
+GAMG:  Solving for p, Initial residual = 0.012255280471, Final residual = 0.000343655466943, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0116012825983, Final residual = 0.000221023848077, No Iterations 1
+GAMG:  Solving for p, Initial residual = 0.0113368899509, Final residual = 9.02538867198e-07, No Iterations 18
+time step continuity errors : sum local = 3.14458385101e-14, global = -3.16770929935e-15, cumulative = -2.40430967856e-10
+PYTHON snapshot=10 shape=(20540, 3) finite=true
+PDE Compute wall time: 54.97 ms
+POD snapshot accepted: 10 time=1e-06 cells=20540
+PYTHON SVD snapshots=10 shape=(61620, 5) finite=true
+POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=1e-06
+POD analysis callback returned: step=10 wall_seconds=0.008080108
+IO wall time: 31.02 ms
+Python finalized successfully
+End
+

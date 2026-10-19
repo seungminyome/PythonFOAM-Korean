@@ -16,7 +16,8 @@ export OPENFOAM_BASHRC="${OPENFOAM_BASHRC:-/usr/lib/openfoam/openfoam2106/etc/ba
 export HF_TOKEN="${HF_TOKEN:?export HF_TOKEN before sbatch, or set it here}"
 # -------------------------------------------------------------------------
 root="${SLURM_SUBMIT_DIR:-$PWD}"
-pod="${POD_SOURCE:-$root/PODFoam}"
+pod="${POD_SOURCE:-$root/PODFoam}"                       # tarball layout
+[[ -d $pod ]] || pod="$root/Solver_Examples/PODFoam"      # git clone layout
 hpc="$pod/llm_demo/hpc"
 export PYTHON="${PYTHON:-$(command -v python3)}"
 export POD_WORKSPACE="${POD_WORKSPACE:-$root/work}"; mkdir -p "$POD_WORKSPACE"

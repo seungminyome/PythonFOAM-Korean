@@ -12,6 +12,24 @@ E2B로 잰 것을 Gemma 4 12B QAT Q4_0으로 클러스터 GPU에서 다시 재�
 | `demo_12b.slurm` | 연결 검증, 솔버 다섯 조건, 검증, 새 상태의 쌍별 재생. 노드에 OpenFOAM v2106 필요. |
 | `build_llama_cuda.sh` | 예비: 미리 빌드된 바이너리가 안 돌면(glibc가 오래됨, CUDA 버전 다름) b11429를 소스에서 CUDA로 빌드. |
 
+## 파일을 클러스터에 올리는 법
+
+둘 다 됩니다. 작업 스크립트가 폴더 구조를 알아서 찾습니다.
+
+```bash
+git clone https://github.com/seungminyome/PythonFOAM.git && cd PythonFOAM
+# 또는: tar -xzf pythonfoam-12b-hpc-20261019.tar.gz && cd pythonfoam-12b-hpc
+```
+
+재생에 쓰는 저장 상태는 저장소 안에 있으므로
+(`docs/evidence/2026-10-17/pod-llm-demo.LRfJBN/fixed-pod`) clone이면 더 필요한 게
+없습니다. 계산 노드에 인터넷이 없으면 제출 전에 로그인 노드에서 한 번 내려받으세요.
+
+```bash
+export HF_TOKEN=hf_... POD_LLM_RUNTIME=$PWD/llm-runtime-12b
+bash Solver_Examples/PODFoam/llm_demo/hpc/setup_12b.sh
+```
+
 ## 제출 전에
 
 1. [huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf](https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf)에서
@@ -24,10 +42,11 @@ E2B로 잰 것을 Gemma 4 12B QAT Q4_0으로 클러스터 GPU에서 다시 재�
 ## 제출
 
 ```bash
-# 패키지 루트: PODFoam/ 과 snapshot/ 이 나란히 있는 곳
+# 저장소 루트(또는 tar.gz를 푼 루트)에서
 export HF_TOKEN=hf_...
-sbatch PODFoam/llm_demo/hpc/replay_12b.slurm     # GPU 1장, 한 시간 안
-sbatch PODFoam/llm_demo/hpc/demo_12b.slurm       # OpenFOAM v2106이 있을 때만
+sbatch Solver_Examples/PODFoam/llm_demo/hpc/replay_12b.slurm   # GPU 1장, 한 시간 안
+sbatch Solver_Examples/PODFoam/llm_demo/hpc/demo_12b.slurm     # OpenFOAM v2106이 있을 때만
+# tar.gz를 풀었으면 경로는 PODFoam/llm_demo/hpc/...
 ```
 
 결과는 `results/`에 생김: `replay-12b-<jobid>.tar.gz`(요청 6개, 답, `summary.json`,

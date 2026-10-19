@@ -256,7 +256,9 @@ class CallbackTests(unittest.TestCase):
         self._run_delayed_io("parent_flush")
 
     def test_image_rendered_when_request_disabled(self):
-        result, request = self.run_case(False, with_mesh=True)
+        # Rendering with matplotlib took over 1 s on a shared CI runner, which
+        # made the parent kill the worker at the deadline; allow 4 s here.
+        result, request = self.run_case(False, with_mesh=True, deadline=4)
         self.assertEqual(result["status"], "disabled")
         self.assertTrue(result["image_input"])
         self.assertFalse(result["text_input_only"])

@@ -14,7 +14,8 @@ set -euo pipefail
 export HF_TOKEN="${HF_TOKEN:?export HF_TOKEN before sbatch, or set it here}"
 # -------------------------------------------------------------------------
 root="${SLURM_SUBMIT_DIR:-$PWD}"
-pod="${POD_SOURCE:-$root/PODFoam}"
+pod="${POD_SOURCE:-$root/PODFoam}"                       # tarball layout
+[[ -d $pod ]] || pod="$root/Solver_Examples/PODFoam"      # git clone layout
 hpc="$pod/llm_demo/hpc"
 export POD_LLM_RUNTIME="${POD_LLM_RUNTIME:-$root/llm-runtime-12b}"
 export POD_LLM_PORT="${POD_LLM_PORT:-8088}"

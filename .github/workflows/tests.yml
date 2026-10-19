@@ -8,11 +8,14 @@ on:
 jobs:
   unit:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.12"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: ${{ matrix.python }}
       - run: pip install -r Solver_Examples/PODFoam/llm_demo/requirements.txt
       - name: llm_demo unit tests (no OpenFOAM, no model)
         working-directory: Solver_Examples/PODFoam/llm_demo

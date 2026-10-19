@@ -1,0 +1,27 @@
+name: evidence
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Evidence files match their manifests
+        run: python3 docs/evidence/check_manifest.py
+      - name: Relative links resolve
+        run: python3 docs/check_links.py
+
+  code-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: seungminyome/PythonFOAM
+          path: english
+      - name: Solver code identical to the English repository (READMEs excluded)
+        run: diff -rq Solver_Examples/PODFoam english/Solver_Examples/PODFoam -x README.md -x __pycache__ -x 'linux64*' -x log.build

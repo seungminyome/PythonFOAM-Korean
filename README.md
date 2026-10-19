@@ -1,6 +1,9 @@
 # PythonFOAM + Gemma 4 E2B: 계산 중 상태 읽기 시험
 
 [![tests](https://github.com/seungminyome/PythonFOAM-Korean/actions/workflows/tests.yml/badge.svg)](https://github.com/seungminyome/PythonFOAM-Korean/actions/workflows/tests.yml)
+[![evidence](https://github.com/seungminyome/PythonFOAM-Korean/actions/workflows/evidence.yml/badge.svg)](https://github.com/seungminyome/PythonFOAM-Korean/actions/workflows/evidence.yml)
+![OpenFOAM v2106](https://img.shields.io/badge/OpenFOAM-v2106-lightgrey)
+![Python 3.10 | 3.12](https://img.shields.io/badge/python-3.10%20%7C%203.12-lightgrey)
 [![license](https://img.shields.io/badge/license-Argonne%20OSS-blue.svg)](LICENSE)
 
 [시험 보고서](docs/results.md) · [근거 자료](docs/evidence/2026-10-17/README.md) · [실행 방법](Solver_Examples/PODFoam/llm_demo/README.md) · [English](https://github.com/seungminyome/PythonFOAM)
@@ -16,12 +19,12 @@ PODFoam 계산 도중 한 단계의 수치와 속도·압력 그림을 로컬 CP
 
 ## 바로 실행해 보기
 
-Python 단위 테스트. OpenFOAM과 모델이 없어도 되고 10초쯤 걸립니다.
+단위 테스트. OpenFOAM과 모델이 없어도 되고 10초쯤 걸립니다.
 
 ```bash
 pip install -r Solver_Examples/PODFoam/llm_demo/requirements.txt
-cd Solver_Examples/PODFoam/llm_demo
-python3 -m unittest test_llm_client test_callback test_ablation_runner
+make test          # 또는 cd Solver_Examples/PODFoam/llm_demo && python3 -m unittest
+make evidence      # 근거 파일 전부를 manifest의 해시와 대조
 ```
 
 전체 실행. OpenFOAM v2106, 모델 파일용 디스크 약 3.4 GB, RAM 몇 GB가 필요합니다.
@@ -38,6 +41,21 @@ python3 llm_demo/runtime.py stop
 자세한 설명과 환경 변수는 [llm_demo/README.md](Solver_Examples/PODFoam/llm_demo/README.md)에 있습니다.
 
 ## 구현
+
+```mermaid
+sequenceDiagram
+    participant S as PODFoam (C++)
+    participant P as python_module.py
+    participant W as 워커 프로세스
+    participant L as llama-server (Gemma 4 E2B)
+    S->>P: analysis_func(state), 5단계 직후
+    P->>W: fork
+    W->>W: 수치 요약, state.png, fields.npz
+    W->>L: POST /v1/chat/completions (JSON + PNG)
+    L-->>W: 세 항목 JSON 답
+    W-->>P: 파이프로 결과 (마감 120 s, 넘기면 종료)
+    P-->>S: 복귀, 6~10단계는 평소대로
+```
 
 - OpenFOAM v2106 PODFoam에 Python 콜백을 추가했습니다. 지정한 단계(시험에서는
   5단계) 직후 잔차, Courant 수, 연속성 오차, SVD 요약과 그 단계의 |U|·p PNG를
@@ -106,9 +124,11 @@ Solver_Examples/PODFoam/      PODFoam 솔버(OpenFOAM v2106)와 콜백 연결 �
 docs/results.md               10월 17일 시험 보고서
 docs/evidence/2026-10-17/     요청·응답 원문, 로그, 검증 결과, 해시 목록
 docs/evidence/2026-10-13/     이전 실행(pod-llm-demo.SwwR2e)과 그 보고서 docs/results-20261013.md
+docs/evidence/check_manifest.py  근거 파일 전부를 manifest와 대조 (CI에서도 실행)
 docs/progress.ko.md           10월 8일부터의 작업 기록
 docs/upstream-project.md      원본 PythonFOAM README (다른 솔버, Docker, 빌드 안내)
-.github/workflows/tests.yml   푸시할 때마다 단위 테스트 실행
+.github/workflows/            tests.yml (단위 테스트, Python 3.10·3.12), evidence.yml (해시, 링크, 영문 저장소와 코드 일치)
+CHANGELOG.md, CITATION.cff, Makefile
 ```
 
 나머지 폴더(`APMOSFoam`, `AEFoam`, `PINNFoam`, `TurbulenceModel_Examples`, `Handson_Examples`)는 원본 그대로입니다.
@@ -120,6 +140,12 @@ docs/upstream-project.md      원본 PythonFOAM README (다른 솔버, Docker, �
 - [전체 실행 결과 내려받기](https://github.com/seungminyome/PythonFOAM-Korean/releases/tag/korean-docs-2026-10-18): 다섯 조건의 저장 결과 전체와 실행 소스(모델 가중치 제외)
 - [작업 기록](docs/progress.ko.md): 10월 8일부터의 진행
 - [그림으로 보는 결과](https://seungminyome.github.io/PythonFOAM-Korean/)
+- [변경 기록](CHANGELOG.md)
+
+## 인용
+
+루트의 `CITATION.cff`를 GitHub의 "Cite this repository" 버튼이 읽습니다. 사용한
+코드 버전을 함께 적어 주세요(10월 17일 결과는 `23089bb`).
 
 ## 출처와 라이선스
 

@@ -65,6 +65,6 @@ sbatch Solver_Examples/PODFoam/llm_demo/hpc/demo_12b.slurm     # OpenFOAM v2106�
 
 ## 여기서 확인 못 한 것
 
-CUDA 빌드와 12B 프로젝터는 이 노트북(GPU 없음)에서 돌려 보지 못했습니다.
+CUDA 빌드와 12B 프로젝터는 시험 컴퓨터(GPU 없음)에서 돌려 보지 못했습니다.
 `start_server.sh`는 10분 안에 `/health`가 안 뜨면 바로 실패하고, 로그는
 `llm-runtime-12b/server-*.log`에 남습니다.

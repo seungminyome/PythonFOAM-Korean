@@ -18,7 +18,7 @@ cd Solver_Examples/PODFoam
 
 사례 설정 변경은 `prepare_case.py`에 있습니다. `python_module.py`는 연결 확인에 필요한 최소 모듈입니다. 스냅샷 10개와 성분별 모드 5개를 다루며, 검사를 위해 `python_svd_audit.npz`에 저장합니다.
 
-## 통과 기준 — `verify.py`
+## 통과 기준 (verify.py)
 
 - 두 솔버 모두: 1e-7 ... 1e-6초에 해당하는 `Time =` 기록이 정확히 10개이고, `End`로 끝나며 `FOAM FATAL`이 없어야 합니다. 모든 잔차와 저장 필드가 유한한 값이어야 하고, 선형 방정식 풀이가 반복 상한인 1000회에 도달하지 않아야 하며, 최대 Courant 수는 1보다 작아야 합니다.
 - PODFoam 로그: `POD snapshot accepted` 기록 10개, `POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true` 기록 1개, `Python finalized successfully` 기록이 있어야 합니다.

@@ -72,7 +72,8 @@ sequenceDiagram
 
 8 vCPU, RAM 7.7 GiB, GPU 없음. llama-server 4스레드, llama.cpp b11429,
 문맥 길이 2048. 셀 20,540개, 시간
-간격 10⁻⁷ s, 10단계. 조건마다 한 번씩 실행했습니다.
+간격 10⁻⁷ s, 10단계. 이 날짜에는 조건마다 한 번씩 실행했습니다. 10월 19일에
+되풀이한 실행은 답과 5단계 해시가 같았습니다([자세히](docs/results.md#2026-10-19-반복)).
 
 | 조건 | 결과 | 완료 단계 | 기준과 같은 파일 | 콜백 시간 |
 |---|---|---:|---:|---:|
@@ -128,6 +129,7 @@ Solver_Examples/PODFoam/      PODFoam 솔버(OpenFOAM v2106)와 콜백 연결 �
 docs/results.md               10월 17일 시험 보고서
 docs/evidence/2026-10-17/     요청·응답 원문, 로그, 검증 결과, 해시 목록
 docs/evidence/2026-10-13/     이전 실행(pod-llm-demo.SwwR2e)과 그 보고서 docs/results-20261013.md
+docs/evidence/2026-10-19/     10월 17일 실행의 반복(pod-llm-demo.o5sNLJ), 답과 해시 동일
 docs/evidence/check_manifest.py  근거 파일 전부를 manifest와 대조 (CI에서도 실행)
 docs/progress.ko.md           10월 8일부터의 작업 기록
 docs/upstream-project.md      원본 PythonFOAM README (다른 솔버, Docker, 빌드 안내)

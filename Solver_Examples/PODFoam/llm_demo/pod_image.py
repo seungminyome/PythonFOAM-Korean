@@ -67,8 +67,24 @@ def cell_polygons(points, offsets, cells, n_cells):
     return {"points": points, "offsets": offsets, "cells": cells}
 
 
-def render(state, centres, solution_d, velocity, pressure, output, polygons=None):
-    """Return (png_path, metadata). Raises on any nonfinite or misaligned input."""
+def parse_window(text):
+    """'x0,x1' in metres from an environment variable, or None for the whole domain."""
+    if not text or not text.strip():
+        return None
+    parts = [float(item) for item in text.split(",")]
+    if len(parts) != 2 or not all(np.isfinite(parts)) or parts[0] >= parts[1]:
+        raise ValueError("window must be 'low,high' with low < high")
+    return parts
+
+
+def render(state, centres, solution_d, velocity, pressure, output, polygons=None,
+           x_window=None, y_window=None):
+    """Return (png_path, metadata). Raises on any nonfinite or misaligned input.
+
+    x_window / y_window ([low, high] in metres) plot only that part of the
+    domain; the colour range then spans the cells inside the window. The
+    saved arrays are always the whole field.
+    """
     if not _backend["ready"]:
         raise RuntimeError("matplotlib backend not prepared: " + str(_backend["error"]))
     import matplotlib.pyplot as plt
@@ -96,6 +112,14 @@ def render(state, centres, solution_d, velocity, pressure, output, polygons=None
     speed = np.linalg.norm(velocity, axis=1)
     x = centres[:, axes[0]]
     y = centres[:, axes[1]]
+    full_extent = {labels[axes[0]]: [float(x.min()), float(x.max())],
+                   labels[axes[1]]: [float(y.min()), float(y.max())]}
+    x_low, x_high = x_window if x_window is not None else (float(x.min()), float(x.max()))
+    y_low, y_high = y_window if y_window is not None else (float(y.min()), float(y.max()))
+    inside = (x >= x_low) & (x <= x_high) & (y >= y_low) & (y <= y_high)
+    if inside.sum() < 3:
+        raise ValueError("fewer than three cells inside the plot window")
+    windowed = x_window is not None or y_window is not None
     from matplotlib.collections import PolyCollection
     if polygons is not None and polygons["cells"].size == cells:
         mode = "cell_polygons"
@@ -108,7 +132,7 @@ def render(state, centres, solution_d, velocity, pressure, output, polygons=None
             collection = PolyCollection(verts, array=values[order], cmap="viridis",
                                         edgecolors="none", linewidths=0, antialiased=False,
                                         rasterized=True)
-            collection.set_clim(float(values.min()), float(values.max()))
+            collection.set_clim(float(values[inside].min()), float(values[inside].max()))
             a.add_collection(collection)
             return collection
     else:
@@ -119,18 +143,20 @@ def render(state, centres, solution_d, velocity, pressure, output, polygons=None
         tree = cKDTree(np.column_stack([x, y]))
         neighbour_distance, _ = tree.query(np.column_stack([x, y]), k=5)
         local_size = neighbour_distance[:, 1:].max(axis=1)
-        gx = np.linspace(float(x.min()), float(x.max()), 560)
-        gy = np.linspace(float(y.min()), float(y.max()), 120)
+        gx = np.linspace(x_low, x_high, 560)
+        gy = np.linspace(y_low, y_high, 120)
         grid_x, grid_y = np.meshgrid(gx, gy)
         distance, nearest = tree.query(np.column_stack([grid_x.ravel(), grid_y.ravel()]), k=1)
-        inside = distance <= 0.75 * local_size[nearest]
+        inside_grid = distance <= 0.75 * local_size[nearest]
         render_note = ("nearest-cell raster (560x120), blank beyond 0.75x the local cell spacing; "
                        "colour range is each panel's min/max; top panel |U|, bottom panel p")
         def draw(a, values):
             raster = np.full(grid_x.size, np.nan)
-            raster[inside] = values[nearest[inside]]
-            return a.pcolormesh(gx, gy, raster.reshape(grid_x.shape), cmap="viridis",
-                                shading="nearest", rasterized=True)
+            raster[inside_grid] = values[nearest[inside_grid]]
+            artist = a.pcolormesh(gx, gy, raster.reshape(grid_x.shape), cmap="viridis",
+                                  shading="nearest", rasterized=True)
+            artist.set_clim(float(values[inside].min()), float(values[inside].max()))
+            return artist
     # The channel is about 20x longer than tall; with equal aspect each panel
     # would be a few pixels high, so the vertical axis is stretched.
     fig, ax = plt.subplots(2, 1, figsize=(6.4, 3.6), dpi=100, constrained_layout=True)
@@ -138,16 +164,18 @@ def render(state, centres, solution_d, velocity, pressure, output, polygons=None
     for a, values, title in panels:
         artist = draw(a, values)
         a.set_aspect("auto")
-        a.set_xlim(float(x.min()), float(x.max()))
-        a.set_ylim(float(y.min()), float(y.max()))
+        a.set_xlim(x_low, x_high)
+        a.set_ylim(y_low, y_high)
         a.set_xlabel(f"{labels[axes[0]]} (m)")
         a.set_ylabel(f"{labels[axes[1]]} (m)")
         a.set_title(title, fontsize=10)
         fig.colorbar(artist, ax=a, shrink=0.9, pad=0.02)
-    fig.suptitle(f"PODFoam cell fields, t={float(state['time_s']):g} s, step={int(state['step'])}",
-                 fontsize=11)
-    x_span = float(np.ptp(x)) or 1.0
-    y_span = float(np.ptp(y)) or 1.0
+    title = f"PODFoam cell fields, t={float(state['time_s']):g} s, step={int(state['step'])}"
+    if windowed:
+        title += f", window {labels[axes[0]]}=[{x_low:g},{x_high:g}] m"
+    fig.suptitle(title, fontsize=11)
+    x_span = (x_high - x_low) or 1.0
+    y_span = (y_high - y_low) or 1.0
     image = output / "state.png"
     fig.savefig(image, metadata={"Time": str(state["time_s"]), "Step": str(state["step"]),
                                  "FieldsSHA256": fields_sha})
@@ -163,10 +191,17 @@ def render(state, centres, solution_d, velocity, pressure, output, polygons=None
         "render": render_note, "render_mode": mode,
         "cell_polygons": None if polygons is None else int(polygons["cells"].size),
         "aspect": {"mode": "auto", "x_span_over_y_span": x_span / y_span},
-        "ranges": {"speed_m_per_s": [float(speed.min()), float(speed.max())],
-                   "p_m2_per_s2": [float(pressure.min()), float(pressure.max())]},
-        "domain_extent_m": {labels[axes[0]]: [float(x.min()), float(x.max())],
-                            labels[axes[1]]: [float(y.min()), float(y.max())]},
+        "ranges": {"speed_m_per_s": [float(speed[inside].min()), float(speed[inside].max())],
+                   "p_m2_per_s2": [float(pressure[inside].min()), float(pressure[inside].max())]},
+        "domain_extent_m": full_extent,
     }
+    if windowed:
+        metadata["plotted_range_m"] = {labels[axes[0]]: [x_low, x_high],
+                                       labels[axes[1]]: [y_low, y_high]}
+        metadata["window_cells"] = int(inside.sum())
+        metadata["full_field_ranges"] = {
+            "speed_m_per_s": [float(speed.min()), float(speed.max())],
+            "p_m2_per_s2": [float(pressure.min()), float(pressure.max())]}
+        metadata["render"] += "; plotted window only, colour range from cells inside the window"
     (output / "image-metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     return image, metadata

@@ -53,9 +53,23 @@ for name, digest in compiled.items():
 save('build-inputs.json', {'source_sha256': compiled, 'binary_path': str(binary),
                            'binary_sha256': sha256(binary), 'version': 'OpenFOAM v2106'})
 
-verification = json.loads((out/'demo-verification.json').read_text())
 server = json.loads((out/'resident-server.json').read_text())
-save('summary.json', {
+if (out/'async-verification.json').exists():
+    verification = json.loads((out/'async-verification.json').read_text())
+    save('summary.json', {
+        'status': verification['status'], 'suite': 'async',
+        'server_pid': server['pid'], 'mmproj_loaded': server['mmproj_loaded'],
+        'settings': verification['settings'],
+        'timings': verification['timings'],
+        'cases': {name: {k: verification[name][k] for k in (
+            'request_step', 'arrived_at_step', 'answer_arrived_before_end', 'end_wait_s',
+            'model_status', 'callback_wall_s', 'solver_stall_s', 'inference_wall_s', 'structured_output')}
+                  for name in ('async-no-llm', 'async-describe', 'async-sequence', 'async-server-error', 'async-timeout')},
+        'source_HEAD': (out/'HEAD').read_text().strip() if (out/'HEAD').exists() else None,
+    })
+else:
+  verification = json.loads((out/'demo-verification.json').read_text())
+  save('summary.json', {
     'status': verification['status'],
     'model': verification['model'],
     'server_pid': server['pid'], 'mmproj_loaded': server['mmproj_loaded'],
@@ -85,6 +99,9 @@ for path in out.rglob('*'):
         if relative.parts[1] == 'mpl-cache':
             continue
         if relative.parts[1] not in ('0', 'constant', 'system', '1e-06', '5e-07', 'llm_observation'):
+            continue
+    if len(relative.parts) >= 3 and relative.parts[0].startswith('async-'):
+        if relative.parts[1] == 'mpl-cache':
             continue
     selected.append(path)
 save('sha256.json', {str(p.relative_to(out)): sha256(p) for p in selected})

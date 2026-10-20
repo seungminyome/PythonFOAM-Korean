@@ -6,6 +6,19 @@ analysis_func sends the step's numeric summary (and, if the solver passed
 geometry and LLM_IMAGE_INPUT=1, a picture of that step's |U| and p) to the
 local model and records the answer. Nothing the model returns is used by the
 solver.
+
+Modes (LLM_MODE): observe (default; numbers plus the same-step image),
+describe (one image, asks for a description and the position of the extrema),
+sequence (images captured at LLM_SEQUENCE_STEPS, sent together at the last of
+those steps, asks how the flow changes).
+
+LLM_ASYNC=1 makes the request asynchronous: the worker is forked and the
+solver carries on. Each later step polls the worker without blocking; the
+answer is recorded with the step at which it arrived. At most
+LLM_ASYNC_MAX_PENDING requests are in flight (default 1). At the last step
+(end_time_s from the solver, or LLM_FINAL_STEP) a pending request is waited
+for until its own deadline (LLM_ASYNC_END=wait) or left running
+(LLM_ASYNC_END=detach).
 """
 import json
 import copy
@@ -20,8 +33,9 @@ import numpy as np
 
 import pod_svd
 from bounded_ipc import FrameReader, FrameWriter, read_frame_blocking
-from llm_client import (DEFAULT_ENDPOINT, build_request, encode_json,
-                        redact_request, request_local, write_json)
+from llm_client import (DEFAULT_ENDPOINT, MODES, build_request, build_sequence_request,
+                        describe_note, encode_json, redact_request, request_local,
+                        write_json)
 
 
 _case = Path(__file__).resolve().parent
@@ -31,8 +45,52 @@ _attempted = False
 _last_callback_outcome = None
 _geometry = None
 _latest_pressure = None
+_latest_velocity = None
+_pending = []          # asynchronous jobs still running (requests and frame renders)
+_frames = []           # frames captured for the sequence mode, in step order
+_sequence_sent = False
 _KILL_JOIN_ALLOWANCE_S = 0.02
 _SCHEDULING_TOLERANCE_S = 0.05
+_RENDER_DEADLINE_S = 30.0
+_FRAME_WAIT_S = 5.0
+
+
+def _mode():
+    mode = os.environ.get("LLM_MODE", "observe")
+    if mode not in MODES:
+        raise ValueError(f"LLM_MODE must be one of {MODES}")
+    return mode
+
+
+def _async():
+    return os.environ.get("LLM_ASYNC", "0") == "1"
+
+
+def _max_pending():
+    value = int(os.environ.get("LLM_ASYNC_MAX_PENDING", "1"))
+    if not 1 <= value <= 8:
+        raise ValueError("LLM_ASYNC_MAX_PENDING must be between 1 and 8")
+    return value
+
+
+def _sequence_steps():
+    text = os.environ.get("LLM_SEQUENCE_STEPS", "")
+    steps = sorted({int(item) for item in text.split(",") if item.strip()})
+    if len(steps) < 2 or steps[0] < 1:
+        raise ValueError("LLM_SEQUENCE_STEPS must list at least two positive steps")
+    if len(steps) > 6:
+        raise ValueError("LLM_SEQUENCE_STEPS lists more than 6 steps")
+    return steps
+
+
+def _is_final_step(state):
+    override = os.environ.get("LLM_FINAL_STEP")
+    if override:
+        return int(state["step"]) == int(override)
+    end = state.get("end_time_s")
+    if end is None:
+        return int(state["step"]) == 10
+    return float(state["time_s"]) + 0.5 * float(state["delta_t_s"]) >= float(end)
 
 
 class _ForkProcess:
@@ -135,10 +193,14 @@ def mesh_func(centres, volumes, solution_d, rank, poly_points=None, poly_offsets
 
 
 def snapshot_func(array, rank):
+    global _latest_velocity
     result = pod_svd.snapshot_func(array, rank)
     # the solver hands over its own copy, so keeping the reference is enough
-    if not _attempted:
-        _snapshots.append(np.asarray(array))
+    _latest_velocity = np.asarray(array)
+    # The SVD summary window stops growing once the request has gone out; the
+    # sequence mode sends no summary and keeps only the latest snapshot.
+    if not _attempted and os.environ.get("LLM_MODE", "observe") != "sequence":
+        _snapshots.append(_latest_velocity)
     return result
 
 
@@ -245,12 +307,16 @@ def _render_image(state):
         return None, None, {"reason": "solver did not call mesh_func; numeric summary only"}
     if _latest_pressure is None:
         return None, None, {"reason": "solver state carried no p_cells; numeric summary only"}
-    if len(_snapshots) != int(state["step"]):
+    if _latest_velocity is None:
+        raise ValueError("no velocity snapshot received for this step")
+    if os.environ.get("LLM_MODE", "observe") != "sequence" and len(_snapshots) != int(state["step"]):
         raise ValueError(f"snapshot count {len(_snapshots)} != step {state['step']}")
     start = time.perf_counter()
     image, metadata = pod_image.render(state, _geometry["centres"], _geometry["solution_d"],
-                                       _snapshots[-1], _latest_pressure,
-                                       _case / "llm_observation", polygons=_geometry["polygons"])
+                                       _latest_velocity, _latest_pressure,
+                                       _case / "llm_observation", polygons=_geometry["polygons"],
+                                       x_window=pod_image.parse_window(os.environ.get("LLM_IMAGE_XRANGE")),
+                                       y_window=pod_image.parse_window(os.environ.get("LLM_IMAGE_YRANGE")))
     metadata["render_wall_s"] = time.perf_counter() - start
     return image, metadata, None
 
@@ -271,13 +337,17 @@ def _stamp():
     return datetime.now(timezone.utc).isoformat()
 
 
-def _marker(event, context, timestamp):
-    print("PYTHON LLM_MARKER " + encode_json({
+def _marker(event, context, timestamp, **extra):
+    record = {
         "event": event, "timestamp_utc": timestamp,
         "parent_pid": context["parent_pid"], "writer_pid": os.getpid(),
         "run_id": context["run_id"], "step": context["step"],
         "time_s": context["time_s"],
-    }).decode("utf-8"), flush=True)
+    }
+    if context.get("async"):
+        record["async"] = True
+    record.update(extra)
+    print("PYTHON LLM_MARKER " + encode_json(record).decode("utf-8"), flush=True)
     return timestamp
 
 
@@ -313,7 +383,11 @@ def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
                    "raw_state": safe_state, "raw_state_issues": issues,
                    "request_status": "summary_pending"}
         write_json(_case / "llm_request.json", pending)
-        summary, summary_wall = _summarize(state)
+        mode = context.get("mode", "observe")
+        if mode == "sequence":
+            summary, summary_wall = _frame_summary(state), 0.0
+        else:
+            summary, summary_wall = _summarize(state)
         context["summary_wall_s"] = summary_wall
         image, image_meta, image_skip = _render_image(state)
         if image is not None:
@@ -328,25 +402,59 @@ def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
             summary["image"] = {k: image_meta[k] for k in (
                 "time_s", "step", "cells", "projection_axes", "coordinate_unit",
                 "panels", "render", "ranges", "domain_extent_m")}
+            if "plotted_range_m" in image_meta:
+                summary["image"]["plotted_range_m"] = image_meta["plotted_range_m"]
         else:
             context["image_input"] = False
             context["text_input_only"] = True
             context["image_skipped"] = image_skip
-        request = build_request(summary, image)
+        if mode == "observe":
+            request = build_request(summary, image)
+            sent_input = summary
+        elif mode == "describe":
+            if image is None:
+                raise ValueError("describe mode needs an image: " + image_skip["reason"])
+            request = build_request(summary, image, mode="describe")
+            sent_input = describe_note(summary)
+        else:
+            if image is None:
+                raise ValueError("sequence mode needs an image: " + image_skip["reason"])
+            frames = _collect_frames(context.get("frames", []))
+            frames.append({"path": str(image), "step": int(state["step"]),
+                           "time_s": float(state["time_s"]), "sha256": image_meta["sha256"],
+                           "fields_npz": image_meta["fields_npz"],
+                           "fields_sha256": image_meta["fields_sha256"],
+                           "projection_axes": image_meta["projection_axes"],
+                           "domain_extent_m": image_meta["domain_extent_m"],
+                           "plotted_range_m": image_meta.get("plotted_range_m",
+                                                             image_meta["domain_extent_m"]),
+                           "cells": image_meta["cells"]})
+            context["frames"] = frames
+            request = build_sequence_request(frames)
+            sent_input = {"frames": [{k: frame[k] for k in ("step", "time_s", "sha256")}
+                                     for frame in frames],
+                          "text": [part["text"] for part in request["messages"][1]["content"]
+                                   if part["type"] == "text"]}
         body = encode_json(request)
         (_case / "llm_request_body.json").write_bytes(body)
         request_record = {**context, "sent": False, "endpoint": endpoint,
                           "request_attempted": False,
-                          "input": summary, "request": redact_request(request),
+                          "input": sent_input, "request": redact_request(request),
                           "request_bytes": len(body),
                           "request_body_file": "llm_request_body.json",
                           "request_status": "ready"}
+        if mode != "observe":
+            request_record["numeric_summary"] = summary
         write_json(_case / "llm_request.json", request_record)
-        events.send({"event": "request_ready", "summary_wall_s": summary_wall,
-                     "image_input": context["image_input"]})
-        # wait for the parent to stamp request_before
-        acknowledgment = read_frame_blocking(ack_fd, context["deadline_s"])
-        request_before_at = acknowledgment["request_before_at"]
+        _send_event(events, {"event": "request_ready", "summary_wall_s": summary_wall,
+                             "image_input": context["image_input"]})
+        if context.get("async"):
+            # nobody is waiting on the other side; stamp the request time here
+            request_before_at = _stamp()
+        else:
+            # wait for the parent to stamp request_before
+            acknowledgment = read_frame_blocking(ack_fd, context["deadline_s"])
+            request_before_at = acknowledgment["request_before_at"]
         context["request_before_at"] = request_before_at
         _marker("request_before", context, request_before_at)
         request_record.update(request_before_at=request_before_at,
@@ -358,7 +466,7 @@ def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
                 request, endpoint=endpoint, timeout_s=context["deadline_s"],
                 connect_timeout_s=context["connect_timeout_s"],
                 read_timeout_s=context["read_timeout_s"], isolated=False,
-                raw_response_path=_case / "llm_http_response.raw")
+                raw_response_path=_case / "llm_http_response.raw", mode=mode)
             request_record.update(sent=result.get("request_sent", False),
                                   request_status="completed")
             write_json(_case / "llm_request.json", request_record)
@@ -377,10 +485,60 @@ def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
         if result["status"] in ("ok", "disabled"):
             result.update(status="callback_error", error=result["response_write_error"])
     try:
-        events.send({"event": "complete", "result": result, "context": context})
+        _send_event(events, {"event": "complete", "result": result, "context": context})
     finally:
         events.close()
         os.close(ack_fd)
+
+
+def _send_event(events, payload):
+    """Report to the parent; a detached worker whose parent is gone carries on."""
+    try:
+        events.send(payload)
+        return True
+    except OSError:
+        return False
+
+
+def _frame_summary(state):
+    """Minimal record for the sequence mode (no SVD window is kept)."""
+    return {"schema_version": 2, "run_id": os.environ.get("LLM_RUN_ID", _case.name),
+            "scope": "fluid PODFoam sequence request; frames only",
+            "time_s": state["time_s"], "delta_t_s": state["delta_t_s"],
+            "step": state["step"], "cells": state["cells"],
+            "residuals": state["residuals"], "courant": state.get("courant"),
+            "continuity": state.get("continuity")}
+
+
+def _collect_frames(frames):
+    """Frames captured earlier; wait briefly for a render that is still finishing."""
+    collected = []
+    for frame in frames:
+        meta_path = Path(frame["directory"]) / "image-metadata.json"
+        deadline = time.monotonic() + _FRAME_WAIT_S
+        while not meta_path.exists() and time.monotonic() < deadline:
+            time.sleep(0.05)
+        if not meta_path.exists():
+            raise FileNotFoundError(f"frame for step {frame['step']} was not rendered in time")
+        meta = json.loads(meta_path.read_text())
+        collected.append({"path": meta["path"], "step": meta["step"], "time_s": meta["time_s"],
+                          "sha256": meta["sha256"], "fields_npz": meta["fields_npz"],
+                          "fields_sha256": meta["fields_sha256"],
+                          "projection_axes": meta["projection_axes"],
+                          "domain_extent_m": meta["domain_extent_m"],
+                          "plotted_range_m": meta.get("plotted_range_m", meta["domain_extent_m"]),
+                          "cells": meta["cells"]})
+    return collected
+
+
+def _render_frame(state, directory):
+    """Body of the forked frame renderer (sequence mode, intermediate steps)."""
+    import pod_image
+    pod_image.render(state, _geometry["centres"], _geometry["solution_d"],
+                     _latest_velocity, _latest_pressure, directory,
+                     polygons=_geometry["polygons"],
+                     x_window=pod_image.parse_window(os.environ.get("LLM_IMAGE_XRANGE")),
+                     y_window=pod_image.parse_window(os.environ.get("LLM_IMAGE_YRANGE")))
 
 
 def _stop_process(process, join_budget_s=_KILL_JOIN_ALLOWANCE_S):
@@ -425,7 +583,11 @@ def _bounded_writer(target, args, deadline_at):
 
 
 def _write_final_report(context, result, cleanup_start):
-    _marker("response_after", context, context["response_after_at"])
+    extra = {}
+    if context.get("async"):
+        extra = {"arrived_at_step": context.get("arrived_at_step"),
+                 "solver_stall_s": context.get("solver_stall_s")}
+    _marker("response_after", context, context["response_after_at"], **extra)
     response_path = _case / "llm_response.json"
     if response_path.exists():
         response_record = json.loads(response_path.read_text())
@@ -439,13 +601,16 @@ def _write_final_report(context, result, cleanup_start):
     write_json(response_path, response_record)
     context["cleanup_elapsed_before_result_write_s"] = time.monotonic() - cleanup_start
     write_json(_case / "llm_result.json", {**context, **result})
-    print(f"PYTHON LLM step={context['step']} time={context['time_s']:.12g} "
-          f"status={result['status']} image_input={context.get('image_input')} "
-          f"analysis_wait={context['callback_elapsed_s']:.6f}s",
-          flush=True)
+    line = (f"PYTHON LLM step={context['step']} time={context['time_s']:.12g} "
+            f"status={result['status']} image_input={context.get('image_input')} "
+            f"analysis_wait={context['callback_elapsed_s']:.6f}s")
+    if context.get("async"):
+        line += (f" async=1 arrived_at_step={context.get('arrived_at_step')} "
+                 f"solver_stall={context.get('solver_stall_s', 0.0):.6f}s")
+    print(line, flush=True)
 
 
-def _observe(state, start):
+def _new_context(state, mode, frames=None, asynchronous=False):
     deadline_s = float(os.environ.get("LLM_CALLBACK_DEADLINE_S",
                                       os.environ.get("LLM_TIMEOUT_S", "120")))
     if not 0 < deadline_s <= 300:
@@ -454,6 +619,7 @@ def _observe(state, start):
         "parent_pid": os.getpid(),
         "run_id": os.environ.get("LLM_RUN_ID", _case.name),
         "step": state["step"], "time_s": state["time_s"],
+        "mode": mode,
         "image_requested": _image_requested() and _geometry is not None,
         "deadline_s": deadline_s, "cleanup_budget_s": 0.2,
         "connect_timeout_s": float(os.environ.get("LLM_CONNECT_TIMEOUT_S", "2")),
@@ -461,10 +627,22 @@ def _observe(state, start):
         "kill_join_allowance_s": _KILL_JOIN_ALLOWANCE_S,
         "scheduling_tolerance_s": _SCHEDULING_TOLERANCE_S,
     }
+    if asynchronous:
+        context["async"] = True
+    if frames is not None:
+        context["frames"] = [{"directory": frame["directory"], "step": frame["step"]}
+                             for frame in frames]
     if not all(0 < context[name] <= 300 for name in
                ("connect_timeout_s", "read_timeout_s")):
         raise ValueError("HTTP timeouts must be in (0, 300]")
     context["callback_started_at"] = _stamp()
+    return context
+
+
+def _observe(state, start, mode="observe", frames=None):
+    """Synchronous request: fork the worker and wait for it, bounded by the deadline."""
+    context = _new_context(state, mode, frames)
+    deadline_s = context["deadline_s"]
     result = {"status": "timeout", "timeout_kind": "callback_deadline",
               "error": "Whole analysis worker exceeded callback deadline",
               "inference_wall_s": None, "output_text": None}
@@ -535,13 +713,211 @@ def _observe(state, start):
             "callback_actual_elapsed_s": time.monotonic() - start}
 
 
+def _start_async_request(state, start, mode, frames=None):
+    """Fork the worker and return at once; the answer is collected by later steps."""
+    context = _new_context(state, mode, frames, asynchronous=True)
+    context["request_step"] = int(state["step"])
+    result = {"status": "timeout", "timeout_kind": "callback_deadline",
+              "error": "Whole analysis worker exceeded callback deadline",
+              "inference_wall_s": None, "output_text": None}
+    job = {"kind": "request", "context": context, "result": result, "start": start,
+           "deadline_at": start + context["deadline_s"], "worker": None, "reader": None,
+           "owned_fds": set(), "request_started": None}
+    try:
+        events_read, events_write = os.pipe()
+        job["owned_fds"].update((events_read, events_write))
+        ack_read, ack_write = os.pipe()
+        job["owned_fds"].update((ack_read, ack_write))
+        job["worker"] = _ForkProcess(target=_analysis_worker,
+                                     args=(state, dict(context), FrameWriter(events_write),
+                                           ack_read, (events_read, ack_write)))
+        job["worker"].start()
+        # the asynchronous worker stamps its own request time; no acknowledgment
+        for fd in (events_write, ack_read, ack_write):
+            os.close(fd)
+            job["owned_fds"].remove(fd)
+        job["reader"] = FrameReader(events_read)
+    except Exception as error:
+        result.update(status="callback_error", timeout_kind=None,
+                      error=f"{type(error).__name__}: {error}")
+        context["solver_stall_s"] = time.monotonic() - start
+        return _finalize_job(job, int(state["step"]))
+    context["solver_stall_s"] = time.monotonic() - start
+    _pending.append(job)
+    _marker("request_started_async", context, _stamp())
+    return {**context, "status": "pending"}
+
+
+def _handle_message(job, message, step):
+    """Apply one worker event; True when the job is complete."""
+    context, result = job["context"], job["result"]
+    if message.get("event") == "request_ready":
+        context["summary_wall_s"] = message["summary_wall_s"]
+        context["image_input"] = bool(message.get("image_input"))
+        context["text_input_only"] = not context["image_input"]
+        job["request_started"] = time.monotonic()
+        return False
+    if message.get("event") == "complete":
+        job["result"] = message["result"]
+        context.update(message["context"])
+        context["arrived_at_step"] = step
+        return True
+    result.update(status="callback_error", timeout_kind=None,
+                  error="Unexpected worker IPC event")
+    return True
+
+
+def _finalize_job(job, step):
+    """Stop the worker, close the pipe, write the result files in a bounded child."""
+    context, result = job["context"], job["result"]
+    cleanup_start = time.monotonic()
+    context["worker_reaped"] = _stop_process(job["worker"])
+    for fd in job["owned_fds"]:
+        _close_fd(fd)
+    if job["reader"] is not None:
+        _close_fd(job["reader"].fd)
+        job["reader"].fd = None
+    context["ipc_select_calls"] = job["reader"].select_calls if job["reader"] else 0
+    context["response_after_at"] = _stamp()
+    context["callback_elapsed_s"] = time.monotonic() - job["start"]
+    context.setdefault("arrived_at_step", step)
+    context["elapsed_since_request_s"] = (
+        time.monotonic() - job["request_started"] if job["request_started"] else None)
+    context["worker_wait_elapsed_s"] = cleanup_start - job["start"]
+    if "end_wait_started_at" in job:
+        context["end_wait_s"] = cleanup_start - job.pop("end_wait_started_at")
+    reporting = _bounded_writer(_write_final_report, (dict(context), result, cleanup_start),
+                                cleanup_start + context["cleanup_budget_s"])
+    if job in _pending:
+        _pending.remove(job)
+    outcome = {**context, **result, **reporting}
+    global _last_callback_outcome
+    _last_callback_outcome = outcome
+    return outcome
+
+
+def _poll_request(job, step, block_until=None):
+    """Read what the worker has sent; blocking only when block_until is given."""
+    reader = job["reader"]
+    while True:
+        try:
+            if block_until is None:
+                if not reader.ready(0.0):
+                    break
+                message = reader.receive(time.monotonic() + 0.1)
+            else:
+                message = reader.receive(block_until)
+        except TimeoutError:
+            break
+        except EOFError:
+            job["result"].update(status="callback_error", timeout_kind=None,
+                                 error="Analysis worker exited without a result")
+            return _finalize_job(job, step)
+        except ValueError as error:
+            job["result"].update(status="callback_error", timeout_kind=None,
+                                 error=f"Malformed worker IPC frame: {error}")
+            return _finalize_job(job, step)
+        if _handle_message(job, message, step):
+            return _finalize_job(job, step)
+    if time.monotonic() >= job["deadline_at"]:
+        return _finalize_job(job, step)   # result still says timeout
+    return None
+
+
+def _poll_render(job, step):
+    worker = job["worker"]
+    if worker.is_alive() and time.monotonic() < job["deadline_at"]:
+        return None
+    _pending.remove(job)
+    frame = job["frame"]
+    meta_path = Path(frame["directory"]) / "image-metadata.json"
+    if worker.is_alive() or worker.exitcode != 0 or not meta_path.exists():
+        _stop_process(worker)
+        frame["status"] = "render_failed"
+        print(f"PYTHON LLM frame step={frame['step']} render failed", flush=True)
+    else:
+        frame["status"] = "rendered"
+        frame["rendered_by_step"] = step
+    return frame
+
+
+def _poll_pending(step):
+    for job in list(_pending):
+        if job["kind"] == "render":
+            _poll_render(job, step)
+        else:
+            _poll_request(job, step)
+
+
+def _capture_frame(state, start):
+    """Render this step's image for the sequence; asynchronous unless LLM_ASYNC=0."""
+    if _geometry is None or _latest_pressure is None or _latest_velocity is None:
+        raise ValueError("sequence capture needs mesh geometry, U and p")
+    directory = _case / "llm_observation" / f"step-{int(state['step']):06d}"
+    frame = {"directory": str(directory), "step": int(state["step"]),
+             "time_s": float(state["time_s"]), "status": "rendering"}
+    worker = _ForkProcess(target=_render_frame, args=(dict(state), directory))
+    worker.start()
+    job = {"kind": "render", "worker": worker, "frame": frame, "start": start,
+           "deadline_at": start + _RENDER_DEADLINE_S}
+    _frames.append(frame)
+    if _async():
+        _pending.append(job)
+    else:
+        worker.join(timeout=_RENDER_DEADLINE_S)
+        _pending.append(job)
+        _poll_render(job, int(state["step"]))
+    print(f"PYTHON LLM frame step={frame['step']} capture started "
+          f"async={int(_async())} wall={time.monotonic() - start:.3f}s", flush=True)
+
+
+def _launch(state, start, mode, frames=None):
+    global _last_callback_outcome
+    if _async():
+        requests_pending = sum(job["kind"] == "request" for job in _pending)
+        if requests_pending >= _max_pending():
+            _last_callback_outcome = {"status": "skipped_pending", "step": state["step"],
+                                      "pending_requests": requests_pending}
+            print(f"PYTHON LLM step={state['step']} request skipped: "
+                  f"{requests_pending} request(s) still pending", flush=True)
+            return
+        _last_callback_outcome = _start_async_request(state, start, mode, frames)
+    else:
+        _last_callback_outcome = _observe(state, start, mode, frames)
+
+
+def _finish_pending_at_end(step):
+    """Last step: wait for pending requests up to their own deadlines, or detach."""
+    policy = os.environ.get("LLM_ASYNC_END", "wait")
+    for job in list(_pending):
+        if job["kind"] == "render":
+            job["worker"].join(timeout=max(0.0, job["deadline_at"] - time.monotonic()))
+            _poll_render(job, step)
+            continue
+        if policy == "detach":
+            if _poll_request(job, step) is not None:
+                continue   # it completed just now
+            job["context"]["detached_at_step"] = step
+            job["result"] = {"status": "detached", "inference_wall_s": None, "output_text": None,
+                             "error": "run ended while the request was pending; the worker "
+                                      "keeps running and writes llm_response.json on its own"}
+            _pending.remove(job)
+            job["worker"] = None   # not killed
+            _finalize_job(job, step)
+            continue
+        job["end_wait_started_at"] = time.monotonic()
+        job["context"]["end_wait_started_at_step"] = step
+        if _poll_request(job, step, block_until=job["deadline_at"]) is None:
+            _finalize_job(job, step)
+
+
 def analysis_func(state):
     """Observe/log after a step; ordinary observer errors fail open.
 
     KeyboardInterrupt and SystemExit are intentional process-level interrupts
     and are not swallowed. Snapshot/SVD callbacks retain their existing API.
     """
-    global _attempted, _last_callback_outcome, _latest_pressure
+    global _attempted, _last_callback_outcome, _latest_pressure, _sequence_sent
     start = time.monotonic()
     try:
         # p_cells is the one big array; keep it out of the history
@@ -552,14 +928,28 @@ def analysis_func(state):
             _latest_pressure = np.array(pressure, dtype=float, copy=True)
         state = copy.deepcopy(state)
         _history.append(state)
-        target = int(os.environ.get("LLM_ANALYSIS_STEP", "5"))
-        if _attempted or int(state["step"]) != target:
-            if int(state["step"]) == int(os.environ.get("LLM_FINAL_STEP", "10")):
-                _bounded_writer(_dump_telemetry, (), start + 0.2)
-            return None
-        # set first, so a failure is not retried at the next step
-        _attempted = True
-        _last_callback_outcome = _observe(state, start)
+        step = int(state["step"])
+        if _pending:
+            _poll_pending(step)
+        mode = _mode()
+        if mode == "sequence":
+            steps = _sequence_steps()
+            if step in steps and not _sequence_sent:
+                if step != steps[-1]:
+                    _capture_frame(state, start)
+                else:
+                    _sequence_sent = True
+                    _launch(state, start, mode, frames=list(_frames))
+        else:
+            target = int(os.environ.get("LLM_ANALYSIS_STEP", "5"))
+            if not _attempted and step == target:
+                # set first, so a failure is not retried at the next step
+                _attempted = True
+                _launch(state, start, mode)
+        if _is_final_step(state):
+            if _pending:
+                _finish_pending_at_end(step)
+            _bounded_writer(_dump_telemetry, (), time.monotonic() + 0.2)
     except Exception as error:
         _last_callback_outcome = {
             "status": "callback_error", "error": f"{type(error).__name__}: {error}"}

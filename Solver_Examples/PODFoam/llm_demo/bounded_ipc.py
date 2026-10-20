@@ -45,16 +45,28 @@ class FrameWriter:
 
 
 class FrameReader:
-    """Non-blocking read end; every read gets an absolute deadline."""
+    """Non-blocking read end; every read gets an absolute deadline.
+
+    Bytes already read stay buffered across a timeout, so a poll that gives
+    up on a half-arrived frame can resume it later.
+    """
 
     def __init__(self, fd):
         self.fd = fd
         os.set_blocking(fd, False)
         self.select_calls = 0
+        self._buffer = bytearray()
+        self._needed = 4
 
-    def _exact(self, count, deadline_at):
-        data = bytearray()
-        while len(data) < count:
+    def ready(self, timeout_s=0.0):
+        """True when at least one byte can be read without blocking."""
+        ready, _, _ = select.select([self.fd], [], [], max(0.0, timeout_s))
+        self.select_calls += 1
+        return bool(ready)
+
+    def _fill(self, count, deadline_at):
+        """Grow the buffer to count bytes; raise TimeoutError and keep what arrived."""
+        while len(self._buffer) < count:
             remaining = deadline_at - time.monotonic()
             if remaining <= 0:
                 raise TimeoutError("IPC wall deadline exceeded")
@@ -66,19 +78,25 @@ class FrameReader:
             if not ready:
                 raise TimeoutError("IPC wall deadline exceeded")
             try:
-                chunk = os.read(self.fd, count - len(data))
+                chunk = os.read(self.fd, count - len(self._buffer))
             except BlockingIOError:
                 continue
             if not chunk:
                 raise EOFError("Worker closed a truncated or absent IPC frame")
-            data.extend(chunk)
-        return bytes(data)
+            self._buffer.extend(chunk)
 
     def receive(self, deadline_at):
-        count = struct.unpack("!I", self._exact(4, deadline_at))[0]
-        if not 0 < count <= MAX_EVENT_BYTES:
-            raise ValueError("Invalid IPC frame length (limit 64 KiB)")
-        value = json.loads(self._exact(count, deadline_at).decode("utf-8"),
+        if self._needed == 4:
+            self._fill(4, deadline_at)
+            count = struct.unpack("!I", bytes(self._buffer[:4]))[0]
+            if not 0 < count <= MAX_EVENT_BYTES:
+                raise ValueError("Invalid IPC frame length (limit 64 KiB)")
+            self._needed = 4 + count
+        self._fill(self._needed, deadline_at)
+        payload = bytes(self._buffer[4:self._needed])
+        self._buffer = self._buffer[self._needed:]
+        self._needed = 4
+        value = json.loads(payload.decode("utf-8"),
                            parse_float=_finite_json_float,
                            parse_constant=_reject_json_constant)
         if not isinstance(value, dict):

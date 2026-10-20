@@ -56,10 +56,11 @@ if (analysis_func && rank == 0)
     }
     PyObject* state = residuals ? Py_BuildValue
     (
-        "{s:i,s:d,s:d,s:i,s:i,s:O}",
+        "{s:i,s:d,s:d,s:d,s:i,s:i,s:O}",
         "schema_version", 1,
         "time_s", double(runTime.value()),
         "delta_t_s", double(runTime.deltaTValue()),
+        "end_time_s", double(runTime.endTime().value()),
         "step", int(podSnapshotCount),
         "cells", int(num_cells),
         "residuals", residuals

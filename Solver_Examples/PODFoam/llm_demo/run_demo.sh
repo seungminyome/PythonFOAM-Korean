@@ -22,7 +22,12 @@ if [[ -z "${POD_REFERENCE_RUN:-}" || ! -d "$POD_REFERENCE_RUN/fixed-pod" ]]; the
     exit 2
 fi
 reference=$POD_REFERENCE_RUN
-output=$(mktemp -d "$workspace/pod-llm-demo.XXXXXX")
+suite=${POD_SUITE:-sync}
+if [[ "$suite" == async ]]; then
+    output=$(mktemp -d "$workspace/pod-llm-async.XXXXXX")
+else
+    output=$(mktemp -d "$workspace/pod-llm-demo.XXXXXX")
+fi
 printf 'Reference run: %s\nDemo directory: %s\n' "$reference" "$output"
 
 # OpenFOAM's bashrc is not errexit-safe.
@@ -59,8 +64,18 @@ export POD_LLM_RUNTIME=${POD_LLM_RUNTIME:-$workspace/llm-runtime}
 export LLM_IMAGE_INPUT=${LLM_IMAGE_INPUT:-1}
 export LLM_TIMEOUT_S=${LLM_TIMEOUT_S:-120}
 export LLM_MAX_TOKENS=${LLM_MAX_TOKENS:-192}
-"$python" "$source_dir/llm_demo/run_cases.py" "$source_dir" "$reference" "$output" "$FOAM_USER_APPBIN/PODFoam"
-"$python" "$source_dir/validation/verify.py" "$output" > "$output/verification.json"
-"$python" "$source_dir/llm_demo/verify_demo.py" "$output" | tee "$output/demo-verification.json"
-"$python" "$source_dir/llm_demo/pack_run.py" "$output"
+if [[ "$suite" == async ]]; then
+    # longer run, requests answered while the solver keeps stepping
+    "$python" "$source_dir/llm_demo/run_async_cases.py" "$source_dir" "$reference" "$output" "$FOAM_USER_APPBIN/PODFoam"
+    if [[ -z "${LLM_LONG_CASES:-}" ]]; then
+        "$python" "$source_dir/llm_demo/verify_async.py" "$output" | tee "$output/async-verification.json"
+    fi
+else
+    "$python" "$source_dir/llm_demo/run_cases.py" "$source_dir" "$reference" "$output" "$FOAM_USER_APPBIN/PODFoam"
+    "$python" "$source_dir/validation/verify.py" "$output" > "$output/verification.json"
+    "$python" "$source_dir/llm_demo/verify_demo.py" "$output" | tee "$output/demo-verification.json"
+fi
+if [[ -z "${LLM_LONG_CASES:-}" ]]; then
+    "$python" "$source_dir/llm_demo/pack_run.py" "$output"
+fi
 printf 'PASS: %s\n' "$output"

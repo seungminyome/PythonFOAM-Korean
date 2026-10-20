@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The velocity magnitude |U| is relatively uniform across the domain, with a slight increase towards the right side. The kinematic pressure p is generally high in the lower-left and lower-right regions, and lowest in the central-upper region.\",\n  \"fastest_flow_x_percent\": 90,\n  \"fastest_flow_y_percent\": 10,\n  \"lowest_pressure_x_percent\": 50,\n  \"lowest_pressure_y_percent\": 10,\n  \"uncertainties\": \"The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the color bar ranges.\"\n}"
+      }
+    }
+  ],
+  "created": 1792524532,
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "system_fingerprint": "b11429-d81235049",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 584,
+    "total_tokens": 744,
+    "prompt_tokens_details": {
+      "cached_tokens": 266
+    }
+  },
+  "id": "chatcmpl-QwSkN88yoXc0sUALrrPOGCCn1haAtsdf",
+  "timings": {
+    "cache_n": 266,
+    "prompt_n": 318,
+    "prompt_ms": 16177.88,
+    "prompt_per_token_ms": 50.87383647798742,
+    "prompt_per_second": 19.65646920362866,
+    "predicted_n": 160,
+    "predicted_ms": 15778.291,
+    "predicted_per_token_ms": 99.23453459119496,
+    "predicted_per_second": 10.077136997916949
+  }
+}

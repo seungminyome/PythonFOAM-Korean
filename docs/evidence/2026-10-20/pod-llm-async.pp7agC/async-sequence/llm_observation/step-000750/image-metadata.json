@@ -1,0 +1,48 @@
+{
+  "path": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000750/state.png",
+  "sha256": "0981387dcf43fdc8a8b2a790385040c017511c44d05b5070d8feb7aee538603f",
+  "bytes": 30581,
+  "fields_npz": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000750/fields.npz",
+  "fields_sha256": "d4c143ec60d289dcccaf57869145927d26c6800cba03b376b4d588673e7e0208",
+  "time_s": 0.00037500000000000586,
+  "step": 750,
+  "cells": 20540,
+  "width": 640,
+  "height": 360,
+  "projection_axes": [
+    "x",
+    "y"
+  ],
+  "coordinate_unit": "m",
+  "panels": [
+    "|U| (m/s)",
+    "kinematic pressure p (m^2/s^2)"
+  ],
+  "render": "each cell drawn as its own polygon in its own colour, no interpolation; colour range is each panel's min/max; top panel |U|, bottom panel p",
+  "render_mode": "cell_polygons",
+  "cell_polygons": 20540,
+  "aspect": {
+    "mode": "auto",
+    "x_span_over_y_span": 18.851541158812854
+  },
+  "ranges": {
+    "speed_m_per_s": [
+      0.005241281795854082,
+      49.64738523395541
+    ],
+    "p_m2_per_s2": [
+      -896.9556195611187,
+      130.23516881313247
+    ]
+  },
+  "domain_extent_m": {
+    "x": [
+      -1.5533076923100004,
+      0.6012246511046805
+    ],
+    "y": [
+      5.781735398474376e-06,
+      0.11429523559299273
+    ]
+  }
+}

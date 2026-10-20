@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The velocity magnitude is highest in the center-right region (around x=0.05 to 0.15, y=0.05 to 0.10). The kinematic pressure is lowest (darkest color) in the center-right, corresponding to the high velocity area.\",\n  \"fastest_flow_x_percent\": 75,\n  \"fastest_flow_y_percent\": 50,\n  \"lowest_pressure_x_percent\": 75,\n  \"lowest_pressure_y_percent\": 50,\n  \"uncertainties\": \"The exact physical meaning of the cell colors is not specified, only that they represent values on a color bar.\"\n}",
+  "request_sha256": "1bb3e181c7d83840dfe1d365085f41b8fae63cf4e08112efb99b021aa163deef",
+  "request_bytes": 52561,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1171,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 170,
+    "prompt_tokens": 556,
+    "total_tokens": 726,
+    "prompt_tokens_details": {
+      "cached_tokens": 551
+    }
+  },
+  "server_timings": {
+    "cache_n": 551,
+    "prompt_n": 5,
+    "prompt_ms": 310.036,
+    "prompt_per_token_ms": 62.0072,
+    "prompt_per_second": 16.12715942664723,
+    "predicted_n": 170,
+    "predicted_ms": 16641.079,
+    "predicted_per_token_ms": 98.46792307692309,
+    "predicted_per_second": 10.155591473365398
+  },
+  "structured_output": {
+    "flow_description": "The velocity magnitude is highest in the center-right region (around x=0.05 to 0.15, y=0.05 to 0.10). The kinematic pressure is lowest (darkest color) in the center-right, corresponding to the high velocity area.",
+    "fastest_flow_x_percent": 75,
+    "fastest_flow_y_percent": 50,
+    "lowest_pressure_x_percent": 75,
+    "lowest_pressure_y_percent": 50,
+    "uncertainties": "The exact physical meaning of the cell colors is not specified, only that they represent values on a color bar."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 17.033776093041524,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

@@ -1,0 +1,31 @@
+{
+  "mode": "sequence",
+  "attempted": 3,
+  "successful": 3,
+  "latency_s_all": [
+    11.93375205702614,
+    11.269602025975473,
+    10.741338809020817
+  ],
+  "prompt_tokens": [
+    907,
+    907,
+    907
+  ],
+  "cached_tokens": [
+    902,
+    906,
+    906
+  ],
+  "field_matches": {
+    "max_speed_trend": 0,
+    "min_pressure_trend": 0,
+    "fastest_flow_region": 3
+  },
+  "cannot_tell": {
+    "max_speed_trend": 0,
+    "min_pressure_trend": 0,
+    "fastest_flow_region": 0
+  },
+  "interpretation": "Repeats of one request are not independent cases. Prompt-cache reuse differs between requests, so latencies are not comparable unless cache_n is the same. Position scores use the plotted range of the image; trend words use the saved extrema with the stated tolerances."
+}

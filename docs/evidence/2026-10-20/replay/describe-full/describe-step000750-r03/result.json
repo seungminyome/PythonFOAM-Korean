@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The velocity magnitude is generally low across the domain, with a region of slightly higher velocity towards the right side. The kinematic pressure is relatively uniform, with a slight dip in the lower-left quadrant.\",\n  \"fastest_flow_x_percent\": 85,\n  \"fastest_flow_y_percent\": 5,\n  \"lowest_pressure_x_percent\": 10,\n  \"lowest_pressure_y_percent\": 10,\n  \"uncertainties\": \"The exact values of the minimum and maximum for velocity and pressure are not explicitly given, only the color bar ranges.\"\n}",
+  "request_sha256": "001d24b94d4de9e8b78f94c72e78f9fed5cb3f331b5348fbe7a5febaa843564a",
+  "request_bytes": 43389,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1186,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 148,
+    "prompt_tokens": 584,
+    "total_tokens": 732,
+    "prompt_tokens_details": {
+      "cached_tokens": 579
+    }
+  },
+  "server_timings": {
+    "cache_n": 579,
+    "prompt_n": 5,
+    "prompt_ms": 305.389,
+    "prompt_per_token_ms": 61.0778,
+    "prompt_per_second": 16.372560897740257,
+    "predicted_n": 148,
+    "predicted_ms": 14440.122,
+    "predicted_per_token_ms": 98.23212244897958,
+    "predicted_per_second": 10.179969393610389
+  },
+  "structured_output": {
+    "flow_description": "The velocity magnitude is generally low across the domain, with a region of slightly higher velocity towards the right side. The kinematic pressure is relatively uniform, with a slight dip in the lower-left quadrant.",
+    "fastest_flow_x_percent": 85,
+    "fastest_flow_y_percent": 5,
+    "lowest_pressure_x_percent": 10,
+    "lowest_pressure_y_percent": 10,
+    "uncertainties": "The exact values of the minimum and maximum for velocity and pressure are not explicitly given, only the color bar ranges."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 14.807699106051587,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

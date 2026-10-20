@@ -33,6 +33,8 @@
 </section>
 
 <section aria-labelledby="controlled-result">
+<h2 id="async-result">10월 20일: 비동기 요청과 스냅샷 설명</h2>
+<p>요청을 비동기로 보내 솔버가 기다리지 않게 했습니다. 3000걸음 실행에서 요청 걸음의 정지는 0.004~0.006초, 답은 요청 843·1071걸음 뒤에 기록됐고, 저장 필드 216개는 요청 없는 실행과 같았습니다. 스냅샷 하나를 설명하거나 세 장의 변화를 물었을 때 모델은 가장 빠른 곳을 한 번도 그린 범위의 10 % 안에 두지 못했고, 떨어지는 최고 속력을 "increasing"이라 했습니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261020.md">10월 20일 보고서</a></p>
 <h2 id="controlled-result">그림 유무에 따른 위치 답변</h2>
 <p>별도 시험에서는 <strong>질문, 수치, 모델 설정을 같게</strong> 두고 그림을 넣었을 때와 뺐을 때를 비교했습니다. 한 시점의 자료로 3쌍, 총 6회 요청했습니다. 정답 좌표는 모델에 알려주지 않고 채점에만 사용했습니다.</p>
 <div class="table"><table><caption>실제 최대속도 셀과 AI가 말한 위치의 XY 평면 거리</caption><thead><tr><th scope="col">조건</th><th scope="col">위치 오차 · 각 3회</th><th scope="col">확인 결과</th></tr></thead><tbody><tr><td>수치만</td><td>60.92cm</td><td>3회 모두 잘못된 위치</td></tr><tr><td>같은 수치 + 이미지</td><td>50.97cm</td><td>3회 모두 잘못된 위치</td></tr></tbody></table></div>

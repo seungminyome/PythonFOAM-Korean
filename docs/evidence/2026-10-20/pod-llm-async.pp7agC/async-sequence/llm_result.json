@@ -1,0 +1,186 @@
+{
+  "parent_pid": 740833,
+  "run_id": "pod-llm-async.pp7agC/async-sequence",
+  "step": 1250,
+  "time_s": 0.0006249999999999971,
+  "mode": "sequence",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.02,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "frames": [
+    {
+      "path": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000250/state.png",
+      "step": 250,
+      "time_s": 0.00012499999999999979,
+      "sha256": "ed10596a3e6fe9f3c35942dbec3484516c64d242b06a6fcd6be3fa7a7e67ba82",
+      "fields_npz": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000250/fields.npz",
+      "fields_sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a",
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "domain_extent_m": {
+        "x": [
+          -1.5533076923100004,
+          0.6012246511046805
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      },
+      "plotted_range_m": {
+        "x": [
+          -1.5533076923100004,
+          0.6012246511046805
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      },
+      "cells": 20540
+    },
+    {
+      "path": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000750/state.png",
+      "step": 750,
+      "time_s": 0.00037500000000000586,
+      "sha256": "0981387dcf43fdc8a8b2a790385040c017511c44d05b5070d8feb7aee538603f",
+      "fields_npz": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000750/fields.npz",
+      "fields_sha256": "d4c143ec60d289dcccaf57869145927d26c6800cba03b376b4d588673e7e0208",
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "domain_extent_m": {
+        "x": [
+          -1.5533076923100004,
+          0.6012246511046805
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      },
+      "plotted_range_m": {
+        "x": [
+          -1.5533076923100004,
+          0.6012246511046805
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      },
+      "cells": 20540
+    },
+    {
+      "path": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/async-sequence/llm_observation/state.png",
+      "step": 1250,
+      "time_s": 0.0006249999999999971,
+      "sha256": "437b7650684fc27efe152e10dfd9e5fb4908d97d60b9e45b7f334a4a2f179de5",
+      "fields_npz": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/async-sequence/llm_observation/fields.npz",
+      "fields_sha256": "7717b867a6825193a946ee25bff5836915a14de6bc75e376a28b7b31b22a5f65",
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "domain_extent_m": {
+        "x": [
+          -1.5533076923100004,
+          0.6012246511046805
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      },
+      "plotted_range_m": {
+        "x": [
+          -1.5533076923100004,
+          0.6012246511046805
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      },
+      "cells": 20540
+    }
+  ],
+  "callback_started_at": "2026-10-20T19:18:13.674240+00:00",
+  "request_step": 1250,
+  "solver_stall_s": 0.003617794020101428,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.398562473943457,
+  "image": {
+    "path": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/async-sequence/llm_observation/state.png",
+    "sha256": "437b7650684fc27efe152e10dfd9e5fb4908d97d60b9e45b7f334a4a2f179de5",
+    "bytes": 30786,
+    "fields_npz": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/async-sequence/llm_observation/fields.npz",
+    "fields_sha256": "7717b867a6825193a946ee25bff5836915a14de6bc75e376a28b7b31b22a5f65",
+    "time_s": 0.0006249999999999971,
+    "step": 1250,
+    "cells": 20540,
+    "width": 640,
+    "height": 360,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "render_wall_s": 0.398562473943457
+  },
+  "request_before_at": "2026-10-20T19:18:14.124352+00:00",
+  "arrived_at_step": 2321,
+  "worker_reaped": true,
+  "ipc_select_calls": 1076,
+  "response_after_at": "2026-10-20T19:18:57.538905+00:00",
+  "callback_elapsed_s": 43.864865347975865,
+  "elapsed_since_request_s": 43.41017051797826,
+  "worker_wait_elapsed_s": 43.86062374408357,
+  "cleanup_elapsed_before_result_write_s": 0.008969580987468362,
+  "status": "ok",
+  "output_text": "{\n  \"change_description\": \"The velocity magnitude |U| shows a localized increase in the central region over time, and the kinematic pressure p also shows a corresponding change, with the pressure minimum becoming more negative.\",\n  \"max_speed_trend\": \"increasing\",\n  \"min_pressure_trend\": \"more_negative\",\n  \"fastest_flow_region\": \"same_place\",\n  \"uncertainties\": \"cannot_tell\"\n}",
+  "request_sha256": "c837a07afabe25e2606d6a3cca5d8b9284a53190770f9a9535e18ac3c487cbb3",
+  "request_bytes": 125107,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1059,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 105,
+    "prompt_tokens": 907,
+    "total_tokens": 1012,
+    "prompt_tokens_details": {
+      "cached_tokens": 273
+    }
+  },
+  "server_timings": {
+    "cache_n": 273,
+    "prompt_n": 634,
+    "prompt_ms": 32375.626,
+    "prompt_per_token_ms": 51.06565615141956,
+    "prompt_per_second": 19.582632935035758,
+    "predicted_n": 105,
+    "predicted_ms": 10658.29,
+    "predicted_per_token_ms": 102.4835576923077,
+    "predicted_per_second": 9.757662814579072
+  },
+  "structured_output": {
+    "change_description": "The velocity magnitude |U| shows a localized increase in the central region over time, and the kinematic pressure p also shows a corresponding change, with the pressure minimum becoming more negative.",
+    "max_speed_trend": "increasing",
+    "min_pressure_trend": "more_negative",
+    "fastest_flow_region": "same_place",
+    "uncertainties": "cannot_tell"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 43.40419723803643
+}

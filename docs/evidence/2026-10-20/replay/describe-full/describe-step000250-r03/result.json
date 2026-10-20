@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The velocity magnitude |U| is relatively uniform across the domain, with a slight increase towards the right side. The kinematic pressure p is generally high in the lower-left and lower-right regions, and lowest in the central-upper region.\",\n  \"fastest_flow_x_percent\": 90,\n  \"fastest_flow_y_percent\": 10,\n  \"lowest_pressure_x_percent\": 50,\n  \"lowest_pressure_y_percent\": 10,\n  \"uncertainties\": \"The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the color bar ranges.\"\n}",
+  "request_sha256": "809b951ab451ca743ee5ae67159877018af51a89844b29518750bdf2176c3460",
+  "request_bytes": 43001,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1222,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 584,
+    "total_tokens": 744,
+    "prompt_tokens_details": {
+      "cached_tokens": 579
+    }
+  },
+  "server_timings": {
+    "cache_n": 579,
+    "prompt_n": 5,
+    "prompt_ms": 323.591,
+    "prompt_per_token_ms": 64.7182,
+    "prompt_per_second": 15.451604031014458,
+    "predicted_n": 160,
+    "predicted_ms": 15623.954,
+    "predicted_per_token_ms": 98.26386163522012,
+    "predicted_per_second": 10.176681267750789
+  },
+  "structured_output": {
+    "flow_description": "The velocity magnitude |U| is relatively uniform across the domain, with a slight increase towards the right side. The kinematic pressure p is generally high in the lower-left and lower-right regions, and lowest in the central-upper region.",
+    "fastest_flow_x_percent": 90,
+    "fastest_flow_y_percent": 10,
+    "lowest_pressure_x_percent": 50,
+    "lowest_pressure_y_percent": 10,
+    "uncertainties": "The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the color bar ranges."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 16.085583333973773,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

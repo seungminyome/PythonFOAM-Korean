@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "a82f717a8c1310585e38576a00485660396cb2a8ee44a36e97a94afb9b3480e6",
+  "request_bytes": 125123,
+  "replay_wall_s": 11.93375205702614,
+  "client_inference_wall_s": 11.931053031003103,
+  "usage": {
+    "completion_tokens": 105,
+    "prompt_tokens": 907,
+    "total_tokens": 1012,
+    "prompt_tokens_details": {
+      "cached_tokens": 902
+    }
+  },
+  "server_timings": {
+    "cache_n": 902,
+    "prompt_n": 5,
+    "prompt_ms": 358.778,
+    "prompt_per_token_ms": 71.7556,
+    "prompt_per_second": 13.936194526977685,
+    "predicted_n": 105,
+    "predicted_ms": 11094.979,
+    "predicted_per_token_ms": 106.68249038461538,
+    "predicted_per_second": 9.373609449824105
+  },
+  "structured_output": {
+    "change_description": "The velocity magnitude |U| shows a localized increase in the central region over time, and the kinematic pressure p also shows a corresponding change, with the pressure minimum becoming more negative.",
+    "max_speed_trend": "increasing",
+    "min_pressure_trend": "more_negative",
+    "fastest_flow_region": "same_place",
+    "uncertainties": "cannot_tell"
+  },
+  "scores": {
+    "max_speed_trend": {
+      "answer": "increasing",
+      "truth": "decreasing",
+      "match": false,
+      "cannot_tell": false
+    },
+    "min_pressure_trend": {
+      "answer": "more_negative",
+      "truth": "less_negative",
+      "match": false,
+      "cannot_tell": false
+    },
+    "fastest_flow_region": {
+      "answer": "same_place",
+      "truth": "same_place",
+      "match": true,
+      "cannot_tell": false
+    },
+    "matches": 1
+  }
+}

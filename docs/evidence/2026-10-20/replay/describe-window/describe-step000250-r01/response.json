@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The velocity magnitude is highest in the upper left quadrant, and the kinematic pressure is lowest in the lower left quadrant.\",\n  \"fastest_flow_x_percent\": 10,\n  \"fastest_flow_y_percent\": 90,\n  \"lowest_pressure_x_percent\": 10,\n  \"lowest_pressure_y_percent\": 10,\n  \"uncertainties\": \"The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the axis ranges.\"\n}"
+      }
+    }
+  ],
+  "created": 1792524709,
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "system_fingerprint": "b11429-d81235049",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 133,
+    "prompt_tokens": 556,
+    "total_tokens": 689,
+    "prompt_tokens_details": {
+      "cached_tokens": 266
+    }
+  },
+  "id": "chatcmpl-tSQzhctLESI4OBkT7xgLoQvheXFaAQpS",
+  "timings": {
+    "cache_n": 266,
+    "prompt_n": 290,
+    "prompt_ms": 13056.884,
+    "prompt_per_token_ms": 45.02373793103448,
+    "prompt_per_second": 22.210505967580012,
+    "predicted_n": 133,
+    "predicted_ms": 13084.884,
+    "predicted_per_token_ms": 99.12790909090909,
+    "predicted_per_second": 10.087976324436655
+  }
+}

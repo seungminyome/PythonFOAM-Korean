@@ -1,0 +1,52 @@
+{
+  "max_speed_trend": "decreasing",
+  "max_speed_relative_change": -0.22416899419036962,
+  "max_speed_first_last": [
+    60.211684811477696,
+    46.714091988781185
+  ],
+  "min_pressure_trend": "less_negative",
+  "min_pressure_relative_change": 0.46059580788828824,
+  "min_pressure_first_last": [
+    -1467.3944426954104,
+    -791.5187138713334
+  ],
+  "fastest_flow_region": "same_place",
+  "fastest_flow_moved_percent": 0.1991086927253258,
+  "tolerances": {
+    "relative_change": 0.02,
+    "region_percent": 5.0
+  },
+  "frames": [
+    {
+      "step": 250,
+      "time_s": 0.00012499999999999979,
+      "max_speed_m_per_s": 60.211684811477696,
+      "min_pressure_m2_per_s2": -1467.3944426954104,
+      "fastest_flow_percent": [
+        72.11971225824898,
+        11.180868763531066
+      ]
+    },
+    {
+      "step": 750,
+      "time_s": 0.00037500000000000586,
+      "max_speed_m_per_s": 49.64738523395541,
+      "min_pressure_m2_per_s2": -896.9556195611187,
+      "fastest_flow_percent": [
+        72.2168821946314,
+        11.160334815276153
+      ]
+    },
+    {
+      "step": 1250,
+      "time_s": 0.0006249999999999971,
+      "max_speed_m_per_s": 46.714091988781185,
+      "min_pressure_m2_per_s2": -791.5187138713334,
+      "fastest_flow_percent": [
+        72.31399735727368,
+        11.224429890878186
+      ]
+    }
+  ]
+}

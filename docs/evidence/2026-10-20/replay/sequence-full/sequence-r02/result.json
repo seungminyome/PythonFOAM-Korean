@@ -1,0 +1,43 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"change_description\": \"The velocity magnitude |U| shows a localized increase in the central region over time, and the kinematic pressure p also shows a corresponding change, with the pressure minimum becoming more negative.\",\n  \"max_speed_trend\": \"increasing\",\n  \"min_pressure_trend\": \"more_negative\",\n  \"fastest_flow_region\": \"same_place\",\n  \"uncertainties\": \"cannot_tell\"\n}",
+  "request_sha256": "fb481f0cfb39facd88673c404855f86f475fb0e18b790964a71f62520ecd2cbf",
+  "request_bytes": 125123,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1045,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 105,
+    "prompt_tokens": 907,
+    "total_tokens": 1012,
+    "prompt_tokens_details": {
+      "cached_tokens": 906
+    }
+  },
+  "server_timings": {
+    "cache_n": 906,
+    "prompt_n": 1,
+    "prompt_ms": 120.273,
+    "prompt_per_token_ms": 120.273,
+    "prompt_per_second": 8.31441803230983,
+    "predicted_n": 105,
+    "predicted_ms": 10796.355,
+    "predicted_per_token_ms": 103.81110576923076,
+    "predicted_per_second": 9.632880726874951
+  },
+  "structured_output": {
+    "change_description": "The velocity magnitude |U| shows a localized increase in the central region over time, and the kinematic pressure p also shows a corresponding change, with the pressure minimum becoming more negative.",
+    "max_speed_trend": "increasing",
+    "min_pressure_trend": "more_negative",
+    "fastest_flow_region": "same_place",
+    "uncertainties": "cannot_tell"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 11.263843917055055,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

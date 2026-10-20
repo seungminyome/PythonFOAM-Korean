@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The velocity magnitude is generally low across the domain, with a region of slightly higher velocity near the right side. The kinematic pressure is relatively uniform, with a slight dip in the lower-right quadrant indicating lower pressure there.\",\n  \"fastest_flow_x_percent\": 85,\n  \"fastest_flow_y_percent\": 5,\n  \"lowest_pressure_x_percent\": 85,\n  \"lowest_pressure_y_percent\": 95,\n  \"uncertainties\": \"The exact values of the minimum and maximum for velocity and pressure are not explicitly given, only the color bar ranges.\"\n}"
+      }
+    }
+  ],
+  "created": 1792524590,
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "system_fingerprint": "b11429-d81235049",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 152,
+    "prompt_tokens": 584,
+    "total_tokens": 736,
+    "prompt_tokens_details": {
+      "cached_tokens": 266
+    }
+  },
+  "id": "chatcmpl-sQ3piIt1Wqt6bTdbqQApBebIolzciDY8",
+  "timings": {
+    "cache_n": 266,
+    "prompt_n": 318,
+    "prompt_ms": 14363.627,
+    "prompt_per_token_ms": 45.16863836477987,
+    "prompt_per_second": 22.139254938881386,
+    "predicted_n": 152,
+    "predicted_ms": 14662.104,
+    "predicted_per_token_ms": 97.10002649006623,
+    "predicted_per_second": 10.29865836444756
+  }
+}

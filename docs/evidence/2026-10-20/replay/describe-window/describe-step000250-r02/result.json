@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The velocity magnitude is highest in the upper left quadrant, and the kinematic pressure is lowest in the lower left quadrant.\",\n  \"fastest_flow_x_percent\": 10,\n  \"fastest_flow_y_percent\": 90,\n  \"lowest_pressure_x_percent\": 10,\n  \"lowest_pressure_y_percent\": 10,\n  \"uncertainties\": \"The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the axis ranges.\"\n}",
+  "request_sha256": "4bef151332798d10ce7f87f60efb9245e4dda262b5bdb70b7336b501f3690827",
+  "request_bytes": 49441,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1117,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 133,
+    "prompt_tokens": 556,
+    "total_tokens": 689,
+    "prompt_tokens_details": {
+      "cached_tokens": 266
+    }
+  },
+  "server_timings": {
+    "cache_n": 266,
+    "prompt_n": 290,
+    "prompt_ms": 13077.792,
+    "prompt_per_token_ms": 45.09583448275862,
+    "prompt_per_second": 22.174997124896922,
+    "predicted_n": 133,
+    "predicted_ms": 13107.144,
+    "predicted_per_token_ms": 99.29654545454545,
+    "predicted_per_second": 10.070843808536779
+  },
+  "structured_output": {
+    "flow_description": "The velocity magnitude is highest in the upper left quadrant, and the kinematic pressure is lowest in the lower left quadrant.",
+    "fastest_flow_x_percent": 10,
+    "fastest_flow_y_percent": 90,
+    "lowest_pressure_x_percent": 10,
+    "lowest_pressure_y_percent": 10,
+    "uncertainties": "The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the axis ranges."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 26.259469573036768,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

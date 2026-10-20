@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The velocity magnitude is generally low across the domain, with a region of slightly higher velocity towards the right side. The kinematic pressure is relatively uniform, with a slight dip in the lower-right quadrant indicating lower pressure.\",\n  \"fastest_flow_x_percent\": 85,\n  \"fastest_flow_y_percent\": 5,\n  \"lowest_pressure_x_percent\": 85,\n  \"lowest_pressure_y_percent\": 95,\n  \"uncertainties\": \"The exact values of the minimum and maximum for velocity and pressure are not explicitly given, only the color bar ranges.\"\n}",
+  "request_sha256": "618494147bd699e509142bb90c4c9e08348b003d75fa23a926955ef998d62772",
+  "request_bytes": 43661,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1213,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 151,
+    "prompt_tokens": 584,
+    "total_tokens": 735,
+    "prompt_tokens_details": {
+      "cached_tokens": 579
+    }
+  },
+  "server_timings": {
+    "cache_n": 579,
+    "prompt_n": 5,
+    "prompt_ms": 314.852,
+    "prompt_per_token_ms": 62.9704,
+    "prompt_per_second": 15.880477176578204,
+    "predicted_n": 151,
+    "predicted_ms": 14535.473,
+    "predicted_per_token_ms": 96.90315333333334,
+    "predicted_per_second": 10.319581619394155
+  },
+  "structured_output": {
+    "flow_description": "The velocity magnitude is generally low across the domain, with a region of slightly higher velocity towards the right side. The kinematic pressure is relatively uniform, with a slight dip in the lower-right quadrant indicating lower pressure.",
+    "fastest_flow_x_percent": 85,
+    "fastest_flow_y_percent": 5,
+    "lowest_pressure_x_percent": 85,
+    "lowest_pressure_y_percent": 95,
+    "uncertainties": "The exact values of the minimum and maximum for velocity and pressure are not explicitly given, only the color bar ranges."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 14.998607461922802,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

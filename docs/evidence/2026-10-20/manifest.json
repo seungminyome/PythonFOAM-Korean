@@ -1,0 +1,1718 @@
+{
+  "source_runs": [
+    "pod-llm-async.pp7agC",
+    "pod-llm-async.8YC6bG",
+    "pod-replay-20261020"
+  ],
+  "executed_commit": "9449085e775874c12b2c3c93f56e37fb60d63a63",
+  "scope": "Five asynchronous cases on a 3000-step run (whole-domain images), a windowed capture run, and describe/sequence replays of the saved frames, 2026-10-20.",
+  "notes": [
+    "Solver and callback code changed since 23089bb: asynchronous path, describe and sequence modes, plot window, end_time_s in the state.",
+    "The llama-server process is the one started on 2026-10-11; a short trial of the same suite an hour earlier left the system prompts in its cache (cached token counts are in the records).",
+    "log.PODFoam.gz and telemetry.jsonl.gz are gzip -9 -n copies of the originals; the hashes are of the compressed files.",
+    "ground_truth.private.json means withheld from model input, not private personal information."
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "source": "written for this folder",
+      "kind": "derived",
+      "bytes": 2718,
+      "sha256": "179d93723b183e031052d4c8140f25166090c692bcb30c683c97e0bc91c87bca"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_observation/fields.npz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_observation/fields.npz (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 781321,
+      "sha256": "83813327c46c85fac460920d7477e21cca6b5c47dd17a3139137f3c9bdff04b2"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_observation/image-metadata.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_observation/image-metadata.json (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 1710,
+      "sha256": "134b1df2e181683f85c8e35940c8a9937c85a81a0ec8cacd596789fec6e05915"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_observation/state.png",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_observation/state.png (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 39909,
+      "sha256": "a6047004d6ff98f11d87fa533334b11577034b8ef876ae7bd127ca89fd3926ad"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-000250/fields.npz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-000250/fields.npz (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 777745,
+      "sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-000250/image-metadata.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-000250/image-metadata.json (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 1735,
+      "sha256": "c91c7ae8239cfcc328d8d1c97beef5d0120b37c96128b69a046a6ee22ad1b2a1"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-000250/state.png",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-000250/state.png (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 35141,
+      "sha256": "1137100a96d6eb9146d30c11a01541bc61c01ee81442f7fe9f3fab119ba7450e"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-001250/fields.npz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-001250/fields.npz (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 780662,
+      "sha256": "7717b867a6825193a946ee25bff5836915a14de6bc75e376a28b7b31b22a5f65"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-001250/image-metadata.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-001250/image-metadata.json (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 1734,
+      "sha256": "a265143eaeb5b92ccb0f5738fced304e7780561b4a23c168c1b4f529fdee99f5"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-001250/state.png",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-001250/state.png (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 37482,
+      "sha256": "439fef25c6956d6094589ffa6348d483c7afe7fec72aedb2d91419e6fe6c33c0"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_request.json (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 12725,
+      "sha256": "dfbf40453df503aa45725ccc2b323dec6a500421db1577de2bee35ca975699da"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/llm_result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/llm_result.json (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 4591,
+      "sha256": "75f8eb7d7193abeb577f70c69547851ef3038bc6212afdbc7456ec367aeb5689"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/log.PODFoam.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/log.PODFoam.gz (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 637769,
+      "sha256": "e41dfc61a1958967d22a00c12880a20c4d08615c1948adbf435d25c16a34025f"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-no-llm/timeline.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-no-llm/timeline.json (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 517483,
+      "sha256": "1bbbd85faebc65b815bd9cb67441f4abf610939ea141a9bb817aae74b0d6a121"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/async-settings.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/async-settings.json (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 225,
+      "sha256": "16b5b24c890d068f0e3c422446401339e557463b5b4661d4fa6fd7966d0c29b1"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/resident-server.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/resident-server.json (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 986,
+      "sha256": "2eba5b3336e753bb10d293acfc981d5304e533db9991d9651bf0a0b66b0fef1b"
+    },
+    {
+      "path": "pod-llm-async.8YC6bG/timings.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/pod-llm-async.8YC6bG/timings.json (log.PODFoam.gz is a gzip copy)",
+      "kind": "byte-preserved",
+      "bytes": 445,
+      "sha256": "e04e9cab212b20f753a24acc88f9afcc4a09d686d91fe64f6e4f2dab3c6a616b"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/HEAD",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/HEAD (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 41,
+      "sha256": "2002b63ba18b2df7e4c754f0d482f3311067274dcd13d8424a248ac6d0a78493"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-describe/llm_http_response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-describe/llm_http_response.raw (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1229,
+      "sha256": "244e6a04b07ce4afd858c61308b55c54755132c2f04beaf6116b31d3e4bf81bb"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-describe/llm_observation/fields.npz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-describe/llm_observation/fields.npz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 777745,
+      "sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-describe/llm_observation/image-metadata.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-describe/llm_observation/image-metadata.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1294,
+      "sha256": "1ccfc556d8adce9b809b323708cca714bdbfb67a1896b42a37bd91996025ca32"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-describe/llm_observation/state.png",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-describe/llm_observation/state.png (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 30289,
+      "sha256": "ed10596a3e6fe9f3c35942dbec3484516c64d242b06a6fcd6be3fa7a7e67ba82"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-describe/llm_request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-describe/llm_request.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 9856,
+      "sha256": "59edc4b9e2a1497aa32922989f9fbcab9e4daa5bc69a4446a76c602206d11b4b"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-describe/llm_response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-describe/llm_response.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 3226,
+      "sha256": "45efe374a127b1c1584cb2702342e1e9366dd19d475b498689f030e14d9d0dd7"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-describe/llm_result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-describe/llm_result.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 3686,
+      "sha256": "dddc7215916f65a539a93638814c3fd20bd0f9a4c24d49a0650b0e3fb346afb2"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-describe/log.PODFoam.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-describe/log.PODFoam.gz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 637720,
+      "sha256": "61036a661134464751163e69a7cb0846cd5e71b5782badb6e7f0f927a817e93b"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-describe/telemetry.jsonl.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-describe/telemetry.jsonl.gz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 357923,
+      "sha256": "5bdb639ed77bab7d791c047554793804904b1733435b1f62af921212bc567ad8"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-describe/timeline.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-describe/timeline.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 517149,
+      "sha256": "8c944b18f0dc23e357a6f04e5b0d1e896341b8086bd6bcc437910b7a40582eb1"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_observation/fields.npz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_observation/fields.npz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 780662,
+      "sha256": "7717b867a6825193a946ee25bff5836915a14de6bc75e376a28b7b31b22a5f65"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_observation/image-metadata.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_observation/image-metadata.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1289,
+      "sha256": "6b396df91a38d42b68b436ee6142fc1f572ec2d9d210ae76df8539f472c29698"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_observation/state.png",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_observation/state.png (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 30786,
+      "sha256": "437b7650684fc27efe152e10dfd9e5fb4908d97d60b9e45b7f334a4a2f179de5"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/fields.npz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/fields.npz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 777745,
+      "sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/image-metadata.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/image-metadata.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1314,
+      "sha256": "e60ed5fe898d262de28e1226adec7f2d8a93868d3570b4c6defba5ebbc27f5ad"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/state.png",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/state.png (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 30289,
+      "sha256": "ed10596a3e6fe9f3c35942dbec3484516c64d242b06a6fcd6be3fa7a7e67ba82"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000750/fields.npz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000750/fields.npz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 779925,
+      "sha256": "d4c143ec60d289dcccaf57869145927d26c6800cba03b376b4d588673e7e0208"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000750/image-metadata.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000750/image-metadata.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1313,
+      "sha256": "a51e945e7d3497f278ed14c70dc9c163104c2910c4c33e5dd7d3d05add557a45"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000750/state.png",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000750/state.png (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 30581,
+      "sha256": "0981387dcf43fdc8a8b2a790385040c017511c44d05b5070d8feb7aee538603f"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_request.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 12618,
+      "sha256": "773c6fb5e157a55fcd0a7e5749b69c4e1fa60bc58d1c6db43359436063dc8ec2"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_response.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 4643,
+      "sha256": "e8d117dc5a437e8606f5eca81813647c7d2f5c8080cd1d1053d755668155c949"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/llm_result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/llm_result.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 4675,
+      "sha256": "db00ab9d9430081566611962527e6d74d0194d86320d7894be4599a40eb88cb2"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/log.PODFoam.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/log.PODFoam.gz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 637818,
+      "sha256": "2f97540bcdb009c30ecd0b4717cf98010dd1b1adec406424ff48d5e876c03776"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/telemetry.jsonl.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/telemetry.jsonl.gz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 357921,
+      "sha256": "86aa825392a6eb64a54b276be7df5cab370485235b1d5a7150caa2e94e98b0b1"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-no-llm/timeline.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-no-llm/timeline.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 517242,
+      "sha256": "4bb42b925f2e0359c1b432f9cfccbf90d06b675dea1b391120f0d86b7a913317"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_http_response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_http_response.raw (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1059,
+      "sha256": "083399f9d8b81d2463bd87c2eeda24426ac5f4d99148312cc0844d2c97a8ab50"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_observation/fields.npz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_observation/fields.npz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 780662,
+      "sha256": "7717b867a6825193a946ee25bff5836915a14de6bc75e376a28b7b31b22a5f65"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_observation/image-metadata.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_observation/image-metadata.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1293,
+      "sha256": "eea55ea733dd817c292ab938968fee5f349ceb25416f912e1cc3cdc24401ac79"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_observation/state.png",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_observation/state.png (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 30786,
+      "sha256": "437b7650684fc27efe152e10dfd9e5fb4908d97d60b9e45b7f334a4a2f179de5"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_observation/step-000250/fields.npz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000250/fields.npz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 777745,
+      "sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_observation/step-000250/image-metadata.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000250/image-metadata.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1318,
+      "sha256": "d663cd805b634c53a06a54f071af45c7909d6d55a7fae4a1ea2f909cbaf71b55"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_observation/step-000250/state.png",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000250/state.png (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 30289,
+      "sha256": "ed10596a3e6fe9f3c35942dbec3484516c64d242b06a6fcd6be3fa7a7e67ba82"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_observation/step-000750/fields.npz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000750/fields.npz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 779925,
+      "sha256": "d4c143ec60d289dcccaf57869145927d26c6800cba03b376b4d588673e7e0208"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_observation/step-000750/image-metadata.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000750/image-metadata.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1317,
+      "sha256": "75faed9cb97218e514b8bd0e940ee47c4d54969d33c126a7f3afe07138ade9c6"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_observation/step-000750/state.png",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_observation/step-000750/state.png (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 30581,
+      "sha256": "0981387dcf43fdc8a8b2a790385040c017511c44d05b5070d8feb7aee538603f"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_request.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 12633,
+      "sha256": "251446c6a1994a9eaa134a23b5833f9bb48a4327eecec755f6a2bfd3838f0cbb"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_response.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 6009,
+      "sha256": "55a50e6f509435ef194e93ecb672f9405b62ba9e130d54ae78f98e67b821129a"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/llm_result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/llm_result.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 6295,
+      "sha256": "136f2f81fc2d2ca686234ea5b80d0d3e65050034c34689e3e478f8ab3f3787ab"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/log.PODFoam.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/log.PODFoam.gz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 637406,
+      "sha256": "f10accb5f41f3b15bc26ad2748a28031728f4644a7dca81f843351f326a4015a"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/telemetry.jsonl.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/telemetry.jsonl.gz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 357923,
+      "sha256": "28b73b3e37af87a38687baeba96a3a95d35e38eddd98616b0a1a0365b18b0221"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-sequence/timeline.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-sequence/timeline.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 517410,
+      "sha256": "23315b150509d5222e5e80817c07eedf328bd358ff4003b31fea89a0168b45a4"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-server-error/llm_request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-server-error/llm_request.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 9867,
+      "sha256": "90c89c56b5f4498acdad2f32fa3ab50337ed569f0cb50ba3c0321325decac4ee"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-server-error/llm_response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-server-error/llm_response.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1731,
+      "sha256": "25e64ee263cb41e41b825e69f37ad414ea1564b0cb077000334597e611081659"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-server-error/llm_result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-server-error/llm_result.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 2051,
+      "sha256": "47469e10e3557b2a7813e60bdb5994a63c0149438457614ca18f2a28e3b0b18b"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-server-error/log.PODFoam.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-server-error/log.PODFoam.gz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 637770,
+      "sha256": "a3a0fc61155eaaaf4a8ef8b47826b8c7eee157174d93d160f22ce87fd1e29096"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-server-error/telemetry.jsonl.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-server-error/telemetry.jsonl.gz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 358158,
+      "sha256": "220128a816c37300ca93ac446de41a1c024239a9e4fff52579b7332dc08856ed"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-server-error/timeline.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-server-error/timeline.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 516894,
+      "sha256": "9ab3bd28f411aabc8fb6f8b4b111faea2dc76fbed0d7121b756c5a8641c8b921"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-settings.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-settings.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 216,
+      "sha256": "5064231a2b6781f734e4c18d9625551ac121671c5176baf565021a455ec161d6"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-timeout/llm_http_response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-timeout/llm_http_response.raw (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 53,
+      "sha256": "bb6bc790ed371dba4cb20ef7ace2a3970c55f55a063518b2a68ba9edb5d3bf7e"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-timeout/llm_request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-timeout/llm_request.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 9852,
+      "sha256": "bd7e97f5eba637d166994302c82f9e89510f32230edd6e9e7dda8b33c4855d28"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-timeout/llm_response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-timeout/llm_response.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1035,
+      "sha256": "4c131d1410369ee509ab06754ae61fa93627e4a43aebd0a5b0399c1b58bdaf1e"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-timeout/llm_result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-timeout/llm_result.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1094,
+      "sha256": "6a2848887ad6612d633a0c6b3ec94b56ccae064dcf81e8bb8f30e99ca09e8e09"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-timeout/log.PODFoam.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-timeout/log.PODFoam.gz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 638083,
+      "sha256": "b672cc5cb8b291c03884c400fefa4cf7c96dfbf4177f74959fb9bd189b7ef14c"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-timeout/telemetry.jsonl.gz",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-timeout/telemetry.jsonl.gz (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 357923,
+      "sha256": "3d78f46bcba324fa12494227314562e244e2ff9343443ccb0620d02e04740ffa"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-timeout/timeline.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-timeout/timeline.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 516917,
+      "sha256": "62616d68dcfda2e76156cc5b5e65c6b25d6be37aa20f84c733eb5faabc733277"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-timeout/timeout-fixture.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-timeout/timeout-fixture.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 220,
+      "sha256": "a4e6a9ea1986b90c57d404b593686d088c3a7634051221a89fb46bf1b5426d3e"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/async-verification.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/async-verification.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 9563,
+      "sha256": "fae92d2bde2c6d12ffcd6c2e75e6bad69ed8223477a186f35882c6bdb51a1302"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/build-inputs.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/build-inputs.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1004,
+      "sha256": "5c3d56e7c6000bed3ed0b14f2e0eff84bd68ae95f378ef4b6577f8644d5ca8e1"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/environment.txt",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/environment.txt (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 5334,
+      "sha256": "e83805d09dd24bb81bc1decccd8ec64d53fb9ba447a2b8e4dba9ed7161851fbc"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/executed-callback-source/bounded_ipc.py",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/executed-callback-source/bounded_ipc.py (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 4892,
+      "sha256": "4810f6efdb23a7ad02ef86117019296d1a8705f4fad5f2cc5627673f598188a9"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/executed-callback-source/llm_client.py",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/executed-callback-source/llm_client.py (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 25118,
+      "sha256": "a8aa4546e9fd1edfcff2b24bfbd9dbf238f02653c7adf9a3aef401e06bd2a8e4"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/executed-callback-source/pod_image.py",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/executed-callback-source/pod_image.py (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 10284,
+      "sha256": "9c5eee02d62546a8fbdd35625d4f6252dfb2cadb7fa63184fca50f88f7f1e42b"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/executed-callback-source/pod_svd.py",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/executed-callback-source/pod_svd.py (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 1669,
+      "sha256": "110e5e70b77bced27587808349c155ef0797b5eac3f059fce16bcad862772123"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/executed-callback-source/python_module.py",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/executed-callback-source/python_module.py (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 43234,
+      "sha256": "0a2c9ac983a935637720075b8fdb9d04bfa102d88c872548ec64c806eba2bea4"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/git-status.txt",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/git-status.txt (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 37,
+      "sha256": "05f9333df63abacd4c2d5efed6bbd4177228a702643b0904d8f23907c9d64b94"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/resident-server.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/resident-server.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 986,
+      "sha256": "2eba5b3336e753bb10d293acfc981d5304e533db9991d9651bf0a0b66b0fef1b"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/summary.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/summary.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 4301,
+      "sha256": "f05a27989d163d6a767a2350f3fef3a1cb6b72823f0fb635d3cf2a9775901f0e"
+    },
+    {
+      "path": "pod-llm-async.pp7agC/timings.json",
+      "source": "/home/syome/pythonfoam-llm/pod-llm-async.pp7agC/pod-llm-async.pp7agC/timings.json (log.PODFoam.gz and telemetry.jsonl.gz are gzip copies)",
+      "kind": "byte-preserved",
+      "bytes": 2220,
+      "sha256": "3ed73ac149c919fabb702410a45b7c60343b3214e3caeb4b6f644f5d5274533a"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r01/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r01/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2328,
+      "sha256": "1da8a5271feab86b66e18e17c9e25430a9d621bea70c6b4715d3a101bf65c425"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r01/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r01/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 43001,
+      "sha256": "3b9e8b11ef83c97705c9bce570bf6d1d64e3e7f72d6534ce587d8315aa5c3f34"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r01/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r01/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1429,
+      "sha256": "80e031d596c49f38623d2be261a78ea626bd3aca2e837500dd63a475e0d63088"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r01/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r01/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1234,
+      "sha256": "72d25f7e92f2a9e3907c17d1d2e682e6ff52761d81b06d8a55c4ca9d986bef43"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r01/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r01/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2162,
+      "sha256": "c3948e0732676c9d0dfa18af6977e4c6dfb1e55c6a1550c222179c42975f357e"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r01.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r01.request.json",
+      "kind": "byte-preserved",
+      "bytes": 43001,
+      "sha256": "3b9e8b11ef83c97705c9bce570bf6d1d64e3e7f72d6534ce587d8315aa5c3f34"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r02/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r02/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2317,
+      "sha256": "c5b8bd7d0dec9f3ddc3d8f3c18eab637bfd474d093881786068d3efd43e8e9bc"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r02/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r02/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 43001,
+      "sha256": "4e4da77b15d0d2367b91fb1f3f855f900715564118eb853ce1a437ce49c46e1d"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r02/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r02/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1417,
+      "sha256": "6bfdc90fdd27e43bd78ffe5bb413aa5181a1da344995cef4d67d18c6baeef00a"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r02/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r02/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1222,
+      "sha256": "22de9e74ed6c4b9a6f71c924a68b113c4302231a491fe1fb1a8fde611afacce5"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r02/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r02/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2151,
+      "sha256": "7e518ec01c503e954d5913ff030574abdacc1f26ce93412327e9a3790e64d6f3"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r02.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r02.request.json",
+      "kind": "byte-preserved",
+      "bytes": 43001,
+      "sha256": "4e4da77b15d0d2367b91fb1f3f855f900715564118eb853ce1a437ce49c46e1d"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r03/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r03/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2317,
+      "sha256": "aabc2ce72814293f7c2dd116d15e44d1e3837eb8bec64af528cf6155ce952d2e"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r03/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r03/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 43001,
+      "sha256": "809b951ab451ca743ee5ae67159877018af51a89844b29518750bdf2176c3460"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r03/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r03/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1417,
+      "sha256": "ca0a96b643c7e4a4a43f85c5942814a0de4c365c3d619fa2bf8710a861452434"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r03/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r03/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1222,
+      "sha256": "3fc062b1f6c0d072b01bb2b9dc9b4b21e6b277762026c6cda3c8a05c1ca4baed"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r03/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r03/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2151,
+      "sha256": "ccf99beef58cc91ecb41073efa5876a005152e19aad82e45168265e732a8b53b"
+    },
+    {
+      "path": "replay/describe-full/describe-step000250-r03.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000250-r03.request.json",
+      "kind": "byte-preserved",
+      "bytes": 43001,
+      "sha256": "809b951ab451ca743ee5ae67159877018af51a89844b29518750bdf2176c3460"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r01/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r01/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2280,
+      "sha256": "27c3cc5cc4f81ba053297236edab31c202428b49dd4eff6423e41362cf8971d8"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r01/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r01/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 43389,
+      "sha256": "1a7fdb95b12d927fc7f81f295dce71a3271f8eaf9222200bec9b9cfb09702539"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r01/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r01/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1392,
+      "sha256": "f49085837f8de75723c3b90cd9a822609782f3a287b86f0276ac34305bc8858d"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r01/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r01/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1197,
+      "sha256": "50dd6fb427357e3fdeb547ebe520f81bf6961c777903fe176dc37aa90b873d42"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r01/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r01/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2090,
+      "sha256": "1e1f3acdfcb15a427d11f35815399ae54d61735f0cb9cf53a11b274a0f0dfdff"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r01.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r01.request.json",
+      "kind": "byte-preserved",
+      "bytes": 43389,
+      "sha256": "1a7fdb95b12d927fc7f81f295dce71a3271f8eaf9222200bec9b9cfb09702539"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r02/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r02/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2281,
+      "sha256": "6b23812e34d80ef48150fd4b571242dbde4d68528280709b832b97854ad97c44"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r02/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r02/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 43389,
+      "sha256": "33c359c33314d8cd1410c595665007aace281524f02ed81d0fd01060c84b526a"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r02/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r02/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1392,
+      "sha256": "c40722ba500cbbfc4a4844caf1c596fd257aaebbe8d763e1a6b6fe4808d3b9bc"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r02/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r02/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1197,
+      "sha256": "8457a62d624e5b6b29454cb30c24e47b64c48ddaeab22301353253d999e4dea1"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r02/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r02/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2090,
+      "sha256": "e1f8f3926d6adda76f805875ae6ecdf5e0b18f061706e725b143c29f870f93a1"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r02.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r02.request.json",
+      "kind": "byte-preserved",
+      "bytes": 43389,
+      "sha256": "33c359c33314d8cd1410c595665007aace281524f02ed81d0fd01060c84b526a"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r03/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r03/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2270,
+      "sha256": "6179e026d892627c7ad3aeac760e2f1ffdd89d2babae57555611ad5b7bc27b75"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r03/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r03/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 43389,
+      "sha256": "001d24b94d4de9e8b78f94c72e78f9fed5cb3f331b5348fbe7a5febaa843564a"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r03/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r03/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1381,
+      "sha256": "a5350337ed8b89cc7a6956dc6357aaf4de64d42cf737dcb8c50dd0f93d2a0c47"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r03/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r03/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1186,
+      "sha256": "5e91af5cee0bfe356935a5387be642c513047cd4eeacb3108da51a619025cfa5"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r03/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r03/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2079,
+      "sha256": "76ef0ae6098e69f26c804596a2c606cdee06e3ec424d181ffd771aec943c4410"
+    },
+    {
+      "path": "replay/describe-full/describe-step000750-r03.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step000750-r03.request.json",
+      "kind": "byte-preserved",
+      "bytes": 43389,
+      "sha256": "001d24b94d4de9e8b78f94c72e78f9fed5cb3f331b5348fbe7a5febaa843564a"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r01/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r01/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2313,
+      "sha256": "84b927b82e0de8f19940749fc9ac40c9a2f2e3e24a86a9b322dd52cb3314652f"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r01/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r01/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 43661,
+      "sha256": "42e21f2ced6e0567b252d51c0722a69e6cfcf1a5c18e6e13a4a1bb2450ccee12"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r01/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r01/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1424,
+      "sha256": "13848d42f293ffa6fb9c4b9d047fdbc6a93870231d2cb34407c3ab3cc4615a84"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r01/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r01/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1229,
+      "sha256": "0c9cc26857e9e497757f9d631678fb0b5d283c48399a4000e4041e6459330dda"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r01/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r01/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2152,
+      "sha256": "00348ade9be9d6356671df80f1bb1b709383dc0869859ee46ae5a5b900bff619"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r01.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r01.request.json",
+      "kind": "byte-preserved",
+      "bytes": 43661,
+      "sha256": "42e21f2ced6e0567b252d51c0722a69e6cfcf1a5c18e6e13a4a1bb2450ccee12"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r02/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r02/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2297,
+      "sha256": "cab0f4843eee81b4325801d9ce2a8501ac928166a0b8936e7e57fcbae13f6324"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r02/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r02/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 43661,
+      "sha256": "618494147bd699e509142bb90c4c9e08348b003d75fa23a926955ef998d62772"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r02/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r02/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1408,
+      "sha256": "eff98cb37e44f87f4600d1b6385e3385b484a14e9a5b8ac52739d1ba01dcd8e5"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r02/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r02/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1213,
+      "sha256": "228e700cbd9c1a164d23b198fc3de0f2dd50259bb9d59c7bb4f0882baa76dba5"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r02/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r02/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2133,
+      "sha256": "58efd6328d50d99cd7c7163c88b43f7d10f6186956f2499eca467cd1d616999d"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r02.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r02.request.json",
+      "kind": "byte-preserved",
+      "bytes": 43661,
+      "sha256": "618494147bd699e509142bb90c4c9e08348b003d75fa23a926955ef998d62772"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r03/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r03/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2296,
+      "sha256": "fdb9a4f3d62697f6ad96a9e75149ee8466f4f69bb4fe68a4a68eba9c9e2d8513"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r03/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r03/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 43661,
+      "sha256": "562cd26d11d45389d205fcfd2a8203d0c4ae0481f1808733d4418aa47fc68266"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r03/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r03/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1408,
+      "sha256": "f4135169c0313f91a484be40bc440ed954024310c6c186686f9438caff565048"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r03/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r03/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1213,
+      "sha256": "4d006c492525fbb04f0009325d85a9d8b13f8bfa929097cabe41dda26976f0c6"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r03/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r03/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2132,
+      "sha256": "e9ddf2c2f5aa457dfef8d872a4f6de49aea87d8f5834b20a65a13511b35dd1b4"
+    },
+    {
+      "path": "replay/describe-full/describe-step001250-r03.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/describe-step001250-r03.request.json",
+      "kind": "byte-preserved",
+      "bytes": 43661,
+      "sha256": "562cd26d11d45389d205fcfd2a8203d0c4ae0481f1808733d4418aa47fc68266"
+    },
+    {
+      "path": "replay/describe-full/ground_truth.private.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/ground_truth.private.json",
+      "kind": "byte-preserved",
+      "bytes": 2716,
+      "sha256": "b5018022e25c86d56743aa0701f4983b754232848fcd7000d8466b796b74e134"
+    },
+    {
+      "path": "replay/describe-full/metrics.jsonl",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/metrics.jsonl",
+      "kind": "byte-preserved",
+      "bytes": 16733,
+      "sha256": "c6d635655a043f7ac53c17056d276ed09d8814a5d2b05143fd81943638d6b8e8"
+    },
+    {
+      "path": "replay/describe-full/summary.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-full/summary.json",
+      "kind": "byte-preserved",
+      "bytes": 1847,
+      "sha256": "3e2e9dec887e3dab5921ad23e500068495719f578058a32b0b05ea9891e02d90"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r01/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r01/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2216,
+      "sha256": "5237f295383b73c10e233c2a1ab9c3fac2921c3e776fa9927796bae5e34b25b9"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r01/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r01/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 49441,
+      "sha256": "42a4d749d71a1df2b22cfd2af89db6e42b4f0b6f821b252d52575791bb93e81c"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r01/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r01/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1312,
+      "sha256": "395e9b91a943cc40b29e8c144da477153195f498935e8170dff4ad9e56c98279"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r01/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r01/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1117,
+      "sha256": "e65e8ad3fc2c5773aa328392691eaa535893bee840fd21436bf7f56a1adf1fe4"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r01/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r01/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1927,
+      "sha256": "6fc04597ed812d3ed506d51697e833a6aa71ece690e412df6adb7e6235420805"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r01.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r01.request.json",
+      "kind": "byte-preserved",
+      "bytes": 49441,
+      "sha256": "42a4d749d71a1df2b22cfd2af89db6e42b4f0b6f821b252d52575791bb93e81c"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r02/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r02/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2216,
+      "sha256": "f6c33afadab9dca0302d023323ea6e1779f44238f4c438f85319e2b7fefefe1d"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r02/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r02/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 49441,
+      "sha256": "4bef151332798d10ce7f87f60efb9245e4dda262b5bdb70b7336b501f3690827"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r02/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r02/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1312,
+      "sha256": "94d30a3c346abefd9d1acc7953ab49701f2a928c4760a8117bc79ff89dcc23eb"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r02/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r02/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1117,
+      "sha256": "e4c661d445f357cd001bdf6d63606bac6d8b530cb429e3d996f71a7811b5ae8d"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r02/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r02/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1927,
+      "sha256": "7ca84215c87b7ef076129dfebda464ff3d129f915ffbaecfe391d3941fe4700f"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r02.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r02.request.json",
+      "kind": "byte-preserved",
+      "bytes": 49441,
+      "sha256": "4bef151332798d10ce7f87f60efb9245e4dda262b5bdb70b7336b501f3690827"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r03/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r03/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2199,
+      "sha256": "8d14d83c4637851bea72f6e84fd01151479c8cbaad857044486a8b3668290450"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r03/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r03/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 49441,
+      "sha256": "56e60948b696f9e33bc9b7d131db948afe35e053dc76f3709becdfa98585e98b"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r03/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r03/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1296,
+      "sha256": "6dc668281b49776dcaf12d3c3541695f82c26bcf9b1b299a9ca40f345bfd640b"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r03/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r03/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1101,
+      "sha256": "f4b023986d4432a11a087010435508fe590a147724accbc9fc9bb83da8e92770"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r03/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r03/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1909,
+      "sha256": "3aab4318d2ee6059966906096f7458a6cc3450e6dd76c1df74dad89127bc5408"
+    },
+    {
+      "path": "replay/describe-window/describe-step000250-r03.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step000250-r03.request.json",
+      "kind": "byte-preserved",
+      "bytes": 49441,
+      "sha256": "56e60948b696f9e33bc9b7d131db948afe35e053dc76f3709becdfa98585e98b"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r01/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r01/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2322,
+      "sha256": "6fefed623f91bf9697faacb4b5b6642f16325dcee2cdcdb09185635e830c29d9"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r01/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r01/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 52561,
+      "sha256": "ef670b1c0cfea48a260937c239418d9c209fce7cb573939d2b23c4e9fafb622e"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r01/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r01/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1428,
+      "sha256": "40d86de0766e0d921b1d03dad444da990f28962781489adeb316ed778f0d0c62"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r01/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r01/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1233,
+      "sha256": "986b4f889b8691993101280a346c37acdf7c3cbd43ae1c0c2072488233d6daba"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r01/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r01/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2159,
+      "sha256": "2756867f7fc7bdd69bfe7c49723d4805afff257fa4c06a86d7cea5517b296274"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r01.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r01.request.json",
+      "kind": "byte-preserved",
+      "bytes": 52561,
+      "sha256": "ef670b1c0cfea48a260937c239418d9c209fce7cb573939d2b23c4e9fafb622e"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r02/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r02/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2260,
+      "sha256": "26c46e0a749dac84d14e1c8a609c0ff7d7cf456f8ec4f5a796089c6fe2a95c63"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r02/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r02/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 52561,
+      "sha256": "5a7617dfa6fb2d91d75a70f7389a0e6bf3575854e8d2e905e099943c7ecb37f6"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r02/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r02/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1367,
+      "sha256": "35ff05c2ac91547cea17f2ae6a3aecd24e71a3759b93f1791c637a69943425f7"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r02/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r02/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1172,
+      "sha256": "30060e25d1f051fe9471021ef4f0f288f73ab1c83689a1641b6f41f0fa04961d"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r02/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r02/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2051,
+      "sha256": "73ba8e1db7309513c84adefa62d64d62435029d640c5228ed0c4c62bbe4360e5"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r02.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r02.request.json",
+      "kind": "byte-preserved",
+      "bytes": 52561,
+      "sha256": "5a7617dfa6fb2d91d75a70f7389a0e6bf3575854e8d2e905e099943c7ecb37f6"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r03/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r03/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2260,
+      "sha256": "49d44b7c8daa7bec9496a0d316c07ae32949249deb13f4fe9a835dd6fde1efaf"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r03/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r03/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 52561,
+      "sha256": "1bb3e181c7d83840dfe1d365085f41b8fae63cf4e08112efb99b021aa163deef"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r03/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r03/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1366,
+      "sha256": "46011171ea743b5135b035c771923fd78f0de5879bb340d498bc83dd39693416"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r03/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r03/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1171,
+      "sha256": "75f2e73a71e87a2ace7e2fe67b5acb80e14df589292f0c72f9d110e22f0d616e"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r03/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r03/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2050,
+      "sha256": "f56110cb7c413d48d5fa60a36808c24a58b041c263f3efdd095e0bd1d5456e2d"
+    },
+    {
+      "path": "replay/describe-window/describe-step001250-r03.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step001250-r03.request.json",
+      "kind": "byte-preserved",
+      "bytes": 52561,
+      "sha256": "1bb3e181c7d83840dfe1d365085f41b8fae63cf4e08112efb99b021aa163deef"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r01/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r01/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2320,
+      "sha256": "5575138973889ea102f4b40f52fdf3ee071ed6f96c245e8433e0ddbcc361c2fa"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r01/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r01/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 55797,
+      "sha256": "05269b9d218b23e642d9e5f8259e71a2fc0b4960c3d6fad3c80c5b8d0bbe8413"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r01/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r01/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1428,
+      "sha256": "05cb3a8c4c6e6cd335f7d2f2eb5234164c3e83d6ebc58b104911669192d004b7"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r01/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r01/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1233,
+      "sha256": "08b8cfae99297a6fb735b09649e4f9a29b5455a7c820e49833c9c77e6260b12a"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r01/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r01/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2159,
+      "sha256": "f3b40a2199f9dd644de9f540973ccc7a05dd7d0d8ef1252298e99482671480fa"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r01.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r01.request.json",
+      "kind": "byte-preserved",
+      "bytes": 55797,
+      "sha256": "05269b9d218b23e642d9e5f8259e71a2fc0b4960c3d6fad3c80c5b8d0bbe8413"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r02/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r02/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2314,
+      "sha256": "529c46fd36b72acc6efd5ef83a652215086d476c64ffc2203f555add7b6ff8b4"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r02/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r02/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 55797,
+      "sha256": "2df56618cfccd19958131a36891129f64c6cbaa1be1838e5d40da0be2a9f3911"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r02/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r02/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1418,
+      "sha256": "1bdb88a8789441e97457278ddeb6990e034592287092d9135dcd07d5db06b9b5"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r02/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r02/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1223,
+      "sha256": "0b311f8bced8c184044c56f78b7954b1d55f7facd6d59c0e96e65f71fd4a0f9f"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r02/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r02/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2142,
+      "sha256": "1d310b2b7250c15ec49497d03d521079cb736cb1916d9ae9c622558c429df603"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r02.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r02.request.json",
+      "kind": "byte-preserved",
+      "bytes": 55797,
+      "sha256": "2df56618cfccd19958131a36891129f64c6cbaa1be1838e5d40da0be2a9f3911"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r03/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r03/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 2313,
+      "sha256": "41ba068fbd3a8dfdbee30d24e73d9a09344f16a1f118cda6ee726d924f1187d1"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r03/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r03/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 55797,
+      "sha256": "ec6db1168629f13d33dbff5769978819e6a0af7181f29de85e4e127414c9c856"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r03/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r03/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1416,
+      "sha256": "1711af9bbb51b52cb5dff6fa74c8b48a51d98d1f67db9dce61d7f1f9660b646e"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r03/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r03/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1221,
+      "sha256": "5843221324a00b04e69dfad65cf88faf25946578a3052394ca966e5cec17fbfe"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r03/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r03/result.json",
+      "kind": "byte-preserved",
+      "bytes": 2140,
+      "sha256": "2df5b8bcd593c6f792d468d265c5b1a6fde30828ba7d9448ea34f5888ce96c2f"
+    },
+    {
+      "path": "replay/describe-window/describe-step002750-r03.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/describe-step002750-r03.request.json",
+      "kind": "byte-preserved",
+      "bytes": 55797,
+      "sha256": "ec6db1168629f13d33dbff5769978819e6a0af7181f29de85e4e127414c9c856"
+    },
+    {
+      "path": "replay/describe-window/ground_truth.private.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/ground_truth.private.json",
+      "kind": "byte-preserved",
+      "bytes": 2597,
+      "sha256": "c42862f0e0976ea0bea27a540c1be719f7879d318b00f002127349fbf3aaa97e"
+    },
+    {
+      "path": "replay/describe-window/metrics.jsonl",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/metrics.jsonl",
+      "kind": "byte-preserved",
+      "bytes": 16457,
+      "sha256": "d66195a1ce06d7fcdc7dff63bb4cde7dd44993aee7ce3e9e973bbf3b79bafb44"
+    },
+    {
+      "path": "replay/describe-window/summary.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/describe-window/summary.json",
+      "kind": "byte-preserved",
+      "bytes": 1849,
+      "sha256": "ef8b28c98cf70b16f0af43fe170f30b454af48d3fe94fbf0ab2e87f220dcf78b"
+    },
+    {
+      "path": "replay/sequence-full/ground_truth.private.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/ground_truth.private.json",
+      "kind": "byte-preserved",
+      "bytes": 1332,
+      "sha256": "2ee9ca001ea0b7d32a5dc505bea43d2650adab357704b5a0852e53a883cf46d1"
+    },
+    {
+      "path": "replay/sequence-full/metrics.jsonl",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/metrics.jsonl",
+      "kind": "byte-preserved",
+      "bytes": 4220,
+      "sha256": "b0313cd8660bd7059af11072d403257b3bc6e75a078e094c4e3aad48e50f6a83"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r01/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r01/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1643,
+      "sha256": "a1ec5022af8e1d2d4d2bbadf285ec3f8667a03d4e8c3e7e563a633724f07e012"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r01/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r01/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 125123,
+      "sha256": "a82f717a8c1310585e38576a00485660396cb2a8ee44a36e97a94afb9b3480e6"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r01/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r01/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1242,
+      "sha256": "1fa98237eb77214d3b526ba26cbafaea374074335e12bd0fa95a08981fc9721f"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r01/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r01/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1047,
+      "sha256": "9e5192e3cd0e3802685284b4489767ba268cc64b1627bfb68a9c01c178b978c1"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r01/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r01/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1796,
+      "sha256": "ae4ebeeb18a05b2b111873c158a4d96a96246873fac9d57ecdc2f271185c2b85"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r01.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r01.request.json",
+      "kind": "byte-preserved",
+      "bytes": 125123,
+      "sha256": "a82f717a8c1310585e38576a00485660396cb2a8ee44a36e97a94afb9b3480e6"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r02/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r02/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1642,
+      "sha256": "54e363df33f845c58c7c05f8cb409fa1fe4fd2e397566dfbc95a6fa6d86e90fa"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r02/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r02/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 125123,
+      "sha256": "fb481f0cfb39facd88673c404855f86f475fb0e18b790964a71f62520ecd2cbf"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r02/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r02/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1240,
+      "sha256": "50a4bce1762de507b177c9518f15de964c0360e298982070dfbfc2d9c1798b7b"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r02/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r02/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1045,
+      "sha256": "d7e28699c0a7c0d084de36635bf089f45bfb77fb95c166da8d826d76a5395726"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r02/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r02/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1794,
+      "sha256": "b871f68a5371361797353b179f964eed735aa794a8761619b9bfe79f144c3101"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r02.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r02.request.json",
+      "kind": "byte-preserved",
+      "bytes": 125123,
+      "sha256": "fb481f0cfb39facd88673c404855f86f475fb0e18b790964a71f62520ecd2cbf"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r03/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r03/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1643,
+      "sha256": "f6ca044b0e300799f4012c03003bc6f985f176074a4ed957af357abeb2befa2c"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r03/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r03/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 125123,
+      "sha256": "6df9c2d06ffcc9ec29760d4dea3441b25a30675da3c16ed8e26624aaaecde56b"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r03/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r03/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1241,
+      "sha256": "a350362060425f9ad0d119757c018b8477f80be1b750ce4df04983cf441aa181"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r03/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r03/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1046,
+      "sha256": "1f0d718f70c156eab34adfd158840f434df4e40825f5b47435351aafc592a61a"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r03/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r03/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1795,
+      "sha256": "b7dfa0b8bd617ebe16f25d62be9dd602947a56a939fe7359275a3ef3e8a9153f"
+    },
+    {
+      "path": "replay/sequence-full/sequence-r03.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/sequence-r03.request.json",
+      "kind": "byte-preserved",
+      "bytes": 125123,
+      "sha256": "6df9c2d06ffcc9ec29760d4dea3441b25a30675da3c16ed8e26624aaaecde56b"
+    },
+    {
+      "path": "replay/sequence-full/summary.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-full/summary.json",
+      "kind": "byte-preserved",
+      "bytes": 772,
+      "sha256": "9b519375c1d23ca9ceb5d7a930444d3af3b556a90334acb1cf92335921a8deae"
+    },
+    {
+      "path": "replay/sequence-window/ground_truth.private.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/ground_truth.private.json",
+      "kind": "byte-preserved",
+      "bytes": 1331,
+      "sha256": "d847deadb53a8c4f3191dd67bb4a57e2fac79163b13ea2ba2c94a40201421e69"
+    },
+    {
+      "path": "replay/sequence-window/metrics.jsonl",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/metrics.jsonl",
+      "kind": "byte-preserved",
+      "bytes": 4234,
+      "sha256": "ee389bfe92396f84185bc5cf181129391148b328a71b38dcc8dee735c98321ba"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r01/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r01/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1721,
+      "sha256": "d4bd624cdcad67fcb677e28bde8c48b8f169849880702d8fc2b84b995e7524d4"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r01/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r01/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 152928,
+      "sha256": "f5676eaa97a79b43cda03abe635a35aecf8cea121a12d5070f8fa5534f6762a8"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r01/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r01/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1322,
+      "sha256": "3843fa2e0e83429c555656ebd844a7de27173b9668bb270c7e23e6fc339b5cc6"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r01/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r01/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1127,
+      "sha256": "20e0c265ef99f221d57f998d03171e1a1c0452649dc9d7094bce9853404c5631"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r01/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r01/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1942,
+      "sha256": "180c772aa87cd914f364f05cd4f4fd0d055dea7ad849bff5cf46898d2236a3fa"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r01.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r01.request.json",
+      "kind": "byte-preserved",
+      "bytes": 152928,
+      "sha256": "f5676eaa97a79b43cda03abe635a35aecf8cea121a12d5070f8fa5534f6762a8"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r02/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r02/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1610,
+      "sha256": "93b2e3e8881adcd048ff627bbe1101d250607a7eea05122c2305051a23ef217d"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r02/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r02/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 152928,
+      "sha256": "c56cf4c00da8232329798cad9c07c7fa5de790ae6a160795e53aded951eefc1c"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r02/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r02/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1209,
+      "sha256": "cf780e1e1e4dc0dc756fbbbdccd15041c517356bba659a3c9053ddf58c0d0dd4"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r02/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r02/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1014,
+      "sha256": "852ccbc1a1b45a43bab6c2071e92f15221effbc53cf567f670783585cad5eff7"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r02/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r02/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1732,
+      "sha256": "efffa91f7498504f53f9cb4e3e86eba95b5e3253267e4f80163ebc932bb76282"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r02.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r02.request.json",
+      "kind": "byte-preserved",
+      "bytes": 152928,
+      "sha256": "c56cf4c00da8232329798cad9c07c7fa5de790ae6a160795e53aded951eefc1c"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r03/metrics.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r03/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1608,
+      "sha256": "7c012158870dd0445c80435fedf4751587ce6aabf1109c186c86af446de4b090"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r03/request_body.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r03/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 152928,
+      "sha256": "05cbac63fc1b5c0713acef138d8d5028d4eaf2efe6d0b1c35d30ffd510c1f562"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r03/response.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r03/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1208,
+      "sha256": "d15a8589d38023566937fd07013573b6ea5cf69e2ad20a44d5187f61cfb82ab3"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r03/response.raw",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r03/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1013,
+      "sha256": "f3e37e1938dbb1e259f0d14414c17fdd8234f31091d05c1288568cba149d85e6"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r03/result.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r03/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1730,
+      "sha256": "3077c2790ab92f06788ecb789daa2a43880163acfcad61d5dab307d8e505c8d9"
+    },
+    {
+      "path": "replay/sequence-window/sequence-r03.request.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/sequence-r03.request.json",
+      "kind": "byte-preserved",
+      "bytes": 152928,
+      "sha256": "05cbac63fc1b5c0713acef138d8d5028d4eaf2efe6d0b1c35d30ffd510c1f562"
+    },
+    {
+      "path": "replay/sequence-window/summary.json",
+      "source": "/home/syome/pythonfoam-llm/pod-replay-20261020/replay/sequence-window/summary.json",
+      "kind": "byte-preserved",
+      "bytes": 772,
+      "sha256": "668cb0d4278308847bd6b39d38d066bd3f7734e7c8ce90881e5b9e0ae5751f5c"
+    },
+    {
+      "path": "unit-tests-70.txt",
+      "source": "output of python3 -m unittest test_llm_client test_callback test_ablation_runner test_async -v on the test machine",
+      "kind": "byte-preserved",
+      "bytes": 8929,
+      "sha256": "1dbeb297cb5548a1ab80b75598cb102770a90272f60cddfc89e70f2685d763e0"
+    }
+  ]
+}

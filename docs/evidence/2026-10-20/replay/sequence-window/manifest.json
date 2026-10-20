@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "mode": "sequence",
+  "execute": true,
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "endpoint": "http://127.0.0.1:8088/v1/chat/completions",
+  "server_note": "llama.cpp b11429, Gemma 4 E2B Q4_0 + mmproj Q8_0, 4 threads, ctx 2048, resident server",
+  "max_tokens": 320,
+  "frames": [
+    {
+      "directory": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-000250",
+      "step": 250,
+      "time_s": 0.00012499999999999979,
+      "sha256": "1137100a96d6eb9146d30c11a01541bc61c01ee81442f7fe9f3fab119ba7450e",
+      "fields_sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a",
+      "plotted_range_m": {
+        "x": [
+          -0.05,
+          0.15
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      }
+    },
+    {
+      "directory": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-001250",
+      "step": 1250,
+      "time_s": 0.0006249999999999971,
+      "sha256": "439fef25c6956d6094589ffa6348d483c7afe7fec72aedb2d91419e6fe6c33c0",
+      "fields_sha256": "7717b867a6825193a946ee25bff5836915a14de6bc75e376a28b7b31b22a5f65",
+      "plotted_range_m": {
+        "x": [
+          -0.05,
+          0.15
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      }
+    },
+    {
+      "directory": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/async-no-llm/llm_observation",
+      "step": 2750,
+      "time_s": 0.0013750000000000203,
+      "sha256": "a6047004d6ff98f11d87fa533334b11577034b8ef876ae7bd127ca89fd3926ad",
+      "fields_sha256": "83813327c46c85fac460920d7477e21cca6b5c47dd17a3139137f3c9bdff04b2",
+      "plotted_range_m": {
+        "x": [
+          -0.05,
+          0.15
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      }
+    }
+  ],
+  "schedule": [
+    {
+      "name": "sequence-r01",
+      "repeat": 1,
+      "frame_step": [
+        250,
+        1250,
+        2750
+      ],
+      "seed": 20261020,
+      "request_sha256": "f5676eaa97a79b43cda03abe635a35aecf8cea121a12d5070f8fa5534f6762a8",
+      "request_bytes": 152928
+    },
+    {
+      "name": "sequence-r02",
+      "repeat": 2,
+      "frame_step": [
+        250,
+        1250,
+        2750
+      ],
+      "seed": 20261021,
+      "request_sha256": "c56cf4c00da8232329798cad9c07c7fa5de790ae6a160795e53aded951eefc1c",
+      "request_bytes": 152928
+    },
+    {
+      "name": "sequence-r03",
+      "repeat": 3,
+      "frame_step": [
+        250,
+        1250,
+        2750
+      ],
+      "seed": 20261022,
+      "request_sha256": "05cbac63fc1b5c0713acef138d8d5028d4eaf2efe6d0b1c35d30ffd510c1f562",
+      "request_bytes": 152928
+    }
+  ],
+  "new_solver_run": false,
+  "truth_withheld_from_model": true
+}

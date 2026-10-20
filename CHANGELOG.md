@@ -2,6 +2,20 @@
 
 날짜는 실행이나 변경이 있었던 날입니다. 기록된 실행에는 그 실행을 만든 코드 버전을 적었습니다.
 
+## 2026-10-20 (코드 `9449085`)
+
+- 비동기 요청(`LLM_ASYNC=1`): 요청 걸음은 워커를 포크하고 바로 복귀. 이후 걸음마다 막힘 없이
+  확인해 도착 걸음을 기록하고, 늦은 워커는 종료하며, 대기 요청 수를 제한. 마지막 걸음에서
+  남은 요청을 기다리거나 분리.
+- 요청 모드: `describe`(그림 한 장, 설명과 가장 빠른 곳·가장 낮은 압력의 위치를 그린 범위의 %로),
+  `sequence`(지정 걸음의 프레임을 모아 한 요청으로, 추세 단어).
+- `LLM_IMAGE_XRANGE` / `LLM_IMAGE_YRANGE`로 영역 일부만 그림.
+- `PythonAnalysis.H`가 `end_time_s`를 넘김.
+- `run_async_cases.py`, `verify_async.py`(`POD_SUITE=async`), `snapshot_runner.py`,
+  `test_async.py`(14개, 전체 70개).
+- 실행: 3000걸음의 비동기 다섯 조건(`pod-llm-async.pp7agC`), 창 프레임(`pod-llm-async.8YC6bG`),
+  describe·sequence 재생. 보고서: [docs/results-20261020.md](docs/results-20261020.md).
+
 ## 2026-10-19
 
 - `CITATION.cff` 제거: 아직 인용할 논문이 없음. 용어 통일(시간 단계, 그림), 다음 단계에서 12B를 첫 항목으로.

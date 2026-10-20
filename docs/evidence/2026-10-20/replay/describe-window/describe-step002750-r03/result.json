@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The velocity magnitude |U| is highest in the upper right quadrant (around x=0.10, y=0.05), indicating a fast flow. The kinematic pressure p is lowest in the lower left quadrant (around x=-0.02, y=5.78e-06), indicating low pressure.\",\n  \"fastest_flow_x_percent\": 80,\n  \"fastest_flow_y_percent\": 5,\n  \"lowest_pressure_x_percent\": 10,\n  \"lowest_pressure_y_percent\": 0,\n  \"uncertainties\": \"The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly stated, only the color bar ranges.\"\n}",
+  "request_sha256": "ec6db1168629f13d33dbff5769978819e6a0af7181f29de85e4e127414c9c856",
+  "request_bytes": 55797,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1221,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 178,
+    "prompt_tokens": 556,
+    "total_tokens": 734,
+    "prompt_tokens_details": {
+      "cached_tokens": 551
+    }
+  },
+  "server_timings": {
+    "cache_n": 551,
+    "prompt_n": 5,
+    "prompt_ms": 304.393,
+    "prompt_per_token_ms": 60.87859999999999,
+    "prompt_per_second": 16.426133321068487,
+    "predicted_n": 178,
+    "predicted_ms": 17285.695,
+    "predicted_per_token_ms": 97.65929378531074,
+    "predicted_per_second": 10.23968084592491
+  },
+  "structured_output": {
+    "flow_description": "The velocity magnitude |U| is highest in the upper right quadrant (around x=0.10, y=0.05), indicating a fast flow. The kinematic pressure p is lowest in the lower left quadrant (around x=-0.02, y=5.78e-06), indicating low pressure.",
+    "fastest_flow_x_percent": 80,
+    "fastest_flow_y_percent": 5,
+    "lowest_pressure_x_percent": 10,
+    "lowest_pressure_y_percent": 0,
+    "uncertainties": "The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly stated, only the color bar ranges."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 17.752488301950507,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

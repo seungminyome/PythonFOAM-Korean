@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "suite": "async",
+  "server_pid": 4177294,
+  "mmproj_loaded": true,
+  "settings": {
+    "steps": 3000,
+    "delta_t_s": 5e-07,
+    "write_every": 250,
+    "request_step": 250,
+    "sequence_steps": [
+      250,
+      750,
+      1250
+    ],
+    "image_x_window": null,
+    "image_y_window": null,
+    "deadline_s": "120"
+  },
+  "timings": {
+    "async-no-llm": 150.5738891379442,
+    "async-describe": 138.0429755069781,
+    "async-sequence": 136.539489320945,
+    "async-server-error": 142.97165469103493,
+    "async-timeout": 147.2245659220498
+  },
+  "cases": {
+    "async-no-llm": {
+      "request_step": 1250,
+      "arrived_at_step": 1261,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "disabled",
+      "callback_wall_s": {
+        "request_step": 0.00434367,
+        "arrival_step": 0.007999989,
+        "last_step": 0.099843287,
+        "max_other_steps": 0.00517446,
+        "median_all_steps": 8.0722e-05
+      },
+      "solver_stall_s": 0.003819792065769434,
+      "inference_wall_s": 0.0,
+      "structured_output": null
+    },
+    "async-describe": {
+      "request_step": 250,
+      "arrived_at_step": 1093,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "ok",
+      "callback_wall_s": {
+        "request_step": 0.006306862,
+        "arrival_step": 0.011706309,
+        "last_step": 0.09810524,
+        "max_other_steps": 0.00224225,
+        "median_all_steps": 8.6427e-05
+      },
+      "solver_stall_s": 0.005739226937294006,
+      "inference_wall_s": 34.04288571700454,
+      "structured_output": {
+        "flow_description": "The velocity magnitude |U| is relatively uniform across the domain, with a slight increase towards the right side. The kinematic pressure p is generally high in the lower-left and lower-right regions, and lowest near the center-right.",
+        "fastest_flow_x_percent": 90,
+        "fastest_flow_y_percent": 10,
+        "lowest_pressure_x_percent": 50,
+        "lowest_pressure_y_percent": 10,
+        "uncertainties": "The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the color bar ranges."
+      }
+    },
+    "async-sequence": {
+      "request_step": 1250,
+      "arrived_at_step": 2321,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "ok",
+      "callback_wall_s": {
+        "request_step": 0.004243447,
+        "arrival_step": 0.012844219,
+        "last_step": 0.10045551,
+        "max_other_steps": 0.004229136,
+        "median_all_steps": 8.8171e-05
+      },
+      "solver_stall_s": 0.003617794020101428,
+      "inference_wall_s": 43.40419723803643,
+      "structured_output": {
+        "change_description": "The velocity magnitude |U| shows a localized increase in the central region over time, and the kinematic pressure p also shows a corresponding change, with the pressure minimum becoming more negative.",
+        "max_speed_trend": "increasing",
+        "min_pressure_trend": "more_negative",
+        "fastest_flow_region": "same_place",
+        "uncertainties": "cannot_tell"
+      }
+    },
+    "async-server-error": {
+      "request_step": 250,
+      "arrived_at_step": 280,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "error",
+      "callback_wall_s": {
+        "request_step": 0.004513275,
+        "arrival_step": 0.012228434,
+        "last_step": 0.101845635,
+        "max_other_steps": 0.002931766,
+        "median_all_steps": 7.846e-05
+      },
+      "solver_stall_s": 0.0039496279787272215,
+      "inference_wall_s": 0.0015585270011797547,
+      "structured_output": null
+    },
+    "async-timeout": {
+      "request_step": 250,
+      "arrived_at_step": 353,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "timeout",
+      "callback_wall_s": {
+        "request_step": 0.004634941,
+        "arrival_step": 0.019162034,
+        "last_step": 0.114789152,
+        "max_other_steps": 0.00210878,
+        "median_all_steps": 7.979849999999999e-05
+      },
+      "solver_stall_s": 0.004077704041264951,
+      "inference_wall_s": null,
+      "structured_output": null
+    }
+  },
+  "source_HEAD": "9449085e775874c12b2c3c93f56e37fb60d63a63"
+}

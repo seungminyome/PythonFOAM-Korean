@@ -1,0 +1,280 @@
+{
+  "async-no-llm": {
+    "steps": 3000,
+    "request_step": 1250,
+    "arrived_at_step": 1261,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "disabled",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.00434367,
+      "arrival_step": 0.007999989,
+      "last_step": 0.099843287,
+      "max_other_steps": 0.00517446,
+      "median_all_steps": 8.0722e-05
+    },
+    "solver_stall_s": 0.003819792065769434,
+    "inference_wall_s": 0.0,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a",
+        "png_sha256": "ed10596a3e6fe9f3c35942dbec3484516c64d242b06a6fcd6be3fa7a7e67ba82",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 750,
+        "written_fields_checked": true,
+        "fields_sha256": "d4c143ec60d289dcccaf57869145927d26c6800cba03b376b4d588673e7e0208",
+        "png_sha256": "0981387dcf43fdc8a8b2a790385040c017511c44d05b5070d8feb7aee538603f",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 1250,
+        "written_fields_checked": true,
+        "fields_sha256": "7717b867a6825193a946ee25bff5836915a14de6bc75e376a28b7b31b22a5f65",
+        "png_sha256": "437b7650684fc27efe152e10dfd9e5fb4908d97d60b9e45b7f334a4a2f179de5",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      }
+    ],
+    "structured_output": null
+  },
+  "async-describe": {
+    "steps": 3000,
+    "request_step": 250,
+    "arrived_at_step": 1093,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "ok",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.006306862,
+      "arrival_step": 0.011706309,
+      "last_step": 0.09810524,
+      "max_other_steps": 0.00224225,
+      "median_all_steps": 8.6427e-05
+    },
+    "solver_stall_s": 0.005739226937294006,
+    "inference_wall_s": 34.04288571700454,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a",
+        "png_sha256": "ed10596a3e6fe9f3c35942dbec3484516c64d242b06a6fcd6be3fa7a7e67ba82",
+        "same_fields_as_baseline_frame": true
+      }
+    ],
+    "structured_output": {
+      "flow_description": "The velocity magnitude |U| is relatively uniform across the domain, with a slight increase towards the right side. The kinematic pressure p is generally high in the lower-left and lower-right regions, and lowest near the center-right.",
+      "fastest_flow_x_percent": 90,
+      "fastest_flow_y_percent": 10,
+      "lowest_pressure_x_percent": 50,
+      "lowest_pressure_y_percent": 10,
+      "uncertainties": "The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the color bar ranges."
+    }
+  },
+  "async-sequence": {
+    "steps": 3000,
+    "request_step": 1250,
+    "arrived_at_step": 2321,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "ok",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.004243447,
+      "arrival_step": 0.012844219,
+      "last_step": 0.10045551,
+      "max_other_steps": 0.004229136,
+      "median_all_steps": 8.8171e-05
+    },
+    "solver_stall_s": 0.003617794020101428,
+    "inference_wall_s": 43.40419723803643,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a",
+        "png_sha256": "ed10596a3e6fe9f3c35942dbec3484516c64d242b06a6fcd6be3fa7a7e67ba82",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 750,
+        "written_fields_checked": true,
+        "fields_sha256": "d4c143ec60d289dcccaf57869145927d26c6800cba03b376b4d588673e7e0208",
+        "png_sha256": "0981387dcf43fdc8a8b2a790385040c017511c44d05b5070d8feb7aee538603f",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 1250,
+        "written_fields_checked": true,
+        "fields_sha256": "7717b867a6825193a946ee25bff5836915a14de6bc75e376a28b7b31b22a5f65",
+        "png_sha256": "437b7650684fc27efe152e10dfd9e5fb4908d97d60b9e45b7f334a4a2f179de5",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      }
+    ],
+    "structured_output": {
+      "change_description": "The velocity magnitude |U| shows a localized increase in the central region over time, and the kinematic pressure p also shows a corresponding change, with the pressure minimum becoming more negative.",
+      "max_speed_trend": "increasing",
+      "min_pressure_trend": "more_negative",
+      "fastest_flow_region": "same_place",
+      "uncertainties": "cannot_tell"
+    }
+  },
+  "async-server-error": {
+    "steps": 3000,
+    "request_step": 250,
+    "arrived_at_step": 280,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "error",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.004513275,
+      "arrival_step": 0.012228434,
+      "last_step": 0.101845635,
+      "max_other_steps": 0.002931766,
+      "median_all_steps": 7.846e-05
+    },
+    "solver_stall_s": 0.0039496279787272215,
+    "inference_wall_s": 0.0015585270011797547,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a",
+        "png_sha256": "ed10596a3e6fe9f3c35942dbec3484516c64d242b06a6fcd6be3fa7a7e67ba82",
+        "same_fields_as_baseline_frame": true
+      }
+    ],
+    "structured_output": null
+  },
+  "async-timeout": {
+    "steps": 3000,
+    "request_step": 250,
+    "arrived_at_step": 353,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "timeout",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.004634941,
+      "arrival_step": 0.019162034,
+      "last_step": 0.114789152,
+      "max_other_steps": 0.00210878,
+      "median_all_steps": 7.979849999999999e-05
+    },
+    "solver_stall_s": 0.004077704041264951,
+    "inference_wall_s": null,
+    "frames": null,
+    "structured_output": null
+  },
+  "timings": {
+    "async-no-llm": 150.5738891379442,
+    "async-describe": 138.0429755069781,
+    "async-sequence": 136.539489320945,
+    "async-server-error": 142.97165469103493,
+    "async-timeout": 147.2245659220498
+  },
+  "resources": {
+    "async-no-llm": {
+      "wall_seconds": 150.5738891379442,
+      "exit_status": 0,
+      "solver_pid": 720786,
+      "llama_server_pid": 4177294,
+      "mode": "sequence",
+      "model_request_enabled": false,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 549244,
+      "cfd_python_peak_pss_sum_kib": 535396,
+      "llama_server_peak_rss_kib": 2523684,
+      "llama_server_peak_pss_kib": 2518640,
+      "concurrent_samples": 280
+    },
+    "async-describe": {
+      "wall_seconds": 138.0429755069781,
+      "exit_status": 0,
+      "solver_pid": 731887,
+      "llama_server_pid": 4177294,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 866472,
+      "cfd_python_peak_pss_sum_kib": 687262,
+      "llama_server_peak_rss_kib": 2536104,
+      "llama_server_peak_pss_kib": 2531006,
+      "concurrent_samples": 212
+    },
+    "async-sequence": {
+      "wall_seconds": 136.539489320945,
+      "exit_status": 0,
+      "solver_pid": 740833,
+      "llama_server_pid": 4177294,
+      "mode": "sequence",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 819164,
+      "cfd_python_peak_pss_sum_kib": 759843,
+      "llama_server_peak_rss_kib": 2549444,
+      "llama_server_peak_pss_kib": 2544347,
+      "concurrent_samples": 214
+    },
+    "async-server-error": {
+      "wall_seconds": 142.97165469103493,
+      "exit_status": 0,
+      "solver_pid": 749873,
+      "llama_server_pid": 4177294,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 746012,
+      "cfd_python_peak_pss_sum_kib": 633259,
+      "llama_server_peak_rss_kib": 2549444,
+      "llama_server_peak_pss_kib": 2544400,
+      "concurrent_samples": 264
+    },
+    "async-timeout": {
+      "wall_seconds": 147.2245659220498,
+      "exit_status": 0,
+      "solver_pid": 764027,
+      "llama_server_pid": 4177294,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 696308,
+      "cfd_python_peak_pss_sum_kib": 689883,
+      "llama_server_peak_rss_kib": 2549444,
+      "llama_server_peak_pss_kib": 2544435,
+      "concurrent_samples": 275
+    }
+  },
+  "settings": {
+    "steps": 3000,
+    "delta_t_s": 5e-07,
+    "write_every": 250,
+    "request_step": 250,
+    "sequence_steps": [
+      250,
+      750,
+      1250
+    ],
+    "image_x_window": null,
+    "image_y_window": null,
+    "deadline_s": "120"
+  },
+  "status": "PASS"
+}

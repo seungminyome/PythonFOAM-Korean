@@ -1,0 +1,80 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "ec6db1168629f13d33dbff5769978819e6a0af7181f29de85e4e127414c9c856",
+  "request_bytes": 55797,
+  "replay_wall_s": 17.756009044940583,
+  "client_inference_wall_s": 17.752488301950507,
+  "usage": {
+    "completion_tokens": 178,
+    "prompt_tokens": 556,
+    "total_tokens": 734,
+    "prompt_tokens_details": {
+      "cached_tokens": 551
+    }
+  },
+  "server_timings": {
+    "cache_n": 551,
+    "prompt_n": 5,
+    "prompt_ms": 304.393,
+    "prompt_per_token_ms": 60.87859999999999,
+    "prompt_per_second": 16.426133321068487,
+    "predicted_n": 178,
+    "predicted_ms": 17285.695,
+    "predicted_per_token_ms": 97.65929378531074,
+    "predicted_per_second": 10.23968084592491
+  },
+  "structured_output": {
+    "flow_description": "The velocity magnitude |U| is highest in the upper right quadrant (around x=0.10, y=0.05), indicating a fast flow. The kinematic pressure p is lowest in the lower left quadrant (around x=-0.02, y=5.78e-06), indicating low pressure.",
+    "fastest_flow_x_percent": 80,
+    "fastest_flow_y_percent": 5,
+    "lowest_pressure_x_percent": 10,
+    "lowest_pressure_y_percent": 0,
+    "uncertainties": "The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly stated, only the color bar ranges."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        80,
+        5
+      ],
+      "true_percent": [
+        29.978006923428993,
+        11.205033455293458
+      ],
+      "error_percent": [
+        50.02199307657101,
+        -6.205033455293458
+      ],
+      "distance_percent": 50.40537899405012,
+      "error_m": [
+        0.10004398615314201,
+        -0.007091698847735904
+      ],
+      "distance_m": 0.10029502160105978,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        10,
+        0
+      ],
+      "true_percent": [
+        30.49861934171832,
+        6.147922213962728
+      ],
+      "error_percent": [
+        -20.49861934171832,
+        -6.147922213962728
+      ],
+      "distance_percent": 21.400708924369884,
+      "error_m": [
+        -0.040997238683436646,
+        -0.0070264267219277195
+      ],
+      "distance_m": 0.0415950027304398,
+      "within_10_percent": false
+    }
+  }
+}

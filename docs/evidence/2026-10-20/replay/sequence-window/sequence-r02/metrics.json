@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "c56cf4c00da8232329798cad9c07c7fa5de790ae6a160795e53aded951eefc1c",
+  "request_bytes": 152928,
+  "replay_wall_s": 10.835782196023501,
+  "client_inference_wall_s": 10.831932761939242,
+  "usage": {
+    "completion_tokens": 104,
+    "prompt_tokens": 880,
+    "total_tokens": 984,
+    "prompt_tokens_details": {
+      "cached_tokens": 879
+    }
+  },
+  "server_timings": {
+    "cache_n": 879,
+    "prompt_n": 1,
+    "prompt_ms": 105.842,
+    "prompt_per_token_ms": 105.842,
+    "prompt_per_second": 9.448045199448234,
+    "predicted_n": 104,
+    "predicted_ms": 10551.783,
+    "predicted_per_token_ms": 102.44449514563107,
+    "predicted_per_second": 9.761383455289025
+  },
+  "structured_output": {
+    "change_description": "The velocity magnitude $|U|$ shows an increase in the peak value and spread over time. The kinematic pressure $p$ also shows an increase in the peak value and spread over time.",
+    "max_speed_trend": "increasing",
+    "min_pressure_trend": "less_negative",
+    "fastest_flow_region": "same_place",
+    "uncertainties": "None"
+  },
+  "scores": {
+    "max_speed_trend": {
+      "answer": "increasing",
+      "truth": "decreasing",
+      "match": false,
+      "cannot_tell": false
+    },
+    "min_pressure_trend": {
+      "answer": "less_negative",
+      "truth": "less_negative",
+      "match": true,
+      "cannot_tell": false
+    },
+    "fastest_flow_region": {
+      "answer": "same_place",
+      "truth": "same_place",
+      "match": true,
+      "cannot_tell": false
+    },
+    "matches": 2
+  }
+}

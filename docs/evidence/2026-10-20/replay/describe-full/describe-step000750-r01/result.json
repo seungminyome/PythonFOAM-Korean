@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The velocity magnitude is generally low across the domain, with a region of slightly higher velocity towards the right side. The kinematic pressure is relatively uniform, with a slight dip in the lower-left quadrant.\",\n  \"fastest_flow_x_percent\": 85,\n  \"fastest_flow_y_percent\": 5,\n  \"lowest_pressure_x_percent\": 10,\n  \"lowest_pressure_y_percent\": 10,\n  \"uncertainties\": \"The exact values of the minimum and maximum for velocity and pressure are not explicitly given, only the color bar ranges.\"\n}",
+  "request_sha256": "1a7fdb95b12d927fc7f81f295dce71a3271f8eaf9222200bec9b9cfb09702539",
+  "request_bytes": 43389,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1197,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 148,
+    "prompt_tokens": 584,
+    "total_tokens": 732,
+    "prompt_tokens_details": {
+      "cached_tokens": 266
+    }
+  },
+  "server_timings": {
+    "cache_n": 266,
+    "prompt_n": 318,
+    "prompt_ms": 14740.02,
+    "prompt_per_token_ms": 46.3522641509434,
+    "prompt_per_second": 21.573919167002487,
+    "predicted_n": 148,
+    "predicted_ms": 14395.892,
+    "predicted_per_token_ms": 97.9312380952381,
+    "predicted_per_second": 10.211246375007537
+  },
+  "structured_output": {
+    "flow_description": "The velocity magnitude is generally low across the domain, with a region of slightly higher velocity towards the right side. The kinematic pressure is relatively uniform, with a slight dip in the lower-left quadrant.",
+    "fastest_flow_x_percent": 85,
+    "fastest_flow_y_percent": 5,
+    "lowest_pressure_x_percent": 10,
+    "lowest_pressure_y_percent": 10,
+    "uncertainties": "The exact values of the minimum and maximum for velocity and pressure are not explicitly given, only the color bar ranges."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 29.316342238918878,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

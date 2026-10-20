@@ -1,0 +1,43 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"change_description\": \"The velocity magnitude $|U|$ shows an increase in the peak value and spread over time. The kinematic pressure $p$ also shows an increase in the peak value and spread over time.\",\n  \"max_speed_trend\": \"increasing\",\n  \"min_pressure_trend\": \"less_negative\",\n  \"fastest_flow_region\": \"same_place\",\n  \"uncertainties\": \"None\"\n}",
+  "request_sha256": "c56cf4c00da8232329798cad9c07c7fa5de790ae6a160795e53aded951eefc1c",
+  "request_bytes": 152928,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1014,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 104,
+    "prompt_tokens": 880,
+    "total_tokens": 984,
+    "prompt_tokens_details": {
+      "cached_tokens": 879
+    }
+  },
+  "server_timings": {
+    "cache_n": 879,
+    "prompt_n": 1,
+    "prompt_ms": 105.842,
+    "prompt_per_token_ms": 105.842,
+    "prompt_per_second": 9.448045199448234,
+    "predicted_n": 104,
+    "predicted_ms": 10551.783,
+    "predicted_per_token_ms": 102.44449514563107,
+    "predicted_per_second": 9.761383455289025
+  },
+  "structured_output": {
+    "change_description": "The velocity magnitude $|U|$ shows an increase in the peak value and spread over time. The kinematic pressure $p$ also shows an increase in the peak value and spread over time.",
+    "max_speed_trend": "increasing",
+    "min_pressure_trend": "less_negative",
+    "fastest_flow_region": "same_place",
+    "uncertainties": "None"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 10.831932761939242,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

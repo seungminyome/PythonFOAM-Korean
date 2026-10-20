@@ -1,0 +1,80 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "5a7617dfa6fb2d91d75a70f7389a0e6bf3575854e8d2e905e099943c7ecb37f6",
+  "request_bytes": 52561,
+  "replay_wall_s": 17.18082927109208,
+  "client_inference_wall_s": 17.178440763964318,
+  "usage": {
+    "completion_tokens": 170,
+    "prompt_tokens": 556,
+    "total_tokens": 726,
+    "prompt_tokens_details": {
+      "cached_tokens": 551
+    }
+  },
+  "server_timings": {
+    "cache_n": 551,
+    "prompt_n": 5,
+    "prompt_ms": 349.773,
+    "prompt_per_token_ms": 69.9546,
+    "prompt_per_second": 14.294985604949495,
+    "predicted_n": 170,
+    "predicted_ms": 16670.049,
+    "predicted_per_token_ms": 98.63934319526626,
+    "predicted_per_second": 10.137942605927554
+  },
+  "structured_output": {
+    "flow_description": "The velocity magnitude is highest in the center-right region (around x=0.05 to 0.15, y=0.05 to 0.10). The kinematic pressure is lowest (darkest color) in the center-right, corresponding to the high velocity area.",
+    "fastest_flow_x_percent": 75,
+    "fastest_flow_y_percent": 50,
+    "lowest_pressure_x_percent": 75,
+    "lowest_pressure_y_percent": 50,
+    "uncertainties": "The exact physical meaning of the cell colors is not specified, only that they represent values on a color bar."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        75,
+        50
+      ],
+      "true_percent": [
+        27.360384784249238,
+        11.224429890878186
+      ],
+      "error_percent": [
+        47.639615215750766,
+        38.775570109121816
+      ],
+      "distance_percent": 61.42538380174936,
+      "error_m": [
+        0.09527923043150154,
+        0.04431638730788389
+      ],
+      "distance_m": 0.10508127300162261,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        75,
+        50
+      ],
+      "true_percent": [
+        27.880246141637887,
+        8.028162961998405
+      ],
+      "error_percent": [
+        47.11975385836212,
+        41.971837038001595
+      ],
+      "distance_percent": 63.102347880385516,
+      "error_m": [
+        0.09423950771672424,
+        0.04796938332473149
+      ],
+      "distance_m": 0.10574566918434794,
+      "within_10_percent": false
+    }
+  }
+}

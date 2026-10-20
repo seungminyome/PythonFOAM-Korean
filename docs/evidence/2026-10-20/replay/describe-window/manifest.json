@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "mode": "describe",
+  "execute": true,
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "endpoint": "http://127.0.0.1:8088/v1/chat/completions",
+  "server_note": "llama.cpp b11429, Gemma 4 E2B Q4_0 + mmproj Q8_0, 4 threads, ctx 2048, resident server",
+  "max_tokens": 320,
+  "frames": [
+    {
+      "directory": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-000250",
+      "step": 250,
+      "time_s": 0.00012499999999999979,
+      "sha256": "1137100a96d6eb9146d30c11a01541bc61c01ee81442f7fe9f3fab119ba7450e",
+      "fields_sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a",
+      "plotted_range_m": {
+        "x": [
+          -0.05,
+          0.15
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      }
+    },
+    {
+      "directory": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/async-no-llm/llm_observation/step-001250",
+      "step": 1250,
+      "time_s": 0.0006249999999999971,
+      "sha256": "439fef25c6956d6094589ffa6348d483c7afe7fec72aedb2d91419e6fe6c33c0",
+      "fields_sha256": "7717b867a6825193a946ee25bff5836915a14de6bc75e376a28b7b31b22a5f65",
+      "plotted_range_m": {
+        "x": [
+          -0.05,
+          0.15
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      }
+    },
+    {
+      "directory": "/home/syome/pythonfoam-llm/pod-llm-async.8YC6bG/async-no-llm/llm_observation",
+      "step": 2750,
+      "time_s": 0.0013750000000000203,
+      "sha256": "a6047004d6ff98f11d87fa533334b11577034b8ef876ae7bd127ca89fd3926ad",
+      "fields_sha256": "83813327c46c85fac460920d7477e21cca6b5c47dd17a3139137f3c9bdff04b2",
+      "plotted_range_m": {
+        "x": [
+          -0.05,
+          0.15
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      }
+    }
+  ],
+  "schedule": [
+    {
+      "name": "describe-step000250-r01",
+      "repeat": 1,
+      "frame_step": 250,
+      "seed": 20261020,
+      "request_sha256": "42a4d749d71a1df2b22cfd2af89db6e42b4f0b6f821b252d52575791bb93e81c",
+      "request_bytes": 49441
+    },
+    {
+      "name": "describe-step001250-r01",
+      "repeat": 1,
+      "frame_step": 1250,
+      "seed": 20261020,
+      "request_sha256": "ef670b1c0cfea48a260937c239418d9c209fce7cb573939d2b23c4e9fafb622e",
+      "request_bytes": 52561
+    },
+    {
+      "name": "describe-step002750-r01",
+      "repeat": 1,
+      "frame_step": 2750,
+      "seed": 20261020,
+      "request_sha256": "05269b9d218b23e642d9e5f8259e71a2fc0b4960c3d6fad3c80c5b8d0bbe8413",
+      "request_bytes": 55797
+    },
+    {
+      "name": "describe-step000250-r02",
+      "repeat": 2,
+      "frame_step": 250,
+      "seed": 20261021,
+      "request_sha256": "4bef151332798d10ce7f87f60efb9245e4dda262b5bdb70b7336b501f3690827",
+      "request_bytes": 49441
+    },
+    {
+      "name": "describe-step001250-r02",
+      "repeat": 2,
+      "frame_step": 1250,
+      "seed": 20261021,
+      "request_sha256": "5a7617dfa6fb2d91d75a70f7389a0e6bf3575854e8d2e905e099943c7ecb37f6",
+      "request_bytes": 52561
+    },
+    {
+      "name": "describe-step002750-r02",
+      "repeat": 2,
+      "frame_step": 2750,
+      "seed": 20261021,
+      "request_sha256": "2df56618cfccd19958131a36891129f64c6cbaa1be1838e5d40da0be2a9f3911",
+      "request_bytes": 55797
+    },
+    {
+      "name": "describe-step000250-r03",
+      "repeat": 3,
+      "frame_step": 250,
+      "seed": 20261022,
+      "request_sha256": "56e60948b696f9e33bc9b7d131db948afe35e053dc76f3709becdfa98585e98b",
+      "request_bytes": 49441
+    },
+    {
+      "name": "describe-step001250-r03",
+      "repeat": 3,
+      "frame_step": 1250,
+      "seed": 20261022,
+      "request_sha256": "1bb3e181c7d83840dfe1d365085f41b8fae63cf4e08112efb99b021aa163deef",
+      "request_bytes": 52561
+    },
+    {
+      "name": "describe-step002750-r03",
+      "repeat": 3,
+      "frame_step": 2750,
+      "seed": 20261022,
+      "request_sha256": "ec6db1168629f13d33dbff5769978819e6a0af7181f29de85e4e127414c9c856",
+      "request_bytes": 55797
+    }
+  ],
+  "new_solver_run": false,
+  "truth_withheld_from_model": true
+}

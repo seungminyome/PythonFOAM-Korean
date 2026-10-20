@@ -1,0 +1,81 @@
+{
+  "mode": "describe",
+  "attempted": 9,
+  "successful": 9,
+  "latency_s_all": [
+    26.214773669023998,
+    31.445022503030486,
+    31.08531866897829,
+    26.262225922895595,
+    17.18082927109208,
+    18.18900591507554,
+    13.81426652695518,
+    17.037634941982105,
+    17.756009044940583
+  ],
+  "prompt_tokens": [
+    556,
+    556,
+    556,
+    556,
+    556,
+    556,
+    556,
+    556,
+    556
+  ],
+  "cached_tokens": [
+    266,
+    266,
+    266,
+    266,
+    551,
+    551,
+    551,
+    551,
+    551
+  ],
+  "by_frame": {
+    "250": {
+      "fastest_flow_distance_percent": [
+        80.28417948057928,
+        80.28417948057928,
+        80.28417948057928
+      ],
+      "lowest_pressure_distance_percent": [
+        15.308648462609142,
+        15.308648462609142,
+        15.308648462609142
+      ],
+      "fastest_flow_within_10_percent": 0
+    },
+    "1250": {
+      "fastest_flow_distance_percent": [
+        61.42538380174936,
+        61.42538380174936,
+        61.42538380174936
+      ],
+      "lowest_pressure_distance_percent": [
+        63.102347880385516,
+        63.102347880385516,
+        63.102347880385516
+      ],
+      "fastest_flow_within_10_percent": 0
+    },
+    "2750": {
+      "fastest_flow_distance_percent": [
+        63.302837381569375,
+        50.40537899405012,
+        50.40537899405012
+      ],
+      "lowest_pressure_distance_percent": [
+        19.878187816017952,
+        21.400708924369884,
+        21.400708924369884
+      ],
+      "fastest_flow_within_10_percent": 0
+    }
+  },
+  "fastest_flow_within_10_percent": 0,
+  "interpretation": "Repeats of one request are not independent cases. Prompt-cache reuse differs between requests, so latencies are not comparable unless cache_n is the same. Position scores use the plotted range of the image; trend words use the saved extrema with the stated tolerances."
+}

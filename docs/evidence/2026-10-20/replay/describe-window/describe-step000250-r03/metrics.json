@@ -1,0 +1,80 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "56e60948b696f9e33bc9b7d131db948afe35e053dc76f3709becdfa98585e98b",
+  "request_bytes": 49441,
+  "replay_wall_s": 13.81426652695518,
+  "client_inference_wall_s": 13.811197602073662,
+  "usage": {
+    "completion_tokens": 136,
+    "prompt_tokens": 556,
+    "total_tokens": 692,
+    "prompt_tokens_details": {
+      "cached_tokens": 551
+    }
+  },
+  "server_timings": {
+    "cache_n": 551,
+    "prompt_n": 5,
+    "prompt_ms": 313.507,
+    "prompt_per_token_ms": 62.7014,
+    "prompt_per_second": 15.948607208132513,
+    "predicted_n": 136,
+    "predicted_ms": 13417.645,
+    "predicted_per_token_ms": 99.38996296296297,
+    "predicted_per_second": 10.061378133047938
+  },
+  "structured_output": {
+    "flow_description": "The velocity magnitude is highest in the upper-left quadrant, and the kinematic pressure is lowest in the lower-left quadrant.",
+    "fastest_flow_x_percent": 10,
+    "fastest_flow_y_percent": 90,
+    "lowest_pressure_x_percent": 10,
+    "lowest_pressure_y_percent": 10,
+    "uncertainties": "The exact values of the minimum and maximum for the color bars are not explicitly given, only the ranges for the plotted axes."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        10,
+        90
+      ],
+      "true_percent": [
+        25.26741713578805,
+        11.180868763531066
+      ],
+      "error_percent": [
+        -15.267417135788051,
+        78.81913123646893
+      ],
+      "distance_percent": 80.28417948057928,
+      "error_m": [
+        -0.030534834271576102,
+        0.09008195462546083
+      ],
+      "distance_m": 0.09511642683120619,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        10,
+        10
+      ],
+      "true_percent": [
+        25.269523861556344,
+        11.093781876384275
+      ],
+      "error_percent": [
+        -15.269523861556344,
+        -1.0937818763842753
+      ],
+      "distance_percent": 15.308648462609142,
+      "error_m": [
+        -0.03053904772311269,
+        -0.0012500773329129351
+      ],
+      "distance_m": 0.030564622182726504,
+      "within_10_percent": false
+    }
+  }
+}

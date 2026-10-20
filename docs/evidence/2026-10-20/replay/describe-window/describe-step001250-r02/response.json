@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The velocity magnitude is highest in the center-right region (around x=0.05 to 0.15, y=0.05 to 0.10). The kinematic pressure is lowest (darkest color) in the center-right, corresponding to the high velocity area.\",\n  \"fastest_flow_x_percent\": 75,\n  \"fastest_flow_y_percent\": 50,\n  \"lowest_pressure_x_percent\": 75,\n  \"lowest_pressure_y_percent\": 50,\n  \"uncertainties\": \"The exact physical meaning of the cell colors is not specified, only that they represent values on a color bar.\"\n}"
+      }
+    }
+  ],
+  "created": 1792524815,
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "system_fingerprint": "b11429-d81235049",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 170,
+    "prompt_tokens": 556,
+    "total_tokens": 726,
+    "prompt_tokens_details": {
+      "cached_tokens": 551
+    }
+  },
+  "id": "chatcmpl-ukWD8ytZvKC2F6mBUcoRBzYQgSmCiMA1",
+  "timings": {
+    "cache_n": 551,
+    "prompt_n": 5,
+    "prompt_ms": 349.773,
+    "prompt_per_token_ms": 69.9546,
+    "prompt_per_second": 14.294985604949495,
+    "predicted_n": 170,
+    "predicted_ms": 16670.049,
+    "predicted_per_token_ms": 98.63934319526626,
+    "predicted_per_second": 10.137942605927554
+  }
+}

@@ -4,8 +4,9 @@
 
 | 폴더 | 실행 | 코드 | 보고서 |
 |---|---|---|---|
+| [2026-10-20/](2026-10-20/README.md) | `pod-llm-async.pp7agC`: 3000걸음의 비동기 다섯 조건; `pod-llm-async.8YC6bG`: 창 프레임; describe·sequence 재생 | `9449085` | [results-20261020.md](../results-20261020.md) |
 | [2026-10-19/](2026-10-19/README.md) | `pod-llm-demo.o5sNLJ`: 10월 17일 실행과 재생의 반복, 답과 해시 동일 | `23089bb` (코드), `4187659` (문서) | [results.md](../results.md#2026-10-19-반복) |
 | [2026-10-17/](2026-10-17/README.md) | `pod-llm-demo.LRfJBN`: 다섯 솔버 조건과 그림 유무 쌍별 비교 | `23089bb` | [results.md](../results.md) |
 | [2026-10-13/](2026-10-13/README.md) | `pod-llm-demo.SwwR2e`: 이미지 경로를 넣은 첫 다섯 조건 실행 | `9ae54d0` | [results-20261013.md](../results-20261013.md) |
 
-모든 시각 폴더를 포함한 전체 솔버 결과는 저장소가 아니라 릴리스에 있습니다: [2026-10-17](https://github.com/seungminyome/PythonFOAM-Korean/releases/tag/korean-docs-2026-10-18), [2026-10-13](https://github.com/seungminyome/PythonFOAM/releases/tag/pod-insitu-demo-2026-10-13).
+모든 시각 폴더를 포함한 전체 솔버 결과는 저장소가 아니라 릴리스에 있습니다: [2026-10-20](https://github.com/seungminyome/PythonFOAM/releases/tag/pod-insitu-async-2026-10-20)(영문 저장소), [2026-10-17](https://github.com/seungminyome/PythonFOAM-Korean/releases/tag/korean-docs-2026-10-18), [2026-10-13](https://github.com/seungminyome/PythonFOAM/releases/tag/pod-insitu-demo-2026-10-13).

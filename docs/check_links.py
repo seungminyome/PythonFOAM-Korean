@@ -7,7 +7,7 @@ import re
 import sys
 from pathlib import Path
 
-SKIP_DIRS = {'.git', 'pod-llm-demo.LRfJBN', 'progress-evidence', 'linux64Gcc', '__pycache__'}
+SKIP_DIRS = {'.git', 'pod-llm-demo.LRfJBN', 'progress-evidence', 'linux64Gcc', '__pycache__', 'llm-runtime-12b'}
 
 
 def main(argv):

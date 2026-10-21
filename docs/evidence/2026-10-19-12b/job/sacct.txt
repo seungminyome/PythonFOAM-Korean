@@ -1,0 +1,7 @@
+# sacct -X -P for the 12B jobs of 2026-10-19, captured 2026-10-21T04:24:43Z on the MedicineBow login node; times are MDT (UTC-6)
+JobID|JobName|Account|Partition|NodeList|State|ExitCode|Submit|Start|End|Elapsed|AllocTRES
+24695930|drvcheck|me5475|mb-a30|mba30-007|COMPLETED|0:0|2026-10-19T02:51:46|2026-10-19T02:51:59|2026-10-19T02:52:00|00:00:01|billing=1,cpu=1,gres/gpu:a30=1,gres/gpu=1,mem=2G,node=1
+24695931|llama-build|me5475|mb|mbcpu-001|FAILED|127:0|2026-10-19T02:52:33|2026-10-19T02:52:34|2026-10-19T02:52:35|00:00:01|billing=16,cpu=16,mem=32G,node=1
+24695932|llama-build|me5475|mb|mbcpu-001|FAILED|2:0|2026-10-19T02:53:00|2026-10-19T02:53:01|2026-10-19T02:59:37|00:06:36|billing=16,cpu=16,mem=32G,node=1
+24696057|llama-build|me5475|mb-a30|mba30-007|COMPLETED|0:0|2026-10-19T03:00:29|2026-10-19T03:00:59|2026-10-19T03:07:21|00:06:22|billing=16,cpu=16,gres/gpu:a30=1,gres/gpu=1,mem=32G,node=1
+24696203|pod-12b-replay|me5475|mb-a30|mba30-007|COMPLETED|0:0|2026-10-19T03:07:49|2026-10-19T03:07:59|2026-10-19T03:08:34|00:00:35|billing=4,cpu=4,gres/gpu:a30=1,gres/gpu=1,mem=24G,node=1

@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum speed |U| is 82.5275 m/s. Position is unknown as the image does not provide specific coordinates for the maximum value.\",\n  \"possible_interpretation\": \"The high leading energy fraction in Ux suggests a dominant flow direction along the x-axis.\",\n  \"checks\": \"Missing coordinate mapping for max speed; residuals are not force balance; low Courant does not imply low speed.\"\n}",
+  "request_sha256": "0cccac9fec37c21122487824665aaaf31977b5c97880906c99b8d8632c7b7dfb",
+  "request_bytes": 4870,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1069,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 1466,
+    "total_tokens": 1569,
+    "prompt_tokens_details": {
+      "cached_tokens": 1457
+    }
+  },
+  "server_timings": {
+    "cache_n": 1457,
+    "prompt_n": 9,
+    "prompt_ms": 714.734,
+    "prompt_per_token_ms": 79.4148888888889,
+    "prompt_per_second": 12.592097199797406,
+    "predicted_n": 103,
+    "predicted_ms": 1634.103,
+    "predicted_per_token_ms": 16.020617647058824,
+    "predicted_per_second": 62.4195659637122
+  },
+  "structured_output": {
+    "observations": "Maximum speed |U| is 82.5275 m/s. Position is unknown as the image does not provide specific coordinates for the maximum value.",
+    "possible_interpretation": "The high leading energy fraction in Ux suggests a dominant flow direction along the x-axis.",
+    "checks": "Missing coordinate mapping for max speed; residuals are not force balance; low Courant does not imply low speed."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.4126322884112597,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

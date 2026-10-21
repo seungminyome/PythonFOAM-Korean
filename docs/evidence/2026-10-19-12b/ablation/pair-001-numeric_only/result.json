@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed |U| is 82.5275 m/s. Position is unknown as JSON lacks specific coordinate mapping for max values.\",\n  \"possible_interpretation\": \"High velocity likely occurs in a primary flow region; SVD shows dominant Ux and Uy patterns.\",\n  \"checks\": \"Missing coordinate mapping for max speed; residuals are not force balance; low Courant does not imply low speed.\"\n}",
+  "request_sha256": "1cba006cf4eca5edcce7ef9d419b62a63bce9fb3641786b9dbd8f2276d344700",
+  "request_bytes": 4870,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1041,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 101,
+    "prompt_tokens": 1466,
+    "total_tokens": 1567,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1466,
+    "prompt_ms": 1582.937,
+    "prompt_per_token_ms": 1.0797660300136425,
+    "prompt_per_second": 926.1265609433605,
+    "predicted_n": 101,
+    "predicted_ms": 1605.354,
+    "predicted_per_token_ms": 16.05354,
+    "predicted_per_second": 62.291556877797674
+  },
+  "structured_output": {
+    "observations": "Max speed |U| is 82.5275 m/s. Position is unknown as JSON lacks specific coordinate mapping for max values.",
+    "possible_interpretation": "High velocity likely occurs in a primary flow region; SVD shows dominant Ux and Uy patterns.",
+    "checks": "Missing coordinate mapping for max speed; residuals are not force balance; low Courant does not imply low speed."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.2526265159249306,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

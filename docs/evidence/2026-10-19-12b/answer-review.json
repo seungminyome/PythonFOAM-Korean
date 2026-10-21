@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "review_kind": "manual_review_separate_from_frozen_automated_metrics",
+  "reviewed_records": "ablation/ (results/replay-12b-24696203 of Slurm job 24696203)",
+  "reviewed_on": "2026-10-20",
+  "model_calls_by_reviewer": 0,
+  "no_source_or_run_result_files_modified": true,
+  "source_manifest_sha256": "a2b7f63e8643864a7358d6bd17600afddd44f5e7079f61b8fad59877928b01ce",
+  "reference_from_ground_truth": {
+    "max_speed_m_per_s": 82.52751611538334,
+    "max_speed_cells": [
+      12090
+    ],
+    "max_speed_centres_m": [
+      [
+        0.0005381680929193357,
+        0.01271448422486468,
+        0.006349999999999999
+      ]
+    ],
+    "unique_maximum": true,
+    "minimum_pressure_m2_per_s2": -9362.826066967049,
+    "step": 5,
+    "time_s": 5e-07
+  },
+  "request_checks": {
+    "bodies_equal_to_2026_10_17_except": "model",
+    "model": "gemma-4-12b-it-qat-q4_0-vision (2026-10-17: gemma-4-E2B-it-Q4_0-vision)",
+    "png_sha256": "05a876ff878efd6ba4249dc7c82572f9e472a7524dbb9eb37cb1d539c7e16c70",
+    "seeds": [
+      20261017,
+      20261018,
+      20261019
+    ],
+    "order": "A1 B1 B2 A2 A3 B3 (A = numbers only, B = numbers + image)"
+  },
+  "findings": [
+    "All six observations say the position of the maximum speed is unknown and give no coordinates, so no position error can be computed; the automatic scorer marks all six unscorable.",
+    "B1, B2 and B3 say in possible_interpretation that high velocity is concentrated near x=0.00 m. The reference x is 0.000538 m, which rounds to 0.00 m, but no y is given, the same answers say exact coordinates are not provided, and the scorer reads observations only. This does not show that the image was read.",
+    "A2 and A3 (numbers only) say the image does not provide coordinates, although no image was sent. The system prompt mentions an optional PNG in both conditions.",
+    "A2 and A3 read the leading energy fraction of Ux as a dominant flow direction along x. The fraction is 0.99997 for Ux and 0.999913 for Uy; the system prompt describes it as a dominant numeric pattern, and it says nothing about direction.",
+    "Every answer has 52 to 54 words; the prompt asks for under 45 English words in total. The output validator checks the three fields and the 160-character limit only. The 2026-10-17 E2B answers had 28 to 34 words.",
+    "B1, B2 and B3 are the same text, and so are A2 and A3; A1, the first request on an empty prompt cache, differs.",
+    "No answer contradicts the numeric evidence: the quoted maximum speed (82.5275 or 82.53 m/s) is the input value."
+  ],
+  "answers": [
+    {
+      "name": "A1",
+      "record": "ablation/pair-001-numeric_only/result.json",
+      "condition": "numeric_only",
+      "location_status": "unscorable",
+      "location_reason": "location_uncertain_or_unavailable",
+      "words_total": 52,
+      "longest_field_chars": 112,
+      "observations": "Max speed |U| is 82.5275 m/s. Position is unknown as JSON lacks specific coordinate mapping for max values.",
+      "possible_interpretation": "High velocity likely occurs in a primary flow region; SVD shows dominant Ux and Uy patterns.",
+      "checks": "Missing coordinate mapping for max speed; residuals are not force balance; low Courant does not imply low speed."
+    },
+    {
+      "name": "A2",
+      "record": "ablation/pair-002-numeric_only/result.json",
+      "condition": "numeric_only",
+      "location_status": "unscorable",
+      "location_reason": "location_uncertain_or_unavailable",
+      "words_total": 54,
+      "longest_field_chars": 127,
+      "observations": "Maximum speed |U| is 82.5275 m/s. Position is unknown as the image does not provide specific coordinates for the maximum value.",
+      "possible_interpretation": "The high leading energy fraction in Ux suggests a dominant flow direction along the x-axis.",
+      "checks": "Missing coordinate mapping for max speed; residuals are not force balance; low Courant does not imply low speed."
+    },
+    {
+      "name": "A3",
+      "record": "ablation/pair-003-numeric_only/result.json",
+      "condition": "numeric_only",
+      "location_status": "unscorable",
+      "location_reason": "location_uncertain_or_unavailable",
+      "words_total": 54,
+      "longest_field_chars": 127,
+      "observations": "Maximum speed |U| is 82.5275 m/s. Position is unknown as the image does not provide specific coordinates for the maximum value.",
+      "possible_interpretation": "The high leading energy fraction in Ux suggests a dominant flow direction along the x-axis.",
+      "checks": "Missing coordinate mapping for max speed; residuals are not force balance; low Courant does not imply low speed."
+    },
+    {
+      "name": "B1",
+      "record": "ablation/pair-001-numeric_plus_image/result.json",
+      "condition": "numeric_plus_image",
+      "location_status": "unscorable",
+      "location_reason": "location_uncertain_or_unavailable",
+      "words_total": 52,
+      "longest_field_chars": 107,
+      "observations": "Max speed |U| is 82.53 m/s. Position is unknown as the image lacks specific coordinate labels for the peak.",
+      "possible_interpretation": "High velocity is concentrated near x=0.00 m, likely a jet or wake, but exact coordinates are not provided.",
+      "checks": "Missing coordinate labels for peak; SVD shows dominant Ux pattern; residuals are not force balance."
+    },
+    {
+      "name": "B2",
+      "record": "ablation/pair-002-numeric_plus_image/result.json",
+      "condition": "numeric_plus_image",
+      "location_status": "unscorable",
+      "location_reason": "location_uncertain_or_unavailable",
+      "words_total": 52,
+      "longest_field_chars": 107,
+      "observations": "Max speed |U| is 82.53 m/s. Position is unknown as the image lacks specific coordinate labels for the peak.",
+      "possible_interpretation": "High velocity is concentrated near x=0.00 m, likely a jet or wake, but exact coordinates are not provided.",
+      "checks": "Missing coordinate labels for peak; SVD shows dominant Ux pattern; residuals are not force balance."
+    },
+    {
+      "name": "B3",
+      "record": "ablation/pair-003-numeric_plus_image/result.json",
+      "condition": "numeric_plus_image",
+      "location_status": "unscorable",
+      "location_reason": "location_uncertain_or_unavailable",
+      "words_total": 52,
+      "longest_field_chars": 107,
+      "observations": "Max speed |U| is 82.53 m/s. Position is unknown as the image lacks specific coordinate labels for the peak.",
+      "possible_interpretation": "High velocity is concentrated near x=0.00 m, likely a jet or wake, but exact coordinates are not provided.",
+      "checks": "Missing coordinate labels for peak; SVD shows dominant Ux pattern; residuals are not force balance."
+    }
+  ]
+}

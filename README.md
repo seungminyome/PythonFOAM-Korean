@@ -13,6 +13,8 @@ PODFoam 계산 도중 한 단계의 수치와 속도·압력 그림, 또는 계�
 수 있습니다. 솔버는 계속 걸음을 가고 답은 도착했을 때 기록됩니다. 여기까지는 됩니다.
 모델이 한 말은 계산으로 들어가지 않습니다. 답의 내용은 아직 쓸 수 없습니다. 가장 빠른
 곳이 어디인지, 스냅샷 사이에 흐름이 어떻게 변하는지 물으면 시험한 거의 모든 경우에 틀립니다.
+GPU 노드의 Gemma 4 12B는 10월 17일의 쌍별 요청 여섯 개에 2~3초 만에 답했지만 위치는 전혀
+대지 않았습니다([자세히](docs/results.md#gpu에서-gemma-4-12b로-같은-재생-2026-10-19)).
 
 <img src="docs/evidence/2026-10-17/pod-llm-demo.LRfJBN/fixed-pod/llm_observation/state.png" width="640" alt="5단계의 |U|와 p, 모델에 보낸 그림">
 
@@ -77,6 +79,8 @@ sequenceDiagram
   같은지는 동기 그림 조건과 비동기 sequence 조건에서 확인합니다.
 - 10월 17일 측정은 코드 `23089bb`, 10월 20일 측정은 모드·비동기 경로·그림 창을 더한
   `9449085`를 썼습니다. `9449085`는 영문 저장소의 커밋이고, 이 저장소에서 같은 코드는 `74553ea`입니다.
+  10월 19일 12B 재생은 `934da23`(영문 저장소, 이 저장소에서는 `f4a99f3`)에서 돌렸고, 요청과
+  채점 코드는 `23089bb`와 같습니다.
 
 ## 측정값 (2026-10-20, 비동기 실행과 재생)
 
@@ -104,6 +108,25 @@ sequenceDiagram
 | 흐름이 어떻게 변하는가? (추세 단어) | 프레임 3 × 보기 2 | 최고 속력이 60에서 47(42) m/s로 떨어지는데 두 보기 모두 `increasing`. 단어 셋 중 전체 영역 1개, 창 2개 맞음 |
 
 자세한 내용, 모델이 쓴 글, 주의점은 [10월 20일 보고서](docs/results-20261020.md)에 있습니다.
+
+## 측정값 (2026-10-19, GPU 노드의 Gemma 4 12B)
+
+아래 10월 17일 쌍별 재생을 모델 이름만 바꿔 다시 보냈습니다. Gemma 4 12B QAT Q4_0과 이미지
+프로젝터, NVIDIA A30 한 장(MedicineBow, Slurm 작업 24696203), 소스에서 CUDA로 빌드한
+llama.cpp b11429, 모든 층을 GPU에, 문맥 길이 2048.
+
+| 모델, 컴퓨터 | 조건 | 답한 위치 | 오차 | 요청당 시간 |
+|---|---|---|---:|---:|
+| E2B, CPU, 10월 17일 | 수치만 | (0.6012, 0.1143) m, 3번 모두 | 60.92 cm | 14.5~55.6 s |
+| E2B, CPU, 10월 17일 | 수치 + 그림 | (0.5, 0.1143) m, 3번 모두 | 50.97 cm | 13.2~20.8 s |
+| 12B, A30, 10월 19일 | 수치만 | "unknown", 3번 모두 | 채점 안 됨 | 2.0~3.3 s |
+| 12B, A30, 10월 19일 | 수치 + 그림 | "unknown", 3번 모두 | 채점 안 됨 | 2.1~2.7 s |
+
+"unknown"은 오차 0이 아닙니다. 그림 포함 답은 가능한 해석으로 빠른 흐름이 "near x=0.00 m"라고
+덧붙였지만(정답 x = 0.0005 m) y가 없고, 채점기는 이 부분을 읽지 않습니다. 수치만 받은 답 두 개는
+그림을 보내지 않았는데도 "the image" 탓을 했습니다. 응답 시간 차이에는 모델 크기, CPU 대신 GPU,
+이미 떠 있던 상주 서버 대신 새로 띄운 서버가 섞여 있습니다. 자세히: [10월 17일 보고서](docs/results.md#gpu에서-gemma-4-12b로-같은-재생-2026-10-19),
+[근거](docs/evidence/2026-10-19-12b/README.md).
 
 ## 측정값 (2026-10-17, 실행 `pod-llm-demo.LRfJBN`)
 
@@ -140,16 +163,19 @@ sequenceDiagram
 
 1. 답의 정확도. 상태 셋과 보기 둘에서 모델은 가장 빠른 곳을 그린 범위의 10 % 안에 둔 적이
    없고, 색 막대가 떨어지는데도 최고 속력이 늘어난다고 했습니다. 이 모델로는 설명을 쓸 수
-   없습니다.
+   없습니다. Gemma 4 12B는 GPU 노드에서 10월 17일의 쌍별 질문을 받고 위치를 전혀 대지
+   않았습니다.
 2. 비용 측정. 지연이 서버의 프롬프트 캐시에 달려 있어(그림 한 장: 앞부분 266토큰만 캐시 26~33 s,
    거의 전부 캐시 14~18 s; 세 장 11~45 s) 그림 한 장의 시간 비용은 아직 분리되지 않았습니다.
-3. 범위. 직렬 유체 사례 하나(시작 직후의 후향 계단), 동시에 요청 하나. MPI, 3D, 12B 모델,
-   SVD 요약의 기여는 시험하지 않았습니다.
+3. 범위. 직렬 유체 사례 하나(시작 직후의 후향 계단), 동시에 요청 하나. MPI, 3D, 쌍별 재생
+   밖의 12B 모델, SVD 요약의 기여는 시험하지 않았습니다.
 
 ## 다음 단계
 
 1. GPU 노드에서 Gemma 4 12B QAT로 describe·sequence 재생과 비동기 다섯 조건을 돌려 E2B와
-   한 표에서 비교합니다. 서버 스크립트는 [llm_demo/hpc/](Solver_Examples/PODFoam/llm_demo/hpc/README.md),
+   한 표에서 비교합니다. 쌍별 재생은 마쳤습니다([10월 19일](docs/results.md#gpu에서-gemma-4-12b로-같은-재생-2026-10-19):
+   위치를 대지 않음). 재생에는 OpenFOAM이 필요 없고, 비동기 다섯 조건에는 GPU 노드에 OpenFOAM
+   v2106이 필요합니다. 서버 스크립트는 [llm_demo/hpc/](Solver_Examples/PODFoam/llm_demo/hpc/README.md),
    재생 명령은 [llm_demo/README.md](Solver_Examples/PODFoam/llm_demo/README.md#저장한-프레임-재생-describe-sequence)에 있습니다.
 2. 모델이 읽을 수 있는 그림을 시도합니다. 더 크게, 격자선과 눈금 표시, 또는 패널 하나.
    같은 재생 스크립트로 시험합니다.
@@ -164,12 +190,14 @@ Solver_Examples/PODFoam/      PODFoam 솔버(OpenFOAM v2106)와 콜백 연결 �
   validation/                 연결 검증: 10단계, SVD 왕복, verify.py
   llm_demo/                   콜백 모듈, llama-server 클라이언트, 다섯 조건 실행기(동기·비동기),
                               재생 비교(쌍별, describe, sequence), 단위 테스트, requirements.txt
+  llm_demo/hpc/               GPU 노드에서 Gemma 4 12B를 돌리는 Slurm 스크립트(쌍별 재생은 MedicineBow에서 시험)
 docs/results-20261020.md      10월 20일 보고서: 비동기 실행, describe·sequence 재생
 docs/evidence/2026-10-20/     10월 20일 실행과 재생의 기록, 해시 목록
 docs/results.md               10월 17일 시험 보고서
 docs/evidence/2026-10-17/     요청·응답 원문, 로그, 검증 결과, 해시 목록
 docs/evidence/2026-10-13/     이전 실행(pod-llm-demo.SwwR2e)과 그 보고서 docs/results-20261013.md
 docs/evidence/2026-10-19/     10월 17일 실행의 반복(pod-llm-demo.o5sNLJ), 해시와 재생 좌표 동일
+docs/evidence/2026-10-19-12b/ NVIDIA A30의 Gemma 4 12B로 한 쌍별 재생(Slurm 작업 24696203), 해시 목록
 docs/evidence/check_manifest.py  근거 파일 전부를 manifest와 대조 (CI에서도 실행)
 docs/progress.ko.md           10월 8일부터의 작업 기록
 docs/upstream-project.md      원본 PythonFOAM README (다른 솔버, Docker, 빌드 안내)
@@ -183,6 +211,7 @@ CHANGELOG.md, Makefile
 
 - [10월 20일 보고서](docs/results-20261020.md): 비동기 실행, 스냅샷 하나·연속 재생, 주의점
 - [10월 17일 보고서](docs/results.md): 동기 조건, 그림 유무 쌍별 재생
+- [12B 재생](docs/results.md#gpu에서-gemma-4-12b로-같은-재생-2026-10-19): 10월 17일의 쌍별 요청, GPU 노드의 Gemma 4 12B
 - [근거 자료](docs/evidence/README.md): 요청·응답 원문, 로그, 검증 결과, 해시 목록
 - 전체 실행 결과 내려받기: [10월 20일](https://github.com/seungminyome/PythonFOAM/releases/tag/pod-insitu-async-2026-10-20)(영문 저장소 릴리스), [10월 17일](https://github.com/seungminyome/PythonFOAM-Korean/releases/tag/korean-docs-2026-10-18): 다섯 조건의 저장 결과 전체와 실행 소스(모델 가중치 제외, 10월 20일 창 프레임 실행의 시각 폴더는 없음)
 - [작업 기록](docs/progress.ko.md): 10월 8일부터의 진행

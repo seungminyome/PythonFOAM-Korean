@@ -1,0 +1,39 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "request_sha256": "b166bbbce8a4e5b793857629c16a1885ab1faecea5112ed1e86770ca21bd4986",
+  "raw_response_sha256": "b5e395fef97e9ed4608ff8daf3df80afe5af3fa386d6fc13b13a0e24f5df5a87",
+  "raw_response_bytes": 1059,
+  "replay_callback_wall_s": 2.012671198695898,
+  "transport_wait_wall_s": 1.9915598332881927,
+  "client_inference_wall_s": 1.991538628935814,
+  "location": {
+    "status": "unscorable",
+    "reason": "location_uncertain_or_unavailable",
+    "axes": [],
+    "coordinates_m": null,
+    "axis_errors_m": null,
+    "projected_error_m": null,
+    "euclidean_error_m": null,
+    "reference_candidate_count": 1
+  },
+  "grounding": {
+    "rubric_version": 1,
+    "numeric_checks": [
+      {
+        "kind": "maximum_speed",
+        "quoted": 82.5275,
+        "expected": 82.52751611538334,
+        "agrees_with_numeric_evidence": true,
+        "tolerance": "max(0.05 m/s, 0.1% of reference)",
+        "field": "observations"
+      }
+    ],
+    "numeric_contradiction_count": 0,
+    "unsupported_claim_flags": [],
+    "needs_human_review": true,
+    "hallucination_free": null,
+    "assessment": "no_automatic_flags",
+    "limitations": "English rules check a few explicit claims only; absence of flags is not proof of grounding. Numeric values occur in both prompts."
+  }
+}

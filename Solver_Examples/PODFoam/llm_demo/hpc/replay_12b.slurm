@@ -9,9 +9,13 @@
 #SBATCH --time=02:00:00
 #SBATCH --output=pod-12b-replay-%j.out
 set -euo pipefail
-# --- site settings: edit these two lines ---------------------------------
+# --- site settings: edit these lines -------------------------------------
 # module load cuda/12.8 python/3.10
-export HF_TOKEN="${HF_TOKEN:?export HF_TOKEN before sbatch, or set it here}"
+# MedicineBow (UWyo), job 24696203, source-built llama-server (hpc/README.md):
+#   module load arcc/1.0 gcc/14.2.0 cuda-toolkit/12.8.0
+#   export PATH=<python 3 with numpy>/bin:$PATH
+# Account and partition go on the command line: sbatch --account=... --partition=...
+export HF_TOKEN="${HF_TOKEN:-}"   # needed only to download the weights
 # -------------------------------------------------------------------------
 root="${SLURM_SUBMIT_DIR:-$PWD}"
 pod="${POD_SOURCE:-$root/PODFoam}"                       # tarball layout

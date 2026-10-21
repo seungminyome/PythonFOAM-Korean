@@ -12,8 +12,9 @@
 set -euo pipefail
 # --- site settings: edit these lines -------------------------------------
 # module load cuda/12.8 python/3.10 openfoam/2106
+# Account and partition go on the command line: sbatch --account=... --partition=...
 export OPENFOAM_BASHRC="${OPENFOAM_BASHRC:-/usr/lib/openfoam/openfoam2106/etc/bashrc}"
-export HF_TOKEN="${HF_TOKEN:?export HF_TOKEN before sbatch, or set it here}"
+export HF_TOKEN="${HF_TOKEN:-}"   # needed only to download the weights
 # -------------------------------------------------------------------------
 root="${SLURM_SUBMIT_DIR:-$PWD}"
 pod="${POD_SOURCE:-$root/PODFoam}"                       # tarball layout

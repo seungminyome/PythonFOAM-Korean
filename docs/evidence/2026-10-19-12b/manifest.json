@@ -1,0 +1,401 @@
+{
+  "source_run": "replay-12b-24696203",
+  "executed_commit": "934da239fbae3ace8fff6df6cc49ec1583b2e601",
+  "replay_code_equal_to": "23089bbf3447731852fa960d7d25ea18767a3f51",
+  "scope": "Paired replay of the 2026-10-17 step-5 state (three pairs, numbers only vs numbers + image) with Gemma 4 12B QAT Q4_0 on one NVIDIA A30, Slurm job 24696203 on MedicineBow, 2026-10-19. No solver run.",
+  "notes": [
+    "The job ran Solver_Examples/PODFoam/llm_demo/hpc/replay_12b.slurm from a clone at 934da23 with an uncommitted site edit (account, partition, module and PATH lines); job/replay_12b.slurm is that file.",
+    "ablation_runner.py and llm_client.py are byte-identical to 23089bb, so requests and scoring are those of the 2026-10-17 E2B replay; the six request bodies differ from 2026-10-17 only in the model string.",
+    "llama-server is a source build of llama.cpp b11429 (commit d81235049384534c167caea52b85a694f6103d14, GCC 14.2.0, CUDA 12.8) from job 24696057; the prebuilt b11429 libraries need GLIBC_2.38 and MedicineBow has glibc 2.34. ablation/runtime_manifest_12b.json and runtime/sha256.txt hash the prebuilt archives, which were downloaded but not used; server_version identifies the source build. The built binary was not hashed at run time.",
+    "Job 24695931 (srun) failed with exit 127: its script was in a login-node /tmp directory the compute node could not see. Job 24695932 ran on a CPU node without the CUDA stub library on the link path and failed at the final link (libcuda.so.1 not found). Which of the two changes in job 24696057 (GPU node, stubs in LDFLAGS) fixed the link was not isolated.",
+    "The job started its own server, so the first request had cache_n 0. The server log records image_max_tokens capped from 256 to 128 because n_ubatch is 128.",
+    "No unit tests were run in the job.",
+    "Model weights, projector, llama.cpp archives and binaries are not included; runtime/sha256.txt and ablation/runtime_manifest_12b.json identify them.",
+    "Files named *.log at the source are stored as .txt because .gitignore excludes *.log; bytes unchanged.",
+    "results/replay-12b-24696203.tar.gz, the archive the job wrote (231476 bytes, sha256 87e6eb379e6140a7d12df1bec70a133eff2d063952f6632f883e3eb82dc83d8d), holds the same 44 files as ablation/ and is not included.",
+    "ablation/manifest.json repeats the 2026-10-17 E2B C++ callback time (78.255546163 s, recorded_not_new); it is not a 12B measurement.",
+    "Original records contain cluster paths, a PID and the Slurm account as provenance.",
+    "ground_truth.private.json means withheld from model input, not private personal information.",
+    "Automatic review flags are unchanged; answer-review.json is a separate manual review."
+  ],
+  "files": [
+    {
+      "path": "ablation/gpu-20261019T090809Z.txt",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/gpu-20261019T090809Z.txt",
+      "kind": "byte-preserved",
+      "bytes": 76,
+      "sha256": "1c1a2d48411bc40f78620e17ccc041bdf2efda76ca32919c5f4dc11e05e1c930"
+    },
+    {
+      "path": "ablation/ground_truth.private.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/ground_truth.private.json",
+      "kind": "byte-preserved",
+      "bytes": 320,
+      "sha256": "abf042b1f9df5b18a0a835aca4ca71da0793cf5dd14ce23e5d6d55286fded9bc"
+    },
+    {
+      "path": "ablation/manifest.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/manifest.json",
+      "kind": "byte-preserved",
+      "bytes": 4579,
+      "sha256": "a2b7f63e8643864a7358d6bd17600afddd44f5e7079f61b8fad59877928b01ce"
+    },
+    {
+      "path": "ablation/metrics.jsonl",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/metrics.jsonl",
+      "kind": "byte-preserved",
+      "bytes": 6961,
+      "sha256": "e718f1f333eb3b3461e9f782b848cab52c6f9b2345505630514e3fe02e02ecfb"
+    },
+    {
+      "path": "ablation/models-20261019T090809Z.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/models-20261019T090809Z.json",
+      "kind": "byte-preserved",
+      "bytes": 778,
+      "sha256": "a678cbde8c8447d6833170a8496401d0d9bde57ec38f135fe3e2132a88da2988"
+    },
+    {
+      "path": "ablation/numeric_summary.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/numeric_summary.json",
+      "kind": "byte-preserved",
+      "bytes": 3650,
+      "sha256": "7e6cb6caff1f271dc22d317871266327305b0fb1518cb6b79260d159f35418a1"
+    },
+    {
+      "path": "ablation/pair-001-numeric_only.request.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_only.request.json",
+      "kind": "byte-preserved",
+      "bytes": 4870,
+      "sha256": "1cba006cf4eca5edcce7ef9d419b62a63bce9fb3641786b9dbd8f2276d344700"
+    },
+    {
+      "path": "ablation/pair-001-numeric_only/metrics.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_only/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1327,
+      "sha256": "61672872b7622b4b6dc0ac79a5bd61f8de50554575fa1b029ff01ceb5c647668"
+    },
+    {
+      "path": "ablation/pair-001-numeric_only/request_body.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_only/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 4870,
+      "sha256": "1cba006cf4eca5edcce7ef9d419b62a63bce9fb3641786b9dbd8f2276d344700"
+    },
+    {
+      "path": "ablation/pair-001-numeric_only/response.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_only/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1236,
+      "sha256": "3f24d5bf678e8ba49328cb01259dd8508f04336df4b49a25cb7c01380e7e6348"
+    },
+    {
+      "path": "ablation/pair-001-numeric_only/response.raw",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_only/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1041,
+      "sha256": "4cb2ddb5e33e6dca766197adb969b46665ce4b474081af7e9268ee1085fa063d"
+    },
+    {
+      "path": "ablation/pair-001-numeric_only/result.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_only/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1790,
+      "sha256": "c7c5f24a5483081a07de7720ba0e7f2b0396beee2dfaec4e1411567aef328373"
+    },
+    {
+      "path": "ablation/pair-001-numeric_plus_image.request.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_plus_image.request.json",
+      "kind": "byte-preserved",
+      "bytes": 50852,
+      "sha256": "1348ff201abb62f070df2c8a6c52c43baf2e464409baa0e688a30f57e0aba97d"
+    },
+    {
+      "path": "ablation/pair-001-numeric_plus_image/metrics.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_plus_image/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1326,
+      "sha256": "ebb7fed31e3bd34e666be9ed86e04107c886353993bd49f8815e868e3b9227a8"
+    },
+    {
+      "path": "ablation/pair-001-numeric_plus_image/request_body.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_plus_image/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 50852,
+      "sha256": "1348ff201abb62f070df2c8a6c52c43baf2e464409baa0e688a30f57e0aba97d"
+    },
+    {
+      "path": "ablation/pair-001-numeric_plus_image/response.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_plus_image/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1251,
+      "sha256": "480d905b11213caa277997cc500d9fad0b31c837d08810f99f956e461dcf0f9b"
+    },
+    {
+      "path": "ablation/pair-001-numeric_plus_image/response.raw",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_plus_image/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1056,
+      "sha256": "32712f457d4d00e6f72841ebc32d8cb21b24188b042f99b61ddef2b7fa570ff0"
+    },
+    {
+      "path": "ablation/pair-001-numeric_plus_image/result.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-001-numeric_plus_image/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1807,
+      "sha256": "7210747c95552a798fcf56f3c1b2111b0630952fd07a7ae86e5d94283e7927a3"
+    },
+    {
+      "path": "ablation/pair-002-numeric_only.request.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_only.request.json",
+      "kind": "byte-preserved",
+      "bytes": 4870,
+      "sha256": "0cccac9fec37c21122487824665aaaf31977b5c97880906c99b8d8632c7b7dfb"
+    },
+    {
+      "path": "ablation/pair-002-numeric_only/metrics.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_only/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1329,
+      "sha256": "f61384e6e4892b555d361b33fad609500a349f4df17e3f44d072a549f61926b4"
+    },
+    {
+      "path": "ablation/pair-002-numeric_only/request_body.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_only/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 4870,
+      "sha256": "0cccac9fec37c21122487824665aaaf31977b5c97880906c99b8d8632c7b7dfb"
+    },
+    {
+      "path": "ablation/pair-002-numeric_only/response.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_only/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1264,
+      "sha256": "3a61de44eee1159fda169a23bf866d14a702176cd751aa7ef374d784541c559d"
+    },
+    {
+      "path": "ablation/pair-002-numeric_only/response.raw",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_only/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1069,
+      "sha256": "7725174e8197cb44b5fb8643efa730eb966a56cf6c69bd263bef79f710fbcfda"
+    },
+    {
+      "path": "ablation/pair-002-numeric_only/result.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_only/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1837,
+      "sha256": "4ea27d5a4d2e482fcc4268848bddd03e09ae5988b88a0762b9726c3ecac61bbc"
+    },
+    {
+      "path": "ablation/pair-002-numeric_plus_image.request.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_plus_image.request.json",
+      "kind": "byte-preserved",
+      "bytes": 50852,
+      "sha256": "0c2635d9ea97b5c08df2c4e08126f58df3f1b0c83dcfa885a5b93090ba3711bd"
+    },
+    {
+      "path": "ablation/pair-002-numeric_plus_image/metrics.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_plus_image/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1328,
+      "sha256": "174e17c15ae7fbd79b227bc9e7a3b866e8183fdbdd8e1ef8ecbd09da88805296"
+    },
+    {
+      "path": "ablation/pair-002-numeric_plus_image/request_body.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_plus_image/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 50852,
+      "sha256": "0c2635d9ea97b5c08df2c4e08126f58df3f1b0c83dcfa885a5b93090ba3711bd"
+    },
+    {
+      "path": "ablation/pair-002-numeric_plus_image/response.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_plus_image/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1236,
+      "sha256": "979502289642b33c6fb5c0a12d7f9d62641c276edb0236cbf71255d7b77c798f"
+    },
+    {
+      "path": "ablation/pair-002-numeric_plus_image/response.raw",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_plus_image/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1041,
+      "sha256": "2db9e61b2dc73efd77911a32ae1ac13026f765e4ac56b90854f83b6ac995e475"
+    },
+    {
+      "path": "ablation/pair-002-numeric_plus_image/result.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-002-numeric_plus_image/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1792,
+      "sha256": "beeab6a5f0a7b33336e68c314fb1201282d2b8abc5ec5e0169a02fd32b0f4af6"
+    },
+    {
+      "path": "ablation/pair-003-numeric_only.request.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_only.request.json",
+      "kind": "byte-preserved",
+      "bytes": 4870,
+      "sha256": "b166bbbce8a4e5b793857629c16a1885ab1faecea5112ed1e86770ca21bd4986"
+    },
+    {
+      "path": "ablation/pair-003-numeric_only/metrics.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_only/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1328,
+      "sha256": "0e66b0b52364a817018163bdb224aca09fadaa2b81b6be33f2ee6394076ede5f"
+    },
+    {
+      "path": "ablation/pair-003-numeric_only/request_body.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_only/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 4870,
+      "sha256": "b166bbbce8a4e5b793857629c16a1885ab1faecea5112ed1e86770ca21bd4986"
+    },
+    {
+      "path": "ablation/pair-003-numeric_only/response.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_only/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1254,
+      "sha256": "5bf9ee88da6f638972c62eab7b0b901dfe0f134407608eadada6d58a9e9b8289"
+    },
+    {
+      "path": "ablation/pair-003-numeric_only/response.raw",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_only/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1059,
+      "sha256": "b5e395fef97e9ed4608ff8daf3df80afe5af3fa386d6fc13b13a0e24f5df5a87"
+    },
+    {
+      "path": "ablation/pair-003-numeric_only/result.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_only/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1826,
+      "sha256": "f6b92bb0505447f86d7a0e256b253943ecab14ad2164c5dd637114f1de4c2484"
+    },
+    {
+      "path": "ablation/pair-003-numeric_plus_image.request.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_plus_image.request.json",
+      "kind": "byte-preserved",
+      "bytes": 50852,
+      "sha256": "5b60f2c971f19716a570f41aa49e15046a1817bc69bf2af530b4c9ad81781274"
+    },
+    {
+      "path": "ablation/pair-003-numeric_plus_image/metrics.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_plus_image/metrics.json",
+      "kind": "byte-preserved",
+      "bytes": 1325,
+      "sha256": "b1af94106b1ed29c6522a5f1b87af5e4c9eb4e0d49d2ad998eb8ad26b59b74d3"
+    },
+    {
+      "path": "ablation/pair-003-numeric_plus_image/request_body.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_plus_image/request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 50852,
+      "sha256": "5b60f2c971f19716a570f41aa49e15046a1817bc69bf2af530b4c9ad81781274"
+    },
+    {
+      "path": "ablation/pair-003-numeric_plus_image/response.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_plus_image/response.json",
+      "kind": "byte-preserved",
+      "bytes": 1238,
+      "sha256": "4d721e77a9f146630be69b4b7e531c6cced07b78ec3fdf53be58a75d48a84cce"
+    },
+    {
+      "path": "ablation/pair-003-numeric_plus_image/response.raw",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_plus_image/response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1043,
+      "sha256": "dea41266db6fe334699afaff50747406dc1af88a6b263fb794cbd86334b06a53"
+    },
+    {
+      "path": "ablation/pair-003-numeric_plus_image/result.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/pair-003-numeric_plus_image/result.json",
+      "kind": "byte-preserved",
+      "bytes": 1793,
+      "sha256": "0d6ffd1a807175b68c33117b0bac41d43bb041130b2cdd4a91a4482c9f32b511"
+    },
+    {
+      "path": "ablation/runtime_manifest_12b.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/runtime_manifest_12b.json",
+      "kind": "byte-preserved",
+      "bytes": 866,
+      "sha256": "2168afb62aedc294d83447ed08675da94c78fd22f4cc3f44f488c468b96bcba6"
+    },
+    {
+      "path": "ablation/summary.json",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/replay-12b-24696203/summary.json",
+      "kind": "byte-preserved",
+      "bytes": 1314,
+      "sha256": "eb7eeb9e2917852dead13728b0a66430e895849330290e2eebf5ef6d6c86cc56"
+    },
+    {
+      "path": "answer-review.json",
+      "source": "written for this folder",
+      "kind": "derived; manual review",
+      "bytes": 6761,
+      "sha256": "d6d639c80db485f86922a7bc1f8483e07da2879c92c3fe682475c06ac6a573d7"
+    },
+    {
+      "path": "job/pod-12b-replay-24696203.out",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/pod-12b-replay-24696203.out",
+      "kind": "byte-preserved",
+      "bytes": 425,
+      "sha256": "11fb1706e8c4f709858d67e8abd833670829b6c26eb0a569bcc684da6221cd1c"
+    },
+    {
+      "path": "job/replay_12b.slurm",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/Solver_Examples/PODFoam/llm_demo/hpc/replay_12b.slurm (working copy as run: 934da23 plus the uncommitted site edit, later restored to the template in that clone; same text as the batch script sacct -B shows for job 24696203)",
+      "kind": "byte-preserved",
+      "bytes": 2531,
+      "sha256": "e0c25a7584589194a477dc35fdaa4a70d4a4b34657aa03a2a782643c3c4a7a4c"
+    },
+    {
+      "path": "job/sacct.txt",
+      "source": "sacct -X -P for jobs 24695930, 24695931, 24695932, 24696057, 24696203, captured 2026-10-21T04:24:43Z (2026-10-20 MDT) on the MedicineBow login node",
+      "kind": "derived",
+      "bytes": 1086,
+      "sha256": "c3d5a40780e32111fd63fa05a2e6fc87eef64feaf5cbaba7c6fd26620c137ac3"
+    },
+    {
+      "path": "runtime/build-24695932.txt",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/llm-runtime-12b/build-24695932.log (renamed: *.log is in .gitignore)",
+      "kind": "byte-preserved",
+      "bytes": 40845,
+      "sha256": "ab00e7509080c3edac09c248d3536d70d388d49ece3ca9c915494e6a79c4d1df"
+    },
+    {
+      "path": "runtime/build-24696057.txt",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/llm-runtime-12b/build-24696057.log (renamed: *.log is in .gitignore)",
+      "kind": "byte-preserved",
+      "bytes": 35444,
+      "sha256": "aa8e263f31626862d16bf804044ab032255a71185523f69a22a4ee7e43ea8972"
+    },
+    {
+      "path": "runtime/build_llama-24695932.sacct-B.txt",
+      "source": "sacct -j 24695932 -B (the batch script Slurm stored for the failed build; the file on disk was rewritten for job 24696057)",
+      "kind": "derived",
+      "bytes": 767,
+      "sha256": "ce5f1eee145aa6d97a0a3a738f2a67279946e2f85fbba77beed3ca1e6db99984"
+    },
+    {
+      "path": "runtime/build_llama.sbatch",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/llm-runtime-12b/build_llama.sbatch (batch script of job 24696057; same text as sacct -B shows for that job)",
+      "kind": "byte-preserved",
+      "bytes": 818,
+      "sha256": "178a8ba68169aac2159404b3a3a1480593321499d92a6ef9fa6fe2429f7c23c2"
+    },
+    {
+      "path": "runtime/server-20261019T090809Z.txt",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/llm-runtime-12b/server-20261019T090809Z.log (renamed: *.log is in .gitignore)",
+      "kind": "byte-preserved",
+      "bytes": 7283,
+      "sha256": "3334aee13c67905568188303b30025bbe504b02a53f1019509ed233030b143af"
+    },
+    {
+      "path": "runtime/sha256.txt",
+      "source": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/llm-runtime-12b/sha256.txt",
+      "kind": "byte-preserved",
+      "bytes": 426,
+      "sha256": "c111836ea382b1832b8d915718b6d212601d5869ea5bf02a71caf5c08df96c23"
+    }
+  ]
+}

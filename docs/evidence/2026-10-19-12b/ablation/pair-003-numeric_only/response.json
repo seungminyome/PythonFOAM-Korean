@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"observations\": \"Maximum speed |U| is 82.5275 m/s. Position is unknown as the image does not provide specific coordinates for the maximum value.\",\n  \"possible_interpretation\": \"The high leading energy fraction in Ux suggests a dominant flow direction along the x-axis.\",\n  \"checks\": \"Missing coordinate mapping for max speed; residuals are not force balance; low Courant does not imply low speed.\"\n}"
+      }
+    }
+  ],
+  "created": 1792400908,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 1466,
+    "total_tokens": 1569,
+    "prompt_tokens_details": {
+      "cached_tokens": 1465
+    }
+  },
+  "id": "chatcmpl-SragVopRL2snFQieCUmjyADIlVpo3LHY",
+  "timings": {
+    "cache_n": 1465,
+    "prompt_n": 1,
+    "prompt_ms": 293.06,
+    "prompt_per_token_ms": 293.06,
+    "prompt_per_second": 3.4122705248072065,
+    "predicted_n": 103,
+    "predicted_ms": 1632.997,
+    "predicted_per_token_ms": 16.009774509803922,
+    "predicted_per_second": 62.46184163228714
+  }
+}

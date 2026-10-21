@@ -1,0 +1,41 @@
+{
+  "numeric_only": {
+    "attempted": 3,
+    "successful": 3,
+    "failed_or_invalid": 0,
+    "location_scored": 0,
+    "location_errors_m_by_axes": {},
+    "latency_s_all_attempts": [
+      3.273841604590416,
+      2.4317601043730974,
+      2.012671198695898
+    ],
+    "latency_s_successful": [
+      3.273841604590416,
+      2.4317601043730974,
+      2.012671198695898
+    ],
+    "responses_with_review_flags": 0,
+    "grounding_denominator_successful_responses": 3
+  },
+  "numeric_plus_image": {
+    "attempted": 3,
+    "successful": 3,
+    "failed_or_invalid": 0,
+    "location_scored": 0,
+    "location_errors_m_by_axes": {},
+    "latency_s_all_attempts": [
+      2.658512504771352,
+      2.0531506948173046,
+      2.554936630651355
+    ],
+    "latency_s_successful": [
+      2.658512504771352,
+      2.0531506948173046,
+      2.554936630651355
+    ],
+    "responses_with_review_flags": 0,
+    "grounding_denominator_successful_responses": 3
+  },
+  "interpretation": "Compare errors only with the same answered axes and report coverage. Refusal/unknown is not zero error. Repeated one-snapshot trials are not independent physical cases. Alternating order reduces but does not remove server warm-cache effects. Seed is requested, not proof of backend determinism. Human grounding review remains required."
+}

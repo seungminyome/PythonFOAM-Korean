@@ -41,6 +41,11 @@
 <a href="results-20261017.html">6개 답변과 개별 측정값 보기 →</a>
 </section>
 
+<section aria-labelledby="gpu-12b-result">
+<h2 id="gpu-12b-result">10월 19일: 같은 쌍별 요청을 GPU의 Gemma 4 12B에</h2>
+<p>코드 <code>934da23</code>(영문 저장소, 이 저장소에서는 <code>f4a99f3</code>), Slurm 작업 24696203. 같은 쌍별 요청 6개를 NVIDIA A30 한 장의 Gemma 4 12B QAT에 보냈습니다. 답 하나에 2.0~3.3초 걸렸습니다(CPU의 E2B는 13~56초). 6개 답변 모두 위치를 모른다고 해서 비교할 위치 오차가 없습니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results.md#gpu에서-gemma-4-12b로-같은-재생-2026-10-19">자세히</a></p>
+</section>
+
 <section aria-labelledby="async-result">
 <h2 id="async-result">10월 20일: 비동기 요청과 스냅샷 설명</h2>
 <p>코드 <code>74553ea</code>(영문 저장소의 <code>9449085</code>), 실행 <code>pod-llm-async.pp7agC</code>. 요청을 비동기로 보내 솔버가 기다리지 않게 했습니다. 3000걸음 실행에서 요청 걸음의 정지는 0.004~0.006초, 답은 요청 843·1071걸음 뒤에 기록됐고, 저장 필드 216개는 요청 없는 실행과 같았습니다. 스냅샷 하나를 설명하게 했을 때 모델은 가장 빠른 곳을 한 번도 그린 범위의 10 % 안에 두지 못했고, 세 장의 변화를 물었을 때는 떨어지는 최고 속력을 "increasing"이라 했습니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261020.md">10월 20일 보고서</a></p>
@@ -55,7 +60,7 @@
 <section aria-labelledby="latest-evidence">
 <h2 id="latest-evidence">시험 자료</h2>
 <p>실행 로그, 모델에 보낸 요청과 답변, 답변을 원본 자료와 대조한 기록을 볼 수 있습니다.</p>
-<div class="links"><a href="results-20261017.html">결과와 원문 링크</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-17">10월 17일 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-20">10월 20일 원본 폴더</a></div>
+<div class="links"><a href="results-20261017.html">결과와 원문 링크</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-17">10월 17일 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-19-12b">10월 19일 12B 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-20">10월 20일 원본 폴더</a></div>
 </section>
 
 <footer><a href="https://github.com/argonne-lcf/PythonFOAM">argonne-lcf/PythonFOAM</a>을 바탕으로 한 포크입니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/LICENSE">라이선스</a></footer>

@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # Start llama-server with Gemma 4 12B QAT Q4_0 + projector on the GPU of this
 # node, write server.pid into POD_LLM_RUNTIME and wait until /health is ok.
-# Flags mirror the E2B runs (context 2048, one slot, 256 image tokens,
-# reasoning off); the only changes are all layers on the GPU and the projector
-# offloaded as well.
+# Flags mirror the E2B runs (context 2048, one slot, 256 image tokens
+# requested, reasoning off); the only changes are all layers on the GPU and the
+# projector offloaded as well. With the 12B projector the server caps image
+# tokens at 128 because --ubatch-size is 128.
 set -euo pipefail
 runtime_dir="${POD_LLM_RUNTIME:?set POD_LLM_RUNTIME}"
 port="${POD_LLM_PORT:-8088}"

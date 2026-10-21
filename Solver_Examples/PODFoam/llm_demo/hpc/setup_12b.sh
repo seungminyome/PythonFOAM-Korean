@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Download llama.cpp b11429 (CUDA build) and Gemma 4 12B QAT Q4_0 (weights +
-# image projector) into POD_LLM_RUNTIME, record SHA-256 of what was fetched.
+# image projector) into POD_LLM_RUNTIME, record SHA-256 of what was fetched
+# and of the llama-server in use.
 # About 8 GB. The Google repository is gated: accept the licence on
 # https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf and export HF_TOKEN.
 set -euo pipefail
@@ -44,7 +45,9 @@ if [[ ! -x llama-$tag-cuda/llama-server ]]; then
     chmod +x "llama-$tag-cuda"/llama-*
 fi
 [[ -x llama-$tag-cuda/llama-server ]] || { echo "llama-server not found after extraction" >&2; exit 1; }
-sha256sum "$model" "$projector" "$archive" "$cudart" > sha256.txt
+# The archives are hashed even when llama-server is a source build
+# (build_llama_cuda.sh), so the server binary itself is hashed as well.
+sha256sum "$model" "$projector" "$archive" "$cudart" "llama-$tag-cuda/llama-server" > sha256.txt
 python3 - "$runtime_dir" "$tag" "$cuda" "$repo" "$revision" "$model" "$projector" <<'PY'
 import json, sys, subprocess, datetime
 root, tag, cuda, repo, rev, model, proj = sys.argv[1:]

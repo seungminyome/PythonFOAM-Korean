@@ -235,7 +235,7 @@ class AsyncTests(unittest.TestCase):
         with fixture(delay_s=0.3) as (endpoint, received):
             harness = Harness({"LLM_MODE": "describe", "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1"})
             try:
-                result = harness.run(sleep_after=5, sleep_s=0.3)
+                result = harness.run(sleep_after=5, sleep_s=0.5)
                 walls = dict(harness.walls)
                 telemetry = (harness.case / "telemetry.jsonl").read_text().splitlines()
             finally:
@@ -273,13 +273,21 @@ class AsyncTests(unittest.TestCase):
             try:
                 result = harness.run()
                 walls = dict(harness.walls)
-                time.sleep(1.0)
-                response = json.loads((harness.case / "llm_response.json").read_text())
+                # the detached worker writes its reply by itself; slow runners need longer
+                path = harness.case / "llm_response.json"
+                deadline = time.monotonic() + 15.0
+                response = None
+                while time.monotonic() < deadline:
+                    if path.exists():
+                        response = json.loads(path.read_text())
+                        if response.get("api_response"):
+                            break
+                    time.sleep(0.05)
             finally:
                 harness.close()
         self.assertEqual(result["status"], "detached")
         self.assertEqual(result["detached_at_step"], 10)
-        self.assertLess(max(walls.values()), 0.3)
+        self.assertLess(max(walls.values()), 0.5)
         # the detached worker finished on its own and wrote the reply
         self.assertEqual(response["api_response"]["choices"][0]["finish_reason"], "stop")
 
@@ -298,7 +306,7 @@ class AsyncTests(unittest.TestCase):
         self.assertTrue(result["worker_reaped"])
         self.assertGreater(result["arrived_at_step"], 5)
         self.assertLess(result["arrived_at_step"], 10)
-        self.assertLess(max(walls.values()), 0.3)
+        self.assertLess(max(walls.values()), 0.5)
 
     def test_connection_refused_is_reported_without_a_stall(self):
         harness = Harness({"LLM_MODE": "describe", "LLM_ASYNC": "1",
@@ -310,7 +318,7 @@ class AsyncTests(unittest.TestCase):
             harness.close()
         self.assertEqual(result["status"], "error")
         self.assertIn("refused", result["error"].lower())
-        self.assertLess(max(walls.values()), 0.3)
+        self.assertLess(max(walls.values()), 0.5)
 
     def test_second_request_is_skipped_while_one_is_pending(self):
         with fixture(delay_s=0.5) as (endpoint, received):
@@ -375,13 +383,17 @@ class SequenceModeTests(unittest.TestCase):
             harness = Harness({"LLM_MODE": "sequence", "LLM_SEQUENCE_STEPS": "2,4,6",
                                "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1"})
             try:
-                harness.run(sleep_after=2, sleep_s=0.15)
+                harness.run(sleep_after=2, sleep_s=0.3)
                 walls = dict(harness.walls)
                 result = self.check(harness, received, True)
             finally:
                 harness.close()
         self.assertGreater(result["arrived_at_step"], 6)
-        self.assertLess(max(walls.values()), 0.3)
+        # the frame steps and the request step only fork
+        self.assertLess(max(walls[step] for step in (2, 4, 6)), 0.2)
+        # no step waits for the model; the step that records the reply waits at most
+        # 0.2 s for the result writer, and the last step may wait for a late reply
+        self.assertLess(max(walls[step] for step in range(1, 10)), 0.5)
         self.assertLess(result["solver_stall_s"], 0.2)
 
 

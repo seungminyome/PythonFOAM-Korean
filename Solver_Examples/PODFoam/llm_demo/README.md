@@ -2,7 +2,7 @@
 
 PODFoam은 선택한 계산 단계에서 속도·압력장의 수치 요약과 그림을 Gemma 4 E2B에 보냅니다. PythonFOAM의 콜백 함수가 전달을 맡고, llama.cpp가 로컬 CPU에서 모델을 실행합니다. 콜백은 정해진 형식의 답변을 저장한 뒤 솔버로 돌아옵니다. 모델의 답변은 U, p, 솔버 설정이나 제어 알고리즘을 바꾸는 데 사용하지 않습니다.
 
-콜백은 동기식입니다. 솔버는 답이 오거나 마감이 될 때까지 기다립니다. 결과는 [10월 17일 보고서](../../../docs/results.md)에 있습니다.
+콜백은 동기식이거나 비동기식입니다. 동기식에서는 솔버가 답이나 마감을 기다립니다(10월 17일 측정). 비동기식(`LLM_ASYNC=1`)에서는 솔버가 계속 걸음을 진행하고, 답은 도착한 걸음과 함께 기록됩니다. 요청 모드는 셋입니다. `observe`는 수치와 같은 걸음의 그림을 보내는 원래 방식, `describe`는 그림 한 장의 설명과 극값의 위치, `sequence`는 실행 중 여러 장으로 본 흐름의 변화입니다. 결과는 [10월 17일 보고서](../../../docs/results.md)와 [10월 20일 보고서](../../../docs/results-20261020.md)에 있습니다.
 
 기존 PODFoam 예제에 선택적으로 사용할 수 있는 콜백을 추가했습니다. `snapshot_func`와 `svd_func`만 정의한 기존 모듈도 전과 같이 동작합니다.
 
@@ -29,11 +29,56 @@ PythonAnalysis.H each step  analysis_func(state)                                
 
 부모 프로세스는 메시지 길이를 표시한 파이프로 결과를 기다립니다. 전체 대기 기한은 `LLM_CALLBACK_DEADLINE_S`로 정하며 기본값은 120초입니다. 기한을 넘기면 작업 프로세스를 종료하도록 처리합니다. 부모가 결과 파일을 직접 쓰지는 않습니다. 별도의 짧게 실행되는 자식 프로세스가 0.2초의 시간 한도 안에서 최종 결과 파일을 씁니다. HTTP 클라이언트는 같은 컴퓨터의 루프백 주소만 허용하고 요청·응답 크기를 제한합니다. 연결, 응답 데이터가 오지 않는 시간, 전체 호출에 각각 시간 제한을 둡니다.
 
-그림 생성에는 matplotlib이 필요합니다. 3차원 대체 방식인 최근접 셀 기반 래스터 그림에는 scipy도 필요합니다. matplotlib은 시작할 때 `mesh_func`에서 한 번 불러오며, 매 계산 단계에서 다시 불러오지 않습니다.
+그림 생성에는 matplotlib이 필요합니다. 3차원 대체 방식인 최근접 셀 기반 래스터 그림에는 scipy도 필요합니다. matplotlib은 시작할 때 `mesh_func`에서 한 번 불러오며, 매 계산 단계에서 다시 불러오지 않습니다. `LLM_IMAGE_XRANGE="x0,x1"`(와 `LLM_IMAGE_YRANGE`)를 주면 그 창(단위 m)만 그립니다. 색 범위는 창 안의 셀로 정하고, 요청에 그린 범위를 적습니다.
+
+## 요청 모드
+
+| `LLM_MODE` | 보내는 것 | 묻는 것 | 답 항목 |
+|---|---|---|---|
+| `observe`(기본) | 수치 요약(+ 그림) | 관찰 | `observations`, `possible_interpretation`, `checks` |
+| `describe` | 걸음, 시간, 그린 범위 + 그림 한 장 | 스냅샷 설명. 가장 빠른 곳과 가장 낮은 압력이 그린 x, y 범위의 몇 %에 있는지 | `flow_description`, `fastest_flow_x_percent`, `fastest_flow_y_percent`, `lowest_pressure_x_percent`, `lowest_pressure_y_percent`, `uncertainties` |
+| `sequence` | 걸음과 시간 + 시간 순서의 그림 2~6장 | 첫 그림에서 마지막 그림까지 흐름이 어떻게 변하는지 | `change_description`, `max_speed_trend`, `min_pressure_trend`, `fastest_flow_region`, `uncertainties` |
+
+`describe` 모드의 글에는 필드 값도 위치도 없습니다. 극값은 그림과 색 막대에서 읽어야 합니다. `sequence` 모드에서는 `LLM_SEQUENCE_STEPS`(예: `250,750,1250`)의 각 걸음에서 포크한 렌더러가 프레임을 그리고, 마지막 걸음에서 모든 프레임을 담은 요청 하나를 보냅니다. 앞 걸음의 프레임은 `llm_observation/step-XXXXXX/`에, 마지막 걸음의 프레임은 `llm_observation/` 자체에 저장됩니다.
+
+추세 단어는 정해진 목록이라 답을 저장된 배열과 대조해 채점할 수 있습니다. 최고 속력은 `increasing`, `decreasing`, `roughly_constant`, `cannot_tell`, 최저 압력은 `more_negative`, `less_negative`, `roughly_constant`, `cannot_tell`, 가장 빠른 지점은 `same_place`, `moves`, `cannot_tell` 중 하나입니다. 답 형식은 서버가 강제하고(`response_format`, 정수 범위와 열거값이 있는 JSON 스키마) 클라이언트가 한 번 더 검사합니다.
+
+## 비동기 요청
+
+`LLM_ASYNC=1`이면 요청 걸음은 워커를 포크하고 바로 돌아옵니다(몇 밀리초). 이후 걸음마다 워커의 파이프를 막힘 없이 확인하고, 답이 오면 `arrived_at_step`과 함께 기록하며 솔버 로그에 `response_after` 표시를 남깁니다. 마감을 넘긴 워커는 같은 확인 과정에서 종료합니다. 동시에 진행하는 요청은 `LLM_ASYNC_MAX_PENDING`개(기본 1, 1~8)까지이고, 이를 넘는 요청은 건너뛰고 기록합니다. 마지막 걸음(솔버가 넘기는 `end_time_s`로 판단하며 `LLM_FINAL_STEP`으로 바꿀 수 있음)에 아직 답이 없으면 그 요청의 마감까지 기다리거나(`LLM_ASYNC_END=wait`, 기본) 그대로 두고 끝냅니다(`LLM_ASYNC_END=detach`. 이때도 워커가 `llm_response.json`을 직접 씁니다).
+
+`POD_SUITE=async ./llm_demo/run_demo.sh`는 더 긴 실행에서 비동기 다섯 조건을 돌리고 `verify_async.py`로 검사합니다. 기본값은 `LLM_LONG_STEPS` 3000걸음, `LLM_LONG_DT` 5e-7 s, 필드와 SVD 모드 저장 간격 `LLM_LONG_WRITE` 250걸음, 요청 걸음 `LLM_LONG_STEP` 250, sequence 프레임 걸음 `LLM_LONG_SEQUENCE_STEPS` 250,750,1250입니다.
+
+| 조건 | 모드 | 모델 요청 | 예상 결과 |
+|---|---|---|---|
+| `async-no-llm` | sequence | 사용 안 함(프레임은 그림) | 기준 필드와 프레임 |
+| `async-describe` | describe | 사용 | `ok`, 솔버가 도는 동안 답 도착 |
+| `async-sequence` | sequence | 사용 | `ok`, 프레임 셋을 한 요청에 |
+| `async-server-error` | describe | 닫힌 포트 | `error`, 확인 과정에서 발견 |
+| `async-timeout` | describe | 조금씩 응답하는 시험 서버 | `timeout`, 확인 과정에서 종료 |
+
+`verify_async.py`는 저장된 모든 시각 폴더가 기준과 같은지, 프레임의 배열이 저장된 필드와 기준의 프레임과 같은지, 요청 걸음이 0.5 s 안에 끝났는지, 요청·도착·마지막 걸음을 뺀 모든 걸음이 1 s 안에 끝났는지, 답(또는 오류)이 도착 걸음과 함께 기록됐는지 확인합니다. sequence 조건에서는 요청 본문의 그림 해시도 확인합니다. `LLM_LONG_CASES=async-no-llm`은 기준 조건만 돌리므로 모델 요청 없이 프레임을 얻는 방법입니다. 다만 실행기가 첫 조건 전에 서버를 확인하므로 모델을 띄운 llama-server는 있어야 합니다.
+
+## 저장한 프레임 재생 (describe, sequence)
+
+`snapshot_runner.py`는 저장한 프레임(`state.png`, `fields.npz`, `image-metadata.json`이 있는 폴더)을 describe나 sequence 프롬프트로 보내고 답을 배열과 대조해 채점합니다.
+
+```bash
+python3 snapshot_runner.py --mode describe --frames RUN/async-no-llm/llm_observation/step-000250 \
+    RUN/async-no-llm/llm_observation/step-000750 RUN/async-no-llm/llm_observation \
+    --output /tmp/describe-replay --repeats 3 --execute
+python3 snapshot_runner.py --mode sequence --frames RUN/async-no-llm/llm_observation/step-000250 \
+    RUN/async-no-llm/llm_observation/step-000750 RUN/async-no-llm/llm_observation \
+    --output /tmp/sequence-replay --repeats 3 --execute
+```
+
+`RUN`은 `pod-llm-async.XXXXXX` 폴더입니다. 공개된 프레임(전체 영역은 `docs/evidence/2026-10-20/pod-llm-async.pp7agC`, 창은 `pod-llm-async.8YC6bG`의 `step-000250`, `step-001250`, `llm_observation`)을 주면 10월 20일 재생 요청 24개가 바이트 단위로 똑같이 다시 만들어집니다(기본값: 첫 반복의 시드 20261020, 반복마다 1씩 증가, `--max-tokens` 320). `--execute`를 빼면 요청과 기준값만 만들고 서버에는 보내지 않습니다.
+
+describe의 점수는 답한 % 위치와, 그린 창 안에서 최대 속력(과 최저 압력)을 가진 실제 셀 사이의 거리입니다. 그린 범위의 %와 m로 적습니다. sequence에서는 답한 추세 단어를 저장된 극값의 추세와 비교합니다. 상대 변화가 2 %를 넘으면 추세로 보고, 가장 빠른 지점이 그린 범위의 5 %보다 많이 움직이면 "moves"입니다. 기준값은 `ground_truth.private.json`에 쓰고 모델에는 보내지 않습니다.
 
 ## 실행 방법
 
-OpenFOAM v2106, numpy와 matplotlib이 설치된 Python 3, [C++·Python 연결 검증](../validation/README.md)을 통과한 실행 자료가 필요합니다. 통과한 실행 자료는 기준 사례로 사용합니다. 모델 파일에는 약 3.4 GB의 디스크 공간이, 서버는 최대 약 2.2 GiB를 쓰므로 RAM 8 GB 정도면 됩니다.
+OpenFOAM v2106, numpy와 matplotlib이 설치된 Python 3, [C++·Python 연결 검증](../validation/README.md)을 통과한 실행 자료가 필요합니다. 통과한 실행 자료는 기준 사례로 사용합니다. 모델 파일에는 약 3.4 GB의 디스크 공간이 필요하고, 서버는 실행 중 약 2.4 GiB(10월 20일 기록)를 쓰므로 RAM 8 GB 정도면 됩니다.
 
 ```bash
 cd Solver_Examples/PODFoam
@@ -52,7 +97,18 @@ python3 llm_demo/runtime.py stop       # when the server is no longer needed
 - `POD_REFERENCE_RUN`: 기준 실행 자료. 기본값은 검증을 통과한 가장 최근 실행
 - `LLM_ANALYSIS_STEP`, `LLM_IMAGE_INPUT`(1/0)
 - `LLM_CALLBACK_DEADLINE_S`, `LLM_CONNECT_TIMEOUT_S`, `LLM_READ_TIMEOUT_S`
-- `LLM_MAX_TOKENS`: 최대 192
+- `LLM_MAX_TOKENS`: `observe`는 최대 192, 다른 모드는 최대 320
+- `LLM_MODE`: `observe`(기본), `describe`, `sequence`
+- `LLM_ASYNC`: `1`이면 비동기(기본 `0`)
+- `LLM_SEQUENCE_STEPS`: sequence 프레임을 그릴 걸음 2~6개(예: `250,750,1250`)
+- `LLM_ASYNC_MAX_PENDING`: 동시에 진행하는 요청 수, 기본 1(1~8)
+- `LLM_ASYNC_END`: 마지막 걸음에서 `wait`(기본) 또는 `detach`
+- `LLM_FINAL_STEP`: 마지막 걸음을 직접 지정(기본은 솔버가 넘기는 `end_time_s`로 판단)
+- `LLM_IMAGE_XRANGE`, `LLM_IMAGE_YRANGE`: 그릴 창 `"x0,x1"`(m)
+- `POD_SUITE`: `async`이면 긴 비동기 다섯 조건(기본 `sync`)
+- `LLM_LONG_STEPS`, `LLM_LONG_DT`, `LLM_LONG_WRITE`, `LLM_LONG_STEP`, `LLM_LONG_SEQUENCE_STEPS`, `LLM_LONG_CASES`: 비동기 다섯 조건의 설정
+
+`run_demo.sh`는 따로 정하지 않으면 모든 모드에 `LLM_MAX_TOKENS=192`를 설정합니다. 그래서 10월 20일 솔버 안의 describe·sequence 요청은 192였고, 재생은 320이었습니다. 실행기는 일부 변수를 조건마다 직접 정합니다. 동기 실행기는 `LLM_ENABLED`와 `LLM_IMAGE_INPUT`을 정하고, `LLM_ANALYSIS_STEP`은 환경 값(기본 5)을 그대로 넘깁니다. 비동기 실행기는 `LLM_ENABLED`, `LLM_IMAGE_INPUT`(항상 1), `LLM_ASYNC`, `LLM_MODE`, `LLM_ANALYSIS_STEP`(`LLM_LONG_STEP` 값), `LLM_SEQUENCE_STEPS`(`LLM_LONG_SEQUENCE_STEPS` 값)를 정하고 `LLM_FINAL_STEP`은 무시하므로, 비동기 다섯 조건은 `LLM_LONG_*` 변수로 설정하세요.
 
 `run_cases.py`는 `LLM_ENDPOINT` 뒤의 서버가 `$POD_LLM_RUNTIME/server.pid`에
 기록된 프로세스인지 확인합니다. 서버를 다른 런타임 폴더에서 띄웠다면
@@ -81,7 +137,7 @@ python3 llm_demo/runtime.py stop       # when the server is no longer needed
 
 ```bash
 cd Solver_Examples/PODFoam/llm_demo
-python3 -m unittest test_llm_client test_callback test_ablation_runner -v
+python3 -m unittest test_llm_client test_callback test_ablation_runner test_async -v
 ```
 
 ## 저장한 상태를 그림 있이, 없이 다시 보내기
@@ -129,7 +185,7 @@ python3 ablation_runner.py \
 
 ## SVD 요약의 의미
 
-두 요청 모두 그때까지 모은 속도 스냅샷의 성분별 SVD 요약을 받습니다. 특이값과 그 비율만 보내고 공간 모드는 보내지 않습니다. `leading_energy_fraction`은 σ₁²를 특이값 제곱의 합으로 나눈 값, 즉 첫 패턴이 스냅샷 행렬에서 차지하는 몫입니다(기록된 실행의 Ux에서 약 99.997%). 행렬은 평균을 빼지 않았고 가중치도 없습니다. 자료 요약일 뿐 물리적 에너지도 정확도 척도도 아니며, 모델에 도움이 되는지는 시험하지 않았습니다.
+observe 요청(그림 있이, 없이)은 그때까지 모은 속도 스냅샷의 성분별 SVD 요약을 받습니다. 특이값과 그 비율만 보내고 공간 모드는 보내지 않습니다. describe와 sequence 요청에는 SVD 요약이 없습니다. `leading_energy_fraction`은 σ₁²를 특이값 제곱의 합으로 나눈 값, 즉 첫 패턴이 스냅샷 행렬에서 차지하는 몫입니다(10월 17일과 19일 실행의 5단계 Ux에서 99.997 %). 행렬은 평균을 빼지 않았고 가중치도 없습니다. 자료 요약일 뿐 물리적 에너지도 정확도 척도도 아니며, 모델에 도움이 되는지는 시험하지 않았습니다.
 
 정상 요청의 작업 프로세스 기한은 120초입니다. 일부러 실패시키는 조건에는 4초 기한과 정리 시간을 포함한 4.27초의 허용 한도를 적용합니다.
 

@@ -1,7 +1,8 @@
 # 10월 20일 근거
 
-[10월 20일 보고서](../../results-20261020.md)의 원본 기록입니다. 코드 `9449085`
-(`23089bb` 이후 솔버·콜백 코드가 바뀜: 비동기 경로, describe·sequence 모드, 그림 창, 상태에 `end_time_s` 추가).
+[10월 20일 보고서](../../results-20261020.md)의 원본 기록입니다. 코드는 영문 저장소의 `9449085`이고,
+이 저장소에서 같은 코드는 `74553ea`입니다(`23089bb` 이후 솔버·콜백 코드가 바뀜: 비동기 경로,
+describe·sequence 모드, 그림 창, 상태에 `end_time_s` 추가).
 
 [영문 문서](https://github.com/seungminyome/PythonFOAM/blob/main/docs/evidence/2026-10-20/README.md)
 
@@ -17,7 +18,7 @@
 | [replay/sequence-window/](replay/sequence-window/) | 창 프레임 250·1250·2750을 담은 sequence 요청 3회 |
 | [unit-tests-70.txt](unit-tests-70.txt) | 단위 테스트 70개 출력 |
 
-재생 폴더마다 `manifest.json`(프레임, 순서, 프롬프트 해시), `ground_truth.private.json`
+재생 폴더마다 `manifest.json`(프레임과 그 PNG·배열 해시, 요청 순서와 요청 본문의 크기·SHA-256), `ground_truth.private.json`
 (배열에서 구한 기준 위치와 추세, 모델에는 보내지 않음), 요청별 `*.request.json`, 그리고
 요청별 폴더에 보낸 본문, 받은 원문과 파싱한 답, 결과, 채점이 있습니다. `summary.json`이 이를 모읍니다.
 

@@ -15,6 +15,8 @@ E2B로 잰 것을 Gemma 4 12B QAT Q4_0으로 클러스터 GPU에서 다시 재�
 | `replay_12b.slurm` | 2026-10-17의 5단계 상태로 쌍별 재생: 수치만 vs 수치+그림 세 쌍, 시드 20261017. OpenFOAM 불필요. |
 | `demo_12b.slurm` | 연결 검증, 솔버 다섯 조건, 검증, 새 상태의 쌍별 재생. 노드에 OpenFOAM v2106 필요. |
 | `picture_test.slurm`, `fetch_models.sh`, `models.tsv` | 여러 크기의 모델로 하는 그림 읽기 시험(2026-10-21 준비, 2026-10-22 실행). [아래](#그림-읽기-시험-2026-10-22-실행) 참고. |
+| `window_test.slurm` | `MODELS`의 모델로 하는 무작위 창 그림 시험(`window_test.py`). [아래](#무작위-창-시험과-qwen-모델-2026-10-22-실행) 참고. |
+| `async_v2.slurm` | 발달한 흐름에서 시작해, 돌고 있는 솔버가 그린 v2 그림과 Gemma 4 12B로 하는 비동기 시험, 이어서 describe sweep. OpenFOAM은 Apptainer 이미지에서, llama-server는 호스트 GPU에서. [아래](#돌고-있는-솔버가-그린-v2-그림-async_v2slurm-2026-10-22-실행) 참고. |
 | `build_llama_cuda.sh` | 예비: 미리 빌드된 바이너리가 안 돌면(glibc가 오래됨, CUDA 버전 다름) b11429를 소스에서 CUDA로 빌드. |
 
 ## 파일을 클러스터에 올리는 법
@@ -112,6 +114,10 @@ sequence에서는 모든 프레임이 같은 색 범위를 씁니다. v2own은 v
 | `12b` | `google/gemma-4-12B-it-qat-q4_0-gguf`. 2026-10-19와 같은 파일 | 7.2 GB |
 | `26b` | `google/gemma-4-26B-A4B-it-qat-q4_0-gguf`, BF16 프로젝터 | 15.6 GB |
 | `31b` | `google/gemma-4-31B-it-qat-q4_0-gguf`, BF16 프로젝터 | 18.9 GB |
+| `qwen3vl-8b` | `Qwen/Qwen3-VL-8B-Instruct-GGUF`, Q8_0 + F16 프로젝터(2026-10-22 추가) | 9.9 GB |
+| `qwen3vl-32b` | `Qwen/Qwen3-VL-32B-Instruct-GGUF`, Q8_0 + F16 프로젝터 | 36.0 GB |
+| `qwen35-27b` | `unsloth/Qwen3.5-27B-GGUF`, Q8_0 + BF16 프로젝터(제3자 변환) | 29.5 GB |
+| `qwen35-35b` | `ggml-org/Qwen3.5-35B-A3B-GGUF`, Q8_0 + Q8_0 프로젝터 | 37.5 GB |
 
 e2b와 e2b-bf16은 프로젝터만 다릅니다. e2b-qat는 가중치가 다르고, 프로젝터도 Google이 따로 낸
 파일입니다(e2b-bf16과 마찬가지로 BF16). 서버 설정은 모든 모델이 같습니다. 문맥 4096(그림 여섯 장인
@@ -141,13 +147,77 @@ sbatch --account=<계정> --partition=mb-a30 PODFoam/llm_demo/hpc/picture_test.s
 `POD_LLM_RUNTIME`을 쓰는 동안에는 둘 다 쓰지 마세요. 작업은 모델을 띄우기 전에
 `picture_test.py check`로 요청 파일과 정답 파일이 모두 manifest와 같은지 확인합니다.
 
-2026-10-22에 Slurm 작업 24756981로 NVIDIA RTX A6000 한 장(49,140 MiB)에서 돌렸습니다. 위 명령은
-mb-a30을 적었지만, 작업이 실제로 어느 파티션에서 돌았는지는 기록에 없습니다. 모델 일곱 개가
+2026-10-22에 Slurm 작업 24756981로 NVIDIA RTX A6000 한 장(49,140 MiB)에서 돌렸습니다. 스케줄러가
+mb-a30 대기열에서는 2주 뒤에야 시작한다고 예상해서 mb-a6000 파티션에 제출했습니다. 모델 일곱 개가
 저마다 요청 308개에 모두 답했고, 모델 일곱 개를 돌린 시간은 모델을 띄우는 시간까지 합쳐
 83분이었습니다. llama.cpp b11429에서 모든 모델이 떠서 답했고, 26B-A4B와 31B도 마찬가지였습니다.
 31B는 서버가 처음 준비됐을 때 GPU 메모리 20,128 MiB를 쓰고 있었습니다. A30의 24 GB에 31B가
 들어가는지는 해 보지 않았습니다. 결과: [10월 22일 보고서](../../../../docs/results-20261022.md),
 [근거](../../../../docs/evidence/2026-10-22-picture-test/README.md).
+
+## 무작위 창 시험과 Qwen 모델 (2026-10-22 실행)
+
+그림 시험의 흐름 상태에서는 가장 빠른 곳과 압력이 가장 낮은 곳이 계단 모서리에 있어서, 답 하나로 고정해도
+24개 중 24개를 맞힙니다. `window_test.py`는 같은 상태를 그리되 창을 가장 빠른 칸 둘레에 무작위로 놓아,
+그림마다 정답 자리가 달라지게 합니다([llm_demo README](../README.md#무작위-창-그림-시험-window_testpy) 참고).
+`window_test.slurm`은 `picture_test.slurm`처럼 묶음 하나를 돌리고, 이미지 토큰 한도를 시험하려면
+`LLM_CTX`와 `LLM_IMAGE_TOKENS`(기본 4096과 256, `start_server.sh`가 읽음)를 올릴 수 있습니다.
+
+```bash
+python3 Solver_Examples/PODFoam/llm_demo/window_test.py build --states <case> \
+    --centres docs/evidence/2026-10-20/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/fields.npz \
+    --old-manifest <picture-test-20261021/manifest.json> --output <set> [--seed N] [--first-step N --describe-every N --last-step N]
+export POD_LLM_RUNTIME=$PWD/llm-runtime-12b PICTURE_TEST_SET=<set>
+sbatch --export=ALL,MODELS="12b 26b 31b qwen35-35b" --account=<account> --partition=mb-a6000 \
+    Solver_Examples/PODFoam/llm_demo/hpc/window_test.slurm
+```
+
+2026-10-22에 모두 RTX A6000 한 장에서 돌렸습니다. 그림 시험 요청 308개에 Qwen 모델 네 개(작업 24757327);
+시작 직후 상태(v2212 이미지에서 5e-7 s 간격 6000걸음을 돌린 `pimpleFoam` 실행, 작업 24757337, 500걸음마다
+상태)에 무작위 창 네 개씩(요청 96개)으로 모델 열한 개(작업 24757344); 가장 큰 여섯 모델을 다른 창 시드
+두 개로(작업 24757384, 24757383), 그리고 `LLM_IMAGE_TOKENS=1024 LLM_CTX=8192`로(작업 24757382) 다시;
+발달한 흐름(아래)의 상태 35개에 창 네 개씩(요청 280개, 작업 24757459). 결과:
+[보고서](../../../../docs/results-20261022-live.md), [근거](../../../../docs/evidence/2026-10-22-window-test/README.md).
+
+## 돌고 있는 솔버가 그린 v2 그림 (`async_v2.slurm`, 2026-10-22 실행)
+
+MedicineBow에는 OpenFOAM 모듈이 없지만, OpenFOAM v2212가 Apptainer 이미지(그곳에서 solids4foam에 쓰는
+것)로 돕니다. PODFoam은 numpy와 matplotlib가 있는 conda Python 3.11에 맞춰 그 안에서 고치지 않고
+빌드되고(이미지에는 Python이 없음), 연결 검증도 그 안에서 통과합니다.
+
+```bash
+module load apptainer
+apptainer exec <of2212.sif> bash -c '
+    source /usr/lib/openfoam/openfoam2212/etc/bashrc
+    export LD_LIBRARY_PATH=<conda>/lib:$LD_LIBRARY_PATH POD_OPENFOAM_VERSION=v2212 PYTHON=<conda>/bin/python3
+    Solver_Examples/PODFoam/validation/run_v2106.sh'      # $POD_WORKSPACE/pod-v2212.XXXXXX에 씀
+```
+
+이미지는 호스트의 네트워크와 프로세스 이름공간을 함께 쓰므로, 이미지 안 솔버의 콜백이 호스트 GPU에 띄운
+llama-server에 127.0.0.1로 닿습니다. `async_v2.slurm`은 서버(12B, 문맥 4096, batch와 ubatch 512, 그림
+시험과 같은 설정)를 띄우고, 호스트에서 체크아웃의 git 상태를 기록하고(이미지에는 git이 없음. `pack_run.py`가
+복사), 이미지 안에서 `POD_SUITE=async`와 `LLM_IMAGE_STYLE=v2`로 `run_demo.sh`를 돌린 뒤
+`run_live_sweep.py`를 돌립니다.
+
+```bash
+# 저장소 최상위에서, 연결 검증 실행과 같은 격자의 발달한 실행이 있은 뒤
+export POD_REFERENCE_RUN=<pod-v2212.XXXXXX> LLM_LONG_START=<developed case>/0.1
+sbatch --account=<account> --partition=mb-a6000 Solver_Examples/PODFoam/llm_demo/hpc/async_v2.slurm
+```
+
+기본값: 시작 상태에서 5e-6 s 간격 6000걸음, 250걸음마다 저장, describe 요청은 250걸음, sequence 프레임은
+3000·3250·3750걸음, 창 x 0~0.12 m, y 0~0.04 m, 그다음 500걸음마다 sweep 요청 열한 개(`SWEEP_STEPS`,
+`SWEEP_PARALLEL`). `LLM_KILL_JOIN_S=0.2`: 이 노드에서는 0.5 GB 솔버에서 포크한 워커를 끊고 거두는 데 약
+40 ms가 걸려 기본값 0.02 s보다 깁니다. 발달한 상태는 같은 이미지의 `pimpleFoam`으로, 연결 검증 실행의
+`fixed-pimple` 경우에서 `controlDict`만 바꿔 얻었습니다. 시간 간격을 스스로 맞추며(`maxCo 0.5`,
+`maxDeltaT 5e-6`) 100 ms를 돌렸고 1 ms마다 저장했습니다(작업 24757429). 2026-10-22에 Slurm 작업
+24757460으로 돌렸고, 결과는 [보고서](../../../../docs/results-20261022-live.md), 기록은
+[근거](../../../../docs/evidence/2026-10-22-live-v2/README.md)에 있습니다.
+
+이 노드에서는 타이밍 단위 시험 두 개(`test_image_rendered_when_request_disabled`,
+`test_timeout_is_detected_by_polling`)가 같은 이유로 기본 `LLM_KILL_JOIN_S`에서 실패하고(이번 변경 전
+코드도 마찬가지), `LLM_KILL_JOIN_S=0.2`에서는 통과합니다. `test_connection_refused_is_reported_without_a_stall`은
+가끔 0.5 s 한도를 100분의 몇 초 넘깁니다.
 
 ## 시험한 곳
 
@@ -186,7 +256,8 @@ stub 없이 CPU 노드에서 한 첫 빌드(작업 24695932)는 마지막 링크
 
 ## 여기서 확인 못 한 것
 
-`demo_12b.slurm`(MedicineBow에는 OpenFOAM 모듈이 없음), 미리 빌드된 CUDA 바이너리,
+`demo_12b.slurm`(GPU 노드에서 OpenFOAM v2106으로 도는 동기 시험. 비동기 시험은 대신 v2212 이미지에서
+돌았음), 미리 빌드된 CUDA 바이너리,
 `LLAMA_CUDA=13.4`, L40S 파티션, 12B 스크립트의 tar.gz 폴더 구조(같은 구조로 된 자기 묶음에서
 `picture_test.slurm`이 2026-10-22에 돌았음).
 `start_server.sh`는 10분 안에 `/health`가 안 뜨면 바로 실패하고, 로그는

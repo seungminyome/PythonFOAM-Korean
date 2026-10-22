@@ -30,20 +30,36 @@ for path in [source/'PODFoam.C', *source.glob('*.H')]:
 for directory in ('llm_demo', 'validation', 'Make'):
     shutil.copytree(source/directory, out/'sources'/directory, dirs_exist_ok=True,
                     ignore=shutil.ignore_patterns('__pycache__', '*.pyc', 'linux64*'))
-for name in ('runtime_manifest.json', 'startup.json', 'standalone.json', 'standalone-request.json'):
+for name in ('runtime_manifest.json', 'runtime_manifest_12b.json', 'startup.json', 'standalone.json',
+             'standalone-request.json'):
     if (runtime/name).exists():
         shutil.copy2(runtime/name, out/'runtime'/name)
+# hpc/start_server.sh keeps the command line, log, model list and GPU record per server start
+state = Path(os.environ['POD_LLM_STATE']) if os.environ.get('POD_LLM_STATE') else None
+if state and state.is_dir():
+    for pattern in ('server-*.cmd', 'server-*.log', 'models-*.json', 'gpu-*.txt'):
+        for path in state.glob(pattern):
+            shutil.copy2(path, out/'runtime'/path.name)
 startup = json.loads((runtime/'startup.json').read_text()) if (runtime/'startup.json').exists() else {}
 if startup.get('server_log') and Path(startup['server_log']).exists():
     shutil.copy2(startup['server_log'], out/'runtime/server.log')
 
 git = ['git', '-C', str(repo)]
+git_error = None
 try:
     (out/'HEAD').write_bytes(subprocess.check_output([*git, 'rev-parse', 'HEAD']))
     (out/'git-status.txt').write_bytes(subprocess.check_output([*git, 'status', '--short']))
     (out/'changes.patch').write_bytes(subprocess.check_output([*git, 'diff', '--binary']))
-except (subprocess.CalledProcessError, FileNotFoundError):
-    pass
+except (subprocess.CalledProcessError, FileNotFoundError) as error:
+    # no git inside an OpenFOAM image: use what the job recorded on the host (POD_GIT_RECORDS)
+    records = Path(os.environ['POD_GIT_RECORDS']) if os.environ.get('POD_GIT_RECORDS') else None
+    if records and (records/'HEAD').exists():
+        for name in ('HEAD', 'git-status.txt', 'changes.patch', 'untracked.tar.gz'):
+            if (records/name).exists():
+                shutil.copy2(records/name, out/name)
+    else:
+        git_error = repr(error)
+        print(f'pack_run: no git records ({git_error})', file=sys.stderr)
 
 build_root = workspace/'llm-demo-work/build'
 binary = workspace/'llm-demo-work/bin/PODFoam'
@@ -51,7 +67,8 @@ compiled = {p.name: sha256(p) for p in [build_root/'PODFoam.C', *build_root.glob
 for name, digest in compiled.items():
     assert sha256(source/name) == digest, f'{name} in the build directory differs from the source tree'
 save('build-inputs.json', {'source_sha256': compiled, 'binary_path': str(binary),
-                           'binary_sha256': sha256(binary), 'version': 'OpenFOAM v2106'})
+                           'binary_sha256': sha256(binary),
+                           'version': f"OpenFOAM {os.environ.get('WM_PROJECT_VERSION', 'v2106')}"})
 
 server = json.loads((out/'resident-server.json').read_text())
 if (out/'async-verification.json').exists():
@@ -64,8 +81,9 @@ if (out/'async-verification.json').exists():
         'cases': {name: {k: verification[name][k] for k in (
             'request_step', 'arrived_at_step', 'answer_arrived_before_end', 'end_wait_s',
             'model_status', 'callback_wall_s', 'solver_stall_s', 'inference_wall_s', 'structured_output')}
-                  for name in ('async-no-llm', 'async-describe', 'async-sequence', 'async-server-error', 'async-timeout')},
+                  for name in verification if name.startswith('async-')},
         'source_HEAD': (out/'HEAD').read_text().strip() if (out/'HEAD').exists() else None,
+        'source_HEAD_error': git_error,
     })
 else:
   verification = json.loads((out/'demo-verification.json').read_text())

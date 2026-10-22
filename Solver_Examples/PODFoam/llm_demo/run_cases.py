@@ -18,7 +18,8 @@ import threading
 import time
 import urllib.request
 
-CALLBACK_FILES = ('python_module.py', 'llm_client.py', 'pod_image.py', 'bounded_ipc.py')
+CALLBACK_FILES = ('python_module.py', 'llm_client.py', 'pod_image.py', 'bounded_ipc.py',
+                  'readable_image.py', 'readable_request.py')
 
 
 def memory(pid):
@@ -68,12 +69,15 @@ class Trickle(http.server.BaseHTTPRequestHandler):
 
 
 def resident_server(endpoint, runtime):
-    """Check that the server behind endpoint is the one recorded in server.pid."""
+    """Check that the server behind endpoint is the one recorded in server.pid.
+
+    server.pid is in POD_LLM_STATE when that is set (hpc/start_server.sh), else in runtime.
+    """
     base = endpoint.split('/v1/', 1)[0]
     with urllib.request.urlopen(base + '/health', timeout=5) as response: assert response.status == 200
     with urllib.request.urlopen(base + '/v1/models', timeout=5) as response:
         models = [m['id'] for m in json.load(response)['data']]
-    pid = int((runtime/'server.pid').read_text())
+    pid = int((Path(os.environ.get('POD_LLM_STATE') or runtime)/'server.pid').read_text())
     cmdline = Path(f'/proc/{pid}/cmdline').read_bytes().split(b'\0')
     assert b'llama-server' in cmdline[0], cmdline[0]
     assert ('--port').encode() in cmdline and base.rsplit(':', 1)[1].encode() in cmdline, (base, pid)
@@ -107,8 +111,10 @@ def main():
         shutil.copy2(frozen/'pod_svd.py', case/'pod_svd.py')
         for filename in CALLBACK_FILES:
             shutil.copy2(frozen/filename, case/filename)
+        # observe mode, so always the v1 picture (LLM_IMAGE_STYLE=v2 would be refused)
         env = dict(os.environ, LLM_ENABLED=enabled, LLM_IMAGE_INPUT=image, LLM_ANALYSIS_STEP=step,
-                   LLM_RUN_ID=f'{output.name}/{name}', MPLCONFIGDIR=str(case/'mpl-cache'))
+                   LLM_IMAGE_STYLE='v1', LLM_RUN_ID=f'{output.name}/{name}',
+                   MPLCONFIGDIR=str(case/'mpl-cache'))
         trickle = None
         if name == 'fixed-pod-server-error':
             env.update(LLM_ENDPOINT='http://127.0.0.1:1/v1/chat/completions',

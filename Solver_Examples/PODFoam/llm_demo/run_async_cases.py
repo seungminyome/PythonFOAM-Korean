@@ -2,7 +2,10 @@
 
 Cases (LLM_ASYNC=1, LLM_LONG_STEPS steps of LLM_LONG_DT, written every
 LLM_LONG_WRITE steps; request at LLM_LONG_STEP, sequence frames at
-LLM_LONG_SEQUENCE_STEPS):
+LLM_LONG_SEQUENCE_STEPS; LLM_LONG_START=<time directory of an earlier run of
+the same mesh> starts every case from that state instead of t = 0, and step
+numbers then count from it; the refused and stalled cases get a callback
+deadline of LLM_LONG_FIXTURE_DEADLINE_S, default 4 s):
   async-no-llm         sequence mode, frames rendered, request disabled (baseline fields and frames)
   async-describe       one image to the real model; the solver keeps stepping
   async-sequence       frames captured along the run, sent together at the last one
@@ -10,6 +13,7 @@ LLM_LONG_SEQUENCE_STEPS):
   async-timeout        trickling HTTP fixture, killed at the deadline by polling
 """
 from pathlib import Path
+import hashlib
 import http.server
 import json
 import os
@@ -27,6 +31,19 @@ DT = os.environ.get('LLM_LONG_DT', '5e-7')
 WRITE_EVERY = int(os.environ.get('LLM_LONG_WRITE', '250'))
 REQUEST_STEP = os.environ.get('LLM_LONG_STEP', '250')
 SEQUENCE_STEPS = os.environ.get('LLM_LONG_SEQUENCE_STEPS', '250,750,1250')
+START = Path(os.environ['LLM_LONG_START']).resolve() if os.environ.get('LLM_LONG_START') else None
+T0 = float(START.name) if START else 0.0
+FIXTURE_DEADLINE_S = os.environ.get('LLM_LONG_FIXTURE_DEADLINE_S', '4')
+
+
+def sha256(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def start_files():
+    """The fields of the start state (U, p, phi, ...); uniform/ is left out, so the time
+    index restarts and the writes land at whole multiples of LLM_LONG_WRITE steps."""
+    return sorted(path for path in START.iterdir() if path.is_file())
 
 
 def stage_case(reference, case):
@@ -34,7 +51,16 @@ def stage_case(reference, case):
         shutil.copytree(reference/'fixed-pod'/directory, case/directory)
     (case/'0/uniform/time').unlink(missing_ok=True)
     control = (case/'system/controlDict').read_text()
-    end = float(DT) * STEPS
+    if START:
+        for name in ('boundary', 'faces', 'neighbour', 'owner', 'points'):
+            assert sha256(START.parent/'constant/polyMesh'/name) == sha256(case/'constant/polyMesh'/name), \
+                f'{START} is not on the mesh of the reference case ({name})'
+        (case/START.name).mkdir()
+        for path in start_files():
+            shutil.copy2(path, case/START.name/path.name)
+        control = re.sub(r'^startFrom .*$', 'startFrom startTime;', control, flags=re.M)
+        control = re.sub(r'^startTime .*$', f'startTime {START.name};', control, flags=re.M)
+    end = T0 + float(DT) * STEPS
     control = re.sub(r'^endTime .*$', f'endTime {end:.12g};', control, flags=re.M)
     control = re.sub(r'^deltaT .*$', f'deltaT {DT};', control, flags=re.M)
     control = re.sub(r'^writeInterval .*$', f'writeInterval {WRITE_EVERY};', control, flags=re.M)
@@ -46,6 +72,7 @@ def stage_case(reference, case):
 def main():
     source, reference, output, executable = map(Path, sys.argv[1:])
     endpoint = os.environ['LLM_ENDPOINT']
+    # server.pid is read from POD_LLM_STATE when set (run_cases.resident_server)
     runtime = Path(os.environ.get('POD_LLM_RUNTIME', source.parents[2]/'llm-runtime'))
     server = resident_server(endpoint, runtime)
     server_pid = server['pid']
@@ -60,7 +87,13 @@ def main():
     settings = {'steps': STEPS, 'delta_t_s': float(DT), 'write_every': WRITE_EVERY,
                 'request_step': int(REQUEST_STEP), 'sequence_steps': [int(s) for s in SEQUENCE_STEPS.split(',')],
                 'image_x_window': os.environ.get('LLM_IMAGE_XRANGE'), 'image_y_window': os.environ.get('LLM_IMAGE_YRANGE'),
-                'deadline_s': os.environ.get('LLM_CALLBACK_DEADLINE_S', os.environ.get('LLM_TIMEOUT_S', '120'))}
+                'deadline_s': os.environ.get('LLM_CALLBACK_DEADLINE_S', os.environ.get('LLM_TIMEOUT_S', '120')),
+                'image_style': os.environ.get('LLM_IMAGE_STYLE', 'v1'), 'model': os.environ.get('LLM_MODEL'),
+                'max_tokens_env': os.environ.get('LLM_MAX_TOKENS'),
+                'fixture_deadline_s': float(FIXTURE_DEADLINE_S), 'start_time_s': T0}
+    if START:
+        settings.update(start_dir=str(START),
+                        start_files_sha256={path.name: sha256(path) for path in start_files()})
     (output/'async-settings.json').write_text(json.dumps(settings, indent=2)+'\n')
     timings = {}
     cases = [('async-no-llm', '0', 'sequence'), ('async-describe', '1', 'describe'),
@@ -82,7 +115,8 @@ def main():
         trickle = None
         if name == 'async-server-error':
             env.update(LLM_ENDPOINT='http://127.0.0.1:1/v1/chat/completions',
-                       LLM_CALLBACK_DEADLINE_S='4', LLM_CONNECT_TIMEOUT_S='0.5', LLM_READ_TIMEOUT_S='0.3')
+                       LLM_CALLBACK_DEADLINE_S=FIXTURE_DEADLINE_S, LLM_CONNECT_TIMEOUT_S='0.5',
+                       LLM_READ_TIMEOUT_S='0.3')
         if name == 'async-timeout':
             trickle = http.server.ThreadingHTTPServer(('127.0.0.1', 0), Trickle)
             trickle.daemon_threads = True
@@ -91,7 +125,8 @@ def main():
             trickle.byte_count = 0
             threading.Thread(target=trickle.serve_forever, daemon=True).start()
             env.update(LLM_ENDPOINT=f'http://127.0.0.1:{trickle.server_port}/v1/chat/completions',
-                       LLM_CALLBACK_DEADLINE_S='4', LLM_CONNECT_TIMEOUT_S='0.5', LLM_READ_TIMEOUT_S='0.3')
+                       LLM_CALLBACK_DEADLINE_S=FIXTURE_DEADLINE_S, LLM_CONNECT_TIMEOUT_S='0.5',
+                       LLM_READ_TIMEOUT_S='0.3')
         start = time.monotonic()
         deadline = float(env.get('LLM_CALLBACK_DEADLINE_S', env.get('LLM_TIMEOUT_S', '120'))) + 90 + 0.5*STEPS
         events, samples = [], []
@@ -103,7 +138,7 @@ def main():
                     log.write(line)
                     if line.startswith(('PYTHON LLM', 'POD analysis callback returned', 'POD mesh geometry',
                                         'Python finalized', 'End')) or line.startswith('Time = ') and \
-                            int(float(line.split()[2]) / float(DT) + 0.5) % WRITE_EVERY == 0:
+                            int((float(line.split()[2]) - T0) / float(DT) + 0.5) % WRITE_EVERY == 0:
                         events.append({'wall_since_start_s': time.monotonic()-start,
                                        'monotonic_s': time.monotonic(), 'line': line.rstrip()})
                 log.flush()
@@ -130,7 +165,7 @@ def main():
             (case/'timeout-fixture.json').write_text(json.dumps({
                 'requests': trickle.received, 'bytes_sent': trickle.byte_count,
                 'byte_interval_s': .05, 'read_inactivity_timeout_s': .3,
-                'callback_deadline_s': 4}, indent=2)+'\n')
+                'callback_deadline_s': float(FIXTURE_DEADLINE_S)}, indent=2)+'\n')
         (case/'timeline.json').write_text(json.dumps(events, indent=2)+'\n')
         (case/'memory-samples.json').write_text(json.dumps(samples, indent=2)+'\n')
         def peak(key):
@@ -143,7 +178,9 @@ def main():
                         'cfd_python_peak_rss_sum_kib': peak('cfd_python_rss_sum_kib'),
                         'cfd_python_peak_pss_sum_kib': peak('cfd_python_pss_sum_kib'),
                         'llama_server_peak_rss_kib': max((s['rss_kib'] or 0 for s in server_samples), default=None),
-                        'llama_server_peak_pss_kib': max((s['pss_kib'] or 0 for s in server_samples), default=None),
+                        # PSS of a server outside the container's user namespace cannot be read
+                        'llama_server_peak_pss_kib': max((s['pss_kib'] for s in server_samples
+                                                          if s['pss_kib'] is not None), default=None),
                         'concurrent_samples': sum(bool(s['llama_server'] and s['cfd_python_processes']) for s in samples)}
         (output/'timings.json').write_text(json.dumps(timings, indent=2)+'\n')
         assert process.returncode == 0, (name, process.returncode)

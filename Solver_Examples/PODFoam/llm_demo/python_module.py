@@ -12,6 +12,19 @@ describe (one image, asks for a description and the position of the extrema),
 sequence (images captured at LLM_SEQUENCE_STEPS, sent together at the last of
 those steps, asks how the flow changes).
 
+LLM_IMAGE_STYLE chooses the pictures of describe and sequence requests: v1
+(default) is one 640x360 PNG with |U| above p (pod_image.py), as sent on
+2026-10-13 to 2026-10-20; v2 is one 1024x576 PNG per field with percent axes
+(readable_image.py), every frame in llm_observation/step-NNNNNN, and the
+request is built by readable_request.py exactly as in the 2026-10-22
+picture-reading tests (a v2 sequence takes two or three times, each picture on
+its own colour scale; a v2 describe request sends no SVD summary, so none is
+computed). v2 requests always send max_tokens 320, seed 20261021 and
+cache_prompt false, as tested; LLM_MAX_TOKENS must then be unset or 320. A v2
+frame folder is never overwritten: rerunning in a case folder that already
+holds llm_observation/step-NNNNNN from an earlier run is refused rather than
+sending that earlier picture. observe always sends the v1 picture.
+
 LLM_ASYNC=1 makes the request asynchronous: the worker is forked and the
 solver carries on. Each later step polls the worker without blocking; the
 answer is recorded with the step at which it arrived. At most
@@ -33,9 +46,9 @@ import numpy as np
 
 import pod_svd
 from bounded_ipc import FrameReader, FrameWriter, read_frame_blocking
-from llm_client import (DEFAULT_ENDPOINT, MODES, build_request, build_sequence_request,
-                        describe_note, encode_json, redact_request, request_local,
-                        write_json)
+from llm_client import (DEFAULT_ENDPOINT, DEFAULT_MODEL, MODES, build_request,
+                        build_sequence_request, describe_note, encode_json, redact_request,
+                        request_local, write_json)
 
 
 _case = Path(__file__).resolve().parent
@@ -73,6 +86,39 @@ def _max_pending():
     return value
 
 
+def _kill_join_allowance():
+    """How long a killed child may take to be reaped (LLM_KILL_JOIN_S, default 0.02 s).
+
+    Reaping a killed child takes longer the more memory it maps: about 16 ms for 200 MB
+    and 38 ms for 500 MB on the MedicineBow nodes, where 0.02 s is too short for a worker
+    forked from the solver.
+    """
+    try:
+        value = float(os.environ.get("LLM_KILL_JOIN_S", _KILL_JOIN_ALLOWANCE_S))
+    except ValueError:
+        raise ValueError("LLM_KILL_JOIN_S must be a number in (0, 2]") from None
+    if not 0 < value <= 2:
+        raise ValueError("LLM_KILL_JOIN_S must be in (0, 2]")
+    return value
+
+
+def _image_style():
+    style = os.environ.get("LLM_IMAGE_STYLE", "v1")
+    if style not in ("v1", "v2"):
+        raise ValueError("LLM_IMAGE_STYLE must be v1 or v2")
+    return style
+
+
+def _keeps_svd_window():
+    """Whether the request will carry the SVD summary, so its snapshot window is kept.
+
+    Called from snapshot_func, so it must not raise.
+    """
+    mode = os.environ.get("LLM_MODE", "observe")
+    return mode == "observe" or (mode == "describe"
+                                 and os.environ.get("LLM_IMAGE_STYLE", "v1") != "v2")
+
+
 def _sequence_steps():
     text = os.environ.get("LLM_SEQUENCE_STEPS", "")
     steps = sorted({int(item) for item in text.split(",") if item.strip()})
@@ -80,6 +126,10 @@ def _sequence_steps():
         raise ValueError("LLM_SEQUENCE_STEPS must list at least two positive steps")
     if len(steps) > 6:
         raise ValueError("LLM_SEQUENCE_STEPS lists more than 6 steps")
+    if _image_style() == "v2":
+        import readable_request
+        if len(steps) > readable_request.MAX_FRAMES:
+            raise ValueError("a v2 sequence takes at most 3 steps (two pictures per step)")
     return steps
 
 
@@ -198,8 +248,8 @@ def snapshot_func(array, rank):
     # the solver hands over its own copy, so keeping the reference is enough
     _latest_velocity = np.asarray(array)
     # The SVD summary window stops growing once the request has gone out; the
-    # sequence mode sends no summary and keeps only the latest snapshot.
-    if not _attempted and os.environ.get("LLM_MODE", "observe") != "sequence":
+    # sequence mode and v2 describe send no summary and keep only the latest snapshot.
+    if not _attempted and _keeps_svd_window():
         _snapshots.append(_latest_velocity)
     return result
 
@@ -309,7 +359,14 @@ def _render_image(state):
         return None, None, {"reason": "solver state carried no p_cells; numeric summary only"}
     if _latest_velocity is None:
         raise ValueError("no velocity snapshot received for this step")
-    if os.environ.get("LLM_MODE", "observe") != "sequence" and len(_snapshots) != int(state["step"]):
+    if _image_style() == "v2":
+        if _frame_directory(state).exists():
+            raise FileExistsError(f"{_frame_directory(state)} holds a frame of an earlier run "
+                                  "in this case folder")
+        start = time.perf_counter()
+        frame, metadata = _render_v2(state, _frame_directory(state))
+        return frame, dict(metadata, render_wall_s=time.perf_counter() - start), None
+    if _keeps_svd_window() and len(_snapshots) != int(state["step"]):
         raise ValueError(f"snapshot count {len(_snapshots)} != step {state['step']}")
     start = time.perf_counter()
     image, metadata = pod_image.render(state, _geometry["centres"], _geometry["solution_d"],
@@ -319,6 +376,64 @@ def _render_image(state):
                                        y_window=pod_image.parse_window(os.environ.get("LLM_IMAGE_YRANGE")))
     metadata["render_wall_s"] = time.perf_counter() - start
     return image, metadata, None
+
+
+def _frame_directory(state):
+    return _case / "llm_observation" / f"step-{int(state['step']):06d}"
+
+
+def _frame_sentinel():
+    """The file a renderer writes last; it marks a complete frame."""
+    if _image_style() == "v2":
+        import readable_request
+        return readable_request.METADATA
+    return "image-metadata.json"
+
+
+def _v2_ranges():
+    """Plotted range and domain extent, [[x0, x1], [y0, y1]] in metres, of v2 pictures."""
+    import pod_image
+    centres = _geometry["centres"]
+    if pod_image.projection_axes(centres, _geometry["solution_d"]) != [0, 1]:
+        raise ValueError("v2 pictures need a 2D case in the x-y plane")
+    domain = [[float(centres[:, 0].min()), float(centres[:, 0].max())],
+              [float(centres[:, 1].min()), float(centres[:, 1].max())]]
+    x_window = pod_image.parse_window(os.environ.get("LLM_IMAGE_XRANGE"))
+    y_window = pod_image.parse_window(os.environ.get("LLM_IMAGE_YRANGE"))
+    return [x_window or domain[0], y_window or domain[1]], domain
+
+
+def _render_v2(state, directory):
+    """One v2 frame of this step (readable_request.render_frame); returns (frame, metadata)."""
+    import pod_image
+    import readable_request
+    if _geometry is None or _geometry["polygons"] is None:
+        raise ValueError("v2 pictures need one polygon per cell (a 2D case with an empty patch)")
+    if not pod_image._backend["ready"]:
+        raise RuntimeError(f"matplotlib is not ready: {pod_image._backend['error']}")
+    plotted, domain = _v2_ranges()
+    return readable_request.render_frame(
+        directory, _geometry["centres"], _geometry["polygons"], _latest_velocity,
+        _latest_pressure, plotted, int(state["step"]), float(state["time_s"]),
+        view="full" if plotted == domain else "window", domain_extent=domain)
+
+
+def _v2_frame_record(frame, metadata):
+    """What llm_request.json and llm_result.json keep about a v2 frame."""
+    directory = Path(frame["directory"])
+    return {"style": metadata["style"], "view": metadata["view"], "directory": str(directory),
+            "step": metadata["step"], "time_s": metadata["time_s"], "cells": metadata["cells"],
+            "projection_axes": metadata["projection_axes"],
+            "plotted_range_m": metadata["plotted_range_m"],
+            "domain_extent_m": metadata["domain_extent_m"],
+            "fields_npz": str(directory / metadata["fields_npz"]),
+            "fields_sha256": metadata["fields_sha256"],
+            "images": {image["field"]: {"path": str(directory / image["path"]),
+                                        "sha256": image["sha256"], "bytes": image["bytes"],
+                                        "width": image["width"], "height": image["height"],
+                                        "colour_range": image["colour_range"],
+                                        "colour_range_shared": image["colour_range_shared"]}
+                       for image in metadata["images"]}}
 
 
 def _record_callback_error(state, error):
@@ -384,13 +499,24 @@ def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
                    "request_status": "summary_pending"}
         write_json(_case / "llm_request.json", pending)
         mode = context.get("mode", "observe")
-        if mode == "sequence":
+        style = context.get("image_style", "v1")
+        if mode == "sequence" or (mode == "describe" and style == "v2"):
             summary, summary_wall = _frame_summary(state), 0.0
         else:
             summary, summary_wall = _summarize(state)
         context["summary_wall_s"] = summary_wall
         image, image_meta, image_skip = _render_image(state)
-        if image is not None:
+        if image is not None and style == "v2":
+            context["image_input"] = True
+            context["text_input_only"] = False
+            context["image_render_wall_s"] = image_meta["render_wall_s"]
+            context["image"] = dict(_v2_frame_record(image, image_meta),
+                                    render_wall_s=image_meta["render_wall_s"])
+            summary["scope"] = "fluid PODFoam request; two same-step field pictures (v2)"
+            summary["image"] = {k: image_meta[k] for k in (
+                "style", "view", "time_s", "step", "cells", "projection_axes",
+                "plotted_range_m", "domain_extent_m")}
+        elif image is not None:
             context["image_input"] = True
             context["text_input_only"] = False
             context["image_render_wall_s"] = image_meta["render_wall_s"]
@@ -411,6 +537,25 @@ def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
         if mode == "observe":
             request = build_request(summary, image)
             sent_input = summary
+        elif style == "v2":
+            import readable_request
+            if image is None:
+                raise ValueError(f"{mode} mode needs an image: " + image_skip["reason"])
+            model = os.environ.get("LLM_MODEL", DEFAULT_MODEL)
+            if mode == "describe":
+                request = readable_request.describe_v2_payload(image, model=model)
+                sent_input = json.loads(request["messages"][1]["content"][0]["text"])
+            else:
+                collected = _collect_frames(context.get("frames", []))
+                frames = [frame for frame, _ in collected] + [image]
+                context["frames"] = ([_v2_frame_record(*item) for item in collected]
+                                     + [_v2_frame_record(image, image_meta)])
+                context["sequence_colour_range"] = "own"
+                request = readable_request.sequence_v2_payload(frames, model=model, own_ranges=True)
+                sent_input = {"frames": [{"step": f["step"], "time_s": f["time_s"],
+                                          "image_sha256": f["image_sha256"]} for f in frames],
+                              "text": [part["text"] for part in request["messages"][1]["content"]
+                                       if part["type"] == "text"]}
         elif mode == "describe":
             if image is None:
                 raise ValueError("describe mode needs an image: " + image_skip["reason"])
@@ -511,15 +656,30 @@ def _frame_summary(state):
 
 
 def _collect_frames(frames):
-    """Frames captured earlier; wait briefly for a render that is still finishing."""
+    """Frames captured earlier; wait briefly for a render that is still finishing.
+
+    v1: the frame dictionaries build_sequence_request takes. v2: (frame, metadata)
+    pairs, read with every hash checked.
+    """
     collected = []
+    sentinel = _frame_sentinel()
     for frame in frames:
-        meta_path = Path(frame["directory"]) / "image-metadata.json"
+        if _image_style() == "v2" and frame.get("status") == "render_failed":
+            raise ValueError(f"frame for step {frame['step']} was not rendered by this run")
+        meta_path = Path(frame["directory"]) / sentinel
         deadline = time.monotonic() + _FRAME_WAIT_S
         while not meta_path.exists() and time.monotonic() < deadline:
             time.sleep(0.05)
         if not meta_path.exists():
             raise FileNotFoundError(f"frame for step {frame['step']} was not rendered in time")
+        if _image_style() == "v2":
+            import readable_request
+            loaded, meta, _ = readable_request.load_frame(frame["directory"])
+            if meta["step"] != frame["step"] or meta["time_s"] != frame.get("time_s", meta["time_s"]):
+                raise ValueError(f"{frame['directory']} holds a frame of another run "
+                                 f"(t = {meta['time_s']}, expected {frame.get('time_s')})")
+            collected.append((loaded, meta))
+            continue
         meta = json.loads(meta_path.read_text())
         collected.append({"path": meta["path"], "step": meta["step"], "time_s": meta["time_s"],
                           "sha256": meta["sha256"], "fields_npz": meta["fields_npz"],
@@ -534,6 +694,9 @@ def _collect_frames(frames):
 def _render_frame(state, directory):
     """Body of the forked frame renderer (sequence mode, intermediate steps)."""
     import pod_image
+    if _image_style() == "v2":
+        _render_v2(state, directory)
+        return
     pod_image.render(state, _geometry["centres"], _geometry["solution_d"],
                      _latest_velocity, _latest_pressure, directory,
                      polygons=_geometry["polygons"],
@@ -541,11 +704,16 @@ def _render_frame(state, directory):
                      y_window=pod_image.parse_window(os.environ.get("LLM_IMAGE_YRANGE")))
 
 
-def _stop_process(process, join_budget_s=_KILL_JOIN_ALLOWANCE_S):
+def _stop_process(process, join_budget_s=None):
     """Best-effort bounded cleanup; a failed cleanup must not stop the solver."""
     if process is None:
         return True
     try:
+        if join_budget_s is None:
+            try:
+                join_budget_s = _kill_join_allowance()
+            except ValueError:   # reported by _new_context; cleanup must not raise
+                join_budget_s = _KILL_JOIN_ALLOWANCE_S
         if process.is_alive():
             process.kill()
         process.join(timeout=max(0.0, join_budget_s))
@@ -615,22 +783,35 @@ def _new_context(state, mode, frames=None, asynchronous=False):
                                       os.environ.get("LLM_TIMEOUT_S", "120")))
     if not 0 < deadline_s <= 300:
         raise ValueError("LLM_CALLBACK_DEADLINE_S must be in (0, 300]")
+    style = _image_style()
+    if style == "v2" and mode == "observe":
+        raise ValueError("LLM_IMAGE_STYLE=v2 applies to describe and sequence; "
+                         "observe sends the v1 picture")
+    if style == "v2":
+        import readable_request
+        if os.environ.get("LLM_MAX_TOKENS", str(readable_request.MAX_TOKENS)) != str(readable_request.MAX_TOKENS):
+            raise ValueError("LLM_IMAGE_STYLE=v2 sends max_tokens 320 and seed 20261021, as in the "
+                             "picture tests; leave LLM_MAX_TOKENS unset or set it to 320")
     context = {
         "parent_pid": os.getpid(),
         "run_id": os.environ.get("LLM_RUN_ID", _case.name),
         "step": state["step"], "time_s": state["time_s"],
-        "mode": mode,
+        "mode": mode, "image_style": style,
         "image_requested": _image_requested() and _geometry is not None,
         "deadline_s": deadline_s, "cleanup_budget_s": 0.2,
         "connect_timeout_s": float(os.environ.get("LLM_CONNECT_TIMEOUT_S", "2")),
         "read_timeout_s": float(os.environ.get("LLM_READ_TIMEOUT_S", "90")),
-        "kill_join_allowance_s": _KILL_JOIN_ALLOWANCE_S,
+        "kill_join_allowance_s": _kill_join_allowance(),
         "scheduling_tolerance_s": _SCHEDULING_TOLERANCE_S,
     }
     if asynchronous:
         context["async"] = True
     if frames is not None:
-        context["frames"] = [{"directory": frame["directory"], "step": frame["step"]}
+        # v2 frames also carry the capture time and status, so the worker can refuse a
+        # folder left by an earlier run (step numbers restart with every solver process)
+        context["frames"] = [dict({"directory": frame["directory"], "step": frame["step"]},
+                                  **({"time_s": frame["time_s"], "status": frame["status"]}
+                                     if style == "v2" else {}))
                              for frame in frames]
     if not all(0 < context[name] <= 300 for name in
                ("connect_timeout_s", "read_timeout_s")):
@@ -830,7 +1011,7 @@ def _poll_render(job, step):
         return None
     _pending.remove(job)
     frame = job["frame"]
-    meta_path = Path(frame["directory"]) / "image-metadata.json"
+    meta_path = Path(frame["directory"]) / _frame_sentinel()
     if worker.is_alive() or worker.exitcode != 0 or not meta_path.exists():
         _stop_process(worker)
         frame["status"] = "render_failed"
@@ -853,9 +1034,13 @@ def _capture_frame(state, start):
     """Render this step's image for the sequence; asynchronous unless LLM_ASYNC=0."""
     if _geometry is None or _latest_pressure is None or _latest_velocity is None:
         raise ValueError("sequence capture needs mesh geometry, U and p")
-    directory = _case / "llm_observation" / f"step-{int(state['step']):06d}"
+    directory = _frame_directory(state)
     frame = {"directory": str(directory), "step": int(state["step"]),
              "time_s": float(state["time_s"]), "status": "rendering"}
+    if _image_style() == "v2" and directory.exists():
+        frame["status"] = "render_failed"
+        _frames.append(frame)
+        raise FileExistsError(f"{directory} holds a frame of an earlier run in this case folder")
     worker = _ForkProcess(target=_render_frame, args=(dict(state), directory))
     worker.start()
     job = {"kind": "render", "worker": worker, "frame": frame, "start": start,
@@ -933,13 +1118,18 @@ def analysis_func(state):
             _poll_pending(step)
         mode = _mode()
         if mode == "sequence":
-            steps = _sequence_steps()
-            if step in steps and not _sequence_sent:
-                if step != steps[-1]:
-                    _capture_frame(state, start)
-                else:
-                    _sequence_sent = True
-                    _launch(state, start, mode, frames=list(_frames))
+            if not _sequence_sent:
+                try:
+                    steps = _sequence_steps()
+                except Exception:
+                    _sequence_sent = True   # report a refused LLM_SEQUENCE_STEPS once
+                    raise
+                if step in steps:
+                    if step != steps[-1]:
+                        _capture_frame(state, start)
+                    else:
+                        _sequence_sent = True
+                        _launch(state, start, mode, frames=list(_frames))
         else:
             target = int(os.environ.get("LLM_ANALYSIS_STEP", "5"))
             if not _attempted and step == target:
@@ -949,7 +1139,8 @@ def analysis_func(state):
         if _is_final_step(state):
             if _pending:
                 _finish_pending_at_end(step)
-            _bounded_writer(_dump_telemetry, (), time.monotonic() + 0.2)
+            # about 0.15 s for 6000 states on a login node; scale with the history
+            _bounded_writer(_dump_telemetry, (), time.monotonic() + max(0.2, 1e-4 * len(_history)))
     except Exception as error:
         _last_callback_outcome = {
             "status": "callback_error", "error": f"{type(error).__name__}: {error}"}

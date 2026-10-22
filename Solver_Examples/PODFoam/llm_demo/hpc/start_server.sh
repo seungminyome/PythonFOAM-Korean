@@ -30,7 +30,7 @@ command=("$bindir/llama-server"
     --host 127.0.0.1 --port "$port" --ctx-size "${LLM_CTX:-2048}" --parallel 1
     --threads "${LLM_THREADS:-4}" --threads-batch "${LLM_THREADS:-4}"
     --batch-size "${LLM_BATCH:-128}" --ubatch-size "${LLM_UBATCH:-128}" --n-gpu-layers "${LLM_GPU_LAYERS:-99}"
-    --image-max-tokens 256 --mtmd-batch-max-tokens 256
+    --image-max-tokens "${LLM_IMAGE_TOKENS:-256}" --mtmd-batch-max-tokens "${LLM_IMAGE_TOKENS:-256}"
     --reasoning off --reasoning-budget 0 --chat-template-kwargs '{"enable_thinking":false}'
     --no-webui --metrics --log-timestamps)
 printf '%q ' "${command[@]}" > "$state/server-$stamp.cmd"

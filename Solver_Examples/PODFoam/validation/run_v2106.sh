@@ -1,7 +1,8 @@
 #!/bin/bash
 # Build PODFoam and run the ten-step bridge validation in a fresh directory
 # under the workspace (default: the parent of the PythonFOAM checkout).
-# Environment: OPENFOAM_BASHRC (v2106), PYTHON (interpreter with numpy), POD_WORKSPACE.
+# Environment: OPENFOAM_BASHRC (v2106), PYTHON (interpreter with numpy), POD_WORKSPACE,
+# POD_OPENFOAM_VERSION (default v2106; e.g. v2212 for the MedicineBow Apptainer image).
 set -eo pipefail
 source_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 workspace=${POD_WORKSPACE:-$(cd -- "$source_dir/../../.." && pwd)}
@@ -10,7 +11,7 @@ if [[ "${1:-}" == --resume && $# == 2 ]]; then
     output=$(cd -- "$2" && pwd)
     [[ -f "$output/environment.txt" && -d "$output/fixed-pod" ]]
 elif [[ $# == 0 ]]; then
-    output=$(mktemp -d "$workspace/pod-v2106.XXXXXX")
+    output=$(mktemp -d "$workspace/pod-${POD_OPENFOAM_VERSION:-v2106}.XXXXXX")
 else
     echo "Usage: $0 [--resume RUN_DIRECTORY]" >&2
     exit 2
@@ -20,7 +21,7 @@ printf 'Validation directory: %s\n' "$output"
 set +e
 source "${OPENFOAM_BASHRC:-/usr/lib/openfoam/openfoam2106/etc/bashrc}" > "$output/log.environment-setup" 2>&1
 set -eu
-[[ "$WM_PROJECT_VERSION" == v2106 ]]
+[[ "$WM_PROJECT_VERSION" == "${POD_OPENFOAM_VERSION:-v2106}" ]]
 # Keep all build products inside this run, including the executable.
 export FOAM_USER_APPBIN="$output/bin"
 export PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
@@ -28,7 +29,8 @@ unset PYTHONHOME PYTHONPATH
 export PYTHON_INCLUDE_PATH=$("$python" -c 'import sysconfig; print(sysconfig.get_path("include"))')
 export NUMPY_INCLUDE_PATH=$("$python" -c 'import numpy; print(numpy.get_include())')
 export PYTHON_LIB_PATH=$("$python" -c 'import sysconfig; print(sysconfig.get_config_var("LIBDIR"))')
-export PYTHON_LIB_NAME=l$("$python" -c 'import sysconfig; print(sysconfig.get_config_var("LDLIBRARY").removeprefix("lib").split(".so")[0])')
+# python<LDVERSION>: also right for conda, whose LDLIBRARY names the static library
+export PYTHON_LIB_NAME=lpython$("$python" -c 'import sysconfig; print(sysconfig.get_config_var("LDVERSION"))')
 mkdir -p "$output/bin" "$output/build/Make"
 cp -u "$source_dir/"*.H "$source_dir/PODFoam.C" "$output/build/"
 cp -u "$source_dir/Make/options" "$source_dir/Make/files" "$output/build/Make/"

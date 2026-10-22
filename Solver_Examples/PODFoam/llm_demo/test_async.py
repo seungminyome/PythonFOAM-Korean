@@ -397,5 +397,186 @@ class SequenceModeTests(unittest.TestCase):
         self.assertLess(result["solver_stall_s"], 0.2)
 
 
+class V2Harness(Harness):
+    """The same 20 cells, each given a small square polygon, so v2 pictures can be drawn."""
+
+    def __init__(self, environment):
+        super().__init__(dict({"LLM_IMAGE_STYLE": "v2", "LLM_MODEL": "unit-test-model"}, **environment))
+        for helper in ("readable_image.py", "readable_request.py"):
+            shutil.copyfile(SOURCE / helper, self.case / helper)
+        centres = np.column_stack([np.linspace(-1.0, 1.0, 20), np.linspace(0.0, 0.1, 20),
+                                   np.full(20, 0.005)])
+        corners = np.array([[-1, -1], [1, -1], [1, 1], [-1, 1]], dtype=float)
+        points = np.concatenate([np.column_stack([c[:2] + corners * [0.05, 0.003], np.zeros(4)])
+                                 for c in centres])
+        self.callback.mesh_func(centres, np.full(20, 1e-9), (1, 1, -1), 0,
+                                points, np.arange(0, 81, 4), np.arange(20))
+
+
+class V2PictureTests(unittest.TestCase):
+    """LLM_IMAGE_STYLE=v2: the solver sends what the 2026-10-22 picture tests sent."""
+
+    def frame_folder(self, harness, step):
+        return harness.case / "llm_observation" / f"step-{step:06d}"
+
+    def test_describe_v2_body_is_the_tested_builder_applied_to_the_live_frame(self):
+        import readable_request
+        with fixture() as (endpoint, received):
+            harness = V2Harness({"LLM_MODE": "describe", "LLM_ENDPOINT": endpoint})
+            try:
+                result = harness.run()
+                request = harness.request()
+                raw = (harness.case / "llm_request_body.json").read_bytes()
+                folder = self.frame_folder(harness, 5)
+                files = sorted(path.name for path in folder.iterdir())
+                frame, meta, arrays = readable_request.load_frame(folder)
+                with patch.dict(os.environ, harness.environment):
+                    rebuilt = llm_client.encode_json(
+                        readable_request.describe_v2_payload(frame, model="unit-test-model"))
+                kept = len(harness.callback._snapshots)
+            finally:
+                harness.close()
+        self.assertEqual(result["status"], "ok", result)
+        self.assertEqual(result["image_style"], "v2")
+        self.assertEqual(files, ["U.png", "fields.npz", "p.png", "readable-metadata.json"])
+        self.assertEqual(raw, rebuilt)
+        body = json.loads(raw)
+        # the frame is the solver state of the request step, not just self-consistent
+        note = json.loads(body["messages"][1]["content"][0]["text"])
+        self.assertEqual((note["step"], note["time_s"], note["cells"]), (5, 5e-7, 20))
+        np.testing.assert_array_equal(arrays["p"], np.linspace(-1.0, 1.0, 20) * 5)
+        np.testing.assert_array_equal(arrays["U"], np.arange(60).reshape(20, 3) + 5.0)
+        self.assertEqual(body["messages"][0]["content"], readable_request.DESCRIBE_V2_SYSTEM_PROMPT)
+        self.assertEqual([p["type"] for p in body["messages"][1]["content"]],
+                         ["text", "text", "image_url", "text", "image_url"])
+        self.assertEqual((body["model"], body["seed"], body["max_tokens"], body["cache_prompt"]),
+                         ("unit-test-model", readable_request.SEED, readable_request.MAX_TOKENS, False))
+        self.assertEqual(result["image"]["images"]["U"]["sha256"], meta["images"][0]["sha256"])
+        self.assertEqual(request["input"]["plotted_range_m"]["x"], [-1.0, 1.0])
+        # no SVD summary is sent, so none is computed and no snapshot window is kept
+        self.assertNotIn("velocity_svd", request["numeric_summary"])
+        self.assertEqual(kept, 0)
+        self.assertEqual(len(received), 1)
+
+    def test_describe_v2_asynchronous_with_a_window(self):
+        with fixture(delay_s=0.3) as (endpoint, received):
+            harness = V2Harness({"LLM_MODE": "describe", "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1",
+                                 "LLM_IMAGE_XRANGE": "-0.5,0.5"})
+            try:
+                result = harness.run(sleep_after=5, sleep_s=0.3)
+                walls = dict(harness.walls)
+                meta = json.loads((self.frame_folder(harness, 5) / "readable-metadata.json").read_text())
+            finally:
+                harness.close()
+        self.assertEqual(result["status"], "ok", result)
+        self.assertGreater(result["arrived_at_step"], 5)
+        self.assertLess(walls[5], 0.2)
+        self.assertEqual(meta["view"], "window")
+        self.assertEqual(meta["plotted_range_m"]["x"], [-0.5, 0.5])
+        self.assertEqual(meta["domain_extent_m"]["x"], [-1.0, 1.0])
+        note = json.loads(received[0]["messages"][1]["content"][0]["text"])
+        self.assertEqual(note["plotted_range_m"]["x"], [-0.5, 0.5])
+
+    def test_sequence_v2_sends_two_pictures_per_time_on_their_own_scales(self):
+        import readable_request
+        with fixture(delay_s=0.3) as (endpoint, received):
+            harness = V2Harness({"LLM_MODE": "sequence", "LLM_SEQUENCE_STEPS": "2,4,6",
+                                 "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1"})
+            try:
+                harness.run(sleep_after=2, sleep_s=0.3)
+                result = harness.result()
+                walls = dict(harness.walls)
+                statuses = [f["status"] for f in harness.callback._frames]
+                raw = (harness.case / "llm_request_body.json").read_bytes()
+                loaded = [readable_request.load_frame(self.frame_folder(harness, s)) for s in (2, 4, 6)]
+                frames = [item[0] for item in loaded]
+                with patch.dict(os.environ, harness.environment):
+                    rebuilt = llm_client.encode_json(readable_request.sequence_v2_payload(
+                        frames, model="unit-test-model", own_ranges=True))
+            finally:
+                harness.close()
+        self.assertEqual(result["status"], "ok", result)
+        self.assertEqual(statuses, ["rendered", "rendered"])
+        self.assertEqual([f["step"] for f in result["frames"]], [2, 4, 6])
+        self.assertEqual(result["sequence_colour_range"], "own")
+        self.assertFalse(any(image["colour_range_shared"] for f in result["frames"]
+                             for image in f["images"].values()))
+        self.assertEqual(raw, rebuilt)
+        body = received[0]
+        header = json.loads(body["messages"][1]["content"][0]["text"])
+        self.assertEqual([(f["step"], f["time_s"]) for f in header["frames"]], [(s, s * 1e-7) for s in (2, 4, 6)])
+        for step, (_, _, arrays) in zip((2, 4, 6), loaded):
+            np.testing.assert_array_equal(arrays["p"], np.linspace(-1.0, 1.0, 20) * step)
+            np.testing.assert_array_equal(arrays["U"], np.arange(60).reshape(20, 3) + float(step))
+        self.assertEqual(body["messages"][0]["content"], readable_request.SEQUENCE_V2OWN_SYSTEM_PROMPT)
+        self.assertEqual(sum(p["type"] == "image_url" for p in body["messages"][1]["content"]), 6)
+        self.assertLess(max(walls[step] for step in (2, 4, 6)), 0.2)
+
+    def test_observe_and_four_step_sequences_are_refused_without_stopping_the_solver(self):
+        for environment, message in (({"LLM_MODE": "observe"}, "LLM_IMAGE_STYLE=v2"),
+                                     ({"LLM_MODE": "sequence", "LLM_SEQUENCE_STEPS": "2,4,6,8"},
+                                      "at most 3 steps")):
+            harness = V2Harness(dict(environment, LLM_ENDPOINT="http://127.0.0.1:1/v1/chat/completions"))
+            try:
+                harness.run()
+                outcome = harness.callback._last_callback_outcome
+                result = harness.result()
+                errors = (harness.case / "llm_errors.jsonl").read_text().splitlines()
+                telemetry = (harness.case / "telemetry.jsonl").read_text().splitlines()
+            finally:
+                harness.close()
+            self.assertEqual(outcome["status"], "callback_error", outcome)
+            self.assertIn(message, outcome["error"])
+            self.assertIsNone(result)
+            # reported once, and the run still writes its final telemetry
+            self.assertEqual(len(errors), 1)
+            self.assertEqual(len(telemetry), 10)
+
+    def test_a_rerun_in_the_same_case_folder_never_sends_an_earlier_frame(self):
+        with fixture() as (endpoint, received):
+            harness = V2Harness({"LLM_MODE": "sequence", "LLM_SEQUENCE_STEPS": "2,4,6",
+                                 "LLM_ENDPOINT": endpoint})
+            try:
+                harness.run()
+                first = harness.result()
+                # a second solver process in the same folder: step numbers start again at 1
+                harness.callback = load_module(f"async_rerun_{id(harness)}", harness.case / "python_module.py")
+                corners = np.array([[-1, -1], [1, -1], [1, 1], [-1, 1]], dtype=float)
+                centres = np.column_stack([np.linspace(-1.0, 1.0, 20), np.linspace(0.0, 0.1, 20),
+                                           np.full(20, 0.005)])
+                points = np.concatenate([np.column_stack([c[:2] + corners * [0.05, 0.003], np.zeros(4)])
+                                         for c in centres])
+                harness.callback.mesh_func(centres, np.full(20, 1e-9), (1, 1, -1), 0,
+                                           points, np.arange(0, 81, 4), np.arange(20))
+                harness.environment["LLM_SEQUENCE_STEPS"] = "2,5,7"
+                harness.run()
+                second = harness.result()
+            finally:
+                harness.close()
+        self.assertEqual(first["status"], "ok", first)
+        self.assertEqual(second["status"], "callback_error", second)
+        self.assertIn("not rendered by this run", second["error"])
+        self.assertEqual(len(received), 1)
+
+    def test_final_telemetry_budget_scales_with_history(self):
+        harness = Harness({"LLM_MODE": "describe", "LLM_ENABLED": "0"})
+        budgets, real = [], harness.callback._bounded_writer
+
+        def spy(target, args, deadline_at):
+            if target is harness.callback._dump_telemetry:
+                budgets.append(deadline_at - time.monotonic())
+            return real(target, args, deadline_at)
+
+        harness.callback._bounded_writer = spy
+        harness.callback._history.extend({"step": 0} for _ in range(7999))
+        try:
+            with patch.dict(os.environ, harness.environment):
+                harness.callback.analysis_func(harness.state(10))
+        finally:
+            harness.close()
+        self.assertEqual(len(budgets), 1)
+        self.assertGreater(budgets[0], 0.7)
+
+
 if __name__ == "__main__":
     unittest.main()

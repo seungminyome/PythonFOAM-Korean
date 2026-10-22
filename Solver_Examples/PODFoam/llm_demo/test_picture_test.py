@@ -195,6 +195,83 @@ class BaselineTests(unittest.TestCase):
             self.assertIn(part, b)
 
 
+EVIDENCE = Path(__file__).resolve().parents[3] / "docs" / "evidence" / "2026-10-22-picture-test"
+
+
+def tiny_png(path):
+    """A 1x1 PNG standing in for every picture of a request skeleton."""
+    path.write_bytes(b"\x89PNG\r\n\x1a\n" + png_chunk(b"IHDR", struct.pack(">IIBBBBB", 1, 1, 8, 2, 0, 0, 0))
+                     + png_chunk(b"IDAT", zlib.compress(b"\0\0\0\0")) + png_chunk(b"IEND", b""))
+    return path
+
+
+def skeleton_sha256(body):
+    """SHA-256 of a request with every image URL replaced by one placeholder."""
+    body = json.loads(json.dumps(body))
+    for message in body["messages"]:
+        if isinstance(message["content"], list):
+            for part in message["content"]:
+                if part["type"] == "image_url":
+                    part["image_url"]["url"] = "data:image/png;base64,<image>"
+    return pt.sha256(pt.encode_json(body))
+
+
+class GoldenV2RequestTests(unittest.TestCase):
+    """The v2 builders give the bodies sent on 2026-10-22 byte for byte. The solver uses
+    the same builders, so a live request equals a tested one apart from its pictures,
+    step, time, plotted range (LLM_IMAGE_XRANGE/YRANGE) and model name; on another mesh
+    the cell count also differs."""
+
+    @classmethod
+    def setUpClass(cls):
+        if not (EVIDENCE / "test-set" / "manifest.json").exists():
+            raise unittest.SkipTest("docs/evidence/2026-10-22-picture-test not present")
+        manifest = json.loads((EVIDENCE / "test-set" / "manifest.json").read_text())
+        cls.truth = json.loads((EVIDENCE / "test-set" / "truth.private.json").read_text())
+        cls.entries = {f"{e['set']}/{e['name']}": e for e in manifest["requests"]}
+        cls.views = manifest["views_m"]
+        cls.temp = tempfile.TemporaryDirectory()
+        cls.placeholder = tiny_png(Path(cls.temp.name) / "tiny.png")
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.temp.cleanup()
+
+    def frame(self, key, view, images):
+        truth = self.truth[key]
+        return {"step": truth["step"], "time_s": truth["time_s"], "cells": 20540, "images": images,
+                "plotted_range_m": {"x": self.views[view][0], "y": self.views[view][1]}}
+
+    def test_describe_bodies_rebuild_exactly_from_the_published_pictures(self):
+        for key, view in (("control-position-v2/full-01", "full"),
+                          ("planted-position-v2/window-02-step002500", "window")):
+            stem = key.replace("/", "-")
+            frame = self.frame(key, view, {f: str(EVIDENCE / "pictures" / f"{stem}-{f}.png") for f in ("U", "p")})
+            body = pt.encode_json(pt.describe_v2_payload(frame))
+            self.assertEqual(pt.sha256(body), self.entries[key]["request_sha256"], key)
+
+    def test_request_skeletons_are_pinned(self):
+        tiny = {"U": str(self.placeholder), "p": str(self.placeholder)}
+        pinned = {
+            "flow-describe-v2/window-step001000": "828e64b897847524235bbb0dd77bf8d0ea4fd7713cc7f4a534efbbeb650f23de",
+            "control-trend-v2/trend-13": "f780e2116dc284d55f88b9d43d806bd3bff216761b046ab64f95c05f81ea7370",
+            "control-trend-v2own/trend-13": "52a7a906d884d4d46e1659c50b72fba190811820e4a8262146a82ef72b0d736c",
+            "flow-sequence-v2/full-steps000250-000750-001250":
+                "bd399adc7e38228aa70afe54a3656d46ef067aaffb503411b692f5f95ff83208",
+            "flow-sequence-v2own/window-steps005000-005500-006000":
+                "1c36956b914d710d784a7b94390c48256912b10ae8ae72a2ff16ae923fbe8a4b"}
+        for key, expected in pinned.items():
+            view = "window" if key.startswith("control-trend") else key.split("/")[1].split("-")[0]
+            if key.startswith("flow-describe"):
+                body = pt.describe_v2_payload(self.frame(key, view, tiny))
+            else:
+                frames = [{"step": f["step"], "time_s": f["time_s"], "images": tiny,
+                           "plotted_range_m": {"x": self.views[view][0], "y": self.views[view][1]}}
+                          for f in self.truth[key]["frames"]]
+                body = pt.sequence_v2_payload(frames, own_ranges="v2own" in key)
+            self.assertEqual(skeleton_sha256(body), expected, key)
+
+
 class PictureTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

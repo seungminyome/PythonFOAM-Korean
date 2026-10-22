@@ -373,6 +373,26 @@ class CallbackTests(unittest.TestCase):
                     self.assertIn("HTTP timeouts", outcome["error"])
                     self.assertTrue(outcome["writer_completed"])
 
+    def test_invalid_kill_join_allowance_fails_open(self):
+        class Finished:
+            def is_alive(self):
+                return False
+
+            def join(self, timeout):
+                self.timeout = timeout
+
+        for invalid in ("5", "0", "nan", "abc"):
+            with self.subTest(invalid=invalid), self.fault_case() as (callback, state), \
+                    patch.dict(os.environ, {"LLM_KILL_JOIN_S": invalid}):
+                self.assertIsNone(callback.analysis_func(state))
+                outcome = callback._last_callback_outcome
+                self.assertEqual(outcome["status"], "callback_error")
+                self.assertIn("LLM_KILL_JOIN_S", outcome["error"])
+                # cleanup never raises; it falls back to the default allowance
+                finished = Finished()
+                self.assertTrue(callback._stop_process(finished))
+                self.assertEqual(finished.timeout, callback._KILL_JOIN_ALLOWANCE_S)
+
     def test_reader_setup_failure_reaps_started_worker(self):
         with self.fault_case() as (callback, state):
             with patch.object(callback, "FrameReader", side_effect=OSError("reader setup")):

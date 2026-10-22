@@ -11,7 +11,8 @@ root = Path(sys.argv[1])
 reference = json.loads((root/'verification.json').read_text())
 assert reference['status'] == 'PASS'
 reports = {}
-CALLBACK_FILES = ('python_module.py', 'llm_client.py', 'pod_image.py', 'bounded_ipc.py', 'pod_svd.py')
+# every file frozen for the run (later runs freeze more files than the 2026-10-17 one)
+CALLBACK_FILES = tuple(sorted(p.name for p in (root/'executed-callback-source').iterdir() if p.is_file()))
 CASES = ('fixed-pod-no-llm', 'fixed-pod', 'fixed-pod-text-only', 'fixed-pod-server-error', 'fixed-pod-timeout')
 EXPECTED_STATUS = {'fixed-pod-no-llm': 'disabled', 'fixed-pod': 'ok', 'fixed-pod-text-only': 'ok',
                    'fixed-pod-server-error': 'error', 'fixed-pod-timeout': 'timeout'}

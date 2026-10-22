@@ -1,0 +1,14 @@
+# Models for picture_test.slurm. Tab-separated: key, server alias, Hugging Face repository,
+# pinned revision, weights file, its SHA-256, projector file, its SHA-256, folder under
+# POD_LLM_RUNTIME. "." for 12b is where setup_12b.sh puts the 12B files. e2b is the
+# E2B file pair used on the CPU since 2026-10-13 (projector Q8_0); e2b-bf16 is the same
+# weights with the BF16 projector of the same repository; the others are Google QAT
+# Q4_0 builds with BF16 projectors. e2b vs e2b-bf16 isolates the projector, e2b-bf16
+# vs e2b-qat the QAT weights.
+e2b	gemma-4-E2B-it-Q4_0-vision	ggml-org/gemma-4-E2B-it-GGUF	b4243c156154b6dca9324415f8c7ccc098b4aed1	gemma-4-E2B-it-Q4_0.gguf	8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52	mmproj-gemma-4-E2B-it-Q8_0.gguf	9406f99c16d68cda4f1f0552192dcc99021ea1fc6d2fd50b1dc3ccf30d04b292	models/e2b
+e2b-bf16	gemma-4-E2B-it-Q4_0-bf16proj-vision	ggml-org/gemma-4-E2B-it-GGUF	b4243c156154b6dca9324415f8c7ccc098b4aed1	gemma-4-E2B-it-Q4_0.gguf	8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52	mmproj-gemma-4-E2B-it-BF16.gguf	711e1e8f43fa0664adbac493129be1e6c25b81af4b4cdea97c7d798b25c0a3a4	models/e2b
+e2b-qat	gemma-4-E2B-it-qat-q4_0-vision	google/gemma-4-E2B-it-qat-q4_0-gguf	675cff42a74c774d6cb76f76d8eacb49b48c9b93	gemma-4-E2B_q4_0-it.gguf	fa401b55b07ee70a54c6dae3903c783a6e65064312529ea57175cb5f8dec6634	gemma-4-E2B-it-mmproj.gguf	021059cce659fe7f9170d5599761d7bbaf644b798dab9503aca30dc43e6beb14	models/e2b-qat
+e4b	gemma-4-E4B-it-qat-q4_0-vision	google/gemma-4-E4B-it-qat-q4_0-gguf	4b4a2c1d584be7264f87aac328a1bc739ce81b6c	gemma-4-E4B_q4_0-it.gguf	676c35070db6dbe52f93e9c864ee0fba4eddea94b9c875d9cb10daff453fbaee	gemma-4-E4B-it-mmproj.gguf	7498a37cb619e55f2fcf87eb931f56e99389ed6d432e4c5c66110694c0d65578	models/e4b
+12b	gemma-4-12b-it-qat-q4_0-vision	google/gemma-4-12B-it-qat-q4_0-gguf	29d097773436b69ff9feafd636ab4cf873786537	gemma-4-12b-it-qat-q4_0.gguf	93567e57a8fe10b23569b9d9ec38cd005deedf71e29477c421a4b83f418a538b	mmproj-gemma-4-12b-it-qat-q4_0.gguf	cb018338a7538a9814d994bfe54644c71eb7ed54e31eae2f721e45fd3c260da7	.
+26b	gemma-4-26B-A4B-it-qat-q4_0-vision	google/gemma-4-26B-A4B-it-qat-q4_0-gguf	d1c082be9cf3c8a514acf63b8761f4b41935842e	gemma-4-26B_q4_0-it.gguf	3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d	gemma-4-26B-it-mmproj.gguf	a359953a076b877db30c31dbbb4c6d93b4a6e017ee5db5784247e4d4c0dd4f3b	models/26b
+31b	gemma-4-31B-it-qat-q4_0-vision	google/gemma-4-31B-it-qat-q4_0-gguf	59dde24573e7e61570dba08b18a2e1fe246955ed	gemma-4-31B_q4_0-it.gguf	179cfb99212709597eae5929112cfca677e1bbf566178b479ae1da0c4772874b	gemma-4-31B-it-mmproj.gguf	6bd60bdb958548b4093196d38744b0f2290c12503a3fddd7486bffa9c5eb07a4	models/31b

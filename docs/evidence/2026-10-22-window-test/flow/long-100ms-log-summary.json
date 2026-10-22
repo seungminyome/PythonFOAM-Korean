@@ -1,0 +1,28 @@
+{
+ "steps": 21108,
+ "end_time_s": 0.1,
+ "ended": true,
+ "turbulence_model": "laminar",
+ "delta_t_s_range": [
+  2.40355885656e-07,
+  5.00938425852e-06
+ ],
+ "courant_max": {
+  "value": 1.24606422611,
+  "time_s": 8.405833284e-07,
+  "step": 2
+ },
+ "courant_max_other_steps": 0.506480799325,
+ "steps_with_courant_above_0.5": 589,
+ "last_time_with_courant_above_0.49_s": 0.013855,
+ "last_time_with_delta_t_below_4.99e-6_s": 0.0112986862,
+ "from_0.03_s": {
+  "steps": 14001,
+  "courant_max": 0.34139479632,
+  "delta_t_s_range": [
+   4.99999999999e-06,
+   5.00000000001e-06
+  ]
+ },
+ "execution_time_s": 1072.86
+}

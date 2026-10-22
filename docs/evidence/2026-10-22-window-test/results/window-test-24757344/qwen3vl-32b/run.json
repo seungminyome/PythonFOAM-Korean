@@ -1,0 +1,30 @@
+{
+  "model": "qwen3-vl-32b-instruct-q8_0-vision",
+  "endpoint": "http://127.0.0.1:27344/v1/chat/completions",
+  "server_note": "Qwen/Qwen3-VL-32B-Instruct-GGUF@e3e1fe0c76de7ee58ea65db420c643adfe2e457c Qwen3VL-32B-Instruct-Q8_0.gguf + mmproj-Qwen3VL-32B-Instruct-F16.gguf; llama.cpp b11429 CUDA (llama-server-version.txt); NVIDIA RTX A6000; all layers on GPU; context 4096, batch 512, ubatch 512, image token limit 256, parallel 1, temperature 0",
+  "sets": [
+    "oct17-paired",
+    "oct17-paired-cold",
+    "oct20-replay",
+    "control-position-v1",
+    "control-position-v2",
+    "planted-position-v1",
+    "planted-position-v2",
+    "control-trend-v1",
+    "control-trend-v2",
+    "control-trend-v2own",
+    "flow-describe-v1",
+    "flow-describe-v2",
+    "flow-sequence-v1",
+    "flow-sequence-v2",
+    "flow-sequence-v2own",
+    "flow-window-v1",
+    "flow-window-v2"
+  ],
+  "limit": 0,
+  "timeout_s": 300.0,
+  "test_set": "/cluster/medbow/gscratch/syome/github_repos/picture-test-20261021/pythonfoam-picture-test-20261021/picture-window-test-20261022",
+  "test_set_manifest_sha256": "d392c9441cf23b2fa1f6f2d8a4652fa27f9ea6582dd2c62288717b17bdc8e500",
+  "truth_sha256": "4efdc38380db112fefe3583112218cdd7cb8ec3017f871c6089b7dd527c0fad8",
+  "started_unix_s": 1792664289.6006966
+}

@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum speed |U| is near x=0.5 m, y=0.114 m, with value ~82.5 m/s. Location inferred from top panel color scale and domain extent; exact cell not labeled.\",\n  \"possible_interpretation\": \"High-speed region at right edge suggests outflow or jet; pressure gradient (bottom panel) supports flow direction from left to right.\",\n  \"checks\": \"Missing: force equilibrium, exact cell coordinates for max |U|, velocity field vector plot, boundary conditions, mesh resolution at high-speed region.\"\n}",
+  "request_sha256": "8eb8ddecf0f6a5e872e5def55cb4223ec9cbf1bc394561dd06910340acabfad3",
+  "request_bytes": 50855,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1183,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 125,
+    "prompt_tokens": 1589,
+    "total_tokens": 1714,
+    "prompt_tokens_details": {
+      "cached_tokens": 1362
+    }
+  },
+  "server_timings": {
+    "cache_n": 1362,
+    "prompt_n": 227,
+    "prompt_ms": 456.508,
+    "prompt_per_token_ms": 2.0110484581497796,
+    "prompt_per_second": 497.2530601873352,
+    "predicted_n": 125,
+    "predicted_ms": 6469.684,
+    "predicted_per_token_ms": 52.17487096774194,
+    "predicted_per_second": 19.16631476900572
+  },
+  "structured_output": {
+    "observations": "Maximum speed |U| is near x=0.5 m, y=0.114 m, with value ~82.5 m/s. Location inferred from top panel color scale and domain extent; exact cell not labeled.",
+    "possible_interpretation": "High-speed region at right edge suggests outflow or jet; pressure gradient (bottom panel) supports flow direction from left to right.",
+    "checks": "Missing: force equilibrium, exact cell coordinates for max |U|, velocity field vector plot, boundary conditions, mesh resolution at high-speed region."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 6.995733732357621,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum speed |U| is at x=0.0 m, y=0.0 m, value 82.53 m/s. Location inferred from image color scale and axis labels.\",\n  \"possible_interpretation\": \"High speed correlates with low kinematic pressure near origin, suggesting potential flow acceleration.\",\n  \"checks\": \"Verify if image color scale matches snapshot_values_finite; confirm coordinate units and domain extent.\"\n}",
+  "request_sha256": "36e512569932f5a0c6a6f87ac10258633c156d50435389f0f4f687ef2b55cb05",
+  "request_bytes": 50875,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1057,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 96,
+    "prompt_tokens": 1589,
+    "total_tokens": 1685,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1589,
+    "prompt_ms": 495.433,
+    "prompt_per_token_ms": 0.3117891755821271,
+    "prompt_per_second": 3207.295436517148,
+    "predicted_n": 96,
+    "predicted_ms": 1312.215,
+    "predicted_per_token_ms": 13.81278947368421,
+    "predicted_per_second": 72.3966728013321
+  },
+  "structured_output": {
+    "observations": "Maximum speed |U| is at x=0.0 m, y=0.0 m, value 82.53 m/s. Location inferred from image color scale and axis labels.",
+    "possible_interpretation": "High speed correlates with low kinematic pressure near origin, suggesting potential flow acceleration.",
+    "checks": "Verify if image color scale matches snapshot_values_finite; confirm coordinate units and domain extent."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 1.8705424722284079,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

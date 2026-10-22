@@ -1,0 +1,96 @@
+{
+  "parent_pid": 2715687,
+  "run_id": "pod-llm-async.UM1RyJ/async-server-error",
+  "step": 250,
+  "time_s": 0.10125000000000126,
+  "mode": "describe",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 4.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 0.5,
+  "read_timeout_s": 0.3,
+  "kill_join_allowance_s": 0.2,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "callback_started_at": "2026-10-22T16:06:24.836345+00:00",
+  "request_step": 250,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.5720250438898802,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ/async-server-error/llm_observation/step-000250",
+    "step": 250,
+    "time_s": 0.10125000000000126,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046805
+      ],
+      "y": [
+        5.781735398474376e-06,
+        0.11429523559299273
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ/async-server-error/llm_observation/step-000250/fields.npz",
+    "fields_sha256": "31609ca633323537889fe1261a1c663910811f19097a1845ff48cb4f127f170a",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ/async-server-error/llm_observation/step-000250/U.png",
+        "sha256": "64340079f97ed42345e961e760178a06382a51d0ea55ba81b89e626e51b5e725",
+        "bytes": 84593,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          0.0018479234371137775,
+          37.74172997904556
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ/async-server-error/llm_observation/step-000250/p.png",
+        "sha256": "4f6666ce5c477aba445bda2d48ab4ad75bad21110bea75d6e194eb17b764e55a",
+        "bytes": 79948,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -361.05514131098454,
+          40.04878138171317
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.5720250438898802
+  },
+  "request_before_at": "2026-10-22T16:06:25.455149+00:00",
+  "inference_wall_s": 0.010570617392659187,
+  "api_response": null,
+  "solver_stall_s": 0.0037378333508968353,
+  "arrived_at_step": 261,
+  "worker_reaped": true,
+  "ipc_select_calls": 16,
+  "response_after_at": "2026-10-22T16:06:25.510478+00:00",
+  "callback_elapsed_s": 0.6742684878408909,
+  "elapsed_since_request_s": 0.05427950993180275,
+  "worker_wait_elapsed_s": 0.6741768680512905,
+  "raw_response_file": null,
+  "raw_response_bytes": 0
+}

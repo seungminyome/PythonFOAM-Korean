@@ -56,6 +56,11 @@
 <p>코드 <code>58e00d9</code>(영문 저장소, 이 저장소에서는 <code>7435513</code>), Slurm 작업 24756981. 미리 만든 같은 요청 308개를 NVIDIA RTX A6000 한 장에서 Gemma 4 모델 일곱 개에 차례로 보냈습니다. 솔버는 돌리지 않았습니다. 읽기 쉽게 새로 그린 그림(그림 한 장에 필드 하나, 퍼센트 축과 격자)에서는 12B, 26B-A4B, 31B가 합성 그림 32장 모두에서 가장 빠른 곳을 10 % 안에 짚었고, 지금 솔버가 보내는 그림에서는 9~18장이었습니다. E2B는 세 가지 모두, 같은 그림들에서 어느 방식이든 3~11장이었습니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022.md">자세히</a></p>
 </section>
 
+<section aria-labelledby="live-v2-result">
+<h2 id="live-v2-result">10월 22일 이어서: 돌고 있는 솔버가 그린 그림을 GPU의 12B에</h2>
+<p>Slurm 작업 24757460. 이제 솔버가 읽기 쉬운 그림을 직접 그립니다. 같은 노드 GPU의 Gemma 4 12B에, 돌고 있는 솔버에서 창을 저마다 다르게 정한 요청 열한 개를 보냈더니 가장 빠른 곳은 9개, 가장 낮은 압력은 10개를 10 % 안에 짚었습니다. 답 하나로 고정하면 4개씩입니다. 저장한 흐름 필드는 요청 없는 실행과 같았습니다. 재생에서도 창을 무작위로 놓았을 때 12B, 26B-A4B, 31B, Qwen3.5-35B-A3B가 창 시드 세 개 모두에서 그림 48장 중 45~48장을 맞혔습니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">자세히</a></p>
+</section>
+
 <section aria-labelledby="integration-flow">
 <h2 id="integration-flow">모델에 보낸 이미지</h2>
 <figure><img src="evidence/2026-10-17/pod-llm-demo.LRfJBN/fixed-pod/llm_observation/state.png" width="640" height="360" alt="10월 17일 실행의 5단계에서 모델에 전달한 속도 크기와 운동학적 압력 지도"><figcaption>10월 17일 시험에서 모델에 보낸 그림입니다. 위는 속력 |U|, 아래는 운동학적 압력 p입니다. 세로를 늘려 표시했으므로 실제 길이 비율과 다릅니다.</figcaption></figure>
@@ -65,7 +70,7 @@
 <section aria-labelledby="latest-evidence">
 <h2 id="latest-evidence">시험 자료</h2>
 <p>실행 로그, 모델에 보낸 요청과 답변, 답변을 원본 자료와 대조한 기록을 볼 수 있습니다.</p>
-<div class="links"><a href="results-20261017.html">결과와 원문 링크</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-17">10월 17일 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-19-12b">10월 19일 12B 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-20">10월 20일 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-22-picture-test">10월 22일 그림 시험 원본 폴더</a></div>
+<div class="links"><a href="results-20261017.html">결과와 원문 링크</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-17">10월 17일 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-19-12b">10월 19일 12B 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-20">10월 20일 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-22-picture-test">10월 22일 그림 시험 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-22-window-test">10월 22일 무작위 창 시험 원본 폴더</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/tree/main/docs/evidence/2026-10-22-live-v2">10월 22일 솔버 실행 원본 폴더</a></div>
 </section>
 
 <footer><a href="https://github.com/argonne-lcf/PythonFOAM">argonne-lcf/PythonFOAM</a>을 바탕으로 한 포크입니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/LICENSE">라이선스</a></footer>

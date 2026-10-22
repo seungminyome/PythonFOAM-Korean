@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed 82.53 m/s at x=0.00 m, y=0.114 m (domain top-right corner).\",\n  \"possible_interpretation\": \"High-speed jet or shear layer near x=0; pressure drop correlates spatially.\",\n  \"checks\": \"No force equilibrium; SVD confirms dominant flow pattern; Courant max 0.209 not low speed.\"\n}",
+  "request_sha256": "6405547ee462daa1256b4a1a3998135ede6aa5d8403af32620bd686e4fbde9cc",
+  "request_bytes": 50849,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 968,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 1595,
+    "total_tokens": 1695,
+    "prompt_tokens_details": {
+      "cached_tokens": 1083
+    }
+  },
+  "server_timings": {
+    "cache_n": 1083,
+    "prompt_n": 512,
+    "prompt_ms": 322.981,
+    "prompt_per_token_ms": 0.630822265625,
+    "prompt_per_second": 1585.232567860029,
+    "predicted_n": 100,
+    "predicted_ms": 787.11,
+    "predicted_per_token_ms": 7.950606060606061,
+    "predicted_per_second": 125.77657506574684
+  },
+  "structured_output": {
+    "observations": "Max speed 82.53 m/s at x=0.00 m, y=0.114 m (domain top-right corner).",
+    "possible_interpretation": "High-speed jet or shear layer near x=0; pressure drop correlates spatially.",
+    "checks": "No force equilibrium; SVD confirms dominant flow pattern; Courant max 0.209 not low speed."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 1.1741853188723326,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

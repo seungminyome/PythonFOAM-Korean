@@ -1,0 +1,4183 @@
+{
+  "schema_version": 2,
+  "test": "picture-window test 2026-10-22",
+  "seed": 20261022,
+  "max_tokens": 320,
+  "sets": {
+    "flow-window-v1": 48,
+    "flow-window-v2": 48
+  },
+  "requests": [
+    {
+      "set": "flow-window-v2",
+      "name": "step000500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step000500-w1.request.json",
+      "request_sha256": "861aab7545339f1ae68e8cba2adbc7d568dcf71d0178e0c84ac1d419e6dc3a58",
+      "request_bytes": 162340,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step000500-w1/v2",
+        "state_step": 500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.015171314275206084,
+            0.04803892949801125
+          ],
+          "y": [
+            -0.001385345542981191,
+            0.04060201822936219
+          ]
+        },
+        "fastest_cell_percent": [
+          26.500780137371585,
+          33.196587964565836
+        ],
+        "cells_in_window": 3784
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step000500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step000500-w1.request.json",
+      "request_sha256": "d55816d275f7f30e5dffac6676788a4572ed0d2acd1e75b54a4554a551a4f879",
+      "request_bytes": 52498,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step000500-w1/v1",
+        "state_step": 500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.015171314275206084,
+            0.04803892949801125
+          ],
+          "y": [
+            -0.001385345542981191,
+            0.04060201822936219
+          ]
+        },
+        "fastest_cell_percent": [
+          26.500780137371585,
+          33.196587964565836
+        ],
+        "cells_in_window": 3784
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step000500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step000500-w2.request.json",
+      "request_sha256": "ccbf9955fdde4ae1ab1bf311eb8425741b4da68a04ccaace76f3ca0a19f6012a",
+      "request_bytes": 157031,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step000500-w2/v2",
+        "state_step": 500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.06022768278863817,
+            0.03172860921878232
+          ],
+          "y": [
+            -0.007216715091316153,
+            0.03475483261601528
+          ]
+        },
+        "fastest_cell_percent": [
+          67.21408061460484,
+          47.10272262266344
+        ],
+        "cells_in_window": 2964
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step000500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step000500-w2.request.json",
+      "request_sha256": "a6b39954d0e7361c0f41af2833958a750ef8af465414341178ce2fcad2fea7f0",
+      "request_bytes": 49073,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step000500-w2/v1",
+        "state_step": 500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.06022768278863817,
+            0.03172860921878232
+          ],
+          "y": [
+            -0.007216715091316153,
+            0.03475483261601528
+          ]
+        },
+        "fastest_cell_percent": [
+          67.21408061460484,
+          47.10272262266344
+        ],
+        "cells_in_window": 2964
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step000500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step000500-w3.request.json",
+      "request_sha256": "c28f464cba25d3a9102f6a9a5f8d42dba0d74382ba8aca92cfce147415aeb4aa",
+      "request_bytes": 157071,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step000500-w3/v2",
+        "state_step": 500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0699936983502784,
+            0.032488045980135175
+          ],
+          "y": [
+            0.0041068599807373984,
+            0.04727022339711977
+          ]
+        },
+        "fastest_cell_percent": [
+          69.84033328994411,
+          19.56790656810573
+        ],
+        "cells_in_window": 2503
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step000500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step000500-w3.request.json",
+      "request_sha256": "b496e1456608568718b495a501bf099e2949f620790322750f719741d4033a3b",
+      "request_bytes": 49293,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step000500-w3/v1",
+        "state_step": 500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0699936983502784,
+            0.032488045980135175
+          ],
+          "y": [
+            0.0041068599807373984,
+            0.04727022339711977
+          ]
+        },
+        "fastest_cell_percent": [
+          69.84033328994411,
+          19.56790656810573
+        ],
+        "cells_in_window": 2503
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step000500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step000500-w4.request.json",
+      "request_sha256": "06c62bb31ff26d25197d77cecaeb22992a072d7a8f6a9dc3e911718b9f1bee1d",
+      "request_bytes": 150749,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step000500-w4/v2",
+        "state_step": 500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.14849379257796316,
+            0.02946780410219982
+          ],
+          "y": [
+            -0.0186758406888183,
+            0.03436232032694402
+          ]
+        },
+        "fastest_cell_percent": [
+          84.32925351816786,
+          58.87999639588649
+        ],
+        "cells_in_window": 3137
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step000500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step000500-w4.request.json",
+      "request_sha256": "3c721549a03ac0350e9206d892e2fafdbad9abff03f8345c5ac04160bc28e10e",
+      "request_bytes": 52695,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step000500-w4/v1",
+        "state_step": 500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.14849379257796316,
+            0.02946780410219982
+          ],
+          "y": [
+            -0.0186758406888183,
+            0.03436232032694402
+          ]
+        },
+        "fastest_cell_percent": [
+          84.32925351816786,
+          58.87999639588649
+        ],
+        "cells_in_window": 3137
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step001000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step001000-w1.request.json",
+      "request_sha256": "46dbfa39011ad102ccbbbe6068940befd3e473599662df79d812a2b591540a99",
+      "request_bytes": 165964,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001000-w1/v2",
+        "state_step": 1000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.04753142310842357,
+            0.19251207609977644
+          ],
+          "y": [
+            -0.0026307920621187007,
+            0.06015840813452846
+          ]
+        },
+        "fastest_cell_percent": [
+          21.33206770029366,
+          24.524846326771087
+        ],
+        "cells_in_window": 9919
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step001000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step001000-w1.request.json",
+      "request_sha256": "f0052f11601ac52a38767be328e2a25bd448804f037c1f03d25672e69f758885",
+      "request_bytes": 52222,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001000-w1/v1",
+        "state_step": 1000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.04753142310842357,
+            0.19251207609977644
+          ],
+          "y": [
+            -0.0026307920621187007,
+            0.06015840813452846
+          ]
+        },
+        "fastest_cell_percent": [
+          21.33206770029366,
+          24.524846326771087
+        ],
+        "cells_in_window": 9919
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step001000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step001000-w2.request.json",
+      "request_sha256": "e836cf8d7c575b1a862eeb02bc71b01fcf618595d48ef22f56d97fdbd722043c",
+      "request_bytes": 165491,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001000-w2/v2",
+        "state_step": 1000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.07415165156763655,
+            0.03882242413345714
+          ],
+          "y": [
+            -0.004810803455975891,
+            0.02597977234782084
+          ]
+        },
+        "fastest_cell_percent": [
+          68.88878686325614,
+          57.09203479632857
+        ],
+        "cells_in_window": 3323
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step001000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step001000-w2.request.json",
+      "request_sha256": "d9da3ed3f730c3ea85c50796ed619add67b86dc5e641bc641ccb2b75cd111cbe",
+      "request_bytes": 50805,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001000-w2/v1",
+        "state_step": 1000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.07415165156763655,
+            0.03882242413345714
+          ],
+          "y": [
+            -0.004810803455975891,
+            0.02597977234782084
+          ]
+        },
+        "fastest_cell_percent": [
+          68.88878686325614,
+          57.09203479632857
+        ],
+        "cells_in_window": 3323
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step001000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step001000-w3.request.json",
+      "request_sha256": "2493c95a0dc9142f36fdea0c24164c08aeef705e886d041feddb8f79d355a760",
+      "request_bytes": 165880,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001000-w3/v2",
+        "state_step": 1000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.04836886621652917,
+            0.13054707424029385
+          ],
+          "y": [
+            -0.012897862336225814,
+            0.042995129700184216
+          ]
+        },
+        "fastest_cell_percent": [
+          29.088344356836206,
+          45.919934140265774
+        ],
+        "cells_in_window": 8910
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step001000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step001000-w3.request.json",
+      "request_sha256": "725562965d3ad5b69d7707b65b7f63b09c75af656e5cf88d838a49720dec4c58",
+      "request_bytes": 57894,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001000-w3/v1",
+        "state_step": 1000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.04836886621652917,
+            0.13054707424029385
+          ],
+          "y": [
+            -0.012897862336225814,
+            0.042995129700184216
+          ]
+        },
+        "fastest_cell_percent": [
+          29.088344356836206,
+          45.919934140265774
+        ],
+        "cells_in_window": 8910
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step001000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step001000-w4.request.json",
+      "request_sha256": "3b077d9ff06cd68daaad6f3dc421a2fa0687c2958fec909d8951642571f59d04",
+      "request_bytes": 159738,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001000-w4/v2",
+        "state_step": 1000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0440019518992696,
+            0.24038167211829303
+          ],
+          "y": [
+            -0.005944155560525608,
+            0.08351627579658169
+          ]
+        },
+        "fastest_cell_percent": [
+          16.764949359091354,
+          20.916865783653133
+        ],
+        "cells_in_window": 10750
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step001000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step001000-w4.request.json",
+      "request_sha256": "dbb1ee22509c4b84aec543819da2ed403fdcb1c5a0bd2e3fbf3194cb4bc89678",
+      "request_bytes": 48688,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001000-w4/v1",
+        "state_step": 1000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0440019518992696,
+            0.24038167211829303
+          ],
+          "y": [
+            -0.005944155560525608,
+            0.08351627579658169
+          ]
+        },
+        "fastest_cell_percent": [
+          16.764949359091354,
+          20.916865783653133
+        ],
+        "cells_in_window": 10750
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step001500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step001500-w1.request.json",
+      "request_sha256": "d582590ff3b64d8e32cf251740e4d4f7de811c431bf6b24ce1be2281bf7dc2de",
+      "request_bytes": 165856,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001500-w1/v2",
+        "state_step": 1500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.06187807097564001,
+            0.03990886196060163
+          ],
+          "y": [
+            -0.012735854593886067,
+            0.04800267623219043
+          ]
+        },
+        "fastest_cell_percent": [
+          66.45812758778557,
+          42.11894227880691
+        ],
+        "cells_in_window": 3740
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step001500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step001500-w1.request.json",
+      "request_sha256": "ee878ff13102d55747918f68b991ae17cc9bac988bb04f38a0b9ff5d53774d36",
+      "request_bytes": 51110,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001500-w1/v1",
+        "state_step": 1500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.06187807097564001,
+            0.03990886196060163
+          ],
+          "y": [
+            -0.012735854593886067,
+            0.04800267623219043
+          ]
+        },
+        "fastest_cell_percent": [
+          66.45812758778557,
+          42.11894227880691
+        ],
+        "cells_in_window": 3740
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step001500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step001500-w2.request.json",
+      "request_sha256": "977818dcc66a5bcb2b0848359f6fec2324b75c34e5d8ce5475627b9a0ae8f4f6",
+      "request_bytes": 172410,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001500-w2/v2",
+        "state_step": 1500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.010045827339090357,
+            0.04258466071229722
+          ],
+          "y": [
+            -0.006387436689707593,
+            0.025611063236440065
+          ]
+        },
+        "fastest_cell_percent": [
+          30.046170399315965,
+          60.10909536335767
+        ],
+        "cells_in_window": 3089
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step001500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step001500-w2.request.json",
+      "request_sha256": "109f19e72be059b98cc18c2a9daefe6b36b710e9e9650866d6c21ed1812ecd70",
+      "request_bytes": 52436,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001500-w2/v1",
+        "state_step": 1500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.010045827339090357,
+            0.04258466071229722
+          ],
+          "y": [
+            -0.006387436689707593,
+            0.025611063236440065
+          ]
+        },
+        "fastest_cell_percent": [
+          30.046170399315965,
+          60.10909536335767
+        ],
+        "cells_in_window": 3089
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step001500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step001500-w3.request.json",
+      "request_sha256": "6cf1ad0c0a372c64f903d26a26d15515865ed773a2b1b7b0480f053e92fae034",
+      "request_bytes": 158347,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001500-w3/v2",
+        "state_step": 1500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.05906543610890232,
+            0.2105499185285885
+          ],
+          "y": [
+            -0.04039380902000937,
+            0.030004926142052482
+          ]
+        },
+        "fastest_cell_percent": [
+          24.04649949513976,
+          75.62690017539583
+        ],
+        "cells_in_window": 8954
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step001500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step001500-w3.request.json",
+      "request_sha256": "ca194bd4dad72aa6a9c145b84cdea753f4fb9a90cb123ec29c7706755b75bfe4",
+      "request_bytes": 53177,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001500-w3/v1",
+        "state_step": 1500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.05906543610890232,
+            0.2105499185285885
+          ],
+          "y": [
+            -0.04039380902000937,
+            0.030004926142052482
+          ]
+        },
+        "fastest_cell_percent": [
+          24.04649949513976,
+          75.62690017539583
+        ],
+        "cells_in_window": 8954
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step001500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step001500-w4.request.json",
+      "request_sha256": "95d823db06527b1966f73ec53b789da32baee7ba1bfa32373abcbff8361b96d3",
+      "request_bytes": 167056,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001500-w4/v2",
+        "state_step": 1500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.03142882146977964,
+            0.17861827743888525
+          ],
+          "y": [
+            -0.004102005065867262,
+            0.07259523001156594
+          ]
+        },
+        "fastest_cell_percent": [
+          17.70861889826672,
+          22.098028950457582
+        ],
+        "cells_in_window": 10009
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step001500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step001500-w4.request.json",
+      "request_sha256": "f37827af1291936ad468c1aa52e8e801bc1d7dc97a56a07dfb4246298eee75a8",
+      "request_bytes": 59034,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step001500-w4/v1",
+        "state_step": 1500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.03142882146977964,
+            0.17861827743888525
+          ],
+          "y": [
+            -0.004102005065867262,
+            0.07259523001156594
+          ]
+        },
+        "fastest_cell_percent": [
+          17.70861889826672,
+          22.098028950457582
+        ],
+        "cells_in_window": 10009
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step002000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step002000-w1.request.json",
+      "request_sha256": "e86f356bfc611aad3588f983d0e8cffb2745e26fa72d0d447289917d425710cc",
+      "request_bytes": 167776,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002000-w1/v2",
+        "state_step": 2000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.023050765090500646,
+            0.13922838776021226
+          ],
+          "y": [
+            -0.019969638731476266,
+            0.050324842777321147
+          ]
+        },
+        "fastest_cell_percent": [
+          19.049104958889803,
+          46.6138909331426
+        ],
+        "cells_in_window": 9017
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step002000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step002000-w1.request.json",
+      "request_sha256": "d5e5dd81861154fc69bc4d6f3d3a9f86582798beaef2d43ce7b1f8c6cc0e7649",
+      "request_bytes": 58650,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002000-w1/v1",
+        "state_step": 2000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.023050765090500646,
+            0.13922838776021226
+          ],
+          "y": [
+            -0.019969638731476266,
+            0.050324842777321147
+          ]
+        },
+        "fastest_cell_percent": [
+          19.049104958889803,
+          46.6138909331426
+        ],
+        "cells_in_window": 9017
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step002000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step002000-w2.request.json",
+      "request_sha256": "e2cd2d609f53af0486a8c94740867c46d7fe370bcf47f8c8bf3c3d13bf1ba792",
+      "request_bytes": 161429,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002000-w2/v2",
+        "state_step": 2000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.08162326519203769,
+            0.07386293704962427
+          ],
+          "y": [
+            -0.04317142187570001,
+            0.04134871649503293
+          ]
+        },
+        "fastest_cell_percent": [
+          57.55187596349262,
+          66.21945629248182
+        ],
+        "cells_in_window": 6179
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step002000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step002000-w2.request.json",
+      "request_sha256": "05b225d2fbed99b7f1feb979bbefd31777992c9c6baac72eff8add56ac889cdc",
+      "request_bytes": 57311,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002000-w2/v1",
+        "state_step": 2000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.08162326519203769,
+            0.07386293704962427
+          ],
+          "y": [
+            -0.04317142187570001,
+            0.04134871649503293
+          ]
+        },
+        "fastest_cell_percent": [
+          57.55187596349262,
+          66.21945629248182
+        ],
+        "cells_in_window": 6179
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step002000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step002000-w3.request.json",
+      "request_sha256": "56a60fda4bd2e8ca76309bc82041bc1bfb19e52b1dfa42beaaf4ad4ed0872ce2",
+      "request_bytes": 161780,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002000-w3/v2",
+        "state_step": 2000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0446360277446294,
+            0.127414319494959
+          ],
+          "y": [
+            -0.024064674543132283,
+            0.019829161118190247
+          ]
+        },
+        "fastest_cell_percent": [
+          30.513154811569365,
+          83.97996711567009
+        ],
+        "cells_in_window": 7340
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step002000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step002000-w3.request.json",
+      "request_sha256": "1f281751db15517452477efc7e28716de1cb7b0d89998e694b9f2e9f05bedd40",
+      "request_bytes": 54722,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002000-w3/v1",
+        "state_step": 2000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0446360277446294,
+            0.127414319494959
+          ],
+          "y": [
+            -0.024064674543132283,
+            0.019829161118190247
+          ]
+        },
+        "fastest_cell_percent": [
+          30.513154811569365,
+          83.97996711567009
+        ],
+        "cells_in_window": 7340
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step002000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step002000-w4.request.json",
+      "request_sha256": "0f5f1c11f9b2172de2e970e7463233e2feb1d275a763817e5ff1376b69aac426",
+      "request_bytes": 162725,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002000-w4/v2",
+        "state_step": 2000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.10940936631554482,
+            0.03792340316448317
+          ],
+          "y": [
+            0.004965646169626931,
+            0.05365936640623452
+          ]
+        },
+        "fastest_cell_percent": [
+          79.5962281791429,
+          16.08360996730313
+        ],
+        "cells_in_window": 2980
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step002000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step002000-w4.request.json",
+      "request_sha256": "256ca29aeed0097faf071b5677d9d99de4d06eeab524fea39a5549a90b0d2aea",
+      "request_bytes": 52643,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002000-w4/v1",
+        "state_step": 2000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.10940936631554482,
+            0.03792340316448317
+          ],
+          "y": [
+            0.004965646169626931,
+            0.05365936640623452
+          ]
+        },
+        "fastest_cell_percent": [
+          79.5962281791429,
+          16.08360996730313
+        ],
+        "cells_in_window": 2980
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step002500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step002500-w1.request.json",
+      "request_sha256": "b72c6983800fa63a679e0fa0909ff452964bca76ed8dc36bd566c6ca501e2496",
+      "request_bytes": 161049,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002500-w1/v2",
+        "state_step": 2500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.1690768111645182,
+            0.1648548422591958
+          ],
+          "y": [
+            -0.05044993699476987,
+            0.06135335541160395
+          ]
+        },
+        "fastest_cell_percent": [
+          53.61370484876513,
+          56.51527928830291
+        ],
+        "cells_in_window": 10368
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step002500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step002500-w1.request.json",
+      "request_sha256": "6e6841ad7e058ae43180cc70884134b0eda7d5aa5b1747035fd9e10669af4d21",
+      "request_bytes": 53451,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002500-w1/v1",
+        "state_step": 2500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.1690768111645182,
+            0.1648548422591958
+          ],
+          "y": [
+            -0.05044993699476987,
+            0.06135335541160395
+          ]
+        },
+        "fastest_cell_percent": [
+          53.61370484876513,
+          56.51527928830291
+        ],
+        "cells_in_window": 10368
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step002500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step002500-w2.request.json",
+      "request_sha256": "894aa6cc32ba66ade5fefab61a0e48b359c9c55f1335a82833a4f43b17ad4d79",
+      "request_bytes": 164751,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002500-w2/v2",
+        "state_step": 2500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.04774457955115919,
+            0.15875118231785662
+          ],
+          "y": [
+            -0.03917468102832328,
+            0.04781697043002617
+          ]
+        },
+        "fastest_cell_percent": [
+          27.94289767866185,
+          59.673182564407035
+        ],
+        "cells_in_window": 9359
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step002500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step002500-w2.request.json",
+      "request_sha256": "cb7bb8144254f4a8856e5ea3c12706e3b4b782060d251a7e1777d9236f9dbcb7",
+      "request_bytes": 59577,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002500-w2/v1",
+        "state_step": 2500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.04774457955115919,
+            0.15875118231785662
+          ],
+          "y": [
+            -0.03917468102832328,
+            0.04781697043002617
+          ]
+        },
+        "fastest_cell_percent": [
+          27.94289767866185,
+          59.673182564407035
+        ],
+        "cells_in_window": 9359
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step002500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step002500-w3.request.json",
+      "request_sha256": "3ff607162ac75df04851cdf43937ab624ee28c2c9f223d20ea9b7d43deff1190",
+      "request_bytes": 167526,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002500-w3/v2",
+        "state_step": 2500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.07297023775049567,
+            0.1012891648687504
+          ],
+          "y": [
+            -0.02775777631324961,
+            0.03271505629121769
+          ]
+        },
+        "fastest_cell_percent": [
+          47.587996058015854,
+          66.96194064583716
+        ],
+        "cells_in_window": 7733
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step002500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step002500-w3.request.json",
+      "request_sha256": "3f0a50da6f0fd95573b172c9d074bee2be696697974f812125290e871a73ffc8",
+      "request_bytes": 59612,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002500-w3/v1",
+        "state_step": 2500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.07297023775049567,
+            0.1012891648687504
+          ],
+          "y": [
+            -0.02775777631324961,
+            0.03271505629121769
+          ]
+        },
+        "fastest_cell_percent": [
+          47.587996058015854,
+          66.96194064583716
+        ],
+        "cells_in_window": 7733
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step002500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step002500-w4.request.json",
+      "request_sha256": "8aab0b62efd507dfe5d81a6a43b35b5ffe337dd14dde91fb2bdf37a88595a53a",
+      "request_bytes": 174744,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002500-w4/v2",
+        "state_step": 2500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.03679052779120837,
+            0.1552792300465635
+          ],
+          "y": [
+            -0.010684755064511308,
+            0.058115241191896254
+          ]
+        },
+        "fastest_cell_percent": [
+          24.338473800422737,
+          34.04180567021514
+        ],
+        "cells_in_window": 9557
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step002500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step002500-w4.request.json",
+      "request_sha256": "74ac08086abd91e390b018e7af0cff2ae6e1738d1653ce83628d9f7bf917dcab",
+      "request_bytes": 62226,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step002500-w4/v1",
+        "state_step": 2500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.03679052779120837,
+            0.1552792300465635
+          ],
+          "y": [
+            -0.010684755064511308,
+            0.058115241191896254
+          ]
+        },
+        "fastest_cell_percent": [
+          24.338473800422737,
+          34.04180567021514
+        ],
+        "cells_in_window": 9557
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step003000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step003000-w1.request.json",
+      "request_sha256": "bebd0caaeadeb5fda3a98ca665b55214721cf354795b4287b5d3fcc2276f0111",
+      "request_bytes": 170137,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003000-w1/v2",
+        "state_step": 3000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.09175719762090921,
+            0.03573909706796348
+          ],
+          "y": [
+            -0.004551456440592155,
+            0.032271516700022
+          ]
+        },
+        "fastest_cell_percent": [
+          80.59866254402601,
+          47.17356655029228
+        ],
+        "cells_in_window": 3334
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step003000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step003000-w1.request.json",
+      "request_sha256": "033e98edd6c7ac82f4eeb98e871702d8fb448fe9ee97a455e9f1af34eb4f20d9",
+      "request_bytes": 54243,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003000-w1/v1",
+        "state_step": 3000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.09175719762090921,
+            0.03573909706796348
+          ],
+          "y": [
+            -0.004551456440592155,
+            0.032271516700022
+          ]
+        },
+        "fastest_cell_percent": [
+          80.59866254402601,
+          47.17356655029228
+        ],
+        "cells_in_window": 3334
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step003000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step003000-w2.request.json",
+      "request_sha256": "d2281cd81d9e2207ceceb7a8b4c50e161074fceac7c135caca29c6e41c751416",
+      "request_bytes": 178836,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003000-w2/v2",
+        "state_step": 3000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.009976071125674136,
+            0.10595099093036343
+          ],
+          "y": [
+            -0.00929153118878126,
+            0.050386273771069884
+          ]
+        },
+        "fastest_cell_percent": [
+          18.096880439396738,
+          37.05026433755101
+        ],
+        "cells_in_window": 7990
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step003000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step003000-w2.request.json",
+      "request_sha256": "091a79814bcf94c460c7f43f38ccb11adc026c761a12e6ae106827fd1c92f8de",
+      "request_bytes": 57978,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003000-w2/v1",
+        "state_step": 3000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.009976071125674136,
+            0.10595099093036343
+          ],
+          "y": [
+            -0.00929153118878126,
+            0.050386273771069884
+          ]
+        },
+        "fastest_cell_percent": [
+          18.096880439396738,
+          37.05026433755101
+        ],
+        "cells_in_window": 7990
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step003000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step003000-w3.request.json",
+      "request_sha256": "1027e466da7a761ec3c3f7831350a6151a4d7b9be199e8e7a387026c01f9b05b",
+      "request_bytes": 165825,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003000-w3/v2",
+        "state_step": 3000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0572956510914371,
+            0.17124576177309125
+          ],
+          "y": [
+            -0.04051218353692013,
+            0.04947018980556822
+          ]
+        },
+        "fastest_cell_percent": [
+          29.884632691684,
+          59.26875993104032
+        ],
+        "cells_in_window": 9615
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step003000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step003000-w3.request.json",
+      "request_sha256": "fd0096c4514b6ab5906756477ce3a1910e6593ec55ffa0e8b1aa257e897af962",
+      "request_bytes": 54843,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003000-w3/v1",
+        "state_step": 3000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0572956510914371,
+            0.17124576177309125
+          ],
+          "y": [
+            -0.04051218353692013,
+            0.04947018980556822
+          ]
+        },
+        "fastest_cell_percent": [
+          29.884632691684,
+          59.26875993104032
+        ],
+        "cells_in_window": 9615
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step003000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step003000-w4.request.json",
+      "request_sha256": "52ff26a68971cec64ed178b33b40eb3aaafc2d34b6b2aed24cc755a61c38cb3f",
+      "request_bytes": 166943,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003000-w4/v2",
+        "state_step": 3000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.21560929292145936,
+            0.08788194750590056
+          ],
+          "y": [
+            -0.016591658268579848,
+            0.07477987642586066
+          ]
+        },
+        "fastest_cell_percent": [
+          74.66851540554129,
+          32.18826483173984
+        ],
+        "cells_in_window": 8410
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step003000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step003000-w4.request.json",
+      "request_sha256": "08fe9c3ede128a138ee55bf00197dd34992edef919a72a2d5651b98cf247a5f8",
+      "request_bytes": 53277,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003000-w4/v1",
+        "state_step": 3000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.21560929292145936,
+            0.08788194750590056
+          ],
+          "y": [
+            -0.016591658268579848,
+            0.07477987642586066
+          ]
+        },
+        "fastest_cell_percent": [
+          74.66851540554129,
+          32.18826483173984
+        ],
+        "cells_in_window": 8410
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step003500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step003500-w1.request.json",
+      "request_sha256": "9fc996a67458a50d139ef4d16c622f92fdd826bc6952b4f58772df45965192cf",
+      "request_bytes": 174159,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003500-w1/v2",
+        "state_step": 3500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.06275797272160244,
+            0.07279746365020376
+          ],
+          "y": [
+            -0.018159037881588604,
+            0.026832532739966615
+          ]
+        },
+        "fastest_cell_percent": [
+          55.18643790155997,
+          68.8697705616096
+        ],
+        "cells_in_window": 5578
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step003500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step003500-w1.request.json",
+      "request_sha256": "a3941687cf42c57adc624d19510c0ca42df23c98aa2363156de48a5e7d20b7de",
+      "request_bytes": 56781,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003500-w1/v1",
+        "state_step": 3500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.06275797272160244,
+            0.07279746365020376
+          ],
+          "y": [
+            -0.018159037881588604,
+            0.026832532739966615
+          ]
+        },
+        "fastest_cell_percent": [
+          55.18643790155997,
+          68.8697705616096
+        ],
+        "cells_in_window": 5578
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step003500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step003500-w2.request.json",
+      "request_sha256": "6ba3f5e8a1c891f206c055f5ac4a09277ff8fc7ad4295b47bf33a69aaf88e896",
+      "request_bytes": 160068,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003500-w2/v2",
+        "state_step": 3500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.055870129422681075,
+            0.320756349696698
+          ],
+          "y": [
+            -0.07092018632993749,
+            0.03444866171910552
+          ]
+        },
+        "fastest_cell_percent": [
+          18.033881626008938,
+          79.4796009049082
+        ],
+        "cells_in_window": 9481
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step003500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step003500-w2.request.json",
+      "request_sha256": "3abac89e0a1b4d53d6587de33bf2896ed66ef8adf0c9d0e55a64faef62f77ab4",
+      "request_bytes": 52166,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003500-w2/v1",
+        "state_step": 3500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.055870129422681075,
+            0.320756349696698
+          ],
+          "y": [
+            -0.07092018632993749,
+            0.03444866171910552
+          ]
+        },
+        "fastest_cell_percent": [
+          18.033881626008938,
+          79.4796009049082
+        ],
+        "cells_in_window": 9481
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step003500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step003500-w3.request.json",
+      "request_sha256": "f07d8d62acd74128d47f153c91ae0d4774bd76f4392dd5e9a14525cfb4883f98",
+      "request_bytes": 173527,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003500-w3/v2",
+        "state_step": 3500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.16262162858441745,
+            0.12672563900206477
+          ],
+          "y": [
+            -0.00022362695561259707,
+            0.0753203317720334
+          ]
+        },
+        "fastest_cell_percent": [
+          60.367555579602374,
+          17.274949252001264
+        ],
+        "cells_in_window": 10279
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step003500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step003500-w3.request.json",
+      "request_sha256": "b90e4e23fdc849d73653ebd0d83ef80ea91302c325ec8e438178233a22e5b180",
+      "request_bytes": 54653,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003500-w3/v1",
+        "state_step": 3500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.16262162858441745,
+            0.12672563900206477
+          ],
+          "y": [
+            -0.00022362695561259707,
+            0.0753203317720334
+          ]
+        },
+        "fastest_cell_percent": [
+          60.367555579602374,
+          17.274949252001264
+        ],
+        "cells_in_window": 10279
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step003500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step003500-w4.request.json",
+      "request_sha256": "8d24f3db80ab9c6a9d4ff51b5fafa62d639beeb0ebbec27f9177aab582227d27",
+      "request_bytes": 182556,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003500-w4/v2",
+        "state_step": 3500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.005057844282756933,
+            0.09134560287260646
+          ],
+          "y": [
+            -0.012798813851528557,
+            0.024875384584333922
+          ]
+        },
+        "fastest_cell_percent": [
+          17.746344950817615,
+          68.0183480816317
+        ],
+        "cells_in_window": 6023
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step003500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step003500-w4.request.json",
+      "request_sha256": "a5887d05698890f6599fddc17e56109836193d7fbd324ca4ef29f4b4edfdfed1",
+      "request_bytes": 57038,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step003500-w4/v1",
+        "state_step": 3500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.005057844282756933,
+            0.09134560287260646
+          ],
+          "y": [
+            -0.012798813851528557,
+            0.024875384584333922
+          ]
+        },
+        "fastest_cell_percent": [
+          17.746344950817615,
+          68.0183480816317
+        ],
+        "cells_in_window": 6023
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step004000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step004000-w1.request.json",
+      "request_sha256": "6a5d6b9c9e185965c1191c323c3835112e056bb6b7cb2249d94b1669b0b668db",
+      "request_bytes": 174010,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004000-w1/v2",
+        "state_step": 4000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.05862973311280635,
+            0.10304991297522793
+          ],
+          "y": [
+            -0.013444076559957904,
+            0.08508809696910621
+          ]
+        },
+        "fastest_cell_percent": [
+          43.715745405801265,
+          26.864758636564556
+        ],
+        "cells_in_window": 9127
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step004000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step004000-w1.request.json",
+      "request_sha256": "8b443ca0d64275a4eef53b553d9f4cff12b4e7103ddf3bb461f9ae5c891618fc",
+      "request_bytes": 58480,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004000-w1/v1",
+        "state_step": 4000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.05862973311280635,
+            0.10304991297522793
+          ],
+          "y": [
+            -0.013444076559957904,
+            0.08508809696910621
+          ]
+        },
+        "fastest_cell_percent": [
+          43.715745405801265,
+          26.864758636564556
+        ],
+        "cells_in_window": 9127
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step004000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step004000-w2.request.json",
+      "request_sha256": "5518dd43b95e5dbe9d056460f395a3e1a01dcea92e3d9665906c80f69e57118d",
+      "request_bytes": 173859,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004000-w2/v2",
+        "state_step": 4000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.10294982786773961,
+            0.10623923940709441
+          ],
+          "y": [
+            -0.022426093778914816,
+            0.046703865460566416
+          ]
+        },
+        "fastest_cell_percent": [
+          54.97398057647614,
+          51.28376785828261
+        ],
+        "cells_in_window": 8619
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step004000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step004000-w2.request.json",
+      "request_sha256": "e9f9209a12992da2b65b97a5a45bc246a7b3c083720503beb6bf0f1d43e9e688",
+      "request_bytes": 62337,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004000-w2/v1",
+        "state_step": 4000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.10294982786773961,
+            0.10623923940709441
+          ],
+          "y": [
+            -0.022426093778914816,
+            0.046703865460566416
+          ]
+        },
+        "fastest_cell_percent": [
+          54.97398057647614,
+          51.28376785828261
+        ],
+        "cells_in_window": 8619
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step004000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step004000-w3.request.json",
+      "request_sha256": "a75a27063670de942f0c58c329ff446115a329e05a34ff9874514d960b2ef80f",
+      "request_bytes": 167931,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004000-w3/v2",
+        "state_step": 4000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0447497939873312,
+            0.09857981873082025
+          ],
+          "y": [
+            -0.03331150229339598,
+            0.0218297411429164
+          ]
+        },
+        "fastest_cell_percent": [
+          39.62860308780927,
+          84.03484115279682
+        ],
+        "cells_in_window": 6689
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step004000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step004000-w3.request.json",
+      "request_sha256": "cc53996d900b7d27f7322dcdcad20972dd909a2932f55e29159e8eece3137fea",
+      "request_bytes": 58069,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004000-w3/v1",
+        "state_step": 4000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0447497939873312,
+            0.09857981873082025
+          ],
+          "y": [
+            -0.03331150229339598,
+            0.0218297411429164
+          ]
+        },
+        "fastest_cell_percent": [
+          39.62860308780927,
+          84.03484115279682
+        ],
+        "cells_in_window": 6689
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step004000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step004000-w4.request.json",
+      "request_sha256": "f398ee2a6dca3c547c035a19452e49d45f8a57a23839822b2ed87ec095906c11",
+      "request_bytes": 173326,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004000-w4/v2",
+        "state_step": 4000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.14316508820844137,
+            0.10105807315937149
+          ],
+          "y": [
+            -0.012189607285076875,
+            0.07621906765923529
+          ]
+        },
+        "fastest_cell_percent": [
+          63.554503464443734,
+          28.52204417603398
+        ],
+        "cells_in_window": 9145
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step004000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step004000-w4.request.json",
+      "request_sha256": "b899688f361c1b41555707cca4ffe41ae127a78b67605858e753b199dd7f244e",
+      "request_bytes": 54232,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004000-w4/v1",
+        "state_step": 4000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.14316508820844137,
+            0.10105807315937149
+          ],
+          "y": [
+            -0.012189607285076875,
+            0.07621906765923529
+          ]
+        },
+        "fastest_cell_percent": [
+          63.554503464443734,
+          28.52204417603398
+        ],
+        "cells_in_window": 9145
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step004500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step004500-w1.request.json",
+      "request_sha256": "cfd830d21bee533273c9744ba92d9acad2a7c0466f88dd77c381bb6ffb4bd522",
+      "request_bytes": 176161,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004500-w1/v2",
+        "state_step": 4500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0677595364991394,
+            0.040161200860715784
+          ],
+          "y": [
+            -0.007130100833419469,
+            0.028423735293696722
+          ]
+        },
+        "fastest_cell_percent": [
+          73.95149091367313,
+          57.021802346860184
+        ],
+        "cells_in_window": 3440
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step004500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step004500-w1.request.json",
+      "request_sha256": "fe87bcbe079375fcd0429c799f82da252c760012505fa3ccee047ea9cd3dc356",
+      "request_bytes": 55495,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004500-w1/v1",
+        "state_step": 4500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0677595364991394,
+            0.040161200860715784
+          ],
+          "y": [
+            -0.007130100833419469,
+            0.028423735293696722
+          ]
+        },
+        "fastest_cell_percent": [
+          73.95149091367313,
+          57.021802346860184
+        ],
+        "cells_in_window": 3440
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step004500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step004500-w2.request.json",
+      "request_sha256": "a36c3cfa73e5c12977e7e2a12590b4438aef5ba6fcddefe2b34e26fb75b35be5",
+      "request_bytes": 172940,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004500-w2/v2",
+        "state_step": 4500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.03396651303359728,
+            0.23937566053560383
+          ],
+          "y": [
+            -0.0039661579734700456,
+            0.0956258135174319
+          ]
+        },
+        "fastest_cell_percent": [
+          16.834566805495356,
+          17.17959294012404
+        ],
+        "cells_in_window": 11006
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step004500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step004500-w2.request.json",
+      "request_sha256": "44f2ef4fb6e28f4867ec2e7e63c21a0571055e6d560e32d5bb91d2db6787b188",
+      "request_bytes": 52910,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004500-w2/v1",
+        "state_step": 4500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.03396651303359728,
+            0.23937566053560383
+          ],
+          "y": [
+            -0.0039661579734700456,
+            0.0956258135174319
+          ]
+        },
+        "fastest_cell_percent": [
+          16.834566805495356,
+          17.17959294012404
+        ],
+        "cells_in_window": 11006
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step004500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step004500-w3.request.json",
+      "request_sha256": "cdc0dad49c55637d376c5efe631ca5c19532c15dbcbef4f0a48f99fda4e8cd42",
+      "request_bytes": 169508,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004500-w3/v2",
+        "state_step": 4500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.25096776064357074,
+            0.08422638890013678
+          ],
+          "y": [
+            -0.004561983334407351,
+            0.10189322227614378
+          ]
+        },
+        "fastest_cell_percent": [
+          78.4671268233987,
+          16.631709612107322
+        ],
+        "cells_in_window": 8992
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step004500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step004500-w3.request.json",
+      "request_sha256": "4a9d3b7078110b709eeaf41f827b8b58bcfcd846e4979dc763de00c62421ae1e",
+      "request_bytes": 56502,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004500-w3/v1",
+        "state_step": 4500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.25096776064357074,
+            0.08422638890013678
+          ],
+          "y": [
+            -0.004561983334407351,
+            0.10189322227614378
+          ]
+        },
+        "fastest_cell_percent": [
+          78.4671268233987,
+          16.631709612107322
+        ],
+        "cells_in_window": 8992
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step004500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step004500-w4.request.json",
+      "request_sha256": "f58d1b637cd6f1cd87744b3f61bf4b37c7fffeb3562ebc7a45a57846925a9296",
+      "request_bytes": 193987,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004500-w4/v2",
+        "state_step": 4500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0005397439071456872,
+            0.08112270793592614
+          ],
+          "y": [
+            -0.003436228123316589,
+            0.027512406633757223
+          ]
+        },
+        "fastest_cell_percent": [
+          15.416144637490067,
+          53.571233701151726
+        ],
+        "cells_in_window": 5420
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step004500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step004500-w4.request.json",
+      "request_sha256": "24fd5bf00aee532379f9dda309f48b464857455a6ad3e20a645b2aec04414f79",
+      "request_bytes": 64477,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step004500-w4/v1",
+        "state_step": 4500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.0005397439071456872,
+            0.08112270793592614
+          ],
+          "y": [
+            -0.003436228123316589,
+            0.027512406633757223
+          ]
+        },
+        "fastest_cell_percent": [
+          15.416144637490067,
+          53.571233701151726
+        ],
+        "cells_in_window": 5420
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step005000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step005000-w1.request.json",
+      "request_sha256": "c7eaebc614bcbfc1ea25dbb139aacbf1b0cd0c925c0a2144a9e0f98caa796d44",
+      "request_bytes": 191699,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005000-w1/v2",
+        "state_step": 5000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.028266726864800848,
+            0.10560179658133483
+          ],
+          "y": [
+            0.003259437502076466,
+            0.04012675761353851
+          ]
+        },
+        "fastest_cell_percent": [
+          30.116046085949456,
+          27.164176239089425
+        ],
+        "cells_in_window": 5528
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step005000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step005000-w1.request.json",
+      "request_sha256": "ead7576facf2672c24a5e3f4ef2cdcb8b24863e92f336eb21f8dc4f8e1ee5ce1",
+      "request_bytes": 62021,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005000-w1/v1",
+        "state_step": 5000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.028266726864800848,
+            0.10560179658133483
+          ],
+          "y": [
+            0.003259437502076466,
+            0.04012675761353851
+          ]
+        },
+        "fastest_cell_percent": [
+          30.116046085949456,
+          27.164176239089425
+        ],
+        "cells_in_window": 5528
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step005000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step005000-w2.request.json",
+      "request_sha256": "fb7761073fe2f123e82337e77c91f55065c2691beacd4ef2c4ada0b0d6b170fb",
+      "request_bytes": 168433,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005000-w2/v2",
+        "state_step": 5000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.04343046284079704,
+            0.17729949177922372
+          ],
+          "y": [
+            -0.06227926788019924,
+            0.0480979094169268
+          ]
+        },
+        "fastest_cell_percent": [
+          25.134623113170488,
+          68.45020958327203
+        ],
+        "cells_in_window": 9480
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step005000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step005000-w2.request.json",
+      "request_sha256": "f18e3691ad1cf650e6d9211ebc8f8b41e6b70be3d881efa247c990cbba3bd293",
+      "request_bytes": 59663,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005000-w2/v1",
+        "state_step": 5000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.04343046284079704,
+            0.17729949177922372
+          ],
+          "y": [
+            -0.06227926788019924,
+            0.0480979094169268
+          ]
+        },
+        "fastest_cell_percent": [
+          25.134623113170488,
+          68.45020958327203
+        ],
+        "cells_in_window": 9480
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step005000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step005000-w3.request.json",
+      "request_sha256": "5703c3a8e0fe1139d939d0224241547bed10b2bba41f410191cc8f07861f11d7",
+      "request_bytes": 163274,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005000-w3/v2",
+        "state_step": 5000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.12067903746692188,
+            0.18705509285646893
+          ],
+          "y": [
+            -0.07078046515230423,
+            0.03106649427966103
+          ]
+        },
+        "fastest_cell_percent": [
+          43.13080797318719,
+          82.53030520782193
+        ],
+        "cells_in_window": 9126
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step005000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step005000-w3.request.json",
+      "request_sha256": "eba95795339a32e84a1f1983a90c14bdc5a0cc1b627336a46b85599004114c94",
+      "request_bytes": 51668,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005000-w3/v1",
+        "state_step": 5000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.12067903746692188,
+            0.18705509285646893
+          ],
+          "y": [
+            -0.07078046515230423,
+            0.03106649427966103
+          ]
+        },
+        "fastest_cell_percent": [
+          43.13080797318719,
+          82.53030520782193
+        ],
+        "cells_in_window": 9126
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step005000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step005000-w4.request.json",
+      "request_sha256": "d257ad53c1c185934e0c9475a30acb732fae13568e4fe35e0640507f720d3c4b",
+      "request_bytes": 175159,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005000-w4/v2",
+        "state_step": 5000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.02034612855612708,
+            0.19358637862200015
+          ],
+          "y": [
+            -0.02803073655152053,
+            0.028527497032898273
+          ]
+        },
+        "fastest_cell_percent": [
+          15.142770182172974,
+          73.03070701748872
+        ],
+        "cells_in_window": 8450
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step005000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step005000-w4.request.json",
+      "request_sha256": "8b5f263e52675c3d5be31e193f9ff5902e67af0b25bfc6742c25da03f7b35d17",
+      "request_bytes": 63309,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005000-w4/v1",
+        "state_step": 5000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.02034612855612708,
+            0.19358637862200015
+          ],
+          "y": [
+            -0.02803073655152053,
+            0.028527497032898273
+          ]
+        },
+        "fastest_cell_percent": [
+          15.142770182172974,
+          73.03070701748872
+        ],
+        "cells_in_window": 8450
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step005500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step005500-w1.request.json",
+      "request_sha256": "3e795bdb1d7e3687236bf8fa207a7353f32ff98cccfbdf60e5c00b5b074328d6",
+      "request_bytes": 172891,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005500-w1/v2",
+        "state_step": 5500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.06681242307094647,
+            0.28766225681937607
+          ],
+          "y": [
+            -0.03477785715549643,
+            0.06408234654428208
+          ]
+        },
+        "fastest_cell_percent": [
+          22.24737727454184,
+          48.754588187797
+        ],
+        "cells_in_window": 10549
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step005500-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step005500-w1.request.json",
+      "request_sha256": "0850c28f0d04fb9a6710c4b9e3ba0781a78399dac28af50adfc018f622342e2f",
+      "request_bytes": 55433,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005500-w1/v1",
+        "state_step": 5500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.06681242307094647,
+            0.28766225681937607
+          ],
+          "y": [
+            -0.03477785715549643,
+            0.06408234654428208
+          ]
+        },
+        "fastest_cell_percent": [
+          22.24737727454184,
+          48.754588187797
+        ],
+        "cells_in_window": 10549
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step005500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step005500-w2.request.json",
+      "request_sha256": "7b3ec1a5b7cfc848c389de1ea32cac6091ce78132526dbef7385fd86d1625522",
+      "request_bytes": 174154,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005500-w2/v2",
+        "state_step": 5500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.16817714984635004,
+            0.0617283681369703
+          ],
+          "y": [
+            -0.008668015157146849,
+            0.0651535945923776
+          ]
+        },
+        "fastest_cell_percent": [
+          78.39135299327768,
+          29.922191174159497
+        ],
+        "cells_in_window": 6032
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step005500-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step005500-w2.request.json",
+      "request_sha256": "398bce834e79354d32b71549f173322302bf0cb01132a7cb1c90971bfbdcb021",
+      "request_bytes": 57208,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005500-w2/v1",
+        "state_step": 5500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.16817714984635004,
+            0.0617283681369703
+          ],
+          "y": [
+            -0.008668015157146849,
+            0.0651535945923776
+          ]
+        },
+        "fastest_cell_percent": [
+          78.39135299327768,
+          29.922191174159497
+        ],
+        "cells_in_window": 6032
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step005500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step005500-w3.request.json",
+      "request_sha256": "2c8a33d20a3ef54edff4d781559942cc50c8036101d5ae1eb3cffcdfc9d016aa",
+      "request_bytes": 170967,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005500-w3/v2",
+        "state_step": 5500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.18100794129903347,
+            0.09564268395813058
+          ],
+          "y": [
+            -0.04314874286767449,
+            0.04406993795029873
+          ]
+        },
+        "fastest_cell_percent": [
+          69.78362598188714,
+          64.85969562608305
+        ],
+        "cells_in_window": 8085
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step005500-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step005500-w3.request.json",
+      "request_sha256": "d06fe72fa7965d9ea1407a59aebfe153948039e0f0b14a0245ccdca83b840b53",
+      "request_bytes": 56281,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005500-w3/v1",
+        "state_step": 5500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.18100794129903347,
+            0.09564268395813058
+          ],
+          "y": [
+            -0.04314874286767449,
+            0.04406993795029873
+          ]
+        },
+        "fastest_cell_percent": [
+          69.78362598188714,
+          64.85969562608305
+        ],
+        "cells_in_window": 8085
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step005500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step005500-w4.request.json",
+      "request_sha256": "667c0ca291caba90a709cdace429a11ec734e57d777c5f6c57c395cdc8063040",
+      "request_bytes": 166565,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005500-w4/v2",
+        "state_step": 5500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.1899788124377653,
+            0.05913243358324413
+          ],
+          "y": [
+            -0.0387549906480424,
+            0.04857517986210748
+          ]
+        },
+        "fastest_cell_percent": [
+          81.09939313125385,
+          59.74569657106773
+        ],
+        "cells_in_window": 5605
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step005500-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step005500-w4.request.json",
+      "request_sha256": "850df753627863db4ce5f35707657cd4df54db59af81617c229b353c28af6e8d",
+      "request_bytes": 54883,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step005500-w4/v1",
+        "state_step": 5500
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.1899788124377653,
+            0.05913243358324413
+          ],
+          "y": [
+            -0.0387549906480424,
+            0.04857517986210748
+          ]
+        },
+        "fastest_cell_percent": [
+          81.09939313125385,
+          59.74569657106773
+        ],
+        "cells_in_window": 5605
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step006000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step006000-w1.request.json",
+      "request_sha256": "ca32bce5e9d0cdc42ca685c3882d70eee090bfdb48c91d3dd668036abc22e7b8",
+      "request_bytes": 176973,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step006000-w1/v2",
+        "state_step": 6000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.16803861474678142,
+            0.12567288146049324
+          ],
+          "y": [
+            -0.02361562517780226,
+            0.05623226025431845
+          ]
+        },
+        "fastest_cell_percent": [
+          61.314326521944075,
+          46.59149230347139
+        ],
+        "cells_in_window": 9756
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step006000-w1",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step006000-w1.request.json",
+      "request_sha256": "677325723974fcb7ecc073c2e4497d8dac967b31ef13d5c19204e2c1f3b3b3cf",
+      "request_bytes": 56875,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step006000-w1/v1",
+        "state_step": 6000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.16803861474678142,
+            0.12567288146049324
+          ],
+          "y": [
+            -0.02361562517780226,
+            0.05623226025431845
+          ]
+        },
+        "fastest_cell_percent": [
+          61.314326521944075,
+          46.59149230347139
+        ],
+        "cells_in_window": 9756
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step006000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step006000-w2.request.json",
+      "request_sha256": "e06fa7d3057bbb2035d5ef37ab27bc47c7a4ee90e181eef17f97f734c8a1f143",
+      "request_bytes": 174518,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step006000-w2/v2",
+        "state_step": 6000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.08844671708036485,
+            0.17400541821767979
+          ],
+          "y": [
+            -0.03578862354525688,
+            0.045543437813056815
+          ]
+        },
+        "fastest_cell_percent": [
+          38.29091656521491,
+          60.708309783911176
+        ],
+        "cells_in_window": 9616
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step006000-w2",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step006000-w2.request.json",
+      "request_sha256": "1ae8f2d9e399125143d651f0a4a041c399fe503f538c5c04b4674f6f06b5b202",
+      "request_bytes": 57652,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step006000-w2/v1",
+        "state_step": 6000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.08844671708036485,
+            0.17400541821767979
+          ],
+          "y": [
+            -0.03578862354525688,
+            0.045543437813056815
+          ]
+        },
+        "fastest_cell_percent": [
+          38.29091656521491,
+          60.708309783911176
+        ],
+        "cells_in_window": 9616
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step006000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step006000-w3.request.json",
+      "request_sha256": "314931de3701cecc44ff52eb833fd46a2c9de113896e38a88310f47a72c047a7",
+      "request_bytes": 179488,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step006000-w3/v2",
+        "state_step": 6000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.08748017960541389,
+            0.07490343939945042
+          ],
+          "y": [
+            0.00557793857174812,
+            0.05699781135150237
+          ]
+        },
+        "fastest_cell_percent": [
+          61.292383607158555,
+          15.57521871037011
+        ],
+        "cells_in_window": 4715
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step006000-w3",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step006000-w3.request.json",
+      "request_sha256": "4c941cd066ea531f7a41179bc156ff19a3f7df9c3a36eed5807843e5907febe3",
+      "request_bytes": 60914,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step006000-w3/v1",
+        "state_step": 6000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.08748017960541389,
+            0.07490343939945042
+          ],
+          "y": [
+            0.00557793857174812,
+            0.05699781135150237
+          ]
+        },
+        "fastest_cell_percent": [
+          61.292383607158555,
+          15.57521871037011
+        ],
+        "cells_in_window": 4715
+      }
+    },
+    {
+      "set": "flow-window-v2",
+      "name": "step006000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v2/step006000-w4.request.json",
+      "request_sha256": "0e17b49aab2353db849937bd9348ab1317e872bb1d4cfaac154e86c22077306f",
+      "request_bytes": 173970,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step006000-w4/v2",
+        "state_step": 6000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.07708400371392223,
+            0.13816038720703777
+          ],
+          "y": [
+            -0.042240076932828094,
+            0.06572323587121068
+          ]
+        },
+        "fastest_cell_percent": [
+          41.409959350293605,
+          51.70902198226044
+        ],
+        "cells_in_window": 9802
+      }
+    },
+    {
+      "set": "flow-window-v1",
+      "name": "step006000-w4",
+      "mode": "describe",
+      "file": "requests/flow-window-v1/step006000-w4.request.json",
+      "request_sha256": "6271af1c14781ef4925233d383b1d5c7563b51f1ce103c9f48a637746e9a5a34",
+      "request_bytes": 61444,
+      "images": 1,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/flow-window/step006000-w4/v1",
+        "state_step": 6000
+      },
+      "design": {
+        "plotted_range_m": {
+          "x": [
+            -0.07708400371392223,
+            0.13816038720703777
+          ],
+          "y": [
+            -0.042240076932828094,
+            0.06572323587121068
+          ]
+        },
+        "fastest_cell_percent": [
+          41.409959350293605,
+          51.70902198226044
+        ],
+        "cells_in_window": 9802
+      }
+    }
+  ],
+  "truth_sha256": "4efdc38380db112fefe3583112218cdd7cb8ec3017f871c6089b7dd527c0fad8",
+  "build_args": {
+    "command": "build",
+    "states": "flow-states-20261022/no-llm-6000",
+    "centres": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/docs/evidence/2026-10-20/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/fields.npz",
+    "old_manifest": "pythonfoam-picture-test-20261021/picture-test-20261021/manifest.json",
+    "describe_every": 500,
+    "last_step": 6000,
+    "windows_per_state": 4,
+    "output": "picture-window-test-20261022"
+  },
+  "path_prefixes": {
+    "": "frames/ and requests/ are in this test set",
+    "flow-states-20261022/": "the folder of the pimpleFoam run without model requests"
+  },
+  "mesh": {
+    "polymesh": {
+      "boundary": "e2e290c5d71885db1beb6f721a7dee08e61794511dab877da5ab2a46f78e62ad",
+      "faces": "9c942a604bb38d52a0467c428dff391dfecb449ee75e1f4f606f8f58f953c8ed",
+      "owner": "76b8c4a6b08de41adeec8cbb651c89121c59eec7855e43d9b9aad2d314f9712d",
+      "points": "399ad89ebb870febfcfda6259d9bb8b3b10488950a050769bff0975bfcdebea8"
+    },
+    "centres_npz": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/docs/evidence/2026-10-20/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/fields.npz",
+    "centres_npz_sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a"
+  },
+  "domain_m": [
+    [
+      -1.5533076923100004,
+      0.6012246511046805
+    ],
+    [
+      5.781735398474376e-06,
+      0.11429523559299273
+    ]
+  ],
+  "window_rule": {
+    "peak_margin_fraction": 0.15,
+    "min_cells": 200,
+    "y_span_m": [
+      0.03,
+      0.114
+    ],
+    "aspect_x_over_y": [
+      1.5,
+      4.0
+    ],
+    "note": "windows are placed at random around the fastest cell of each state; x stays inside the domain, y may reach below the bottom wall (white, no cells)"
+  },
+  "fastest_cell_percent_spread": {
+    "x_min": 15.142770182172974,
+    "x_max": 84.32925351816786,
+    "y_min": 15.57521871037011,
+    "y_max": 84.03484115279682
+  },
+  "code_sha256": {
+    "window_test.py": "186f067ef63eb146fc6bd66ea247b2448a39714a0dc7488d7b586d5ab5dbc1bb",
+    "picture_test.py": "d33fd5a4770a29612fa8f32ccefe509e30e86ba972ba44b56a4724e52e3ae3de",
+    "readable_image.py": "8043e4eefad5ea5472ccb8a51b9d3d3136171d65480d304032b62472c9f0a657",
+    "foam_fields.py": "ef0a28e09259cca8d66d94db97e5fb2fb4bc19395c9486c8f3eaaa25e822c1cf",
+    "pod_image.py": "9c5eee02d62546a8fbdd35625d4f6252dfb2cadb7fa63184fca50f88f7f1e42b",
+    "snapshot_runner.py": "500e6f197dd336dc746524b8738d71c19c4c2bda5a24e5e18a8293a27c283c39",
+    "llm_client.py": "a8aa4546e9fd1edfcff2b24bfbd9dbf238f02653c7adf9a3aef401e06bd2a8e4"
+  },
+  "matplotlib": "3.11.2",
+  "numpy": "2.4.6",
+  "extra": {
+    "oct17_numeric_summary": {
+      "schema_version": 2,
+      "run_id": "pod-llm-demo.LRfJBN/fixed-pod",
+      "scope": "saved fluid snapshot; identical numeric evidence in both benchmark conditions",
+      "time_s": 5e-07,
+      "delta_t_s": 1e-07,
+      "step": 5,
+      "cells": 20540,
+      "residual_definition": "normalized linear-solver residual; not force imbalance; recent values are chronological, last is current; fixed delta_t_s separates samples",
+      "residuals": {
+        "Ux": {
+          "initial_first": 0.00014044,
+          "initial_last": 0.00014044,
+          "final_last": 5.51308e-10,
+          "linear_solves": 1,
+          "iterations_total": 1,
+          "initial_first_change": -4.42354e-05,
+          "initial_first_relative_change": -0.23953,
+          "recent_initial_first": [
+            0.00035465,
+            0.000184676,
+            0.00014044
+          ]
+        },
+        "Uy": {
+          "initial_first": 0.00102259,
+          "initial_last": 0.00102259,
+          "final_last": 4.94541e-10,
+          "linear_solves": 1,
+          "iterations_total": 1,
+          "initial_first_change": -0.000236337,
+          "initial_first_relative_change": -0.187729,
+          "recent_initial_first": [
+            0.00294568,
+            0.00125893,
+            0.00102259
+          ]
+        },
+        "p": {
+          "initial_first": 0.16204,
+          "initial_last": 0.00892506,
+          "final_last": 9.19188e-07,
+          "linear_solves": 6,
+          "iterations_total": 24,
+          "initial_first_change": -0.051519,
+          "initial_first_relative_change": -0.24124,
+          "recent_initial_first": [
+            0.532359,
+            0.213559,
+            0.16204
+          ]
+        }
+      },
+      "courant": {
+        "mean": 0.000337189,
+        "max": 0.208697,
+        "phase": "post_step_phi"
+      },
+      "continuity": {
+        "local": 6.69831e-14,
+        "global": -7.92063e-15,
+        "cumulative": -2.41222e-10,
+        "phase": "last_pressure_correction"
+      },
+      "velocity_svd": {
+        "method": "uncentered; separate component matrices (cells, snapshots)",
+        "mean_removed": false,
+        "window_snapshots": 5,
+        "window_start_time_s": 1e-07,
+        "window_end_time_s": 5e-07,
+        "components": {
+          "Ux": {
+            "singular_values_top3": [
+              9362.87,
+              50.4324,
+              10.317
+            ],
+            "leading_energy_fraction": 0.99997,
+            "zero_energy": false
+          },
+          "Uy": {
+            "singular_values_top3": [
+              1072.5,
+              9.47503,
+              3.15147
+            ],
+            "leading_energy_fraction": 0.999913,
+            "zero_energy": false
+          },
+          "Uz": {
+            "singular_values_top3": [
+              1.25473e-13,
+              2.63781e-16,
+              3.61177e-17
+            ],
+            "leading_energy_fraction": 0.999995,
+            "zero_energy": false
+          }
+        }
+      },
+      "snapshot_values_finite": true,
+      "not_implemented": [
+        "force_equilibrium"
+      ],
+      "unavailable": {
+        "force_equilibrium": {
+          "value": null,
+          "reason": "not computed in this demo"
+        }
+      },
+      "feature_status": "finite",
+      "feature_issues": [],
+      "image": {
+        "time_s": 5e-07,
+        "step": 5,
+        "cells": 20540,
+        "projection_axes": [
+          "x",
+          "y"
+        ],
+        "coordinate_unit": "m",
+        "panels": [
+          "|U| (m/s)",
+          "kinematic pressure p (m^2/s^2)"
+        ],
+        "render": "each cell drawn as its own polygon in its own colour, no interpolation; colour range is each panel's min/max; top panel |U|, bottom panel p",
+        "ranges": {
+          "speed_m_per_s": [
+            2.753965220748645,
+            82.52751611538334
+          ],
+          "p_m2_per_s2": [
+            -9362.826066967049,
+            12901.930047757134
+          ]
+        },
+        "domain_extent_m": {
+          "x": [
+            -1.5533076923100004,
+            0.6012246511046805
+          ],
+          "y": [
+            5.781735398474376e-06,
+            0.11429523559299273
+          ]
+        }
+      }
+    },
+    "flow_states": {
+      "500": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.00025",
+        "U_sha256": "f35ff329c1348f95415569f7a811b451bbb0c520f14a2b0e85b2b5216357211f",
+        "p_sha256": "f3f43158b4dbf761c1c1f7196fa20984d53bf9a3e3c691ba49fd5d9c4db55340"
+      },
+      "1000": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.0005",
+        "U_sha256": "d5d6e4027aefcdb36a2ac361efb9acc8e39dff4649c3a2fdcd09c461da5f3425",
+        "p_sha256": "977e2e54189b5662257656f4de8894d11aa425be2b7dead81a2cc02e8cb2e70c"
+      },
+      "1500": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.00075",
+        "U_sha256": "83614a6b3e90f83cbff061d523ca29a1a5caa974052935cce70d70e0bd01357d",
+        "p_sha256": "9b8ad4b0b106b8105d113d10c9e93853fabfb71f6c92ae1403b20f576288f768"
+      },
+      "2000": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.001",
+        "U_sha256": "c1c8197529a74232d39cb99536afa2a454f3a3eec182799c6b455dd75b7dcdd7",
+        "p_sha256": "f308d8c4667328c8cead090b2fc6a24edf86b47960768cdfd250832e13e25be9"
+      },
+      "2500": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.00125",
+        "U_sha256": "73faf38c92e376554f654b6912e94b3396edd5eb257405b948b69f92f089628d",
+        "p_sha256": "7f529045592a8c22a53800472ec2ca9e0e16ec5fa9da1019ee11f29c7c95c4bc"
+      },
+      "3000": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.0015",
+        "U_sha256": "580a6d46ad373da9f3cfa6b63a6549393b68417f2b2fb2534e83ea65e844b9de",
+        "p_sha256": "dd98bf8fdf1d676a699905f65949bdb6d18c64451d25ac3126e29232726c956a"
+      },
+      "3500": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.00175",
+        "U_sha256": "09ebabe3b2d5556da3e384a979ef59396e4eeab1b2133e44d6bc78453102b355",
+        "p_sha256": "70f05bef07f012c22c41544e11ec2c11710e86a7e8dfef48dc465b3d95332863"
+      },
+      "4000": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.002",
+        "U_sha256": "05e4597d62a2efb6b216fb0637a328574eb1bc0aba7be78a8786bd511939aac2",
+        "p_sha256": "90db32d05c21e251e64d90878f16093b92a8252d6e0a7e5718d03e0d7d92b60b"
+      },
+      "4500": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.00225",
+        "U_sha256": "a54181831fc63c4a77d5240e68f0abf46fe0a8eb715be403643f4012546e3533",
+        "p_sha256": "e659a4b1db014aaa6dc2c794be6d13369e033988cc434422ef98b82eec492468"
+      },
+      "5000": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.0025",
+        "U_sha256": "a5ace11da152b66f4de5444f76b274440752a8b732cbbb060d0ac6a6e3943e8a",
+        "p_sha256": "4021df304cf56d1e6119bf065a8c402dfe1a2ecb6f980dcbb529688a75a17821"
+      },
+      "5500": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.00275",
+        "U_sha256": "2d89078d0cbc4a23a3f4cb61fcc8f485e7616caf46e2a6d83f0d9fb9f5c18ba6",
+        "p_sha256": "4e44b5b47d7d721fb9cacd188f22ca10aa67aed5405b544391680b4f60d390e1"
+      },
+      "6000": {
+        "time_dir": "flow-states-20261022/no-llm-6000/0.003",
+        "U_sha256": "ca60d8a60489409e74a694d22c62c97f9db2df51515a6918ab79d4e313727bae",
+        "p_sha256": "9f68ba9986be9d746b164f0b1eec3be30c5394d94746809b89a6377d162d066d"
+      }
+    },
+    "windows": {
+      "step000500-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.015171314275206084,
+            0.04803892949801125
+          ],
+          "y": [
+            -0.001385345542981191,
+            0.04060201822936219
+          ]
+        },
+        "fastest_cell_percent": [
+          26.500780137371585,
+          33.196587964565836
+        ],
+        "cells_in_window": 3784
+      },
+      "step000500-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.06022768278863817,
+            0.03172860921878232
+          ],
+          "y": [
+            -0.007216715091316153,
+            0.03475483261601528
+          ]
+        },
+        "fastest_cell_percent": [
+          67.21408061460484,
+          47.10272262266344
+        ],
+        "cells_in_window": 2964
+      },
+      "step000500-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.0699936983502784,
+            0.032488045980135175
+          ],
+          "y": [
+            0.0041068599807373984,
+            0.04727022339711977
+          ]
+        },
+        "fastest_cell_percent": [
+          69.84033328994411,
+          19.56790656810573
+        ],
+        "cells_in_window": 2503
+      },
+      "step000500-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.14849379257796316,
+            0.02946780410219982
+          ],
+          "y": [
+            -0.0186758406888183,
+            0.03436232032694402
+          ]
+        },
+        "fastest_cell_percent": [
+          84.32925351816786,
+          58.87999639588649
+        ],
+        "cells_in_window": 3137
+      },
+      "step001000-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.04753142310842357,
+            0.19251207609977644
+          ],
+          "y": [
+            -0.0026307920621187007,
+            0.06015840813452846
+          ]
+        },
+        "fastest_cell_percent": [
+          21.33206770029366,
+          24.524846326771087
+        ],
+        "cells_in_window": 9919
+      },
+      "step001000-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.07415165156763655,
+            0.03882242413345714
+          ],
+          "y": [
+            -0.004810803455975891,
+            0.02597977234782084
+          ]
+        },
+        "fastest_cell_percent": [
+          68.88878686325614,
+          57.09203479632857
+        ],
+        "cells_in_window": 3323
+      },
+      "step001000-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.04836886621652917,
+            0.13054707424029385
+          ],
+          "y": [
+            -0.012897862336225814,
+            0.042995129700184216
+          ]
+        },
+        "fastest_cell_percent": [
+          29.088344356836206,
+          45.919934140265774
+        ],
+        "cells_in_window": 8910
+      },
+      "step001000-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.0440019518992696,
+            0.24038167211829303
+          ],
+          "y": [
+            -0.005944155560525608,
+            0.08351627579658169
+          ]
+        },
+        "fastest_cell_percent": [
+          16.764949359091354,
+          20.916865783653133
+        ],
+        "cells_in_window": 10750
+      },
+      "step001500-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.06187807097564001,
+            0.03990886196060163
+          ],
+          "y": [
+            -0.012735854593886067,
+            0.04800267623219043
+          ]
+        },
+        "fastest_cell_percent": [
+          66.45812758778557,
+          42.11894227880691
+        ],
+        "cells_in_window": 3740
+      },
+      "step001500-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.010045827339090357,
+            0.04258466071229722
+          ],
+          "y": [
+            -0.006387436689707593,
+            0.025611063236440065
+          ]
+        },
+        "fastest_cell_percent": [
+          30.046170399315965,
+          60.10909536335767
+        ],
+        "cells_in_window": 3089
+      },
+      "step001500-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.05906543610890232,
+            0.2105499185285885
+          ],
+          "y": [
+            -0.04039380902000937,
+            0.030004926142052482
+          ]
+        },
+        "fastest_cell_percent": [
+          24.04649949513976,
+          75.62690017539583
+        ],
+        "cells_in_window": 8954
+      },
+      "step001500-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.03142882146977964,
+            0.17861827743888525
+          ],
+          "y": [
+            -0.004102005065867262,
+            0.07259523001156594
+          ]
+        },
+        "fastest_cell_percent": [
+          17.70861889826672,
+          22.098028950457582
+        ],
+        "cells_in_window": 10009
+      },
+      "step002000-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.023050765090500646,
+            0.13922838776021226
+          ],
+          "y": [
+            -0.019969638731476266,
+            0.050324842777321147
+          ]
+        },
+        "fastest_cell_percent": [
+          19.049104958889803,
+          46.6138909331426
+        ],
+        "cells_in_window": 9017
+      },
+      "step002000-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.08162326519203769,
+            0.07386293704962427
+          ],
+          "y": [
+            -0.04317142187570001,
+            0.04134871649503293
+          ]
+        },
+        "fastest_cell_percent": [
+          57.55187596349262,
+          66.21945629248182
+        ],
+        "cells_in_window": 6179
+      },
+      "step002000-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.0446360277446294,
+            0.127414319494959
+          ],
+          "y": [
+            -0.024064674543132283,
+            0.019829161118190247
+          ]
+        },
+        "fastest_cell_percent": [
+          30.513154811569365,
+          83.97996711567009
+        ],
+        "cells_in_window": 7340
+      },
+      "step002000-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.10940936631554482,
+            0.03792340316448317
+          ],
+          "y": [
+            0.004965646169626931,
+            0.05365936640623452
+          ]
+        },
+        "fastest_cell_percent": [
+          79.5962281791429,
+          16.08360996730313
+        ],
+        "cells_in_window": 2980
+      },
+      "step002500-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.1690768111645182,
+            0.1648548422591958
+          ],
+          "y": [
+            -0.05044993699476987,
+            0.06135335541160395
+          ]
+        },
+        "fastest_cell_percent": [
+          53.61370484876513,
+          56.51527928830291
+        ],
+        "cells_in_window": 10368
+      },
+      "step002500-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.04774457955115919,
+            0.15875118231785662
+          ],
+          "y": [
+            -0.03917468102832328,
+            0.04781697043002617
+          ]
+        },
+        "fastest_cell_percent": [
+          27.94289767866185,
+          59.673182564407035
+        ],
+        "cells_in_window": 9359
+      },
+      "step002500-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.07297023775049567,
+            0.1012891648687504
+          ],
+          "y": [
+            -0.02775777631324961,
+            0.03271505629121769
+          ]
+        },
+        "fastest_cell_percent": [
+          47.587996058015854,
+          66.96194064583716
+        ],
+        "cells_in_window": 7733
+      },
+      "step002500-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.03679052779120837,
+            0.1552792300465635
+          ],
+          "y": [
+            -0.010684755064511308,
+            0.058115241191896254
+          ]
+        },
+        "fastest_cell_percent": [
+          24.338473800422737,
+          34.04180567021514
+        ],
+        "cells_in_window": 9557
+      },
+      "step003000-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.09175719762090921,
+            0.03573909706796348
+          ],
+          "y": [
+            -0.004551456440592155,
+            0.032271516700022
+          ]
+        },
+        "fastest_cell_percent": [
+          80.59866254402601,
+          47.17356655029228
+        ],
+        "cells_in_window": 3334
+      },
+      "step003000-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.009976071125674136,
+            0.10595099093036343
+          ],
+          "y": [
+            -0.00929153118878126,
+            0.050386273771069884
+          ]
+        },
+        "fastest_cell_percent": [
+          18.096880439396738,
+          37.05026433755101
+        ],
+        "cells_in_window": 7990
+      },
+      "step003000-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.0572956510914371,
+            0.17124576177309125
+          ],
+          "y": [
+            -0.04051218353692013,
+            0.04947018980556822
+          ]
+        },
+        "fastest_cell_percent": [
+          29.884632691684,
+          59.26875993104032
+        ],
+        "cells_in_window": 9615
+      },
+      "step003000-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.21560929292145936,
+            0.08788194750590056
+          ],
+          "y": [
+            -0.016591658268579848,
+            0.07477987642586066
+          ]
+        },
+        "fastest_cell_percent": [
+          74.66851540554129,
+          32.18826483173984
+        ],
+        "cells_in_window": 8410
+      },
+      "step003500-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.06275797272160244,
+            0.07279746365020376
+          ],
+          "y": [
+            -0.018159037881588604,
+            0.026832532739966615
+          ]
+        },
+        "fastest_cell_percent": [
+          55.18643790155997,
+          68.8697705616096
+        ],
+        "cells_in_window": 5578
+      },
+      "step003500-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.055870129422681075,
+            0.320756349696698
+          ],
+          "y": [
+            -0.07092018632993749,
+            0.03444866171910552
+          ]
+        },
+        "fastest_cell_percent": [
+          18.033881626008938,
+          79.4796009049082
+        ],
+        "cells_in_window": 9481
+      },
+      "step003500-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.16262162858441745,
+            0.12672563900206477
+          ],
+          "y": [
+            -0.00022362695561259707,
+            0.0753203317720334
+          ]
+        },
+        "fastest_cell_percent": [
+          60.367555579602374,
+          17.274949252001264
+        ],
+        "cells_in_window": 10279
+      },
+      "step003500-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.005057844282756933,
+            0.09134560287260646
+          ],
+          "y": [
+            -0.012798813851528557,
+            0.024875384584333922
+          ]
+        },
+        "fastest_cell_percent": [
+          17.746344950817615,
+          68.0183480816317
+        ],
+        "cells_in_window": 6023
+      },
+      "step004000-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.05862973311280635,
+            0.10304991297522793
+          ],
+          "y": [
+            -0.013444076559957904,
+            0.08508809696910621
+          ]
+        },
+        "fastest_cell_percent": [
+          43.715745405801265,
+          26.864758636564556
+        ],
+        "cells_in_window": 9127
+      },
+      "step004000-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.10294982786773961,
+            0.10623923940709441
+          ],
+          "y": [
+            -0.022426093778914816,
+            0.046703865460566416
+          ]
+        },
+        "fastest_cell_percent": [
+          54.97398057647614,
+          51.28376785828261
+        ],
+        "cells_in_window": 8619
+      },
+      "step004000-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.0447497939873312,
+            0.09857981873082025
+          ],
+          "y": [
+            -0.03331150229339598,
+            0.0218297411429164
+          ]
+        },
+        "fastest_cell_percent": [
+          39.62860308780927,
+          84.03484115279682
+        ],
+        "cells_in_window": 6689
+      },
+      "step004000-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.14316508820844137,
+            0.10105807315937149
+          ],
+          "y": [
+            -0.012189607285076875,
+            0.07621906765923529
+          ]
+        },
+        "fastest_cell_percent": [
+          63.554503464443734,
+          28.52204417603398
+        ],
+        "cells_in_window": 9145
+      },
+      "step004500-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.0677595364991394,
+            0.040161200860715784
+          ],
+          "y": [
+            -0.007130100833419469,
+            0.028423735293696722
+          ]
+        },
+        "fastest_cell_percent": [
+          73.95149091367313,
+          57.021802346860184
+        ],
+        "cells_in_window": 3440
+      },
+      "step004500-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.03396651303359728,
+            0.23937566053560383
+          ],
+          "y": [
+            -0.0039661579734700456,
+            0.0956258135174319
+          ]
+        },
+        "fastest_cell_percent": [
+          16.834566805495356,
+          17.17959294012404
+        ],
+        "cells_in_window": 11006
+      },
+      "step004500-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.25096776064357074,
+            0.08422638890013678
+          ],
+          "y": [
+            -0.004561983334407351,
+            0.10189322227614378
+          ]
+        },
+        "fastest_cell_percent": [
+          78.4671268233987,
+          16.631709612107322
+        ],
+        "cells_in_window": 8992
+      },
+      "step004500-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.0005397439071456872,
+            0.08112270793592614
+          ],
+          "y": [
+            -0.003436228123316589,
+            0.027512406633757223
+          ]
+        },
+        "fastest_cell_percent": [
+          15.416144637490067,
+          53.571233701151726
+        ],
+        "cells_in_window": 5420
+      },
+      "step005000-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.028266726864800848,
+            0.10560179658133483
+          ],
+          "y": [
+            0.003259437502076466,
+            0.04012675761353851
+          ]
+        },
+        "fastest_cell_percent": [
+          30.116046085949456,
+          27.164176239089425
+        ],
+        "cells_in_window": 5528
+      },
+      "step005000-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.04343046284079704,
+            0.17729949177922372
+          ],
+          "y": [
+            -0.06227926788019924,
+            0.0480979094169268
+          ]
+        },
+        "fastest_cell_percent": [
+          25.134623113170488,
+          68.45020958327203
+        ],
+        "cells_in_window": 9480
+      },
+      "step005000-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.12067903746692188,
+            0.18705509285646893
+          ],
+          "y": [
+            -0.07078046515230423,
+            0.03106649427966103
+          ]
+        },
+        "fastest_cell_percent": [
+          43.13080797318719,
+          82.53030520782193
+        ],
+        "cells_in_window": 9126
+      },
+      "step005000-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.02034612855612708,
+            0.19358637862200015
+          ],
+          "y": [
+            -0.02803073655152053,
+            0.028527497032898273
+          ]
+        },
+        "fastest_cell_percent": [
+          15.142770182172974,
+          73.03070701748872
+        ],
+        "cells_in_window": 8450
+      },
+      "step005500-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.06681242307094647,
+            0.28766225681937607
+          ],
+          "y": [
+            -0.03477785715549643,
+            0.06408234654428208
+          ]
+        },
+        "fastest_cell_percent": [
+          22.24737727454184,
+          48.754588187797
+        ],
+        "cells_in_window": 10549
+      },
+      "step005500-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.16817714984635004,
+            0.0617283681369703
+          ],
+          "y": [
+            -0.008668015157146849,
+            0.0651535945923776
+          ]
+        },
+        "fastest_cell_percent": [
+          78.39135299327768,
+          29.922191174159497
+        ],
+        "cells_in_window": 6032
+      },
+      "step005500-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.18100794129903347,
+            0.09564268395813058
+          ],
+          "y": [
+            -0.04314874286767449,
+            0.04406993795029873
+          ]
+        },
+        "fastest_cell_percent": [
+          69.78362598188714,
+          64.85969562608305
+        ],
+        "cells_in_window": 8085
+      },
+      "step005500-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.1899788124377653,
+            0.05913243358324413
+          ],
+          "y": [
+            -0.0387549906480424,
+            0.04857517986210748
+          ]
+        },
+        "fastest_cell_percent": [
+          81.09939313125385,
+          59.74569657106773
+        ],
+        "cells_in_window": 5605
+      },
+      "step006000-w1": {
+        "plotted_range_m": {
+          "x": [
+            -0.16803861474678142,
+            0.12567288146049324
+          ],
+          "y": [
+            -0.02361562517780226,
+            0.05623226025431845
+          ]
+        },
+        "fastest_cell_percent": [
+          61.314326521944075,
+          46.59149230347139
+        ],
+        "cells_in_window": 9756
+      },
+      "step006000-w2": {
+        "plotted_range_m": {
+          "x": [
+            -0.08844671708036485,
+            0.17400541821767979
+          ],
+          "y": [
+            -0.03578862354525688,
+            0.045543437813056815
+          ]
+        },
+        "fastest_cell_percent": [
+          38.29091656521491,
+          60.708309783911176
+        ],
+        "cells_in_window": 9616
+      },
+      "step006000-w3": {
+        "plotted_range_m": {
+          "x": [
+            -0.08748017960541389,
+            0.07490343939945042
+          ],
+          "y": [
+            0.00557793857174812,
+            0.05699781135150237
+          ]
+        },
+        "fastest_cell_percent": [
+          61.292383607158555,
+          15.57521871037011
+        ],
+        "cells_in_window": 4715
+      },
+      "step006000-w4": {
+        "plotted_range_m": {
+          "x": [
+            -0.07708400371392223,
+            0.13816038720703777
+          ],
+          "y": [
+            -0.042240076932828094,
+            0.06572323587121068
+          ]
+        },
+        "fastest_cell_percent": [
+          41.409959350293605,
+          51.70902198226044
+        ],
+        "cells_in_window": 9802
+      }
+    }
+  },
+  "identical_arrays_hard_linked": 84,
+  "truth_withheld_from_model": true,
+  "model_name_in_bodies": "gemma-4-E2B-it-Q4_0-vision",
+  "note": "Same states, prompts, renderers and scoring as picture-test-20261021; only the plotted window differs per request. The runner replaces only the model name."
+}

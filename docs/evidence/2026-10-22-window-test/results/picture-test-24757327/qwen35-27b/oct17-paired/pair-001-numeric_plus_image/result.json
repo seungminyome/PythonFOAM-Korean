@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed 82.5 m/s is in the top-right corner of the domain (x≈0.60 m, y≈0.11 m). The image shows a sharp velocity jump near x=0.0 m.\",\n  \"possible_interpretation\": \"The flow likely accelerates through a constriction or nozzle at the right boundary. The pressure drop supports this acceleration.\",\n  \"checks\": \"Force equilibrium is unavailable. The vertical axis is stretched, so geometric proportions are distorted.\"\n}",
+  "request_sha256": "e5a185dc2aedd4e29a39725efa82c2d249bf778526213edf41d5e520ca02600b",
+  "request_bytes": 50845,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1105,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 115,
+    "prompt_tokens": 1595,
+    "total_tokens": 1710,
+    "prompt_tokens_details": {
+      "cached_tokens": 861
+    }
+  },
+  "server_timings": {
+    "cache_n": 861,
+    "prompt_n": 734,
+    "prompt_ms": 1008.134,
+    "prompt_per_token_ms": 1.3734795640326976,
+    "prompt_per_second": 728.077815052364,
+    "predicted_n": 115,
+    "predicted_ms": 4926.751,
+    "predicted_per_token_ms": 43.21711403508772,
+    "predicted_per_second": 23.138981450452842
+  },
+  "structured_output": {
+    "observations": "Max speed 82.5 m/s is in the top-right corner of the domain (x≈0.60 m, y≈0.11 m). The image shows a sharp velocity jump near x=0.0 m.",
+    "possible_interpretation": "The flow likely accelerates through a constriction or nozzle at the right boundary. The pressure drop supports this acceleration.",
+    "checks": "Force equilibrium is unavailable. The vertical axis is stretched, so geometric proportions are distorted."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 5.997771300375462,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

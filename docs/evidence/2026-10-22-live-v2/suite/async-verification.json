@@ -1,0 +1,475 @@
+{
+  "async-no-llm": {
+    "steps": 6000,
+    "request_step": 3750,
+    "arrived_at_step": 3763,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 432,
+    "model_status": "disabled",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.003305532,
+      "arrival_step": 0.024992926,
+      "last_step": 0.188764289,
+      "max_other_steps": 0.006840569,
+      "median_all_steps": 5.77605e-05
+    },
+    "solver_stall_s": 0.00292227603495121,
+    "inference_wall_s": 0.0,
+    "frames": [
+      {
+        "step": 3000,
+        "written_fields_checked": true,
+        "fields_sha256": "b0f276756255543a0151f02055d54f39b3cb7fbe2b3e3289d5e47d9e8b9caa88",
+        "png_sha256": {
+          "U": "679031669451f6ffcc37c1105d8a90b2b48fe93afd6ca73a7e50e7d883972b10",
+          "p": "f036f692e86c66a8653fce4fe48aae837c5277fa8e8600ed021e5617c929a995"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 3250,
+        "written_fields_checked": true,
+        "fields_sha256": "7ca94e9999ff50d41b36021f78b230a9f6ce7f0b6386814b5616a878affe84ea",
+        "png_sha256": {
+          "U": "9cc2d9838f555c4774eb5b605252652fe026bc8bb76513142aa259589cbccb4a",
+          "p": "1dc56fcc1335898f925b269e2d5ac01d1166c2b0f41f62a2087a84bc53b71491"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 3750,
+        "written_fields_checked": true,
+        "fields_sha256": "692b060aca27f38a2ee035b50e5d4c012af5eeb44059d27dd02c66c542db7685",
+        "png_sha256": {
+          "U": "8daf23efef73979455c12cd10b34b1710ccac7e1988ba54dbdc6f9c16399c644",
+          "p": "22c9b3949db3fac98af7fc587865be6076a011ee91561c818f6cad57de5ede33"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 0.346668233526
+  },
+  "async-describe": {
+    "steps": 6000,
+    "request_step": 250,
+    "arrived_at_step": 320,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 432,
+    "model_status": "ok",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.003909481,
+      "arrival_step": 0.022994187,
+      "last_step": 0.186885029,
+      "max_other_steps": 0.000767355,
+      "median_all_steps": 5.2621e-05
+    },
+    "solver_stall_s": 0.0035199150443077087,
+    "inference_wall_s": 3.1716984529048204,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "31609ca633323537889fe1261a1c663910811f19097a1845ff48cb4f127f170a",
+        "png_sha256": {
+          "U": "64340079f97ed42345e961e760178a06382a51d0ea55ba81b89e626e51b5e725",
+          "p": "4f6666ce5c477aba445bda2d48ab4ad75bad21110bea75d6e194eb17b764e55a"
+        },
+        "same_fields_as_baseline_frame": null
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": {
+      "flow_description": "The flow is fastest in the upper half of the domain, particularly around x=40% and x=60%, where velocity magnitude is highest. The flow is slowest in the bottom third of the domain. The lowest pressure is located in a distinct dark region near the center-left at x=35%, while higher pressure is seen on the far right and top edges.",
+      "fastest_flow_x_percent": 40,
+      "fastest_flow_y_percent": 45,
+      "lowest_pressure_x_percent": 35,
+      "lowest_pressure_y_percent": 30,
+      "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range."
+    },
+    "score": {
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 37.09709528168654,
+          "y_percent": 46.53218030997406,
+          "x_m": 0.04451651433802385,
+          "y_m": 0.018612872123989623,
+          "cell": 13490
+        },
+        "lowest_pressure": {
+          "x_percent": 37.970214907677764,
+          "y_percent": 25.946103729004815,
+          "x_m": 0.04556425788921332,
+          "y_m": 0.010378441491601926,
+          "cell": 9676
+        },
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        }
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            40,
+            45
+          ],
+          "true_percent": [
+            37.09709528168654,
+            46.53218030997406
+          ],
+          "error_percent": [
+            2.902904718313458,
+            -1.5321803099740592
+          ],
+          "distance_percent": 3.282443039243597,
+          "error_m": [
+            0.0034834856619761494,
+            -0.0006128721239896237
+          ],
+          "distance_m": 0.003536988068619537,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            35,
+            30
+          ],
+          "true_percent": [
+            37.970214907677764,
+            25.946103729004815
+          ],
+          "error_percent": [
+            -2.9702149076777644,
+            4.053896270995185
+          ],
+          "distance_percent": 5.025559826902859,
+          "error_m": [
+            -0.003564257889213317,
+            0.001621558508398074
+          ],
+          "distance_m": 0.003915786804331609,
+          "within_10_percent": true
+        }
+      }
+    },
+    "max_courant": 0.346668233526
+  },
+  "async-sequence": {
+    "steps": 6000,
+    "request_step": 3750,
+    "arrived_at_step": 3823,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 432,
+    "model_status": "ok",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.004252546,
+      "arrival_step": 0.023243919,
+      "last_step": 0.191249679,
+      "max_other_steps": 0.006745411,
+      "median_all_steps": 5.78005e-05
+    },
+    "solver_stall_s": 0.0038515496999025345,
+    "inference_wall_s": 3.147821942344308,
+    "frames": [
+      {
+        "step": 3000,
+        "written_fields_checked": true,
+        "fields_sha256": "b0f276756255543a0151f02055d54f39b3cb7fbe2b3e3289d5e47d9e8b9caa88",
+        "png_sha256": {
+          "U": "679031669451f6ffcc37c1105d8a90b2b48fe93afd6ca73a7e50e7d883972b10",
+          "p": "f036f692e86c66a8653fce4fe48aae837c5277fa8e8600ed021e5617c929a995"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 3250,
+        "written_fields_checked": true,
+        "fields_sha256": "7ca94e9999ff50d41b36021f78b230a9f6ce7f0b6386814b5616a878affe84ea",
+        "png_sha256": {
+          "U": "9cc2d9838f555c4774eb5b605252652fe026bc8bb76513142aa259589cbccb4a",
+          "p": "1dc56fcc1335898f925b269e2d5ac01d1166c2b0f41f62a2087a84bc53b71491"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 3750,
+        "written_fields_checked": true,
+        "fields_sha256": "692b060aca27f38a2ee035b50e5d4c012af5eeb44059d27dd02c66c542db7685",
+        "png_sha256": {
+          "U": "8daf23efef73979455c12cd10b34b1710ccac7e1988ba54dbdc6f9c16399c644",
+          "p": "22c9b3949db3fac98af7fc587865be6076a011ee91561c818f6cad57de5ede33"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": {
+      "change_description": "The high-velocity region shifts from approximately x=40% to x=60% and slightly higher in y. The pressure minimum moves from x=45% to x=60% and then to x=30% by the final frame.",
+      "max_speed_trend": "decreasing",
+      "min_pressure_trend": "more_negative",
+      "fastest_flow_region": "moves",
+      "uncertainties": "The exact nature of the flow (e.g., wake or obstacle) is not specified."
+    },
+    "score": {
+      "truth": {
+        "max_speed_trend": "decreasing",
+        "max_speed_relative_change": -0.09715883049632625,
+        "max_speed_first_last": [
+          38.56079669576149,
+          34.8142747857947
+        ],
+        "min_pressure_trend": "less_negative",
+        "min_pressure_relative_change": 0.385865320217386,
+        "min_pressure_first_last": [
+          -365.24402199345786,
+          -224.30902048946626
+        ],
+        "fastest_flow_region": "moves",
+        "fastest_flow_moved_percent": 23.763511571877636,
+        "tolerances": {
+          "relative_change": 0.02,
+          "region_percent": 5.0
+        },
+        "frames": [
+          {
+            "step": 3000,
+            "time_s": 0.115000000000015,
+            "max_speed_m_per_s": 38.56079669576149,
+            "min_pressure_m2_per_s2": -365.24402199345786,
+            "fastest_flow_percent": [
+              42.33414973464664,
+              47.95508320723889
+            ]
+          },
+          {
+            "step": 3250,
+            "time_s": 0.11625000000001626,
+            "max_speed_m_per_s": 38.146695180185766,
+            "min_pressure_m2_per_s2": -378.5527839110209,
+            "fastest_flow_percent": [
+              57.172588154703405,
+              45.72112598941333
+            ]
+          },
+          {
+            "step": 3750,
+            "time_s": 0.11875000000001876,
+            "max_speed_m_per_s": 34.8142747857947,
+            "min_pressure_m2_per_s2": -224.30902048946626,
+            "fastest_flow_percent": [
+              18.767241378488077,
+              44.904622134026155
+            ]
+          }
+        ]
+      },
+      "scores": {
+        "max_speed_trend": {
+          "answer": "decreasing",
+          "truth": "decreasing",
+          "match": true,
+          "cannot_tell": false
+        },
+        "min_pressure_trend": {
+          "answer": "more_negative",
+          "truth": "less_negative",
+          "match": false,
+          "cannot_tell": false
+        },
+        "fastest_flow_region": {
+          "answer": "moves",
+          "truth": "moves",
+          "match": true,
+          "cannot_tell": false
+        },
+        "matches": 2
+      }
+    },
+    "max_courant": 0.346668233526
+  },
+  "async-server-error": {
+    "steps": 6000,
+    "request_step": 250,
+    "arrived_at_step": 261,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 432,
+    "model_status": "error",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.004140398,
+      "arrival_step": 0.024933209,
+      "last_step": 0.195272406,
+      "max_other_steps": 0.000804061,
+      "median_all_steps": 5.1631e-05
+    },
+    "solver_stall_s": 0.0037378333508968353,
+    "inference_wall_s": 0.010570617392659187,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "31609ca633323537889fe1261a1c663910811f19097a1845ff48cb4f127f170a",
+        "png_sha256": {
+          "U": "64340079f97ed42345e961e760178a06382a51d0ea55ba81b89e626e51b5e725",
+          "p": "4f6666ce5c477aba445bda2d48ab4ad75bad21110bea75d6e194eb17b764e55a"
+        },
+        "same_fields_as_baseline_frame": null
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 0.346668233526
+  },
+  "async-timeout": {
+    "steps": 6000,
+    "request_step": 250,
+    "arrived_at_step": 324,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 432,
+    "model_status": "timeout",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.004342802,
+      "arrival_step": 0.043643101,
+      "last_step": 0.189037827,
+      "max_other_steps": 0.000821752,
+      "median_all_steps": 5.3285499999999997e-05
+    },
+    "solver_stall_s": 0.003952236846089363,
+    "inference_wall_s": null,
+    "frames": null,
+    "image_style": "v2",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 0.346668233526
+  },
+  "timings": {
+    "async-no-llm": 324.2182531338185,
+    "async-describe": 323.2823339384049,
+    "async-sequence": 324.2720171082765,
+    "async-server-error": 323.25716375000775,
+    "async-timeout": 323.80340996943414
+  },
+  "resources": {
+    "async-no-llm": {
+      "wall_seconds": 324.2182531338185,
+      "exit_status": 0,
+      "solver_pid": 2715110,
+      "llama_server_pid": 2714219,
+      "mode": "sequence",
+      "model_request_enabled": false,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 591400,
+      "cfd_python_peak_pss_sum_kib": 583361,
+      "llama_server_peak_rss_kib": 1379132,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 644
+    },
+    "async-describe": {
+      "wall_seconds": 323.2823339384049,
+      "exit_status": 0,
+      "solver_pid": 2715261,
+      "llama_server_pid": 2714219,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 595624,
+      "cfd_python_peak_pss_sum_kib": 587443,
+      "llama_server_peak_rss_kib": 2031888,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 642
+    },
+    "async-sequence": {
+      "wall_seconds": 324.2720171082765,
+      "exit_status": 0,
+      "solver_pid": 2715387,
+      "llama_server_pid": 2714219,
+      "mode": "sequence",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 575392,
+      "cfd_python_peak_pss_sum_kib": 567361,
+      "llama_server_peak_rss_kib": 2963480,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 644
+    },
+    "async-server-error": {
+      "wall_seconds": 323.25716375000775,
+      "exit_status": 0,
+      "solver_pid": 2715687,
+      "llama_server_pid": 2714219,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 573192,
+      "cfd_python_peak_pss_sum_kib": 564880,
+      "llama_server_peak_rss_kib": 2964792,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 642
+    },
+    "async-timeout": {
+      "wall_seconds": 323.80340996943414,
+      "exit_status": 0,
+      "solver_pid": 2716195,
+      "llama_server_pid": 2714219,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 573648,
+      "cfd_python_peak_pss_sum_kib": 565541,
+      "llama_server_peak_rss_kib": 2965420,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 643
+    }
+  },
+  "settings": {
+    "steps": 6000,
+    "delta_t_s": 5e-06,
+    "write_every": 250,
+    "request_step": 250,
+    "sequence_steps": [
+      3000,
+      3250,
+      3750
+    ],
+    "image_x_window": "0,0.12",
+    "image_y_window": "0,0.04",
+    "deadline_s": "120",
+    "image_style": "v2",
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "max_tokens_env": "320",
+    "fixture_deadline_s": 4.0,
+    "start_time_s": 0.1,
+    "start_dir": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261022/long-100ms/0.1",
+    "start_files_sha256": {
+      "U": "5e89b31d71d8fc8a3a7ae6e44eef1ed478cda488f5aeb98488c17fd5fb50b5af",
+      "p": "7e7291a1a194da52419addf3d2b41de6eea8ac28503e98a593d909d332c9dabd",
+      "phi": "3e5221f6aca5724a9486e235bd6bf94ae1de21ad6dd4637627cfe23198d76774"
+    }
+  },
+  "status": "PASS"
+}

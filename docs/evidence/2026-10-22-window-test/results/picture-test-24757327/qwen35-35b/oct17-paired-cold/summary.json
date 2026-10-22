@@ -1,0 +1,95 @@
+{
+  "set": "oct17-paired-cold",
+  "attempted": 6,
+  "successful": 6,
+  "latency_s": [
+    1.394060231745243,
+    1.6360875833779573,
+    1.6324427425861359,
+    1.3844956457614899,
+    1.3818949591368437,
+    1.6340188663452864
+  ],
+  "prompt_tokens": [
+    1373,
+    1595,
+    1595,
+    1373,
+    1373,
+    1595
+  ],
+  "completion_tokens": [
+    85,
+    96,
+    96,
+    85,
+    85,
+    96
+  ],
+  "cache_n": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "by_mode": {
+    "observe": {
+      "attempted": 6,
+      "successful": 6,
+      "median_latency_s": 1.5132514871656895,
+      "median_prompt_tokens": 1484.0,
+      "paired": {
+        "numeric_only": {
+          "attempted": 3,
+          "successful": 3,
+          "failed_or_invalid": 0,
+          "location_scored": 0,
+          "location_errors_m_by_axes": {},
+          "latency_s_all_attempts": [
+            1.394060231745243,
+            1.3844956457614899,
+            1.3818949591368437
+          ],
+          "latency_s_successful": [
+            1.394060231745243,
+            1.3844956457614899,
+            1.3818949591368437
+          ],
+          "responses_with_review_flags": 3,
+          "grounding_denominator_successful_responses": 3
+        },
+        "numeric_plus_image": {
+          "attempted": 3,
+          "successful": 3,
+          "failed_or_invalid": 0,
+          "location_scored": 3,
+          "location_errors_m_by_axes": {
+            "xy": [
+              0.5106082656025325,
+              0.5106082656025325,
+              0.5106082656025325
+            ]
+          },
+          "latency_s_all_attempts": [
+            1.6360875833779573,
+            1.6324427425861359,
+            1.6340188663452864
+          ],
+          "latency_s_successful": [
+            1.6360875833779573,
+            1.6324427425861359,
+            1.6340188663452864
+          ],
+          "responses_with_review_flags": 0,
+          "grounding_denominator_successful_responses": 3
+        },
+        "interpretation": "Compare errors only with the same answered axes and report coverage. Refusal/unknown is not zero error. Repeated one-snapshot trials are not independent physical cases. Alternating order reduces but does not remove server warm-cache effects. Seed is requested, not proof of backend determinism. Human grounding review remains required."
+      },
+      "constant_answer_baseline": null
+    }
+  },
+  "by_group": {},
+  "interpretation": "Counts are out of attempted requests. Different places or states are separate cases; the flow states are from one run, so neighbouring states are alike, the fastest flow and the lowest pressure sit at the step corner in every state, and the flow trend keys hardly vary: compare with constant_answer_baseline. Repeats of one request (oct20-replay) are not separate cases. Positions are percent of the plotted range; 10 percent is the distance used on 2026-10-20. Synthetic controls test reading a simple picture, not physics."
+}

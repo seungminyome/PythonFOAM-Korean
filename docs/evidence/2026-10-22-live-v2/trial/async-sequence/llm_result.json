@@ -1,0 +1,313 @@
+{
+  "parent_pid": 2713419,
+  "run_id": "pod-llm-async.yIW1TX/async-sequence",
+  "step": 500,
+  "time_s": 0.1025000000000025,
+  "mode": "sequence",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.2,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "frames": [
+    {
+      "style": "readable-v2",
+      "view": "window",
+      "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000200",
+      "step": 200,
+      "time_s": 0.101000000000001,
+      "cells": 20540,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "plotted_range_m": {
+        "x": [
+          0.0,
+          0.12
+        ],
+        "y": [
+          0.0,
+          0.04
+        ]
+      },
+      "domain_extent_m": {
+        "x": [
+          -1.5533076923100004,
+          0.6012246511046805
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      },
+      "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000200/fields.npz",
+      "fields_sha256": "531d9226584002ce1572da1bb90107748098fb11bb99dc647b45db1a7d477bbc",
+      "images": {
+        "U": {
+          "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000200/U.png",
+          "sha256": "db9691c1d3fe04619507ee7af2f5e6ab02b8cbd1f64d08ce58737bca2481aa4f",
+          "bytes": 85151,
+          "width": 1024,
+          "height": 576,
+          "colour_range": [
+            0.0001631024612488301,
+            38.14138503297058
+          ],
+          "colour_range_shared": false
+        },
+        "p": {
+          "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000200/p.png",
+          "sha256": "330aa0b16d578698b67c5854ef61655b8e97ee05e9cac0a3546301e18f7c4f35",
+          "bytes": 79278,
+          "width": 1024,
+          "height": 576,
+          "colour_range": [
+            -376.195020375808,
+            40.763679248443395
+          ],
+          "colour_range_shared": false
+        }
+      }
+    },
+    {
+      "style": "readable-v2",
+      "view": "window",
+      "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000300",
+      "step": 300,
+      "time_s": 0.1015000000000015,
+      "cells": 20540,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "plotted_range_m": {
+        "x": [
+          0.0,
+          0.12
+        ],
+        "y": [
+          0.0,
+          0.04
+        ]
+      },
+      "domain_extent_m": {
+        "x": [
+          -1.5533076923100004,
+          0.6012246511046805
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      },
+      "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000300/fields.npz",
+      "fields_sha256": "0d4a6d69dacabfd9f8d23064caaaf1828e1c023c4788f38694b8ef7f933101f4",
+      "images": {
+        "U": {
+          "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000300/U.png",
+          "sha256": "2d7947219594aad21b0e164aad8acc1a3b521e4dac1a8e4382f47d03a0e536a3",
+          "bytes": 84461,
+          "width": 1024,
+          "height": 576,
+          "colour_range": [
+            0.0010823479298789765,
+            37.0858657277107
+          ],
+          "colour_range_shared": false
+        },
+        "p": {
+          "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000300/p.png",
+          "sha256": "6ac5f07a2aeba2d11b4ef86fb1723a49e8de1ecabf86f5f87ceb721edc1ce7dd",
+          "bytes": 79290,
+          "width": 1024,
+          "height": 576,
+          "colour_range": [
+            -334.35011100521433,
+            40.16729788779323
+          ],
+          "colour_range_shared": false
+        }
+      }
+    },
+    {
+      "style": "readable-v2",
+      "view": "window",
+      "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000500",
+      "step": 500,
+      "time_s": 0.1025000000000025,
+      "cells": 20540,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "plotted_range_m": {
+        "x": [
+          0.0,
+          0.12
+        ],
+        "y": [
+          0.0,
+          0.04
+        ]
+      },
+      "domain_extent_m": {
+        "x": [
+          -1.5533076923100004,
+          0.6012246511046805
+        ],
+        "y": [
+          5.781735398474376e-06,
+          0.11429523559299273
+        ]
+      },
+      "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000500/fields.npz",
+      "fields_sha256": "7a12434fa8187b437b77f7dd9ab1f16c71ea645c6ab3121a1440aaa991afaf8f",
+      "images": {
+        "U": {
+          "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000500/U.png",
+          "sha256": "59624f09ec6eee9ee63340d1e46a814bd5b386a88c499e44ced8a4162c25dc2a",
+          "bytes": 81805,
+          "width": 1024,
+          "height": 576,
+          "colour_range": [
+            0.002471316597751262,
+            34.89995808721363
+          ],
+          "colour_range_shared": false
+        },
+        "p": {
+          "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000500/p.png",
+          "sha256": "c3963ac29e47dedf945870c2233b7bb1c9deb81b9e97d4db29c9f10576897f08",
+          "bytes": 75730,
+          "width": 1024,
+          "height": 576,
+          "colour_range": [
+            -226.11967688427177,
+            41.46663745600481
+          ],
+          "colour_range_shared": false
+        }
+      }
+    }
+  ],
+  "callback_started_at": "2026-10-22T15:44:45.585649+00:00",
+  "request_step": 500,
+  "solver_stall_s": 0.0027629341930150986,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.5663054045289755,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000500",
+    "step": 500,
+    "time_s": 0.1025000000000025,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046805
+      ],
+      "y": [
+        5.781735398474376e-06,
+        0.11429523559299273
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000500/fields.npz",
+    "fields_sha256": "7a12434fa8187b437b77f7dd9ab1f16c71ea645c6ab3121a1440aaa991afaf8f",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000500/U.png",
+        "sha256": "59624f09ec6eee9ee63340d1e46a814bd5b386a88c499e44ced8a4162c25dc2a",
+        "bytes": 81805,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          0.002471316597751262,
+          34.89995808721363
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757458/pod-llm-async.yIW1TX/async-sequence/llm_observation/step-000500/p.png",
+        "sha256": "c3963ac29e47dedf945870c2233b7bb1c9deb81b9e97d4db29c9f10576897f08",
+        "bytes": 75730,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -226.11967688427177,
+          41.46663745600481
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.5663054045289755
+  },
+  "sequence_colour_range": "own",
+  "request_before_at": "2026-10-22T15:44:46.250410+00:00",
+  "arrived_at_step": 572,
+  "worker_reaped": true,
+  "ipc_select_calls": 77,
+  "response_after_at": "2026-10-22T15:44:49.471476+00:00",
+  "callback_elapsed_s": 3.8860077131539583,
+  "elapsed_since_request_s": 3.2192572504281998,
+  "worker_wait_elapsed_s": 3.885923011228442,
+  "cleanup_elapsed_before_result_write_s": 0.01298430748283863,
+  "status": "ok",
+  "output_text": "{\n  \"change_description\": \"The velocity magnitude shows a slight decrease in the maximum value while the high-velocity region expands horizontally. The pressure field shows a shift in the location of the minimum pressure values, moving from approximately x=35% to x=50% and becoming less negative.\",\n  \"max_speed_trend\": \"decreasing\",\n  \"min_pressure_trend\": \"less_negative\",\n  \"fastest_flow_region\": \"moves\",\n  \"uncertainties\": \"The exact nature of the flow physics (e.g., wake, boundary layer) is not specified.\"\n}",
+  "request_sha256": "5f913f4ea61ae723523ce8c83e926603f6b22eed174fc0666edc50a13671de1a",
+  "request_bytes": 651050,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1191,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 138,
+    "prompt_tokens": 2158,
+    "total_tokens": 2296,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2158,
+    "prompt_ms": 1040.752,
+    "prompt_per_token_ms": 0.4822761816496756,
+    "prompt_per_second": 2073.500699494212,
+    "predicted_n": 138,
+    "predicted_ms": 1876.362,
+    "predicted_per_token_ms": 13.69607299270073,
+    "predicted_per_second": 73.01362956614982
+  },
+  "structured_output": {
+    "change_description": "The velocity magnitude shows a slight decrease in the maximum value while the high-velocity region expands horizontally. The pressure field shows a shift in the location of the minimum pressure values, moving from approximately x=35% to x=50% and becoming less negative.",
+    "max_speed_trend": "decreasing",
+    "min_pressure_trend": "less_negative",
+    "fastest_flow_region": "moves",
+    "uncertainties": "The exact nature of the flow physics (e.g., wake, boundary layer) is not specified."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.1727266684174538
+}

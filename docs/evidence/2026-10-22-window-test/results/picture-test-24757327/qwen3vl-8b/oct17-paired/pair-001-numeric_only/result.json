@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum speed |U| location unknown; image shows speed distribution but no coordinate labels or max-value marker.\",\n  \"possible_interpretation\": \"Speed peaks near top-left of image; exact position and value cannot be determined from supplied data.\",\n  \"checks\": \"Verify image axes labels and max-value annotation; confirm if snapshot includes cell-wise |U| data with coordinates.\"\n}",
+  "request_sha256": "e601e8b79b7b0a49ce5be5c5303765bf2142b6156071a54af21b8313b5f25de2",
+  "request_bytes": 4872,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1066,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 83,
+    "prompt_tokens": 1367,
+    "total_tokens": 1450,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1367,
+    "prompt_ms": 413.029,
+    "prompt_per_token_ms": 0.3021426481346013,
+    "prompt_per_second": 3309.694960886524,
+    "predicted_n": 83,
+    "predicted_ms": 1134.346,
+    "predicted_per_token_ms": 13.833487804878049,
+    "predicted_per_second": 72.2883494101447
+  },
+  "structured_output": {
+    "observations": "Maximum speed |U| location unknown; image shows speed distribution but no coordinate labels or max-value marker.",
+    "possible_interpretation": "Speed peaks near top-left of image; exact position and value cannot be determined from supplied data.",
+    "checks": "Verify image axes labels and max-value annotation; confirm if snapshot includes cell-wise |U| data with coordinates."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 1.6029657255858183,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

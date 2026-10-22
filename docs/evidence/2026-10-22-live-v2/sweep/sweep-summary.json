@@ -1,0 +1,1058 @@
+{
+  "requests": 11,
+  "ok": 11,
+  "all_bodies_equal_tested_builder": true,
+  "all_arrived_while_running": true,
+  "fastest_flow_within_10_percent": 9,
+  "lowest_pressure_within_10_percent": 10,
+  "median_distance_percent": {
+    "fastest_flow": 3.456842533529192,
+    "lowest_pressure": 2.2326398224232036
+  },
+  "one_fixed_answer_for_all": {
+    "fastest_flow": 4,
+    "lowest_pressure": 4,
+    "note": "one fixed answer for the whole set (every request has its own window)"
+  },
+  "max_request_step_wall_s": 0.00515773,
+  "arrival_delay_steps": [
+    71,
+    78,
+    69,
+    92,
+    93,
+    78,
+    89,
+    92,
+    75,
+    76,
+    84
+  ],
+  "inference_wall_s": [
+    3.1706753838807344,
+    2.853088354691863,
+    3.286169396713376,
+    3.158703660592437,
+    3.082967860624194,
+    2.9353045038878918,
+    3.2795636411756277,
+    3.385444451123476,
+    3.2294320669025183,
+    3.1275552678853273,
+    3.060053139925003
+  ],
+  "cases": [
+    {
+      "name": "describe-step000500",
+      "request_step": 500,
+      "window_m": [
+        [
+          -0.03737250207013163,
+          0.21823591691934843
+        ],
+        [
+          -0.0410010909690117,
+          0.05270342315437517
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 571,
+      "solver_stall_s": 0.0032698754221200943,
+      "request_step_wall_s": 0.003695652,
+      "inference_wall_s": 3.1706753838807344,
+      "wall_seconds": 168.2246798723936,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity boundary layer or wake structure extending horizontally across the middle. The pressure field shows a localized low-pressure zone near the center-left and a high-pressure region towards the right side of the domain.",
+        "fastest_flow_x_percent": 40,
+        "fastest_flow_y_percent": 65,
+        "lowest_pressure_x_percent": 38,
+        "lowest_pressure_y_percent": 55,
+        "uncertainties": "The exact physical nature of the geometry causing the pressure fluctuations and the specific flow regime (e.g., turbulent vs. laminar) cannot be determined from the images alone."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 38.59329939319264,
+          "y_percent": 62.75044033537026,
+          "x_m": 0.06127522034468467,
+          "y_m": 0.017798904257532777,
+          "cell": 13215
+        },
+        "lowest_pressure": {
+          "x_percent": 37.77380362437679,
+          "y_percent": 54.23374413911143,
+          "x_m": 0.059180520166328805,
+          "y_m": 0.009818375467463466,
+          "cell": 9689
+        },
+        "cells_in_window": 9766
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            40,
+            65
+          ],
+          "true_percent": [
+            38.59329939319264,
+            62.75044033537026
+          ],
+          "error_percent": [
+            1.4067006068073624,
+            2.249559664629743
+          ],
+          "distance_percent": 2.653172682265759,
+          "error_m": [
+            0.0035956451809757216,
+            0.0021079389536569917
+          ],
+          "distance_m": 0.004167981633814917,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            38,
+            55
+          ],
+          "true_percent": [
+            37.77380362437679,
+            54.23374413911143
+          ],
+          "error_percent": [
+            0.2261963756232106,
+            0.7662558608885703
+          ],
+          "distance_percent": 0.7989448320698749,
+          "error_m": [
+            0.0005781769795419943,
+            0.00071801633138761
+          ],
+          "distance_m": 0.0009218655389001293,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step001000",
+      "request_step": 1000,
+      "window_m": [
+        [
+          -0.028188790791460708,
+          0.10651468432886392
+        ],
+        [
+          -0.01557769820820865,
+          0.06869057717050271
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 1078,
+      "solver_stall_s": 0.003449220210313797,
+      "request_step_wall_s": 0.003828124,
+      "inference_wall_s": 2.853088354691863,
+      "wall_seconds": 198.87275435216725,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows a high-velocity region in the center-right area, while the lower section contains a slower-moving layer. The pressure field shows a significant low-pressure zone in the lower-right quadrant, corresponding to a region of high velocity.",
+        "fastest_flow_x_percent": 68,
+        "fastest_flow_y_percent": 43,
+        "lowest_pressure_x_percent": 68,
+        "lowest_pressure_y_percent": 30,
+        "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions and ranges."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 68.74814513220929,
+          "y_percent": 42.71229762732136,
+          "x_m": 0.06441734978238949,
+          "y_m": 0.020415218376957315,
+          "cell": 13509
+        },
+        "lowest_pressure": {
+          "x_percent": 68.7484166853791,
+          "y_percent": 31.641614174897626,
+          "x_m": 0.06441771557394603,
+          "y_m": 0.011086144358963454,
+          "cell": 10082
+        },
+        "cells_in_window": 8677
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            68,
+            43
+          ],
+          "true_percent": [
+            68.74814513220929,
+            42.71229762732136
+          ],
+          "error_percent": [
+            -0.748145132209288,
+            0.28770237267863763
+          ],
+          "distance_percent": 0.8015571059465263,
+          "error_m": [
+            -0.001007777492029458,
+            0.00024244182767992078
+          ],
+          "distance_m": 0.0010365295525212798,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            68,
+            30
+          ],
+          "true_percent": [
+            68.7484166853791,
+            31.641614174897626
+          ],
+          "error_percent": [
+            -0.7484166853790981,
+            -1.6416141748976258
+          ],
+          "distance_percent": 1.804168682296267,
+          "error_m": [
+            -0.0010081432835859917,
+            -0.0013833599535586917
+          ],
+          "distance_m": 0.0017117352719826307,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step001500",
+      "request_step": 1500,
+      "window_m": [
+        [
+          -0.035283359411060894,
+          0.11821852188743243
+        ],
+        [
+          -0.010247276031878558,
+          0.04605138585606064
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 1569,
+      "solver_stall_s": 0.003639163449406624,
+      "request_step_wall_s": 0.004047978,
+      "inference_wall_s": 3.286169396713376,
+      "wall_seconds": 117.24586065113544,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow is fastest in the upper region (y > 40%) and slowest in the lower region (y < 40%), particularly between x=25% and x=100%. The pressure is lowest in the lower region, showing distinct dark spots between x=40% and x=90%, and highest in the upper right corner.",
+        "fastest_flow_x_percent": 80,
+        "fastest_flow_y_percent": 90,
+        "lowest_pressure_x_percent": 82,
+        "lowest_pressure_y_percent": 28,
+        "uncertainties": "The exact magnitude of the velocity and pressure values at specific coordinates cannot be determined without the numerical data, only their relative positions based on the color scale."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 84.05662566472466,
+          "y_percent": 49.415781729695574,
+          "x_m": 0.09374514234032363,
+          "y_m": 0.01757314784340478,
+          "cell": 12955
+        },
+        "lowest_pressure": {
+          "x_percent": 83.3742487939485,
+          "y_percent": 32.29480857556297,
+          "x_m": 0.09269768100613641,
+          "y_m": 0.007934269055434826,
+          "cell": 9624
+        },
+        "cells_in_window": 8666
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            80,
+            90
+          ],
+          "true_percent": [
+            84.05662566472466,
+            49.415781729695574
+          ],
+          "error_percent": [
+            -4.056625664724663,
+            40.584218270304426
+          ],
+          "distance_percent": 40.78645589402706,
+          "error_m": [
+            -0.0062269967125898685,
+            0.022848371823861936
+          ],
+          "distance_m": 0.023681714107303405,
+          "within_10_percent": false
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            82,
+            28
+          ],
+          "true_percent": [
+            83.3742487939485,
+            32.29480857556297
+          ],
+          "error_percent": [
+            -1.374248793948496,
+            -4.294808575562968
+          ],
+          "distance_percent": 4.509317071175867,
+          "error_m": [
+            -0.0021094977524327963,
+            -0.0024179197586904127
+          ],
+          "distance_m": 0.003208787423152946,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step002000",
+      "request_step": 2000,
+      "window_m": [
+        [
+          0.009106810395259742,
+          0.10095861040936044
+        ],
+        [
+          -0.004151740203965935,
+          0.032696592926794894
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 2092,
+      "solver_stall_s": 0.003838013857603073,
+      "request_step_wall_s": 0.004281042,
+      "inference_wall_s": 3.158703660592437,
+      "wall_seconds": 204.95551455579698,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows a high-velocity region in the upper-middle section, with a distinct low-velocity boundary layer or wake structure along the bottom. The pressure field shows a significant low-pressure zone in the center-left, corresponding to a region of high velocity, while higher pressure is observed towards the right and top edges.",
+        "fastest_flow_x_percent": 55,
+        "fastest_flow_y_percent": 65,
+        "lowest_pressure_x_percent": 52,
+        "lowest_pressure_y_percent": 38,
+        "uncertainties": "The exact physical geometry of the boundaries and the specific nature of the flow (e.g., internal vs. external) are not explicitly stated."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 53.37517248172636,
+          "y_percent": 65.12586543552385,
+          "x_m": 0.058132867080356344,
+          "y_m": 0.019846055646006912,
+          "cell": 13503
+        },
+        "lowest_pressure": {
+          "x_percent": 53.375219885855564,
+          "y_percent": 35.0796593806588,
+          "x_m": 0.0581329106219023,
+          "y_m": 0.008774529545755411,
+          "cell": 9397
+        },
+        "cells_in_window": 6212
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            55,
+            65
+          ],
+          "true_percent": [
+            53.37517248172636,
+            65.12586543552385
+          ],
+          "error_percent": [
+            1.6248275182736407,
+            -0.1258654355238491
+          ],
+          "distance_percent": 1.6296952389937471,
+          "error_m": [
+            0.00149243332265878,
+            -4.63793149783109e-05
+          ],
+          "distance_m": 0.0014931537976511941,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            52,
+            38
+          ],
+          "true_percent": [
+            53.375219885855564,
+            35.0796593806588
+          ],
+          "error_percent": [
+            -1.3752198858555644,
+            2.9203406193411965
+          ],
+          "distance_percent": 3.227943473393968,
+          "error_m": [
+            -0.001263164219310197,
+            0.0010760968399677682
+          ],
+          "distance_m": 0.0016593879154477881,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step002500",
+      "request_step": 2500,
+      "window_m": [
+        [
+          -0.1326063823956965,
+          0.1612978329740966
+        ],
+        [
+          -0.014937304984622275,
+          0.08150659453972081
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 2593,
+      "solver_stall_s": 0.004153091460466385,
+      "request_step_wall_s": 0.004581528,
+      "inference_wall_s": 3.082967860624194,
+      "wall_seconds": 240.48258784785867,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow is generally fast in the upper region, with a distinct low-velocity zone in the bottom right quadrant. The pressure is relatively uniform in the upper left, with a localized low-pressure region near the center-right and a high-pressure zone in the bottom right.",
+        "fastest_flow_x_percent": 62,
+        "fastest_flow_y_percent": 38,
+        "lowest_pressure_x_percent": 62,
+        "lowest_pressure_y_percent": 30,
+        "uncertainties": "The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the obstacles are not explicitly labeled."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 63.11656820730901,
+          "y_percent": 34.7284505597434,
+          "x_m": 0.05289587216233531,
+          "y_m": 0.018556166979577817,
+          "cell": 13401
+        },
+        "lowest_pressure": {
+          "x_percent": 63.47305398246708,
+          "y_percent": 26.56975105895303,
+          "x_m": 0.05394359888271857,
+          "y_m": 0.010687599030542467,
+          "cell": 9878
+        },
+        "cells_in_window": 10793
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            62,
+            38
+          ],
+          "true_percent": [
+            63.11656820730901,
+            34.7284505597434
+          ],
+          "error_percent": [
+            -1.1165682073090082,
+            3.2715494402565994
+          ],
+          "distance_percent": 3.456842533529192,
+          "error_m": [
+            -0.0032816410287601055,
+            0.003155209855050283
+          ],
+          "distance_m": 0.004552418815426378,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            62,
+            30
+          ],
+          "true_percent": [
+            63.47305398246708,
+            26.56975105895303
+          ],
+          "error_percent": [
+            -1.4730539824670785,
+            3.430248941046969
+          ],
+          "distance_percent": 3.733161640327937,
+          "error_m": [
+            -0.004329367749143357,
+            0.0033082658421381816
+          ],
+          "distance_m": 0.005448673966166527,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step003000",
+      "request_step": 3000,
+      "window_m": [
+        [
+          -0.054604481956009074,
+          0.11850358104241705
+        ],
+        [
+          -0.06420030309891585,
+          0.03816991897198624
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 3078,
+      "solver_stall_s": 0.003903675824403763,
+      "request_step_wall_s": 0.004334102,
+      "inference_wall_s": 2.9353045038878918,
+      "wall_seconds": 378.49334092997015,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows a high-velocity region in the upper half, with a distinct low-velocity wake or boundary layer extending from the left towards the right in the lower half. Pressure is highest in the upper right and lowest in a localized region near the center of the wake.",
+        "fastest_flow_x_percent": 58,
+        "fastest_flow_y_percent": 80,
+        "lowest_pressure_x_percent": 60,
+        "lowest_pressure_y_percent": 72,
+        "uncertainties": "The exact physical boundaries of the objects causing the wake are not explicitly labeled, and the specific fluid properties are not provided."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 60.88997809336204,
+          "y_percent": 81.4517490487228,
+          "x_m": 0.05080097968157596,
+          "y_m": 0.019182033282895555,
+          "cell": 13496
+        },
+        "lowest_pressure": {
+          "x_percent": 61.49532824052164,
+          "y_percent": 73.81917179342823,
+          "x_m": 0.051848889595682054,
+          "y_m": 0.011368546996917339,
+          "cell": 10070
+        },
+        "cells_in_window": 8573
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            58,
+            80
+          ],
+          "true_percent": [
+            60.88997809336204,
+            81.4517490487228
+          ],
+          "error_percent": [
+            -2.889978093362039,
+            -1.451749048722803
+          ],
+          "distance_percent": 3.234122551880193,
+          "error_m": [
+            -0.005002785098497873,
+            -0.0014861587250897422
+          ],
+          "distance_m": 0.005218862567448269,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            60,
+            72
+          ],
+          "true_percent": [
+            61.49532824052164,
+            73.81917179342823
+          ],
+          "error_percent": [
+            -1.495328240521637,
+            -1.8191717934282252
+          ],
+          "distance_percent": 2.3548657203557064,
+          "error_m": [
+            -0.0025885337526354523,
+            -0.0018622902047836863
+          ],
+          "distance_m": 0.003188829220163137,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step003500",
+      "request_step": 3500,
+      "window_m": [
+        [
+          -0.06280569421872897,
+          0.2567203515318651
+        ],
+        [
+          -0.05578306299889377,
+          0.050443012489798156
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 3589,
+      "solver_stall_s": 0.004684785380959511,
+      "request_step_wall_s": 0.00515773,
+      "inference_wall_s": 3.2795636411756277,
+      "wall_seconds": 512.7665937766433,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct horizontal boundary around y=60%. A localized area of high velocity and low pressure is visible between x=30% and x=50% near the boundary. The flow is slowest in the lower region below y=50%, which contains no cells.",
+        "fastest_flow_x_percent": 38,
+        "fastest_flow_y_percent": 68,
+        "lowest_pressure_x_percent": 35,
+        "lowest_pressure_y_percent": 62,
+        "uncertainties": "The exact physical dimensions of the domain are not provided beyond the plotted range. The specific nature of the boundary at y=50% is not described."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 34.24356472089943,
+          "y_percent": 69.49858339542374,
+          "x_m": 0.046611414058006416,
+          "y_m": 0.01804255466230056,
+          "cell": 13395
+        },
+        "lowest_pressure": {
+          "x_percent": 34.243588000808636,
+          "y_percent": 61.66122368569392,
+          "x_m": 0.04661148844337975,
+          "y_m": 0.009717235020722631,
+          "cell": 9483
+        },
+        "cells_in_window": 10021
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            38,
+            68
+          ],
+          "true_percent": [
+            34.24356472089943,
+            69.49858339542374
+          ],
+          "error_percent": [
+            3.7564352791005717,
+            -1.4985833954237364
+          ],
+          "distance_percent": 4.044324195599448,
+          "error_m": [
+            0.012002789108490348,
+            -0.0015918863288838208
+          ],
+          "distance_m": 0.012107891991052024,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            35,
+            62
+          ],
+          "true_percent": [
+            34.243588000808636,
+            61.66122368569392
+          ],
+          "error_percent": [
+            0.7564119991913643,
+            0.3387763143060809
+          ],
+          "distance_percent": 0.8288115006776203,
+          "error_m": [
+            0.0024169333505991816,
+            0.0003598687833725857
+          ],
+          "distance_m": 0.0024435777790945495,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step004000",
+      "request_step": 4000,
+      "window_m": [
+        [
+          -0.15317885903295345,
+          0.13571375707381259
+        ],
+        [
+          0.004872200846969824,
+          0.08661938227966293
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 4092,
+      "solver_stall_s": 0.004418283700942993,
+      "request_step_wall_s": 0.00484118,
+      "inference_wall_s": 3.385444451123476,
+      "wall_seconds": 374.8420346081257,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows a high-velocity region in the lower right quadrant, specifically around x=65% and y=20%. The pressure is lowest in a localized area near x=68% and y=10%, corresponding to a region of high velocity and complex flow structure. Most of the upper domain maintains a moderate, uniform velocity and pressure.",
+        "fastest_flow_x_percent": 65,
+        "fastest_flow_y_percent": 20,
+        "lowest_pressure_x_percent": 68,
+        "lowest_pressure_y_percent": 10,
+        "uncertainties": "The exact magnitude of the pressure and velocity values are unknown without the specific numerical values from the color bars; the 3D structure of the flow is not visible in these 2D snapshots."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 68.79469134203251,
+          "y_percent": 16.92478097005058,
+          "x_m": 0.04556392452761913,
+          "y_m": 0.01870773225364299,
+          "cell": 13491
+        },
+        "lowest_pressure": {
+          "x_percent": 69.15745112910608,
+          "y_percent": 8.090814974812295,
+          "x_m": 0.046611910766679296,
+          "y_m": 0.011486214043813133,
+          "cell": 10065
+        },
+        "cells_in_window": 7590
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            65,
+            20
+          ],
+          "true_percent": [
+            68.79469134203251,
+            16.92478097005058
+          ],
+          "error_percent": [
+            -3.7946913420325075,
+            3.0752190299494195
+          ],
+          "distance_percent": 4.884327432048298,
+          "error_m": [
+            -0.01096258309117466,
+            0.002513904879865457
+          ],
+          "distance_m": 0.011247130557431968,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            68,
+            10
+          ],
+          "true_percent": [
+            69.15745112910608,
+            8.090814974812295
+          ],
+          "error_percent": [
+            -1.1574511291060787,
+            1.9091850251877052
+          ],
+          "distance_percent": 2.2326398224232036,
+          "error_m": [
+            -0.0033437908470318528,
+            0.001560704946426001
+          ],
+          "distance_m": 0.0036900863348291162,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step004500",
+      "request_step": 4500,
+      "window_m": [
+        [
+          -0.035764654109898486,
+          0.07406001193776351
+        ],
+        [
+          -0.0010768897487515687,
+          0.054584044079481364
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 4575,
+      "solver_stall_s": 0.00423581525683403,
+      "request_step_wall_s": 0.004684414,
+      "inference_wall_s": 3.2294320669025183,
+      "wall_seconds": 655.1150473300368,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows a high-velocity region in the upper half and a lower-velocity region in the bottom right. A distinct low-pressure zone is visible in the lower right quadrant, specifically around the center of the bottom-right active area. The flow appears to be moving from left to right with significant variation in the lower half.",
+        "fastest_flow_x_percent": 72,
+        "fastest_flow_y_percent": 38,
+        "lowest_pressure_x_percent": 72,
+        "lowest_pressure_y_percent": 22,
+        "uncertainties": "The exact velocity and pressure values at specific coordinates are not provided, only the relative ranges. The physical nature of the boundaries and the specific fluid properties are not specified."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 70.2382647965969,
+          "y_percent": 34.86319815110485,
+          "x_m": 0.041374285640636596,
+          "y_m": 0.01832829190454063,
+          "cell": 13487
+        },
+        "lowest_pressure": {
+          "x_percent": 71.19238196438991,
+          "y_percent": 21.312096442330045,
+          "x_m": 0.04242214163386869,
+          "y_m": 0.010785622149422944,
+          "cell": 9770
+        },
+        "cells_in_window": 6154
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            72,
+            38
+          ],
+          "true_percent": [
+            70.2382647965969,
+            34.86319815110485
+          ],
+          "error_percent": [
+            1.7617352034031057,
+            3.1368018488951535
+          ],
+          "distance_percent": 3.597671019721208,
+          "error_m": [
+            0.00193481980378156,
+            0.0017459732014363189
+          ],
+          "distance_m": 0.0026061370058458365,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            72,
+            22
+          ],
+          "true_percent": [
+            71.19238196438991,
+            21.312096442330045
+          ],
+          "error_percent": [
+            0.8076180356100906,
+            0.687903557669955
+          ],
+          "distance_percent": 1.0608761455031792,
+          "error_m": [
+            0.00088696381054947,
+            0.0003828935440367339
+          ],
+          "distance_m": 0.0009660808803042562,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step005000",
+      "request_step": 5000,
+      "window_m": [
+        [
+          -0.12518620140732853,
+          0.13198933014628209
+        ],
+        [
+          -0.025106430116615994,
+          0.06110038095144797
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 5076,
+      "solver_stall_s": 0.004160208627581596,
+      "request_step_wall_s": 0.004597376,
+      "inference_wall_s": 3.1275552678853273,
+      "wall_seconds": 930.0619503818452,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct wake or interaction zone starting around x=50%. The velocity is lowest in the bottom right quadrant. Pressure is highest in the upper right and lowest in a localized region near the center of the wake at x=65%, y=45%.",
+        "fastest_flow_x_percent": 63,
+        "fastest_flow_y_percent": 50,
+        "lowest_pressure_x_percent": 65,
+        "lowest_pressure_y_percent": 45,
+        "uncertainties": "The exact nature of the obstacle or geometry causing the wake is not visible as it is not explicitly rendered."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 63.54347181679827,
+          "y_percent": 50.054214445854655,
+          "x_m": 0.03823206000514117,
+          "y_m": 0.018043711962325515,
+          "cell": 13484
+        },
+        "lowest_pressure": {
+          "x_percent": 64.76559654578841,
+          "y_percent": 43.15865927492006,
+          "x_m": 0.041375065773169725,
+          "y_m": 0.012099273744023809,
+          "cell": 10254
+        },
+        "cells_in_window": 9817
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            63,
+            50
+          ],
+          "true_percent": [
+            63.54347181679827,
+            50.054214445854655
+          ],
+          "error_percent": [
+            -0.5434718167982666,
+            -0.054214445854654514
+          ],
+          "distance_percent": 0.5461692245022013,
+          "error_m": [
+            -0.0013976765336950068,
+            -4.673654490951986e-05
+          ],
+          "distance_m": 0.0013984577210168956,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            65,
+            45
+          ],
+          "true_percent": [
+            64.76559654578841,
+            43.15865927492006
+          ],
+          "error_percent": [
+            0.23440345421158781,
+            1.841340725079938
+          ],
+          "distance_percent": 1.8562005940049249,
+          "error_m": [
+            0.0006028283293486753,
+            0.0015873611199889814
+          ],
+          "distance_m": 0.0016979744756379551,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step005500",
+      "request_step": 5500,
+      "window_m": [
+        [
+          -0.024125144769251733,
+          0.12437345643043948
+        ],
+        [
+          -0.04774441387834363,
+          0.029653122112393626
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 5584,
+      "solver_stall_s": 0.004166498780250549,
+      "request_step_wall_s": 0.004561714,
+      "inference_wall_s": 3.060053139925003,
+      "wall_seconds": 569.9925795290619,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows high velocity in the upper region, particularly between 30% and 60% x. A lower velocity zone exists below 70% y. Pressure is low in localized spots around 40% and 65% x, while it is high in the upper right and center-right regions.",
+        "fastest_flow_x_percent": 53,
+        "fastest_flow_y_percent": 82,
+        "lowest_pressure_x_percent": 66,
+        "lowest_pressure_y_percent": 73,
+        "uncertainties": "The exact physical boundaries and the nature of the obstacles or geometry causing the pressure fluctuations are not explicitly labeled."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 39.87585577273193,
+          "y_percent": 83.78218770081776,
+          "x_m": 0.03508994326966151,
+          "y_m": 0.01710093500122384,
+          "cell": 13384
+        },
+        "lowest_pressure": {
+          "x_percent": 41.99198353336411,
+          "y_percent": 75.1398769719477,
+          "x_m": 0.038232363393798645,
+          "y_m": 0.010411999444415294,
+          "cell": 9572
+        },
+        "cells_in_window": 8025
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            53,
+            82
+          ],
+          "true_percent": [
+            39.87585577273193,
+            83.78218770081776
+          ],
+          "error_percent": [
+            13.124144227268069,
+            -1.782187700817758
+          ],
+          "distance_percent": 13.244597189008047,
+          "error_m": [
+            0.01948917059692311,
+            -0.0013793693671629171
+          ],
+          "distance_m": 0.019537922878521137,
+          "within_10_percent": false
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            66,
+            73
+          ],
+          "true_percent": [
+            41.99198353336411,
+            75.1398769719477
+          ],
+          "error_percent": [
+            24.008016466635887,
+            -2.1398769719477
+          ],
+          "distance_percent": 24.103193317843424,
+          "error_m": [
+            0.03565156862874582,
+            -0.00165621204952072
+          ],
+          "distance_m": 0.035690017988831986,
+          "within_10_percent": false
+        }
+      }
+    }
+  ]
+}

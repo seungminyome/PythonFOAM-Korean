@@ -1,0 +1,131 @@
+{
+  "parent_pid": 2716768,
+  "run_id": "pod-llm-async.UM1RyJ-sweep/describe-step000500",
+  "step": 500,
+  "time_s": 0.1025000000000025,
+  "mode": "describe",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.2,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "callback_started_at": "2026-10-22T16:22:38.250707+00:00",
+  "request_step": 500,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.5903486870229244,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_observation/step-000500",
+    "step": 500,
+    "time_s": 0.1025000000000025,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        -0.03737250207013163,
+        0.21823591691934843
+      ],
+      "y": [
+        -0.0410010909690117,
+        0.05270342315437517
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046805
+      ],
+      "y": [
+        5.781735398474376e-06,
+        0.11429523559299273
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_observation/step-000500/fields.npz",
+    "fields_sha256": "7a12434fa8187b437b77f7dd9ab1f16c71ea645c6ab3121a1440aaa991afaf8f",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_observation/step-000500/U.png",
+        "sha256": "6e55f762428da17a903b168e91202d0da1a1af3b39f9c9141a999ccde30ec14d",
+        "bytes": 73635,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          0.002471316597751262,
+          34.89995808721363
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_observation/step-000500/p.png",
+        "sha256": "ed639ccc31205aaa13666dc2c265c2b425b1eafe1aaa4b32a7aefb93f1fb6a7b",
+        "bytes": 70021,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -226.11967688427177,
+          41.46663745600481
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.5903486870229244
+  },
+  "request_before_at": "2026-10-22T16:22:38.893815+00:00",
+  "inference_wall_s": 3.1706753838807344,
+  "api_response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity boundary layer or wake structure extending horizontally across the middle. The pressure field shows a localized low-pressure zone near the center-left and a high-pressure region towards the right side of the domain.\",\n  \"fastest_flow_x_percent\": 40,\n  \"fastest_flow_y_percent\": 65,\n  \"lowest_pressure_x_percent\": 38,\n  \"lowest_pressure_y_percent\": 55,\n  \"uncertainties\": \"The exact physical nature of the geometry causing the pressure fluctuations and the specific flow regime (e.g., turbulent vs. laminar) cannot be determined from the images alone.\"\n}"
+        }
+      }
+    ],
+    "created": 1792686162,
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "system_fingerprint": "b1-d812350",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 182,
+      "prompt_tokens": 1060,
+      "total_tokens": 1242,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-aFJpxMtCoQ8iiSwO6Epq9BEm8RVm9quq",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 1060,
+      "prompt_ms": 516.025,
+      "prompt_per_token_ms": 0.486816037735849,
+      "prompt_per_second": 2054.1640424398042,
+      "predicted_n": 182,
+      "predicted_ms": 2452.723,
+      "predicted_per_token_ms": 13.550955801104973,
+      "predicted_per_second": 73.79553255708043
+    }
+  },
+  "solver_stall_s": 0.0032698754221200943,
+  "arrived_at_step": 571,
+  "worker_reaped": true,
+  "ipc_select_calls": 76,
+  "response_after_at": "2026-10-22T16:22:42.117943+00:00",
+  "callback_elapsed_s": 3.867353456094861,
+  "elapsed_since_request_s": 3.1889762114733458,
+  "worker_wait_elapsed_s": 3.86727680452168,
+  "raw_response_file": "llm_http_response.raw",
+  "raw_response_bytes": 1350
+}

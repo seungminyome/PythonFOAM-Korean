@@ -1,0 +1,73 @@
+{
+  "style": "readable-v2",
+  "view": "window",
+  "step": 2000,
+  "time_s": 0.11000000000001,
+  "cells": 20540,
+  "projection_axes": [
+    "x",
+    "y"
+  ],
+  "plotted_range_m": {
+    "x": [
+      0.009106810395259742,
+      0.10095861040936044
+    ],
+    "y": [
+      -0.004151740203965935,
+      0.032696592926794894
+    ]
+  },
+  "domain_extent_m": {
+    "x": [
+      -1.5533076923100004,
+      0.6012246511046805
+    ],
+    "y": [
+      5.781735398474376e-06,
+      0.11429523559299273
+    ]
+  },
+  "fields_npz": "fields.npz",
+  "fields_sha256": "2e909201b42600310c7981111a17a82ca3139e7f8b5f35f1838ddbda2c49c0ac",
+  "images": [
+    {
+      "field": "U",
+      "symbol": "|U|",
+      "unit": "m/s",
+      "path": "U.png",
+      "sha256": "0d670c439525212349c0b7371dfdb6f4d8f0cbf6c51ffdb15f726d568692afdf",
+      "bytes": 85005,
+      "width": 1024,
+      "height": 576,
+      "colour_range": [
+        7.623308386713616e-06,
+        38.51797343690666
+      ],
+      "colour_range_shared": false,
+      "range_inside_window": [
+        7.623308386713616e-06,
+        38.51797343690666
+      ]
+    },
+    {
+      "field": "p",
+      "symbol": "p",
+      "unit": "m^2/s^2",
+      "path": "p.png",
+      "sha256": "8edf18483bdf5a5ac0acbee47bf0df52298676f65a114827c5b4f67654b416ae",
+      "bytes": 75734,
+      "width": 1024,
+      "height": 576,
+      "colour_range": [
+        -446.1201738557461,
+        101.24591287264481
+      ],
+      "colour_range_shared": false,
+      "range_inside_window": [
+        -446.1201738557461,
+        101.24591287264481
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed 82.53 m/s; location unknown. No cell coordinates provided in JSON. Image lacks explicit axis labels for peak position.\",\n  \"possible_interpretation\": \"High speed likely near boundaries or inlet, but evidence is insufficient. SVD shows dominant Ux pattern, not spatial stability.\",\n  \"checks\": \"Missing: cell coordinates for max |U|. Cannot verify force equilibrium. Low Courant does not confirm low speed.\"\n}",
+  "request_sha256": "0beb6dc0cecaa7de75c03130a68b464451f92a376d75166490b614947a55c9ee",
+  "request_bytes": 4863,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1102,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 1373,
+    "total_tokens": 1476,
+    "prompt_tokens_details": {
+      "cached_tokens": 1083
+    }
+  },
+  "server_timings": {
+    "cache_n": 1083,
+    "prompt_n": 290,
+    "prompt_ms": 372.232,
+    "prompt_per_token_ms": 1.2835586206896552,
+    "prompt_per_second": 779.0840121214726,
+    "predicted_n": 103,
+    "predicted_ms": 4409.289,
+    "predicted_per_token_ms": 43.22832352941176,
+    "predicted_per_second": 23.132981303788434
+  },
+  "structured_output": {
+    "observations": "Max speed 82.53 m/s; location unknown. No cell coordinates provided in JSON. Image lacks explicit axis labels for peak position.",
+    "possible_interpretation": "High speed likely near boundaries or inlet, but evidence is insufficient. SVD shows dominant Ux pattern, not spatial stability.",
+    "checks": "Missing: cell coordinates for max |U|. Cannot verify force equilibrium. Low Courant does not confirm low speed."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.8369953241199255,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

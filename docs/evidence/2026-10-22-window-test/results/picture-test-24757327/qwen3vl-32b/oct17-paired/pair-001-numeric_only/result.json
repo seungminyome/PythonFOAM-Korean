@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum speed |U| is 82.53 m/s; location is unknown. Image shows top panel |U|, bottom panel p, with x in [-1.55, 0.60] m, y in [0, 0.114] m, but no explicit x,\",\"possible_interpretation\": \"High |U| likely near domain edge or obstacle; pressure gradient may drive flow. SVD shows Ux dominates velocity variation. Residuals low, suggesting converged.\", \"checks\": \"Missing: force equilibrium, spatial max location, flow topology, boundary conditions, time-averaged fields.\"\n}",
+  "request_sha256": "88f96ae5bdf6c8abd421b45c42c9057762a2e9bb9c36879f184fc89b34cf6622",
+  "request_bytes": 4873,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1160,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 141,
+    "prompt_tokens": 1367,
+    "total_tokens": 1508,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1367,
+    "prompt_ms": 1476.477,
+    "prompt_per_token_ms": 1.0800855888807608,
+    "prompt_per_second": 925.8525530705863,
+    "predicted_n": 141,
+    "predicted_ms": 7361.383,
+    "predicted_per_token_ms": 52.58130714285714,
+    "predicted_per_second": 19.01816547243908
+  },
+  "structured_output": {
+    "observations": "Maximum speed |U| is 82.53 m/s; location is unknown. Image shows top panel |U|, bottom panel p, with x in [-1.55, 0.60] m, y in [0, 0.114] m, but no explicit x,",
+    "possible_interpretation": "High |U| likely near domain edge or obstacle; pressure gradient may drive flow. SVD shows Ux dominates velocity variation. Residuals low, suggesting converged.",
+    "checks": "Missing: force equilibrium, spatial max location, flow topology, boundary conditions, time-averaged fields."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 8.895011853426695,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

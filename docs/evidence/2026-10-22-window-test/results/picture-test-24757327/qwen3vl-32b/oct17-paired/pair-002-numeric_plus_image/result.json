@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum speed |U| is approximately 82.5 m/s, located near x=0.5 m, y=0.11 m (top-right corner of domain).\",\n  \"possible_interpretation\": \"High-speed region at right boundary suggests outflow or jet; pressure gradient may drive flow. SVD shows dominant Ux mode, indicating x-directional flow.\",\n  \"checks\": \"Missing: force equilibrium, velocity field divergence, boundary condition details, time-averaged flow structure.\"\n}",
+  "request_sha256": "6bdbe7ead40a96d0c7c780544cd312c6ae7dc599bc3e3aca8f7bbf3607fe501b",
+  "request_bytes": 50855,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1101,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 112,
+    "prompt_tokens": 1589,
+    "total_tokens": 1701,
+    "prompt_tokens_details": {
+      "cached_tokens": 1588
+    }
+  },
+  "server_timings": {
+    "cache_n": 1588,
+    "prompt_n": 1,
+    "prompt_ms": 52.305,
+    "prompt_per_token_ms": 52.305,
+    "prompt_per_second": 19.11863110601281,
+    "predicted_n": 112,
+    "predicted_ms": 5836.532,
+    "predicted_per_token_ms": 52.58136936936937,
+    "predicted_per_second": 19.018142965720056
+  },
+  "structured_output": {
+    "observations": "Maximum speed |U| is approximately 82.5 m/s, located near x=0.5 m, y=0.11 m (top-right corner of domain).",
+    "possible_interpretation": "High-speed region at right boundary suggests outflow or jet; pressure gradient may drive flow. SVD shows dominant Ux mode, indicating x-directional flow.",
+    "checks": "Missing: force equilibrium, velocity field divergence, boundary condition details, time-averaged flow structure."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 5.952766055241227,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

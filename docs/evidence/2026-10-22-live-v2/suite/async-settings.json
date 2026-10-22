@@ -1,0 +1,25 @@
+{
+  "steps": 6000,
+  "delta_t_s": 5e-06,
+  "write_every": 250,
+  "request_step": 250,
+  "sequence_steps": [
+    3000,
+    3250,
+    3750
+  ],
+  "image_x_window": "0,0.12",
+  "image_y_window": "0,0.04",
+  "deadline_s": "120",
+  "image_style": "v2",
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "max_tokens_env": "320",
+  "fixture_deadline_s": 4.0,
+  "start_time_s": 0.1,
+  "start_dir": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261022/long-100ms/0.1",
+  "start_files_sha256": {
+    "U": "5e89b31d71d8fc8a3a7ae6e44eef1ed478cda488f5aeb98488c17fd5fb50b5af",
+    "p": "7e7291a1a194da52419addf3d2b41de6eea8ac28503e98a593d909d332c9dabd",
+    "phi": "3e5221f6aca5724a9486e235bd6bf94ae1de21ad6dd4637627cfe23198d76774"
+  }
+}

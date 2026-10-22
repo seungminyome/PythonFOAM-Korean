@@ -1,0 +1,351 @@
+{
+ "suite_describe": {
+  "body_equals_builder": true,
+  "status": "ok",
+  "truth_percent": {
+   "fastest_flow": [
+    37.1,
+    46.53
+   ],
+   "lowest_pressure": [
+    37.97,
+    25.95
+   ]
+  },
+  "fastest_flow_answer": [
+   40,
+   45
+  ],
+  "fastest_flow_distance_percent": 3.28,
+  "lowest_pressure_answer": [
+   35,
+   30
+  ],
+  "lowest_pressure_distance_percent": 5.03
+ },
+ "suite_sequence": {
+  "body_equals_builder": true,
+  "truth": {
+   "max_speed_trend": "decreasing",
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "moves"
+  },
+  "max_speed_first_last": [
+   38.561,
+   34.814
+  ],
+  "min_pressure_first_last": [
+   -365.24,
+   -224.31
+  ],
+  "fastest_cell_moved_percent": 23.76,
+  "answer": {
+   "max_speed_trend": "decreasing",
+   "min_pressure_trend": "more_negative",
+   "fastest_flow_region": "moves"
+  },
+  "right": {
+   "max_speed_trend": true,
+   "min_pressure_trend": false,
+   "fastest_flow_region": true
+  }
+ },
+ "sweep": {
+  "cases": [
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      38.59,
+      62.75
+     ],
+     "lowest_pressure": [
+      37.77,
+      54.23
+     ]
+    },
+    "fastest_flow_answer": [
+     40,
+     65
+    ],
+    "fastest_flow_distance_percent": 2.65,
+    "lowest_pressure_answer": [
+     38,
+     55
+    ],
+    "lowest_pressure_distance_percent": 0.8,
+    "name": "describe-step000500",
+    "arrived_at_step": 571
+   },
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      68.75,
+      42.71
+     ],
+     "lowest_pressure": [
+      68.75,
+      31.64
+     ]
+    },
+    "fastest_flow_answer": [
+     68,
+     43
+    ],
+    "fastest_flow_distance_percent": 0.8,
+    "lowest_pressure_answer": [
+     68,
+     30
+    ],
+    "lowest_pressure_distance_percent": 1.8,
+    "name": "describe-step001000",
+    "arrived_at_step": 1078
+   },
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      84.06,
+      49.42
+     ],
+     "lowest_pressure": [
+      83.37,
+      32.29
+     ]
+    },
+    "fastest_flow_answer": [
+     80,
+     90
+    ],
+    "fastest_flow_distance_percent": 40.79,
+    "lowest_pressure_answer": [
+     82,
+     28
+    ],
+    "lowest_pressure_distance_percent": 4.51,
+    "name": "describe-step001500",
+    "arrived_at_step": 1569
+   },
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      53.38,
+      65.13
+     ],
+     "lowest_pressure": [
+      53.38,
+      35.08
+     ]
+    },
+    "fastest_flow_answer": [
+     55,
+     65
+    ],
+    "fastest_flow_distance_percent": 1.63,
+    "lowest_pressure_answer": [
+     52,
+     38
+    ],
+    "lowest_pressure_distance_percent": 3.23,
+    "name": "describe-step002000",
+    "arrived_at_step": 2092
+   },
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      63.12,
+      34.73
+     ],
+     "lowest_pressure": [
+      63.47,
+      26.57
+     ]
+    },
+    "fastest_flow_answer": [
+     62,
+     38
+    ],
+    "fastest_flow_distance_percent": 3.46,
+    "lowest_pressure_answer": [
+     62,
+     30
+    ],
+    "lowest_pressure_distance_percent": 3.73,
+    "name": "describe-step002500",
+    "arrived_at_step": 2593
+   },
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      60.89,
+      81.45
+     ],
+     "lowest_pressure": [
+      61.5,
+      73.82
+     ]
+    },
+    "fastest_flow_answer": [
+     58,
+     80
+    ],
+    "fastest_flow_distance_percent": 3.23,
+    "lowest_pressure_answer": [
+     60,
+     72
+    ],
+    "lowest_pressure_distance_percent": 2.35,
+    "name": "describe-step003000",
+    "arrived_at_step": 3078
+   },
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      34.24,
+      69.5
+     ],
+     "lowest_pressure": [
+      34.24,
+      61.66
+     ]
+    },
+    "fastest_flow_answer": [
+     38,
+     68
+    ],
+    "fastest_flow_distance_percent": 4.04,
+    "lowest_pressure_answer": [
+     35,
+     62
+    ],
+    "lowest_pressure_distance_percent": 0.83,
+    "name": "describe-step003500",
+    "arrived_at_step": 3589
+   },
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      68.79,
+      16.92
+     ],
+     "lowest_pressure": [
+      69.16,
+      8.09
+     ]
+    },
+    "fastest_flow_answer": [
+     65,
+     20
+    ],
+    "fastest_flow_distance_percent": 4.88,
+    "lowest_pressure_answer": [
+     68,
+     10
+    ],
+    "lowest_pressure_distance_percent": 2.23,
+    "name": "describe-step004000",
+    "arrived_at_step": 4092
+   },
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      70.24,
+      34.86
+     ],
+     "lowest_pressure": [
+      71.19,
+      21.31
+     ]
+    },
+    "fastest_flow_answer": [
+     72,
+     38
+    ],
+    "fastest_flow_distance_percent": 3.6,
+    "lowest_pressure_answer": [
+     72,
+     22
+    ],
+    "lowest_pressure_distance_percent": 1.06,
+    "name": "describe-step004500",
+    "arrived_at_step": 4575
+   },
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      63.54,
+      50.05
+     ],
+     "lowest_pressure": [
+      64.77,
+      43.16
+     ]
+    },
+    "fastest_flow_answer": [
+     63,
+     50
+    ],
+    "fastest_flow_distance_percent": 0.55,
+    "lowest_pressure_answer": [
+     65,
+     45
+    ],
+    "lowest_pressure_distance_percent": 1.86,
+    "name": "describe-step005000",
+    "arrived_at_step": 5076
+   },
+   {
+    "body_equals_builder": true,
+    "status": "ok",
+    "truth_percent": {
+     "fastest_flow": [
+      39.88,
+      83.78
+     ],
+     "lowest_pressure": [
+      41.99,
+      75.14
+     ]
+    },
+    "fastest_flow_answer": [
+     53,
+     82
+    ],
+    "fastest_flow_distance_percent": 13.24,
+    "lowest_pressure_answer": [
+     66,
+     73
+    ],
+    "lowest_pressure_distance_percent": 24.1,
+    "name": "describe-step005500",
+    "arrived_at_step": 5584
+   }
+  ],
+  "requests": 11,
+  "bodies_equal_builder": 11,
+  "fastest_flow_within_10": 9,
+  "lowest_pressure_within_10": 10,
+  "one_fixed_answer": {
+   "fastest_flow": 4,
+   "lowest_pressure": 4
+  }
+ }
+}

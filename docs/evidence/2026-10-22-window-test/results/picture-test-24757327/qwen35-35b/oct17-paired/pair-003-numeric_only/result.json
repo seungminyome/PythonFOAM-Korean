@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed 82.53 m/s range; location unknown. No explicit coordinates provided in JSON or image.\",\n  \"possible_interpretation\": \"High speed exists; SVD shows dominant pattern. Residuals low, Courant max 0.21.\",\n  \"checks\": \"Missing force equilibrium. No coordinate labels for max speed. Image lacks grid.\"\n}",
+  "request_sha256": "77564ef3ab95f44178f48b723da2aa9715de015f7ae9532751f0dee7d666cf65",
+  "request_bytes": 4867,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 976,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 88,
+    "prompt_tokens": 1373,
+    "total_tokens": 1461,
+    "prompt_tokens_details": {
+      "cached_tokens": 1369
+    }
+  },
+  "server_timings": {
+    "cache_n": 1369,
+    "prompt_n": 4,
+    "prompt_ms": 27.952,
+    "prompt_per_token_ms": 6.988,
+    "prompt_per_second": 143.10246136233542,
+    "predicted_n": 88,
+    "predicted_ms": 691.013,
+    "predicted_per_token_ms": 7.942678160919541,
+    "predicted_per_second": 125.90211761573227
+  },
+  "structured_output": {
+    "observations": "Max speed 82.53 m/s range; location unknown. No explicit coordinates provided in JSON or image.",
+    "possible_interpretation": "High speed exists; SVD shows dominant pattern. Residuals low, Courant max 0.21.",
+    "checks": "Missing force equilibrium. No coordinate labels for max speed. Image lacks grid."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 0.774900771677494,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

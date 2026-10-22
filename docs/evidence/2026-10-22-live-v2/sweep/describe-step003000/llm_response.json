@@ -1,0 +1,131 @@
+{
+  "parent_pid": 2716960,
+  "run_id": "pod-llm-async.UM1RyJ-sweep/describe-step003000",
+  "step": 3000,
+  "time_s": 0.115000000000015,
+  "mode": "describe",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.2,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "callback_started_at": "2026-10-22T16:31:59.492442+00:00",
+  "request_step": 3000,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.5707079768180847,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_observation/step-003000",
+    "step": 3000,
+    "time_s": 0.115000000000015,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        -0.054604481956009074,
+        0.11850358104241705
+      ],
+      "y": [
+        -0.06420030309891585,
+        0.03816991897198624
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046805
+      ],
+      "y": [
+        5.781735398474376e-06,
+        0.11429523559299273
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_observation/step-003000/fields.npz",
+    "fields_sha256": "b0f276756255543a0151f02055d54f39b3cb7fbe2b3e3289d5e47d9e8b9caa88",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_observation/step-003000/U.png",
+        "sha256": "3e804d7785312249b90f332a4e8320a9782096d2a4a72582986bc59c47d97a3a",
+        "bytes": 70551,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          0.00033362647966544935,
+          38.56079669576149
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_observation/step-003000/p.png",
+        "sha256": "deaa68c529ee9d57c58cd175eb8d8280c83c490b427b4caf26cfa12649c518e3",
+        "bytes": 66108,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -365.24402199345786,
+          79.44256578326537
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.5707079768180847
+  },
+  "request_before_at": "2026-10-22T16:32:00.173278+00:00",
+  "inference_wall_s": 2.9353045038878918,
+  "api_response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half, with a distinct low-velocity wake or boundary layer extending from the left towards the right in the lower half. Pressure is highest in the upper right and lowest in a localized region near the center of the wake.\",\n  \"fastest_flow_x_percent\": 58,\n  \"fastest_flow_y_percent\": 80,\n  \"lowest_pressure_x_percent\": 60,\n  \"lowest_pressure_y_percent\": 72,\n  \"uncertainties\": \"The exact physical boundaries of the objects causing the wake are not explicitly labeled, and the specific fluid properties are not provided.\"\n}"
+        }
+      }
+    ],
+    "created": 1792686723,
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "system_fingerprint": "b1-d812350",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 165,
+      "prompt_tokens": 1062,
+      "total_tokens": 1227,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-aetp5EEXfByl76cAj06hJluqSiLqXPtI",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 1062,
+      "prompt_ms": 533.29,
+      "prompt_per_token_ms": 0.5021563088512241,
+      "prompt_per_second": 1991.4118022089297,
+      "predicted_n": 165,
+      "predicted_ms": 2224.334,
+      "predicted_per_token_ms": 13.56301219512195,
+      "predicted_per_second": 73.72993444329853
+    }
+  },
+  "solver_stall_s": 0.003903675824403763,
+  "arrived_at_step": 3078,
+  "worker_reaped": true,
+  "ipc_select_calls": 83,
+  "response_after_at": "2026-10-22T16:32:03.155455+00:00",
+  "callback_elapsed_s": 3.663129413500428,
+  "elapsed_since_request_s": 2.9371065720915794,
+  "worker_wait_elapsed_s": 3.6445084251463413,
+  "raw_response_file": "llm_http_response.raw",
+  "raw_response_bytes": 1267
+}

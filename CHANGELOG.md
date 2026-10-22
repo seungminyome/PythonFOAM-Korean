@@ -2,6 +2,34 @@
 
 날짜는 실행이나 변경이 있었던 날입니다. 기록된 실행에는 그 실행을 만든 코드 버전을 적었습니다.
 
+## 2026-10-22, 돌고 있는 솔버가 그린 v2 그림, 무작위 창, Qwen 모델 (`354caf9`에 커밋하지 않은 변경으로 실행; 코드 `dee7731`, 이 저장소의 `f26bac5`로 공개)
+
+- `llm_demo/`에 새로: `readable_request.py`(v2 요청 빌더. `picture_test.py`에서 옮겨 와 그림 시험과 콜백이
+  함께 씀), `run_live_sweep.py`(돌고 있는 솔버의 여러 걸음에서, 걸음마다 무작위 창으로 describe 요청),
+  `window_test.py`(가장 빠른 칸 둘레에 창을 무작위로 놓은 그림 묶음). `llm_demo/hpc/`에
+  `async_v2.slurm`(v2 그림 비동기 시험과 sweep. OpenFOAM은 Apptainer 이미지에서, llama-server는 호스트
+  GPU에서)과 `window_test.slurm`; `models.tsv`에 Qwen 네 줄; `start_server.sh`가 `LLM_IMAGE_TOKENS`를 읽음.
+- `python_module.py`: `LLM_IMAGE_STYLE=v2`이면 `describe`와 `sequence` 요청에 필드마다 그림 한 장을 그리고,
+  프레임마다(배열, 그림, 마지막에 메타데이터) 폴더 하나에 쓰며, 이전 실행이 남긴 프레임은 덮어쓰지도
+  보내지도 않음. v2 요청은 `max_tokens` 320, 그림 시험의 시드, 프롬프트 캐시 없음으로 보내고, v2 describe
+  요청은 SVD 창을 쌓지 않음. `LLM_KILL_JOIN_S`로 끊은 워커를 거두는 시간을 정함. 기본값(`v1`)은 그대로.
+- `run_async_cases.py`, `verify_async.py`: `LLM_LONG_START`로 모든 경우를 발달한 상태에서 시작(격자와 시작
+  파일은 해시로 확인). v2 실행에서는 요청 본문이 디스크의 프레임에 빌더를 적용한 결과와 바이트까지
+  같은지, 프레임 배열이 저장 필드와 같은지 확인하고 답을 채점. `run_demo.sh`와 `validation/run_v2106.sh`는
+  OpenFOAM 버전을 `POD_OPENFOAM_VERSION`에서, Python 라이브러리 이름을 인터프리터에서 얻음.
+  `pack_run.py`는 작업 스크립트가 호스트에서 기록한 git 상태를 담음.
+- 테스트: 발표된 그림 시험 요청 두 개를 그 그림으로부터 바이트까지 다시 만들고 다섯 개는 해시로 고정하는
+  골든 테스트; v2 콜백 테스트(describe, sequence, 거부, 같은 폴더에서 다시 돌리기); 전체 92개.
+- 실행: 발달한 흐름에서 v2 그림과 Gemma 4 12B로 비동기 다섯 조건과 sweep 요청 열한 개(작업 24757460);
+  모델 열한 개, 창 시드 세 개, 더 큰 이미지 토큰 한도의 무작위 창 시험(작업 24757344, 24757382~24757384);
+  발달한 흐름의 무작위 창(작업 24757459); 요청 308개에 Qwen 모델 네 개(작업 24757327); 흐름 계산
+  24757337과 24757429. 보고서 [docs/results-20261022-live.md](docs/results-20261022-live.md), 기록
+  [docs/evidence/2026-10-22-live-v2/](docs/evidence/2026-10-22-live-v2/README.md)와
+  [docs/evidence/2026-10-22-window-test/](docs/evidence/2026-10-22-window-test/README.md), 압축 파일은 영문
+  저장소의 새 `pod-insitu-v2-2026-10-22` 릴리스와 `picture-test-2026-10-22` 릴리스.
+- README, 근거 자료 목록, 페이지 목록, `llm_demo/README.md`, `hpc/README.md`에 결과를 넣고, 남은 문제와
+  다음 단계를 고침. `.gitignore`가 모든 `pod-*.out` 작업 로그를 제외함.
+
 ## 2026-10-22, 그림 읽기 시험 (2026-10-21 준비, 코드 `58e00d9`, 이 저장소의 `7435513`, Slurm 작업 24756981로 실행)
 
 - `llm_demo/`에 새로: `readable_image.py`(그림 한 장에 필드 하나, 축은 그린 범위의 퍼센트와 10 %마다

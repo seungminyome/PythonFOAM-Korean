@@ -1,0 +1,1429 @@
+{
+  "source_run": "pod-llm-async.UM1RyJ (Slurm job 24757460)",
+  "executed_code": "checkout at 354caf99e9168f8926b46799abb52e9b883aeb44 with the uncommitted changes in job/code-state",
+  "scope": "Solver run of 2026-10-22 on MedicineBow (one NVIDIA RTX A6000): the five asynchronous cases of run_async_cases.py with v2 pictures and Gemma 4 12B, started from t = 0.1 s of a developed pimpleFoam run, 6000 steps of 5e-6 s; then eleven describe requests (run_live_sweep.py) at steps 500 to 5500, each with its own random window; and the records of a 600-step trial run (job 24757458).",
+  "archives": {
+    "solver-evidence-UM1RyJ.tar.gz": {
+      "bytes": 780632338,
+      "sha256": "626a59c49b182d6c316d99ad7e29d8579580553dc4bc7ba6152ce7cb2b058109"
+    },
+    "sweep-UM1RyJ.tar.gz": {
+      "bytes": 422593231,
+      "sha256": "771cfa62dd4572900c2ce4040a5da1b01126084e7cc99530bf0e8c8d0a5be9db"
+    },
+    "job-24757460.tar.gz": {
+      "bytes": 61588,
+      "sha256": "fb78fcd5b490c7c7940c1c8d3e0070d6bb3bb420f55564a95d02da3895384176"
+    },
+    "trial-24757458.tar.gz": {
+      "bytes": 135521803,
+      "sha256": "0c628e3ed067ed03f9a1a53f1b2558abac66f58b27ccab6acf93ffa45964ba37"
+    },
+    "release": "https://github.com/seungminyome/PythonFOAM/releases/tag/pod-insitu-v2-2026-10-22"
+  },
+  "notes": [
+    "Sources are paths inside the archives named in 'archives'; solver-evidence-UM1RyJ.tar.gz is the run-archive.tar.gz that pack_run.py wrote at the end of the suite.",
+    "Files of kind gzip copy are gzip -9 copies (no name, mtime 0) of the named source; source_sha256 is the hash of the uncompressed bytes.",
+    "The describe request body is the same bytes in async-describe, async-server-error and async-timeout (same frame, same request); only the async-describe copy is here. The frames of async-no-llm (steps 3000, 3250, 3750) are byte-identical to those of async-sequence, and the frames of async-server-error and async-timeout (step 250) to that of async-describe, in all four files; they are not repeated here.",
+    "The sweep bodies are in the sweep archive; check-live.py compares the rebuilt bodies with the request_sha256 the client recorded for each body it sent.",
+    "The sweep archive leaves out python_svd_audit.npz (the POD audit file PODFoam writes at the end of every run, 120 MB per case) and the matplotlib cache; the suite archive has them.",
+    "Original records contain cluster paths and process ids as provenance."
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "source": "written for this folder",
+      "kind": "derived",
+      "bytes": 8236,
+      "sha256": "dd8496313e307789ce2a665d13e323bf5899e763ef20e4d2c2a507f2252ed5f7"
+    },
+    {
+      "path": "check-live.json",
+      "source": "output of check-live.py",
+      "kind": "derived",
+      "bytes": 6328,
+      "sha256": "d3764d3ad1017d326d6ddae3324e6c405c3ac7f2e970eecfd66b3c9bbacb4542"
+    },
+    {
+      "path": "check-live.py",
+      "source": "written for this folder",
+      "kind": "derived",
+      "bytes": 8858,
+      "sha256": "acf69d23b5ed021b3d60304de93b9ea8ce6ca1ec7405e1e180015e76c95cb9ae"
+    },
+    {
+      "path": "courant-spectrum.json",
+      "source": "output of courant-spectrum.py",
+      "kind": "derived",
+      "bytes": 164,
+      "sha256": "285f51f6368115f285419b63341d7c39abf08f69eaea2dd8ddafd2f8e75ec37b"
+    },
+    {
+      "path": "courant-spectrum.py",
+      "source": "written for this folder",
+      "kind": "derived",
+      "bytes": 1370,
+      "sha256": "d10b63aa445c20b4abe9558d345a8d4b238fa4cf3e22fe8172f38b9890fb3282"
+    },
+    {
+      "path": "job/async_v2.slurm",
+      "source": "job-24757460.tar.gz: job-24757460/async_v2.slurm",
+      "kind": "byte-preserved",
+      "bytes": 4895,
+      "sha256": "9ad122866f24ee939fe251fb6adca40f8edad7704bc7bd3d0a7a32017eb05467"
+    },
+    {
+      "path": "job/code-state/HEAD",
+      "source": "job-24757460.tar.gz: job-24757460/code-state/HEAD",
+      "kind": "byte-preserved",
+      "bytes": 41,
+      "sha256": "31386a97db90d4995693860edd702b334cf69ed8a633e21103513132dd77be8d"
+    },
+    {
+      "path": "job/code-state/changes.patch",
+      "source": "job-24757460.tar.gz: job-24757460/code-state/changes.patch",
+      "kind": "byte-preserved",
+      "bytes": 73035,
+      "sha256": "c8ea4a8d9184c5e1f5300f2295e298aa943bebdc3f478ae7af09809bfbe98e0c"
+    },
+    {
+      "path": "job/code-state/git-status.txt",
+      "source": "job-24757460.tar.gz: job-24757460/code-state/git-status.txt",
+      "kind": "byte-preserved",
+      "bytes": 896,
+      "sha256": "8a88f6c7e7a31e4bd16b74ea04999e169921c848c06941f077387d8c19161b5c"
+    },
+    {
+      "path": "job/code-state/untracked.tar.gz",
+      "source": "job-24757460.tar.gz: job-24757460/code-state/untracked.tar.gz",
+      "kind": "byte-preserved",
+      "bytes": 14710,
+      "sha256": "57470ff64e8d7fdc96fa524265f622fa21920fd134f6ec90cdbb6d0490ca497d"
+    },
+    {
+      "path": "job/gpu-samples.csv.gz",
+      "source": "job-24757460.tar.gz: job-24757460/gpu-samples.csv",
+      "kind": "gzip copy",
+      "bytes": 9979,
+      "sha256": "3e59f78abbf2d50bfaa5344bb1f18d7082afa9ac4c596bf967ff89c49888bc0d",
+      "source_bytes": 159679,
+      "source_sha256": "a77cc118c9117eb3bd2da032d6a3fe12085a4d5fd1b5cbed7d9918255bba4ab9"
+    },
+    {
+      "path": "job/nvidia-smi.txt",
+      "source": "job-24757460.tar.gz: job-24757460/nvidia-smi.txt",
+      "kind": "byte-preserved",
+      "bytes": 1689,
+      "sha256": "3d49c380c3174e638778953834b357382d9131cef516e790425ccb101d93716d"
+    },
+    {
+      "path": "job/pod-async-v2-24757460.out",
+      "source": "job-24757460.tar.gz: job-24757460/pod-async-v2-24757460.out",
+      "kind": "byte-preserved",
+      "bytes": 17270,
+      "sha256": "3e00a6c63d5ec1e4ac6723aac0b337a21426179f8618dcbedd1f07b578c26242"
+    },
+    {
+      "path": "job/runtime_manifest_12b.json",
+      "source": "job-24757460.tar.gz: job-24757460/runtime_manifest_12b.json",
+      "kind": "byte-preserved",
+      "bytes": 866,
+      "sha256": "2168afb62aedc294d83447ed08675da94c78fd22f4cc3f44f488c468b96bcba6"
+    },
+    {
+      "path": "job/server/gpu-20261022T154934Z.txt",
+      "source": "job-24757460.tar.gz: job-24757460/server/gpu-20261022T154934Z.txt",
+      "kind": "byte-preserved",
+      "bytes": 82,
+      "sha256": "460414e83ce8921fb9f7a6d36e104e7c0a6a2c7940b8280468a1128d6b99a2ac"
+    },
+    {
+      "path": "job/server/models-20261022T154934Z.json",
+      "source": "job-24757460.tar.gz: job-24757460/server/models-20261022T154934Z.json",
+      "kind": "byte-preserved",
+      "bytes": 778,
+      "sha256": "66843c62f0bf2fbfae43c12bd4e33c477261e8b1f82caa065b178c9adc4ed54e"
+    },
+    {
+      "path": "job/server/server-20261022T154934Z.cmd",
+      "source": "job-24757460.tar.gz: job-24757460/server/server-20261022T154934Z.cmd",
+      "kind": "byte-preserved",
+      "bytes": 686,
+      "sha256": "fd24b3c933be0180531ff8849f3bea6f78e6aa8f6d924ece25955800d126012c"
+    },
+    {
+      "path": "job/server/server-20261022T154934Z.log.gz",
+      "source": "job-24757460.tar.gz: job-24757460/server/server-20261022T154934Z.log",
+      "kind": "gzip copy",
+      "bytes": 2636,
+      "sha256": "cca929d4c10005f6228ffd63d499ded0199089e9f57e3c4993f75f91e975e75e",
+      "source_bytes": 12323,
+      "source_sha256": "1ce1eb36ee396288049ca8eadbc50d4076e26b453ca569afcc3c1fbd069d1c8d"
+    },
+    {
+      "path": "job/server/server.stamp",
+      "source": "job-24757460.tar.gz: job-24757460/server/server.stamp",
+      "kind": "byte-preserved",
+      "bytes": 17,
+      "sha256": "a4e0ef591f681fffe6deaa75a5fd8aef95573a96bf9bef973b685df88f94c731"
+    },
+    {
+      "path": "suite/async-describe/llm_http_response.raw",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1325,
+      "sha256": "22be083a377192a0596017561857a23b8e499b1cc6c9456c145dcef023fba9e3"
+    },
+    {
+      "path": "suite/async-describe/llm_observation/step-000250/U.png",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/llm_observation/step-000250/U.png",
+      "kind": "byte-preserved",
+      "bytes": 84593,
+      "sha256": "64340079f97ed42345e961e760178a06382a51d0ea55ba81b89e626e51b5e725"
+    },
+    {
+      "path": "suite/async-describe/llm_observation/step-000250/fields.npz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/llm_observation/step-000250/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 787893,
+      "sha256": "31609ca633323537889fe1261a1c663910811f19097a1845ff48cb4f127f170a"
+    },
+    {
+      "path": "suite/async-describe/llm_observation/step-000250/p.png",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/llm_observation/step-000250/p.png",
+      "kind": "byte-preserved",
+      "bytes": 79948,
+      "sha256": "4f6666ce5c477aba445bda2d48ab4ad75bad21110bea75d6e194eb17b764e55a"
+    },
+    {
+      "path": "suite/async-describe/llm_observation/step-000250/readable-metadata.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/llm_observation/step-000250/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1510,
+      "sha256": "20485b6e67621c51486f74a71078b4ce5a3ef822ae8a003488bb4576ab36edc4"
+    },
+    {
+      "path": "suite/async-describe/llm_request.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9548,
+      "sha256": "f038231e2781ebeda33630d586e18fe7c32361ecbf4e0d5c56f47643159f1429"
+    },
+    {
+      "path": "suite/async-describe/llm_request_body.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/llm_request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 222226,
+      "sha256": "031ab574701fa8a1fefd0ed19031af0e6297ab8c1c37a04849cf55bbacf8f38c"
+    },
+    {
+      "path": "suite/async-describe/llm_response.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4620,
+      "sha256": "932ec53aab6571e066052d51ace602dbe4cfdc992c984abc4a74b4132f6203e4"
+    },
+    {
+      "path": "suite/async-describe/llm_result.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5186,
+      "sha256": "8791da9ed20b460eaf6f3de7d9226e56ebcc0bc41c899cb54736e6471197f066"
+    },
+    {
+      "path": "suite/async-describe/log.PODFoam.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/log.PODFoam",
+      "kind": "gzip copy",
+      "bytes": 1304102,
+      "sha256": "f27831c6f6c08869fe39f99c132ac947e4f42b1b95404b7b7a94dabbb37f4132",
+      "source_bytes": 8859936,
+      "source_sha256": "2fcb9bc873a08b4a917f14b36a622c0ea2469ad43c92a68a3db86e26e2b1fb15"
+    },
+    {
+      "path": "suite/async-describe/memory-samples.json.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/memory-samples.json",
+      "kind": "gzip copy",
+      "bytes": 18641,
+      "sha256": "f2111e8911bc9fcf92f999611f1849cc27daab26a4a020b92cc3dd4948d5c9de",
+      "source_bytes": 300024,
+      "source_sha256": "434aa7da012367456e6cdaae4a9a27ffa14e4759d02a193d2e1cadeb31c508b2"
+    },
+    {
+      "path": "suite/async-describe/telemetry.jsonl.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/telemetry.jsonl",
+      "kind": "gzip copy",
+      "bytes": 742103,
+      "sha256": "b5c99eb5508d48449a222642d708de37745c3b00cde695f562d4930d9a3cc31d",
+      "source_bytes": 5029312,
+      "source_sha256": "9d89a5a641c3e9fe971162002cc84e3e5426422cdc6f1973e3d3398a754bb6a4"
+    },
+    {
+      "path": "suite/async-describe/timeline.json.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-describe/timeline.json",
+      "kind": "gzip copy",
+      "bytes": 142747,
+      "sha256": "c1baa6ee5c132191a3272618ea9d20257f3ecd9ea21501e308a9ccd3679b9657",
+      "source_bytes": 1042723,
+      "source_sha256": "7fd134f8b25af07068ec57ae1578c2982ec8851d081f93a309c2033219dd1f99"
+    },
+    {
+      "path": "suite/async-no-llm/llm_request.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-no-llm/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 18718,
+      "sha256": "b33ace7951f1b0450e295a5bf8457e734251dfa560a300cee12a0f9c343a7478"
+    },
+    {
+      "path": "suite/async-no-llm/llm_response.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-no-llm/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 8999,
+      "sha256": "7eac1436c4dc80d886f0e7114be040140b97896df3d5926068eb50eefa289c49"
+    },
+    {
+      "path": "suite/async-no-llm/llm_result.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-no-llm/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 9031,
+      "sha256": "5a2b7bcfc9cf7fae67f3f3e336ca6a4e88e533ae134b297e79cd7bb36185a7c1"
+    },
+    {
+      "path": "suite/async-no-llm/log.PODFoam.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-no-llm/log.PODFoam",
+      "kind": "gzip copy",
+      "bytes": 1304124,
+      "sha256": "f0c647b2128cf7be86dc35691942a1a4d5307bfbff6078c983681663cb9e7625",
+      "source_bytes": 8861009,
+      "source_sha256": "ac407d45ddacc11acfb885fabb35433a0dae459f8b7e362112009ec288c19d7a"
+    },
+    {
+      "path": "suite/async-no-llm/memory-samples.json.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-no-llm/memory-samples.json",
+      "kind": "gzip copy",
+      "bytes": 19532,
+      "sha256": "ed114c4d7559e8e8acab66dba1a9c5cd6a9269c91f152c4e51f61a5773194cfa",
+      "source_bytes": 300350,
+      "source_sha256": "43d5435b1d0d24f83ff15197605e5d7c1d2ecc71bf94e11a6556f0a71e278974"
+    },
+    {
+      "path": "suite/async-no-llm/telemetry.jsonl.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-no-llm/telemetry.jsonl",
+      "kind": "gzip copy",
+      "bytes": 742069,
+      "sha256": "31067ab0ce473185c20a796fe4c713df83b35ab38177b142af0e643501a20ea6",
+      "source_bytes": 5017312,
+      "source_sha256": "60bd1f39eb22a8c1c0b33b67db5370d3eda5bd3bf50f28bcadccf25516054daa"
+    },
+    {
+      "path": "suite/async-no-llm/timeline.json.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-no-llm/timeline.json",
+      "kind": "gzip copy",
+      "bytes": 142910,
+      "sha256": "05a480741fbcc3109900928d3d8823a79c9ba0429d76b8f62f4b68187bd7d348",
+      "source_bytes": 1043870,
+      "source_sha256": "e1d9a4a08d53754163afd5ae31ef4590ae9de507ad730fff2edd59382592d639"
+    },
+    {
+      "path": "suite/async-sequence/llm_http_response.raw",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1087,
+      "sha256": "ee809e977f24c682670c75f4e3b3a980d80de123d7cd8af857ab8ed3bed6dadb"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003000/U.png",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003000/U.png",
+      "kind": "byte-preserved",
+      "bytes": 84826,
+      "sha256": "679031669451f6ffcc37c1105d8a90b2b48fe93afd6ca73a7e50e7d883972b10"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003000/fields.npz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003000/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 788103,
+      "sha256": "b0f276756255543a0151f02055d54f39b3cb7fbe2b3e3289d5e47d9e8b9caa88"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003000/p.png",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003000/p.png",
+      "kind": "byte-preserved",
+      "bytes": 77691,
+      "sha256": "f036f692e86c66a8653fce4fe48aae837c5277fa8e8600ed021e5617c929a995"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003000/readable-metadata.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003000/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1511,
+      "sha256": "bfc11eb33f12bd868a35dd3f0d06ef53d9aeafcd7541638956c5d72351537783"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003250/U.png",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003250/U.png",
+      "kind": "byte-preserved",
+      "bytes": 86818,
+      "sha256": "9cc2d9838f555c4774eb5b605252652fe026bc8bb76513142aa259589cbccb4a"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003250/fields.npz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003250/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 788492,
+      "sha256": "7ca94e9999ff50d41b36021f78b230a9f6ce7f0b6386814b5616a878affe84ea"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003250/p.png",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003250/p.png",
+      "kind": "byte-preserved",
+      "bytes": 80093,
+      "sha256": "1dc56fcc1335898f925b269e2d5ac01d1166c2b0f41f62a2087a84bc53b71491"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003250/readable-metadata.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003250/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1511,
+      "sha256": "4b42b5983ef17afe96e6dfe50b9044aeed64901a523fd34bd5cd6eae062231eb"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003750/U.png",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003750/U.png",
+      "kind": "byte-preserved",
+      "bytes": 82992,
+      "sha256": "8daf23efef73979455c12cd10b34b1710ccac7e1988ba54dbdc6f9c16399c644"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003750/fields.npz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003750/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 787343,
+      "sha256": "692b060aca27f38a2ee035b50e5d4c012af5eeb44059d27dd02c66c542db7685"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003750/p.png",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003750/p.png",
+      "kind": "byte-preserved",
+      "bytes": 75784,
+      "sha256": "22c9b3949db3fac98af7fc587865be6076a011ee91561c818f6cad57de5ede33"
+    },
+    {
+      "path": "suite/async-sequence/llm_observation/step-003750/readable-metadata.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_observation/step-003750/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1509,
+      "sha256": "baf4eb9ecb4254b43a66f04c1a3c5702a2be50cfcdcf0df491dd5ccea54a0e38"
+    },
+    {
+      "path": "suite/async-sequence/llm_request.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 18753,
+      "sha256": "44158e00ce5de9739bb33518d675c4fd31148b5ebd97a8a39fdf31bf4c11d4e6"
+    },
+    {
+      "path": "suite/async-sequence/llm_request_body.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_request_body.json",
+      "kind": "byte-preserved",
+      "bytes": 654380,
+      "sha256": "25efb07361df246ca61d0ebd8a81aefe36dc38e374641d49df50f682a101c1b6"
+    },
+    {
+      "path": "suite/async-sequence/llm_response.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 10414,
+      "sha256": "9db895ba513f0426dad6f0b3c93ce97c55123e8897ed9f607c3d63a68dc6e1a8"
+    },
+    {
+      "path": "suite/async-sequence/llm_result.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 10733,
+      "sha256": "81a85fa81be027e1480cd942c057566a58d75b2f733d34ebc78fe49a0c2e8740"
+    },
+    {
+      "path": "suite/async-sequence/log.PODFoam.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/log.PODFoam",
+      "kind": "gzip copy",
+      "bytes": 1304437,
+      "sha256": "ef0c5735090d3d73f2cdf1fb4ce9d28e1bf39a9cfd5a28cc8e359af91e601b3d",
+      "source_bytes": 8860395,
+      "source_sha256": "8ed86bb24abc6c5d23c77b3dedb39c0ce58340acdcd1bf11312c118ef83b0882"
+    },
+    {
+      "path": "suite/async-sequence/memory-samples.json.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/memory-samples.json",
+      "kind": "gzip copy",
+      "bytes": 20039,
+      "sha256": "7433551b28f0aa47f26d36226d13102e25c1f4d560eed4855ca295c011de3e34",
+      "source_bytes": 301385,
+      "source_sha256": "ed5dd82420c0c9cdcfd2bd999bafcdbc975dbd271e405c1c43ec2ac90ee20116"
+    },
+    {
+      "path": "suite/async-sequence/telemetry.jsonl.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/telemetry.jsonl",
+      "kind": "gzip copy",
+      "bytes": 742104,
+      "sha256": "d804753825faf11bdfdb311adbf1921f344c5be06369d378bebe299d42c17f7b",
+      "source_bytes": 5029312,
+      "source_sha256": "1854027ed0f717ed24e586a804cc545f44f4a748b6b050724fabd01457211bd2"
+    },
+    {
+      "path": "suite/async-sequence/timeline.json.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-sequence/timeline.json",
+      "kind": "gzip copy",
+      "bytes": 143089,
+      "sha256": "fd42c2997c0fae7a99deff2d19dddf44052d239efb29051a4d509326ddc75079",
+      "source_bytes": 1043392,
+      "source_sha256": "ccbe5e14b95f01666ebd6351b99db993708ef71fba186fc4c486f8544d1a87c0"
+    },
+    {
+      "path": "suite/async-server-error/llm_request.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-server-error/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9566,
+      "sha256": "f886c2a8ac848b46a30363f6ef94478ab6f7ffdb35c7c7125b2867b2ddab5d63"
+    },
+    {
+      "path": "suite/async-server-error/llm_response.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-server-error/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 3034,
+      "sha256": "aff3a6d58c9baa27f03a57a37cfa108b8c2b7bc8d5e892b83bb93882d28ab95b"
+    },
+    {
+      "path": "suite/async-server-error/llm_result.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-server-error/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 3354,
+      "sha256": "f85125fe8200a5b204b4ac0007e08bea6ed57899976b11bfb07a88261aba2aa7"
+    },
+    {
+      "path": "suite/async-server-error/log.PODFoam.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-server-error/log.PODFoam",
+      "kind": "gzip copy",
+      "bytes": 1303761,
+      "sha256": "8bfce0783a9ebf293bc0e09305a6f883929ef7653b4fd899422f08a32ba76cf7",
+      "source_bytes": 8859799,
+      "source_sha256": "47806027ac0b0eba56237d60d1923ff23666b9a1df72e0fc2cb628b66a2da0d4"
+    },
+    {
+      "path": "suite/async-server-error/memory-samples.json.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-server-error/memory-samples.json",
+      "kind": "gzip copy",
+      "bytes": 19214,
+      "sha256": "fcd86d0fc19533e1d57d5b5f86deaba36cb9202908a55549f60b5d4e180f043a",
+      "source_bytes": 299271,
+      "source_sha256": "a96ff42df8403c3256e1088f0a329bb281114b74e68e27cefb3743e7e1ac7ac4"
+    },
+    {
+      "path": "suite/async-server-error/telemetry.jsonl.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-server-error/telemetry.jsonl",
+      "kind": "gzip copy",
+      "bytes": 742217,
+      "sha256": "83d1ed1103163f597ba3193f2aeb4ba2ab6ddf1752373adc391a016045ed8057",
+      "source_bytes": 5053312,
+      "source_sha256": "6c2e05a9962d77adec8a2f7dffc0da54db7a1f888971e13b13b5e51aef02d08c"
+    },
+    {
+      "path": "suite/async-server-error/timeline.json.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-server-error/timeline.json",
+      "kind": "gzip copy",
+      "bytes": 142590,
+      "sha256": "c0885be3ce8ebd40078741d70fe3f4e968980a7f4920c3133692dd0f3596aaa3",
+      "source_bytes": 1042529,
+      "source_sha256": "896b5d045c57fcc828aadd1cf7492454880667cc1ffc0f828ea5a7608c5dff46"
+    },
+    {
+      "path": "suite/async-settings.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-settings.json",
+      "kind": "byte-preserved",
+      "bytes": 734,
+      "sha256": "d79b17747fd11b955fd3abd3b1e4177d00110b792d0994e0c76bbd4365d0a672"
+    },
+    {
+      "path": "suite/async-timeout/llm_http_response.raw",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-timeout/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 69,
+      "sha256": "d22c586c80136a000a9162f9df4fb09da67113f1163fb7f8298c4df03d2cd9a8"
+    },
+    {
+      "path": "suite/async-timeout/llm_request.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-timeout/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9539,
+      "sha256": "9531ae94b8713a795de7e6f7ddafe25db106252f3735dfe627313f9fef40c011"
+    },
+    {
+      "path": "suite/async-timeout/llm_response.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-timeout/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 1040,
+      "sha256": "401d2c4374234092374b28c7556ee23f68f96eca3f4b497f78c1ff1468a9a9a5"
+    },
+    {
+      "path": "suite/async-timeout/llm_result.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-timeout/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 1098,
+      "sha256": "95df3490e0512766f1f9a2a097adae5cc41ac45882482183de1c4d83c183d1f8"
+    },
+    {
+      "path": "suite/async-timeout/log.PODFoam.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-timeout/log.PODFoam",
+      "kind": "gzip copy",
+      "bytes": 1304596,
+      "sha256": "f3544234ab3f95595ff384c26df73f396e763fa26b99b5a7c47d9499a203ea94",
+      "source_bytes": 8859969,
+      "source_sha256": "6af47529be17e271e6c3770abc63cabadc30f186f1538c98efb9a7aa10d23d91"
+    },
+    {
+      "path": "suite/async-timeout/memory-samples.json.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-timeout/memory-samples.json",
+      "kind": "gzip copy",
+      "bytes": 19494,
+      "sha256": "745bacb65b7134ac54c367698dbf763ccab41d0cd1bf943fd4f0c276300a77c2",
+      "source_bytes": 300489,
+      "source_sha256": "0cf848d46c10c7e7f9c980c2d06f8e64aabd11c38b933034907420fe445d38b6"
+    },
+    {
+      "path": "suite/async-timeout/telemetry.jsonl.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-timeout/telemetry.jsonl",
+      "kind": "gzip copy",
+      "bytes": 742085,
+      "sha256": "8d01654d0157950c1b8570f1ff8ef7775376d4be1f9ae75ae16e7937cb7fb57f",
+      "source_bytes": 5023312,
+      "source_sha256": "ddd6bf36f42590bb2183a8834f7996b1c9bc80f558348ac88cf5aba1e29b1889"
+    },
+    {
+      "path": "suite/async-timeout/timeline.json.gz",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-timeout/timeline.json",
+      "kind": "gzip copy",
+      "bytes": 142763,
+      "sha256": "8c5b9206ff9fea9287253bedcd9439e32e5d6ac98100c9483e1d0b0c8f8611ab",
+      "source_bytes": 1042697,
+      "source_sha256": "f6b5361903fad9db1972549cd9eea2c24c858222925d4bbb6a2401f2c8f23ed2"
+    },
+    {
+      "path": "suite/async-timeout/timeout-fixture.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-timeout/timeout-fixture.json",
+      "kind": "byte-preserved",
+      "bytes": 224,
+      "sha256": "eba28675212b21a2d6de3e546c43332ac6e92e82cb9aa63949de04c5001506b0"
+    },
+    {
+      "path": "suite/async-verification.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/async-verification.json",
+      "kind": "byte-preserved",
+      "bytes": 15487,
+      "sha256": "54fb2850588a6c57d2e2e8f7b3debfec3a52d158aa4b4bd9b69fbf6da3ccd8fd"
+    },
+    {
+      "path": "suite/build-inputs.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/build-inputs.json",
+      "kind": "byte-preserved",
+      "bytes": 1061,
+      "sha256": "b32313909eaf8568be79da1fb83d7617ad8d0f54d8ed5cc82013b6ec3b96beba"
+    },
+    {
+      "path": "suite/environment.txt",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/environment.txt",
+      "kind": "byte-preserved",
+      "bytes": 5659,
+      "sha256": "838f48b52e06852277fb654f11d904e88ad0e6f85708f8c2f98b6920671c7cfa"
+    },
+    {
+      "path": "suite/executed-callback-source/bounded_ipc.py",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/executed-callback-source/bounded_ipc.py",
+      "kind": "byte-preserved",
+      "bytes": 4892,
+      "sha256": "4810f6efdb23a7ad02ef86117019296d1a8705f4fad5f2cc5627673f598188a9"
+    },
+    {
+      "path": "suite/executed-callback-source/llm_client.py",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/executed-callback-source/llm_client.py",
+      "kind": "byte-preserved",
+      "bytes": 25118,
+      "sha256": "a8aa4546e9fd1edfcff2b24bfbd9dbf238f02653c7adf9a3aef401e06bd2a8e4"
+    },
+    {
+      "path": "suite/executed-callback-source/pod_image.py",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/executed-callback-source/pod_image.py",
+      "kind": "byte-preserved",
+      "bytes": 10284,
+      "sha256": "9c5eee02d62546a8fbdd35625d4f6252dfb2cadb7fa63184fca50f88f7f1e42b"
+    },
+    {
+      "path": "suite/executed-callback-source/pod_svd.py",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/executed-callback-source/pod_svd.py",
+      "kind": "byte-preserved",
+      "bytes": 1669,
+      "sha256": "110e5e70b77bced27587808349c155ef0797b5eac3f059fce16bcad862772123"
+    },
+    {
+      "path": "suite/executed-callback-source/python_module.py",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/executed-callback-source/python_module.py",
+      "kind": "byte-preserved",
+      "bytes": 51187,
+      "sha256": "608720ded7a717ae9c1f10dee5d2a6a9f112866a26dcbb6fdaaa4c169d72dfcb"
+    },
+    {
+      "path": "suite/executed-callback-source/readable_image.py",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/executed-callback-source/readable_image.py",
+      "kind": "byte-preserved",
+      "bytes": 4767,
+      "sha256": "8043e4eefad5ea5472ccb8a51b9d3d3136171d65480d304032b62472c9f0a657"
+    },
+    {
+      "path": "suite/executed-callback-source/readable_request.py",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/executed-callback-source/readable_request.py",
+      "kind": "byte-preserved",
+      "bytes": 9626,
+      "sha256": "48a5b7bfd8624a9f8e7c23016767b750ef377c9e8dd685ec1dc58aca3b05f165"
+    },
+    {
+      "path": "suite/log.build",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/log.build",
+      "kind": "byte-preserved",
+      "bytes": 3174,
+      "sha256": "2959be9034c5e5e12ae8a0e294e456acf49ee44fcec9def0473fe5a05edaa166"
+    },
+    {
+      "path": "suite/resident-server.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/resident-server.json",
+      "kind": "byte-preserved",
+      "bytes": 1071,
+      "sha256": "1914f650d2c92682e39476dcc9d53c98fd54964ffdb1809322e19daf36553bda"
+    },
+    {
+      "path": "suite/sha256.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/sha256.json",
+      "kind": "byte-preserved",
+      "bytes": 298837,
+      "sha256": "11f45c305c3e618f8f742b476ace3865004cd74a223c9b64ab6feac07b9e4ea5"
+    },
+    {
+      "path": "suite/summary.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/summary.json",
+      "kind": "byte-preserved",
+      "bytes": 4949,
+      "sha256": "6926af2c4bf02811e949fc9f4b5f12fa9f221de8efe8dbd7efe68a2df7cb241c"
+    },
+    {
+      "path": "suite/timings.json",
+      "source": "solver-evidence-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ/timings.json",
+      "kind": "byte-preserved",
+      "bytes": 2212,
+      "sha256": "1ffaebbb8d32813557cca991cc21c160f5e968b71aa64f1ee6f1b02e64c7aa9c"
+    },
+    {
+      "path": "sweep/compare_sweep_fields.py",
+      "source": "written for this folder",
+      "kind": "derived",
+      "bytes": 3067,
+      "sha256": "d7854838533e54ab43331214941981cd6113f609e4a51b6d0a5edd9e659c1593"
+    },
+    {
+      "path": "sweep/describe-step000500/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1350,
+      "sha256": "f95145c56e2f8e329e49fc7bbe399e5061cc833311d5f43d5b4d492f3c5df0b0"
+    },
+    {
+      "path": "sweep/describe-step000500/llm_observation/step-000500/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_observation/step-000500/U.png",
+      "kind": "byte-preserved",
+      "bytes": 73635,
+      "sha256": "6e55f762428da17a903b168e91202d0da1a1af3b39f9c9141a999ccde30ec14d"
+    },
+    {
+      "path": "sweep/describe-step000500/llm_observation/step-000500/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_observation/step-000500/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 787295,
+      "sha256": "7a12434fa8187b437b77f7dd9ab1f16c71ea645c6ab3121a1440aaa991afaf8f"
+    },
+    {
+      "path": "sweep/describe-step000500/llm_observation/step-000500/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_observation/step-000500/p.png",
+      "kind": "byte-preserved",
+      "bytes": 70021,
+      "sha256": "ed639ccc31205aaa13666dc2c265c2b425b1eafe1aaa4b32a7aefb93f1fb6a7b"
+    },
+    {
+      "path": "sweep/describe-step000500/llm_observation/step-000500/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_observation/step-000500/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1570,
+      "sha256": "11277d2016a4ee7042eb93c48502d4eb34d7ad69198ed6b0d6db0273d1b01bde"
+    },
+    {
+      "path": "sweep/describe-step000500/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9859,
+      "sha256": "8ea2d3071422e9cb13cae101b6f1558fcbfef3cb53cb4a0ab1090884bc203bfb"
+    },
+    {
+      "path": "sweep/describe-step000500/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4758,
+      "sha256": "e4c9bb2ab8259021e03ae491a81f31168683f9ee2c956a2d3467af23331040aa"
+    },
+    {
+      "path": "sweep/describe-step000500/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step000500/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5347,
+      "sha256": "65fa3e555e5322cd902f016e4ecd9d08d6fefbd3daadde5c027221a9fffa4e8d"
+    },
+    {
+      "path": "sweep/describe-step001000/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001000/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1232,
+      "sha256": "2fa38507a074935274f454dd0226fd253944ca55c7c7131e8822c4346c85121c"
+    },
+    {
+      "path": "sweep/describe-step001000/llm_observation/step-001000/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001000/llm_observation/step-001000/U.png",
+      "kind": "byte-preserved",
+      "bytes": 74246,
+      "sha256": "87f1d53430fb0d18ab19f1916e62ceb524a03bcb534e653f9075872b846a1f25"
+    },
+    {
+      "path": "sweep/describe-step001000/llm_observation/step-001000/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001000/llm_observation/step-001000/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 788275,
+      "sha256": "8e86dbc7acdfe295058bf6d4b86a72e919cc2cc2866ef87346172df0bf6558c7"
+    },
+    {
+      "path": "sweep/describe-step001000/llm_observation/step-001000/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001000/llm_observation/step-001000/p.png",
+      "kind": "byte-preserved",
+      "bytes": 69819,
+      "sha256": "525576155968ace500c8e4c19e6de3dcfe893ba9fee74b865ef56a5639781b1b"
+    },
+    {
+      "path": "sweep/describe-step001000/llm_observation/step-001000/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001000/llm_observation/step-001000/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1576,
+      "sha256": "d4d78826d70b52c10b3f88a6454bf181cb012026189fb46c6db7b3b484e8db8d"
+    },
+    {
+      "path": "sweep/describe-step001000/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001000/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9872,
+      "sha256": "1fc05a064aa64bebb9f7025bb198338da47e82d8e5578bbaa2bd91d5ddf88b99"
+    },
+    {
+      "path": "sweep/describe-step001000/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001000/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4645,
+      "sha256": "268b05a93c8939cbde13c762fd5a1adae74d7d5ad11b02d1315e1d41f47c7a31"
+    },
+    {
+      "path": "sweep/describe-step001000/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001000/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5115,
+      "sha256": "b173847d664f2ab3c5600c3fe31215df7461a262faf06ff9a215bc9ee24815dd"
+    },
+    {
+      "path": "sweep/describe-step001500/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001500/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1309,
+      "sha256": "d5be64ac37962d1a8293400dcc6bc6728cce190134f92dbf5dda992ed1c63f93"
+    },
+    {
+      "path": "sweep/describe-step001500/llm_observation/step-001500/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001500/llm_observation/step-001500/U.png",
+      "kind": "byte-preserved",
+      "bytes": 80052,
+      "sha256": "fff74267b5569aff05c64545b89cf73904ff0782e9b1f17a78bed14d43304222"
+    },
+    {
+      "path": "sweep/describe-step001500/llm_observation/step-001500/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001500/llm_observation/step-001500/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 787836,
+      "sha256": "297b17d4835b98a63d997eb2a7d536ecb5128a9605791f81bf8c939c88cb6e08"
+    },
+    {
+      "path": "sweep/describe-step001500/llm_observation/step-001500/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001500/llm_observation/step-001500/p.png",
+      "kind": "byte-preserved",
+      "bytes": 77460,
+      "sha256": "67c0f531a1b680e535e5988546a8b57881875fed23e6f8148aa081d30c68a56a"
+    },
+    {
+      "path": "sweep/describe-step001500/llm_observation/step-001500/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001500/llm_observation/step-001500/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1576,
+      "sha256": "e96216bfd12feede304573e54024e94d1518c8d30036b28478b7d31e2b947d96"
+    },
+    {
+      "path": "sweep/describe-step001500/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001500/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9880,
+      "sha256": "1158d9a077c2f6457d384e56c3fefee6d0e705f4ff20c4864675bf250f9bde58"
+    },
+    {
+      "path": "sweep/describe-step001500/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001500/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4723,
+      "sha256": "83c64411c3b90ad49d45b0232f8f61f6a6dfb7b2ad2524d8c239284176ccfd2a"
+    },
+    {
+      "path": "sweep/describe-step001500/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step001500/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5269,
+      "sha256": "d1e257103e3d1571ec23e36179fc73e283fe62093caaa4730a09226becb4f165"
+    },
+    {
+      "path": "sweep/describe-step002000/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002000/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1329,
+      "sha256": "5e4e55d8cfd121bc204a946e27efaab9e49fdef34da5ce884f495a90fa259b2c"
+    },
+    {
+      "path": "sweep/describe-step002000/llm_observation/step-002000/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002000/llm_observation/step-002000/U.png",
+      "kind": "byte-preserved",
+      "bytes": 85005,
+      "sha256": "0d670c439525212349c0b7371dfdb6f4d8f0cbf6c51ffdb15f726d568692afdf"
+    },
+    {
+      "path": "sweep/describe-step002000/llm_observation/step-002000/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002000/llm_observation/step-002000/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 788756,
+      "sha256": "2e909201b42600310c7981111a17a82ca3139e7f8b5f35f1838ddbda2c49c0ac"
+    },
+    {
+      "path": "sweep/describe-step002000/llm_observation/step-002000/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002000/llm_observation/step-002000/p.png",
+      "kind": "byte-preserved",
+      "bytes": 75734,
+      "sha256": "8edf18483bdf5a5ac0acbee47bf0df52298676f65a114827c5b4f67654b416ae"
+    },
+    {
+      "path": "sweep/describe-step002000/llm_observation/step-002000/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002000/llm_observation/step-002000/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1574,
+      "sha256": "f12aaa49326fb1ac080711312db2bfb6b9a14eae6459b4a9782d9022d553f179"
+    },
+    {
+      "path": "sweep/describe-step002000/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002000/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9872,
+      "sha256": "bbaf312ee8e90463b29f00e44c41c2cf54b62f81da888de5937e2114367d1198"
+    },
+    {
+      "path": "sweep/describe-step002000/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002000/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4741,
+      "sha256": "5cd8732545de6393796a9cd9bf075def0c8c92b92c7aa685d32921eff7dab233"
+    },
+    {
+      "path": "sweep/describe-step002000/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002000/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5309,
+      "sha256": "f94b0972bd7908a01c42aa9fee2b1f9f4d6e8168dd6ecf8b2766934a438acfae"
+    },
+    {
+      "path": "sweep/describe-step002500/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002500/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1322,
+      "sha256": "5482f636e0ac31b1ae20fd68b524c40c7d59c5319d6824c010bfaa96e2676d6d"
+    },
+    {
+      "path": "sweep/describe-step002500/llm_observation/step-002500/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002500/llm_observation/step-002500/U.png",
+      "kind": "byte-preserved",
+      "bytes": 74605,
+      "sha256": "31f3c48933c21046eaf96a85518f163a34a6633687d190b13880d395a854f4ab"
+    },
+    {
+      "path": "sweep/describe-step002500/llm_observation/step-002500/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002500/llm_observation/step-002500/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 788212,
+      "sha256": "bc08b2585a37a8af6e9e552d253facc6d7e86e8fe734603730a2fce8f96c737b"
+    },
+    {
+      "path": "sweep/describe-step002500/llm_observation/step-002500/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002500/llm_observation/step-002500/p.png",
+      "kind": "byte-preserved",
+      "bytes": 71677,
+      "sha256": "f7ee07481e1e12a36973aa039f799e5dca983d76e26a4efa0c1dd8277f482234"
+    },
+    {
+      "path": "sweep/describe-step002500/llm_observation/step-002500/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002500/llm_observation/step-002500/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1573,
+      "sha256": "3fd65ab6170b68913a19146dd315b99a6425779e0d7f8e2f303dd656fed3e7e4"
+    },
+    {
+      "path": "sweep/describe-step002500/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002500/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9863,
+      "sha256": "cfa5d07207fd4e3a9591a165ad0a9e9e9ac67a81b071fddcfa2bb04fe27fc226"
+    },
+    {
+      "path": "sweep/describe-step002500/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002500/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4733,
+      "sha256": "47f3c44e2ea7560e6644d5062d39947cd802123a1286136e14ef2a8fc11f0ca0"
+    },
+    {
+      "path": "sweep/describe-step002500/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step002500/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5294,
+      "sha256": "0b3db2657d629c64988ff1705831c096f595b25f8c2ff661654debb4ea3d09d9"
+    },
+    {
+      "path": "sweep/describe-step003000/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1267,
+      "sha256": "504c4857caeec20b82d8414a8ab507bd14d420faa7bc9df909826384b52e4477"
+    },
+    {
+      "path": "sweep/describe-step003000/llm_observation/step-003000/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_observation/step-003000/U.png",
+      "kind": "byte-preserved",
+      "bytes": 70551,
+      "sha256": "3e804d7785312249b90f332a4e8320a9782096d2a4a72582986bc59c47d97a3a"
+    },
+    {
+      "path": "sweep/describe-step003000/llm_observation/step-003000/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_observation/step-003000/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 788103,
+      "sha256": "b0f276756255543a0151f02055d54f39b3cb7fbe2b3e3289d5e47d9e8b9caa88"
+    },
+    {
+      "path": "sweep/describe-step003000/llm_observation/step-003000/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_observation/step-003000/p.png",
+      "kind": "byte-preserved",
+      "bytes": 66108,
+      "sha256": "deaa68c529ee9d57c58cd175eb8d8280c83c490b427b4caf26cfa12649c518e3"
+    },
+    {
+      "path": "sweep/describe-step003000/llm_observation/step-003000/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_observation/step-003000/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1576,
+      "sha256": "3c0901a4dd902ebab680e6872f9e31abc5d0a46603424a848fa335ae0d724a3f"
+    },
+    {
+      "path": "sweep/describe-step003000/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9871,
+      "sha256": "10e45a37501e4c805c666e323c64888ce2b992276061558a34ac709c01ac535d"
+    },
+    {
+      "path": "sweep/describe-step003000/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4682,
+      "sha256": "00c19241094f3318a1f25681c2483e9edafa2273486ea806910f0ed1912e5c40"
+    },
+    {
+      "path": "sweep/describe-step003000/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003000/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5188,
+      "sha256": "18893565f59c64cd8546c6217c2c5346d46250efaff30d82b37c93bdcf0f89e2"
+    },
+    {
+      "path": "sweep/describe-step003500/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1304,
+      "sha256": "8f30cc64d57887cb3e03a8af4488551f7f5935105af9bac2f02321e7410b8c59"
+    },
+    {
+      "path": "sweep/describe-step003500/llm_observation/step-003500/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_observation/step-003500/U.png",
+      "kind": "byte-preserved",
+      "bytes": 74325,
+      "sha256": "d0af849c81bd641458facd6492f1cfff1b009ced6f08d3805cbf76fe6e16b841"
+    },
+    {
+      "path": "sweep/describe-step003500/llm_observation/step-003500/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_observation/step-003500/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 788403,
+      "sha256": "81570f95889658604f31a96710c96d43f74a8fe5f056ef409abe6f8b99a96b3f"
+    },
+    {
+      "path": "sweep/describe-step003500/llm_observation/step-003500/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_observation/step-003500/p.png",
+      "kind": "byte-preserved",
+      "bytes": 69136,
+      "sha256": "ef6adc7e4062798a48c7dbd4f221bbed7522c25fba11ab1e142578f3ee854796"
+    },
+    {
+      "path": "sweep/describe-step003500/llm_observation/step-003500/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_observation/step-003500/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1575,
+      "sha256": "05e189e86ddf10984a7522f3334df5898a31f6d4259612447347046b95ebb8c0"
+    },
+    {
+      "path": "sweep/describe-step003500/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9875,
+      "sha256": "48a46d08d211a75761ec6d6c63990594900a56c7e09a7bafa366bad638348298"
+    },
+    {
+      "path": "sweep/describe-step003500/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4719,
+      "sha256": "b5eb4cf1e89df69c7087b625ba9006c128a19bf4729dd4780a8afa568c5ec421"
+    },
+    {
+      "path": "sweep/describe-step003500/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5267,
+      "sha256": "2652038f51af53b9130fa86c4ecb1eadf90d456826a9cd6814863ed8e1bceec5"
+    },
+    {
+      "path": "sweep/describe-step004000/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1368,
+      "sha256": "24aedb1baf2a53f6004400c2b956e7f027c84287c4be1a6ba24438c839eecf1e"
+    },
+    {
+      "path": "sweep/describe-step004000/llm_observation/step-004000/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_observation/step-004000/U.png",
+      "kind": "byte-preserved",
+      "bytes": 67399,
+      "sha256": "a362d7357a108d54513badb63623ad49d47db1d089678d3ab210fb8e1fce255e"
+    },
+    {
+      "path": "sweep/describe-step004000/llm_observation/step-004000/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_observation/step-004000/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 787771,
+      "sha256": "7cfaebd4be6ff36791b901e2e21b697471504927eb3a89c49017f3094d2ce4c8"
+    },
+    {
+      "path": "sweep/describe-step004000/llm_observation/step-004000/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_observation/step-004000/p.png",
+      "kind": "byte-preserved",
+      "bytes": 68421,
+      "sha256": "94c1f099c02b4e6f713634b11ac4a125a367505b489b75fed73c0ed854cff030"
+    },
+    {
+      "path": "sweep/describe-step004000/llm_observation/step-004000/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_observation/step-004000/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1575,
+      "sha256": "afcc76050804718396999dac778c490ce6e52acdcd1604814637157008c11a35"
+    },
+    {
+      "path": "sweep/describe-step004000/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9874,
+      "sha256": "12660c90146e28d15822a3b9ba28a44649201549384b05ecdeee1b76318b2480"
+    },
+    {
+      "path": "sweep/describe-step004000/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4782,
+      "sha256": "95adf0a0b0552a79f4b51e7e51be6240c7e5ffb460813f7bfec71d608f9f2ddc"
+    },
+    {
+      "path": "sweep/describe-step004000/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5387,
+      "sha256": "d65723f94943fddcbd812052546e4eee9a255cdddc78dede6b5b81afb7e74569"
+    },
+    {
+      "path": "sweep/describe-step004500/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1387,
+      "sha256": "20cc57a1032305493e20789262b3156474cdb035b6a33cc9e9d2901f50004e34"
+    },
+    {
+      "path": "sweep/describe-step004500/llm_observation/step-004500/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_observation/step-004500/U.png",
+      "kind": "byte-preserved",
+      "bytes": 73140,
+      "sha256": "1d65c119f625c34d1e5c5887510bd64e149d7b2dfe9d2c3659aa2af9b81e18e7"
+    },
+    {
+      "path": "sweep/describe-step004500/llm_observation/step-004500/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_observation/step-004500/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 788066,
+      "sha256": "5a54627b53568473b87a3a61fdab5262c038572cc90fef751413dd82bca11ce4"
+    },
+    {
+      "path": "sweep/describe-step004500/llm_observation/step-004500/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_observation/step-004500/p.png",
+      "kind": "byte-preserved",
+      "bytes": 70430,
+      "sha256": "41dd6244db75542f5cf7dec048bc3bc479140032d5098e23c8b1805d56589f46"
+    },
+    {
+      "path": "sweep/describe-step004500/llm_observation/step-004500/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_observation/step-004500/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1577,
+      "sha256": "75e114b0cf4bc5c13cebd1feaa2f088a3e336faa5dedc84170a8250c620b5f62"
+    },
+    {
+      "path": "sweep/describe-step004500/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9894,
+      "sha256": "d9bd728f46f63a37a35a50383a23e5f6a3b3a1772a88b9d433f01a14b6e5062b"
+    },
+    {
+      "path": "sweep/describe-step004500/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4805,
+      "sha256": "d2d8818c2fc21b2712eb0e5e3fc94a14a4b250600709cda679cebeba5ba4d562"
+    },
+    {
+      "path": "sweep/describe-step004500/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5430,
+      "sha256": "da49fc2c13713b915f16b836d3f95a1ed751443fbc079f7b7a212ba31f48783f"
+    },
+    {
+      "path": "sweep/describe-step005000/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005000/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1272,
+      "sha256": "d101ba98aae4ef67fbdceea872fd9e573e8147c4e752f3b211c340d14d469b29"
+    },
+    {
+      "path": "sweep/describe-step005000/llm_observation/step-005000/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005000/llm_observation/step-005000/U.png",
+      "kind": "byte-preserved",
+      "bytes": 73129,
+      "sha256": "5c84edfb4715b07aa986e9acf46fc633b4ef57f15cf005ed3eede9d5a2d17932"
+    },
+    {
+      "path": "sweep/describe-step005000/llm_observation/step-005000/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005000/llm_observation/step-005000/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 787882,
+      "sha256": "d7e5a09d716b36cf95cad1a4946f6fe19464840961d65359d25444a0ea88581f"
+    },
+    {
+      "path": "sweep/describe-step005000/llm_observation/step-005000/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005000/llm_observation/step-005000/p.png",
+      "kind": "byte-preserved",
+      "bytes": 69150,
+      "sha256": "120f36527e95390a85982511cf458d9f70c0fcecf7f7aa4adca53e8a8413c7a1"
+    },
+    {
+      "path": "sweep/describe-step005000/llm_observation/step-005000/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005000/llm_observation/step-005000/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1572,
+      "sha256": "d37f48e37463149240e3adc79a6383deae72ea019dfe968d1a186e22fc705440"
+    },
+    {
+      "path": "sweep/describe-step005000/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005000/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9869,
+      "sha256": "b2da749458cfee43c91c49f5fa0e85422536718c3d5d38f7495924291b2c5f84"
+    },
+    {
+      "path": "sweep/describe-step005000/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005000/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4685,
+      "sha256": "e11d3e53b1ab754be12d419823a054a3023773095d5cce7312be4ad1a3cda5b3"
+    },
+    {
+      "path": "sweep/describe-step005000/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005000/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5194,
+      "sha256": "e0a6b18a081163b5a8b6fedee798a5e9fea3ea20defa77b99d70b6ddc363fafb"
+    },
+    {
+      "path": "sweep/describe-step005500/llm_http_response.raw",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005500/llm_http_response.raw",
+      "kind": "byte-preserved",
+      "bytes": 1238,
+      "sha256": "75765c8b219f6dc84d6474cbf6d71551af54c27b87d672bd455e94f53c662792"
+    },
+    {
+      "path": "sweep/describe-step005500/llm_observation/step-005500/U.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005500/llm_observation/step-005500/U.png",
+      "kind": "byte-preserved",
+      "bytes": 75872,
+      "sha256": "60d5a7cff65160b6b2d37916e3dbf83d8500c7152c6c81eb1d21bd923967bd22"
+    },
+    {
+      "path": "sweep/describe-step005500/llm_observation/step-005500/fields.npz",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005500/llm_observation/step-005500/fields.npz",
+      "kind": "byte-preserved",
+      "bytes": 788282,
+      "sha256": "1aff205d6fabd5df82bfcfe35a4db094858a3c17a7b83eceb72659f60afe768e"
+    },
+    {
+      "path": "sweep/describe-step005500/llm_observation/step-005500/p.png",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005500/llm_observation/step-005500/p.png",
+      "kind": "byte-preserved",
+      "bytes": 70230,
+      "sha256": "694ee5ff3716c89c0523f3b29db39a5e03df35657083bf851e6402b0981a72ff"
+    },
+    {
+      "path": "sweep/describe-step005500/llm_observation/step-005500/readable-metadata.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005500/llm_observation/step-005500/readable-metadata.json",
+      "kind": "byte-preserved",
+      "bytes": 1574,
+      "sha256": "c19b6cb305af153502890c1c4e68056924fa8f4e5161de36ea22af35e76114d8"
+    },
+    {
+      "path": "sweep/describe-step005500/llm_request.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005500/llm_request.json",
+      "kind": "byte-preserved",
+      "bytes": 9875,
+      "sha256": "916cad6f8809c7a2d229d0a7e06e8e0c5aaeaa6a120c3b0890caba38a8d29315"
+    },
+    {
+      "path": "sweep/describe-step005500/llm_response.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005500/llm_response.json",
+      "kind": "byte-preserved",
+      "bytes": 4654,
+      "sha256": "62005278e34a1607d527bebd7c1e22e3ad61cc98ef32ace17745add2fc645f26"
+    },
+    {
+      "path": "sweep/describe-step005500/llm_result.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/describe-step005500/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5131,
+      "sha256": "7016236df6f559fefe8debc486855c87df2a2793019219bd447c43dd5fef2702"
+    },
+    {
+      "path": "sweep/fields-vs-baseline.json",
+      "source": "compare_sweep_fields.py run on the suite and sweep folders of job 24757460 (both release archives)",
+      "kind": "derived",
+      "bytes": 8046,
+      "sha256": "6c259b1da68047d207c26408da681d472b0cbf43571f352139b6552a31061501"
+    },
+    {
+      "path": "sweep/sweep-plan.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/sweep-plan.json",
+      "kind": "byte-preserved",
+      "bytes": 4607,
+      "sha256": "482c3bdf4382387e5207668b1a443386f6dcc0b83eb95e29e03d3b24fb5a3959"
+    },
+    {
+      "path": "sweep/sweep-summary.json",
+      "source": "sweep-UM1RyJ.tar.gz: pod-llm-async.UM1RyJ-sweep/sweep-summary.json",
+      "kind": "byte-preserved",
+      "bytes": 33672,
+      "sha256": "96974a6feccdf8dc6cf2c61689c96753fa76950a94147d98bc6e0062f212556e"
+    },
+    {
+      "path": "trial/async-describe/llm_result.json",
+      "source": "trial-24757458.tar.gz: trial-24757458/pod-llm-async.yIW1TX/async-describe/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 5133,
+      "sha256": "b0168c99357e249d6dd8984f7bbe893fed83358910b247389733c45c2e526827"
+    },
+    {
+      "path": "trial/async-sequence/llm_result.json",
+      "source": "trial-24757458.tar.gz: trial-24757458/pod-llm-async.yIW1TX/async-sequence/llm_result.json",
+      "kind": "byte-preserved",
+      "bytes": 10931,
+      "sha256": "09584cf3da88285801d7fb3c162422aa23ed440c00e073ebad2f2314f39f5fb8"
+    },
+    {
+      "path": "trial/async-settings.json",
+      "source": "trial-24757458.tar.gz: trial-24757458/pod-llm-async.yIW1TX/async-settings.json",
+      "kind": "byte-preserved",
+      "bytes": 730,
+      "sha256": "342678e3109a13ca40287b00fc25fb4e226e2ba36239ff9465dd1dc5b01ff7a7"
+    },
+    {
+      "path": "trial/async-verification.json",
+      "source": "trial-24757458.tar.gz: trial-24757458/pod-llm-async.yIW1TX/async-verification.json",
+      "kind": "byte-preserved",
+      "bytes": 15516,
+      "sha256": "04d701a0751433871273c124dde3715ab72a16c1938ddaf8418884e566fb970f"
+    },
+    {
+      "path": "trial/pod-async-v2-24757458.out",
+      "source": "trial-24757458.tar.gz: trial-24757458/pod-async-v2-24757458.out",
+      "kind": "byte-preserved",
+      "bytes": 17008,
+      "sha256": "1bf034ab03f6b37103cc5df6c0412175afc115b974347aa0484a0b5f1c35a9ba"
+    },
+    {
+      "path": "trial/summary.json",
+      "source": "trial-24757458.tar.gz: trial-24757458/pod-llm-async.yIW1TX/summary.json",
+      "kind": "byte-preserved",
+      "bytes": 5005,
+      "sha256": "2d44a8003a4166daec8beee91b016d0150cc3860f73b2b3c6e4c647070262208"
+    },
+    {
+      "path": "trial/sweep/sweep-plan.json",
+      "source": "trial-24757458.tar.gz: trial-24757458/pod-llm-async.yIW1TX-sweep/sweep-plan.json",
+      "kind": "byte-preserved",
+      "bytes": 966,
+      "sha256": "f19bdf5aa9e77ab6593d454257b7d01afc2133531ab6011de1a21e33657d2e88"
+    },
+    {
+      "path": "trial/sweep/sweep-summary.json",
+      "source": "trial-24757458.tar.gz: trial-24757458/pod-llm-async.yIW1TX-sweep/sweep-summary.json",
+      "kind": "byte-preserved",
+      "bytes": 6599,
+      "sha256": "bc205f7a21731ca5117ab49c39c7fc34eab59d2da857f3cbb86bb281ac7642af"
+    },
+    {
+      "path": "trial/timings.json",
+      "source": "trial-24757458.tar.gz: trial-24757458/pod-llm-async.yIW1TX/timings.json",
+      "kind": "byte-preserved",
+      "bytes": 2207,
+      "sha256": "6eb5efd81c57aafb50c6eb8dde7a425f4a4a59c86f75c8bee940a404b0689a1c"
+    }
+  ]
+}

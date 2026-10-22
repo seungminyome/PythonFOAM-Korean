@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum speed |U| is 82.53 m/s; location is unknown. Image shows top panel |U|, bottom panel p, with x in [-1.55, 0.60] m, y in [0, 0.114] m, but no explicit x,\",\"possible_interpretation\": \"High |U| likely near domain edge or obstacle; pressure gradient may drive flow. SVD shows Ux dominates velocity variation. Residuals low, suggesting converged.\", \"checks\": \"Missing: force equilibrium, spatial max location, velocity field vector plot, Courant number spatial distribution, boundary conditions.\"\n}",
+  "request_sha256": "ec419b0ab88a3e1d656b1e98972a6e9a6b6432c1c621a7cb47b429723830ebb4",
+  "request_bytes": 4873,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1178,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 143,
+    "prompt_tokens": 1367,
+    "total_tokens": 1510,
+    "prompt_tokens_details": {
+      "cached_tokens": 1362
+    }
+  },
+  "server_timings": {
+    "cache_n": 1362,
+    "prompt_n": 5,
+    "prompt_ms": 58.485,
+    "prompt_per_token_ms": 11.697,
+    "prompt_per_second": 85.4920064973925,
+    "predicted_n": 143,
+    "predicted_ms": 7453.183,
+    "predicted_per_token_ms": 52.487204225352116,
+    "predicted_per_second": 19.052262637318847
+  },
+  "structured_output": {
+    "observations": "Maximum speed |U| is 82.53 m/s; location is unknown. Image shows top panel |U|, bottom panel p, with x in [-1.55, 0.60] m, y in [0, 0.114] m, but no explicit x,",
+    "possible_interpretation": "High |U| likely near domain edge or obstacle; pressure gradient may drive flow. SVD shows Ux dominates velocity variation. Residuals low, suggesting converged.",
+    "checks": "Missing: force equilibrium, spatial max location, velocity field vector plot, Courant number spatial distribution, boundary conditions."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 7.566856877878308,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

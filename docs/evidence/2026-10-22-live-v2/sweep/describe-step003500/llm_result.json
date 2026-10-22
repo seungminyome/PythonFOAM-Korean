@@ -1,0 +1,131 @@
+{
+  "parent_pid": 2717002,
+  "run_id": "pod-llm-async.UM1RyJ-sweep/describe-step003500",
+  "step": 3500,
+  "time_s": 0.11750000000001751,
+  "mode": "describe",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.2,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "callback_started_at": "2026-10-22T16:36:27.808979+00:00",
+  "request_step": 3500,
+  "solver_stall_s": 0.004684785380959511,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.5769455917179585,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_observation/step-003500",
+    "step": 3500,
+    "time_s": 0.11750000000001751,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        -0.06280569421872897,
+        0.2567203515318651
+      ],
+      "y": [
+        -0.05578306299889377,
+        0.050443012489798156
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046805
+      ],
+      "y": [
+        5.781735398474376e-06,
+        0.11429523559299273
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_observation/step-003500/fields.npz",
+    "fields_sha256": "81570f95889658604f31a96710c96d43f74a8fe5f056ef409abe6f8b99a96b3f",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_observation/step-003500/U.png",
+        "sha256": "d0af849c81bd641458facd6492f1cfff1b009ced6f08d3805cbf76fe6e16b841",
+        "bytes": 74325,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          0.0014969039522033788,
+          37.484634159822136
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step003500/llm_observation/step-003500/p.png",
+        "sha256": "ef6adc7e4062798a48c7dbd4f221bbed7522c25fba11ab1e142578f3ee854796",
+        "bytes": 69136,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -361.2418873487386,
+          73.30108796304539
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.5769455917179585
+  },
+  "request_before_at": "2026-10-22T16:36:28.623756+00:00",
+  "arrived_at_step": 3589,
+  "worker_reaped": true,
+  "ipc_select_calls": 94,
+  "response_after_at": "2026-10-22T16:36:31.962595+00:00",
+  "callback_elapsed_s": 4.153748160228133,
+  "elapsed_since_request_s": 3.316095631569624,
+  "worker_wait_elapsed_s": 4.153672531247139,
+  "cleanup_elapsed_before_result_write_s": 0.013995831832289696,
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half of the domain, with a distinct horizontal boundary around y=60%. A localized area of high velocity and low pressure is visible between x=30% and x=50% near the boundary. The flow is slowest in the lower region below y=50%, which contains no cells.\",\n  \"fastest_flow_x_percent\": 38,\n  \"fastest_flow_y_percent\": 68,\n  \"lowest_pressure_x_percent\": 35,\n  \"lowest_pressure_y_percent\": 62,\n  \"uncertainties\": \"The exact physical dimensions of the domain are not provided beyond the plotted range. The specific nature of the boundary at y=50% is not described.\"\n}",
+  "request_sha256": "55e6e8b66a8b189ccc5d75284ebc599d403ac770e5a4b71366242f469cf6a7fc",
+  "request_bytes": 194183,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1304,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 190,
+    "prompt_tokens": 1063,
+    "total_tokens": 1253,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 535.6,
+    "prompt_per_token_ms": 0.503857008466604,
+    "prompt_per_second": 1984.690067214339,
+    "predicted_n": 190,
+    "predicted_ms": 2562.432,
+    "predicted_per_token_ms": 13.55784126984127,
+    "predicted_per_second": 73.7580548478945
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct horizontal boundary around y=60%. A localized area of high velocity and low pressure is visible between x=30% and x=50% near the boundary. The flow is slowest in the lower region below y=50%, which contains no cells.",
+    "fastest_flow_x_percent": 38,
+    "fastest_flow_y_percent": 68,
+    "lowest_pressure_x_percent": 35,
+    "lowest_pressure_y_percent": 62,
+    "uncertainties": "The exact physical dimensions of the domain are not provided beyond the plotted range. The specific nature of the boundary at y=50% is not described."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.2795636411756277
+}

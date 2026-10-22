@@ -1,0 +1,212 @@
+{
+  "requests": 2,
+  "ok": 2,
+  "all_bodies_equal_tested_builder": true,
+  "all_arrived_while_running": true,
+  "fastest_flow_within_10_percent": 2,
+  "lowest_pressure_within_10_percent": 2,
+  "median_distance_percent": {
+    "fastest_flow": 5.590655774448017,
+    "lowest_pressure": 0.7795697659755971
+  },
+  "one_fixed_answer_for_all": {
+    "fastest_flow": 1,
+    "lowest_pressure": 1,
+    "note": "one fixed answer for the whole set (every request has its own window)"
+  },
+  "max_request_step_wall_s": 0.003467126,
+  "arrival_delay_steps": [
+    88,
+    88
+  ],
+  "inference_wall_s": [
+    3.055528739467263,
+    3.136959658935666
+  ],
+  "cases": [
+    {
+      "name": "describe-step000200",
+      "request_step": 200,
+      "window_m": [
+        [
+          -0.058320845676762365,
+          0.19728757331271768
+        ],
+        [
+          -0.04056656333512201,
+          0.05313795078826486
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 288,
+      "solver_stall_s": 0.003073669970035553,
+      "request_step_wall_s": 0.003467126,
+      "inference_wall_s": 3.055528739467263,
+      "wall_seconds": 104.8695216961205,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows a horizontal boundary with a complex interaction zone between 30% and 60% of the x-range. Velocity is highest in the upper region and near a central wake-like structure. Pressure is lowest in localized pockets within this central interaction zone, while it is higher in the surrounding regions.",
+        "fastest_flow_x_percent": 45,
+        "fastest_flow_y_percent": 65,
+        "lowest_pressure_x_percent": 38,
+        "lowest_pressure_y_percent": 55,
+        "uncertainties": "The exact physical geometry of the obstacles or boundaries is not explicitly labeled, and the specific fluid properties are not provided."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 38.59329939319264,
+          "y_percent": 62.750440335370264,
+          "x_m": 0.040326876738053935,
+          "y_m": 0.01823343189142247,
+          "cell": 13486
+        },
+        "lowest_pressure": {
+          "x_percent": 39.412983246286856,
+          "y_percent": 54.5056454619143,
+          "x_m": 0.042422057675660145,
+          "y_m": 0.010507686914780639,
+          "cell": 9673
+        },
+        "cells_in_window": 9854
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            45,
+            65
+          ],
+          "true_percent": [
+            38.59329939319264,
+            62.750440335370264
+          ],
+          "error_percent": [
+            6.406700606807362,
+            2.2495596646297358
+          ],
+          "distance_percent": 6.790164309499062,
+          "error_m": [
+            0.016376066130449726,
+            0.002107938953656985
+          ],
+          "distance_m": 0.016511176473565023,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            38,
+            55
+          ],
+          "true_percent": [
+            39.412983246286856,
+            54.5056454619143
+          ],
+          "error_percent": [
+            -1.4129832462868563,
+            0.49435453808570173
+          ],
+          "distance_percent": 1.49696628673236,
+          "error_m": [
+            -0.003611704136420065,
+            0.0004632325179601203
+          ],
+          "distance_m": 0.003641289762533254,
+          "within_10_percent": true
+        }
+      }
+    },
+    {
+      "name": "describe-step000300",
+      "request_step": 300,
+      "window_m": [
+        [
+          -0.043899908431189676,
+          0.09080356668913495
+        ],
+        [
+          -0.01777915792200246,
+          0.0664891174567089
+        ]
+      ],
+      "status": "ok",
+      "arrived_at_step": 388,
+      "solver_stall_s": 0.003058789297938347,
+      "request_step_wall_s": 0.003437886,
+      "inference_wall_s": 3.136959658935666,
+      "wall_seconds": 110.37727734446526,
+      "arrived_while_running": true,
+      "request_equals_tested_builder": true,
+      "fields_equal_baseline_state": true,
+      "structured_output": {
+        "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity zone in the lower half. A complex interaction occurs between x=30% and x=100% at y=20% to y=40%, where velocity fluctuates and pressure shows significant spatial variation with multiple local minima and maxima.",
+        "fastest_flow_x_percent": 65,
+        "fastest_flow_y_percent": 45,
+        "lowest_pressure_x_percent": 68,
+        "lowest_pressure_y_percent": 33,
+        "uncertainties": "The exact physical nature of the obstacles or boundaries causing the pressure fluctuations and velocity gradients is not explicitly labeled."
+      },
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 68.74814513220929,
+          "y_percent": 42.71229762732136,
+          "x_m": 0.04870623214266052,
+          "y_m": 0.018213758663163503,
+          "cell": 13397
+        },
+        "lowest_pressure": {
+          "x_percent": 67.97069694919311,
+          "y_percent": 32.94516530628835,
+          "x_m": 0.04765898242287792,
+          "y_m": 0.009983164702272281,
+          "cell": 9581
+        },
+        "cells_in_window": 7694
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            65,
+            45
+          ],
+          "true_percent": [
+            68.74814513220929,
+            42.71229762732136
+          ],
+          "error_percent": [
+            -3.748145132209288,
+            2.2877023726786376
+          ],
+          "distance_percent": 4.391147239396972,
+          "error_m": [
+            -0.005048881745639197,
+            0.001927807335254148
+          ],
+          "distance_m": 0.005404410051366236,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            68,
+            33
+          ],
+          "true_percent": [
+            67.97069694919311,
+            32.94516530628835
+          ],
+          "error_percent": [
+            0.02930305080688811,
+            0.05483469371164773
+          ],
+          "distance_percent": 0.06217324521883416,
+          "error_m": [
+            3.9472227753152605e-05,
+            4.620825070000423e-05
+          ],
+          "distance_m": 6.077219098034225e-05,
+          "within_10_percent": true
+        }
+      }
+    }
+  ]
+}

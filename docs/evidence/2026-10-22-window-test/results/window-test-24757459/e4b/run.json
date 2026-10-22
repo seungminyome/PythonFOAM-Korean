@@ -1,0 +1,30 @@
+{
+  "model": "gemma-4-E4B-it-qat-q4_0-vision",
+  "endpoint": "http://127.0.0.1:27459/v1/chat/completions",
+  "server_note": "google/gemma-4-E4B-it-qat-q4_0-gguf@4b4a2c1d584be7264f87aac328a1bc739ce81b6c gemma-4-E4B_q4_0-it.gguf + gemma-4-E4B-it-mmproj.gguf; llama.cpp b11429 CUDA (llama-server-version.txt); NVIDIA RTX A6000; all layers on GPU; context 4096, batch 512, ubatch 512, image token limit 256, parallel 1, temperature 0",
+  "sets": [
+    "oct17-paired",
+    "oct17-paired-cold",
+    "oct20-replay",
+    "control-position-v1",
+    "control-position-v2",
+    "planted-position-v1",
+    "planted-position-v2",
+    "control-trend-v1",
+    "control-trend-v2",
+    "control-trend-v2own",
+    "flow-describe-v1",
+    "flow-describe-v2",
+    "flow-sequence-v1",
+    "flow-sequence-v2",
+    "flow-sequence-v2own",
+    "flow-window-v1",
+    "flow-window-v2"
+  ],
+  "limit": 0,
+  "timeout_s": 300.0,
+  "test_set": "/cluster/medbow/gscratch/syome/github_repos/picture-test-20261021/developed-window-test-20261022",
+  "test_set_manifest_sha256": "173a1fc0ac4f1dff265688334024fe80ffe668490a6a02d644b0679b5cc6075c",
+  "truth_sha256": "b6f87e1fa331551a625e863955aa26f54fea8c5ef75801bfa1fc5e090496e02b",
+  "started_unix_s": 1792690330.449255
+}

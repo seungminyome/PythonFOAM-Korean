@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed 82.53 m/s range; location unknown. No explicit coordinates provided in JSON or image.\",\n  \"possible_interpretation\": \"High SVD energy fraction indicates dominant flow pattern; low Courant does not imply low speed.\",\n  \"checks\": \"Missing force equilibrium data; no coordinate labels for max speed; image resolution limits verification.\"\n}",
+  "request_sha256": "b6409f93d4fd646d156f55d64a1bf37ca7c112504443567319eb3fb0c55a908d",
+  "request_bytes": 4888,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1027,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 85,
+    "prompt_tokens": 1373,
+    "total_tokens": 1458,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1373,
+    "prompt_ms": 638.714,
+    "prompt_per_token_ms": 0.46519592134013116,
+    "prompt_per_second": 2149.6319166324834,
+    "predicted_n": 85,
+    "predicted_ms": 668.1,
+    "predicted_per_token_ms": 7.953571428571429,
+    "predicted_per_second": 125.72968118545128
+  },
+  "structured_output": {
+    "observations": "Max speed 82.53 m/s range; location unknown. No explicit coordinates provided in JSON or image.",
+    "possible_interpretation": "High SVD energy fraction indicates dominant flow pattern; low Courant does not imply low speed.",
+    "checks": "Missing force equilibrium data; no coordinate labels for max speed; image resolution limits verification."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 1.3612686041742563,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

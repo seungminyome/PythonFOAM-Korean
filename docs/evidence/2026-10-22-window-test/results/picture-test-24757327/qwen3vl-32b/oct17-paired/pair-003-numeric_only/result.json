@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum speed |U| is 82.53 m/s; location is unknown. Image shows top panel |U|, bottom panel p, with x in [-1.55, 0.60] m, y in [0, 0.114] m, but no explicit x,\",\"possible_interpretation\": \"High |U| likely near domain edge or obstacle; pressure gradient may drive flow. SVD shows Ux dominates velocity variation. Residuals low, suggesting converged.\", \"checks\": \"Missing: force equilibrium, spatial max location, flow topology, boundary conditions, time-averaged fields.\"\n}",
+  "request_sha256": "f3893efbf57dfafa526eba1afceda2488d3330c27fb15046b4547e7da5758882",
+  "request_bytes": 4873,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1151,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 141,
+    "prompt_tokens": 1367,
+    "total_tokens": 1508,
+    "prompt_tokens_details": {
+      "cached_tokens": 1366
+    }
+  },
+  "server_timings": {
+    "cache_n": 1366,
+    "prompt_n": 1,
+    "prompt_ms": 52.218,
+    "prompt_per_token_ms": 52.218,
+    "prompt_per_second": 19.15048450725803,
+    "predicted_n": 141,
+    "predicted_ms": 7340.449,
+    "predicted_per_token_ms": 52.431778571428566,
+    "predicted_per_second": 19.072402791709337
+  },
+  "structured_output": {
+    "observations": "Maximum speed |U| is 82.53 m/s; location is unknown. Image shows top panel |U|, bottom panel p, with x in [-1.55, 0.60] m, y in [0, 0.114] m, but no explicit x,",
+    "possible_interpretation": "High |U| likely near domain edge or obstacle; pressure gradient may drive flow. SVD shows Ux dominates velocity variation. Residuals low, suggesting converged.",
+    "checks": "Missing: force equilibrium, spatial max location, flow topology, boundary conditions, time-averaged fields."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 7.449977779760957,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

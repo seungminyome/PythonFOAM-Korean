@@ -1,0 +1,131 @@
+{
+  "parent_pid": 2717065,
+  "run_id": "pod-llm-async.UM1RyJ-sweep/describe-step004000",
+  "step": 4000,
+  "time_s": 0.12000000000002001,
+  "mode": "describe",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.2,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "callback_started_at": "2026-10-22T16:39:06.634314+00:00",
+  "request_step": 4000,
+  "solver_stall_s": 0.004418283700942993,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.5768757797777653,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_observation/step-004000",
+    "step": 4000,
+    "time_s": 0.12000000000002001,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        -0.15317885903295345,
+        0.13571375707381259
+      ],
+      "y": [
+        0.004872200846969824,
+        0.08661938227966293
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046805
+      ],
+      "y": [
+        5.781735398474376e-06,
+        0.11429523559299273
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_observation/step-004000/fields.npz",
+    "fields_sha256": "7cfaebd4be6ff36791b901e2e21b697471504927eb3a89c49017f3094d2ce4c8",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_observation/step-004000/U.png",
+        "sha256": "a362d7357a108d54513badb63623ad49d47db1d089678d3ab210fb8e1fce255e",
+        "bytes": 67399,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          0.042012486751318474,
+          39.43983581604272
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step004000/llm_observation/step-004000/p.png",
+        "sha256": "94c1f099c02b4e6f713634b11ac4a125a367505b489b75fed73c0ed854cff030",
+        "bytes": 68421,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -420.62206495001027,
+          45.185931278137666
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.5768757797777653
+  },
+  "request_before_at": "2026-10-22T16:39:07.348815+00:00",
+  "arrived_at_step": 4092,
+  "worker_reaped": true,
+  "ipc_select_calls": 97,
+  "response_after_at": "2026-10-22T16:39:10.779263+00:00",
+  "callback_elapsed_s": 4.145058931782842,
+  "elapsed_since_request_s": 3.394934918731451,
+  "worker_wait_elapsed_s": 4.136725632473826,
+  "cleanup_elapsed_before_result_write_s": 0.02275325544178486,
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the lower right quadrant, specifically around x=65% and y=20%. The pressure is lowest in a localized area near x=68% and y=10%, corresponding to a region of high velocity and complex flow structure. Most of the upper domain maintains a moderate, uniform velocity and pressure.\",\n  \"fastest_flow_x_percent\": 65,\n  \"fastest_flow_y_percent\": 20,\n  \"lowest_pressure_x_percent\": 68,\n  \"lowest_pressure_y_percent\": 10,\n  \"uncertainties\": \"The exact magnitude of the pressure and velocity values are unknown without the specific numerical values from the color bars; the 3D structure of the flow is not visible in these 2D snapshots.\"\n}",
+  "request_sha256": "fe506e29d10c6088eaa0bc492bc3230b70e613660668c3ba51402783c5b423cb",
+  "request_bytes": 183995,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1368,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 198,
+    "prompt_tokens": 1063,
+    "total_tokens": 1261,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 536.445,
+    "prompt_per_token_ms": 0.5046519285042333,
+    "prompt_per_second": 1981.5638136248822,
+    "predicted_n": 198,
+    "predicted_ms": 2669.734,
+    "predicted_per_token_ms": 13.551949238578679,
+    "predicted_per_second": 73.79012291112149
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the lower right quadrant, specifically around x=65% and y=20%. The pressure is lowest in a localized area near x=68% and y=10%, corresponding to a region of high velocity and complex flow structure. Most of the upper domain maintains a moderate, uniform velocity and pressure.",
+    "fastest_flow_x_percent": 65,
+    "fastest_flow_y_percent": 20,
+    "lowest_pressure_x_percent": 68,
+    "lowest_pressure_y_percent": 10,
+    "uncertainties": "The exact magnitude of the pressure and velocity values are unknown without the specific numerical values from the color bars; the 3D structure of the flow is not visible in these 2D snapshots."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.385444451123476
+}

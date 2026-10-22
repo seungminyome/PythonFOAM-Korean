@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum speed |U| is near x=0.5 m, y=0.1 m, with value ~82.5 m/s. The top panel shows |U| in m/s; color bar indicates max at 82.5 m/s, located at right edge of域\",\n  \"possible_interpretation\": \"High speed at right boundary suggests outflow or jet; pressure gradient (bottom panel) supports flow direction from left to right. SVD shows dominant Ux mode, 9\",\n  \"checks\": \"Missing: force equilibrium, velocity field divergence, boundary condition specification, time-averaged flow structure. SVD energy fraction high but not proof of\" }",
+  "request_sha256": "732eab19569177f1d454c93d4545fc1de08f409bf1e9541813a61eea375643cb",
+  "request_bytes": 50876,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1223,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 151,
+    "prompt_tokens": 1589,
+    "total_tokens": 1740,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1589,
+    "prompt_ms": 1812.874,
+    "prompt_per_token_ms": 1.1408898678414097,
+    "prompt_per_second": 876.5087921168266,
+    "predicted_n": 151,
+    "predicted_ms": 7959.566,
+    "predicted_per_token_ms": 53.06377333333333,
+    "predicted_per_second": 18.845248597725053
+  },
+  "structured_output": {
+    "observations": "Maximum speed |U| is near x=0.5 m, y=0.1 m, with value ~82.5 m/s. The top panel shows |U| in m/s; color bar indicates max at 82.5 m/s, located at right edge of域",
+    "possible_interpretation": "High speed at right boundary suggests outflow or jet; pressure gradient (bottom panel) supports flow direction from left to right. SVD shows dominant Ux mode, 9",
+    "checks": "Missing: force equilibrium, velocity field divergence, boundary condition specification, time-averaged flow structure. SVD energy fraction high but not proof of"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 9.838383413851261,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

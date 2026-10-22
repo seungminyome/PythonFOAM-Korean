@@ -1,0 +1,131 @@
+{
+  "parent_pid": 2717121,
+  "run_id": "pod-llm-async.UM1RyJ-sweep/describe-step004500",
+  "step": 4500,
+  "time_s": 0.12250000000002251,
+  "mode": "describe",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.2,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "callback_started_at": "2026-10-22T16:48:02.981797+00:00",
+  "request_step": 4500,
+  "solver_stall_s": 0.00423581525683403,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.5783585365861654,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_observation/step-004500",
+    "step": 4500,
+    "time_s": 0.12250000000002251,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        -0.035764654109898486,
+        0.07406001193776351
+      ],
+      "y": [
+        -0.0010768897487515687,
+        0.054584044079481364
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046805
+      ],
+      "y": [
+        5.781735398474376e-06,
+        0.11429523559299273
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_observation/step-004500/fields.npz",
+    "fields_sha256": "5a54627b53568473b87a3a61fdab5262c038572cc90fef751413dd82bca11ce4",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_observation/step-004500/U.png",
+        "sha256": "1d65c119f625c34d1e5c5887510bd64e149d7b2dfe9d2c3659aa2af9b81e18e7",
+        "bytes": 73140,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          0.0018100886189410007,
+          38.2630478817325
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ-sweep/describe-step004500/llm_observation/step-004500/p.png",
+        "sha256": "41dd6244db75542f5cf7dec048bc3bc479140032d5098e23c8b1805d56589f46",
+        "bytes": 70430,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -373.59947181955187,
+          8.204779963526759
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.5783585365861654
+  },
+  "request_before_at": "2026-10-22T16:48:03.709347+00:00",
+  "arrived_at_step": 4575,
+  "worker_reaped": true,
+  "ipc_select_calls": 80,
+  "response_after_at": "2026-10-22T16:48:06.983855+00:00",
+  "callback_elapsed_s": 4.002169333398342,
+  "elapsed_since_request_s": 3.2434465885162354,
+  "worker_wait_elapsed_s": 3.987634403631091,
+  "cleanup_elapsed_before_result_write_s": 0.027860771864652634,
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half and a lower-velocity region in the bottom right. A distinct low-pressure zone is visible in the lower right quadrant, specifically around the center of the bottom-right active area. The flow appears to be moving from left to right with significant variation in the lower half.\",\n  \"fastest_flow_x_percent\": 72,\n  \"fastest_flow_y_percent\": 38,\n  \"lowest_pressure_x_percent\": 72,\n  \"lowest_pressure_y_percent\": 22,\n  \"uncertainties\": \"The exact velocity and pressure values at specific coordinates are not provided, only the relative ranges. The physical nature of the boundaries and the specific fluid properties are not specified.\"\n}",
+  "request_sha256": "52a4ced936423c94a6af4d60520dbc5bbc8bf3bdc9f0c790684fa0ae1ea4ad48",
+  "request_bytes": 194331,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1387,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 186,
+    "prompt_tokens": 1067,
+    "total_tokens": 1253,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1067,
+    "prompt_ms": 543.719,
+    "prompt_per_token_ms": 0.5095773195876289,
+    "prompt_per_second": 1962.4107305427985,
+    "predicted_n": 186,
+    "predicted_ms": 2506.024,
+    "predicted_per_token_ms": 13.546075675675675,
+    "predicted_per_second": 73.82211822392763
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper half and a lower-velocity region in the bottom right. A distinct low-pressure zone is visible in the lower right quadrant, specifically around the center of the bottom-right active area. The flow appears to be moving from left to right with significant variation in the lower half.",
+    "fastest_flow_x_percent": 72,
+    "fastest_flow_y_percent": 38,
+    "lowest_pressure_x_percent": 72,
+    "lowest_pressure_y_percent": 22,
+    "uncertainties": "The exact velocity and pressure values at specific coordinates are not provided, only the relative ranges. The physical nature of the boundaries and the specific fluid properties are not specified."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.2294320669025183
+}

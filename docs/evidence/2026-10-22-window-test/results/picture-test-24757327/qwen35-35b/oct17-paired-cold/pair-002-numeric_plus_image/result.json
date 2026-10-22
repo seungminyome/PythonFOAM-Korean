@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed 82.53 m/s at x=0.501 m, y=0.114 m (domain corner).\",\n  \"possible_interpretation\": \"High-speed region near right boundary; pressure gradient may drive flow.\",\n  \"checks\": \"No force equilibrium; SVD shows dominant Ux pattern; Courant max 0.209 not low speed.\"\n}",
+  "request_sha256": "ed81ae6a225d215594c60825edea7d26c32896f53ad8a2698740e757ed791a99",
+  "request_bytes": 50870,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 951,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 96,
+    "prompt_tokens": 1595,
+    "total_tokens": 1691,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1595,
+    "prompt_ms": 793.574,
+    "prompt_per_token_ms": 0.49753855799373037,
+    "prompt_per_second": 2009.8944773896324,
+    "predicted_n": 96,
+    "predicted_ms": 755.595,
+    "predicted_per_token_ms": 7.953631578947369,
+    "predicted_per_second": 125.72873033834263
+  },
+  "structured_output": {
+    "observations": "Max speed 82.53 m/s at x=0.501 m, y=0.114 m (domain corner).",
+    "possible_interpretation": "High-speed region near right boundary; pressure gradient may drive flow.",
+    "checks": "No force equilibrium; SVD shows dominant Ux pattern; Courant max 0.209 not low speed."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 1.6129189729690552,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

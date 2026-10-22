@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum |U| is 82.5275 m/s. Location is unknown as no specific coordinates for the peak value are provided in the JSON or image.\",\n  \"possible_interpretation\": \"High velocity likely occurs near the exit/shear layer at x=0 m, but exact coordinates are not explicitly labeled.\",\n  \"checks\": \"Missing: coordinate mapping for max |U| and spatial gradient analysis.\"\n}",
+  "request_sha256": "cb21dd4d5a837513b60865e0bb307337dd9ae390afed296e52190d03f31b4336",
+  "request_bytes": 50856,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1043,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 1572,
+    "total_tokens": 1675,
+    "prompt_tokens_details": {
+      "cached_tokens": 1571
+    }
+  },
+  "server_timings": {
+    "cache_n": 1571,
+    "prompt_n": 1,
+    "prompt_ms": 73.135,
+    "prompt_per_token_ms": 73.135,
+    "prompt_per_second": 13.673343816230258,
+    "predicted_n": 103,
+    "predicted_ms": 809.924,
+    "predicted_per_token_ms": 7.940431372549019,
+    "predicted_per_second": 125.93774230668558
+  },
+  "structured_output": {
+    "observations": "Maximum |U| is 82.5275 m/s. Location is unknown as no specific coordinates for the peak value are provided in the JSON or image.",
+    "possible_interpretation": "High velocity likely occurs near the exit/shear layer at x=0 m, but exact coordinates are not explicitly labeled.",
+    "checks": "Missing: coordinate mapping for max |U| and spatial gradient analysis."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 0.9489613156765699,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

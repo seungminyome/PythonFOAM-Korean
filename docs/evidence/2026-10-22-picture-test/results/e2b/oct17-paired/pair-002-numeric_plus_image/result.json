@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed |U| is 82.52751611538334 m/s at x=0.5 m, y=0.11429523559299273 m.\",\n  \"possible_interpretation\": \"The maximum velocity is observed near the center of the domain.\",\n  \"checks\": \"Missing evidence for force balance check.\"\n}",
+  "request_sha256": "a68849311bb7c7c93bea1bbfb45a7c8b08bc191f3955f7a0dc51479e1e4499ca",
+  "request_bytes": 50848,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 900,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 106,
+    "prompt_tokens": 1568,
+    "total_tokens": 1674,
+    "prompt_tokens_details": {
+      "cached_tokens": 1567
+    }
+  },
+  "server_timings": {
+    "cache_n": 1567,
+    "prompt_n": 1,
+    "prompt_ms": 7.538,
+    "prompt_per_token_ms": 7.538,
+    "prompt_per_second": 132.66118333775538,
+    "predicted_n": 106,
+    "predicted_ms": 481.382,
+    "predicted_per_token_ms": 4.584590476190476,
+    "predicted_per_second": 218.1219904358701
+  },
+  "structured_output": {
+    "observations": "Max speed |U| is 82.52751611538334 m/s at x=0.5 m, y=0.11429523559299273 m.",
+    "possible_interpretation": "The maximum velocity is observed near the center of the domain.",
+    "checks": "Missing evidence for force balance check."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 0.5549924243241549,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

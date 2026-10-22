@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed |U| is 82.53 m/s at unknown coordinates. Kinematic pressure ranges from -9362.83 to 12901.93 m^2/s^2.\",\n  \"possible_interpretation\": \"The high leading energy fraction in Ux suggests a dominant flow pattern in the x-direction.\",\n  \"checks\": \"Missing evidence for force equilibrium and specific maximum speed location.\"\n}",
+  "request_sha256": "acaea6a162c3adb8b68c395ed537213cf3bf78d09d18325e99eefbaeb5027165",
+  "request_bytes": 4870,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1003,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 108,
+    "prompt_tokens": 1462,
+    "total_tokens": 1570,
+    "prompt_tokens_details": {
+      "cached_tokens": 1461
+    }
+  },
+  "server_timings": {
+    "cache_n": 1461,
+    "prompt_n": 1,
+    "prompt_ms": 14.467,
+    "prompt_per_token_ms": 14.467,
+    "prompt_per_second": 69.12283127116886,
+    "predicted_n": 108,
+    "predicted_ms": 789.948,
+    "predicted_per_token_ms": 7.382691588785047,
+    "predicted_per_second": 135.4519537994906
+  },
+  "structured_output": {
+    "observations": "Max speed |U| is 82.53 m/s at unknown coordinates. Kinematic pressure ranges from -9362.83 to 12901.93 m^2/s^2.",
+    "possible_interpretation": "The high leading energy fraction in Ux suggests a dominant flow pattern in the x-direction.",
+    "checks": "Missing evidence for force equilibrium and specific maximum speed location."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 0.8601467162370682,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

@@ -1,0 +1,429 @@
+{
+  "set": "oct20-replay",
+  "attempted": 24,
+  "successful": 24,
+  "latency_s": [
+    0.8363412208855152,
+    0.8266549576073885,
+    0.8441258873790503,
+    0.8152141720056534,
+    0.749264033511281,
+    0.780677504837513,
+    0.8086393047124147,
+    0.7481100838631392,
+    0.7802650686353445,
+    0.7619967889040709,
+    0.8866658676415682,
+    0.9759406596422195,
+    0.7584779281169176,
+    0.8228361718356609,
+    0.8652999140322208,
+    0.6456585731357336,
+    0.8178243599832058,
+    0.8601258080452681,
+    1.0736002121120691,
+    0.7794821560382843,
+    0.7750740610063076,
+    0.7773710135370493,
+    0.59745510853827,
+    0.5965807233005762
+  ],
+  "prompt_tokens": [
+    584,
+    584,
+    584,
+    584,
+    584,
+    584,
+    584,
+    584,
+    584,
+    556,
+    556,
+    556,
+    556,
+    556,
+    556,
+    556,
+    556,
+    556,
+    907,
+    907,
+    907,
+    880,
+    880,
+    880
+  ],
+  "completion_tokens": [
+    143,
+    148,
+    153,
+    159,
+    146,
+    153,
+    159,
+    146,
+    153,
+    135,
+    164,
+    183,
+    135,
+    161,
+    171,
+    123,
+    161,
+    171,
+    165,
+    145,
+    145,
+    107,
+    106,
+    106
+  ],
+  "cache_n": [
+    0,
+    266,
+    266,
+    579,
+    579,
+    579,
+    579,
+    579,
+    579,
+    266,
+    266,
+    266,
+    266,
+    551,
+    551,
+    551,
+    551,
+    551,
+    0,
+    906,
+    906,
+    273,
+    879,
+    879
+  ],
+  "by_mode": {
+    "describe": {
+      "attempted": 18,
+      "successful": 18,
+      "median_latency_s": 0.8165192659944296,
+      "median_prompt_tokens": 570.0,
+      "fastest_flow": {
+        "within_10_percent": 0,
+        "median_distance_percent": 31.24993061226835,
+        "distances_percent": [
+          12.934305677035198,
+          12.835672078604759,
+          14.130753359878483,
+          44.67892814674417,
+          17.820933077792528,
+          12.744955535777095,
+          44.67892814674417,
+          17.820933077792528,
+          12.744955535777095,
+          15.313016588342023,
+          69.46848263426537,
+          55.370769926916665,
+          15.313016588342023,
+          69.46848263426537,
+          55.370769926916665,
+          80.28417948057928,
+          69.46848263426537,
+          55.370769926916665
+        ]
+      },
+      "lowest_pressure": {
+        "within_10_percent": 0,
+        "median_distance_percent": 66.5784781256661,
+        "distances_percent": [
+          62.1295365057405,
+          62.27464967779838,
+          78.00241214318027,
+          44.75471070925309,
+          62.27464967779838,
+          72.37596616286419,
+          44.75471070925309,
+          62.27464967779838,
+          72.37596616286419,
+          15.308648462609142,
+          70.88230657353382,
+          90.9670026684139,
+          15.308648462609142,
+          70.88230657353382,
+          90.9670026684139,
+          15.308648462609142,
+          70.88230657353382,
+          90.9670026684139
+        ]
+      },
+      "constant_answer_baseline": {
+        "fastest_flow": 18,
+        "lowest_pressure": 18
+      }
+    },
+    "sequence": {
+      "attempted": 6,
+      "successful": 6,
+      "median_latency_s": 0.7762225372716784,
+      "median_prompt_tokens": 893.5,
+      "max_speed_trend": {
+        "match": 2,
+        "cannot_tell": 0,
+        "answers": [
+          "increasing",
+          "decreasing",
+          "decreasing",
+          "increasing",
+          "increasing",
+          "increasing"
+        ],
+        "truth": [
+          "decreasing",
+          "decreasing",
+          "decreasing",
+          "decreasing",
+          "decreasing",
+          "decreasing"
+        ]
+      },
+      "min_pressure_trend": {
+        "match": 6,
+        "cannot_tell": 0,
+        "answers": [
+          "less_negative",
+          "less_negative",
+          "less_negative",
+          "less_negative",
+          "less_negative",
+          "less_negative"
+        ],
+        "truth": [
+          "less_negative",
+          "less_negative",
+          "less_negative",
+          "less_negative",
+          "less_negative",
+          "less_negative"
+        ]
+      },
+      "fastest_flow_region": {
+        "match": 6,
+        "cannot_tell": 0,
+        "answers": [
+          "same_place",
+          "same_place",
+          "same_place",
+          "same_place",
+          "same_place",
+          "same_place"
+        ],
+        "truth": [
+          "same_place",
+          "same_place",
+          "same_place",
+          "same_place",
+          "same_place",
+          "same_place"
+        ]
+      },
+      "constant_answer_baseline": {
+        "max_speed_trend": 6,
+        "min_pressure_trend": 6,
+        "fastest_flow_region": 6
+      }
+    }
+  },
+  "by_group": {
+    "describe-full": {
+      "attempted": 9,
+      "successful": 9,
+      "median_latency_s": 0.8086393047124147,
+      "median_prompt_tokens": 584,
+      "fastest_flow": {
+        "within_10_percent": 0,
+        "median_distance_percent": 14.130753359878483,
+        "distances_percent": [
+          12.934305677035198,
+          12.835672078604759,
+          14.130753359878483,
+          44.67892814674417,
+          17.820933077792528,
+          12.744955535777095,
+          44.67892814674417,
+          17.820933077792528,
+          12.744955535777095
+        ]
+      },
+      "lowest_pressure": {
+        "within_10_percent": 0,
+        "median_distance_percent": 62.27464967779838,
+        "distances_percent": [
+          62.1295365057405,
+          62.27464967779838,
+          78.00241214318027,
+          44.75471070925309,
+          62.27464967779838,
+          72.37596616286419,
+          44.75471070925309,
+          62.27464967779838,
+          72.37596616286419
+        ]
+      },
+      "constant_answer_baseline": {
+        "fastest_flow": 9,
+        "lowest_pressure": 9
+      }
+    },
+    "describe-window": {
+      "attempted": 9,
+      "successful": 9,
+      "median_latency_s": 0.8228361718356609,
+      "median_prompt_tokens": 556,
+      "fastest_flow": {
+        "within_10_percent": 0,
+        "median_distance_percent": 55.370769926916665,
+        "distances_percent": [
+          15.313016588342023,
+          69.46848263426537,
+          55.370769926916665,
+          15.313016588342023,
+          69.46848263426537,
+          55.370769926916665,
+          80.28417948057928,
+          69.46848263426537,
+          55.370769926916665
+        ]
+      },
+      "lowest_pressure": {
+        "within_10_percent": 0,
+        "median_distance_percent": 70.88230657353382,
+        "distances_percent": [
+          15.308648462609142,
+          70.88230657353382,
+          90.9670026684139,
+          15.308648462609142,
+          70.88230657353382,
+          90.9670026684139,
+          15.308648462609142,
+          70.88230657353382,
+          90.9670026684139
+        ]
+      },
+      "constant_answer_baseline": {
+        "fastest_flow": 9,
+        "lowest_pressure": 9
+      }
+    },
+    "sequence-full": {
+      "attempted": 3,
+      "successful": 3,
+      "median_latency_s": 0.7794821560382843,
+      "median_prompt_tokens": 907,
+      "max_speed_trend": {
+        "match": 2,
+        "cannot_tell": 0,
+        "answers": [
+          "increasing",
+          "decreasing",
+          "decreasing"
+        ],
+        "truth": [
+          "decreasing",
+          "decreasing",
+          "decreasing"
+        ]
+      },
+      "min_pressure_trend": {
+        "match": 3,
+        "cannot_tell": 0,
+        "answers": [
+          "less_negative",
+          "less_negative",
+          "less_negative"
+        ],
+        "truth": [
+          "less_negative",
+          "less_negative",
+          "less_negative"
+        ]
+      },
+      "fastest_flow_region": {
+        "match": 3,
+        "cannot_tell": 0,
+        "answers": [
+          "same_place",
+          "same_place",
+          "same_place"
+        ],
+        "truth": [
+          "same_place",
+          "same_place",
+          "same_place"
+        ]
+      },
+      "constant_answer_baseline": {
+        "max_speed_trend": 3,
+        "min_pressure_trend": 3,
+        "fastest_flow_region": 3
+      }
+    },
+    "sequence-window": {
+      "attempted": 3,
+      "successful": 3,
+      "median_latency_s": 0.59745510853827,
+      "median_prompt_tokens": 880,
+      "max_speed_trend": {
+        "match": 0,
+        "cannot_tell": 0,
+        "answers": [
+          "increasing",
+          "increasing",
+          "increasing"
+        ],
+        "truth": [
+          "decreasing",
+          "decreasing",
+          "decreasing"
+        ]
+      },
+      "min_pressure_trend": {
+        "match": 3,
+        "cannot_tell": 0,
+        "answers": [
+          "less_negative",
+          "less_negative",
+          "less_negative"
+        ],
+        "truth": [
+          "less_negative",
+          "less_negative",
+          "less_negative"
+        ]
+      },
+      "fastest_flow_region": {
+        "match": 3,
+        "cannot_tell": 0,
+        "answers": [
+          "same_place",
+          "same_place",
+          "same_place"
+        ],
+        "truth": [
+          "same_place",
+          "same_place",
+          "same_place"
+        ]
+      },
+      "constant_answer_baseline": {
+        "max_speed_trend": 3,
+        "min_pressure_trend": 3,
+        "fastest_flow_region": 3
+      }
+    }
+  },
+  "interpretation": "Counts are out of attempted requests. Different places or states are separate cases; the flow states are from one run, so neighbouring states are alike, the fastest flow and the lowest pressure sit at the step corner in every state, and the flow trend keys hardly vary: compare with constant_answer_baseline. Repeats of one request (oct20-replay) are not separate cases. Positions are percent of the plotted range; 10 percent is the distance used on 2026-10-20. Synthetic controls test reading a simple picture, not physics."
+}

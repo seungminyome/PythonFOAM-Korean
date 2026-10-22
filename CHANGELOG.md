@@ -2,6 +2,26 @@
 
 날짜는 실행이나 변경이 있었던 날입니다. 기록된 실행에는 그 실행을 만든 코드 버전을 적었습니다.
 
+## 2026-10-22, 그림 읽기 시험 (2026-10-21 준비, 코드 `58e00d9`, 이 저장소의 `7435513`, Slurm 작업 24756981로 실행)
+
+- `llm_demo/`에 새로: `readable_image.py`(그림 한 장에 필드 하나, 축은 그린 범위의 퍼센트와 10 %마다
+  격자선, 색 막대에 최솟값부터 최댓값까지 값 다섯 개), `foam_fields.py`(ASCII OpenFOAM 필드와 empty
+  패치 다각형 읽기), `picture_test.py`(정해 둔 그림 요청 묶음을 만들고, 확인하고, 보내고, 모델에게
+  보이지 않은 정답으로 채점해 보고서를 냄),
+  `test_picture_test.py`(테스트 13개, 전체 83개). `llm_demo/hpc/`에 `models.tsv`(Gemma 4 모델 일곱 개,
+  리비전과 해시 고정), `fetch_models.sh`, `picture_test.slurm`. `start_server.sh`와 `stop_server.sh`는
+  모델·문맥·batch·상태 폴더를 바꿀 수 있고, 바꾸지 않으면 예전과 같음.
+- 실행: NVIDIA RTX A6000 한 장에서 Gemma 4 모델 일곱 개(E2B 세 가지, E4B, 12B, 26B-A4B, 31B)에 요청
+  308개씩. 보고서 [docs/results-20261022.md](docs/results-20261022.md), 정답과 독립 재채점이 든 기록
+  [docs/evidence/2026-10-22-picture-test/](docs/evidence/2026-10-22-picture-test/README.md), 두 압축
+  파일은 영문 저장소의 `picture-test-2026-10-22` 릴리스.
+- README, 근거 목록, `hpc/README.md`, `llm_demo/README.md`, 첫 화면(`index.html`), 작업 기록에 결과를
+  넣고 남은 문제와 다음 단계를 고침. 그림으로 보는 10월 17일 결과와 그림 해설 두 쪽의 안내문에 한
+  줄씩 더함. `hpc/README.md`와 `models.tsv`의 설명: e2b-qat는 프로젝터 파일도 다르다는 것(e2b-bf16처럼
+  BF16), 저장 상태에서 같은 것은 흐름이 아니라 추세 단어라는 것. `Makefile`: 테스트는 약 30초.
+- 입력 묶음을 클러스터로 옮기는 데 쓴 영문 저장소의 임시 사전 릴리스 `picture-test-input-20261021`은
+  지움. 그 묶음은 새 릴리스에 있음.
+
 ## 2026-10-20, 12B 재생 공개 (2026-10-19 실행, 코드 `934da23`, 이 저장소의 `f4a99f3`)
 
 - NVIDIA A30에서 Gemma 4 12B QAT로 한 10월 19일 쌍별 재생의 기록을

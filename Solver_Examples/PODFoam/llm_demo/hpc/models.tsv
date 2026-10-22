@@ -3,8 +3,8 @@
 # POD_LLM_RUNTIME. "." for 12b is where setup_12b.sh puts the 12B files. e2b is the
 # E2B file pair used on the CPU since 2026-10-13 (projector Q8_0); e2b-bf16 is the same
 # weights with the BF16 projector of the same repository; the others are Google QAT
-# Q4_0 builds with BF16 projectors. e2b vs e2b-bf16 isolates the projector, e2b-bf16
-# vs e2b-qat the QAT weights.
+# Q4_0 builds, each with Google's own BF16 projector. e2b vs e2b-bf16 isolates the
+# projector; e2b-bf16 vs e2b-qat changes the weights and the projector file (both BF16).
 e2b	gemma-4-E2B-it-Q4_0-vision	ggml-org/gemma-4-E2B-it-GGUF	b4243c156154b6dca9324415f8c7ccc098b4aed1	gemma-4-E2B-it-Q4_0.gguf	8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52	mmproj-gemma-4-E2B-it-Q8_0.gguf	9406f99c16d68cda4f1f0552192dcc99021ea1fc6d2fd50b1dc3ccf30d04b292	models/e2b
 e2b-bf16	gemma-4-E2B-it-Q4_0-bf16proj-vision	ggml-org/gemma-4-E2B-it-GGUF	b4243c156154b6dca9324415f8c7ccc098b4aed1	gemma-4-E2B-it-Q4_0.gguf	8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52	mmproj-gemma-4-E2B-it-BF16.gguf	711e1e8f43fa0664adbac493129be1e6c25b81af4b4cdea97c7d798b25c0a3a4	models/e2b
 e2b-qat	gemma-4-E2B-it-qat-q4_0-vision	google/gemma-4-E2B-it-qat-q4_0-gguf	675cff42a74c774d6cb76f76d8eacb49b48c9b93	gemma-4-E2B_q4_0-it.gguf	fa401b55b07ee70a54c6dae3903c783a6e65064312529ea57175cb5f8dec6634	gemma-4-E2B-it-mmproj.gguf	021059cce659fe7f9170d5599761d7bbaf644b798dab9503aca30dc43e6beb14	models/e2b-qat

@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed |U| is 82.53 m/s. Position is unknown as the image lacks specific coordinate labels for the peak.\",\n  \"possible_interpretation\": \"High velocity is concentrated near x=0.00 m, likely a jet or wake, but exact coordinates are not provided.\",\n  \"checks\": \"Missing coordinate labels for peak; SVD shows dominant Ux pattern; residuals are not force balance.\"\n}",
+  "request_sha256": "70f0f4253986e4f336450bb5c7caa77e9211b7d088293b4eeedba3495145ffef",
+  "request_bytes": 50873,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1050,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 104,
+    "prompt_tokens": 1572,
+    "total_tokens": 1676,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1572,
+    "prompt_ms": 747.46,
+    "prompt_per_token_ms": 0.47548346055979646,
+    "prompt_per_second": 2103.122575121077,
+    "predicted_n": 104,
+    "predicted_ms": 1419.449,
+    "predicted_per_token_ms": 13.781058252427185,
+    "predicted_per_second": 72.56336789838873
+  },
+  "structured_output": {
+    "observations": "Max speed |U| is 82.53 m/s. Position is unknown as the image lacks specific coordinate labels for the peak.",
+    "possible_interpretation": "High velocity is concentrated near x=0.00 m, likely a jet or wake, but exact coordinates are not provided.",
+    "checks": "Missing coordinate labels for peak; SVD shows dominant Ux pattern; residuals are not force balance."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.229166692122817,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

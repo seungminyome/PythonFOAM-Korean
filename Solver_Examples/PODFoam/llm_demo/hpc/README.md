@@ -14,6 +14,7 @@ E2B로 잰 것을 Gemma 4 12B QAT Q4_0으로 클러스터 GPU에서 다시 재�
 | `start_server.sh` / `stop_server.sh` | 노드 GPU에서 llama-server를 E2B와 같은 설정(문맥 2048, 슬롯 1, 이미지 토큰 256 요청, reasoning off)으로 띄움. 모든 층을 GPU에. `server.pid` 기록. 12B 프로젝터에서는 `--ubatch-size`가 128이라서 서버가 이미지 토큰 상한을 128로 낮춤. |
 | `replay_12b.slurm` | 2026-10-17의 5단계 상태로 쌍별 재생: 수치만 vs 수치+그림 세 쌍, 시드 20261017. OpenFOAM 불필요. |
 | `demo_12b.slurm` | 연결 검증, 솔버 다섯 조건, 검증, 새 상태의 쌍별 재생. 노드에 OpenFOAM v2106 필요. |
+| `picture_test.slurm`, `fetch_models.sh`, `models.tsv` | 여러 크기의 모델로 하는 그림 읽기 시험(2026-10-21 준비, 2026-10-22 실행). [아래](#그림-읽기-시험-2026-10-22-실행) 참고. |
 | `build_llama_cuda.sh` | 예비: 미리 빌드된 바이너리가 안 돌면(glibc가 오래됨, CUDA 버전 다름) b11429를 소스에서 CUDA로 빌드. |
 
 ## 파일을 클러스터에 올리는 법
@@ -69,6 +70,85 @@ sbatch Solver_Examples/PODFoam/llm_demo/hpc/demo_12b.slurm     # OpenFOAM v2106�
 - 각 결과의 `server_timings.cache_n`: 0이나 1이면 프롬프트 캐시가 비어 있었다는 뜻(새로 띄운
   서버에서는 0, 12B 실행이 그랬음).
 
+## 그림 읽기 시험 (2026-10-22 실행)
+
+`picture_test.slurm`은 미리 만든 요청 308개를 `MODELS`의 모델마다, GPU 하나에서 차례로
+보냅니다. 요청 묶음은 클러스터 밖의 컴퓨터에서 `picture_test.py build`로 만들고(matplotlib 필요)
+클러스터로 옮깁니다. 작업 자체에는 numpy가 있는 Python 3만 있으면 되고 OpenFOAM은
+필요 없습니다.
+
+| 묶음 | 요청 | 내용 |
+|---|---:|---|
+| `oct17-paired` | 6 | 2026-10-17 쌍별 요청. 모델 이름만 바뀜 |
+| `oct17-paired-cold` | 6 | 같은 여섯 개에 `cache_prompt: false` |
+| `oct20-replay` | 24 | 2026-10-20 describe·sequence 요청. 모델 이름만 바뀜 |
+| `control-position-v1`, `-v2` | 각 32 | 정해 둔 자리에 \|U\|의 밝은 점 하나와 p의 어두운 점 하나를 넣은 합성 필드. 전체 영역과 창 |
+| `planted-position-v1`, `-v2` | 각 32 | 저장 상태(1000·2500·4000·5500걸음)에 좁은 \|U\| 봉우리와 p 골을 하나씩, 계단 모서리에서 15 % 이상 떨어진 곳에 넣은 것 |
+| `control-trend-v1`, `-v2`, `-v2own` | 각 18 | 세 시각의 합성 필드. 속력 추세 × 압력 추세 × 점의 움직임 조합마다 한 번 |
+| `flow-describe-v1`, `-v2` | 각 24 | 6000걸음까지 500걸음마다의 저장 상태. 전체 영역과 창 |
+| `flow-sequence-v1`, `-v2`, `-v2own` | 각 14 | 저장 상태 세 개씩 일곱 묶음. 전체 영역과 창 |
+
+v1은 솔버가 보내는 그림입니다(`pod_image.py`: 패널 두 개, 640x360, 색 범위는 그림마다).
+v2는 `readable_image.py`가 그립니다. 그림 한 장에 필드 하나만 1024x576 크기로 그리고, 축은 그린 범위의
+퍼센트로 적고 10 %마다 격자선을 그으며, 색 막대에는 최솟값부터 최댓값까지 값 다섯 개를 적습니다.
+sequence에서는 모든 프레임이 같은 색 범위를 씁니다. v2own은 v2에서 색 범위만 그림마다 따로 잡은
+것이고, 프롬프트도 색 범위 문장과 추세를 무엇으로 판단하라는 말(색인지 색 막대 숫자인지)만
+다릅니다. 그래서 v2와 v2own을 비교하면 모든 프레임이 색 범위 하나를 같이 쓰는 것의 효과만 따로 볼
+수 있습니다. v2는 v1보다 이미지 토큰을 다섯 배쯤 더 씁니다. 새 묶음은 `cache_prompt: false`를 보내서
+프롬프트를 매번 처음부터 처리합니다. 흐름 상태는 모델 요청 없이 돌린 PODFoam 실행에서 왔습니다
+(5e-7 s 6000걸음, 250걸음마다 저장. 앞의 저장 시각 12개는 2026-10-20 실행과 같음). 모든 흐름
+상태에서 가장 빠른 곳과 압력이 가장 낮은 곳은 계단 모서리이고, 추세 단어도 거의 모든 연속 그림에서
+같아서, 요약마다 답을 하나로 고정했을 때의 점수(`constant_answer_baseline`)를 함께 적습니다. 그림을
+정말 읽는지는 합성 묶음과 심은 묶음에서 가릴 수 있습니다.
+
+모델(`models.tsv`에 리비전과 SHA-256 고정. 토큰이 필요한 저장소는 없음):
+
+| 키 | 저장소, 파일 | 내려받기 |
+|---|---|---:|
+| `e2b` | `ggml-org/gemma-4-E2B-it-GGUF`, Q4_0 + Q8_0 프로젝터. CPU에서 써 온 파일 | 3.4 GB |
+| `e2b-bf16` | 같은 Q4_0 가중치 + 같은 저장소의 BF16 프로젝터 | 1.0 GB 더 |
+| `e2b-qat` | `google/gemma-4-E2B-it-qat-q4_0-gguf`, BF16 프로젝터 | 4.3 GB |
+| `e4b` | `google/gemma-4-E4B-it-qat-q4_0-gguf`, BF16 프로젝터 | 6.1 GB |
+| `12b` | `google/gemma-4-12B-it-qat-q4_0-gguf`. 2026-10-19와 같은 파일 | 7.2 GB |
+| `26b` | `google/gemma-4-26B-A4B-it-qat-q4_0-gguf`, BF16 프로젝터 | 15.6 GB |
+| `31b` | `google/gemma-4-31B-it-qat-q4_0-gguf`, BF16 프로젝터 | 18.9 GB |
+
+e2b와 e2b-bf16은 프로젝터만 다릅니다. e2b-qat는 가중치가 다르고, 프로젝터도 Google이 따로 낸
+파일입니다(e2b-bf16과 마찬가지로 BF16). 서버 설정은 모든 모델이 같습니다. 문맥 4096(그림 여섯 장인
+v2 sequence가 프롬프트 약 2,200토큰), batch와 ubatch 512(어느 프로젝터도 이미지 토큰 상한 256을
+낮추지 않게), 모든 층을 GPU에. 나머지는 `start_server.sh`와 같습니다. 작업은 자기 서버의 pid 파일,
+로그, 띄운 시각을 적은 `server.stamp`를 `results/picture-test-<작업번호>/server/`(`POD_LLM_STATE`)에
+두고, 포트는 20000 + 작업번호를 10000으로 나눈 나머지를 써서 다른 작업의 서버와 섞이지 않습니다.
+
+```bash
+# 클러스터에서, 묶음을 푼 폴더에서
+export POD_LLM_RUNTIME=<12B 때 만든 llama-b11429-cuda/가 있는 폴더>
+bash PODFoam/llm_demo/hpc/fetch_models.sh e2b e2b-bf16 e2b-qat e4b 12b 26b 31b   # 계산 노드에 인터넷이 없으면 로그인 노드에서
+sbatch --account=<계정> --partition=mb-a30 PODFoam/llm_demo/hpc/picture_test.slurm
+# 모델 몇 개만: sbatch --export=ALL,MODELS="e2b 12b" ...
+```
+
+결과는 `results/picture-test-<작업번호>.tar.gz`에 모입니다. 모델마다 폴더가 하나 있고, 그 안에 묶음별
+`summary.json`, `metrics.jsonl`, 모든 답이 있습니다. 보낸 요청 본문은 준비한 본문에서 모델 이름만 바꾼
+것이라 빼고, SHA-256만 `metrics.jsonl`에 남깁니다. 그 밖에 모델별 서버 로그와 명령줄,
+`llama-server-version.txt`, `nvidia-smi.txt`, `modules.txt`, `sha256.txt`(llama.cpp 폴더, 시험 묶음,
+스크립트), 실패가 있으면 `failed.txt`, 그때까지의 작업 로그, `report.md`가 들어 있습니다.
+`report.md`(`picture_test.py report`)에는 시도한 요청 수 기준 점수, 고정 답 점수, v1/v2와 v2/v2own
+문항별 비교, 모델마다 2026-10-17/20 답 중 공개된 E2B 답과 같은 답의 수가 있습니다. `GH_TOKEN`
+(contents 쓰기 권한)과 `RESULTS_RELEASE=<태그>`를 주면 결과 묶음을 그 GitHub 릴리스에 올립니다.
+`CLEANUP_MODELS=1`이면 이 작업이 직접 받은 모델 파일(`fetched.txt`)만, `CLEANUP_MODELS=all`이면
+`MODELS`에 있는 키의 `models/<키>` 폴더를 모두 지웁니다. 12B 파일은 지우지 않습니다. 다른 작업이 같은
+`POD_LLM_RUNTIME`을 쓰는 동안에는 둘 다 쓰지 마세요. 작업은 모델을 띄우기 전에
+`picture_test.py check`로 요청 파일과 정답 파일이 모두 manifest와 같은지 확인합니다.
+
+2026-10-22에 Slurm 작업 24756981로 NVIDIA RTX A6000 한 장(49,140 MiB)에서 돌렸습니다. 위 명령은
+mb-a30을 적었지만, 작업이 실제로 어느 파티션에서 돌았는지는 기록에 없습니다. 모델 일곱 개가
+저마다 요청 308개에 모두 답했고, 모델 일곱 개를 돌린 시간은 모델을 띄우는 시간까지 합쳐
+83분이었습니다. llama.cpp b11429에서 모든 모델이 떠서 답했고, 26B-A4B와 31B도 마찬가지였습니다.
+31B는 서버가 처음 준비됐을 때 GPU 메모리 20,128 MiB를 쓰고 있었습니다. A30의 24 GB에 31B가
+들어가는지는 해 보지 않았습니다. 결과: [10월 22일 보고서](../../../../docs/results-20261022.md),
+[근거](../../../../docs/evidence/2026-10-22-picture-test/README.md).
+
 ## 시험한 곳
 
 MedicineBow(와이오밍 대학교 ARCC), 2026-10-19, 쌍별 재생만:
@@ -107,6 +187,7 @@ stub 없이 CPU 노드에서 한 첫 빌드(작업 24695932)는 마지막 링크
 ## 여기서 확인 못 한 것
 
 `demo_12b.slurm`(MedicineBow에는 OpenFOAM 모듈이 없음), 미리 빌드된 CUDA 바이너리,
-`LLAMA_CUDA=13.4`, L40S 파티션, tar.gz 폴더 구조.
+`LLAMA_CUDA=13.4`, L40S 파티션, 12B 스크립트의 tar.gz 폴더 구조(같은 구조로 된 자기 묶음에서
+`picture_test.slurm`이 2026-10-22에 돌았음).
 `start_server.sh`는 10분 안에 `/health`가 안 뜨면 바로 실패하고, 로그는
 `llm-runtime-12b/server-*.log`에 남습니다.

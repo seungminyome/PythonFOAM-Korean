@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed |U| is 82.5275 m/s; location is unknown as coordinates for the maximum are not provided.\",\n  \"possible_interpretation\": \"High leading-mode SVD energy suggests a dominant, stable flow pattern at t=5e-07 s.\",\n  \"checks\": \"Spatial distribution of |U| max, boundary condition verification.\"\n}",
+  "request_sha256": "99605266145a6c63f60c0de7bfbff1dec7746aaa9fa35b3adfaf3617de4c79c8",
+  "request_bytes": 4870,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 984,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 95,
+    "prompt_tokens": 1466,
+    "total_tokens": 1561,
+    "prompt_tokens_details": {
+      "cached_tokens": 1457
+    }
+  },
+  "server_timings": {
+    "cache_n": 1457,
+    "prompt_n": 9,
+    "prompt_ms": 282.071,
+    "prompt_per_token_ms": 31.341222222222225,
+    "prompt_per_second": 31.906860329491508,
+    "predicted_n": 95,
+    "predicted_ms": 2925.42,
+    "predicted_per_token_ms": 31.121489361702128,
+    "predicted_per_second": 32.1321382912539
+  },
+  "structured_output": {
+    "observations": "Max speed |U| is 82.5275 m/s; location is unknown as coordinates for the maximum are not provided.",
+    "possible_interpretation": "High leading-mode SVD energy suggests a dominant, stable flow pattern at t=5e-07 s.",
+    "checks": "Spatial distribution of |U| max, boundary condition verification."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.2643899228423834,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

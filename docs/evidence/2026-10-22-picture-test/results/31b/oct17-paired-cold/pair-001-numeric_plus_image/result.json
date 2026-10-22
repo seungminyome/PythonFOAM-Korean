@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed |U| is 82.5275 m/s. Location is unknown as coordinates for the peak are not provided.\",\n  \"possible_interpretation\": \"High speed region appears near x=0.0 m, y=0.0 m, suggesting a jet or nozzle exit.\",\n  \"checks\": \"Missing spatial coordinates for max |U|.\"\n}",
+  "request_sha256": "d46697750f423f404154d540d2d6020501eaeb79c5e604e2ac7b8fe0f4438c5f",
+  "request_bytes": 50873,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 951,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 94,
+    "prompt_tokens": 1572,
+    "total_tokens": 1666,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1572,
+    "prompt_ms": 1791.229,
+    "prompt_per_token_ms": 1.139458651399491,
+    "prompt_per_second": 877.609730525801,
+    "predicted_n": 94,
+    "predicted_ms": 2893.893,
+    "predicted_per_token_ms": 31.117129032258063,
+    "predicted_per_second": 32.13664085023185
+  },
+  "structured_output": {
+    "observations": "Max speed |U| is 82.5275 m/s. Location is unknown as coordinates for the peak are not provided.",
+    "possible_interpretation": "High speed region appears near x=0.0 m, y=0.0 m, suggesting a jet or nozzle exit.",
+    "checks": "Missing spatial coordinates for max |U|."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.74844566360116,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum |U| is 82.5275 m/s. Location is unknown as the JSON/PNG does not map specific coordinates to the maximum value.\",\n  \"possible_interpretation\": \"High velocity likely occurs near the x=0 m boundary, but exact coordinates are not provided in the data.\",\n  \"checks\": \"Missing coordinate-to-value mapping; missing force balance; missing SVD stability analysis.\"\n}",
+  "request_sha256": "0dfd4afecf66b550fbad7e44ccb798e919e6946149d15051a782931d43aa9aba",
+  "request_bytes": 50877,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1056,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 104,
+    "prompt_tokens": 1572,
+    "total_tokens": 1676,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1572,
+    "prompt_ms": 646.603,
+    "prompt_per_token_ms": 0.4113250636132315,
+    "prompt_per_second": 2431.1671922338746,
+    "predicted_n": 104,
+    "predicted_ms": 822.957,
+    "predicted_per_token_ms": 7.989873786407767,
+    "predicted_per_second": 125.15842261503334
+  },
+  "structured_output": {
+    "observations": "Maximum |U| is 82.5275 m/s. Location is unknown as the JSON/PNG does not map specific coordinates to the maximum value.",
+    "possible_interpretation": "High velocity likely occurs near the x=0 m boundary, but exact coordinates are not provided in the data.",
+    "checks": "Missing coordinate-to-value mapping; missing force balance; missing SVD stability analysis."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 1.5324674174189568,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

@@ -76,6 +76,35 @@ python3 snapshot_runner.py --mode sequence --frames RUN/async-no-llm/llm_observa
 
 describe의 점수는 답한 % 위치와, 그린 창 안에서 최대 속력(과 최저 압력)을 가진 실제 셀 사이의 거리입니다. 그린 범위의 %와 m로 적습니다. sequence에서는 답한 추세 단어를 저장된 극값의 추세와 비교합니다. 상대 변화가 2 %를 넘으면 추세로 보고, 가장 빠른 지점이 그린 범위의 5 %보다 많이 움직이면 "moves"입니다. 기준값은 `ground_truth.private.json`에 쓰고 모델에는 보내지 않습니다.
 
+## 그림 읽기 시험 (모델 여러 개, 그림 두 가지)
+
+`picture_test.py`는 저장한 그림에 대해 정해 둔 요청 묶음을 만들고, 서버 하나에 보내고, 모델이 보지
+못한 정답과 비교해 채점합니다. 그림은 두 가지입니다. v1은 콜백이 그리는 그림(`pod_image.py`)이고, v2는
+`readable_image.py`가 그립니다(그림 한 장에 필드 하나, 축은 퍼센트와 10 %마다 격자선, 색 막대에
+최솟값부터 최댓값까지 값 다섯 개). `foam_fields.py`는 저장한 OpenFOAM 상태를 읽습니다(ASCII만).
+
+```bash
+# 저장소 루트에서. --states는 모델 요청 없이 돌린 PODFoam 사례
+# (2026-10-21 묶음의 인자, 요청 308개. --sequence가 없으면 flow-sequence 묶음은 만들지 않음)
+python3 Solver_Examples/PODFoam/llm_demo/picture_test.py build --states <사례> \
+    --centres docs/evidence/2026-10-20/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/fields.npz \
+    --oct17 docs/evidence/2026-10-17/ablation --oct20 docs/evidence/2026-10-20/replay \
+    --describe-every 500 --last-step 6000 \
+    --sequence 250,750,1250 --sequence 250,1250,2750 --sequence 1250,2250,3250 \
+    --sequence 2250,3250,4250 --sequence 3250,4250,5250 --sequence 4500,5250,6000 \
+    --sequence 5000,5500,6000 --output <시험 묶음>              # matplotlib 필요
+cd Solver_Examples/PODFoam/llm_demo
+python3 picture_test.py check --test-set <시험 묶음>       # 모든 요청과 정답을 manifest와 대조
+python3 picture_test.py run --test-set <시험 묶음> --model <서버 이름> --endpoint <url> --output <실행 폴더>
+python3 picture_test.py report <실행 폴더> [<실행 폴더> ...] --output report.md
+```
+
+2026-10-21에 만든 묶음의 인자는
+[manifest](../../../docs/evidence/2026-10-22-picture-test/test-set/manifest.json)의 `build_args`에 있습니다.
+2026-10-21의 묶음과 그 묶음을 만드는 법, 모델 일곱 개로 돌린 클러스터 작업은
+[hpc/README.md](hpc/README.md#그림-읽기-시험-2026-10-22-실행)에, 결과는
+[10월 22일 보고서](../../../docs/results-20261022.md)에 있습니다.
+
 ## 실행 방법
 
 OpenFOAM v2106, numpy와 matplotlib이 설치된 Python 3, [C++·Python 연결 검증](../validation/README.md)을 통과한 실행 자료가 필요합니다. 통과한 실행 자료는 기준 사례로 사용합니다. 모델 파일에는 약 3.4 GB의 디스크 공간이 필요하고, 서버는 실행 중 약 2.4 GiB(10월 20일 기록)를 쓰므로 RAM 8 GB 정도면 됩니다.

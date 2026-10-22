@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max |U| is 82.52751611538334 m/s at x=0.5 m, y=0.11429523559299273 m.\",\n  \"possible_interpretation\": \"The maximum velocity is observed near the right edge of the domain.\",\n  \"checks\": \"No evidence of force balance or low Courant number is provided.\"\n}",
+  "request_sha256": "b8ac8807f80f2fcb02c61fdb7cdb80f52ce1e1c8ba7925fd413e63b3a1d2329c",
+  "request_bytes": 50852,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 941,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 112,
+    "prompt_tokens": 1568,
+    "total_tokens": 1680,
+    "prompt_tokens_details": {
+      "cached_tokens": 1457
+    }
+  },
+  "server_timings": {
+    "cache_n": 1457,
+    "prompt_n": 111,
+    "prompt_ms": 57.962,
+    "prompt_per_token_ms": 0.5221801801801802,
+    "prompt_per_second": 1915.0477899313341,
+    "predicted_n": 112,
+    "predicted_ms": 501.63,
+    "predicted_per_token_ms": 4.5191891891891895,
+    "predicted_per_second": 221.27863166078583
+  },
+  "structured_output": {
+    "observations": "Max |U| is 82.52751611538334 m/s at x=0.5 m, y=0.11429523559299273 m.",
+    "possible_interpretation": "The maximum velocity is observed near the right edge of the domain.",
+    "checks": "No evidence of force balance or low Courant number is provided."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 0.6231710519641638,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed |U| is unknown. Max speed range is 2.75 to 82.53 m/s.\",\n  \"possible_interpretation\": \"The snapshot shows flow at t=5e-07s. Velocity and pressure fields are visualized.\",\n  \"checks\": \"Missing evidence for max speed location. Courant number is low.\"\n}",
+  "request_sha256": "6d610dd1ee415ba47194aa4704cba348c49a0cc719cfede7b6d5e81df77217f4",
+  "request_bytes": 50852,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 946,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 91,
+    "prompt_tokens": 1568,
+    "total_tokens": 1659,
+    "prompt_tokens_details": {
+      "cached_tokens": 1457
+    }
+  },
+  "server_timings": {
+    "cache_n": 1457,
+    "prompt_n": 111,
+    "prompt_ms": 120.136,
+    "prompt_per_token_ms": 1.0823063063063063,
+    "prompt_per_second": 923.9528534327764,
+    "predicted_n": 91,
+    "predicted_ms": 664.507,
+    "predicted_per_token_ms": 7.38341111111111,
+    "predicted_per_second": 135.43875384307466
+  },
+  "structured_output": {
+    "observations": "Max speed |U| is unknown. Max speed range is 2.75 to 82.53 m/s.",
+    "possible_interpretation": "The snapshot shows flow at t=5e-07s. Velocity and pressure fields are visualized.",
+    "checks": "Missing evidence for max speed location. Courant number is low."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 0.8474688399583101,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

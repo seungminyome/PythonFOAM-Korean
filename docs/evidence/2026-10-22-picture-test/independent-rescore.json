@@ -1,0 +1,2889 @@
+{
+ "report_cells_checked": 518,
+ "report_cells_differing": 0,
+ "aliases": {
+  "e2b": "gemma-4-E2B-it-Q4_0-vision",
+  "e2b-bf16": "gemma-4-E2B-it-Q4_0-bf16proj-vision",
+  "e2b-qat": "gemma-4-E2B-it-qat-q4_0-vision",
+  "e4b": "gemma-4-E4B-it-qat-q4_0-vision",
+  "12b": "gemma-4-12b-it-qat-q4_0-vision",
+  "26b": "gemma-4-26B-A4B-it-qat-q4_0-vision",
+  "31b": "gemma-4-31B-it-qat-q4_0-vision"
+ },
+ "counts": {
+  "e2b": {
+   "control-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 4,
+     "lowest_pressure_within_10": 3
+    }
+   },
+   "control-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 11,
+     "lowest_pressure_within_10": 6
+    }
+   },
+   "control-trend-v1": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 9,
+     "min_pressure_trend_right": 6,
+     "fastest_flow_region_right": 11
+    }
+   },
+   "control-trend-v2": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 7,
+     "min_pressure_trend_right": 6,
+     "fastest_flow_region_right": 9
+    }
+   },
+   "control-trend-v2own": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 6,
+     "min_pressure_trend_right": 7,
+     "fastest_flow_region_right": 9
+    }
+   },
+   "flow-describe-v1": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 0,
+     "lowest_pressure_within_10": 0
+    }
+   },
+   "flow-describe-v2": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 9,
+     "lowest_pressure_within_10": 13
+    }
+   },
+   "flow-sequence-v1": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 2,
+     "min_pressure_trend_right": 4,
+     "fastest_flow_region_right": 13
+    }
+   },
+   "flow-sequence-v2": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 4,
+     "min_pressure_trend_right": 5,
+     "fastest_flow_region_right": 13
+    }
+   },
+   "flow-sequence-v2own": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 8,
+     "min_pressure_trend_right": 10,
+     "fastest_flow_region_right": 2
+    }
+   },
+   "oct17-paired": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 3,
+     "located_numeric_plus_image": 3
+    }
+   },
+   "oct17-paired-cold": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 3,
+     "located_numeric_plus_image": 3
+    }
+   },
+   "oct20-replay": {
+    "describe": {
+     "attempted": 18,
+     "answered": 18,
+     "fastest_flow_within_10": 0,
+     "lowest_pressure_within_10": 0
+    },
+    "sequence": {
+     "attempted": 6,
+     "answered": 6,
+     "max_speed_trend_right": 0,
+     "min_pressure_trend_right": 3,
+     "fastest_flow_region_right": 6
+    }
+   },
+   "planted-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 2,
+     "lowest_pressure_within_10": 3
+    }
+   },
+   "planted-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 10,
+     "lowest_pressure_within_10": 6
+    }
+   }
+  },
+  "e2b-bf16": {
+   "control-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 4,
+     "lowest_pressure_within_10": 2
+    }
+   },
+   "control-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 8,
+     "lowest_pressure_within_10": 7
+    }
+   },
+   "control-trend-v1": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 8,
+     "min_pressure_trend_right": 8,
+     "fastest_flow_region_right": 14
+    }
+   },
+   "control-trend-v2": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 6,
+     "min_pressure_trend_right": 6,
+     "fastest_flow_region_right": 9
+    }
+   },
+   "control-trend-v2own": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 7,
+     "min_pressure_trend_right": 8,
+     "fastest_flow_region_right": 9
+    }
+   },
+   "flow-describe-v1": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 0,
+     "lowest_pressure_within_10": 0
+    }
+   },
+   "flow-describe-v2": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 8,
+     "lowest_pressure_within_10": 10
+    }
+   },
+   "flow-sequence-v1": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 3,
+     "min_pressure_trend_right": 6,
+     "fastest_flow_region_right": 12
+    }
+   },
+   "flow-sequence-v2": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 4,
+     "min_pressure_trend_right": 4,
+     "fastest_flow_region_right": 14
+    }
+   },
+   "flow-sequence-v2own": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 8,
+     "min_pressure_trend_right": 14,
+     "fastest_flow_region_right": 3
+    }
+   },
+   "oct17-paired": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 3,
+     "located_numeric_plus_image": 3
+    }
+   },
+   "oct17-paired-cold": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 3,
+     "located_numeric_plus_image": 3
+    }
+   },
+   "oct20-replay": {
+    "describe": {
+     "attempted": 18,
+     "answered": 18,
+     "fastest_flow_within_10": 0,
+     "lowest_pressure_within_10": 0
+    },
+    "sequence": {
+     "attempted": 6,
+     "answered": 6,
+     "max_speed_trend_right": 0,
+     "min_pressure_trend_right": 3,
+     "fastest_flow_region_right": 6
+    }
+   },
+   "planted-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 1,
+     "lowest_pressure_within_10": 2
+    }
+   },
+   "planted-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 12,
+     "lowest_pressure_within_10": 7
+    }
+   }
+  },
+  "e2b-qat": {
+   "control-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 3,
+     "lowest_pressure_within_10": 3
+    }
+   },
+   "control-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 6,
+     "lowest_pressure_within_10": 5
+    }
+   },
+   "control-trend-v1": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 8,
+     "min_pressure_trend_right": 7,
+     "fastest_flow_region_right": 9
+    }
+   },
+   "control-trend-v2": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 7,
+     "min_pressure_trend_right": 5,
+     "fastest_flow_region_right": 9
+    }
+   },
+   "control-trend-v2own": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 6,
+     "min_pressure_trend_right": 9,
+     "fastest_flow_region_right": 9
+    }
+   },
+   "flow-describe-v1": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 0,
+     "lowest_pressure_within_10": 0
+    }
+   },
+   "flow-describe-v2": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 4,
+     "lowest_pressure_within_10": 4
+    }
+   },
+   "flow-sequence-v1": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 3,
+     "min_pressure_trend_right": 9,
+     "fastest_flow_region_right": 13
+    }
+   },
+   "flow-sequence-v2": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 4,
+     "min_pressure_trend_right": 4,
+     "fastest_flow_region_right": 14
+    }
+   },
+   "flow-sequence-v2own": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 7,
+     "min_pressure_trend_right": 11,
+     "fastest_flow_region_right": 4
+    }
+   },
+   "oct17-paired": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 3,
+     "located_numeric_plus_image": 3
+    }
+   },
+   "oct17-paired-cold": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 3,
+     "located_numeric_plus_image": 3
+    }
+   },
+   "oct20-replay": {
+    "describe": {
+     "attempted": 18,
+     "answered": 18,
+     "fastest_flow_within_10": 0,
+     "lowest_pressure_within_10": 0
+    },
+    "sequence": {
+     "attempted": 6,
+     "answered": 6,
+     "max_speed_trend_right": 2,
+     "min_pressure_trend_right": 6,
+     "fastest_flow_region_right": 6
+    }
+   },
+   "planted-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 5,
+     "lowest_pressure_within_10": 2
+    }
+   },
+   "planted-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 9,
+     "lowest_pressure_within_10": 3
+    }
+   }
+  },
+  "e4b": {
+   "control-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 9,
+     "lowest_pressure_within_10": 3
+    }
+   },
+   "control-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 15,
+     "lowest_pressure_within_10": 2
+    }
+   },
+   "control-trend-v1": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 7,
+     "min_pressure_trend_right": 9,
+     "fastest_flow_region_right": 11
+    }
+   },
+   "control-trend-v2": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 11,
+     "min_pressure_trend_right": 6,
+     "fastest_flow_region_right": 14
+    }
+   },
+   "control-trend-v2own": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 10,
+     "min_pressure_trend_right": 11,
+     "fastest_flow_region_right": 12
+    }
+   },
+   "flow-describe-v1": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 0,
+     "lowest_pressure_within_10": 0
+    }
+   },
+   "flow-describe-v2": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 9,
+     "lowest_pressure_within_10": 4
+    }
+   },
+   "flow-sequence-v1": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 1,
+     "min_pressure_trend_right": 2,
+     "fastest_flow_region_right": 7
+    }
+   },
+   "flow-sequence-v2": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 1,
+     "min_pressure_trend_right": 8,
+     "fastest_flow_region_right": 13
+    }
+   },
+   "flow-sequence-v2own": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 6,
+     "min_pressure_trend_right": 10,
+     "fastest_flow_region_right": 10
+    }
+   },
+   "oct17-paired": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 0,
+     "located_numeric_plus_image": 0
+    }
+   },
+   "oct17-paired-cold": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 0,
+     "located_numeric_plus_image": 0
+    }
+   },
+   "oct20-replay": {
+    "describe": {
+     "attempted": 18,
+     "answered": 18,
+     "fastest_flow_within_10": 0,
+     "lowest_pressure_within_10": 0
+    },
+    "sequence": {
+     "attempted": 6,
+     "answered": 6,
+     "max_speed_trend_right": 0,
+     "min_pressure_trend_right": 2,
+     "fastest_flow_region_right": 6
+    }
+   },
+   "planted-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 4,
+     "lowest_pressure_within_10": 4
+    }
+   },
+   "planted-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 15,
+     "lowest_pressure_within_10": 5
+    }
+   }
+  },
+  "12b": {
+   "control-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 9,
+     "lowest_pressure_within_10": 13
+    }
+   },
+   "control-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 32,
+     "lowest_pressure_within_10": 32
+    }
+   },
+   "control-trend-v1": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 17,
+     "min_pressure_trend_right": 16,
+     "fastest_flow_region_right": 17
+    }
+   },
+   "control-trend-v2": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 13,
+     "min_pressure_trend_right": 13,
+     "fastest_flow_region_right": 18
+    }
+   },
+   "control-trend-v2own": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 12,
+     "min_pressure_trend_right": 12,
+     "fastest_flow_region_right": 18
+    }
+   },
+   "flow-describe-v1": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 4,
+     "lowest_pressure_within_10": 4
+    }
+   },
+   "flow-describe-v2": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 22,
+     "lowest_pressure_within_10": 22
+    }
+   },
+   "flow-sequence-v1": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 8,
+     "min_pressure_trend_right": 7,
+     "fastest_flow_region_right": 10
+    }
+   },
+   "flow-sequence-v2": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 4,
+     "min_pressure_trend_right": 0,
+     "fastest_flow_region_right": 9
+    }
+   },
+   "flow-sequence-v2own": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 12,
+     "min_pressure_trend_right": 3,
+     "fastest_flow_region_right": 13
+    }
+   },
+   "oct17-paired": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 0,
+     "located_numeric_plus_image": 0
+    }
+   },
+   "oct17-paired-cold": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 0,
+     "located_numeric_plus_image": 0
+    }
+   },
+   "oct20-replay": {
+    "describe": {
+     "attempted": 18,
+     "answered": 18,
+     "fastest_flow_within_10": 8,
+     "lowest_pressure_within_10": 8
+    },
+    "sequence": {
+     "attempted": 6,
+     "answered": 6,
+     "max_speed_trend_right": 6,
+     "min_pressure_trend_right": 3,
+     "fastest_flow_region_right": 3
+    }
+   },
+   "planted-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 5,
+     "lowest_pressure_within_10": 9
+    }
+   },
+   "planted-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 32,
+     "lowest_pressure_within_10": 25
+    }
+   }
+  },
+  "26b": {
+   "control-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 17,
+     "lowest_pressure_within_10": 9
+    }
+   },
+   "control-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 32,
+     "lowest_pressure_within_10": 32
+    }
+   },
+   "control-trend-v1": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 15,
+     "min_pressure_trend_right": 13,
+     "fastest_flow_region_right": 17
+    }
+   },
+   "control-trend-v2": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 11,
+     "min_pressure_trend_right": 11,
+     "fastest_flow_region_right": 18
+    }
+   },
+   "control-trend-v2own": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 12,
+     "min_pressure_trend_right": 16,
+     "fastest_flow_region_right": 18
+    }
+   },
+   "flow-describe-v1": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 0,
+     "lowest_pressure_within_10": 1
+    }
+   },
+   "flow-describe-v2": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 24,
+     "lowest_pressure_within_10": 24
+    }
+   },
+   "flow-sequence-v1": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 8,
+     "min_pressure_trend_right": 1,
+     "fastest_flow_region_right": 9
+    }
+   },
+   "flow-sequence-v2": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 7,
+     "min_pressure_trend_right": 3,
+     "fastest_flow_region_right": 12
+    }
+   },
+   "flow-sequence-v2own": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 12,
+     "min_pressure_trend_right": 11,
+     "fastest_flow_region_right": 12
+    }
+   },
+   "oct17-paired": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 0,
+     "located_numeric_plus_image": 0
+    }
+   },
+   "oct17-paired-cold": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 0,
+     "located_numeric_plus_image": 0
+    }
+   },
+   "oct20-replay": {
+    "describe": {
+     "attempted": 18,
+     "answered": 18,
+     "fastest_flow_within_10": 0,
+     "lowest_pressure_within_10": 0
+    },
+    "sequence": {
+     "attempted": 6,
+     "answered": 6,
+     "max_speed_trend_right": 6,
+     "min_pressure_trend_right": 0,
+     "fastest_flow_region_right": 3
+    }
+   },
+   "planted-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 15,
+     "lowest_pressure_within_10": 5
+    }
+   },
+   "planted-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 31,
+     "lowest_pressure_within_10": 20
+    }
+   }
+  },
+  "31b": {
+   "control-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 18,
+     "lowest_pressure_within_10": 15
+    }
+   },
+   "control-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 32,
+     "lowest_pressure_within_10": 32
+    }
+   },
+   "control-trend-v1": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 18,
+     "min_pressure_trend_right": 17,
+     "fastest_flow_region_right": 18
+    }
+   },
+   "control-trend-v2": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 16,
+     "min_pressure_trend_right": 17,
+     "fastest_flow_region_right": 17
+    }
+   },
+   "control-trend-v2own": {
+    "sequence": {
+     "attempted": 18,
+     "answered": 18,
+     "max_speed_trend_right": 12,
+     "min_pressure_trend_right": 12,
+     "fastest_flow_region_right": 18
+    }
+   },
+   "flow-describe-v1": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 4,
+     "lowest_pressure_within_10": 7
+    }
+   },
+   "flow-describe-v2": {
+    "describe": {
+     "attempted": 24,
+     "answered": 24,
+     "fastest_flow_within_10": 24,
+     "lowest_pressure_within_10": 24
+    }
+   },
+   "flow-sequence-v1": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 8,
+     "min_pressure_trend_right": 4,
+     "fastest_flow_region_right": 13
+    }
+   },
+   "flow-sequence-v2": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 5,
+     "min_pressure_trend_right": 1,
+     "fastest_flow_region_right": 14
+    }
+   },
+   "flow-sequence-v2own": {
+    "sequence": {
+     "attempted": 14,
+     "answered": 14,
+     "max_speed_trend_right": 11,
+     "min_pressure_trend_right": 12,
+     "fastest_flow_region_right": 14
+    }
+   },
+   "oct17-paired": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 0,
+     "located_numeric_plus_image": 0
+    }
+   },
+   "oct17-paired-cold": {
+    "observe": {
+     "attempted": 6,
+     "answered": 6,
+     "located_numeric_only": 0,
+     "located_numeric_plus_image": 0
+    }
+   },
+   "oct20-replay": {
+    "describe": {
+     "attempted": 18,
+     "answered": 18,
+     "fastest_flow_within_10": 1,
+     "lowest_pressure_within_10": 1
+    },
+    "sequence": {
+     "attempted": 6,
+     "answered": 6,
+     "max_speed_trend_right": 6,
+     "min_pressure_trend_right": 6,
+     "fastest_flow_region_right": 5
+    }
+   },
+   "planted-position-v1": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 17,
+     "lowest_pressure_within_10": 9
+    }
+   },
+   "planted-position-v2": {
+    "describe": {
+     "attempted": 32,
+     "answered": 32,
+     "fastest_flow_within_10": 32,
+     "lowest_pressure_within_10": 24
+    }
+   }
+  }
+ },
+ "fixed_answer": {
+  "control-position-v1": {
+   "fastest_flow": 5,
+   "lowest_pressure": 5
+  },
+  "control-position-v2": {
+   "fastest_flow": 5,
+   "lowest_pressure": 5
+  },
+  "control-trend-v1": {
+   "max_speed_trend": 6,
+   "min_pressure_trend": 6,
+   "fastest_flow_region": 9
+  },
+  "control-trend-v2": {
+   "max_speed_trend": 6,
+   "min_pressure_trend": 6,
+   "fastest_flow_region": 9
+  },
+  "control-trend-v2own": {
+   "max_speed_trend": 6,
+   "min_pressure_trend": 6,
+   "fastest_flow_region": 9
+  },
+  "flow-describe-v1": {
+   "fastest_flow": 24,
+   "lowest_pressure": 24
+  },
+  "flow-describe-v2": {
+   "fastest_flow": 24,
+   "lowest_pressure": 24
+  },
+  "flow-sequence-v1": {
+   "max_speed_trend": 10,
+   "min_pressure_trend": 14,
+   "fastest_flow_region": 14
+  },
+  "flow-sequence-v2": {
+   "max_speed_trend": 10,
+   "min_pressure_trend": 14,
+   "fastest_flow_region": 14
+  },
+  "flow-sequence-v2own": {
+   "max_speed_trend": 10,
+   "min_pressure_trend": 14,
+   "fastest_flow_region": 14
+  },
+  "oct17-paired": {},
+  "oct17-paired-cold": {},
+  "oct20-replay": {
+   "fastest_flow": 18,
+   "lowest_pressure": 18,
+   "max_speed_trend": 6,
+   "min_pressure_trend": 6,
+   "fastest_flow_region": 6
+  },
+  "planted-position-v1": {
+   "fastest_flow": 6,
+   "lowest_pressure": 6
+  },
+  "planted-position-v2": {
+   "fastest_flow": 6,
+   "lowest_pressure": 6
+  }
+ },
+ "distance_percent": {
+  "e2b": {
+   "control-position-v1": {
+    "fastest_flow": {
+     "median": 32.6,
+     "max": 55.2
+    },
+    "lowest_pressure": {
+     "median": 36.0,
+     "max": 71.4
+    }
+   },
+   "control-position-v2": {
+    "fastest_flow": {
+     "median": 17.2,
+     "max": 53.9
+    },
+    "lowest_pressure": {
+     "median": 35.4,
+     "max": 82.8
+    }
+   },
+   "flow-describe-v1": {
+    "fastest_flow": {
+     "median": 39.9,
+     "max": 81.5
+    },
+    "lowest_pressure": {
+     "median": 47.9,
+     "max": 75.0
+    }
+   },
+   "flow-describe-v2": {
+    "fastest_flow": {
+     "median": 21.1,
+     "max": 100.5
+    },
+    "lowest_pressure": {
+     "median": 9.8,
+     "max": 46.2
+    }
+   },
+   "oct20-replay": {
+    "fastest_flow": {
+     "median": 40.8,
+     "max": 81.3
+    },
+    "lowest_pressure": {
+     "median": 52.9,
+     "max": 86.1
+    }
+   },
+   "planted-position-v1": {
+    "fastest_flow": {
+     "median": 32.6,
+     "max": 91.6
+    },
+    "lowest_pressure": {
+     "median": 37.2,
+     "max": 65.2
+    }
+   },
+   "planted-position-v2": {
+    "fastest_flow": {
+     "median": 18.8,
+     "max": 96.8
+    },
+    "lowest_pressure": {
+     "median": 34.0,
+     "max": 95.4
+    }
+   }
+  },
+  "e2b-bf16": {
+   "control-position-v1": {
+    "fastest_flow": {
+     "median": 31.1,
+     "max": 69.0
+    },
+    "lowest_pressure": {
+     "median": 38.5,
+     "max": 81.5
+    }
+   },
+   "control-position-v2": {
+    "fastest_flow": {
+     "median": 20.5,
+     "max": 40.0
+    },
+    "lowest_pressure": {
+     "median": 33.5,
+     "max": 100.6
+    }
+   },
+   "flow-describe-v1": {
+    "fastest_flow": {
+     "median": 40.8,
+     "max": 62.9
+    },
+    "lowest_pressure": {
+     "median": 48.2,
+     "max": 84.7
+    }
+   },
+   "flow-describe-v2": {
+    "fastest_flow": {
+     "median": 42.2,
+     "max": 100.5
+    },
+    "lowest_pressure": {
+     "median": 17.4,
+     "max": 96.2
+    }
+   },
+   "oct20-replay": {
+    "fastest_flow": {
+     "median": 40.8,
+     "max": 80.3
+    },
+    "lowest_pressure": {
+     "median": 48.0,
+     "max": 72.0
+    }
+   },
+   "planted-position-v1": {
+    "fastest_flow": {
+     "median": 33.2,
+     "max": 80.0
+    },
+    "lowest_pressure": {
+     "median": 37.2,
+     "max": 65.2
+    }
+   },
+   "planted-position-v2": {
+    "fastest_flow": {
+     "median": 22.4,
+     "max": 85.7
+    },
+    "lowest_pressure": {
+     "median": 35.4,
+     "max": 102.5
+    }
+   }
+  },
+  "e2b-qat": {
+   "control-position-v1": {
+    "fastest_flow": {
+     "median": 31.6,
+     "max": 55.2
+    },
+    "lowest_pressure": {
+     "median": 31.4,
+     "max": 71.4
+    }
+   },
+   "control-position-v2": {
+    "fastest_flow": {
+     "median": 23.8,
+     "max": 48.1
+    },
+    "lowest_pressure": {
+     "median": 33.7,
+     "max": 71.0
+    }
+   },
+   "flow-describe-v1": {
+    "fastest_flow": {
+     "median": 41.4,
+     "max": 81.5
+    },
+    "lowest_pressure": {
+     "median": 46.7,
+     "max": 105.3
+    }
+   },
+   "flow-describe-v2": {
+    "fastest_flow": {
+     "median": 40.8,
+     "max": 100.7
+    },
+    "lowest_pressure": {
+     "median": 29.8,
+     "max": 80.6
+    }
+   },
+   "oct20-replay": {
+    "fastest_flow": {
+     "median": 31.2,
+     "max": 80.3
+    },
+    "lowest_pressure": {
+     "median": 66.6,
+     "max": 91.0
+    }
+   },
+   "planted-position-v1": {
+    "fastest_flow": {
+     "median": 32.9,
+     "max": 82.2
+    },
+    "lowest_pressure": {
+     "median": 37.2,
+     "max": 76.9
+    }
+   },
+   "planted-position-v2": {
+    "fastest_flow": {
+     "median": 24.0,
+     "max": 74.6
+    },
+    "lowest_pressure": {
+     "median": 43.1,
+     "max": 84.0
+    }
+   }
+  },
+  "e4b": {
+   "control-position-v1": {
+    "fastest_flow": {
+     "median": 25.9,
+     "max": 51.7
+    },
+    "lowest_pressure": {
+     "median": 27.6,
+     "max": 86.4
+    }
+   },
+   "control-position-v2": {
+    "fastest_flow": {
+     "median": 11.8,
+     "max": 53.2
+    },
+    "lowest_pressure": {
+     "median": 24.7,
+     "max": 69.9
+    }
+   },
+   "flow-describe-v1": {
+    "fastest_flow": {
+     "median": 39.3,
+     "max": 47.6
+    },
+    "lowest_pressure": {
+     "median": 47.0,
+     "max": 83.7
+    }
+   },
+   "flow-describe-v2": {
+    "fastest_flow": {
+     "median": 30.4,
+     "max": 44.4
+    },
+    "lowest_pressure": {
+     "median": 21.1,
+     "max": 65.9
+    }
+   },
+   "oct20-replay": {
+    "fastest_flow": {
+     "median": 38.9,
+     "max": 40.9
+    },
+    "lowest_pressure": {
+     "median": 41.5,
+     "max": 62.4
+    }
+   },
+   "planted-position-v1": {
+    "fastest_flow": {
+     "median": 34.8,
+     "max": 72.5
+    },
+    "lowest_pressure": {
+     "median": 30.5,
+     "max": 75.6
+    }
+   },
+   "planted-position-v2": {
+    "fastest_flow": {
+     "median": 11.3,
+     "max": 61.6
+    },
+    "lowest_pressure": {
+     "median": 19.3,
+     "max": 101.6
+    }
+   }
+  },
+  "12b": {
+   "control-position-v1": {
+    "fastest_flow": {
+     "median": 15.2,
+     "max": 35.0
+    },
+    "lowest_pressure": {
+     "median": 11.6,
+     "max": 52.9
+    }
+   },
+   "control-position-v2": {
+    "fastest_flow": {
+     "median": 1.4,
+     "max": 3.7
+    },
+    "lowest_pressure": {
+     "median": 1.2,
+     "max": 3.4
+    }
+   },
+   "flow-describe-v1": {
+    "fastest_flow": {
+     "median": 33.5,
+     "max": 44.9
+    },
+    "lowest_pressure": {
+     "median": 23.2,
+     "max": 76.4
+    }
+   },
+   "flow-describe-v2": {
+    "fastest_flow": {
+     "median": 2.4,
+     "max": 39.0
+    },
+    "lowest_pressure": {
+     "median": 3.4,
+     "max": 42.6
+    }
+   },
+   "oct20-replay": {
+    "fastest_flow": {
+     "median": 27.5,
+     "max": 44.7
+    },
+    "lowest_pressure": {
+     "median": 30.4,
+     "max": 47.6
+    }
+   },
+   "planted-position-v1": {
+    "fastest_flow": {
+     "median": 18.9,
+     "max": 54.2
+    },
+    "lowest_pressure": {
+     "median": 18.7,
+     "max": 89.5
+    }
+   },
+   "planted-position-v2": {
+    "fastest_flow": {
+     "median": 1.2,
+     "max": 3.9
+    },
+    "lowest_pressure": {
+     "median": 1.9,
+     "max": 97.5
+    }
+   }
+  },
+  "26b": {
+   "control-position-v1": {
+    "fastest_flow": {
+     "median": 9.4,
+     "max": 84.8
+    },
+    "lowest_pressure": {
+     "median": 15.5,
+     "max": 63.9
+    }
+   },
+   "control-position-v2": {
+    "fastest_flow": {
+     "median": 2.6,
+     "max": 6.6
+    },
+    "lowest_pressure": {
+     "median": 2.2,
+     "max": 5.4
+    }
+   },
+   "flow-describe-v1": {
+    "fastest_flow": {
+     "median": 38.0,
+     "max": 74.5
+    },
+    "lowest_pressure": {
+     "median": 31.6,
+     "max": 49.6
+    }
+   },
+   "flow-describe-v2": {
+    "fastest_flow": {
+     "median": 1.9,
+     "max": 7.9
+    },
+    "lowest_pressure": {
+     "median": 2.6,
+     "max": 5.2
+    }
+   },
+   "oct20-replay": {
+    "fastest_flow": {
+     "median": 41.3,
+     "max": 44.7
+    },
+    "lowest_pressure": {
+     "median": 41.8,
+     "max": 47.6
+    }
+   },
+   "planted-position-v1": {
+    "fastest_flow": {
+     "median": 10.8,
+     "max": 72.8
+    },
+    "lowest_pressure": {
+     "median": 31.5,
+     "max": 100.5
+    }
+   },
+   "planted-position-v2": {
+    "fastest_flow": {
+     "median": 1.6,
+     "max": 85.5
+    },
+    "lowest_pressure": {
+     "median": 3.0,
+     "max": 102.1
+    }
+   }
+  },
+  "31b": {
+   "control-position-v1": {
+    "fastest_flow": {
+     "median": 9.2,
+     "max": 53.1
+    },
+    "lowest_pressure": {
+     "median": 12.6,
+     "max": 31.0
+    }
+   },
+   "control-position-v2": {
+    "fastest_flow": {
+     "median": 1.9,
+     "max": 4.7
+    },
+    "lowest_pressure": {
+     "median": 1.6,
+     "max": 3.4
+    }
+   },
+   "flow-describe-v1": {
+    "fastest_flow": {
+     "median": 15.0,
+     "max": 84.1
+    },
+    "lowest_pressure": {
+     "median": 12.1,
+     "max": 47.7
+    }
+   },
+   "flow-describe-v2": {
+    "fastest_flow": {
+     "median": 1.1,
+     "max": 3.1
+    },
+    "lowest_pressure": {
+     "median": 3.0,
+     "max": 6.7
+    }
+   },
+   "oct20-replay": {
+    "fastest_flow": {
+     "median": 26.2,
+     "max": 47.4
+    },
+    "lowest_pressure": {
+     "median": 20.3,
+     "max": 42.2
+    }
+   },
+   "planted-position-v1": {
+    "fastest_flow": {
+     "median": 9.7,
+     "max": 70.6
+    },
+    "lowest_pressure": {
+     "median": 15.6,
+     "max": 82.9
+    }
+   },
+   "planted-position-v2": {
+    "fastest_flow": {
+     "median": 1.5,
+     "max": 5.3
+    },
+    "lowest_pressure": {
+     "median": 2.0,
+     "max": 88.3
+    }
+   }
+  }
+ },
+ "trend_clear_and_flat": {
+  "e2b": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "clear": "6/12",
+     "flat": "3/6"
+    },
+    "min_pressure_trend": {
+     "clear": "5/12",
+     "flat": "1/6"
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "clear": "5/12",
+     "flat": "2/6"
+    },
+    "min_pressure_trend": {
+     "clear": "5/12",
+     "flat": "1/6"
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "clear": "6/12",
+     "flat": "0/6"
+    },
+    "min_pressure_trend": {
+     "clear": "7/12",
+     "flat": "0/6"
+    }
+   }
+  },
+  "e2b-bf16": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "clear": "6/12",
+     "flat": "2/6"
+    },
+    "min_pressure_trend": {
+     "clear": "6/12",
+     "flat": "2/6"
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "clear": "5/12",
+     "flat": "1/6"
+    },
+    "min_pressure_trend": {
+     "clear": "5/12",
+     "flat": "1/6"
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "clear": "7/12",
+     "flat": "0/6"
+    },
+    "min_pressure_trend": {
+     "clear": "8/12",
+     "flat": "0/6"
+    }
+   }
+  },
+  "e2b-qat": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "clear": "7/12",
+     "flat": "1/6"
+    },
+    "min_pressure_trend": {
+     "clear": "6/12",
+     "flat": "1/6"
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "clear": "6/12",
+     "flat": "1/6"
+    },
+    "min_pressure_trend": {
+     "clear": "5/12",
+     "flat": "0/6"
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "clear": "6/12",
+     "flat": "0/6"
+    },
+    "min_pressure_trend": {
+     "clear": "9/12",
+     "flat": "0/6"
+    }
+   }
+  },
+  "e4b": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "clear": "6/12",
+     "flat": "1/6"
+    },
+    "min_pressure_trend": {
+     "clear": "6/12",
+     "flat": "3/6"
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "clear": "7/12",
+     "flat": "4/6"
+    },
+    "min_pressure_trend": {
+     "clear": "3/12",
+     "flat": "3/6"
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "clear": "9/12",
+     "flat": "1/6"
+    },
+    "min_pressure_trend": {
+     "clear": "11/12",
+     "flat": "0/6"
+    }
+   }
+  },
+  "12b": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "clear": "12/12",
+     "flat": "5/6"
+    },
+    "min_pressure_trend": {
+     "clear": "12/12",
+     "flat": "4/6"
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "clear": "7/12",
+     "flat": "6/6"
+    },
+    "min_pressure_trend": {
+     "clear": "7/12",
+     "flat": "6/6"
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "clear": "12/12",
+     "flat": "0/6"
+    },
+    "min_pressure_trend": {
+     "clear": "12/12",
+     "flat": "0/6"
+    }
+   }
+  },
+  "26b": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "clear": "12/12",
+     "flat": "3/6"
+    },
+    "min_pressure_trend": {
+     "clear": "7/12",
+     "flat": "6/6"
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "clear": "5/12",
+     "flat": "6/6"
+    },
+    "min_pressure_trend": {
+     "clear": "5/12",
+     "flat": "6/6"
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "clear": "12/12",
+     "flat": "0/6"
+    },
+    "min_pressure_trend": {
+     "clear": "12/12",
+     "flat": "4/6"
+    }
+   }
+  },
+  "31b": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "clear": "12/12",
+     "flat": "6/6"
+    },
+    "min_pressure_trend": {
+     "clear": "11/12",
+     "flat": "6/6"
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "clear": "10/12",
+     "flat": "6/6"
+    },
+    "min_pressure_trend": {
+     "clear": "11/12",
+     "flat": "6/6"
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "clear": "12/12",
+     "flat": "0/6"
+    },
+    "min_pressure_trend": {
+     "clear": "12/12",
+     "flat": "0/6"
+    }
+   }
+  }
+ },
+ "trend_answers_by_key": {
+  "e2b": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "decreasing -> increasing": 6,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 3,
+     "roughly_constant -> roughly_constant": 3
+    },
+    "min_pressure_trend": {
+     "less_negative -> more_negative": 6,
+     "more_negative -> less_negative": 1,
+     "more_negative -> more_negative": 5,
+     "roughly_constant -> less_negative": 3,
+     "roughly_constant -> more_negative": 2,
+     "roughly_constant -> roughly_constant": 1
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "decreasing -> cannot_tell": 2,
+     "decreasing -> increasing": 4,
+     "increasing -> increasing": 5,
+     "increasing -> roughly_constant": 1,
+     "roughly_constant -> increasing": 4,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> cannot_tell": 1,
+     "less_negative -> more_negative": 3,
+     "less_negative -> roughly_constant": 2,
+     "more_negative -> less_negative": 1,
+     "more_negative -> more_negative": 5,
+     "roughly_constant -> cannot_tell": 1,
+     "roughly_constant -> less_negative": 2,
+     "roughly_constant -> more_negative": 2,
+     "roughly_constant -> roughly_constant": 1
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "decreasing -> increasing": 6,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 6
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 6,
+     "more_negative -> less_negative": 5,
+     "more_negative -> more_negative": 1,
+     "roughly_constant -> less_negative": 5,
+     "roughly_constant -> more_negative": 1
+    }
+   },
+   "flow-sequence-v1": {
+    "max_speed_trend": {
+     "decreasing -> cannot_tell": 1,
+     "decreasing -> increasing": 6,
+     "decreasing -> roughly_constant": 3,
+     "roughly_constant -> cannot_tell": 1,
+     "roughly_constant -> increasing": 1,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> cannot_tell": 2,
+     "less_negative -> less_negative": 4,
+     "less_negative -> more_negative": 5,
+     "less_negative -> roughly_constant": 3
+    }
+   },
+   "flow-sequence-v2": {
+    "max_speed_trend": {
+     "decreasing -> cannot_tell": 1,
+     "decreasing -> roughly_constant": 9,
+     "roughly_constant -> roughly_constant": 4
+    },
+    "min_pressure_trend": {
+     "less_negative -> cannot_tell": 1,
+     "less_negative -> less_negative": 5,
+     "less_negative -> roughly_constant": 8
+    }
+   },
+   "flow-sequence-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 8,
+     "decreasing -> increasing": 2,
+     "roughly_constant -> decreasing": 3,
+     "roughly_constant -> increasing": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> cannot_tell": 1,
+     "less_negative -> less_negative": 10,
+     "less_negative -> more_negative": 2,
+     "less_negative -> roughly_constant": 1
+    }
+   }
+  },
+  "e2b-bf16": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "decreasing -> increasing": 5,
+     "decreasing -> roughly_constant": 1,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 4,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 2,
+     "less_negative -> more_negative": 3,
+     "less_negative -> roughly_constant": 1,
+     "more_negative -> less_negative": 1,
+     "more_negative -> more_negative": 4,
+     "more_negative -> roughly_constant": 1,
+     "roughly_constant -> less_negative": 2,
+     "roughly_constant -> more_negative": 2,
+     "roughly_constant -> roughly_constant": 2
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "decreasing -> cannot_tell": 1,
+     "decreasing -> increasing": 4,
+     "decreasing -> roughly_constant": 1,
+     "increasing -> increasing": 5,
+     "increasing -> roughly_constant": 1,
+     "roughly_constant -> increasing": 5,
+     "roughly_constant -> roughly_constant": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 1,
+     "less_negative -> more_negative": 4,
+     "less_negative -> roughly_constant": 1,
+     "more_negative -> less_negative": 1,
+     "more_negative -> more_negative": 4,
+     "more_negative -> roughly_constant": 1,
+     "roughly_constant -> cannot_tell": 1,
+     "roughly_constant -> less_negative": 1,
+     "roughly_constant -> more_negative": 3,
+     "roughly_constant -> roughly_constant": 1
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 1,
+     "decreasing -> increasing": 5,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 6
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 6,
+     "more_negative -> less_negative": 4,
+     "more_negative -> more_negative": 2,
+     "roughly_constant -> less_negative": 5,
+     "roughly_constant -> more_negative": 1
+    }
+   },
+   "flow-sequence-v1": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 1,
+     "decreasing -> increasing": 6,
+     "decreasing -> roughly_constant": 3,
+     "roughly_constant -> cannot_tell": 1,
+     "roughly_constant -> increasing": 1,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> cannot_tell": 1,
+     "less_negative -> less_negative": 6,
+     "less_negative -> more_negative": 3,
+     "less_negative -> roughly_constant": 4
+    }
+   },
+   "flow-sequence-v2": {
+    "max_speed_trend": {
+     "decreasing -> cannot_tell": 1,
+     "decreasing -> increasing": 1,
+     "decreasing -> roughly_constant": 8,
+     "roughly_constant -> roughly_constant": 4
+    },
+    "min_pressure_trend": {
+     "less_negative -> cannot_tell": 1,
+     "less_negative -> less_negative": 4,
+     "less_negative -> roughly_constant": 9
+    }
+   },
+   "flow-sequence-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 8,
+     "decreasing -> increasing": 2,
+     "roughly_constant -> decreasing": 3,
+     "roughly_constant -> increasing": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 14
+    }
+   }
+  },
+  "e2b-qat": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "decreasing -> cannot_tell": 1,
+     "decreasing -> decreasing": 2,
+     "decreasing -> increasing": 3,
+     "increasing -> decreasing": 1,
+     "increasing -> increasing": 5,
+     "roughly_constant -> increasing": 5,
+     "roughly_constant -> roughly_constant": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 2,
+     "less_negative -> more_negative": 2,
+     "less_negative -> roughly_constant": 2,
+     "more_negative -> less_negative": 2,
+     "more_negative -> more_negative": 4,
+     "roughly_constant -> less_negative": 4,
+     "roughly_constant -> more_negative": 1,
+     "roughly_constant -> roughly_constant": 1
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "decreasing -> increasing": 6,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 5,
+     "roughly_constant -> roughly_constant": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 1,
+     "less_negative -> more_negative": 4,
+     "less_negative -> roughly_constant": 1,
+     "more_negative -> less_negative": 1,
+     "more_negative -> more_negative": 4,
+     "more_negative -> roughly_constant": 1,
+     "roughly_constant -> less_negative": 2,
+     "roughly_constant -> more_negative": 4
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "decreasing -> increasing": 6,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 6
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 6,
+     "more_negative -> less_negative": 3,
+     "more_negative -> more_negative": 3,
+     "roughly_constant -> less_negative": 6
+    }
+   },
+   "flow-sequence-v1": {
+    "max_speed_trend": {
+     "decreasing -> cannot_tell": 1,
+     "decreasing -> decreasing": 1,
+     "decreasing -> increasing": 5,
+     "decreasing -> roughly_constant": 3,
+     "roughly_constant -> increasing": 2,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> cannot_tell": 1,
+     "less_negative -> less_negative": 9,
+     "less_negative -> more_negative": 1,
+     "less_negative -> roughly_constant": 3
+    }
+   },
+   "flow-sequence-v2": {
+    "max_speed_trend": {
+     "decreasing -> roughly_constant": 10,
+     "roughly_constant -> roughly_constant": 4
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 4,
+     "less_negative -> roughly_constant": 10
+    }
+   },
+   "flow-sequence-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 7,
+     "decreasing -> increasing": 3,
+     "roughly_constant -> decreasing": 3,
+     "roughly_constant -> increasing": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 11,
+     "less_negative -> more_negative": 3
+    }
+   }
+  },
+  "e4b": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "decreasing -> increasing": 3,
+     "decreasing -> roughly_constant": 3,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 5,
+     "roughly_constant -> roughly_constant": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 1,
+     "less_negative -> more_negative": 5,
+     "more_negative -> less_negative": 1,
+     "more_negative -> more_negative": 5,
+     "roughly_constant -> less_negative": 1,
+     "roughly_constant -> more_negative": 2,
+     "roughly_constant -> roughly_constant": 3
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 2,
+     "decreasing -> increasing": 2,
+     "decreasing -> roughly_constant": 2,
+     "increasing -> increasing": 5,
+     "increasing -> roughly_constant": 1,
+     "roughly_constant -> decreasing": 1,
+     "roughly_constant -> increasing": 1,
+     "roughly_constant -> roughly_constant": 4
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 3,
+     "less_negative -> more_negative": 1,
+     "less_negative -> roughly_constant": 2,
+     "more_negative -> less_negative": 5,
+     "more_negative -> roughly_constant": 1,
+     "roughly_constant -> less_negative": 1,
+     "roughly_constant -> more_negative": 2,
+     "roughly_constant -> roughly_constant": 3
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 3,
+     "decreasing -> increasing": 2,
+     "decreasing -> roughly_constant": 1,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 5,
+     "roughly_constant -> roughly_constant": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 6,
+     "more_negative -> less_negative": 1,
+     "more_negative -> more_negative": 5,
+     "roughly_constant -> less_negative": 3,
+     "roughly_constant -> more_negative": 3
+    }
+   },
+   "flow-sequence-v1": {
+    "max_speed_trend": {
+     "decreasing -> increasing": 9,
+     "decreasing -> roughly_constant": 1,
+     "roughly_constant -> increasing": 3,
+     "roughly_constant -> roughly_constant": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 2,
+     "less_negative -> more_negative": 9,
+     "less_negative -> roughly_constant": 3
+    }
+   },
+   "flow-sequence-v2": {
+    "max_speed_trend": {
+     "decreasing -> increasing": 5,
+     "decreasing -> roughly_constant": 5,
+     "roughly_constant -> increasing": 3,
+     "roughly_constant -> roughly_constant": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 8,
+     "less_negative -> roughly_constant": 6
+    }
+   },
+   "flow-sequence-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 4,
+     "decreasing -> roughly_constant": 6,
+     "roughly_constant -> increasing": 2,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 10,
+     "less_negative -> more_negative": 4
+    }
+   }
+  },
+  "12b": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 6,
+     "increasing -> increasing": 6,
+     "roughly_constant -> decreasing": 1,
+     "roughly_constant -> roughly_constant": 5
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 6,
+     "more_negative -> more_negative": 6,
+     "roughly_constant -> less_negative": 1,
+     "roughly_constant -> more_negative": 1,
+     "roughly_constant -> roughly_constant": 4
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 3,
+     "decreasing -> roughly_constant": 3,
+     "increasing -> increasing": 4,
+     "increasing -> roughly_constant": 2,
+     "roughly_constant -> roughly_constant": 6
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 3,
+     "less_negative -> more_negative": 1,
+     "less_negative -> roughly_constant": 2,
+     "more_negative -> more_negative": 4,
+     "more_negative -> roughly_constant": 2,
+     "roughly_constant -> roughly_constant": 6
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 6,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 6
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 6,
+     "more_negative -> more_negative": 6,
+     "roughly_constant -> more_negative": 6
+    }
+   },
+   "flow-sequence-v1": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 6,
+     "decreasing -> increasing": 1,
+     "decreasing -> roughly_constant": 3,
+     "roughly_constant -> decreasing": 2,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 7,
+     "less_negative -> more_negative": 2,
+     "less_negative -> roughly_constant": 5
+    }
+   },
+   "flow-sequence-v2": {
+    "max_speed_trend": {
+     "decreasing -> roughly_constant": 10,
+     "roughly_constant -> roughly_constant": 4
+    },
+    "min_pressure_trend": {
+     "less_negative -> more_negative": 2,
+     "less_negative -> roughly_constant": 12
+    }
+   },
+   "flow-sequence-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 10,
+     "roughly_constant -> decreasing": 2,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 3,
+     "less_negative -> more_negative": 11
+    }
+   }
+  },
+  "26b": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 6,
+     "increasing -> increasing": 6,
+     "roughly_constant -> decreasing": 3,
+     "roughly_constant -> roughly_constant": 3
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 4,
+     "less_negative -> roughly_constant": 2,
+     "more_negative -> less_negative": 1,
+     "more_negative -> more_negative": 3,
+     "more_negative -> roughly_constant": 2,
+     "roughly_constant -> roughly_constant": 6
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 4,
+     "decreasing -> roughly_constant": 2,
+     "increasing -> decreasing": 1,
+     "increasing -> increasing": 1,
+     "increasing -> roughly_constant": 4,
+     "roughly_constant -> roughly_constant": 6
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 1,
+     "less_negative -> roughly_constant": 5,
+     "more_negative -> more_negative": 4,
+     "more_negative -> roughly_constant": 2,
+     "roughly_constant -> roughly_constant": 6
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 6,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 6
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 6,
+     "more_negative -> more_negative": 6,
+     "roughly_constant -> more_negative": 2,
+     "roughly_constant -> roughly_constant": 4
+    }
+   },
+   "flow-sequence-v1": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 6,
+     "decreasing -> increasing": 4,
+     "roughly_constant -> decreasing": 2,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 1,
+     "less_negative -> more_negative": 10,
+     "less_negative -> roughly_constant": 3
+    }
+   },
+   "flow-sequence-v2": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 3,
+     "decreasing -> increasing": 3,
+     "decreasing -> roughly_constant": 4,
+     "roughly_constant -> roughly_constant": 4
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 3,
+     "less_negative -> more_negative": 3,
+     "less_negative -> roughly_constant": 8
+    }
+   },
+   "flow-sequence-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 10,
+     "roughly_constant -> decreasing": 2,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 11,
+     "less_negative -> more_negative": 2,
+     "less_negative -> roughly_constant": 1
+    }
+   }
+  },
+  "31b": {
+   "control-trend-v1": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 6,
+     "increasing -> increasing": 6,
+     "roughly_constant -> roughly_constant": 6
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 5,
+     "less_negative -> roughly_constant": 1,
+     "more_negative -> more_negative": 6,
+     "roughly_constant -> roughly_constant": 6
+    }
+   },
+   "control-trend-v2": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 4,
+     "decreasing -> roughly_constant": 2,
+     "increasing -> increasing": 6,
+     "roughly_constant -> roughly_constant": 6
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 5,
+     "less_negative -> roughly_constant": 1,
+     "more_negative -> more_negative": 6,
+     "roughly_constant -> roughly_constant": 6
+    }
+   },
+   "control-trend-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 6,
+     "increasing -> increasing": 6,
+     "roughly_constant -> increasing": 6
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 6,
+     "more_negative -> more_negative": 6,
+     "roughly_constant -> more_negative": 6
+    }
+   },
+   "flow-sequence-v1": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 6,
+     "decreasing -> roughly_constant": 4,
+     "roughly_constant -> decreasing": 2,
+     "roughly_constant -> roughly_constant": 2
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 4,
+     "less_negative -> roughly_constant": 10
+    }
+   },
+   "flow-sequence-v2": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 1,
+     "decreasing -> increasing": 1,
+     "decreasing -> roughly_constant": 8,
+     "roughly_constant -> roughly_constant": 4
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 1,
+     "less_negative -> roughly_constant": 13
+    }
+   },
+   "flow-sequence-v2own": {
+    "max_speed_trend": {
+     "decreasing -> decreasing": 10,
+     "roughly_constant -> decreasing": 3,
+     "roughly_constant -> roughly_constant": 1
+    },
+    "min_pressure_trend": {
+     "less_negative -> less_negative": 12,
+     "less_negative -> more_negative": 2
+    }
+   }
+  }
+ },
+ "flow_sequence_changes": {
+  "full-steps000250-000750-001250": {
+   "max_speed_change_percent": -22.4,
+   "max_speed_trend": "decreasing",
+   "min_pressure_change_percent": 46.1,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "full-steps000250-001250-002750": {
+   "max_speed_change_percent": -29.8,
+   "max_speed_trend": "decreasing",
+   "min_pressure_change_percent": 57.6,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "full-steps001250-002250-003250": {
+   "max_speed_change_percent": -11.2,
+   "max_speed_trend": "decreasing",
+   "min_pressure_change_percent": 26.7,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "full-steps002250-003250-004250": {
+   "max_speed_change_percent": -6.8,
+   "max_speed_trend": "decreasing",
+   "min_pressure_change_percent": 24.2,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "full-steps003250-004250-005250": {
+   "max_speed_change_percent": -3.8,
+   "max_speed_trend": "decreasing",
+   "min_pressure_change_percent": 19.9,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "full-steps004500-005250-006000": {
+   "max_speed_change_percent": -1.2,
+   "max_speed_trend": "roughly_constant",
+   "min_pressure_change_percent": 9.3,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "full-steps005000-005500-006000": {
+   "max_speed_change_percent": -0.5,
+   "max_speed_trend": "roughly_constant",
+   "min_pressure_change_percent": 5.0,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "window-steps000250-000750-001250": {
+   "max_speed_change_percent": -22.4,
+   "max_speed_trend": "decreasing",
+   "min_pressure_change_percent": 46.1,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "window-steps000250-001250-002750": {
+   "max_speed_change_percent": -29.8,
+   "max_speed_trend": "decreasing",
+   "min_pressure_change_percent": 57.6,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "window-steps001250-002250-003250": {
+   "max_speed_change_percent": -11.2,
+   "max_speed_trend": "decreasing",
+   "min_pressure_change_percent": 26.7,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "window-steps002250-003250-004250": {
+   "max_speed_change_percent": -6.8,
+   "max_speed_trend": "decreasing",
+   "min_pressure_change_percent": 24.2,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "window-steps003250-004250-005250": {
+   "max_speed_change_percent": -3.8,
+   "max_speed_trend": "decreasing",
+   "min_pressure_change_percent": 19.9,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "window-steps004500-005250-006000": {
+   "max_speed_change_percent": -1.2,
+   "max_speed_trend": "roughly_constant",
+   "min_pressure_change_percent": 9.3,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  },
+  "window-steps005000-005500-006000": {
+   "max_speed_change_percent": -0.5,
+   "max_speed_trend": "roughly_constant",
+   "min_pressure_change_percent": 5.0,
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "same_place"
+  }
+ },
+ "planted_v2_misses": {
+  "e2b": {
+   "fastest_flow": {
+    "misses": 22,
+    "within_10_of_the_unplanted_state's_own_extreme": 6
+   },
+   "lowest_pressure": {
+    "misses": 26,
+    "within_10_of_the_unplanted_state's_own_extreme": 4
+   }
+  },
+  "e2b-bf16": {
+   "fastest_flow": {
+    "misses": 20,
+    "within_10_of_the_unplanted_state's_own_extreme": 5
+   },
+   "lowest_pressure": {
+    "misses": 25,
+    "within_10_of_the_unplanted_state's_own_extreme": 4
+   }
+  },
+  "e2b-qat": {
+   "fastest_flow": {
+    "misses": 23,
+    "within_10_of_the_unplanted_state's_own_extreme": 3
+   },
+   "lowest_pressure": {
+    "misses": 29,
+    "within_10_of_the_unplanted_state's_own_extreme": 0
+   }
+  },
+  "e4b": {
+   "fastest_flow": {
+    "misses": 17,
+    "within_10_of_the_unplanted_state's_own_extreme": 2
+   },
+   "lowest_pressure": {
+    "misses": 27,
+    "within_10_of_the_unplanted_state's_own_extreme": 1
+   }
+  },
+  "12b": {
+   "fastest_flow": {
+    "misses": 0,
+    "within_10_of_the_unplanted_state's_own_extreme": 0
+   },
+   "lowest_pressure": {
+    "misses": 7,
+    "within_10_of_the_unplanted_state's_own_extreme": 7
+   }
+  },
+  "26b": {
+   "fastest_flow": {
+    "misses": 1,
+    "within_10_of_the_unplanted_state's_own_extreme": 1
+   },
+   "lowest_pressure": {
+    "misses": 12,
+    "within_10_of_the_unplanted_state's_own_extreme": 12
+   }
+  },
+  "31b": {
+   "fastest_flow": {
+    "misses": 0,
+    "within_10_of_the_unplanted_state's_own_extreme": 0
+   },
+   "lowest_pressure": {
+    "misses": 8,
+    "within_10_of_the_unplanted_state's_own_extreme": 8
+   }
+  }
+ },
+ "pictured_planted_item": {
+  "12b": {
+   "fastest_flow": [
+    49,
+    18
+   ],
+   "lowest_pressure": [
+    31,
+    12
+   ],
+   "fastest_within_10": true,
+   "lowest_pressure_within_10": false
+  },
+  "26b": {
+   "fastest_flow": [
+    48,
+    15
+   ],
+   "lowest_pressure": [
+    30,
+    5
+   ],
+   "fastest_within_10": true,
+   "lowest_pressure_within_10": false
+  },
+  "31b": {
+   "fastest_flow": [
+    50,
+    20
+   ],
+   "lowest_pressure": [
+    27,
+    10
+   ],
+   "fastest_within_10": true,
+   "lowest_pressure_within_10": false
+  },
+  "key": {
+   "fastest_flow": [
+    48.8,
+    17.3
+   ],
+   "lowest_pressure": [
+    20.4,
+    90.0
+   ]
+  }
+ },
+ "e2b_projector_swaps_max_position_change": {
+  "e2b vs e2b-bf16 (projector Q8_0 vs BF16, same weights)": 3,
+  "e2b-bf16 vs e2b-qat (other weights, Google's BF16 projector file)": 4,
+  "e2b vs e2b-qat": 5
+ },
+ "totals": {
+  "e2b": {
+   "positions_within_10": "67/388",
+   "fixed_answer_positions": 176,
+   "trend_words_right": "140/306",
+   "fixed_answer_words": 195
+  },
+  "e2b-bf16": {
+   "positions_within_10": "61/388",
+   "fixed_answer_positions": 176,
+   "trend_words_right": "152/306",
+   "fixed_answer_words": 195
+  },
+  "e2b-qat": {
+   "positions_within_10": "44/388",
+   "fixed_answer_positions": 176,
+   "trend_words_right": "152/306",
+   "fixed_answer_words": 195
+  },
+  "e4b": {
+   "positions_within_10": "70/388",
+   "fixed_answer_positions": 176,
+   "trend_words_right": "157/306",
+   "fixed_answer_words": 195
+  },
+  "12b": {
+   "positions_within_10": "225/388",
+   "fixed_answer_positions": 176,
+   "trend_words_right": "214/306",
+   "fixed_answer_words": 195
+  },
+  "26b": {
+   "positions_within_10": "210/388",
+   "fixed_answer_positions": 176,
+   "trend_words_right": "215/306",
+   "fixed_answer_words": 195
+  },
+  "31b": {
+   "positions_within_10": "240/388",
+   "fixed_answer_positions": 176,
+   "trend_words_right": "244/306",
+   "fixed_answer_words": 195
+  }
+ },
+ "oct17_pairs": {
+  "e2b": {
+   "checker": {
+    "no_automatic_flags": 12
+   },
+   "observations_say_unknown": {
+    "numeric_only": 0,
+    "numeric_plus_image": 0
+   },
+   "possible_interpretation_near_x0": {},
+   "prompt_tokens": {
+    "numeric_only": [
+     1462
+    ],
+    "numeric_plus_image": [
+     1568
+    ]
+   }
+  },
+  "e2b-bf16": {
+   "checker": {
+    "no_automatic_flags": 12
+   },
+   "observations_say_unknown": {
+    "numeric_only": 0,
+    "numeric_plus_image": 0
+   },
+   "possible_interpretation_near_x0": {},
+   "prompt_tokens": {
+    "numeric_only": [
+     1462
+    ],
+    "numeric_plus_image": [
+     1568
+    ]
+   }
+  },
+  "e2b-qat": {
+   "checker": {
+    "no_automatic_flags": 12
+   },
+   "observations_say_unknown": {
+    "numeric_only": 0,
+    "numeric_plus_image": 0
+   },
+   "possible_interpretation_near_x0": {},
+   "prompt_tokens": {
+    "numeric_only": [
+     1462
+    ],
+    "numeric_plus_image": [
+     1568
+    ]
+   }
+  },
+  "e4b": {
+   "checker": {
+    "flags_for_review": 6,
+    "flag:force_balance": 6,
+    "no_automatic_flags": 6
+   },
+   "observations_say_unknown": {
+    "numeric_only": 6,
+    "numeric_plus_image": 6
+   },
+   "possible_interpretation_near_x0": {},
+   "prompt_tokens": {
+    "numeric_only": [
+     1462
+    ],
+    "numeric_plus_image": [
+     1568
+    ]
+   }
+  },
+  "12b": {
+   "checker": {
+    "no_automatic_flags": 12
+   },
+   "observations_say_unknown": {
+    "numeric_only": 6,
+    "numeric_plus_image": 6
+   },
+   "possible_interpretation_near_x0": {
+    "numeric_plus_image: x=0.00 m": 6
+   },
+   "prompt_tokens": {
+    "numeric_only": [
+     1466
+    ],
+    "numeric_plus_image": [
+     1572
+    ]
+   }
+  },
+  "26b": {
+   "checker": {
+    "flags_for_review": 11,
+    "flag:force_balance": 11,
+    "no_automatic_flags": 1,
+    "flag:physical_stability_or_convergence": 3
+   },
+   "observations_say_unknown": {
+    "numeric_only": 6,
+    "numeric_plus_image": 6
+   },
+   "possible_interpretation_near_x0": {
+    "numeric_plus_image: x=0 m": 6
+   },
+   "prompt_tokens": {
+    "numeric_only": [
+     1466
+    ],
+    "numeric_plus_image": [
+     1572
+    ]
+   }
+  },
+  "31b": {
+   "checker": {
+    "flags_for_review": 6,
+    "flag:physical_stability_or_convergence": 6,
+    "flag:force_balance": 5,
+    "no_automatic_flags": 6
+   },
+   "observations_say_unknown": {
+    "numeric_only": 6,
+    "numeric_plus_image": 6
+   },
+   "possible_interpretation_near_x0": {
+    "numeric_plus_image: x=0.0 m, y=0.0 m": 6
+   },
+   "prompt_tokens": {
+    "numeric_only": [
+     1466
+    ],
+    "numeric_plus_image": [
+     1572
+    ]
+   }
+  }
+ },
+ "time_and_memory": {
+  "e2b": {
+   "requests": 308,
+   "median_s": 1.01,
+   "min_s": 0.57,
+   "max_s": 1.55,
+   "total_min": 5.4,
+   "generated_tokens_per_s_median": 214.8,
+   "gpu_line_when_ready": "NVIDIA RTX A6000, 2644 MiB, 49140 MiB",
+   "parameters": 4628569635,
+   "weights_bytes": 2825664652,
+   "weights_MiB": 2695,
+   "gpu_used_below_weights": true
+  },
+  "e2b-bf16": {
+   "requests": 308,
+   "median_s": 1.0,
+   "min_s": 0.59,
+   "max_s": 1.58,
+   "total_min": 5.3,
+   "generated_tokens_per_s_median": 214.8,
+   "gpu_line_when_ready": "NVIDIA RTX A6000, 3054 MiB, 49140 MiB",
+   "parameters": 4628569635,
+   "weights_bytes": 2825664652,
+   "weights_MiB": 2695,
+   "gpu_used_below_weights": false
+  },
+  "e2b-qat": {
+   "requests": 308,
+   "median_s": 1.01,
+   "min_s": 0.6,
+   "max_s": 1.48,
+   "total_min": 5.2,
+   "generated_tokens_per_s_median": 221.0,
+   "gpu_line_when_ready": "NVIDIA RTX A6000, 2960 MiB, 49140 MiB",
+   "parameters": 4628569635,
+   "weights_bytes": 3333699724,
+   "weights_MiB": 3179,
+   "gpu_used_below_weights": true
+  },
+  "e4b": {
+   "requests": 308,
+   "median_s": 1.31,
+   "min_s": 0.76,
+   "max_s": 1.8,
+   "total_min": 6.9,
+   "generated_tokens_per_s_median": 135.7,
+   "gpu_line_when_ready": "NVIDIA RTX A6000, 4378 MiB, 49140 MiB",
+   "parameters": 7463013674,
+   "weights_bytes": 5139117224,
+   "weights_MiB": 4901,
+   "gpu_used_below_weights": true
+  },
+  "12b": {
+   "requests": 308,
+   "median_s": 2.86,
+   "min_s": 1.56,
+   "max_s": 3.68,
+   "total_min": 14.6,
+   "generated_tokens_per_s_median": 73.1,
+   "gpu_line_when_ready": "NVIDIA RTX A6000, 7966 MiB, 49140 MiB",
+   "parameters": 11907350576,
+   "weights_bytes": 6960054464,
+   "weights_MiB": 6638,
+   "gpu_used_below_weights": false
+  },
+  "26b": {
+   "requests": 308,
+   "median_s": 2.18,
+   "min_s": 0.87,
+   "max_s": 3.44,
+   "total_min": 11.5,
+   "generated_tokens_per_s_median": 126.8,
+   "gpu_line_when_ready": "NVIDIA RTX A6000, 15892 MiB, 49140 MiB",
+   "parameters": 25233142046,
+   "weights_bytes": 14423538808,
+   "weights_MiB": 13755,
+   "gpu_used_below_weights": false
+  },
+  "31b": {
+   "requests": 308,
+   "median_s": 6.33,
+   "min_s": 3.17,
+   "max_s": 8.83,
+   "total_min": 32.3,
+   "generated_tokens_per_s_median": 32.5,
+   "gpu_line_when_ready": "NVIDIA RTX A6000, 20128 MiB, 49140 MiB",
+   "parameters": 30697345596,
+   "weights_bytes": 17635166448,
+   "weights_MiB": 16818,
+   "gpu_used_below_weights": false
+  }
+ }
+}

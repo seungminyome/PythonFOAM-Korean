@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum speed |U| is 82.5275 m/s. Position is unknown as the image does not provide specific coordinates for the maximum value.\",\n  \"possible_interpretation\": \"High velocity is present in the domain, but the exact spatial location of the peak is not mapped to specific x, y coordinates in the data.\",\n  \"checks\": \"Missing spatial coordinates for max speed; SVD indicates dominant Ux pattern; residuals are not force balance.\"\n}",
+  "request_sha256": "de10f0a03b0da55aad7d1a34f667779f7f7a44f5bfe8ddc16feb5da46314ef11",
+  "request_bytes": 4891,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1113,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 112,
+    "prompt_tokens": 1466,
+    "total_tokens": 1578,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1466,
+    "prompt_ms": 639.47,
+    "prompt_per_token_ms": 0.4362005457025921,
+    "prompt_per_second": 2292.5234960201415,
+    "predicted_n": 112,
+    "predicted_ms": 1531.968,
+    "predicted_per_token_ms": 13.801513513513514,
+    "predicted_per_second": 72.45582153152024
+  },
+  "structured_output": {
+    "observations": "Maximum speed |U| is 82.5275 m/s. Position is unknown as the image does not provide specific coordinates for the maximum value.",
+    "possible_interpretation": "High velocity is present in the domain, but the exact spatial location of the peak is not mapped to specific x, y coordinates in the data.",
+    "checks": "Missing spatial coordinates for max speed; SVD indicates dominant Ux pattern; residuals are not force balance."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.229407150298357,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

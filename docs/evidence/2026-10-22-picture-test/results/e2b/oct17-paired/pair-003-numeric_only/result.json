@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Max speed |U| is 82.52751611538334 m/s at x=0.6012246511046805 m, y=0.11429523559299273 m.\",\n  \"possible_interpretation\": \"The maximum velocity is found in the domain extent.\",\n  \"checks\": \"Missing evidence for other locations. SVD shows dominant Ux component.\"\n}",
+  "request_sha256": "059a3bc84e3816fb8da0b89e08f51c8c8ba08a92ee6304a25adb9d80ecab4dc1",
+  "request_bytes": 4866,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 932,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 125,
+    "prompt_tokens": 1462,
+    "total_tokens": 1587,
+    "prompt_tokens_details": {
+      "cached_tokens": 1461
+    }
+  },
+  "server_timings": {
+    "cache_n": 1461,
+    "prompt_n": 1,
+    "prompt_ms": 7.396,
+    "prompt_per_token_ms": 7.396,
+    "prompt_per_second": 135.2082206598161,
+    "predicted_n": 125,
+    "predicted_ms": 572.412,
+    "predicted_per_token_ms": 4.616225806451613,
+    "predicted_per_second": 216.62718461527712
+  },
+  "structured_output": {
+    "observations": "Max speed |U| is 82.52751611538334 m/s at x=0.6012246511046805 m, y=0.11429523559299273 m.",
+    "possible_interpretation": "The maximum velocity is found in the domain extent.",
+    "checks": "Missing evidence for other locations. SVD shows dominant Ux component."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 0.636864235624671,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

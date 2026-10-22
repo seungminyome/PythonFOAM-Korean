@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"observations\": \"Maximum |U| is 82.5275 m/s. Location is unknown as JSON lacks spatial mapping for peak values.\",\n  \"possible_interpretation\": \"High velocity gradient likely exists near domain boundaries or obstacles, but specific coordinates are not provided.\",\n  \"checks\": \"Missing spatial coordinate mapping for max |U|; missing force balance; missing pressure-velocity coupling verification.\"\n}",
+  "request_sha256": "3b1b40acfd751b8f26198ea06b11b40fb37dd4ca741d6139c78f73f1b174e6cf",
+  "request_bytes": 4874,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1063,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 97,
+    "prompt_tokens": 1466,
+    "total_tokens": 1563,
+    "prompt_tokens_details": {
+      "cached_tokens": 1457
+    }
+  },
+  "server_timings": {
+    "cache_n": 1457,
+    "prompt_n": 9,
+    "prompt_ms": 84.397,
+    "prompt_per_token_ms": 9.377444444444444,
+    "prompt_per_second": 106.63886157090892,
+    "predicted_n": 97,
+    "predicted_ms": 769.221,
+    "predicted_per_token_ms": 8.01271875,
+    "predicted_per_second": 124.80158498012925
+  },
+  "structured_output": {
+    "observations": "Maximum |U| is 82.5275 m/s. Location is unknown as JSON lacks spatial mapping for peak values.",
+    "possible_interpretation": "High velocity gradient likely exists near domain boundaries or obstacles, but specific coordinates are not provided.",
+    "checks": "Missing spatial coordinate mapping for max |U|; missing force balance; missing pressure-velocity coupling verification."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 0.9086832515895367,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0
+}

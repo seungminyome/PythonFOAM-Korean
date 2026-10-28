@@ -1,0 +1,26 @@
+validation ran
+  "status": "PASS"
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-mpi-20261027/run-24903786/pod-v2212.v9gDzq
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-mpi-20261027/run-24903786/pod-v2212.v9gDzq/bin/PODFoam
+serial exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=0.674058s async=1 arrived_at_step=114 solver_stall=0.011160s
+Python finalized successfully
+End
+par2 exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=2
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=0.659762s async=1 arrived_at_step=119 solver_stall=0.009928s
+Python finalized successfully
+End
+cells serial 20540 par2 20540
+{
+ "cells": [
+  20540,
+  20540
+ ],
+ "max_abs_diff_centres_m": 4.163336342344337e-17,
+ "max_abs_diff_U": 0.0007501746298501644,
+ "max_abs_diff_p": 0.020552022168061512,
+ "max_abs_U": 37.19617213135139,
+ "max_abs_p": 335.03879473013546
+}

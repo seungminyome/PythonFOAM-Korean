@@ -1,0 +1,244 @@
+{
+ "first_run": "Slurm 24757460 (NVIDIA RTX A6000), ../../2026-10-22-live-v2",
+ "repeats": {
+  "24903298": {
+   "verification": "PASS",
+   "suite_files": {
+    "compared": 2841,
+    "identical": 2748,
+    "differ": 93,
+    "differ_by_kind": {
+     "code": 47,
+     "request/reply record": 18,
+     "log": 6,
+     "other record": 22
+    },
+    "differ_in_time_directories_other_than_POD_modes": [],
+    "only_in_first_run": 0,
+    "only_in_repeat": 20
+   },
+   "sweep_files": {
+    "compared": 3511,
+    "identical": 1232,
+    "differ": 2279,
+    "differ_by_kind": {
+     "POD mode file": 2145,
+     "code": 44,
+     "request/reply record": 44,
+     "log": 11,
+     "other record": 35
+    },
+    "differ_in_time_directories_other_than_POD_modes": [],
+    "only_in_first_run": 0,
+    "only_in_repeat": 0
+   },
+   "requests_identical_to_first_run": 13,
+   "requests_compared": 13,
+   "answers_identical_to_first_run": 0,
+   "answers_differing_from_first_run": {
+    "async-describe": [
+     "flow_description"
+    ],
+    "async-sequence": [
+     "change_description",
+     "min_pressure_trend",
+     "uncertainties"
+    ],
+    "describe-step000500": [
+     "flow_description",
+     "lowest_pressure_y_percent",
+     "uncertainties"
+    ],
+    "describe-step001000": [
+     "fastest_flow_x_percent",
+     "fastest_flow_y_percent",
+     "flow_description",
+     "uncertainties"
+    ],
+    "describe-step001500": [
+     "flow_description",
+     "uncertainties"
+    ],
+    "describe-step002000": [
+     "flow_description",
+     "uncertainties"
+    ],
+    "describe-step002500": [
+     "flow_description"
+    ],
+    "describe-step003000": [
+     "fastest_flow_y_percent",
+     "flow_description",
+     "lowest_pressure_x_percent",
+     "lowest_pressure_y_percent",
+     "uncertainties"
+    ],
+    "describe-step003500": [
+     "lowest_pressure_y_percent",
+     "uncertainties"
+    ],
+    "describe-step004000": [
+     "fastest_flow_x_percent",
+     "fastest_flow_y_percent",
+     "flow_description",
+     "lowest_pressure_y_percent",
+     "uncertainties"
+    ],
+    "describe-step004500": [
+     "uncertainties"
+    ],
+    "describe-step005000": [
+     "flow_description",
+     "uncertainties"
+    ],
+    "describe-step005500": [
+     "flow_description",
+     "lowest_pressure_x_percent",
+     "uncertainties"
+    ]
+   },
+   "sweep_within_10_percent": {
+    "fastest_flow": 9,
+    "lowest_pressure": 10
+   }
+  },
+  "24903263": {
+   "verification": "PASS",
+   "suite_files": {
+    "compared": 2841,
+    "identical": 2748,
+    "differ": 93,
+    "differ_by_kind": {
+     "code": 47,
+     "request/reply record": 18,
+     "log": 6,
+     "other record": 22
+    },
+    "differ_in_time_directories_other_than_POD_modes": [],
+    "only_in_first_run": 0,
+    "only_in_repeat": 13
+   },
+   "sweep_files": {
+    "compared": 3511,
+    "identical": 1232,
+    "differ": 2279,
+    "differ_by_kind": {
+     "POD mode file": 2145,
+     "code": 44,
+     "request/reply record": 44,
+     "log": 11,
+     "other record": 35
+    },
+    "differ_in_time_directories_other_than_POD_modes": [],
+    "only_in_first_run": 0,
+    "only_in_repeat": 0
+   },
+   "requests_identical_to_first_run": 13,
+   "requests_compared": 13,
+   "answers_identical_to_first_run": 0,
+   "answers_differing_from_first_run": {
+    "async-describe": [
+     "flow_description"
+    ],
+    "async-sequence": [
+     "change_description",
+     "min_pressure_trend",
+     "uncertainties"
+    ],
+    "describe-step000500": [
+     "flow_description",
+     "lowest_pressure_y_percent",
+     "uncertainties"
+    ],
+    "describe-step001000": [
+     "fastest_flow_x_percent",
+     "fastest_flow_y_percent",
+     "flow_description",
+     "uncertainties"
+    ],
+    "describe-step001500": [
+     "flow_description",
+     "uncertainties"
+    ],
+    "describe-step002000": [
+     "flow_description",
+     "uncertainties"
+    ],
+    "describe-step002500": [
+     "flow_description"
+    ],
+    "describe-step003000": [
+     "fastest_flow_y_percent",
+     "flow_description",
+     "lowest_pressure_x_percent",
+     "lowest_pressure_y_percent",
+     "uncertainties"
+    ],
+    "describe-step003500": [
+     "lowest_pressure_y_percent",
+     "uncertainties"
+    ],
+    "describe-step004000": [
+     "fastest_flow_x_percent",
+     "fastest_flow_y_percent",
+     "flow_description",
+     "lowest_pressure_y_percent",
+     "uncertainties"
+    ],
+    "describe-step004500": [
+     "uncertainties"
+    ],
+    "describe-step005000": [
+     "flow_description",
+     "uncertainties"
+    ],
+    "describe-step005500": [
+     "flow_description",
+     "lowest_pressure_x_percent",
+     "uncertainties"
+    ]
+   },
+   "sweep_within_10_percent": {
+    "fastest_flow": 9,
+    "lowest_pressure": 10
+   }
+  }
+ },
+ "repeat_sweeps_against_each_other": {
+  "compared": 3511,
+  "identical": 3432,
+  "differ": 79,
+  "differ_by_kind": {
+   "request/reply record": 44,
+   "log": 11,
+   "other record": 24
+  },
+  "differ_in_time_directories_other_than_POD_modes": [],
+  "only_in_first_run": 0,
+  "only_in_repeat": 0
+ },
+ "repeats_identical_to_each_other": {
+  "requests": 13,
+  "answers": 13,
+  "of": 13
+ },
+ "sequence_words": {
+  "truth (check-live.json)": {
+   "max_speed_trend": "decreasing",
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "moves"
+  },
+  "first_run": {
+   "max_speed_trend": "decreasing",
+   "min_pressure_trend": "more_negative",
+   "fastest_flow_region": "moves"
+  },
+  "first_run_right": 2,
+  "repeats": {
+   "max_speed_trend": "decreasing",
+   "min_pressure_trend": "less_negative",
+   "fastest_flow_region": "moves"
+  },
+  "repeats_right": 3
+ }
+}

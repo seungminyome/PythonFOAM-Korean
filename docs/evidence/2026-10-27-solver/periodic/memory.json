@@ -1,0 +1,973 @@
+{
+ "periodic-no-llm": {
+  "cycles": 95,
+  "baseline_first_quarter_mean_mib": 131.1,
+  "baseline_last_quarter_mean_mib": 215.7,
+  "largest_swing_within_a_cycle_mib": 432.7,
+  "per_cycle": [
+   {
+    "from_step": 250,
+    "min_pss_mib": 78.2,
+    "max_pss_mib": 496.2
+   },
+   {
+    "from_step": 500,
+    "min_pss_mib": 126.8,
+    "max_pss_mib": 497.2
+   },
+   {
+    "from_step": 750,
+    "min_pss_mib": 138.0,
+    "max_pss_mib": 498.2
+   },
+   {
+    "from_step": 1000,
+    "min_pss_mib": 136.2,
+    "max_pss_mib": 522.6
+   },
+   {
+    "from_step": 1250,
+    "min_pss_mib": 138.7,
+    "max_pss_mib": 500.3
+   },
+   {
+    "from_step": 1500,
+    "min_pss_mib": 83.8,
+    "max_pss_mib": 486.8
+   },
+   {
+    "from_step": 1750,
+    "min_pss_mib": 78.3,
+    "max_pss_mib": 485.8
+   },
+   {
+    "from_step": 2000,
+    "min_pss_mib": 141.1,
+    "max_pss_mib": 502.6
+   },
+   {
+    "from_step": 2250,
+    "min_pss_mib": 141.2,
+    "max_pss_mib": 485.5
+   },
+   {
+    "from_step": 2500,
+    "min_pss_mib": 142.0,
+    "max_pss_mib": 502.9
+   },
+   {
+    "from_step": 2750,
+    "min_pss_mib": 144.0,
+    "max_pss_mib": 492.1
+   },
+   {
+    "from_step": 3000,
+    "min_pss_mib": 141.2,
+    "max_pss_mib": 504.7
+   },
+   {
+    "from_step": 3250,
+    "min_pss_mib": 137.7,
+    "max_pss_mib": 488.4
+   },
+   {
+    "from_step": 3500,
+    "min_pss_mib": 88.7,
+    "max_pss_mib": 506.7
+   },
+   {
+    "from_step": 3750,
+    "min_pss_mib": 147.0,
+    "max_pss_mib": 507.9
+   },
+   {
+    "from_step": 4000,
+    "min_pss_mib": 151.1,
+    "max_pss_mib": 508.0
+   },
+   {
+    "from_step": 4250,
+    "min_pss_mib": 148.5,
+    "max_pss_mib": 509.4
+   },
+   {
+    "from_step": 4500,
+    "min_pss_mib": 150.1,
+    "max_pss_mib": 510.7
+   },
+   {
+    "from_step": 4750,
+    "min_pss_mib": 150.3,
+    "max_pss_mib": 494.9
+   },
+   {
+    "from_step": 5000,
+    "min_pss_mib": 146.7,
+    "max_pss_mib": 512.7
+   },
+   {
+    "from_step": 5250,
+    "min_pss_mib": 101.5,
+    "max_pss_mib": 497.3
+   },
+   {
+    "from_step": 5500,
+    "min_pss_mib": 152.3,
+    "max_pss_mib": 506.7
+   },
+   {
+    "from_step": 5750,
+    "min_pss_mib": 153.0,
+    "max_pss_mib": 515.9
+   },
+   {
+    "from_step": 6000,
+    "min_pss_mib": 156.1,
+    "max_pss_mib": 516.0
+   },
+   {
+    "from_step": 6250,
+    "min_pss_mib": 152.7,
+    "max_pss_mib": 579.2
+   },
+   {
+    "from_step": 6500,
+    "min_pss_mib": 112.2,
+    "max_pss_mib": 502.4
+   },
+   {
+    "from_step": 6750,
+    "min_pss_mib": 156.2,
+    "max_pss_mib": 519.4
+   },
+   {
+    "from_step": 7000,
+    "min_pss_mib": 160.0,
+    "max_pss_mib": 519.8
+   },
+   {
+    "from_step": 7250,
+    "min_pss_mib": 162.2,
+    "max_pss_mib": 543.8
+   },
+   {
+    "from_step": 7500,
+    "min_pss_mib": 160.7,
+    "max_pss_mib": 521.6
+   },
+   {
+    "from_step": 7750,
+    "min_pss_mib": 158.5,
+    "max_pss_mib": 523.9
+   },
+   {
+    "from_step": 8000,
+    "min_pss_mib": 106.0,
+    "max_pss_mib": 508.4
+   },
+   {
+    "from_step": 8250,
+    "min_pss_mib": 168.0,
+    "max_pss_mib": 526.1
+   },
+   {
+    "from_step": 8500,
+    "min_pss_mib": 168.2,
+    "max_pss_mib": 524.7
+   },
+   {
+    "from_step": 8750,
+    "min_pss_mib": 166.5,
+    "max_pss_mib": 510.9
+   },
+   {
+    "from_step": 9000,
+    "min_pss_mib": 171.2,
+    "max_pss_mib": 511.9
+   },
+   {
+    "from_step": 9250,
+    "min_pss_mib": 117.3,
+    "max_pss_mib": 537.8
+   },
+   {
+    "from_step": 9500,
+    "min_pss_mib": 170.0,
+    "max_pss_mib": 526.2
+   },
+   {
+    "from_step": 9750,
+    "min_pss_mib": 110.1,
+    "max_pss_mib": 515.1
+   },
+   {
+    "from_step": 10000,
+    "min_pss_mib": 175.3,
+    "max_pss_mib": 548.8
+   },
+   {
+    "from_step": 10250,
+    "min_pss_mib": 175.0,
+    "max_pss_mib": 532.8
+   },
+   {
+    "from_step": 10500,
+    "min_pss_mib": 105.5,
+    "max_pss_mib": 534.0
+   },
+   {
+    "from_step": 10750,
+    "min_pss_mib": 174.1,
+    "max_pss_mib": 534.7
+   },
+   {
+    "from_step": 11000,
+    "min_pss_mib": 174.6,
+    "max_pss_mib": 519.4
+   },
+   {
+    "from_step": 11250,
+    "min_pss_mib": 174.6,
+    "max_pss_mib": 595.8
+   },
+   {
+    "from_step": 11500,
+    "min_pss_mib": 180.7,
+    "max_pss_mib": 533.2
+   },
+   {
+    "from_step": 11750,
+    "min_pss_mib": 180.7,
+    "max_pss_mib": 601.6
+   },
+   {
+    "from_step": 12000,
+    "min_pss_mib": 180.0,
+    "max_pss_mib": 539.9
+   },
+   {
+    "from_step": 12250,
+    "min_pss_mib": 178.6,
+    "max_pss_mib": 524.4
+   },
+   {
+    "from_step": 12500,
+    "min_pss_mib": 135.8,
+    "max_pss_mib": 541.1
+   },
+   {
+    "from_step": 12750,
+    "min_pss_mib": 187.9,
+    "max_pss_mib": 526.1
+   },
+   {
+    "from_step": 13000,
+    "min_pss_mib": 173.0,
+    "max_pss_mib": 567.5
+   },
+   {
+    "from_step": 13250,
+    "min_pss_mib": 186.6,
+    "max_pss_mib": 544.6
+   },
+   {
+    "from_step": 13500,
+    "min_pss_mib": 185.7,
+    "max_pss_mib": 528.7
+   },
+   {
+    "from_step": 13750,
+    "min_pss_mib": 189.6,
+    "max_pss_mib": 546.1
+   },
+   {
+    "from_step": 14000,
+    "min_pss_mib": 189.5,
+    "max_pss_mib": 547.3
+   },
+   {
+    "from_step": 14250,
+    "min_pss_mib": 136.4,
+    "max_pss_mib": 548.2
+   },
+   {
+    "from_step": 14500,
+    "min_pss_mib": 188.6,
+    "max_pss_mib": 534.0
+   },
+   {
+    "from_step": 14750,
+    "min_pss_mib": 118.8,
+    "max_pss_mib": 543.0
+   },
+   {
+    "from_step": 15000,
+    "min_pss_mib": 197.2,
+    "max_pss_mib": 574.4
+   },
+   {
+    "from_step": 15250,
+    "min_pss_mib": 196.8,
+    "max_pss_mib": 551.8
+   },
+   {
+    "from_step": 15500,
+    "min_pss_mib": 147.5,
+    "max_pss_mib": 544.7
+   },
+   {
+    "from_step": 15750,
+    "min_pss_mib": 148.2,
+    "max_pss_mib": 554.7
+   },
+   {
+    "from_step": 16000,
+    "min_pss_mib": 196.4,
+    "max_pss_mib": 539.4
+   },
+   {
+    "from_step": 16250,
+    "min_pss_mib": 141.6,
+    "max_pss_mib": 556.0
+   },
+   {
+    "from_step": 16500,
+    "min_pss_mib": 218.6,
+    "max_pss_mib": 541.0
+   },
+   {
+    "from_step": 16750,
+    "min_pss_mib": 219.6,
+    "max_pss_mib": 558.0
+   },
+   {
+    "from_step": 17000,
+    "min_pss_mib": 220.6,
+    "max_pss_mib": 543.9
+   },
+   {
+    "from_step": 17250,
+    "min_pss_mib": 127.9,
+    "max_pss_mib": 560.6
+   },
+   {
+    "from_step": 17500,
+    "min_pss_mib": 222.6,
+    "max_pss_mib": 544.9
+   },
+   {
+    "from_step": 17750,
+    "min_pss_mib": 223.5,
+    "max_pss_mib": 545.9
+   },
+   {
+    "from_step": 18000,
+    "min_pss_mib": 224.5,
+    "max_pss_mib": 563.8
+   },
+   {
+    "from_step": 18250,
+    "min_pss_mib": 205.0,
+    "max_pss_mib": 564.6
+   },
+   {
+    "from_step": 18500,
+    "min_pss_mib": 226.5,
+    "max_pss_mib": 549.8
+   },
+   {
+    "from_step": 18750,
+    "min_pss_mib": 188.1,
+    "max_pss_mib": 581.1
+   },
+   {
+    "from_step": 19000,
+    "min_pss_mib": 228.5,
+    "max_pss_mib": 566.8
+   },
+   {
+    "from_step": 19250,
+    "min_pss_mib": 187.6,
+    "max_pss_mib": 567.8
+   },
+   {
+    "from_step": 19500,
+    "min_pss_mib": 225.1,
+    "max_pss_mib": 553.1
+   },
+   {
+    "from_step": 19750,
+    "min_pss_mib": 231.4,
+    "max_pss_mib": 554.7
+   },
+   {
+    "from_step": 20000,
+    "min_pss_mib": 232.3,
+    "max_pss_mib": 555.2
+   },
+   {
+    "from_step": 20250,
+    "min_pss_mib": 233.3,
+    "max_pss_mib": 558.6
+   },
+   {
+    "from_step": 20500,
+    "min_pss_mib": 161.5,
+    "max_pss_mib": 559.3
+   },
+   {
+    "from_step": 20750,
+    "min_pss_mib": 149.5,
+    "max_pss_mib": 574.6
+   },
+   {
+    "from_step": 21000,
+    "min_pss_mib": 236.3,
+    "max_pss_mib": 559.6
+   },
+   {
+    "from_step": 21250,
+    "min_pss_mib": 237.8,
+    "max_pss_mib": 575.9
+   },
+   {
+    "from_step": 21500,
+    "min_pss_mib": 259.6,
+    "max_pss_mib": 561.5
+   },
+   {
+    "from_step": 21750,
+    "min_pss_mib": 239.4,
+    "max_pss_mib": 578.7
+   },
+   {
+    "from_step": 22000,
+    "min_pss_mib": 240.3,
+    "max_pss_mib": 602.4
+   },
+   {
+    "from_step": 22250,
+    "min_pss_mib": 241.3,
+    "max_pss_mib": 582.1
+   },
+   {
+    "from_step": 22500,
+    "min_pss_mib": 242.3,
+    "max_pss_mib": 594.4
+   },
+   {
+    "from_step": 22750,
+    "min_pss_mib": 175.6,
+    "max_pss_mib": 582.6
+   },
+   {
+    "from_step": 23000,
+    "min_pss_mib": 171.1,
+    "max_pss_mib": 583.6
+   },
+   {
+    "from_step": 23250,
+    "min_pss_mib": 155.8,
+    "max_pss_mib": 584.5
+   },
+   {
+    "from_step": 23500,
+    "min_pss_mib": 246.2,
+    "max_pss_mib": 585.5
+   },
+   {
+    "from_step": 23750,
+    "min_pss_mib": 247.2,
+    "max_pss_mib": 569.5
+   }
+  ],
+  "baseline_growth_mib": 84.6
+ },
+ "periodic-describe": {
+  "cycles": 95,
+  "baseline_first_quarter_mean_mib": 173.0,
+  "baseline_last_quarter_mean_mib": 242.8,
+  "largest_swing_within_a_cycle_mib": 425.7,
+  "per_cycle": [
+   {
+    "from_step": 250,
+    "min_pss_mib": 164.6,
+    "max_pss_mib": 478.4
+   },
+   {
+    "from_step": 500,
+    "min_pss_mib": 165.2,
+    "max_pss_mib": 495.2
+   },
+   {
+    "from_step": 750,
+    "min_pss_mib": 181.6,
+    "max_pss_mib": 495.8
+   },
+   {
+    "from_step": 1000,
+    "min_pss_mib": 186.5,
+    "max_pss_mib": 521.2
+   },
+   {
+    "from_step": 1250,
+    "min_pss_mib": 183.6,
+    "max_pss_mib": 498.2
+   },
+   {
+    "from_step": 1500,
+    "min_pss_mib": 174.3,
+    "max_pss_mib": 498.9
+   },
+   {
+    "from_step": 1750,
+    "min_pss_mib": 93.6,
+    "max_pss_mib": 499.8
+   },
+   {
+    "from_step": 2000,
+    "min_pss_mib": 232.9,
+    "max_pss_mib": 498.5
+   },
+   {
+    "from_step": 2250,
+    "min_pss_mib": 187.9,
+    "max_pss_mib": 486.0
+   },
+   {
+    "from_step": 2500,
+    "min_pss_mib": 187.4,
+    "max_pss_mib": 485.7
+   },
+   {
+    "from_step": 2750,
+    "min_pss_mib": 193.1,
+    "max_pss_mib": 503.4
+   },
+   {
+    "from_step": 3000,
+    "min_pss_mib": 85.7,
+    "max_pss_mib": 507.9
+   },
+   {
+    "from_step": 3250,
+    "min_pss_mib": 90.0,
+    "max_pss_mib": 509.2
+   },
+   {
+    "from_step": 3500,
+    "min_pss_mib": 196.1,
+    "max_pss_mib": 509.3
+   },
+   {
+    "from_step": 3750,
+    "min_pss_mib": 177.9,
+    "max_pss_mib": 510.9
+   },
+   {
+    "from_step": 4000,
+    "min_pss_mib": 201.6,
+    "max_pss_mib": 512.0
+   },
+   {
+    "from_step": 4250,
+    "min_pss_mib": 194.7,
+    "max_pss_mib": 512.2
+   },
+   {
+    "from_step": 4500,
+    "min_pss_mib": 195.5,
+    "max_pss_mib": 498.0
+   },
+   {
+    "from_step": 4750,
+    "min_pss_mib": 189.7,
+    "max_pss_mib": 514.8
+   },
+   {
+    "from_step": 5000,
+    "min_pss_mib": 97.7,
+    "max_pss_mib": 507.2
+   },
+   {
+    "from_step": 5250,
+    "min_pss_mib": 191.8,
+    "max_pss_mib": 516.9
+   },
+   {
+    "from_step": 5500,
+    "min_pss_mib": 215.6,
+    "max_pss_mib": 501.3
+   },
+   {
+    "from_step": 5750,
+    "min_pss_mib": 191.0,
+    "max_pss_mib": 518.9
+   },
+   {
+    "from_step": 6000,
+    "min_pss_mib": 206.2,
+    "max_pss_mib": 504.2
+   },
+   {
+    "from_step": 6250,
+    "min_pss_mib": 202.6,
+    "max_pss_mib": 520.6
+   },
+   {
+    "from_step": 6500,
+    "min_pss_mib": 206.1,
+    "max_pss_mib": 521.4
+   },
+   {
+    "from_step": 6750,
+    "min_pss_mib": 236.5,
+    "max_pss_mib": 523.3
+   },
+   {
+    "from_step": 7000,
+    "min_pss_mib": 207.0,
+    "max_pss_mib": 523.9
+   },
+   {
+    "from_step": 7250,
+    "min_pss_mib": 212.3,
+    "max_pss_mib": 509.1
+   },
+   {
+    "from_step": 7500,
+    "min_pss_mib": 211.3,
+    "max_pss_mib": 525.9
+   },
+   {
+    "from_step": 7750,
+    "min_pss_mib": 113.9,
+    "max_pss_mib": 526.2
+   },
+   {
+    "from_step": 8000,
+    "min_pss_mib": 202.5,
+    "max_pss_mib": 512.0
+   },
+   {
+    "from_step": 8250,
+    "min_pss_mib": 214.2,
+    "max_pss_mib": 534.1
+   },
+   {
+    "from_step": 8500,
+    "min_pss_mib": 224.7,
+    "max_pss_mib": 534.7
+   },
+   {
+    "from_step": 8750,
+    "min_pss_mib": 213.6,
+    "max_pss_mib": 512.7
+   },
+   {
+    "from_step": 9000,
+    "min_pss_mib": 215.3,
+    "max_pss_mib": 512.4
+   },
+   {
+    "from_step": 9250,
+    "min_pss_mib": 218.1,
+    "max_pss_mib": 527.6
+   },
+   {
+    "from_step": 9500,
+    "min_pss_mib": 107.9,
+    "max_pss_mib": 527.9
+   },
+   {
+    "from_step": 9750,
+    "min_pss_mib": 218.1,
+    "max_pss_mib": 528.9
+   },
+   {
+    "from_step": 10000,
+    "min_pss_mib": 123.3,
+    "max_pss_mib": 529.9
+   },
+   {
+    "from_step": 10250,
+    "min_pss_mib": 216.8,
+    "max_pss_mib": 572.6
+   },
+   {
+    "from_step": 10500,
+    "min_pss_mib": 211.5,
+    "max_pss_mib": 594.9
+   },
+   {
+    "from_step": 10750,
+    "min_pss_mib": 120.6,
+    "max_pss_mib": 532.5
+   },
+   {
+    "from_step": 11000,
+    "min_pss_mib": 219.4,
+    "max_pss_mib": 549.7
+   },
+   {
+    "from_step": 11250,
+    "min_pss_mib": 212.2,
+    "max_pss_mib": 518.7
+   },
+   {
+    "from_step": 11500,
+    "min_pss_mib": 217.6,
+    "max_pss_mib": 535.9
+   },
+   {
+    "from_step": 11750,
+    "min_pss_mib": 216.4,
+    "max_pss_mib": 520.9
+   },
+   {
+    "from_step": 12000,
+    "min_pss_mib": 221.8,
+    "max_pss_mib": 522.0
+   },
+   {
+    "from_step": 12250,
+    "min_pss_mib": 219.4,
+    "max_pss_mib": 538.5
+   },
+   {
+    "from_step": 12500,
+    "min_pss_mib": 218.7,
+    "max_pss_mib": 588.2
+   },
+   {
+    "from_step": 12750,
+    "min_pss_mib": 225.0,
+    "max_pss_mib": 541.2
+   },
+   {
+    "from_step": 13000,
+    "min_pss_mib": 235.6,
+    "max_pss_mib": 526.2
+   },
+   {
+    "from_step": 13250,
+    "min_pss_mib": 209.3,
+    "max_pss_mib": 543.1
+   },
+   {
+    "from_step": 13500,
+    "min_pss_mib": 225.8,
+    "max_pss_mib": 527.5
+   },
+   {
+    "from_step": 13750,
+    "min_pss_mib": 239.5,
+    "max_pss_mib": 544.6
+   },
+   {
+    "from_step": 14000,
+    "min_pss_mib": 222.9,
+    "max_pss_mib": 587.2
+   },
+   {
+    "from_step": 14250,
+    "min_pss_mib": 227.0,
+    "max_pss_mib": 529.9
+   },
+   {
+    "from_step": 14500,
+    "min_pss_mib": 227.6,
+    "max_pss_mib": 547.2
+   },
+   {
+    "from_step": 14750,
+    "min_pss_mib": 235.4,
+    "max_pss_mib": 532.4
+   },
+   {
+    "from_step": 15000,
+    "min_pss_mib": 245.9,
+    "max_pss_mib": 549.0
+   },
+   {
+    "from_step": 15250,
+    "min_pss_mib": 133.3,
+    "max_pss_mib": 534.6
+   },
+   {
+    "from_step": 15500,
+    "min_pss_mib": 225.3,
+    "max_pss_mib": 551.7
+   },
+   {
+    "from_step": 15750,
+    "min_pss_mib": 240.6,
+    "max_pss_mib": 536.1
+   },
+   {
+    "from_step": 16000,
+    "min_pss_mib": 234.8,
+    "max_pss_mib": 615.6
+   },
+   {
+    "from_step": 16250,
+    "min_pss_mib": 237.4,
+    "max_pss_mib": 554.5
+   },
+   {
+    "from_step": 16500,
+    "min_pss_mib": 140.3,
+    "max_pss_mib": 539.2
+   },
+   {
+    "from_step": 16750,
+    "min_pss_mib": 242.7,
+    "max_pss_mib": 540.3
+   },
+   {
+    "from_step": 17000,
+    "min_pss_mib": 238.2,
+    "max_pss_mib": 541.6
+   },
+   {
+    "from_step": 17250,
+    "min_pss_mib": 259.8,
+    "max_pss_mib": 558.8
+   },
+   {
+    "from_step": 17500,
+    "min_pss_mib": 255.6,
+    "max_pss_mib": 559.7
+   },
+   {
+    "from_step": 17750,
+    "min_pss_mib": 250.1,
+    "max_pss_mib": 560.4
+   },
+   {
+    "from_step": 18000,
+    "min_pss_mib": 250.9,
+    "max_pss_mib": 561.5
+   },
+   {
+    "from_step": 18250,
+    "min_pss_mib": 148.0,
+    "max_pss_mib": 546.7
+   },
+   {
+    "from_step": 18500,
+    "min_pss_mib": 257.7,
+    "max_pss_mib": 562.8
+   },
+   {
+    "from_step": 18750,
+    "min_pss_mib": 258.7,
+    "max_pss_mib": 564.3
+   },
+   {
+    "from_step": 19000,
+    "min_pss_mib": 256.4,
+    "max_pss_mib": 548.8
+   },
+   {
+    "from_step": 19250,
+    "min_pss_mib": 256.1,
+    "max_pss_mib": 566.6
+   },
+   {
+    "from_step": 19500,
+    "min_pss_mib": 256.6,
+    "max_pss_mib": 567.4
+   },
+   {
+    "from_step": 19750,
+    "min_pss_mib": 251.3,
+    "max_pss_mib": 552.3
+   },
+   {
+    "from_step": 20000,
+    "min_pss_mib": 261.4,
+    "max_pss_mib": 553.1
+   },
+   {
+    "from_step": 20250,
+    "min_pss_mib": 153.3,
+    "max_pss_mib": 555.5
+   },
+   {
+    "from_step": 20500,
+    "min_pss_mib": 258.6,
+    "max_pss_mib": 595.0
+   },
+   {
+    "from_step": 20750,
+    "min_pss_mib": 264.5,
+    "max_pss_mib": 556.5
+   },
+   {
+    "from_step": 21000,
+    "min_pss_mib": 254.4,
+    "max_pss_mib": 556.8
+   },
+   {
+    "from_step": 21250,
+    "min_pss_mib": 262.7,
+    "max_pss_mib": 574.0
+   },
+   {
+    "from_step": 21500,
+    "min_pss_mib": 157.1,
+    "max_pss_mib": 574.9
+   },
+   {
+    "from_step": 21750,
+    "min_pss_mib": 261.3,
+    "max_pss_mib": 598.6
+   },
+   {
+    "from_step": 22000,
+    "min_pss_mib": 260.4,
+    "max_pss_mib": 575.4
+   },
+   {
+    "from_step": 22250,
+    "min_pss_mib": 256.0,
+    "max_pss_mib": 562.0
+   },
+   {
+    "from_step": 22500,
+    "min_pss_mib": 267.2,
+    "max_pss_mib": 562.9
+   },
+   {
+    "from_step": 22750,
+    "min_pss_mib": 266.8,
+    "max_pss_mib": 580.0
+   },
+   {
+    "from_step": 23000,
+    "min_pss_mib": 155.2,
+    "max_pss_mib": 580.9
+   },
+   {
+    "from_step": 23250,
+    "min_pss_mib": 271.6,
+    "max_pss_mib": 581.9
+   },
+   {
+    "from_step": 23500,
+    "min_pss_mib": 272.0,
+    "max_pss_mib": 582.8
+   },
+   {
+    "from_step": 23750,
+    "min_pss_mib": 276.3,
+    "max_pss_mib": 583.8
+   }
+  ],
+  "baseline_growth_mib": 69.8
+ },
+ "history_of_24000_telemetry_records_mib": 31.7,
+ "history_per_step_kib": 1.35,
+ "python": "3.11.16"
+}

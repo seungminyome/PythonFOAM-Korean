@@ -25,6 +25,13 @@ frame folder is never overwritten: rerunning in a case folder that already
 holds llm_observation/step-NNNNNN from an earlier run is refused rather than
 sending that earlier picture. observe always sends the v1 picture.
 
+LLM_ANALYSIS_EVERY=N (2026-10-27; describe with v2 pictures only) sends a
+describe request at LLM_ANALYSIS_STEP and every N steps after it, as long as
+fewer than LLM_ASYNC_MAX_PENDING requests are pending (otherwise that step is
+skipped and recorded). Each request writes its own files in
+llm_requests/step-NNNNNN/ (the same names as a single request writes in the
+case folder) and the last step writes llm_requests/index.json.
+
 LLM_ASYNC=1 makes the request asynchronous: the worker is forked and the
 solver carries on. Each later step polls the worker without blocking; the
 answer is recorded with the step at which it arrived. At most
@@ -62,7 +69,9 @@ _latest_velocity = None
 _pending = []          # asynchronous jobs still running (requests and frame renders)
 _frames = []           # frames captured for the sequence mode, in step order
 _sequence_sent = False
-_KILL_JOIN_ALLOWANCE_S = 0.02
+_request_log = []      # periodic mode (LLM_ANALYSIS_EVERY): one entry per request step
+_periodic_refused = False
+_KILL_JOIN_ALLOWANCE_S = 0.1
 _SCHEDULING_TOLERANCE_S = 0.05
 _RENDER_DEADLINE_S = 30.0
 _FRAME_WAIT_S = 5.0
@@ -87,11 +96,12 @@ def _max_pending():
 
 
 def _kill_join_allowance():
-    """How long a killed child may take to be reaped (LLM_KILL_JOIN_S, default 0.02 s).
+    """How long a killed child may take to be reaped (LLM_KILL_JOIN_S, default 0.1 s).
 
     Reaping a killed child takes longer the more memory it maps: about 16 ms for 200 MB
-    and 38 ms for 500 MB on the MedicineBow nodes, where 0.02 s is too short for a worker
-    forked from the solver.
+    and 38 ms for 500 MB on the MedicineBow nodes, where the earlier default of 0.02 s was
+    too short for a worker forked from the solver. The allowance is spent only when a
+    worker is killed, inside the 0.2 s cleanup budget of the deadline.
     """
     try:
         value = float(os.environ.get("LLM_KILL_JOIN_S", _KILL_JOIN_ALLOWANCE_S))
@@ -107,6 +117,24 @@ def _image_style():
     if style not in ("v1", "v2"):
         raise ValueError("LLM_IMAGE_STYLE must be v1 or v2")
     return style
+
+
+def _periodic_every():
+    """LLM_ANALYSIS_EVERY: steps between describe requests, or None (one request)."""
+    value = os.environ.get("LLM_ANALYSIS_EVERY")
+    if value is None:
+        return None
+    every = int(value)
+    if every < 1:
+        raise ValueError("LLM_ANALYSIS_EVERY must be a positive integer")
+    if _mode() != "describe" or _image_style() != "v2":
+        raise ValueError("LLM_ANALYSIS_EVERY needs LLM_MODE=describe and LLM_IMAGE_STYLE=v2")
+    return every
+
+
+def _record_dir(context):
+    """Where a request's files go: the case folder, or its own folder in periodic mode."""
+    return Path(context.get("record_dir", _case))
 
 
 def _keeps_svd_window():
@@ -477,6 +505,9 @@ def _dump_telemetry():
                 telemetry["feature_issues"] = issues
             stream.write(encode_json(telemetry).decode("utf-8") + "\n")
     temporary.replace(_case / "telemetry.jsonl")
+    if _request_log:
+        write_json(_case / "llm_requests" / "index.json",
+                   {"every": _periodic_every(), "requests": list(_request_log)})
 
 
 def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
@@ -497,7 +528,9 @@ def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
                    "input": None, "request": None, "request_bytes": 0,
                    "raw_state": safe_state, "raw_state_issues": issues,
                    "request_status": "summary_pending"}
-        write_json(_case / "llm_request.json", pending)
+        rec = _record_dir(context)
+        rec.mkdir(parents=True, exist_ok=True)
+        write_json(rec / "llm_request.json", pending)
         mode = context.get("mode", "observe")
         style = context.get("image_style", "v1")
         if mode == "sequence" or (mode == "describe" and style == "v2"):
@@ -581,7 +614,7 @@ def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
                           "text": [part["text"] for part in request["messages"][1]["content"]
                                    if part["type"] == "text"]}
         body = encode_json(request)
-        (_case / "llm_request_body.json").write_bytes(body)
+        (rec / "llm_request_body.json").write_bytes(body)
         request_record = {**context, "sent": False, "endpoint": endpoint,
                           "request_attempted": False,
                           "input": sent_input, "request": redact_request(request),
@@ -590,7 +623,7 @@ def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
                           "request_status": "ready"}
         if mode != "observe":
             request_record["numeric_summary"] = summary
-        write_json(_case / "llm_request.json", request_record)
+        write_json(rec / "llm_request.json", request_record)
         _send_event(events, {"event": "request_ready", "summary_wall_s": summary_wall,
                              "image_input": context["image_input"]})
         if context.get("async"):
@@ -605,22 +638,22 @@ def _analysis_worker(state, context, events, ack_fd, parent_only_fds):
         request_record.update(request_before_at=request_before_at,
                               sent=None if enabled else False, request_attempted=enabled,
                               request_status="attempted" if enabled else "disabled")
-        write_json(_case / "llm_request.json", request_record)
+        write_json(rec / "llm_request.json", request_record)
         if enabled:
             result, response = request_local(
                 request, endpoint=endpoint, timeout_s=context["deadline_s"],
                 connect_timeout_s=context["connect_timeout_s"],
                 read_timeout_s=context["read_timeout_s"], isolated=False,
-                raw_response_path=_case / "llm_http_response.raw", mode=mode)
+                raw_response_path=rec / "llm_http_response.raw", mode=mode)
             request_record.update(sent=result.get("request_sent", False),
                                   request_status="completed")
-            write_json(_case / "llm_request.json", request_record)
+            write_json(rec / "llm_request.json", request_record)
         else:
             result = {"status": "disabled", "inference_wall_s": 0.0, "output_text": None}
     except BaseException as error:
         result.update(status="callback_error", error=f"{type(error).__name__}: {error}")
     try:
-        write_json(_case / "llm_response.json", {
+        write_json(_record_dir(context) / "llm_response.json", {
             **context, "inference_wall_s": result["inference_wall_s"],
             "api_response": response,
         })
@@ -756,19 +789,21 @@ def _write_final_report(context, result, cleanup_start):
         extra = {"arrived_at_step": context.get("arrived_at_step"),
                  "solver_stall_s": context.get("solver_stall_s")}
     _marker("response_after", context, context["response_after_at"], **extra)
-    response_path = _case / "llm_response.json"
+    rec = _record_dir(context)
+    rec.mkdir(parents=True, exist_ok=True)
+    response_path = rec / "llm_response.json"
     if response_path.exists():
         response_record = json.loads(response_path.read_text())
     else:
         response_record = {"api_response": None,
                            "response_status": "not_completed_before_deadline"}
-    raw_path = _case / "llm_http_response.raw"
+    raw_path = rec / "llm_http_response.raw"
     response_record.update(context, inference_wall_s=result.get("inference_wall_s"),
                            raw_response_file=raw_path.name if raw_path.exists() else None,
                            raw_response_bytes=raw_path.stat().st_size if raw_path.exists() else 0)
     write_json(response_path, response_record)
     context["cleanup_elapsed_before_result_write_s"] = time.monotonic() - cleanup_start
-    write_json(_case / "llm_result.json", {**context, **result})
+    write_json(rec / "llm_result.json", {**context, **result})
     line = (f"PYTHON LLM step={context['step']} time={context['time_s']:.12g} "
             f"status={result['status']} image_input={context.get('image_input')} "
             f"analysis_wait={context['callback_elapsed_s']:.6f}s")
@@ -806,6 +841,8 @@ def _new_context(state, mode, frames=None, asynchronous=False):
     }
     if asynchronous:
         context["async"] = True
+    if _periodic_every() is not None:
+        context["record_dir"] = str(_case / "llm_requests" / f"step-{int(state['step']):06d}")
     if frames is not None:
         # v2 frames also carry the capture time and status, so the worker can refuse a
         # folder left by an earlier run (step numbers restart with every solver process)
@@ -959,6 +996,7 @@ def _finalize_job(job, step):
         _close_fd(job["reader"].fd)
         job["reader"].fd = None
     context["ipc_select_calls"] = job["reader"].select_calls if job["reader"] else 0
+    context["ipc_bytes_received"] = job["reader"].bytes_received if job["reader"] else 0
     context["response_after_at"] = _stamp()
     context["callback_elapsed_s"] = time.monotonic() - job["start"]
     context.setdefault("arrived_at_step", step)
@@ -972,6 +1010,11 @@ def _finalize_job(job, step):
     if job in _pending:
         _pending.remove(job)
     outcome = {**context, **result, **reporting}
+    for entry in _request_log:
+        if entry["step"] == context.get("request_step") and entry["status"] == "pending":
+            entry.update(status=result.get("status"), arrived_at_step=context.get("arrived_at_step"),
+                         inference_wall_s=result.get("inference_wall_s"),
+                         solver_stall_s=context.get("solver_stall_s"))
     global _last_callback_outcome
     _last_callback_outcome = outcome
     return outcome
@@ -1102,21 +1145,33 @@ def analysis_func(state):
     KeyboardInterrupt and SystemExit are intentional process-level interrupts
     and are not swallowed. Snapshot/SVD callbacks retain their existing API.
     """
-    global _attempted, _last_callback_outcome, _latest_pressure, _sequence_sent
+    global _attempted, _last_callback_outcome, _latest_pressure, _latest_velocity, _sequence_sent, _periodic_refused
     start = time.monotonic()
     try:
-        # p_cells is the one big array; keep it out of the history
+        # p_cells and u_cells are the big arrays; keep them out of the history
         if isinstance(state, dict):
             state = dict(state)  # never remove fields from the solver's dictionary
         pressure = state.pop("p_cells", None) if isinstance(state, dict) else None
         if pressure is not None:
             _latest_pressure = np.array(pressure, dtype=float, copy=True)
+        velocity = state.pop("u_cells", None) if isinstance(state, dict) else None
+        if velocity is not None:
+            # the whole mesh's U (gathered to the master in a parallel run); in a serial
+            # run the same values snapshot_func received
+            _latest_velocity = np.array(velocity, dtype=float, copy=True)
         state = copy.deepcopy(state)
         _history.append(state)
         step = int(state["step"])
         if _pending:
             _poll_pending(step)
         mode = _mode()
+        every = None
+        if not _periodic_refused:
+            try:
+                every = _periodic_every()
+            except Exception:
+                _periodic_refused = True   # report a refused LLM_ANALYSIS_EVERY once
+                raise
         if mode == "sequence":
             if not _sequence_sent:
                 try:
@@ -1132,7 +1187,12 @@ def analysis_func(state):
                         _launch(state, start, mode, frames=list(_frames))
         else:
             target = int(os.environ.get("LLM_ANALYSIS_STEP", "5"))
-            if not _attempted and step == target:
+            if every is not None:
+                if step >= target and (step - target) % every == 0:
+                    _launch(state, start, mode)
+                    _request_log.append({"step": step, "status": _last_callback_outcome.get("status"),
+                                         "pending_requests": _last_callback_outcome.get("pending_requests")})
+            elif not _attempted and step == target:
                 # set first, so a failure is not retried at the next step
                 _attempted = True
                 _launch(state, start, mode)

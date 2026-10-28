@@ -51,6 +51,7 @@ Description
 #include "fvcSmooth.H"
 #include "sigFpe.H"
 #include "emptyPolyPatch.H"
+#include "PythonGather.H"
 
 // Some time related libraries
 #include <ctime>

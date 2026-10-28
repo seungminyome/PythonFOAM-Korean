@@ -17,7 +17,10 @@ set -euo pipefail
 #   module load arcc/1.0 gcc/14.2.0 cuda-toolkit/12.8.0
 #   export PATH=<python 3 with numpy>/bin:$PATH
 # Account and partition go on the command line: sbatch --account=... --partition=...
+# POD_HOST_MODULES="arcc/1.0 gcc/14.2.0 cuda-toolkit/12.8.0" loads what the source-built
+# llama-server needs; PATH must hold a python3 with numpy.
 # -------------------------------------------------------------------------
+if [[ -n ${POD_HOST_MODULES:-} ]]; then module load $POD_HOST_MODULES; fi
 root="${SLURM_SUBMIT_DIR:-$PWD}"
 pod="${POD_SOURCE:-$root/PODFoam}"                       # tarball layout
 [[ -d $pod ]] || pod="$root/Solver_Examples/PODFoam"      # git clone layout
@@ -32,6 +35,7 @@ export POD_LLM_STATE="$out/server"
 export POD_LLM_PORT="${POD_LLM_PORT:-$((20000 + ${SLURM_JOB_ID:-0} % 10000))}"
 endpoint="http://127.0.0.1:$POD_LLM_PORT/v1/chat/completions"
 tests="${PICTURE_TEST_SET:-$root/picture-window-test-20261022}"
+script="${PICTURE_TEST_SCRIPT:-window_test.py}"          # window_test.py or sequence_test.py
 models="${MODELS:-e2b e2b-bf16 e2b-qat e4b 12b 26b 31b}"
 bindir="$POD_LLM_RUNTIME/llama-b11429-cuda"
 python3 -c 'import numpy' || { echo "numpy missing: module load python or pip install numpy" >&2; exit 1; }
@@ -39,7 +43,7 @@ python3 -c 'import numpy' || { echo "numpy missing: module load python or pip in
 [[ -x $bindir/llama-server ]] || { echo "no llama-server in $bindir; see hpc/README.md" >&2; exit 1; }
 mkdir -p "$out" "$POD_LLM_STATE"
 # every request file and the answer key must match the manifest before any GPU time is spent
-(cd "$demo" && python3 window_test.py check --test-set "$tests") || { echo "test set damaged or incomplete; recopy it" >&2; exit 1; }
+(cd "$demo" && python3 "$script" check --test-set "$tests") || { echo "test set damaged or incomplete; recopy it" >&2; exit 1; }
 export FETCHED_LIST="$out/fetched.txt"
 bash "$hpc/fetch_models.sh" $models
 nvidia-smi > "$out/nvidia-smi.txt" 2>&1 || true
@@ -69,7 +73,7 @@ for key in $models; do
         continue
     fi
     note="$repo@$revision $weights + $projector; llama.cpp b11429 CUDA (llama-server-version.txt); $gpu; all layers on GPU; context $LLM_CTX, batch 512, ubatch 512, image token limit $LLM_IMAGE_TOKENS, parallel 1, temperature 0"
-    (cd "$demo" && python3 window_test.py run --test-set "$tests" --model "$alias" --endpoint "$endpoint" \
+    (cd "$demo" && python3 "$script" run --test-set "$tests" --model "$alias" --endpoint "$endpoint" \
         --server-note "$note" --output "$out/$key") || echo "$key: run exited with an error or failed requests (see the .out file)" | tee -a "$out/failed.txt"
     cp "$POD_LLM_STATE/server-$stamp.log" "$out/server-$key.log"
     cp "$POD_LLM_STATE/server-$stamp.cmd" "$out/server-$key.cmd"
@@ -80,7 +84,7 @@ done
 runs=()
 for key in $models; do [[ -f $out/$key/run.json ]] && runs+=("$out/$key"); done
 if (( ${#runs[@]} )); then
-    (cd "$demo" && python3 window_test.py report "${runs[@]}" --test-set "$tests" --output "$out/report.md") \
+    (cd "$demo" && python3 "$script" report "${runs[@]}" --test-set "$tests" --output "$out/report.md") \
         || echo "report: some sets have no summary" | tee -a "$out/failed.txt"
 fi
 cp "$root/pod-window-test-$job.out" "$out/job-so-far.out" 2>/dev/null || true

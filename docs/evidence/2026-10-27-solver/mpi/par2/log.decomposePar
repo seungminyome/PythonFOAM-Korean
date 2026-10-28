@@ -1,0 +1,73 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2212                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _c9081d5d-20230220 OPENFOAM=2212 patch=230110 version=2212
+Arch   : "LSB;label=32;scalar=64"
+Exec   : decomposePar
+Date   : Oct 27 2026
+Time   : 09:27:48
+Host   : mbcpu-001.cluster
+PID    : 3343404
+I/O    : uncollated
+Case   : /cluster/medbow/gscratch/syome/github_repos/pod-mpi-20261027/run-24903786/par2
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Decomposing mesh
+
+Create mesh
+
+Calculating distribution of cells
+Decomposition method scotch [2] (region region0)
+
+Finished decomposition in 0.02 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 10252
+    Number of points = 20924
+    Number of faces shared with processor 1 = 120
+    Number of processor patches = 1
+    Number of processor faces = 120
+    Number of boundary faces = 20802
+
+Processor 1
+    Number of cells = 10288
+    Number of points = 21066
+    Number of faces shared with processor 0 = 120
+    Number of processor patches = 1
+    Number of processor faces = 120
+    Number of boundary faces = 20944
+
+Number of processor faces = 120
+Max number of cells = 10288 (0.175267770204% above average 10270)
+Max number of processor patches = 1 (0% above average 1)
+Max number of faces between processors = 120 (0% above average 120)
+
+Time = 0.1
+
+Processor 0: field transfer
+Processor 1: field transfer
+
+End
+

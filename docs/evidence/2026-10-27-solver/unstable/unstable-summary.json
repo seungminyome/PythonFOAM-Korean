@@ -1,0 +1,83 @@
+{
+ "central-dt2e-4": {
+  "deltaT": "2e-4",
+  "endTime": "0.16",
+  "div(phi,U)": "Gauss linear",
+  "steps": 1,
+  "courant_max_first": 11.3446373784,
+  "courant_max_last": 11.3446373784,
+  "ended": "floating point exception"
+ },
+ "central-dt2e-5": {
+  "deltaT": "2e-5",
+  "endTime": "0.10300000000000001",
+  "div(phi,U)": "Gauss linear",
+  "steps": 150,
+  "courant_max_first": 1.13446373784,
+  "courant_max_last": 1.53972032741,
+  "ended": "End"
+ },
+ "central-dt5e-6": {
+  "deltaT": "5e-6",
+  "endTime": "0.10200000000000001",
+  "div(phi,U)": "Gauss linear",
+  "steps": 400,
+  "courant_max_first": 0.283615934459,
+  "courant_max_last": 0.382484576083,
+  "ended": "End"
+ },
+ "central-dt8e-5": {
+  "deltaT": "8e-5",
+  "endTime": "0.124",
+  "div(phi,U)": "Gauss linear",
+  "steps": 1,
+  "courant_max_first": 4.53785495135,
+  "courant_max_last": 4.53785495135,
+  "ended": "floating point exception"
+ },
+ "dt2e-5": {
+  "deltaT": "2e-5",
+  "endTime": "0.10800000000000001",
+  "div(phi,U)": "Gauss upwind",
+  "steps": 400,
+  "courant_max_first": 1.13446373784,
+  "courant_max_last": 1.0129628597,
+  "ended": "End"
+ },
+ "dt4e-5": {
+  "deltaT": "4e-5",
+  "endTime": "0.116",
+  "div(phi,U)": "Gauss upwind",
+  "steps": 400,
+  "courant_max_first": 2.26892747567,
+  "courant_max_last": 2.09987653273,
+  "ended": "End"
+ },
+ "dt8e-5": {
+  "deltaT": "8e-5",
+  "endTime": "0.132",
+  "div(phi,U)": "Gauss upwind",
+  "steps": 400,
+  "courant_max_first": 4.53785495135,
+  "courant_max_last": 4.02991453887,
+  "ended": "End"
+ },
+ "upwind-dt2e-4": {
+  "deltaT": "2e-4",
+  "endTime": "0.16",
+  "div(phi,U)": "Gauss upwind",
+  "steps": 300,
+  "courant_max_first": 11.3446373784,
+  "courant_max_last": 9.32718517132,
+  "ended": "End"
+ },
+ "upwind-dt5e-4": {
+  "deltaT": "5e-4",
+  "endTime": "0.25",
+  "div(phi,U)": "Gauss upwind",
+  "steps": 300,
+  "courant_max_first": 28.3615934459,
+  "courant_max_last": 25.2779255318,
+  "ended": "End"
+ }
+}

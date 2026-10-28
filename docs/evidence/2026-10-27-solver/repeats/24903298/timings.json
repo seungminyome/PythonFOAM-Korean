@@ -1,0 +1,72 @@
+{
+  "async-no-llm": {
+    "wall_seconds": 348.97496648319066,
+    "exit_status": 0,
+    "solver_pid": 2071143,
+    "llama_server_pid": 2070141,
+    "mode": "sequence",
+    "model_request_enabled": false,
+    "memory_sample_interval_s": 0.5,
+    "cfd_python_peak_rss_sum_kib": 604360,
+    "cfd_python_peak_pss_sum_kib": 580128,
+    "llama_server_peak_rss_kib": 1381048,
+    "llama_server_peak_pss_kib": null,
+    "concurrent_samples": 690
+  },
+  "async-describe": {
+    "wall_seconds": 347.59709341451526,
+    "exit_status": 0,
+    "solver_pid": 2072073,
+    "llama_server_pid": 2070141,
+    "mode": "describe",
+    "model_request_enabled": true,
+    "memory_sample_interval_s": 0.5,
+    "cfd_python_peak_rss_sum_kib": 611032,
+    "cfd_python_peak_pss_sum_kib": 592676,
+    "llama_server_peak_rss_kib": 2034264,
+    "llama_server_peak_pss_kib": null,
+    "concurrent_samples": 687
+  },
+  "async-sequence": {
+    "wall_seconds": 347.5680837761611,
+    "exit_status": 0,
+    "solver_pid": 2073043,
+    "llama_server_pid": 2070141,
+    "mode": "sequence",
+    "model_request_enabled": true,
+    "memory_sample_interval_s": 0.5,
+    "cfd_python_peak_rss_sum_kib": 569344,
+    "cfd_python_peak_pss_sum_kib": 551610,
+    "llama_server_peak_rss_kib": 2916528,
+    "llama_server_peak_pss_kib": null,
+    "concurrent_samples": 687
+  },
+  "async-server-error": {
+    "wall_seconds": 347.9154570233077,
+    "exit_status": 0,
+    "solver_pid": 2074087,
+    "llama_server_pid": 2070141,
+    "mode": "describe",
+    "model_request_enabled": true,
+    "memory_sample_interval_s": 0.5,
+    "cfd_python_peak_rss_sum_kib": 584768,
+    "cfd_python_peak_pss_sum_kib": 548108,
+    "llama_server_peak_rss_kib": 2916528,
+    "llama_server_peak_pss_kib": null,
+    "concurrent_samples": 688
+  },
+  "async-timeout": {
+    "wall_seconds": 347.4060383159667,
+    "exit_status": 0,
+    "solver_pid": 2075031,
+    "llama_server_pid": 2070141,
+    "mode": "describe",
+    "model_request_enabled": true,
+    "memory_sample_interval_s": 0.5,
+    "cfd_python_peak_rss_sum_kib": 579412,
+    "cfd_python_peak_pss_sum_kib": 551856,
+    "llama_server_peak_rss_kib": 2916528,
+    "llama_server_peak_pss_kib": null,
+    "concurrent_samples": 687
+  }
+}

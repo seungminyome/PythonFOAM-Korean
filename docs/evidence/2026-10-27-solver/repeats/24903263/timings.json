@@ -1,0 +1,72 @@
+{
+  "async-no-llm": {
+    "wall_seconds": 344.290166515857,
+    "exit_status": 0,
+    "solver_pid": 2068805,
+    "llama_server_pid": 2067834,
+    "mode": "sequence",
+    "model_request_enabled": false,
+    "memory_sample_interval_s": 0.5,
+    "cfd_python_peak_rss_sum_kib": 588356,
+    "cfd_python_peak_pss_sum_kib": 584444,
+    "llama_server_peak_rss_kib": 1381016,
+    "llama_server_peak_pss_kib": null,
+    "concurrent_samples": 681
+  },
+  "async-describe": {
+    "wall_seconds": 346.45932222530246,
+    "exit_status": 0,
+    "solver_pid": 2071259,
+    "llama_server_pid": 2067834,
+    "mode": "describe",
+    "model_request_enabled": true,
+    "memory_sample_interval_s": 0.5,
+    "cfd_python_peak_rss_sum_kib": 558924,
+    "cfd_python_peak_pss_sum_kib": 541249,
+    "llama_server_peak_rss_kib": 2034124,
+    "llama_server_peak_pss_kib": null,
+    "concurrent_samples": 685
+  },
+  "async-sequence": {
+    "wall_seconds": 347.49863770604134,
+    "exit_status": 0,
+    "solver_pid": 2072190,
+    "llama_server_pid": 2067834,
+    "mode": "sequence",
+    "model_request_enabled": true,
+    "memory_sample_interval_s": 0.5,
+    "cfd_python_peak_rss_sum_kib": 603400,
+    "cfd_python_peak_pss_sum_kib": 583830,
+    "llama_server_peak_rss_kib": 2916388,
+    "llama_server_peak_pss_kib": null,
+    "concurrent_samples": 687
+  },
+  "async-server-error": {
+    "wall_seconds": 348.99572842754424,
+    "exit_status": 0,
+    "solver_pid": 2073160,
+    "llama_server_pid": 2067834,
+    "mode": "describe",
+    "model_request_enabled": true,
+    "memory_sample_interval_s": 0.5,
+    "cfd_python_peak_rss_sum_kib": 606784,
+    "cfd_python_peak_pss_sum_kib": 588555,
+    "llama_server_peak_rss_kib": 2916388,
+    "llama_server_peak_pss_kib": null,
+    "concurrent_samples": 690
+  },
+  "async-timeout": {
+    "wall_seconds": 347.98332881741226,
+    "exit_status": 0,
+    "solver_pid": 2074206,
+    "llama_server_pid": 2067834,
+    "mode": "describe",
+    "model_request_enabled": true,
+    "memory_sample_interval_s": 0.5,
+    "cfd_python_peak_rss_sum_kib": 545536,
+    "cfd_python_peak_pss_sum_kib": 526426,
+    "llama_server_peak_rss_kib": 2916388,
+    "llama_server_peak_pss_kib": null,
+    "concurrent_samples": 688
+  }
+}

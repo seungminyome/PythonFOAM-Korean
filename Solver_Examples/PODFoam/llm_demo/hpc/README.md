@@ -17,6 +17,7 @@ E2B로 잰 것을 Gemma 4 12B QAT Q4_0으로 클러스터 GPU에서 다시 재�
 | `picture_test.slurm`, `fetch_models.sh`, `models.tsv` | 여러 크기의 모델로 하는 그림 읽기 시험(2026-10-21 준비, 2026-10-22 실행). [아래](#그림-읽기-시험-2026-10-22-실행) 참고. |
 | `window_test.slurm` | `MODELS`의 모델로 하는 무작위 창 그림 시험(`window_test.py`). [아래](#무작위-창-시험과-qwen-모델-2026-10-22-실행) 참고. |
 | `async_v2.slurm` | 발달한 흐름에서 시작해, 돌고 있는 솔버가 그린 v2 그림과 Gemma 4 12B로 하는 비동기 시험, 이어서 describe sweep. OpenFOAM은 Apptainer 이미지에서, llama-server는 호스트 GPU에서. [아래](#돌고-있는-솔버가-그린-v2-그림-async_v2slurm-2026-10-22-실행) 참고. |
+| `periodic_v2.slurm` | v2 describe 요청을 N걸음마다 보내는 긴 실행과 요청 없는 쌍둥이(`run_periodic.py`). `async_v2.slurm` 실행의 기준 준비 폴더에서 시작. 비용, 메모리, 파이프 전송량. |
 | `build_llama_cuda.sh` | 예비: 미리 빌드된 바이너리가 안 돌면(glibc가 오래됨, CUDA 버전 다름) b11429를 소스에서 CUDA로 빌드. |
 
 ## 파일을 클러스터에 올리는 법
@@ -118,6 +119,9 @@ sequence에서는 모든 프레임이 같은 색 범위를 씁니다. v2own은 v
 | `qwen3vl-32b` | `Qwen/Qwen3-VL-32B-Instruct-GGUF`, Q8_0 + F16 프로젝터 | 36.0 GB |
 | `qwen35-27b` | `unsloth/Qwen3.5-27B-GGUF`, Q8_0 + BF16 프로젝터(제3자 변환) | 29.5 GB |
 | `qwen35-35b` | `ggml-org/Qwen3.5-35B-A3B-GGUF`, Q8_0 + Q8_0 프로젝터 | 37.5 GB |
+| `qwen3vl-32b-q4` | 같은 저장소, Q4_K_M + F16 프로젝터(2026-10-27 추가, Gemma QAT 파일과 같은 가중치 정밀도) | 21.0 GB |
+| `qwen35-27b-q4` | `unsloth/Qwen3.5-27B-GGUF`, Q4_K_M + BF16 프로젝터 | 17.7 GB |
+| `qwen35-35b-q4` | `unsloth/Qwen3.5-35B-A3B-GGUF`, Q4_K_M + BF16 프로젝터 | 22.9 GB |
 
 e2b와 e2b-bf16은 프로젝터만 다릅니다. e2b-qat는 가중치가 다르고, 프로젝터도 Google이 따로 낸
 파일입니다(e2b-bf16과 마찬가지로 BF16). 서버 설정은 모든 모델이 같습니다. 문맥 4096(그림 여섯 장인
@@ -162,6 +166,8 @@ mb-a30 대기열에서는 2주 뒤에야 시작한다고 예상해서 mb-a6000 �
 그림마다 정답 자리가 달라지게 합니다([llm_demo README](../README.md#무작위-창-그림-시험-window_testpy) 참고).
 `window_test.slurm`은 `picture_test.slurm`처럼 묶음 하나를 돌리고, 이미지 토큰 한도를 시험하려면
 `LLM_CTX`와 `LLM_IMAGE_TOKENS`(기본 4096과 256, `start_server.sh`가 읽음)를 올릴 수 있습니다.
+`LLM_IMAGE_MIN_TOKENS`는 `--image-min-tokens`를 넘깁니다(llama.cpp가 Qwen-VL에 권하는 1024).
+`PICTURE_TEST_SCRIPT=sequence_test.py`이면 `sequence_test.py`로 만든 변화 읽기 묶음을 돌립니다.
 
 ```bash
 python3 Solver_Examples/PODFoam/llm_demo/window_test.py build --states <case> \
@@ -208,7 +214,7 @@ sbatch --account=<account> --partition=mb-a6000 Solver_Examples/PODFoam/llm_demo
 기본값: 시작 상태에서 5e-6 s 간격 6000걸음, 250걸음마다 저장, describe 요청은 250걸음, sequence 프레임은
 3000·3250·3750걸음, 창 x 0~0.12 m, y 0~0.04 m, 그다음 500걸음마다 sweep 요청 열한 개(`SWEEP_STEPS`,
 `SWEEP_PARALLEL`). `LLM_KILL_JOIN_S=0.2`: 이 노드에서는 0.5 GB 솔버에서 포크한 워커를 끊고 거두는 데 약
-40 ms가 걸려 기본값 0.02 s보다 깁니다. 발달한 상태는 같은 이미지의 `pimpleFoam`으로, 연결 검증 실행의
+40 ms가 걸려 당시 기본값 0.02 s보다 깁니다(2026-10-27부터 기본 0.1 s). 발달한 상태는 같은 이미지의 `pimpleFoam`으로, 연결 검증 실행의
 `fixed-pimple` 경우에서 `controlDict`만 바꿔 얻었습니다. 시간 간격을 스스로 맞추며(`maxCo 0.5`,
 `maxDeltaT 5e-6`) 100 ms를 돌렸고 1 ms마다 저장했습니다(작업 24757429). 2026-10-22에 Slurm 작업
 24757460으로 돌렸고, 결과는 [보고서](../../../../docs/results-20261022-live.md), 기록은
@@ -218,6 +224,34 @@ sbatch --account=<account> --partition=mb-a6000 Solver_Examples/PODFoam/llm_demo
 `test_timeout_is_detected_by_polling`)가 같은 이유로 기본 `LLM_KILL_JOIN_S`에서 실패하고(이번 변경 전
 코드도 마찬가지), `LLM_KILL_JOIN_S=0.2`에서는 통과합니다. `test_connection_refused_is_reported_without_a_stall`은
 가끔 0.5 s 한도를 100분의 몇 초 넘깁니다.
+
+## 2026-10-27 실행
+
+MedicineBow에서 저장소 최상위 폴더에서, conda Python을 `PATH` 앞에 두고(시스템 `python3`에는 numpy가
+없음) 소스에서 빌드한 llama-server가 쓰는 CUDA 모듈을 불러:
+
+```bash
+export PATH=<numpy가 있는 python 3>/bin:$PATH POD_LLM_RUNTIME=$PWD/llm-runtime-12b
+export POD_HOST_MODULES="arcc/1.0 gcc/14.2.0 cuda-toolkit/12.8.0"
+# 변화 읽기 시험(sequence_test.py 묶음), Gemma와 Qwen
+PICTURE_TEST_SET=<developed-sequence-test-20261027> PICTURE_TEST_SCRIPT=sequence_test.py \
+  sbatch --export=ALL,MODELS="12b 26b 31b" --account=<account> --partition=mb-a30 \
+  Solver_Examples/PODFoam/llm_demo/hpc/window_test.slurm
+# 권장 이미지 토큰으로 4비트 Qwen
+PICTURE_TEST_SET=<창 묶음> LLM_IMAGE_TOKENS=1024 LLM_IMAGE_MIN_TOKENS=1024 LLM_CTX=8192 \
+  sbatch --export=ALL,MODELS="qwen3vl-32b-q4 qwen35-27b-q4 qwen35-35b-q4" --account=<account> \
+  --partition=mb-l40s Solver_Examples/PODFoam/llm_demo/hpc/window_test.slurm
+# 250걸음마다 describe 요청, 24,000걸음, 그리고 쌍둥이
+POD_SUITE_RUN=<PASS한 async_v2.slurm 실행의 pod-llm-async.XXXXXX> \
+  sbatch --account=<account> --partition=mb-a30 Solver_Examples/PODFoam/llm_demo/hpc/periodic_v2.slurm
+```
+
+작업 24903974~24903978(그림 시험), 24903264(주기 요청), 24903298과 24903263(`async_v2.slurm`으로 10월 22일
+시험 반복. `POD_SUITE_RUN`을 주면 `async_v2.slurm`은 sweep만 돌리며, 작업 24903755가 그렇게 돌았음).
+그림 시험의 첫 제출 가운데 시작한 두 개는 `window_test.slurm`이 CUDA 모듈을 더 이상 불러오지 않아 바로
+멈췄고(`libcudart.so.12`를 못 찾음), 그래서 `POD_HOST_MODULES`를 넣었습니다. 결과는
+[보고서](../../../../docs/results-20261027.md), 기록은 [그림 시험 근거](../../../../docs/evidence/2026-10-27-picture-tests/README.md)와
+[솔버 근거](../../../../docs/evidence/2026-10-27-solver/README.md)에 있습니다.
 
 ## 시험한 곳
 
@@ -258,7 +292,7 @@ stub 없이 CPU 노드에서 한 첫 빌드(작업 24695932)는 마지막 링크
 
 `demo_12b.slurm`(GPU 노드에서 OpenFOAM v2106으로 도는 동기 시험. 비동기 시험은 대신 v2212 이미지에서
 돌았음), 미리 빌드된 CUDA 바이너리,
-`LLAMA_CUDA=13.4`, L40S 파티션, 12B 스크립트의 tar.gz 폴더 구조(같은 구조로 된 자기 묶음에서
+`LLAMA_CUDA=13.4`, 12B 스크립트의 tar.gz 폴더 구조(같은 구조로 된 자기 묶음에서
 `picture_test.slurm`이 2026-10-22에 돌았음).
 `start_server.sh`는 10분 안에 `/health`가 안 뜨면 바로 실패하고, 로그는
 `llm-runtime-12b/server-*.log`에 남습니다.

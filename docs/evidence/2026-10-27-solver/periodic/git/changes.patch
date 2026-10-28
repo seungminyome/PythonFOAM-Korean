@@ -1,0 +1,435 @@
+diff --git a/Solver_Examples/PODFoam/PODFoam.C b/Solver_Examples/PODFoam/PODFoam.C
+index 819b1f5..65b9499 100644
+--- a/Solver_Examples/PODFoam/PODFoam.C
++++ b/Solver_Examples/PODFoam/PODFoam.C
+@@ -51,6 +51,7 @@ Description
+ #include "fvcSmooth.H"
+ #include "sigFpe.H"
+ #include "emptyPolyPatch.H"
++#include "PythonGather.H"
+ 
+ // Some time related libraries
+ #include <ctime>
+diff --git a/Solver_Examples/PODFoam/PythonAnalysis.H b/Solver_Examples/PODFoam/PythonAnalysis.H
+index cff8b92..616e97f 100644
+--- a/Solver_Examples/PODFoam/PythonAnalysis.H
++++ b/Solver_Examples/PODFoam/PythonAnalysis.H
+@@ -1,7 +1,21 @@
+ // Optional PythonFOAM in-situ observer/logger after the completed PDE step.
+ // Model responses are recorded in Python; they never control the solver.
+ // Residuals come from this timestep's OpenFOAM solverPerformance, not log parsing.
+-if (analysis_func && rank == 0)
++if (analysis_func)
++{
++    // Every rank: the gathers and the global reductions below are collective.
++    const List<vector> allU(pythonGatherToMaster(List<vector>(U.primitiveField())));
++    const List<scalar> allP(pythonGatherToMaster(List<scalar>(p.primitiveField())));
++    // Recompute diagnostics from the completed step's phi. This Courant value
++    // is post-step, unlike the pre-step Courant printed by the time controller.
++    const scalarField sumPhi(fvc::surfaceSum(mag(phi))().primitiveField());
++    const double postCoMax = 0.5*gMax(sumPhi/mesh.V().field())*runTime.deltaTValue();
++    const double postCoMean = 0.5*gSum(sumPhi)/gSum(mesh.V().field())*runTime.deltaTValue();
++    const volScalarField contErr(fvc::div(phi));
++    const double localCont = runTime.deltaTValue()*mag(contErr)().weightedAverage(mesh.V()).value();
++    const double globalCont = runTime.deltaTValue()*contErr.weightedAverage(mesh.V()).value();
++    const label nAllCells = returnReduce(mesh.nCells(), sumOp<label>());
++if (rank == 0)
+ {
+     const dictionary& perf = mesh.solverPerformanceDict();
+     PyObject* residuals = PyDict_New();
+@@ -62,40 +76,48 @@ if (analysis_func && rank == 0)
+         "delta_t_s", double(runTime.deltaTValue()),
+         "end_time_s", double(runTime.endTime().value()),
+         "step", int(podSnapshotCount),
+-        "cells", int(num_cells),
++        "cells", int(nAllCells),
+         "residuals", residuals
+     ) : nullptr;
+     Py_XDECREF(residuals);
+-    // Same-step kinematic pressure for Python-side rendering. U of this step
+-    // was already copied by snapshot_func above; both are post-step values and
+-    // PythonComm.H verified them finite. Owning copy; never a view of p.
++    // Same-step U and kinematic pressure of the whole mesh (gathered in rank
++    // order, like the geometry of mesh_func) for Python-side rendering; both
++    // are post-step values and PythonComm.H verified them finite. Owning
++    // copies; never views of the fields.
+     if (state)
+     {
+-        npy_intp pDims[] = {num_cells};
++        npy_intp pDims[] = {nAllCells};
++        npy_intp uDims[] = {nAllCells, 3};
+         PyObject* pCells = PyArray_SimpleNew(1, pDims, NPY_DOUBLE);
+-        if (pCells)
++        PyObject* uCells = PyArray_SimpleNew(2, uDims, NPY_DOUBLE);
++        if (pCells && uCells)
+         {
+             double* pData = static_cast<double*>
+             (
+                 PyArray_DATA(reinterpret_cast<PyArrayObject*>(pCells))
+             );
+-            forAll(p, celli) pData[celli] = p[celli];
++            double* uData = static_cast<double*>
++            (
++                PyArray_DATA(reinterpret_cast<PyArrayObject*>(uCells))
++            );
++            forAll(allP, celli) pData[celli] = allP[celli];
++            forAll(allU, celli)
++            {
++                for (direction cmpt = 0; cmpt < 3; ++cmpt)
++                {
++                    uData[3*celli + cmpt] = allU[celli][cmpt];
++                }
++            }
+             PyDict_SetItemString(state, "p_cells", pCells);
+-            Py_DECREF(pCells);
++            PyDict_SetItemString(state, "u_cells", uCells);
+         }
+         else
+         {
+             PyErr_Clear();
+         }
++        Py_XDECREF(pCells);
++        Py_XDECREF(uCells);
+     }
+-    // Recompute diagnostics from the completed step's phi. This Courant value
+-    // is post-step, unlike the pre-step Courant printed by the time controller.
+-    const scalarField sumPhi(fvc::surfaceSum(mag(phi))().primitiveField());
+-    const double postCoMax = 0.5*gMax(sumPhi/mesh.V().field())*runTime.deltaTValue();
+-    const double postCoMean = 0.5*gSum(sumPhi)/gSum(mesh.V().field())*runTime.deltaTValue();
+-    const volScalarField contErr(fvc::div(phi));
+-    const double localCont = runTime.deltaTValue()*mag(contErr)().weightedAverage(mesh.V()).value();
+-    const double globalCont = runTime.deltaTValue()*contErr.weightedAverage(mesh.V()).value();
+     PyObject* courant = Py_BuildValue
+     (
+         "{s:d,s:d,s:s}", "mean", postCoMean, "max", postCoMax,
+@@ -139,4 +161,5 @@ if (analysis_func && rank == 0)
+     }
+     // Ignore the callback's return value: no model-driven field/settings update.
+     Py_XDECREF(response);
++}   // rank 0
+ }
+diff --git a/Solver_Examples/PODFoam/PythonCreate.H b/Solver_Examples/PODFoam/PythonCreate.H
+index f6aa61c..86b9638 100644
+--- a/Solver_Examples/PODFoam/PythonCreate.H
++++ b/Solver_Examples/PODFoam/PythonCreate.H
+@@ -42,12 +42,9 @@ else if (!PyCallable_Check(analysis_func))
+     WarningInFunction << "Ignoring non-callable analysis_func" << endl;
+     Py_CLEAR(analysis_func);
+ }
+-if (analysis_func && Pstream::parRun())
+-{
+-    WarningInFunction << "analysis_func is only supported in serial runs; disabled"
+-        << endl;
+-    Py_CLEAR(analysis_func);
+-}
++// In a parallel run the master rank gathers the whole mesh (here) and the
++// whole U and p fields (PythonAnalysis.H) and is the only rank that calls
++// mesh_func and analysis_func; every rank takes part in the gathers.
+ // Optional one-time geometry for Python-side rendering of the same-step
+ // fields (cell centres, volumes, solution directions). Owning copies only;
+ // Python never aliases mesh storage. Absence or failure only disables images.
+@@ -65,15 +62,6 @@ if (analysis_func)
+     }
+     if (mesh_func)
+     {
+-        npy_intp centreDims[] = {mesh.nCells(), 3};
+-        npy_intp volumeDims[] = {mesh.nCells()};
+-        PyObject* centres = PyArray_SimpleNew(2, centreDims, NPY_DOUBLE);
+-        PyObject* volumes = PyArray_SimpleNew(1, volumeDims, NPY_DOUBLE);
+-        PyObject* solutionD = Py_BuildValue
+-        (
+-            "(iii)",
+-            int(mesh.solutionD()[0]), int(mesh.solutionD()[1]), int(mesh.solutionD()[2])
+-        );
+         // 2D cases: every face of the first 'empty' patch outlines exactly one
+         // cell, so Python can paint true cell polygons (no interpolation).
+         // 3D cases pass empty arrays and Python falls back to a raster.
+@@ -86,13 +74,50 @@ if (analysis_func)
+                 break;
+             }
+         }
+-        label nPolyFaces = 0, nPolyPoints = 0;
++        // This rank's polygons: points, points per face, owner cells.
++        pointField localPolyPoints;
++        labelList localPolySizes, localPolyCells;
+         if (emptyPatch >= 0)
+         {
+             const polyPatch& pp = mesh.boundaryMesh()[emptyPatch];
+-            nPolyFaces = pp.size();
+-            forAll(pp, facei) nPolyPoints += pp[facei].size();
++            const labelUList& faceCells = pp.faceCells();
++            label nPts = 0;
++            forAll(pp, facei) nPts += pp[facei].size();
++            localPolyPoints.setSize(nPts);
++            localPolySizes.setSize(pp.size());
++            localPolyCells.setSize(pp.size());
++            label k = 0;
++            forAll(pp, facei)
++            {
++                const face& f = pp[facei];
++                forAll(f, pointi) localPolyPoints[k++] = mesh.points()[f[pointi]];
++                localPolySizes[facei] = f.size();
++                localPolyCells[facei] = faceCells[facei];
++            }
+         }
++        // Gathered to the master in rank order; cell labels shifted by where
++        // each rank's cells start in that order (a no-op in a serial run).
++        const labelList cellOffsets(pythonCellOffsets(mesh.nCells()));
++        forAll(localPolyCells, i) localPolyCells[i] += cellOffsets[Pstream::myProcNo()];
++        const List<vector> allCentres(pythonGatherToMaster(List<vector>(mesh.C().primitiveField())));
++        const List<scalar> allVolumes(pythonGatherToMaster(List<scalar>(mesh.V().field())));
++        const List<vector> allPolyPoints(pythonGatherToMaster(List<vector>(localPolyPoints)));
++        const labelList allPolySizes(pythonGatherToMaster(localPolySizes));
++        const labelList allPolyCells(pythonGatherToMaster(localPolyCells));
++        if (Pstream::master())
++        {
++        const label nAllCells = allCentres.size();
++        const label nPolyFaces = allPolySizes.size();
++        const label nPolyPoints = allPolyPoints.size();
++        npy_intp centreDims[] = {nAllCells, 3};
++        npy_intp volumeDims[] = {nAllCells};
++        PyObject* centres = PyArray_SimpleNew(2, centreDims, NPY_DOUBLE);
++        PyObject* volumes = PyArray_SimpleNew(1, volumeDims, NPY_DOUBLE);
++        PyObject* solutionD = Py_BuildValue
++        (
++            "(iii)",
++            int(mesh.solutionD()[0]), int(mesh.solutionD()[1]), int(mesh.solutionD()[2])
++        );
+         npy_intp polyPointDims[] = {nPolyPoints, 3};
+         npy_intp polyOffsetDims[] = {nPolyFaces + 1};
+         npy_intp polyCellDims[] = {nPolyFaces};
+@@ -113,26 +138,17 @@ if (analysis_func)
+             (
+                 PyArray_DATA(reinterpret_cast<PyArrayObject*>(polyCells))
+             );
++            forAll(allPolyPoints, k)
++            {
++                pts[3*k] = allPolyPoints[k].x();
++                pts[3*k + 1] = allPolyPoints[k].y();
++                pts[3*k + 2] = allPolyPoints[k].z();
++            }
+             off[0] = 0;
+-            label k = 0;
+-            if (emptyPatch >= 0)
++            forAll(allPolySizes, facei)
+             {
+-                const polyPatch& pp = mesh.boundaryMesh()[emptyPatch];
+-                const labelUList& faceCells = pp.faceCells();
+-                forAll(pp, facei)
+-                {
+-                    const face& f = pp[facei];
+-                    forAll(f, pointi)
+-                    {
+-                        const point& P = mesh.points()[f[pointi]];
+-                        pts[3*k] = P.x();
+-                        pts[3*k + 1] = P.y();
+-                        pts[3*k + 2] = P.z();
+-                        ++k;
+-                    }
+-                    off[facei + 1] = k;
+-                    cells[facei] = faceCells[facei];
+-                }
++                off[facei + 1] = off[facei] + allPolySizes[facei];
++                cells[facei] = allPolyCells[facei];
+             }
+         }
+         PyObject* meshResult = nullptr;
+@@ -146,14 +162,13 @@ if (analysis_func)
+             (
+                 PyArray_DATA(reinterpret_cast<PyArrayObject*>(volumes))
+             );
+-            const volVectorField& C = mesh.C();
+-            forAll(C, celli)
++            forAll(allCentres, celli)
+             {
+                 for (direction cmpt = 0; cmpt < 3; ++cmpt)
+                 {
+-                    c[3*celli + cmpt] = C[celli][cmpt];
++                    c[3*celli + cmpt] = allCentres[celli][cmpt];
+                 }
+-                v[celli] = mesh.V()[celli];
++                v[celli] = allVolumes[celli];
+             }
+             meshResult = PyObject_CallFunction
+             (
+@@ -182,11 +197,13 @@ if (analysis_func)
+         }
+         else
+         {
+-            Info<< "POD mesh geometry passed to Python: cells=" << mesh.nCells()
++            Info<< "POD mesh geometry passed to Python: cells=" << nAllCells
+                 << " solutionD=" << mesh.solutionD()
+-                << " cellPolygons=" << nPolyFaces << endl;
++                << " cellPolygons=" << nPolyFaces
++                << " ranks=" << Pstream::nProcs() << endl;
+         }
+         Py_XDECREF(meshResult);
++        }   // master
+         Py_DECREF(mesh_func);
+     }
+ }
+diff --git a/Solver_Examples/PODFoam/llm_demo/README.md b/Solver_Examples/PODFoam/llm_demo/README.md
+index 6e8ee33..a4141d8 100644
+--- a/Solver_Examples/PODFoam/llm_demo/README.md
++++ b/Solver_Examples/PODFoam/llm_demo/README.md
+@@ -187,6 +187,43 @@ frame, and that each frame's arrays equal the baseline's written fields at R;
+ it scores the answers and the one fixed answer that would do best over all
+ of them (`sweep-summary.json`).
+ 
++### A request every N steps (`LLM_ANALYSIS_EVERY`)
++
++`LLM_ANALYSIS_EVERY=N` (describe with v2 pictures) sends a describe request
++at `LLM_ANALYSIS_STEP` and every N steps after it, as long as fewer than
++`LLM_ASYNC_MAX_PENDING` requests are pending; a step that finds the limit
++reached is skipped and recorded. Each request writes the usual files
++(`llm_request.json`, `llm_request_body.json`, `llm_response.json`,
++`llm_result.json`, the raw reply) in its own `llm_requests/step-NNNNNN/`, and
++the last step writes `llm_requests/index.json` (step, status, arrival step,
++model time, solver stall). `run_periodic.py <suite run> <PODFoam> <output>`
++runs such a case and its twin without requests from a v2 suite's baseline
++staging, compares every written file, checks each body against the builder
++and each frame against the written fields, scores the answers and records
++wall time, memory (RSS and PSS of the solver tree, sampled every 0.5 s) and
++the bytes each request moved over the worker pipe (`ipc_bytes_received` in
++the result); `hpc/periodic_v2.slurm` runs it on a GPU node.
++
++### Trend test on a developed flow (`sequence_test.py`)
++
++`sequence_test.py build --states <case> --centres <fields.npz> --old-manifest
++... --output <set>` takes triples of saved states (gaps of 2000, 4000 and
++6000 steps by default), places one random window around the fastest cells of
++each triple (the window rule above, every fastest cell inside the margin) and
++keeps `--count` triples so that the nine (speed trend, pressure trend)
++classes of the answer key are as evenly filled as the states allow. Five sets
++of the same triples: `dev-sequence-v1` (the solver's two-panel pictures, the
++2026-10-20 prompt), `dev-sequence-v2own` (one picture per field, each on its
++own colour scale, the 2026-10-22 prompt), `dev-sequence-v2own-t` (the same
++with the answer key's thresholds stated in the prompt: 2 % for the trends,
++5 % of the plotted range for the spot), `dev-sequence-v2own-tn` (the same
++plus each time's maximum |U| and minimum p from the arrays in the note) and
++`dev-sequence-numbers` (that note and the fastest cell's position, no
++pictures). `readable_request.sequence_v2_payload(..., thresholds=True,
++numbers=..., images=False)` builds them; with the defaults it still gives the
++2026-10-22 bodies byte for byte. `--dt` (here and in `window_test.py`) is
++the time step the state names are divided by, for runs with another step.
++
+ ### Random-window picture test (`window_test.py`)
+ 
+ `window_test.py build` draws saved states of a run (any time directories;
+diff --git a/Solver_Examples/PODFoam/llm_demo/hpc/README.md b/Solver_Examples/PODFoam/llm_demo/hpc/README.md
+index 3cf5b2d..e0e8f37 100644
+--- a/Solver_Examples/PODFoam/llm_demo/hpc/README.md
++++ b/Solver_Examples/PODFoam/llm_demo/hpc/README.md
+@@ -18,6 +18,7 @@ The paired replay has been run once, on MedicineBow (2026-10-19): see
+ | `picture_test.slurm`, `fetch_models.sh`, `models.tsv` | The picture-reading test for several model sizes (prepared 2026-10-21, run 2026-10-22); see [below](#picture-reading-test-run-2026-10-22). |
+ | `window_test.slurm` | The random-window picture test (`window_test.py`) for the models in `MODELS`; see [below](#random-window-test-and-qwen-models-run-2026-10-22). |
+ | `async_v2.slurm` | The asynchronous suite with v2 pictures from the running solver and Gemma 4 12B, started from a developed flow, then the describe sweep; OpenFOAM in an Apptainer image, llama-server on the host GPU; see [below](#v2-pictures-from-the-running-solver-async_v2slurm-run-2026-10-22). |
++| `periodic_v2.slurm` | A long run with a v2 describe request every N steps and its twin without requests (`run_periodic.py`), from the baseline staging of an `async_v2.slurm` run; cost, memory and pipe traffic. |
+ | `build_llama_cuda.sh` | Fallback: build llama.cpp b11429 from source with CUDA if the prebuilt binary does not run (older glibc, other CUDA). |
+ 
+ ## Getting the files onto the cluster
+@@ -131,6 +132,9 @@ needs a token):
+ | `qwen3vl-32b` | `Qwen/Qwen3-VL-32B-Instruct-GGUF`, Q8_0 + F16 projector | 36.0 GB |
+ | `qwen35-27b` | `unsloth/Qwen3.5-27B-GGUF`, Q8_0 + BF16 projector (a third-party conversion) | 29.5 GB |
+ | `qwen35-35b` | `ggml-org/Qwen3.5-35B-A3B-GGUF`, Q8_0 + Q8_0 projector | 37.5 GB |
++| `qwen3vl-32b-q4` | the same repository, Q4_K_M + F16 projector (added 2026-10-27, same weight precision as the Gemma QAT files) | 21.0 GB |
++| `qwen35-27b-q4` | `unsloth/Qwen3.5-27B-GGUF`, Q4_K_M + BF16 projector | 17.7 GB |
++| `qwen35-35b-q4` | `unsloth/Qwen3.5-35B-A3B-GGUF`, Q4_K_M + BF16 projector | 22.9 GB |
+ 
+ e2b against e2b-bf16 changes only the projector; e2b-qat has other weights
+ and Google's own projector file (BF16, like the one of e2b-bf16). Every model gets the same server: context 4096 (a v2 sequence
+@@ -185,7 +189,10 @@ random around the fastest cell, so that the answer moves from picture to
+ picture (see the [llm_demo README](../README.md#random-window-picture-test-window_testpy)).
+ `window_test.slurm` runs a set like `picture_test.slurm` does; `LLM_CTX` and
+ `LLM_IMAGE_TOKENS` (default 4096 and 256, read by `start_server.sh`) can be
+-raised to test the image-token cap.
++raised to test the image-token cap, and `LLM_IMAGE_MIN_TOKENS` passes
++`--image-min-tokens` (the 1024 that llama.cpp suggests for Qwen-VL).
++`PICTURE_TEST_SCRIPT=sequence_test.py` runs a trend set built by
++`sequence_test.py` instead.
+ 
+ ```bash
+ python3 Solver_Examples/PODFoam/llm_demo/window_test.py build --states <case> \
+diff --git a/Solver_Examples/PODFoam/llm_demo/pod_image.py b/Solver_Examples/PODFoam/llm_demo/pod_image.py
+index 3703950..0148d3e 100644
+--- a/Solver_Examples/PODFoam/llm_demo/pod_image.py
++++ b/Solver_Examples/PODFoam/llm_demo/pod_image.py
+@@ -60,6 +60,13 @@ def cell_polygons(points, offsets, cells, n_cells):
+         raise ValueError("inconsistent cell polygon offsets")
+     if not np.all(np.diff(offsets) >= 3):
+         raise ValueError("cell polygon with fewer than three vertices")
++    if cells.size and np.unique(cells).size != cells.size:
++        # an empty patch that holds both the front and the back face of every cell (one
++        # 'defaultFaces' patch, as blockMesh writes it): keep the first polygon of each cell
++        keep = np.sort(np.unique(cells, return_index=True)[1])
++        points = np.concatenate([points[offsets[k]:offsets[k + 1]] for k in keep])
++        offsets = np.concatenate([[0], np.cumsum([offsets[k + 1] - offsets[k] for k in keep])])
++        cells = cells[keep]
+     if cells.min() < 0 or cells.max() >= n_cells or np.unique(cells).size != cells.size:
+         raise ValueError("cell polygon indices must map one polygon to one distinct cell")
+     if not np.isfinite(points).all():
+diff --git a/Solver_Examples/PODFoam/llm_demo/python_module.py b/Solver_Examples/PODFoam/llm_demo/python_module.py
+index 5de38d1..edb8d01 100644
+--- a/Solver_Examples/PODFoam/llm_demo/python_module.py
++++ b/Solver_Examples/PODFoam/llm_demo/python_module.py
+@@ -1145,15 +1145,20 @@ def analysis_func(state):
+     KeyboardInterrupt and SystemExit are intentional process-level interrupts
+     and are not swallowed. Snapshot/SVD callbacks retain their existing API.
+     """
+-    global _attempted, _last_callback_outcome, _latest_pressure, _sequence_sent, _periodic_refused
++    global _attempted, _last_callback_outcome, _latest_pressure, _latest_velocity, _sequence_sent, _periodic_refused
+     start = time.monotonic()
+     try:
+-        # p_cells is the one big array; keep it out of the history
++        # p_cells and u_cells are the big arrays; keep them out of the history
+         if isinstance(state, dict):
+             state = dict(state)  # never remove fields from the solver's dictionary
+         pressure = state.pop("p_cells", None) if isinstance(state, dict) else None
+         if pressure is not None:
+             _latest_pressure = np.array(pressure, dtype=float, copy=True)
++        velocity = state.pop("u_cells", None) if isinstance(state, dict) else None
++        if velocity is not None:
++            # the whole mesh's U (gathered to the master in a parallel run); in a serial
++            # run the same values snapshot_func received
++            _latest_velocity = np.array(velocity, dtype=float, copy=True)
+         state = copy.deepcopy(state)
+         _history.append(state)
+         step = int(state["step"])
+diff --git a/Solver_Examples/PODFoam/llm_demo/sequence_test.py b/Solver_Examples/PODFoam/llm_demo/sequence_test.py
+index a904178..53f0cf4 100644
+--- a/Solver_Examples/PODFoam/llm_demo/sequence_test.py
++++ b/Solver_Examples/PODFoam/llm_demo/sequence_test.py
+@@ -224,9 +224,13 @@ def main(argv=None):
+         parser.add_argument("--last-step", type=int, default=200000)
+         parser.add_argument("--gaps", default="2000,4000,6000", help="steps between the frames of a triple")
+         parser.add_argument("--count", type=int, default=45, help="triples kept")
++        parser.add_argument("--dt", type=float, default=pt.DELTA_T_S,
++                            help="time step the state names are divided by (step = time / dt)")
+         parser.add_argument("--seed", type=int, default=SEED)
+         parser.add_argument("--output", required=True, help="new directory")
+-        return build(parser.parse_args(argv))
++        args = parser.parse_args(argv)
++        pt.DELTA_T_S = args.dt
++        return build(args)
+     return pt.main(argv)
+ 
+ 
+diff --git a/Solver_Examples/PODFoam/llm_demo/window_test.py b/Solver_Examples/PODFoam/llm_demo/window_test.py
+index f7d368a..fabba3d 100644
+--- a/Solver_Examples/PODFoam/llm_demo/window_test.py
++++ b/Solver_Examples/PODFoam/llm_demo/window_test.py
+@@ -193,9 +193,13 @@ def main(argv=None):
+         parser.add_argument("--describe-every", type=int, default=500)
+         parser.add_argument("--last-step", type=int, default=6000)
+         parser.add_argument("--windows-per-state", type=int, default=4)
++        parser.add_argument("--dt", type=float, default=pt.DELTA_T_S,
++                            help="time step the state names are divided by (step = time / dt)")
+         parser.add_argument("--seed", type=int, default=SEED, help="window placement seed")
+         parser.add_argument("--output", required=True, help="new directory")
+-        return build(parser.parse_args(argv))
++        args = parser.parse_args(argv)
++        pt.DELTA_T_S = args.dt
++        return build(args)
+     return pt.main(argv)
+ 
+ 

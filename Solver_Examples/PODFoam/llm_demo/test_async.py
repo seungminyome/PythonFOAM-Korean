@@ -318,7 +318,9 @@ class AsyncTests(unittest.TestCase):
             harness.close()
         self.assertEqual(result["status"], "error")
         self.assertIn("refused", result["error"].lower())
-        self.assertLess(max(walls.values()), 0.5)
+        # the last step also writes the telemetry (a forked writer, up to 0.2 s plus reaping)
+        self.assertLess(max(w for step, w in walls.items() if step < 10), 0.5)
+        self.assertLess(walls[10], 2.0)
 
     def test_second_request_is_skipped_while_one_is_pending(self):
         with fixture(delay_s=0.5) as (endpoint, received):
@@ -576,6 +578,70 @@ class V2PictureTests(unittest.TestCase):
             harness.close()
         self.assertEqual(len(budgets), 1)
         self.assertGreater(budgets[0], 0.7)
+
+
+class PeriodicRequestTests(unittest.TestCase):
+    """LLM_ANALYSIS_EVERY: a describe request every N steps, each with its own record folder."""
+
+    def test_requests_every_n_steps_write_their_own_records_and_an_index(self):
+        import readable_request
+        with fixture() as (endpoint, received):
+            harness = V2Harness({"LLM_MODE": "describe", "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1",
+                                 "LLM_ANALYSIS_STEP": "2", "LLM_ANALYSIS_EVERY": "3"})
+            try:
+                harness.run(sleep_after=1, sleep_s=0.4)   # each request completes before the next step
+                index = json.loads((harness.case / "llm_requests" / "index.json").read_text())
+                records = {}
+                for folder in sorted((harness.case / "llm_requests").glob("step-*")):
+                    result = json.loads((folder / "llm_result.json").read_text())
+                    body = (folder / "llm_request_body.json").read_bytes()
+                    frame, meta, arrays = readable_request.load_frame(
+                        harness.case / "llm_observation" / f"step-{result['request_step']:06d}")
+                    with patch.dict(os.environ, harness.environment):
+                        rebuilt = llm_client.encode_json(readable_request.describe_v2_payload(frame, model="unit-test-model"))
+                    records[folder.name] = (result["status"], result["request_step"], result["arrived_at_step"],
+                                            body == rebuilt, meta["step"])
+                single = (harness.case / "llm_result.json").exists()
+            finally:
+                harness.close()
+        self.assertEqual(sorted(records), ["step-000002", "step-000005", "step-000008"])
+        for name, (status, step, arrived, parity, meta_step) in records.items():
+            self.assertEqual(status, "ok", name)
+            self.assertEqual(f"step-{step:06d}", name)
+            self.assertEqual(meta_step, step)
+            self.assertTrue(parity, name)
+            self.assertGreaterEqual(arrived, step)
+        self.assertEqual(index["every"], 3)
+        self.assertEqual([r["step"] for r in index["requests"]], [2, 5, 8])
+        self.assertTrue(all(r["status"] == "ok" for r in index["requests"]), index)
+        self.assertEqual(len(received), 3)
+        self.assertFalse(single)
+
+    def test_a_step_is_skipped_while_the_only_allowed_request_is_pending(self):
+        with fixture(delay_s=0.6) as (endpoint, received):
+            harness = V2Harness({"LLM_MODE": "describe", "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1",
+                                 "LLM_ANALYSIS_STEP": "1", "LLM_ANALYSIS_EVERY": "1", "LLM_ASYNC_MAX_PENDING": "1"})
+            try:
+                harness.run(sleep_after=1, sleep_s=0.1)
+                index = json.loads((harness.case / "llm_requests" / "index.json").read_text())
+            finally:
+                harness.close()
+        statuses = [r["status"] for r in index["requests"]]
+        self.assertEqual(len(statuses), 10)
+        self.assertEqual(statuses[0], "ok")
+        self.assertIn("skipped_pending", statuses)
+        self.assertEqual(len(received), statuses.count("ok"))
+
+    def test_periodic_needs_describe_and_v2(self):
+        harness = V2Harness({"LLM_MODE": "sequence", "LLM_ANALYSIS_EVERY": "2", "LLM_SEQUENCE_STEPS": "2,4"})
+        try:
+            with patch.dict(os.environ, harness.environment):
+                harness.callback.analysis_func(harness.state(1))
+                outcome = harness.callback._last_callback_outcome
+        finally:
+            harness.close()
+        self.assertEqual(outcome["status"], "callback_error")
+        self.assertIn("LLM_ANALYSIS_EVERY", outcome["error"])
 
 
 if __name__ == "__main__":

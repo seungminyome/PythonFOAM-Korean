@@ -1,0 +1,506 @@
+server ok on port 23263, pid 2067834, log server-20261027T144659Z.log
+Reference run: /cluster/medbow/gscratch/syome/github_repos/podfoam-v2212-test/pod-v2212.LnadvP
+Demo directory: /cluster/medbow/gscratch/syome/github_repos/PythonFOAM/../pod-async-v2/run-24903263/pod-llm-async.2yctEn
+async-no-llm: exit=0 wall=344.290s
+async-describe: exit=0 wall=346.459s
+async-sequence: exit=0 wall=347.499s
+async-server-error: exit=0 wall=348.996s
+async-timeout: exit=0 wall=347.983s
+{
+  "async-no-llm": {
+    "steps": 6000,
+    "request_step": 3750,
+    "arrived_at_step": 3764,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 432,
+    "model_status": "disabled",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.007629525,
+      "arrival_step": 0.044033455,
+      "last_step": 0.231037738,
+      "max_other_steps": 0.008177343,
+      "median_all_steps": 9.0101e-05
+    },
+    "solver_stall_s": 0.006748072803020477,
+    "inference_wall_s": 0.0,
+    "frames": [
+      {
+        "step": 3000,
+        "written_fields_checked": true,
+        "fields_sha256": "b0f276756255543a0151f02055d54f39b3cb7fbe2b3e3289d5e47d9e8b9caa88",
+        "png_sha256": {
+          "U": "679031669451f6ffcc37c1105d8a90b2b48fe93afd6ca73a7e50e7d883972b10",
+          "p": "f036f692e86c66a8653fce4fe48aae837c5277fa8e8600ed021e5617c929a995"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 3250,
+        "written_fields_checked": true,
+        "fields_sha256": "7ca94e9999ff50d41b36021f78b230a9f6ce7f0b6386814b5616a878affe84ea",
+        "png_sha256": {
+          "U": "9cc2d9838f555c4774eb5b605252652fe026bc8bb76513142aa259589cbccb4a",
+          "p": "1dc56fcc1335898f925b269e2d5ac01d1166c2b0f41f62a2087a84bc53b71491"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 3750,
+        "written_fields_checked": true,
+        "fields_sha256": "692b060aca27f38a2ee035b50e5d4c012af5eeb44059d27dd02c66c542db7685",
+        "png_sha256": {
+          "U": "8daf23efef73979455c12cd10b34b1710ccac7e1988ba54dbdc6f9c16399c644",
+          "p": "22c9b3949db3fac98af7fc587865be6076a011ee91561c818f6cad57de5ede33"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 0.346668233526
+  },
+  "async-describe": {
+    "steps": 6000,
+    "request_step": 250,
+    "arrived_at_step": 337,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 432,
+    "model_status": "ok",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.017986062,
+      "arrival_step": 0.041997794,
+      "last_step": 0.227260711,
+      "max_other_steps": 0.019374032,
+      "median_all_steps": 8.6632e-05
+    },
+    "solver_stall_s": 0.017273161560297012,
+    "inference_wall_s": 4.278303319588304,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "31609ca633323537889fe1261a1c663910811f19097a1845ff48cb4f127f170a",
+        "png_sha256": {
+          "U": "64340079f97ed42345e961e760178a06382a51d0ea55ba81b89e626e51b5e725",
+          "p": "4f6666ce5c477aba445bda2d48ab4ad75bad21110bea75d6e194eb17b764e55a"
+        },
+        "same_fields_as_baseline_frame": null
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": {
+      "flow_description": "The flow is fastest in the upper half of the domain, particularly around x=40% and x=60%, where velocity magnitude is highest. The flow is slowest in the bottom third of the domain. The lowest pressure is located in a concentrated region near the center-left at x=35%, while higher pressure is seen on the far right and top edges.",
+      "fastest_flow_x_percent": 40,
+      "fastest_flow_y_percent": 45,
+      "lowest_pressure_x_percent": 35,
+      "lowest_pressure_y_percent": 30,
+      "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range."
+    },
+    "score": {
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 37.09709528168654,
+          "y_percent": 46.53218030997406,
+          "x_m": 0.04451651433802385,
+          "y_m": 0.018612872123989623,
+          "cell": 13490
+        },
+        "lowest_pressure": {
+          "x_percent": 37.970214907677764,
+          "y_percent": 25.946103729004815,
+          "x_m": 0.04556425788921332,
+          "y_m": 0.010378441491601926,
+          "cell": 9676
+        },
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        }
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            40,
+            45
+          ],
+          "true_percent": [
+            37.09709528168654,
+            46.53218030997406
+          ],
+          "error_percent": [
+            2.902904718313458,
+            -1.5321803099740592
+          ],
+          "distance_percent": 3.282443039243597,
+          "error_m": [
+            0.0034834856619761494,
+            -0.0006128721239896237
+          ],
+          "distance_m": 0.003536988068619537,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            35,
+            30
+          ],
+          "true_percent": [
+            37.970214907677764,
+            25.946103729004815
+          ],
+          "error_percent": [
+            -2.9702149076777644,
+            4.053896270995185
+          ],
+          "distance_percent": 5.025559826902859,
+          "error_m": [
+            -0.003564257889213317,
+            0.001621558508398074
+          ],
+          "distance_m": 0.003915786804331609,
+          "within_10_percent": true
+        }
+      }
+    },
+    "max_courant": 0.346668233526
+  },
+  "async-sequence": {
+    "steps": 6000,
+    "request_step": 3750,
+    "arrived_at_step": 3851,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 432,
+    "model_status": "ok",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.022750893,
+      "arrival_step": 0.029634479,
+      "last_step": 0.236510922,
+      "max_other_steps": 0.013605361,
+      "median_all_steps": 9.1242e-05
+    },
+    "solver_stall_s": 0.022105181589722633,
+    "inference_wall_s": 4.754891524091363,
+    "frames": [
+      {
+        "step": 3000,
+        "written_fields_checked": true,
+        "fields_sha256": "b0f276756255543a0151f02055d54f39b3cb7fbe2b3e3289d5e47d9e8b9caa88",
+        "png_sha256": {
+          "U": "679031669451f6ffcc37c1105d8a90b2b48fe93afd6ca73a7e50e7d883972b10",
+          "p": "f036f692e86c66a8653fce4fe48aae837c5277fa8e8600ed021e5617c929a995"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 3250,
+        "written_fields_checked": true,
+        "fields_sha256": "7ca94e9999ff50d41b36021f78b230a9f6ce7f0b6386814b5616a878affe84ea",
+        "png_sha256": {
+          "U": "9cc2d9838f555c4774eb5b605252652fe026bc8bb76513142aa259589cbccb4a",
+          "p": "1dc56fcc1335898f925b269e2d5ac01d1166c2b0f41f62a2087a84bc53b71491"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 3750,
+        "written_fields_checked": true,
+        "fields_sha256": "692b060aca27f38a2ee035b50e5d4c012af5eeb44059d27dd02c66c542db7685",
+        "png_sha256": {
+          "U": "8daf23efef73979455c12cd10b34b1710ccac7e1988ba54dbdc6f9c16399c644",
+          "p": "22c9b3949db3fac98af7fc587865be6076a011ee91561c818f6cad57de5ede33"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": {
+      "change_description": "The high-velocity region shifts from approximately x=40% to x=60% and slightly higher in y. The pressure minimum moves from x=45% to x=60% and becomes less negative. The overall flow structure shows a slight downstream progression of the primary features.",
+      "max_speed_trend": "decreasing",
+      "min_pressure_trend": "less_negative",
+      "fastest_flow_region": "moves",
+      "uncertainties": "The exact magnitude of the pressure change is difficult to quantify due to the shifting color scales."
+    },
+    "score": {
+      "truth": {
+        "max_speed_trend": "decreasing",
+        "max_speed_relative_change": -0.09715883049632625,
+        "max_speed_first_last": [
+          38.56079669576149,
+          34.8142747857947
+        ],
+        "min_pressure_trend": "less_negative",
+        "min_pressure_relative_change": 0.385865320217386,
+        "min_pressure_first_last": [
+          -365.24402199345786,
+          -224.30902048946626
+        ],
+        "fastest_flow_region": "moves",
+        "fastest_flow_moved_percent": 23.763511571877636,
+        "tolerances": {
+          "relative_change": 0.02,
+          "region_percent": 5.0
+        },
+        "frames": [
+          {
+            "step": 3000,
+            "time_s": 0.115000000000015,
+            "max_speed_m_per_s": 38.56079669576149,
+            "min_pressure_m2_per_s2": -365.24402199345786,
+            "fastest_flow_percent": [
+              42.33414973464664,
+              47.95508320723889
+            ]
+          },
+          {
+            "step": 3250,
+            "time_s": 0.11625000000001626,
+            "max_speed_m_per_s": 38.146695180185766,
+            "min_pressure_m2_per_s2": -378.5527839110209,
+            "fastest_flow_percent": [
+              57.172588154703405,
+              45.72112598941333
+            ]
+          },
+          {
+            "step": 3750,
+            "time_s": 0.11875000000001876,
+            "max_speed_m_per_s": 34.8142747857947,
+            "min_pressure_m2_per_s2": -224.30902048946626,
+            "fastest_flow_percent": [
+              18.767241378488077,
+              44.904622134026155
+            ]
+          }
+        ]
+      },
+      "scores": {
+        "max_speed_trend": {
+          "answer": "decreasing",
+          "truth": "decreasing",
+          "match": true,
+          "cannot_tell": false
+        },
+        "min_pressure_trend": {
+          "answer": "less_negative",
+          "truth": "less_negative",
+          "match": true,
+          "cannot_tell": false
+        },
+        "fastest_flow_region": {
+          "answer": "moves",
+          "truth": "moves",
+          "match": true,
+          "cannot_tell": false
+        },
+        "matches": 3
+      }
+    },
+    "max_courant": 0.346668233526
+  },
+  "async-server-error": {
+    "steps": 6000,
+    "request_step": 250,
+    "arrived_at_step": 261,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 432,
+    "model_status": "error",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.017567792,
+      "arrival_step": 0.048534891,
+      "last_step": 0.236224928,
+      "max_other_steps": 0.017780535,
+      "median_all_steps": 8.703150000000001e-05
+    },
+    "solver_stall_s": 0.016929300501942635,
+    "inference_wall_s": 0.015097873285412788,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "31609ca633323537889fe1261a1c663910811f19097a1845ff48cb4f127f170a",
+        "png_sha256": {
+          "U": "64340079f97ed42345e961e760178a06382a51d0ea55ba81b89e626e51b5e725",
+          "p": "4f6666ce5c477aba445bda2d48ab4ad75bad21110bea75d6e194eb17b764e55a"
+        },
+        "same_fields_as_baseline_frame": null
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 0.346668233526
+  },
+  "async-timeout": {
+    "steps": 6000,
+    "request_step": 250,
+    "arrived_at_step": 320,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 432,
+    "model_status": "timeout",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.0181005,
+      "arrival_step": 0.056722258,
+      "last_step": 0.238765697,
+      "max_other_steps": 0.015743444,
+      "median_all_steps": 8.69665e-05
+    },
+    "solver_stall_s": 0.017484622076153755,
+    "inference_wall_s": null,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "31609ca633323537889fe1261a1c663910811f19097a1845ff48cb4f127f170a",
+        "png_sha256": {
+          "U": "64340079f97ed42345e961e760178a06382a51d0ea55ba81b89e626e51b5e725",
+          "p": "4f6666ce5c477aba445bda2d48ab4ad75bad21110bea75d6e194eb17b764e55a"
+        },
+        "same_fields_as_baseline_frame": null
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 0.346668233526
+  },
+  "timings": {
+    "async-no-llm": 344.290166515857,
+    "async-describe": 346.45932222530246,
+    "async-sequence": 347.49863770604134,
+    "async-server-error": 348.99572842754424,
+    "async-timeout": 347.98332881741226
+  },
+  "resources": {
+    "async-no-llm": {
+      "wall_seconds": 344.290166515857,
+      "exit_status": 0,
+      "solver_pid": 2068805,
+      "llama_server_pid": 2067834,
+      "mode": "sequence",
+      "model_request_enabled": false,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 588356,
+      "cfd_python_peak_pss_sum_kib": 584444,
+      "llama_server_peak_rss_kib": 1381016,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 681
+    },
+    "async-describe": {
+      "wall_seconds": 346.45932222530246,
+      "exit_status": 0,
+      "solver_pid": 2071259,
+      "llama_server_pid": 2067834,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 558924,
+      "cfd_python_peak_pss_sum_kib": 541249,
+      "llama_server_peak_rss_kib": 2034124,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 685
+    },
+    "async-sequence": {
+      "wall_seconds": 347.49863770604134,
+      "exit_status": 0,
+      "solver_pid": 2072190,
+      "llama_server_pid": 2067834,
+      "mode": "sequence",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 603400,
+      "cfd_python_peak_pss_sum_kib": 583830,
+      "llama_server_peak_rss_kib": 2916388,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 687
+    },
+    "async-server-error": {
+      "wall_seconds": 348.99572842754424,
+      "exit_status": 0,
+      "solver_pid": 2073160,
+      "llama_server_pid": 2067834,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 606784,
+      "cfd_python_peak_pss_sum_kib": 588555,
+      "llama_server_peak_rss_kib": 2916388,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 690
+    },
+    "async-timeout": {
+      "wall_seconds": 347.98332881741226,
+      "exit_status": 0,
+      "solver_pid": 2074206,
+      "llama_server_pid": 2067834,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 545536,
+      "cfd_python_peak_pss_sum_kib": 526426,
+      "llama_server_peak_rss_kib": 2916388,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 688
+    }
+  },
+  "settings": {
+    "steps": 6000,
+    "delta_t_s": 5e-06,
+    "write_every": 250,
+    "request_step": 250,
+    "sequence_steps": [
+      3000,
+      3250,
+      3750
+    ],
+    "image_x_window": "0,0.12",
+    "image_y_window": "0,0.04",
+    "deadline_s": "120",
+    "image_style": "v2",
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "max_tokens_env": "320",
+    "fixture_deadline_s": 4.0,
+    "start_time_s": 0.1,
+    "start_dir": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261022/long-100ms/0.1",
+    "start_files_sha256": {
+      "U": "5e89b31d71d8fc8a3a7ae6e44eef1ed478cda488f5aeb98488c17fd5fb50b5af",
+      "p": "7e7291a1a194da52419addf3d2b41de6eea8ac28503e98a593d909d332c9dabd",
+      "phi": "3e5221f6aca5724a9486e235bd6bf94ae1de21ad6dd4637627cfe23198d76774"
+    }
+  },
+  "status": "PASS"
+}
+Archive (no weights): /cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903263/pod-llm-async.2yctEn/run-archive.tar.gz
+PASS: /cluster/medbow/gscratch/syome/github_repos/PythonFOAM/../pod-async-v2/run-24903263/pod-llm-async.2yctEn
+Traceback (most recent call last):
+  File "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/Solver_Examples/PODFoam/llm_demo/run_live_sweep.py", line 214, in <module>
+    main()
+  File "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/Solver_Examples/PODFoam/llm_demo/run_live_sweep.py", line 102, in main
+    import window_test
+  File "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/Solver_Examples/PODFoam/llm_demo/window_test.py", line 204
+    global Y_SPAN_M
+    ^^^^^^^^^^^^^^^
+SyntaxError: name 'Y_SPAN_M' is used prior to global declaration
+done: /cluster/medbow/gscratch/syome/github_repos/PythonFOAM/../pod-async-v2/run-24903263/pod-llm-async.2yctEn (suite exit 0, sweep exit 1)

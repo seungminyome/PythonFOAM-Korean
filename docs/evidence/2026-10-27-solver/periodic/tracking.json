@@ -1,0 +1,39 @@
+{
+ "requests": 96,
+ "steps": [
+  250,
+  24000
+ ],
+ "targets": {
+  "fastest_flow": {
+   "within_10_percent": 65,
+   "one_fixed_answer": 53,
+   "true_x_percent_range": [
+    18.8,
+    80.7
+   ],
+   "true_y_percent_range": [
+    42.2,
+    51.7
+   ],
+   "pearson_x": 0.35,
+   "pearson_y": -0.247,
+   "median_distance_percent": 4.52
+  },
+  "lowest_pressure": {
+   "within_10_percent": 89,
+   "one_fixed_answer": 65,
+   "true_x_percent_range": [
+    28.4,
+    79.9
+   ],
+   "true_y_percent_range": [
+    18.2,
+    30.8
+   ],
+   "pearson_x": 0.783,
+   "pearson_y": 0.501,
+   "median_distance_percent": 3.18
+  }
+ }
+}

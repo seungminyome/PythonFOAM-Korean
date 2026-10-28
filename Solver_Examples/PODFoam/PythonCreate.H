@@ -11,14 +11,19 @@ if (init_numpy() < 0)
     FatalErrorInFunction << "NumPy initialization failed" << exit(FatalError);
 }
 
-// Resolve python_module.py from the case even when invoked with -case.
-PyObject* casePath = PyUnicode_FromString(runTime.path().c_str());
-if (!casePath || PyList_Insert(PySys_GetObject("path"), 0, casePath) < 0)
+// Resolve python_module.py from the case even when invoked with -case; in a
+// parallel run the case path is processorN/, so the undecomposed case
+// directory (globalPath) is added as well.
+for (const fileName& dir : {runTime.path(), runTime.globalPath()})
 {
-    PyErr_Print();
-    FatalErrorInFunction << "Cannot add case to Python path" << exit(FatalError);
+    PyObject* casePath = PyUnicode_FromString(dir.c_str());
+    if (!casePath || PyList_Insert(PySys_GetObject("path"), 0, casePath) < 0)
+    {
+        PyErr_Print();
+        FatalErrorInFunction << "Cannot add case to Python path" << exit(FatalError);
+    }
+    Py_DECREF(casePath);
 }
-Py_DECREF(casePath);
 PyObject* pModule = PyImport_ImportModule("python_module");
 if (!pModule)
 {
@@ -42,12 +47,9 @@ else if (!PyCallable_Check(analysis_func))
     WarningInFunction << "Ignoring non-callable analysis_func" << endl;
     Py_CLEAR(analysis_func);
 }
-if (analysis_func && Pstream::parRun())
-{
-    WarningInFunction << "analysis_func is only supported in serial runs; disabled"
-        << endl;
-    Py_CLEAR(analysis_func);
-}
+// In a parallel run the master rank gathers the whole mesh (here) and the
+// whole U and p fields (PythonAnalysis.H) and is the only rank that calls
+// mesh_func and analysis_func; every rank takes part in the gathers.
 // Optional one-time geometry for Python-side rendering of the same-step
 // fields (cell centres, volumes, solution directions). Owning copies only;
 // Python never aliases mesh storage. Absence or failure only disables images.
@@ -65,15 +67,6 @@ if (analysis_func)
     }
     if (mesh_func)
     {
-        npy_intp centreDims[] = {mesh.nCells(), 3};
-        npy_intp volumeDims[] = {mesh.nCells()};
-        PyObject* centres = PyArray_SimpleNew(2, centreDims, NPY_DOUBLE);
-        PyObject* volumes = PyArray_SimpleNew(1, volumeDims, NPY_DOUBLE);
-        PyObject* solutionD = Py_BuildValue
-        (
-            "(iii)",
-            int(mesh.solutionD()[0]), int(mesh.solutionD()[1]), int(mesh.solutionD()[2])
-        );
         // 2D cases: every face of the first 'empty' patch outlines exactly one
         // cell, so Python can paint true cell polygons (no interpolation).
         // 3D cases pass empty arrays and Python falls back to a raster.
@@ -86,13 +79,50 @@ if (analysis_func)
                 break;
             }
         }
-        label nPolyFaces = 0, nPolyPoints = 0;
+        // This rank's polygons: points, points per face, owner cells.
+        pointField localPolyPoints;
+        labelList localPolySizes, localPolyCells;
         if (emptyPatch >= 0)
         {
             const polyPatch& pp = mesh.boundaryMesh()[emptyPatch];
-            nPolyFaces = pp.size();
-            forAll(pp, facei) nPolyPoints += pp[facei].size();
+            const labelUList& faceCells = pp.faceCells();
+            label nPts = 0;
+            forAll(pp, facei) nPts += pp[facei].size();
+            localPolyPoints.setSize(nPts);
+            localPolySizes.setSize(pp.size());
+            localPolyCells.setSize(pp.size());
+            label k = 0;
+            forAll(pp, facei)
+            {
+                const face& f = pp[facei];
+                forAll(f, pointi) localPolyPoints[k++] = mesh.points()[f[pointi]];
+                localPolySizes[facei] = f.size();
+                localPolyCells[facei] = faceCells[facei];
+            }
         }
+        // Gathered to the master in rank order; cell labels shifted by where
+        // each rank's cells start in that order (a no-op in a serial run).
+        const labelList cellOffsets(pythonCellOffsets(mesh.nCells()));
+        forAll(localPolyCells, i) localPolyCells[i] += cellOffsets[Pstream::myProcNo()];
+        const List<vector> allCentres(pythonGatherToMaster(List<vector>(mesh.C().primitiveField())));
+        const List<scalar> allVolumes(pythonGatherToMaster(List<scalar>(mesh.V().field())));
+        const List<vector> allPolyPoints(pythonGatherToMaster(List<vector>(localPolyPoints)));
+        const labelList allPolySizes(pythonGatherToMaster(localPolySizes));
+        const labelList allPolyCells(pythonGatherToMaster(localPolyCells));
+        if (Pstream::master())
+        {
+        const label nAllCells = allCentres.size();
+        const label nPolyFaces = allPolySizes.size();
+        const label nPolyPoints = allPolyPoints.size();
+        npy_intp centreDims[] = {nAllCells, 3};
+        npy_intp volumeDims[] = {nAllCells};
+        PyObject* centres = PyArray_SimpleNew(2, centreDims, NPY_DOUBLE);
+        PyObject* volumes = PyArray_SimpleNew(1, volumeDims, NPY_DOUBLE);
+        PyObject* solutionD = Py_BuildValue
+        (
+            "(iii)",
+            int(mesh.solutionD()[0]), int(mesh.solutionD()[1]), int(mesh.solutionD()[2])
+        );
         npy_intp polyPointDims[] = {nPolyPoints, 3};
         npy_intp polyOffsetDims[] = {nPolyFaces + 1};
         npy_intp polyCellDims[] = {nPolyFaces};
@@ -113,26 +143,17 @@ if (analysis_func)
             (
                 PyArray_DATA(reinterpret_cast<PyArrayObject*>(polyCells))
             );
-            off[0] = 0;
-            label k = 0;
-            if (emptyPatch >= 0)
+            forAll(allPolyPoints, k)
             {
-                const polyPatch& pp = mesh.boundaryMesh()[emptyPatch];
-                const labelUList& faceCells = pp.faceCells();
-                forAll(pp, facei)
-                {
-                    const face& f = pp[facei];
-                    forAll(f, pointi)
-                    {
-                        const point& P = mesh.points()[f[pointi]];
-                        pts[3*k] = P.x();
-                        pts[3*k + 1] = P.y();
-                        pts[3*k + 2] = P.z();
-                        ++k;
-                    }
-                    off[facei + 1] = k;
-                    cells[facei] = faceCells[facei];
-                }
+                pts[3*k] = allPolyPoints[k].x();
+                pts[3*k + 1] = allPolyPoints[k].y();
+                pts[3*k + 2] = allPolyPoints[k].z();
+            }
+            off[0] = 0;
+            forAll(allPolySizes, facei)
+            {
+                off[facei + 1] = off[facei] + allPolySizes[facei];
+                cells[facei] = allPolyCells[facei];
             }
         }
         PyObject* meshResult = nullptr;
@@ -146,14 +167,13 @@ if (analysis_func)
             (
                 PyArray_DATA(reinterpret_cast<PyArrayObject*>(volumes))
             );
-            const volVectorField& C = mesh.C();
-            forAll(C, celli)
+            forAll(allCentres, celli)
             {
                 for (direction cmpt = 0; cmpt < 3; ++cmpt)
                 {
-                    c[3*celli + cmpt] = C[celli][cmpt];
+                    c[3*celli + cmpt] = allCentres[celli][cmpt];
                 }
-                v[celli] = mesh.V()[celli];
+                v[celli] = allVolumes[celli];
             }
             meshResult = PyObject_CallFunction
             (
@@ -182,11 +202,13 @@ if (analysis_func)
         }
         else
         {
-            Info<< "POD mesh geometry passed to Python: cells=" << mesh.nCells()
+            Info<< "POD mesh geometry passed to Python: cells=" << nAllCells
                 << " solutionD=" << mesh.solutionD()
-                << " cellPolygons=" << nPolyFaces << endl;
+                << " cellPolygons=" << nPolyFaces
+                << " ranks=" << Pstream::nProcs() << endl;
         }
         Py_XDECREF(meshResult);
+        }   // master
         Py_DECREF(mesh_func);
     }
 }

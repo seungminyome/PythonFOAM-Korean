@@ -2,7 +2,7 @@
 
 PODFoam은 선택한 계산 단계에서 속도·압력장의 수치 요약과 그림을 Gemma 4 E2B에 보냅니다. PythonFOAM의 콜백 함수가 전달을 맡고, llama.cpp가 로컬 CPU에서 모델을 실행합니다. 콜백은 정해진 형식의 답변을 저장한 뒤 솔버로 돌아옵니다. 모델의 답변은 U, p, 솔버 설정이나 제어 알고리즘을 바꾸는 데 사용하지 않습니다.
 
-콜백은 동기식이거나 비동기식입니다. 동기식에서는 솔버가 답이나 마감을 기다립니다(10월 17일 측정). 비동기식(`LLM_ASYNC=1`)에서는 솔버가 계속 걸음을 진행하고, 답은 도착한 걸음과 함께 기록됩니다. 요청 모드는 셋입니다. `observe`는 수치와 같은 걸음의 그림을 보내는 원래 방식, `describe`는 그림 한 장의 설명과 극값의 위치, `sequence`는 실행 중 여러 장으로 본 흐름의 변화입니다. 결과는 [10월 17일 보고서](../../../docs/results.md), [10월 20일 보고서](../../../docs/results-20261020.md), [12B 쌍별 재생](../../../docs/results.md#gpu에서-gemma-4-12b로-같은-재생-2026-10-19), [10월 22일 그림 읽기 시험](../../../docs/results-20261022.md), [10월 22일 돌고 있는 솔버의 v2 그림](../../../docs/results-20261022-live.md)에 있습니다.
+콜백은 동기식이거나 비동기식입니다. 동기식에서는 솔버가 답이나 마감을 기다립니다(10월 17일 측정). 비동기식(`LLM_ASYNC=1`)에서는 솔버가 계속 걸음을 진행하고, 답은 도착한 걸음과 함께 기록됩니다. 요청 모드는 셋입니다. `observe`는 수치와 같은 걸음의 그림을 보내는 원래 방식, `describe`는 그림 한 장의 설명과 극값의 위치, `sequence`는 실행 중 여러 장으로 본 흐름의 변화입니다. 결과는 [10월 17일 보고서](../../../docs/results.md), [10월 20일 보고서](../../../docs/results-20261020.md), [12B 쌍별 재생](../../../docs/results.md#gpu에서-gemma-4-12b로-같은-재생-2026-10-19), [10월 22일 그림 읽기 시험](../../../docs/results-20261022.md), [10월 22일 돌고 있는 솔버의 v2 그림](../../../docs/results-20261022-live.md), [10월 27일 변화 읽기·250걸음마다 요청·MPI](../../../docs/results-20261027.md)에 있습니다.
 
 기존 PODFoam 예제에 선택적으로 사용할 수 있는 콜백을 추가했습니다. `snapshot_func`와 `svd_func`만 정의한 기존 모듈도 전과 같이 동작합니다.
 
@@ -18,7 +18,7 @@ PythonAnalysis.H each step  analysis_func(state)                                
 
 `state`에는 해당 단계의 시간, 시간 간격 dt, `solverPerformanceDict`에서 가져온 잔차가 들어 있습니다. 잔차 기록은 Ux, Uy, p 각각의 첫 번째·마지막 초기 잔차, 최종 잔차, 선형 방정식 풀이 횟수와 반복 횟수입니다. 계산을 마친 단계의 `phi`로 다시 구한 Courant 수와 연속성 오차, 운동학적 압력의 복사본인 `p_cells`도 전달합니다. 같은 단계의 U는 이미 `snapshot_func`를 통해 전달된 상태입니다.
 
-배열은 모두 복사본입니다. Python이 솔버의 원래 저장 공간을 직접 보지 않습니다. 콜백은 rank 0에서 실행하며, MPI 병렬 실행에서는 비활성화합니다.
+배열은 모두 복사본입니다. Python이 솔버의 원래 저장 공간을 직접 보지 않습니다. 병렬 실행에서는 격자와 필드를 마스터 rank로 모으고(`PythonGather.H`, 칸은 rank 순서), 마스터만 `mesh_func`와 `analysis_func`를 부릅니다. POD 스냅샷과 SVD는 전처럼 rank마다 따로 합니다. 2026-10-27에 rank 2개로 시험했습니다([보고서](../../../docs/results-20261027.md#mpi와-pod-파일)).
 
 콜백 구현은 `llm_demo/python_module.py`에 있습니다. 선택한 한 단계(기본값 5)에서 별도 작업 프로세스를 만들어 다음 작업을 수행합니다.
 
@@ -69,7 +69,7 @@ PythonAnalysis.H each step  analysis_func(state)                                
 - 그린 범위는 `LLM_IMAGE_XRANGE`/`LLM_IMAGE_YRANGE`, 없으면 전체 영역입니다. v2는 x-y 평면의 2차원 경우이고 칸마다 다각형 하나가 있어야 합니다(래스터 대체 없음).
 - 서버 컨텍스트는 그림 시험처럼 4096토큰, batch/ubatch 512로 하세요. 세 시각 v2 sequence는 프롬프트가 약 2,200토큰입니다.
 
-`LLM_KILL_JOIN_S`(기본 0.02 s, 최대 2 s)는 끊은 워커를 거두는 데 기다리는 시간입니다. 자식 프로세스가 쓰는 메모리가 클수록 오래 걸립니다. MedicineBow 노드에서는 200 MB에 약 16 ms, 500 MB에 38 ms였고, 0.5 GB 솔버에서 포크한 워커는 0.02 s 안에 거둬지지 않습니다. 그래서 그곳 작업은 0.2 s를 씁니다.
+`LLM_KILL_JOIN_S`(기본 0.1 s, 2026-10-27 전에는 0.02 s; 최대 2 s)는 끊은 워커를 거두는 데 기다리는 시간입니다. 자식 프로세스가 쓰는 메모리가 클수록 오래 걸립니다. MedicineBow 노드에서는 200 MB에 약 16 ms, 500 MB에 38 ms였고, 0.5 GB 솔버에서 포크한 워커는 0.02 s 안에 거둬지지 않습니다. 그래서 그곳 작업은 0.2 s를 씁니다.
 
 ### 발달한 흐름에서 시작하기
 
@@ -78,6 +78,14 @@ PythonAnalysis.H each step  analysis_func(state)                                
 ### 한 연구에서 describe 요청 여러 개 (`run_live_sweep.py`)
 
 비동기 시험은 창 하나에 describe 요청 하나를 보냅니다. 창이 고정이면 답이 늘 비슷한 자리에 있어서, 답 하나로 고정해도 잘 맞습니다. `run_live_sweep.py <시험 실행> <PODFoam> <출력>`은 v2 시험 뒤에 요청 걸음 R마다(기본 500걸음마다) 경우를 하나씩 더 돌립니다. 모두 같은 시작 상태에서 출발하고, R에서의 기준 저장 상태의 가장 빠른 칸 둘레에 무작위로 놓은 창(`window_test.py`의 규칙)으로 R에 describe 요청을 보냅니다. 답이 솔버가 도는 동안 왔는지, 요청 본문이 시험한 빌더를 프레임에 적용한 결과인지, 프레임의 배열이 R에서 기준이 쓴 필드와 같은지 확인하고, 답과, 모든 답에 대해 가장 잘 맞는 고정 답 하나를 채점합니다(`sweep-summary.json`).
+
+### N걸음마다 요청 (`LLM_ANALYSIS_EVERY`)
+
+`LLM_ANALYSIS_EVERY=N`(v2 그림의 describe)이면 `LLM_ANALYSIS_STEP`에서, 그 뒤 N걸음마다 describe 요청을 보냅니다. 대기 중인 요청이 `LLM_ASYNC_MAX_PENDING`보다 적을 때만 보내고, 한도에 걸린 걸음은 건너뛰고 기록합니다. 요청마다 늘 쓰는 파일(`llm_request.json`, `llm_request_body.json`, `llm_response.json`, `llm_result.json`, 원래 답)을 자기 폴더 `llm_requests/step-NNNNNN/`에 쓰고, 마지막 걸음에서 `llm_requests/index.json`(걸음, 상태, 도착 걸음, 모델 시간, 솔버 멈춤)을 씁니다. `run_periodic.py <시험 실행> <PODFoam> <출력>`은 v2 시험의 기준 준비 폴더에서 이런 경우 하나와 요청 없는 쌍둥이를 돌려 저장 파일을 모두 비교하고, 요청 본문을 빌더와, 프레임을 저장 필드와 대조하고, 답을 채점하고, 걸린 시간, 메모리(솔버 프로세스들의 RSS와 PSS, 0.5 s마다), 요청마다 워커 파이프로 오간 바이트(결과의 `ipc_bytes_received`)를 기록합니다. `hpc/periodic_v2.slurm`이 GPU 노드에서 돌립니다.
+
+### 발달한 흐름의 변화 읽기 시험 (`sequence_test.py`)
+
+`sequence_test.py build --states <경우> --centres <fields.npz> --old-manifest ... --output <묶음>`은 저장 상태 세 개씩(기본 간격 2000, 4000, 6000걸음)을 묶고, 묶음마다 가장 빠른 칸들 둘레에 무작위 창 하나를 놓고(위의 창 규칙, 가장 빠른 칸이 모두 여백 안쪽), 정답의 (속력 추세, 압력 추세) 아홉 가지가 상태가 허락하는 만큼 고르게 차도록 `--count`개를 고릅니다. 같은 세 시각 묶음으로 다섯 가지를 만듭니다. `dev-sequence-v1`(솔버의 두 칸 그림, 2026-10-20 프롬프트), `dev-sequence-v2own`(필드 하나씩 그린 그림, 그림마다 자기 색 범위, 2026-10-22 프롬프트), `dev-sequence-v2own-t`(같은 것에 정답의 기준을 프롬프트에 적음: 추세는 2 %, 자리는 그린 범위의 5 %), `dev-sequence-v2own-tn`(여기에 시각마다 배열에서 구한 최대 |U|와 최소 p를 메모에 더함), `dev-sequence-numbers`(그 메모와 가장 빠른 칸의 위치만, 그림 없음). `readable_request.sequence_v2_payload(..., thresholds=True, numbers=..., images=False)`가 만들며, 기본값이면 2026-10-22 본문을 바이트까지 그대로 줍니다. `--dt`(여기와 `window_test.py`)는 상태 이름을 나눌 시간 간격으로, 다른 간격으로 돈 실행에 씁니다. `--y-span`은 창 높이의 범위(m)입니다. 2026-10-27에 돌렸습니다([보고서](../../../docs/results-20261027.md#스냅샷-사이의-변화-읽기)).
 
 ### 무작위 창 그림 시험 (`window_test.py`)
 

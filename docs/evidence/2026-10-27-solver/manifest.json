@@ -1,0 +1,868 @@
+{
+ "source_runs": [
+  "periodic 24903264",
+  "repeats 24903298, 24903263, 24903755",
+  "mpi 24903786",
+  "poddiff 24903065",
+  "unstable 24903082, 24903162, 24903182"
+ ],
+ "scope": "Solver runs of 2026-10-27 on MedicineBow: a describe request every 250 steps over 24,000 steps with Gemma 4 12B on an NVIDIA A30 and its twin; two repeats of the October 22 v2 suite and sweep; the observer on 2 MPI ranks; POD mode files against BLAS threads; attempts at an unstable flow.",
+ "release": "https://github.com/seungminyome/PythonFOAM/releases/tag/tests-2026-10-27",
+ "notes": [
+  "Sources are paths inside the archives of the release; the repeats' files are from the cluster run folders, which are not released (their written fields equal the first run's, see repeats/compare-repeats.json).",
+  "Files of kind gzip copy are gzip -9 copies (no name, mtime 0) of the named source; source_sha256 is the hash of the uncompressed bytes.",
+  "Original records contain cluster paths and process ids as provenance."
+ ],
+ "files": [
+  {
+   "path": "README.md",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 9100,
+   "sha256": "98ac1ffd483fc2e8754e6e6d0197fcafa1819ab623af42874984c55cb09c8f9b"
+  },
+  {
+   "path": "mpi/HEAD",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/run-24903786/HEAD",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "fcba7fd9fa50600e68fad927fe45d3503ec2546b3b75555b99bee7fa6ed084b0"
+  },
+  {
+   "path": "mpi/changes.patch",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/run-24903786/changes.patch",
+   "kind": "byte-preserved",
+   "bytes": 29123,
+   "sha256": "7f32a159d5afb0860ef9de4b1b34102689e1935c42d67a5458a9b0ad45fcc6a8"
+  },
+  {
+   "path": "mpi/frame-comparison.json",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/run-24903786/frame-comparison.json",
+   "kind": "byte-preserved",
+   "bytes": 236,
+   "sha256": "477bfd739bad7fda584904d1be397c27f0d654e13afa26e321e1b12349e35d80"
+  },
+  {
+   "path": "mpi/git-status.txt",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/run-24903786/git-status.txt",
+   "kind": "byte-preserved",
+   "bytes": 522,
+   "sha256": "7434d671790945c59cb997800de9d8d838f6986d58d161384db3193e38632386"
+  },
+  {
+   "path": "mpi/mpi-test-24903786.out",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/mpi-test-24903786.out",
+   "kind": "byte-preserved",
+   "bytes": 1066,
+   "sha256": "a5cc8a534f11d425670902ec2ef292746bf3ea4f93b8d3f1aa57ac1143fd6b2a"
+  },
+  {
+   "path": "mpi/mpi_test.sbatch",
+   "source": "the job script as submitted (Slurm 24903786)",
+   "kind": "byte-preserved",
+   "bytes": 4098,
+   "sha256": "3511ab8412335bf057854e35c32ebd9ef7baa2445935c53c98ec26e472af2cf5"
+  },
+  {
+   "path": "mpi/par2/log.PODFoam.gz",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/run-24903786/par2/log.PODFoam",
+   "kind": "gzip copy",
+   "bytes": 137771,
+   "sha256": "5435bacfd370784d812012499ea3b5a0347e4a792c2d230c725d029f32a98dfe",
+   "source_sha256": "141517be2dfc32d09a5a899f197902d01a728bad8c7680279f118224e15f107b"
+  },
+  {
+   "path": "mpi/par2/log.decomposePar",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/run-24903786/par2/log.decomposePar",
+   "kind": "byte-preserved",
+   "bytes": 2327,
+   "sha256": "92f98219bc56c4101f809cd42779bcf7455700234f485ab348e3dea693b9b7ac"
+  },
+  {
+   "path": "mpi/par2/log.reconstructPar",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/run-24903786/par2/log.reconstructPar",
+   "kind": "byte-preserved",
+   "bytes": 1809,
+   "sha256": "33ff6597492f9373387818a24cf74d05cb4abbb24569113926f7e3c7162ac6c4"
+  },
+  {
+   "path": "mpi/par2/system/decomposeParDict",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/run-24903786/par2/system/decomposeParDict",
+   "kind": "byte-preserved",
+   "bytes": 1026,
+   "sha256": "1fa7f05aff78dbabdbdec13ff8c3a8c13bb565667134954525a7c65158c6070c"
+  },
+  {
+   "path": "mpi/serial/log.PODFoam.gz",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/run-24903786/serial/log.PODFoam",
+   "kind": "gzip copy",
+   "bytes": 132310,
+   "sha256": "9335c104ff4faeb964ea10eb3412c11c21f6bdbdf25ac4055a75b04ca0af1972",
+   "source_sha256": "e654cb8b051c3b84470afc713e4e69aed734563c7a525c5fe22bf9fa8184bd37"
+  },
+  {
+   "path": "mpi/validation.log",
+   "source": "mpi-24903786.tar.gz: pod-mpi-20261027/run-24903786/validation.log",
+   "kind": "byte-preserved",
+   "bytes": 1993,
+   "sha256": "1d4edc721685881eb9e5832574c784194f45a8740bdba4e322b44131b964b51f"
+  },
+  {
+   "path": "periodic/executed-callback-source.sha256",
+   "source": "periodic-24903264.tar.gz: run-24903264/executed-callback-source.sha256",
+   "kind": "byte-preserved",
+   "bytes": 1354,
+   "sha256": "d149b8643efb62c64cb636b25c7345dd2ea7844ce9ee023a6fe195fa6f96599c"
+  },
+  {
+   "path": "periodic/git/HEAD",
+   "source": "periodic-24903264.tar.gz: run-24903264/git/HEAD",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "fcba7fd9fa50600e68fad927fe45d3503ec2546b3b75555b99bee7fa6ed084b0"
+  },
+  {
+   "path": "periodic/git/changes.patch",
+   "source": "periodic-24903264.tar.gz: run-24903264/git/changes.patch",
+   "kind": "byte-preserved",
+   "bytes": 23092,
+   "sha256": "f2682684bdd99e701677706596d8b98514c77fb497ba08ee000e6a36f1bed5ed"
+  },
+  {
+   "path": "periodic/git/git-status.txt",
+   "source": "periodic-24903264.tar.gz: run-24903264/git/git-status.txt",
+   "kind": "byte-preserved",
+   "bytes": 467,
+   "sha256": "a5748fe6f61d096c1f2d3bb440d4e48340358279b125feea4163c6ace277bcd0"
+  },
+  {
+   "path": "periodic/gpu-20261027T144959Z.txt",
+   "source": "periodic-24903264.tar.gz: run-24903264/gpu-20261027T144959Z.txt",
+   "kind": "byte-preserved",
+   "bytes": 76,
+   "sha256": "f2330b968e92326029a0e14a41741cc0a8d6f7bae8916480e7546f875c73c589"
+  },
+  {
+   "path": "periodic/gpu-samples.csv.gz",
+   "source": "periodic-24903264.tar.gz: run-24903264/gpu-samples.csv",
+   "kind": "gzip copy",
+   "bytes": 8329,
+   "sha256": "6855daafd4f65ae77f55244cf1cbfc477996f07bb3a575dfa86d42422b5c68c7",
+   "source_sha256": "abb887f4d95e0dfeda1b4168b985e0d6aa9be3bf9c49850d88def35326656f91"
+  },
+  {
+   "path": "periodic/memory.json",
+   "source": "memory.py run in this folder with Python 3.11",
+   "kind": "derived",
+   "bytes": 16805,
+   "sha256": "18fa90f57c4651b5903ac555309068a79d1f34b3270e34c9a4a5902574831eaa"
+  },
+  {
+   "path": "periodic/memory.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 3762,
+   "sha256": "d12ffb9ed4517fa7ff482f0e716b44c8731fc1fa0eacf6d44e77662f1ed35629"
+  },
+  {
+   "path": "periodic/misses.json",
+   "source": "misses.py applied to periodic-24903264.tar.gz: run-24903264/periodic/periodic-describe",
+   "kind": "derived",
+   "bytes": 3641,
+   "sha256": "10be47c9e894aa80d6e16b4b91ca5f6ed4c2c6d97d3d6d7229a20a76aeea088a"
+  },
+  {
+   "path": "periodic/misses.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 2728,
+   "sha256": "b02fe7775b6966b69f9948d2d729fc883b4e9c66c4c6f1b98e4a3c4513c4c05f"
+  },
+  {
+   "path": "periodic/models-20261027T144959Z.json",
+   "source": "periodic-24903264.tar.gz: run-24903264/models-20261027T144959Z.json",
+   "kind": "byte-preserved",
+   "bytes": 778,
+   "sha256": "4b3b8549a634cdcf6afa58b2910e69b7648ea07d9fa639d00957a2889245bd43"
+  },
+  {
+   "path": "periodic/nvidia-smi.txt",
+   "source": "periodic-24903264.tar.gz: run-24903264/nvidia-smi.txt",
+   "kind": "byte-preserved",
+   "bytes": 1689,
+   "sha256": "a11a5cb1647ab68542474c10aa25054b7207689225d2932554808236580a36bc"
+  },
+  {
+   "path": "periodic/periodic-describe/llm_requests/index.json",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/periodic-describe/llm_requests/index.json",
+   "kind": "byte-preserved",
+   "bytes": 20130,
+   "sha256": "036639df7b56176e33d5c6ec9b2c8f7b5b191e124e0cc4c2080f63ce9b3a86b3"
+  },
+  {
+   "path": "periodic/periodic-describe/log.PODFoam.gz",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/periodic-describe/log.PODFoam",
+   "kind": "gzip copy",
+   "bytes": 5276458,
+   "sha256": "fddc9a19ccdc13419f3cedeb5fc3dd6f17a2ea652b6ea6147efdfd650ff6a46b",
+   "source_sha256": "9d177593f424d9c73f15eb9f9b63fd893042875180999e9a322c443546c846dc"
+  },
+  {
+   "path": "periodic/periodic-describe/memory-samples.json.gz",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/periodic-describe/memory-samples.json",
+   "kind": "gzip copy",
+   "bytes": 59706,
+   "sha256": "93aa1ff3a30541f96a9975dddf8b02d1c85e444b5502ce3c7ac3e57967b044d2",
+   "source_sha256": "96bf2f24e506062d61f9f45235642479c75c5f8e8072e1ed3926d8d93277fa95"
+  },
+  {
+   "path": "periodic/periodic-describe/telemetry.jsonl.gz",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/periodic-describe/telemetry.jsonl",
+   "kind": "gzip copy",
+   "bytes": 2956758,
+   "sha256": "2922f8dc776346432c82921c91621bbc01a1a2135ed2e4510cbfc1a3cac6a758",
+   "source_sha256": "2e7305d6bb28d1cbbd0dc137fcada94bd3d852eee2a10b50732f3d6b516fcd1d"
+  },
+  {
+   "path": "periodic/periodic-describe/timeline.json.gz",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/periodic-describe/timeline.json",
+   "kind": "gzip copy",
+   "bytes": 14725,
+   "sha256": "ffddd126ec94009a6cf9de9e1950548067168abe52f65919d3f0f0c31a0a3343",
+   "source_sha256": "c6ac704c807c0a03f4e2eeb4c9b01ceeea6b48fc426b832705864a9f1218bf0c"
+  },
+  {
+   "path": "periodic/periodic-no-llm/log.PODFoam.gz",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/periodic-no-llm/log.PODFoam",
+   "kind": "gzip copy",
+   "bytes": 5252279,
+   "sha256": "2bca1829072c2247bb07c2b36872740dd3f2cfe6ae91351a433c005613a4b169",
+   "source_sha256": "e23b8cd59b2b7c3ab150c29b790f6a8b4efd658fe1aff4fa40d478f284f0a91b"
+  },
+  {
+   "path": "periodic/periodic-no-llm/memory-samples.json.gz",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/periodic-no-llm/memory-samples.json",
+   "kind": "gzip copy",
+   "bytes": 53747,
+   "sha256": "57821e98dd31aced30381c97421eb1bc3b54f26f40fa6d165dc560f54a5ee779",
+   "source_sha256": "da6690a118479b4a5a89614790af31e1af771099b37063d159556b736e4c0566"
+  },
+  {
+   "path": "periodic/periodic-no-llm/telemetry.jsonl.gz",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/periodic-no-llm/telemetry.jsonl",
+   "kind": "gzip copy",
+   "bytes": 2956789,
+   "sha256": "7a5bebaad01df6e6346a0d2e3f8b236b021cb3d0da86650c049a1503286e590a",
+   "source_sha256": "f1b44c6819f7fb33dde9ae03680482d85dcfb0b8522406f324868c27632030b3"
+  },
+  {
+   "path": "periodic/periodic-no-llm/timeline.json.gz",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/periodic-no-llm/timeline.json",
+   "kind": "gzip copy",
+   "bytes": 14284,
+   "sha256": "7d3384ad5837ca49d9e79fe7f24f2acc0196a6de69e6565ab98996fe51e37562",
+   "source_sha256": "3e6027785cec7d4c10af6f209b9e47f53e49b8a1f8e8c95e97dca5484b60696e"
+  },
+  {
+   "path": "periodic/periodic-summary.json",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/periodic-summary.json",
+   "kind": "byte-preserved",
+   "bytes": 227131,
+   "sha256": "c012037218ae0c66c5355706ef5fec2ec63950e5a151731358d69d14dd5fe3d7"
+  },
+  {
+   "path": "periodic/periodic.log",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic.log",
+   "kind": "byte-preserved",
+   "bytes": 6807,
+   "sha256": "1ca782ece1d6fbc22f16e5a04425545aa7667e391aafda5c6b5b19e27456fcaa"
+  },
+  {
+   "path": "periodic/pod-periodic-v2-24903264.out",
+   "source": "periodic-24903264.tar.gz: run-24903264/pod-periodic-v2-24903264.out",
+   "kind": "byte-preserved",
+   "bytes": 6979,
+   "sha256": "2b8de6495b632f20cf0319440f392b0cf090d515849c018db6afd09e151f5c4d"
+  },
+  {
+   "path": "periodic/resident-server.json",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/resident-server.json",
+   "kind": "byte-preserved",
+   "bytes": 1071,
+   "sha256": "8be21145d62b82334cae634c3e2f3eef0d7925f89b1c4e693c5c80e7e6aed9b0"
+  },
+  {
+   "path": "periodic/runtime_manifest_12b.json",
+   "source": "periodic-24903264.tar.gz: run-24903264/runtime_manifest_12b.json",
+   "kind": "byte-preserved",
+   "bytes": 866,
+   "sha256": "2168afb62aedc294d83447ed08675da94c78fd22f4cc3f44f488c468b96bcba6"
+  },
+  {
+   "path": "periodic/server-20261027T144959Z.cmd",
+   "source": "periodic-24903264.tar.gz: run-24903264/server-20261027T144959Z.cmd",
+   "kind": "byte-preserved",
+   "bytes": 686,
+   "sha256": "0cc542429882e3ae7b3c8c40f8f1aca5b87a66f10aea96fe53bd7075113f392c"
+  },
+  {
+   "path": "periodic/server-20261027T144959Z.log.gz",
+   "source": "periodic-24903264.tar.gz: run-24903264/server-20261027T144959Z.log",
+   "kind": "gzip copy",
+   "bytes": 12118,
+   "sha256": "5a34eb8dd3e1f16b589ff615c1fc1ba17400696e3ca0ca137d962d8c19b46d18",
+   "source_sha256": "7ab2ff59d24fdfb489b78eeea6d0bba27a7dcdc52e80ebf116f446c8024f5aae"
+  },
+  {
+   "path": "periodic/timings.json",
+   "source": "periodic-24903264.tar.gz: run-24903264/periodic/timings.json",
+   "kind": "byte-preserved",
+   "bytes": 630,
+   "sha256": "3689e990ba036d0a7ccb2e6de4ca3a324eec296e06c38dc460af9e814a371346"
+  },
+  {
+   "path": "periodic/tracking.json",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 609,
+   "sha256": "eeece967768493acf92d857352cf98f6de18f601d79daf8e4f20bbba5076bfdf"
+  },
+  {
+   "path": "periodic/tracking.png",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 124227,
+   "sha256": "51ea3b2fe79e028e51dc7312990766719c7813d21511d6b9da578530305fa099"
+  },
+  {
+   "path": "periodic/tracking.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 4133,
+   "sha256": "d8f07cde8ee26fcdfe8a7df25994cd65bae3a411d20797844a6cb54950bb1179"
+  },
+  {
+   "path": "poddiff/comparison.json",
+   "source": "poddiff-24903065.tar.gz: pod-poddiff-20261027/run-24903065/comparison.json",
+   "kind": "byte-preserved",
+   "bytes": 1008,
+   "sha256": "02673ffb1e8f94b2d26a5bc310deb0b99525ad76204208902e2ca6d342166eb0"
+  },
+  {
+   "path": "poddiff/mode-differences.json",
+   "source": "mode_differences.py applied to poddiff-24903065.tar.gz: run-24903065",
+   "kind": "derived",
+   "bytes": 813,
+   "sha256": "fce2654c8b16e68864bbc9e7981f79dcd9d966a222aa8ba672ab00371e5e8a46"
+  },
+  {
+   "path": "poddiff/mode_differences.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 1815,
+   "sha256": "0f25b12d35e9dbbad4f3bcb989dfb81e41f45812f2f537fde8cc6e05ba076bae"
+  },
+  {
+   "path": "poddiff/poddiff-24903065.out",
+   "source": "poddiff-24903065.tar.gz: pod-poddiff-20261027/poddiff-24903065.out",
+   "kind": "byte-preserved",
+   "bytes": 1137,
+   "sha256": "2ba6c840d11bdd6a0a1531832e58e7f297596b1d5cb0321761d2ab63a55f82b6"
+  },
+  {
+   "path": "poddiff/poddiff.sbatch",
+   "source": "the job script as submitted (Slurm 24903065)",
+   "kind": "byte-preserved",
+   "bytes": 3172,
+   "sha256": "c932b07a62eb13e0645394dfb4a8ce677f2dae08d4dd64e60dec190a93e02a30"
+  },
+  {
+   "path": "repeats/24903263/HEAD",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "fcba7fd9fa50600e68fad927fe45d3503ec2546b3b75555b99bee7fa6ed084b0"
+  },
+  {
+   "path": "repeats/24903263/async-describe/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/async-describe/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5209,
+   "sha256": "dbf7fa2df921a6c4ddf9da4f2d6942b0396b11d1a740154d63e85a9b8454e944"
+  },
+  {
+   "path": "repeats/24903263/async-sequence/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/async-sequence/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 10958,
+   "sha256": "df98cbeeaac4f31d6b30fbaceb97c404c78d9b19098c179cc15c24d642ff3653"
+  },
+  {
+   "path": "repeats/24903263/async-verification.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/async-verification.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 16008,
+   "sha256": "04f261534b452739da3e1181be4f6079287e516f99d59b62cf058362443d1b54"
+  },
+  {
+   "path": "repeats/24903263/build-inputs.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/build-inputs.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1151,
+   "sha256": "393da5857f3054f0176ebd572b84d87086ef6141d0f2e235575f5f5380f15313"
+  },
+  {
+   "path": "repeats/24903263/git-status.txt",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 467,
+   "sha256": "a5748fe6f61d096c1f2d3bb440d4e48340358279b125feea4163c6ace277bcd0"
+  },
+  {
+   "path": "repeats/24903263/job/pod-async-v2-24903263.out",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-async-v2-24903263.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 17431,
+   "sha256": "92bb46dd55837fbfc2aa64624167295a5e66d3f0c2def9d91f2780579c93d0ab"
+  },
+  {
+   "path": "repeats/24903263/job/pod-async-v2-24903755.out",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-async-v2-24903755.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1237,
+   "sha256": "cb079723144abbbeba11dbbd2d9034e676d2ef514f89e364627a6a3d694d0aea"
+  },
+  {
+   "path": "repeats/24903263/server/gpu-20261027T144659Z.txt",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/gpu-20261027T144659Z.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 76,
+   "sha256": "f2330b968e92326029a0e14a41741cc0a8d6f7bae8916480e7546f875c73c589"
+  },
+  {
+   "path": "repeats/24903263/server/gpu-20261027T152205Z.txt",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/gpu-20261027T152205Z.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 76,
+   "sha256": "f2330b968e92326029a0e14a41741cc0a8d6f7bae8916480e7546f875c73c589"
+  },
+  {
+   "path": "repeats/24903263/server/models-20261027T144659Z.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/models-20261027T144659Z.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 778,
+   "sha256": "28206b6a2568952d655434da2c6af567f0d7cf968c1d0abe7c80d7bec46f4828"
+  },
+  {
+   "path": "repeats/24903263/server/models-20261027T152205Z.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/models-20261027T152205Z.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 778,
+   "sha256": "05d20571fcccb52b094c64233825811898f5af6f298c681295f88384a8386745"
+  },
+  {
+   "path": "repeats/24903263/server/server-20261027T144659Z.cmd",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/server-20261027T144659Z.cmd (not released)",
+   "kind": "byte-preserved",
+   "bytes": 686,
+   "sha256": "58742702f3a3d2ec337b4d59ae912f92444f6daa4d748e638a9d753855b868b0"
+  },
+  {
+   "path": "repeats/24903263/server/server-20261027T144659Z.log.gz",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/server-20261027T144659Z.log (not released)",
+   "kind": "gzip copy",
+   "bytes": 1265,
+   "sha256": "95e550230b1224be327e0f1543979712a8af60dfe8f2dfd7810e953863b7db6c",
+   "source_sha256": "a1da66712efec7b038dec612a983880ede1b6a61243f0cdd219a9b8742349395"
+  },
+  {
+   "path": "repeats/24903263/server/server-20261027T152205Z.cmd",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/server-20261027T152205Z.cmd (not released)",
+   "kind": "byte-preserved",
+   "bytes": 686,
+   "sha256": "12e5dabfec5eb4e14606f5beb1edab0fa34bb3b08bab300f2d04cc4f8ca06abe"
+  },
+  {
+   "path": "repeats/24903263/server/server-20261027T152205Z.log.gz",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/server-20261027T152205Z.log (not released)",
+   "kind": "gzip copy",
+   "bytes": 2374,
+   "sha256": "5ec1ab1e44cc90c1fe2e1e3b212ed458b83caecc88a1562d73b226ab1c946e72",
+   "source_sha256": "e787babd355611a1d79ac8483b5b4757d72f8a7e45b428d77d029d43670b524e"
+  },
+  {
+   "path": "repeats/24903263/sha256.json.gz",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/sha256.json (not released)",
+   "kind": "gzip copy",
+   "bytes": 124810,
+   "sha256": "feb0cd44a2406055f2f42295ffb1756882c4ed2316b80355332dc2af04078955",
+   "source_sha256": "caf0785191729ffd535b1e40b59123ff205bfa9052c3c02f0c7d9b795f7ddc77"
+  },
+  {
+   "path": "repeats/24903263/summary.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/summary.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5118,
+   "sha256": "1c063761385b723d34738b8b81908f8d6214ce6b3c88a07fce179bcc765ca770"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step000500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step000500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5348,
+   "sha256": "2522a43a1b5163c16f46d81f4eb3d775b2b9aaf305e8356fac1383197db8111d"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step001000/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step001000/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5339,
+   "sha256": "1c041f30d34024e2c922ae8344502c5a2a8f52b9ca045b64b315aad5e9f649d6"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step001500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step001500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5385,
+   "sha256": "0ad65b16c81cdda2e110718d932b8218ec1de3005ce366e40f5971ce3147442e"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step002000/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step002000/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5293,
+   "sha256": "91bad173b78b97966c3cc5f17d708313385417b7d44a24c9b353c73b3ac353a9"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step002500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step002500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5440,
+   "sha256": "84f7b4456a11e4bd27570de9ef0a61321eba39b4be50e23478ed17a0a2ff7db4"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step003000/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step003000/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5367,
+   "sha256": "bf9aefbd003cdef5dda00dc96dc0551e4e6dfdd6f2b8466d2baeca37bf40036b"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step003500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step003500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5342,
+   "sha256": "82598ed2fac760dc3d65aeeff2c5f968f1b34a3339fd325c8ad138b4768ea93c"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step004000/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step004000/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5521,
+   "sha256": "cbf59f88334ee399ad572b417f1b972861a925c9112152ace114bac6e1435fd5"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step004500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step004500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5495,
+   "sha256": "1e54853b77048f8e95e799a6af651ce7a161011a669f0c2636c13129bdd191fe"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step005000/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step005000/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5323,
+   "sha256": "94889581dbeb87d2675014a4d1afdfbef37a4ab1f0e7cb2eddf65c98926906a1"
+  },
+  {
+   "path": "repeats/24903263/sweep/describe-step005500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step005500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5307,
+   "sha256": "4c8a70510f29485e03ea6aae1d16176f5601f16a8acfda63d12f91d914e59c26"
+  },
+  {
+   "path": "repeats/24903263/sweep/sweep-sha256.json.gz",
+   "source": "hash_tree.py applied to MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755 (not released)",
+   "kind": "derived",
+   "bytes": 120688,
+   "sha256": "8a497038150715ce953abaa89e7760caff34d730db25f62030b1a03a9d7070b3"
+  },
+  {
+   "path": "repeats/24903263/sweep/sweep-summary.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/sweep-summary.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 34155,
+   "sha256": "17edc7b3723b6d9b4e0163e9aa263c7a82eb7e071fea6837f695245b0ad6c22c"
+  },
+  {
+   "path": "repeats/24903263/timings.json",
+   "source": "MedicineBow pod-async-v2/run-24903263/pod-llm-async.2yctEn/timings.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2213,
+   "sha256": "84184a2686ea0c901a3fad28b4b1068f4994ee40ff2450d3f33cee94dd62f82a"
+  },
+  {
+   "path": "repeats/24903298/HEAD",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "5d512b00b1e8b39902c2c2ec68e58af29129ae3c16231048ed84588bdd6fb619"
+  },
+  {
+   "path": "repeats/24903298/async-describe/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/async-describe/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5212,
+   "sha256": "1aa5b28bf00d3f84b09ad29539c4d9db17dd77f3b6dbeda5edc42eadb4e682f1"
+  },
+  {
+   "path": "repeats/24903298/async-sequence/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/async-sequence/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 10957,
+   "sha256": "e51809af088b045699ba6ed825d2935f8b0441bc1cf6161993510fa587ce9b49"
+  },
+  {
+   "path": "repeats/24903298/async-verification.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/async-verification.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 16008,
+   "sha256": "15b2ff91bbc2dda3ff8c836e5b51585e5390b443ad4b4d40757444d7b9b954ca"
+  },
+  {
+   "path": "repeats/24903298/build-inputs.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/build-inputs.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1224,
+   "sha256": "f90f677df91f7cc17a93fcebf93d6af6e08586bdadc8e72b3b484796830dada0"
+  },
+  {
+   "path": "repeats/24903298/git-status.txt",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 48,
+   "sha256": "1efcb5b8b611262f4125d9a4e8e94c80252d94c26f6da086616f679cf4142910"
+  },
+  {
+   "path": "repeats/24903298/job/pod-async-v2-24903298.out",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-async-v2-24903298.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 17949,
+   "sha256": "649f1426b4d02426681377dabeb682ba98548db3e84c7bf5d8f95c7a2a46c1a3"
+  },
+  {
+   "path": "repeats/24903298/server/gpu-20261027T145200Z.txt",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/gpu-20261027T145200Z.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 76,
+   "sha256": "f2330b968e92326029a0e14a41741cc0a8d6f7bae8916480e7546f875c73c589"
+  },
+  {
+   "path": "repeats/24903298/server/models-20261027T145200Z.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/models-20261027T145200Z.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 778,
+   "sha256": "83acd5b4b158520413f6058172af8f1be2d55f92ea84954a869b7260b717f3e6"
+  },
+  {
+   "path": "repeats/24903298/server/server-20261027T145200Z.cmd",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/server-20261027T145200Z.cmd (not released)",
+   "kind": "byte-preserved",
+   "bytes": 686,
+   "sha256": "1268535f03159c5708b089d434db052be2485650d9d9c69497edf5af486a43dc"
+  },
+  {
+   "path": "repeats/24903298/server/server-20261027T145200Z.log.gz",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/server-20261027T145200Z.log (not released)",
+   "kind": "gzip copy",
+   "bytes": 2638,
+   "sha256": "d86140980122254b2dbd5ec25b827c3a2fcf0e3d6e01fbc69ec0ae4d2d09c0fd",
+   "source_sha256": "91a27c6f22346a4459569fce669999a294d9f9ddbc210f2e5217bbeabc7bb76a"
+  },
+  {
+   "path": "repeats/24903298/sha256.json.gz",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/sha256.json (not released)",
+   "kind": "gzip copy",
+   "bytes": 125155,
+   "sha256": "f4ca41aee6834ba9d745a857861e8cdd685354169004656c9f91b70fd321ec14",
+   "source_sha256": "99498d2d31c47eb67923ba1401b8015f4c2fa4db348ce8a5b66f8cb82f80026d"
+  },
+  {
+   "path": "repeats/24903298/summary.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/summary.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5119,
+   "sha256": "74ef79d3e48e53a4ffb7e6479a77c8395ae706f95a3f61fe08f72a862d32e579"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step000500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step000500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5306,
+   "sha256": "9496319cc31bba251c243b17676f31b9d11a8d3d6a9b112d36f0f8f6bcdd5b9e"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step001000/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step001000/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5291,
+   "sha256": "c4677c6d98e482b2a2d145b7165eac6cedba4bc36a5461175ebe4e6301d5c7b4"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step001500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step001500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5341,
+   "sha256": "588c09dc33c23bbbc131314e3c79101d9a3099798ecf9c2f05fff4a91ca612f5"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step002000/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step002000/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5248,
+   "sha256": "6d493fabf160cfae1d3e379b1c87183a58f7302467eca13d2bc80d5d309db05b"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step002500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step002500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5397,
+   "sha256": "39ac8c1c6f2dbd83d6b8a98ae2e2bda8937b808f26c848616ab68e13a91b54f4"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step003000/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step003000/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5323,
+   "sha256": "1f068849d01cee18e559fe117fcbc264d01968883978c910f98f26047ce46ef4"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step003500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step003500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5296,
+   "sha256": "d6ceb80602d7b3f5124913e14338c9b6b02143c274a760f44a4350034e74e44c"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step004000/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step004000/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5484,
+   "sha256": "9e4db0f28347b6b97de3750687b4337f4f8fd727833a3c087226458a9575e9a2"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step004500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step004500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5451,
+   "sha256": "5eccbb8c5c80e20bc6283b80fbcb5ac1b0dbc740a587f166fdde721b61f57290"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step005000/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step005000/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5281,
+   "sha256": "319e28baacd3226ea5e7b081c8a156182380bb2d0b0069fc806b6ac343eed4be"
+  },
+  {
+   "path": "repeats/24903298/sweep/describe-step005500/llm_result.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step005500/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5263,
+   "sha256": "50f9545607b6915128ad3d4f2ea4a2eba84a13a408bd28996043dc5ba0e4f2aa"
+  },
+  {
+   "path": "repeats/24903298/sweep/sweep-sha256.json.gz",
+   "source": "hash_tree.py applied to MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep (not released)",
+   "kind": "derived",
+   "bytes": 120760,
+   "sha256": "77d82d643dfb797ae83dd7069ab5990ec17a990885f56f3bd307880c32c41e75"
+  },
+  {
+   "path": "repeats/24903298/sweep/sweep-summary.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/sweep-summary.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 34166,
+   "sha256": "136f487c229b3b6ebe51d926e82480520c8b06dbe8dbef3b1ed720b8a3419326"
+  },
+  {
+   "path": "repeats/24903298/timings.json",
+   "source": "MedicineBow pod-async-v2/run-24903298/pod-llm-async.RyMooN/timings.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2212,
+   "sha256": "7e0115e90495e0522a29e5ab9513de6df75a11a69deb2c23f1a3bee91143722a"
+  },
+  {
+   "path": "repeats/compare-repeats.json",
+   "source": "compare-repeats.py run in this folder",
+   "kind": "derived",
+   "bytes": 5592,
+   "sha256": "1639eb09b008b3143542b40c2e82c79a495e133d00375da94572ffe9fd55568d"
+  },
+  {
+   "path": "repeats/compare-repeats.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 5928,
+   "sha256": "d43da37ac7da7cbf74fc6cd02b3837d39b10b19d85c63ad9029376b3e1554ff1"
+  },
+  {
+   "path": "repeats/hash_tree.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 938,
+   "sha256": "05912acfc637553b0ac038b75f8e43f011a40a9227fdc9013f68d5c404657ecf"
+  },
+  {
+   "path": "repeats/run1-sweep-sha256.json.gz",
+   "source": "hash_tree.py applied to the sweep of Slurm 24757460 (pod-insitu-v2-2026-10-22 release: sweep-UM1RyJ.tar.gz)",
+   "kind": "derived",
+   "bytes": 120636,
+   "sha256": "91de48e4282f2026dc9faf4b833cfcb8052aeb6a175c98a780e3c896fae76e3d"
+  },
+  {
+   "path": "unstable/run-unstable-24903082.out",
+   "source": "unstable-attempts-20261027.tar.gz: flow-states-20261027/run-unstable-24903082.out",
+   "kind": "byte-preserved",
+   "bytes": 234,
+   "sha256": "dcd9c4e806566ca4b072b26b55fda9c108f08f05c3495227c372ab83b0684dce"
+  },
+  {
+   "path": "unstable/run-unstable-24903162.out",
+   "source": "unstable-attempts-20261027.tar.gz: flow-states-20261027/run-unstable-24903162.out",
+   "kind": "byte-preserved",
+   "bytes": 792,
+   "sha256": "2562f652236c9fe716b34cfbc9246e8c7b2b8a2b6cf304a0fbcee18c5aed22bb"
+  },
+  {
+   "path": "unstable/run-unstable-24903182.out",
+   "source": "unstable-attempts-20261027.tar.gz: flow-states-20261027/run-unstable-24903182.out",
+   "kind": "byte-preserved",
+   "bytes": 175,
+   "sha256": "2c8e56794203d0dc2a9c7035af48d2666491a989446bc638b29187cb6ad80959"
+  },
+  {
+   "path": "unstable/run_unstable.sbatch",
+   "source": "unstable-attempts-20261027.tar.gz: flow-states-20261027/run_unstable.sbatch",
+   "kind": "byte-preserved",
+   "bytes": 784,
+   "sha256": "26afd613d613163026d57ca18f5068bfc85630f4ef7d2c5527a42d3a458f0e71"
+  },
+  {
+   "path": "unstable/summarize_unstable.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 1827,
+   "sha256": "81bc415173111546e1e8cda2a52ddf5161e118d29584c543b6bb444247663b84"
+  },
+  {
+   "path": "unstable/unstable-summary.json",
+   "source": "summarize_unstable.py applied to unstable-attempts-20261027.tar.gz: flow-states-20261027/unstable",
+   "kind": "derived",
+   "bytes": 1918,
+   "sha256": "873748a78e3c4c6a377c129a78001cf23089df94ebb88987acb9b13c3697c8d7"
+  }
+ ]
+}

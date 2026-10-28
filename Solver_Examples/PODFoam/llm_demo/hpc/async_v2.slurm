@@ -62,6 +62,12 @@ smi=$!
 
 module load apptainer
 suite_status=0
+if [[ -n ${POD_SUITE_RUN:-} ]]; then
+    # sweep only, on an earlier suite run of this checkout (its binary sits next to it)
+    run=$POD_SUITE_RUN
+    ln -sfn "$(dirname "$run")/llm-demo-work" "$out/llm-demo-work"
+    echo "Suite run reused: $run"
+else
 apptainer exec "$SIF" bash -c '
     set +e; source "$OPENFOAM_BASHRC" > /dev/null 2>&1; set -e
     export LD_LIBRARY_PATH=$(dirname "$PYTHON")/../lib:$LD_LIBRARY_PATH   # libpython and its libstdc++ first
@@ -71,13 +77,14 @@ if [[ -z $run || ! -f $run/async-settings.json ]]; then
     echo "done: no suite record from this job (suite exit $suite_status); sweep skipped"
     exit $(( suite_status ? suite_status : 1 ))
 fi
+fi
 # the sweep needs only the suite's async-no-llm baseline, so it runs even if a check above failed
 sweep_status=0
 apptainer exec "$SIF" bash -c '
     set +e; source "$OPENFOAM_BASHRC" > /dev/null 2>&1; set -eo pipefail
     export LD_LIBRARY_PATH=$(dirname "$PYTHON")/../lib:$LD_LIBRARY_PATH
     "$PYTHON" "'"$pod"'/llm_demo/run_live_sweep.py" "'"$run"'" "'"$out"'/llm-demo-work/bin/PODFoam" \
-        "'"$run"'-sweep" ${SWEEP_STEPS:+--steps $SWEEP_STEPS} --parallel '"$SWEEP_PARALLEL"' | tee "'"$run"'-sweep.json"' \
+        "'"$run"'-sweep'"${POD_SUITE_RUN:+-$job}"'" ${SWEEP_STEPS:+--steps $SWEEP_STEPS} --parallel '"$SWEEP_PARALLEL"' | tee "'"$run"'-sweep'"${POD_SUITE_RUN:+-$job}"'.json"' \
     || sweep_status=$?
 for file in "$POD_LLM_STATE"/server-*.cmd "$POD_LLM_STATE"/server-*.log "$POD_LLM_STATE"/models-*.json \
             "$POD_LLM_STATE"/gpu-*.txt "$out/nvidia-smi.txt" "$out/gpu-samples.csv" \

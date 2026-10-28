@@ -1,7 +1,21 @@
 // Optional PythonFOAM in-situ observer/logger after the completed PDE step.
 // Model responses are recorded in Python; they never control the solver.
 // Residuals come from this timestep's OpenFOAM solverPerformance, not log parsing.
-if (analysis_func && rank == 0)
+if (analysis_func)
+{
+    // Every rank: the gathers and the global reductions below are collective.
+    const List<vector> allU(pythonGatherToMaster(List<vector>(U.primitiveField())));
+    const List<scalar> allP(pythonGatherToMaster(List<scalar>(p.primitiveField())));
+    // Recompute diagnostics from the completed step's phi. This Courant value
+    // is post-step, unlike the pre-step Courant printed by the time controller.
+    const scalarField sumPhi(fvc::surfaceSum(mag(phi))().primitiveField());
+    const double postCoMax = 0.5*gMax(sumPhi/mesh.V().field())*runTime.deltaTValue();
+    const double postCoMean = 0.5*gSum(sumPhi)/gSum(mesh.V().field())*runTime.deltaTValue();
+    const volScalarField contErr(fvc::div(phi));
+    const double localCont = runTime.deltaTValue()*mag(contErr)().weightedAverage(mesh.V()).value();
+    const double globalCont = runTime.deltaTValue()*contErr.weightedAverage(mesh.V()).value();
+    const label nAllCells = returnReduce(mesh.nCells(), sumOp<label>());
+if (rank == 0)
 {
     const dictionary& perf = mesh.solverPerformanceDict();
     PyObject* residuals = PyDict_New();
@@ -62,40 +76,48 @@ if (analysis_func && rank == 0)
         "delta_t_s", double(runTime.deltaTValue()),
         "end_time_s", double(runTime.endTime().value()),
         "step", int(podSnapshotCount),
-        "cells", int(num_cells),
+        "cells", int(nAllCells),
         "residuals", residuals
     ) : nullptr;
     Py_XDECREF(residuals);
-    // Same-step kinematic pressure for Python-side rendering. U of this step
-    // was already copied by snapshot_func above; both are post-step values and
-    // PythonComm.H verified them finite. Owning copy; never a view of p.
+    // Same-step U and kinematic pressure of the whole mesh (gathered in rank
+    // order, like the geometry of mesh_func) for Python-side rendering; both
+    // are post-step values and PythonComm.H verified them finite. Owning
+    // copies; never views of the fields.
     if (state)
     {
-        npy_intp pDims[] = {num_cells};
+        npy_intp pDims[] = {nAllCells};
+        npy_intp uDims[] = {nAllCells, 3};
         PyObject* pCells = PyArray_SimpleNew(1, pDims, NPY_DOUBLE);
-        if (pCells)
+        PyObject* uCells = PyArray_SimpleNew(2, uDims, NPY_DOUBLE);
+        if (pCells && uCells)
         {
             double* pData = static_cast<double*>
             (
                 PyArray_DATA(reinterpret_cast<PyArrayObject*>(pCells))
             );
-            forAll(p, celli) pData[celli] = p[celli];
+            double* uData = static_cast<double*>
+            (
+                PyArray_DATA(reinterpret_cast<PyArrayObject*>(uCells))
+            );
+            forAll(allP, celli) pData[celli] = allP[celli];
+            forAll(allU, celli)
+            {
+                for (direction cmpt = 0; cmpt < 3; ++cmpt)
+                {
+                    uData[3*celli + cmpt] = allU[celli][cmpt];
+                }
+            }
             PyDict_SetItemString(state, "p_cells", pCells);
-            Py_DECREF(pCells);
+            PyDict_SetItemString(state, "u_cells", uCells);
         }
         else
         {
             PyErr_Clear();
         }
+        Py_XDECREF(pCells);
+        Py_XDECREF(uCells);
     }
-    // Recompute diagnostics from the completed step's phi. This Courant value
-    // is post-step, unlike the pre-step Courant printed by the time controller.
-    const scalarField sumPhi(fvc::surfaceSum(mag(phi))().primitiveField());
-    const double postCoMax = 0.5*gMax(sumPhi/mesh.V().field())*runTime.deltaTValue();
-    const double postCoMean = 0.5*gSum(sumPhi)/gSum(mesh.V().field())*runTime.deltaTValue();
-    const volScalarField contErr(fvc::div(phi));
-    const double localCont = runTime.deltaTValue()*mag(contErr)().weightedAverage(mesh.V()).value();
-    const double globalCont = runTime.deltaTValue()*contErr.weightedAverage(mesh.V()).value();
     PyObject* courant = Py_BuildValue
     (
         "{s:d,s:d,s:s}", "mean", postCoMean, "max", postCoMax,
@@ -139,4 +161,5 @@ if (analysis_func && rank == 0)
     }
     // Ignore the callback's return value: no model-driven field/settings update.
     Py_XDECREF(response);
+}   // rank 0
 }

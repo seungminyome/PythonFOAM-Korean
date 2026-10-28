@@ -55,6 +55,7 @@ class FrameReader:
         self.fd = fd
         os.set_blocking(fd, False)
         self.select_calls = 0
+        self.bytes_received = 0
         self._buffer = bytearray()
         self._needed = 4
 
@@ -84,6 +85,7 @@ class FrameReader:
             if not chunk:
                 raise EOFError("Worker closed a truncated or absent IPC frame")
             self._buffer.extend(chunk)
+            self.bytes_received += len(chunk)
 
     def receive(self, deadline_at):
         if self._needed == 4:

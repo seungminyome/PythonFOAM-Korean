@@ -62,6 +62,10 @@ SETS = ("oct17-paired", "oct17-paired-cold", "oct20-replay",
         "control-trend-v1", "control-trend-v2", "control-trend-v2own",
         "flow-describe-v1", "flow-describe-v2",
         "flow-sequence-v1", "flow-sequence-v2", "flow-sequence-v2own")
+PAIRED_SETS = (("control-position-v1", "control-position-v2"), ("planted-position-v1", "planted-position-v2"),
+               ("flow-describe-v1", "flow-describe-v2"), ("control-trend-v1", "control-trend-v2"),
+               ("control-trend-v2own", "control-trend-v2"), ("flow-sequence-v1", "flow-sequence-v2"),
+               ("flow-sequence-v2own", "flow-sequence-v2"))   # item-by-item comparisons in report
 
 
 def sha256(data):
@@ -863,10 +867,7 @@ def report(args):
                 lines.append(f"| {model} | {set_name} | {mode} | {b['successful']}/{n} | " + " | ".join(cells)
                              + f" | {fixed} | {'' if tokens is None else int(tokens)} | "
                              + f"{'' if median is None else f'{median:.1f}'} |")
-        for a, b in (("control-position-v1", "control-position-v2"), ("planted-position-v1", "planted-position-v2"),
-                     ("flow-describe-v1", "flow-describe-v2"), ("control-trend-v1", "control-trend-v2"),
-                     ("control-trend-v2own", "control-trend-v2"), ("flow-sequence-v1", "flow-sequence-v2"),
-                     ("flow-sequence-v2own", "flow-sequence-v2")):
+        for a, b in PAIRED_SETS:
             paired = _pairs(run_dir, a, b)
             if paired:
                 extra.append(f"{model} {a} vs {b}: " + ", ".join(f"{k} {v}" for k, v in paired.items()))

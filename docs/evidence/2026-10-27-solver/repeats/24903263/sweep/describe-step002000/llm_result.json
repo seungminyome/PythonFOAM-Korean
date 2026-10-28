@@ -1,0 +1,132 @@
+{
+  "parent_pid": 2077508,
+  "run_id": "pod-llm-async.2yctEn-sweep-24903755/describe-step002000",
+  "step": 2000,
+  "time_s": 0.11000000000001,
+  "mode": "describe",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.2,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "callback_started_at": "2026-10-27T15:25:35.817220+00:00",
+  "request_step": 2000,
+  "solver_stall_s": 0.016622230410575867,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.6116838585585356,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step002000/llm_observation/step-002000",
+    "step": 2000,
+    "time_s": 0.11000000000001,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        0.009106810395259742,
+        0.10095861040936044
+      ],
+      "y": [
+        -0.004151740203965935,
+        0.032696592926794894
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046805
+      ],
+      "y": [
+        5.781735398474376e-06,
+        0.11429523559299273
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step002000/llm_observation/step-002000/fields.npz",
+    "fields_sha256": "2e909201b42600310c7981111a17a82ca3139e7f8b5f35f1838ddbda2c49c0ac",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step002000/llm_observation/step-002000/U.png",
+        "sha256": "0d670c439525212349c0b7371dfdb6f4d8f0cbf6c51ffdb15f726d568692afdf",
+        "bytes": 85005,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          7.623308386713616e-06,
+          38.51797343690666
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903263/pod-llm-async.2yctEn-sweep-24903755/describe-step002000/llm_observation/step-002000/p.png",
+        "sha256": "8edf18483bdf5a5ac0acbee47bf0df52298676f65a114827c5b4f67654b416ae",
+        "bytes": 75734,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -446.1201738557461,
+          101.24591287264481
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.6116838585585356
+  },
+  "request_before_at": "2026-10-27T15:25:36.528790+00:00",
+  "arrived_at_step": 2113,
+  "worker_reaped": true,
+  "ipc_select_calls": 118,
+  "ipc_bytes_received": 4282,
+  "response_after_at": "2026-10-27T15:25:41.098309+00:00",
+  "callback_elapsed_s": 5.29164014197886,
+  "elapsed_since_request_s": 4.540877951309085,
+  "worker_wait_elapsed_s": 5.291502628475428,
+  "cleanup_elapsed_before_result_write_s": 0.018253367394208908,
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper-middle section, specifically around the center. The velocity is lower in the bottom half of the domain. The kinematic pressure is lowest in a concentrated region near the center of the domain, while it is higher towards the right and top edges.\",\n  \"fastest_flow_x_percent\": 55,\n  \"fastest_flow_y_percent\": 65,\n  \"lowest_pressure_x_percent\": 52,\n  \"lowest_pressure_y_percent\": 38,\n  \"uncertainties\": \"The exact physical dimensions of the domain are not provided, and the specific geometry of the boundaries is not explicitly labeled.\"\n}",
+  "request_sha256": "3d4e2df20f6b93916210aa72bab72cf9318a91c8a4b2860853747ef2c859c8f7",
+  "request_bytes": 217218,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1285,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 168,
+    "prompt_tokens": 1062,
+    "total_tokens": 1230,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 1106.075,
+    "prompt_per_token_ms": 1.0415018832391714,
+    "prompt_per_second": 960.1518884343286,
+    "predicted_n": 168,
+    "predicted_ms": 2655.143,
+    "predicted_per_token_ms": 15.899059880239522,
+    "predicted_per_second": 62.89680066196058
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper-middle section, specifically around the center. The velocity is lower in the bottom half of the domain. The kinematic pressure is lowest in a concentrated region near the center of the domain, while it is higher towards the right and top edges.",
+    "fastest_flow_x_percent": 55,
+    "fastest_flow_y_percent": 65,
+    "lowest_pressure_x_percent": 52,
+    "lowest_pressure_y_percent": 38,
+    "uncertainties": "The exact physical dimensions of the domain are not provided, and the specific geometry of the boundaries is not explicitly labeled."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.503481477499008
+}

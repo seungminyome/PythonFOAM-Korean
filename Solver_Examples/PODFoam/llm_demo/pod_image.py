@@ -60,6 +60,13 @@ def cell_polygons(points, offsets, cells, n_cells):
         raise ValueError("inconsistent cell polygon offsets")
     if not np.all(np.diff(offsets) >= 3):
         raise ValueError("cell polygon with fewer than three vertices")
+    if cells.size and np.unique(cells).size != cells.size:
+        # an empty patch that holds both the front and the back face of every cell (one
+        # 'defaultFaces' patch, as blockMesh writes it): keep the first polygon of each cell
+        keep = np.sort(np.unique(cells, return_index=True)[1])
+        points = np.concatenate([points[offsets[k]:offsets[k + 1]] for k in keep])
+        offsets = np.concatenate([[0], np.cumsum([offsets[k + 1] - offsets[k] for k in keep])])
+        cells = cells[keep]
     if cells.min() < 0 or cells.max() >= n_cells or np.unique(cells).size != cells.size:
         raise ValueError("cell polygon indices must map one polygon to one distinct cell")
     if not np.isfinite(points).all():

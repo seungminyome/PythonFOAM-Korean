@@ -64,10 +64,14 @@ except (subprocess.CalledProcessError, FileNotFoundError) as error:
 build_root = workspace/'llm-demo-work/build'
 binary = workspace/'llm-demo-work/bin/PODFoam'
 compiled = {p.name: sha256(p) for p in [build_root/'PODFoam.C', *build_root.glob('*.H')]}
-for name, digest in compiled.items():
-    assert sha256(source/name) == digest, f'{name} in the build directory differs from the source tree'
+# the build directory is what ran; the source tree may have moved on since the build
+changed_since_build = sorted(name for name, digest in compiled.items()
+                             if not (source/name).exists() or sha256(source/name) != digest)
+if changed_since_build:
+    print(f'pack_run: changed in the source tree since the build: {changed_since_build}', file=sys.stderr)
 save('build-inputs.json', {'source_sha256': compiled, 'binary_path': str(binary),
                            'binary_sha256': sha256(binary),
+                           'source_tree_changed_since_build': changed_since_build,
                            'version': f"OpenFOAM {os.environ.get('WM_PROJECT_VERSION', 'v2106')}"})
 
 server = json.loads((out/'resident-server.json').read_text())

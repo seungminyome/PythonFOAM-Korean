@@ -1,0 +1,276 @@
+80 requests checked, 0 problems
+ok   ./gemma-4-12b-it-qat-q4_0.gguf
+ok   ./mmproj-gemma-4-12b-it-qat-q4_0.gguf
+ok   models/26b/gemma-4-26B_q4_0-it.gguf
+ok   models/26b/gemma-4-26B-it-mmproj.gguf
+ok   models/31b/gemma-4-31B_q4_0-it.gguf
+ok   models/31b/gemma-4-31B-it-mmproj.gguf
+=== 12b (gemma-4-12b-it-qat-q4_0-vision) 2026-10-27T19:03:03Z
+server ok on port 23978, pid 2122922, log server-20261027T190303Z.log
+flow-window-v1/step040000-w1: ok 3.6s
+flow-window-v1/step040000-w2: ok 3.6s
+flow-window-v1/step040000-w3: ok 3.7s
+flow-window-v1/step040000-w4: ok 3.6s
+flow-window-v1/step042000-w1: ok 3.5s
+flow-window-v1/step042000-w2: ok 3.3s
+flow-window-v1/step042000-w3: ok 3.5s
+flow-window-v1/step042000-w4: ok 3.6s
+flow-window-v1/step044000-w1: ok 3.6s
+flow-window-v1/step044000-w2: ok 3.6s
+flow-window-v1/step044000-w3: ok 3.6s
+flow-window-v1/step044000-w4: ok 3.3s
+flow-window-v1/step046000-w1: ok 3.5s
+flow-window-v1/step046000-w2: ok 3.3s
+flow-window-v1/step046000-w3: ok 3.6s
+flow-window-v1/step046000-w4: ok 3.6s
+flow-window-v1/step048000-w1: ok 3.6s
+flow-window-v1/step048000-w2: ok 3.8s
+flow-window-v1/step048000-w3: ok 3.5s
+flow-window-v1/step048000-w4: ok 3.9s
+flow-window-v1/step050000-w1: ok 3.5s
+flow-window-v1/step050000-w2: ok 3.7s
+flow-window-v1/step050000-w3: ok 3.9s
+flow-window-v1/step050000-w4: ok 3.8s
+flow-window-v1/step052000-w1: ok 3.9s
+flow-window-v1/step052000-w2: ok 3.6s
+flow-window-v1/step052000-w3: ok 3.5s
+flow-window-v1/step052000-w4: ok 3.5s
+flow-window-v1/step054000-w1: ok 3.5s
+flow-window-v1/step054000-w2: ok 3.4s
+flow-window-v1/step054000-w3: ok 3.5s
+flow-window-v1/step054000-w4: ok 3.5s
+flow-window-v1/step056000-w1: ok 3.4s
+flow-window-v1/step056000-w2: ok 3.5s
+flow-window-v1/step056000-w3: ok 3.4s
+flow-window-v1/step056000-w4: ok 3.3s
+flow-window-v1/step058000-w1: ok 3.8s
+flow-window-v1/step058000-w2: ok 3.2s
+flow-window-v1/step058000-w3: ok 3.8s
+flow-window-v1/step058000-w4: ok 3.5s
+flow-window-v2/step040000-w1: ok 3.8s
+flow-window-v2/step040000-w2: ok 5.0s
+flow-window-v2/step040000-w3: ok 4.3s
+flow-window-v2/step040000-w4: ok 4.6s
+flow-window-v2/step042000-w1: ok 4.2s
+flow-window-v2/step042000-w2: ok 4.2s
+flow-window-v2/step042000-w3: ok 4.8s
+flow-window-v2/step042000-w4: ok 4.7s
+flow-window-v2/step044000-w1: ok 4.5s
+flow-window-v2/step044000-w2: ok 4.4s
+flow-window-v2/step044000-w3: ok 3.7s
+flow-window-v2/step044000-w4: ok 4.2s
+flow-window-v2/step046000-w1: ok 4.1s
+flow-window-v2/step046000-w2: ok 3.9s
+flow-window-v2/step046000-w3: ok 4.1s
+flow-window-v2/step046000-w4: ok 4.3s
+flow-window-v2/step048000-w1: ok 4.1s
+flow-window-v2/step048000-w2: ok 4.2s
+flow-window-v2/step048000-w3: ok 4.6s
+flow-window-v2/step048000-w4: ok 4.0s
+flow-window-v2/step050000-w1: ok 4.7s
+flow-window-v2/step050000-w2: ok 4.7s
+flow-window-v2/step050000-w3: ok 4.2s
+flow-window-v2/step050000-w4: ok 4.0s
+flow-window-v2/step052000-w1: ok 4.1s
+flow-window-v2/step052000-w2: ok 4.3s
+flow-window-v2/step052000-w3: ok 4.4s
+flow-window-v2/step052000-w4: ok 4.2s
+flow-window-v2/step054000-w1: ok 4.2s
+flow-window-v2/step054000-w2: ok 4.8s
+flow-window-v2/step054000-w3: ok 4.4s
+flow-window-v2/step054000-w4: ok 4.7s
+flow-window-v2/step056000-w1: ok 4.6s
+flow-window-v2/step056000-w2: ok 4.4s
+flow-window-v2/step056000-w3: ok 4.0s
+flow-window-v2/step056000-w4: ok 3.9s
+flow-window-v2/step058000-w1: ok 4.1s
+flow-window-v2/step058000-w2: ok 4.0s
+flow-window-v2/step058000-w3: ok 4.3s
+flow-window-v2/step058000-w4: ok 4.9s
+{
+  "output": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/window-test-24903978/12b",
+  "failures": 0
+}
+=== 26b (gemma-4-26B-A4B-it-qat-q4_0-vision) 2026-10-27T19:08:28Z
+server ok on port 23978, pid 2124206, log server-20261027T190828Z.log
+flow-window-v1/step040000-w1: ok 2.9s
+flow-window-v1/step040000-w2: ok 2.4s
+flow-window-v1/step040000-w3: ok 2.6s
+flow-window-v1/step040000-w4: ok 2.7s
+flow-window-v1/step042000-w1: ok 2.8s
+flow-window-v1/step042000-w2: ok 2.9s
+flow-window-v1/step042000-w3: ok 2.7s
+flow-window-v1/step042000-w4: ok 2.7s
+flow-window-v1/step044000-w1: ok 2.7s
+flow-window-v1/step044000-w2: ok 2.8s
+flow-window-v1/step044000-w3: ok 2.8s
+flow-window-v1/step044000-w4: ok 2.6s
+flow-window-v1/step046000-w1: ok 2.7s
+flow-window-v1/step046000-w2: ok 2.7s
+flow-window-v1/step046000-w3: ok 2.7s
+flow-window-v1/step046000-w4: ok 2.8s
+flow-window-v1/step048000-w1: ok 2.8s
+flow-window-v1/step048000-w2: ok 2.7s
+flow-window-v1/step048000-w3: ok 2.8s
+flow-window-v1/step048000-w4: ok 2.5s
+flow-window-v1/step050000-w1: ok 2.7s
+flow-window-v1/step050000-w2: ok 3.1s
+flow-window-v1/step050000-w3: ok 2.8s
+flow-window-v1/step050000-w4: ok 2.8s
+flow-window-v1/step052000-w1: ok 3.0s
+flow-window-v1/step052000-w2: ok 3.1s
+flow-window-v1/step052000-w3: ok 2.9s
+flow-window-v1/step052000-w4: ok 2.8s
+flow-window-v1/step054000-w1: ok 2.8s
+flow-window-v1/step054000-w2: ok 2.7s
+flow-window-v1/step054000-w3: ok 2.9s
+flow-window-v1/step054000-w4: ok 2.8s
+flow-window-v1/step056000-w1: ok 2.7s
+flow-window-v1/step056000-w2: ok 2.7s
+flow-window-v1/step056000-w3: ok 2.9s
+flow-window-v1/step056000-w4: ok 3.0s
+flow-window-v1/step058000-w1: ok 2.7s
+flow-window-v1/step058000-w2: ok 2.8s
+flow-window-v1/step058000-w3: ok 2.8s
+flow-window-v1/step058000-w4: ok 2.5s
+flow-window-v2/step040000-w1: ok 3.1s
+flow-window-v2/step040000-w2: ok 3.5s
+flow-window-v2/step040000-w3: ok 3.7s
+flow-window-v2/step040000-w4: ok 3.6s
+flow-window-v2/step042000-w1: ok 3.8s
+flow-window-v2/step042000-w2: ok 3.4s
+flow-window-v2/step042000-w3: ok 3.8s
+flow-window-v2/step042000-w4: ok 3.7s
+flow-window-v2/step044000-w1: ok 3.8s
+flow-window-v2/step044000-w2: ok 3.4s
+flow-window-v2/step044000-w3: ok 3.4s
+flow-window-v2/step044000-w4: ok 3.8s
+flow-window-v2/step046000-w1: ok 3.6s
+flow-window-v2/step046000-w2: ok 3.6s
+flow-window-v2/step046000-w3: ok 3.5s
+flow-window-v2/step046000-w4: ok 3.6s
+flow-window-v2/step048000-w1: ok 3.5s
+flow-window-v2/step048000-w2: ok 3.6s
+flow-window-v2/step048000-w3: ok 3.1s
+flow-window-v2/step048000-w4: ok 3.5s
+flow-window-v2/step050000-w1: ok 3.8s
+flow-window-v2/step050000-w2: ok 3.7s
+flow-window-v2/step050000-w3: ok 3.8s
+flow-window-v2/step050000-w4: ok 3.5s
+flow-window-v2/step052000-w1: ok 3.6s
+flow-window-v2/step052000-w2: ok 3.4s
+flow-window-v2/step052000-w3: ok 3.8s
+flow-window-v2/step052000-w4: ok 3.7s
+flow-window-v2/step054000-w1: ok 3.6s
+flow-window-v2/step054000-w2: ok 3.6s
+flow-window-v2/step054000-w3: ok 3.5s
+flow-window-v2/step054000-w4: ok 3.4s
+flow-window-v2/step056000-w1: ok 3.5s
+flow-window-v2/step056000-w2: ok 3.4s
+flow-window-v2/step056000-w3: ok 3.7s
+flow-window-v2/step056000-w4: ok 3.7s
+flow-window-v2/step058000-w1: ok 3.6s
+flow-window-v2/step058000-w2: ok 3.6s
+flow-window-v2/step058000-w3: ok 3.6s
+flow-window-v2/step058000-w4: ok 3.6s
+{
+  "output": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/window-test-24903978/26b",
+  "failures": 0
+}
+=== 31b (gemma-4-31B-it-qat-q4_0-vision) 2026-10-27T19:12:53Z
+server ok on port 23978, pid 2125140, log server-20261027T191253Z.log
+flow-window-v1/step040000-w1: ok 6.6s
+flow-window-v1/step040000-w2: ok 6.8s
+flow-window-v1/step040000-w3: ok 7.0s
+flow-window-v1/step040000-w4: ok 7.1s
+flow-window-v1/step042000-w1: ok 6.5s
+flow-window-v1/step042000-w2: ok 7.3s
+flow-window-v1/step042000-w3: ok 7.5s
+flow-window-v1/step042000-w4: ok 7.1s
+flow-window-v1/step044000-w1: ok 7.4s
+flow-window-v1/step044000-w2: ok 7.0s
+flow-window-v1/step044000-w3: ok 7.6s
+flow-window-v1/step044000-w4: ok 7.5s
+flow-window-v1/step046000-w1: ok 7.9s
+flow-window-v1/step046000-w2: ok 7.4s
+flow-window-v1/step046000-w3: ok 7.0s
+flow-window-v1/step046000-w4: ok 6.8s
+flow-window-v1/step048000-w1: ok 7.3s
+flow-window-v1/step048000-w2: ok 7.3s
+flow-window-v1/step048000-w3: ok 7.3s
+flow-window-v1/step048000-w4: ok 7.3s
+flow-window-v1/step050000-w1: ok 7.2s
+flow-window-v1/step050000-w2: ok 7.0s
+flow-window-v1/step050000-w3: ok 7.0s
+flow-window-v1/step050000-w4: ok 7.1s
+flow-window-v1/step052000-w1: ok 6.9s
+flow-window-v1/step052000-w2: ok 7.4s
+flow-window-v1/step052000-w3: ok 7.3s
+flow-window-v1/step052000-w4: ok 6.8s
+flow-window-v1/step054000-w1: ok 6.6s
+flow-window-v1/step054000-w2: ok 6.9s
+flow-window-v1/step054000-w3: ok 7.6s
+flow-window-v1/step054000-w4: ok 7.0s
+flow-window-v1/step056000-w1: ok 7.4s
+flow-window-v1/step056000-w2: ok 7.0s
+flow-window-v1/step056000-w3: ok 6.6s
+flow-window-v1/step056000-w4: ok 6.4s
+flow-window-v1/step058000-w1: ok 6.5s
+flow-window-v1/step058000-w2: ok 7.3s
+flow-window-v1/step058000-w3: ok 7.8s
+flow-window-v1/step058000-w4: ok 7.3s
+flow-window-v2/step040000-w1: ok 8.1s
+flow-window-v2/step040000-w2: ok 9.2s
+flow-window-v2/step040000-w3: ok 9.0s
+flow-window-v2/step040000-w4: ok 8.6s
+flow-window-v2/step042000-w1: ok 9.0s
+flow-window-v2/step042000-w2: ok 9.3s
+flow-window-v2/step042000-w3: ok 10.4s
+flow-window-v2/step042000-w4: ok 9.9s
+flow-window-v2/step044000-w1: ok 9.2s
+flow-window-v2/step044000-w2: ok 10.1s
+flow-window-v2/step044000-w3: ok 8.2s
+flow-window-v2/step044000-w4: ok 8.7s
+flow-window-v2/step046000-w1: ok 9.0s
+flow-window-v2/step046000-w2: ok 8.6s
+flow-window-v2/step046000-w3: ok 9.4s
+flow-window-v2/step046000-w4: ok 9.0s
+flow-window-v2/step048000-w1: ok 9.4s
+flow-window-v2/step048000-w2: ok 9.6s
+flow-window-v2/step048000-w3: ok 8.9s
+flow-window-v2/step048000-w4: ok 9.7s
+flow-window-v2/step050000-w1: ok 9.0s
+flow-window-v2/step050000-w2: ok 9.2s
+flow-window-v2/step050000-w3: ok 9.1s
+flow-window-v2/step050000-w4: ok 8.9s
+flow-window-v2/step052000-w1: ok 9.2s
+flow-window-v2/step052000-w2: ok 8.9s
+flow-window-v2/step052000-w3: ok 10.1s
+flow-window-v2/step052000-w4: ok 10.0s
+flow-window-v2/step054000-w1: ok 8.9s
+flow-window-v2/step054000-w2: ok 10.3s
+flow-window-v2/step054000-w3: ok 9.9s
+flow-window-v2/step054000-w4: ok 9.2s
+flow-window-v2/step056000-w1: ok 11.1s
+flow-window-v2/step056000-w2: ok 8.5s
+flow-window-v2/step056000-w3: ok 10.2s
+flow-window-v2/step056000-w4: ok 9.3s
+flow-window-v2/step058000-w1: ok 10.5s
+flow-window-v2/step058000-w2: ok 10.1s
+flow-window-v2/step058000-w3: ok 10.4s
+flow-window-v2/step058000-w4: ok 9.6s
+{
+  "output": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/results/window-test-24903978/31b",
+  "failures": 0
+}
+| model | set | mode | answered | fastest within 10 % | lowest p within 10 % | speed trend | p trend | region | fixed-answer score | median prompt tokens | median s |
+|---|---|---|---:|---:|---:|---:|---:|---:|---|---:|---:|
+| gemma-4-12b-it-qat-q4_0-vision | flow-window-v1 | describe | 40/40 | 10/40 | 1/40 |  |  |  | 8 / 8 | 568 | 3.6 |
+| gemma-4-12b-it-qat-q4_0-vision | flow-window-v2 | describe | 40/40 | 32/40 | 18/40 |  |  |  | 8 / 8 | 1044 | 4.2 |
+| gemma-4-26B-A4B-it-qat-q4_0-vision | flow-window-v1 | describe | 40/40 | 9/40 | 3/40 |  |  |  | 8 / 8 | 568 | 2.8 |
+| gemma-4-26B-A4B-it-qat-q4_0-vision | flow-window-v2 | describe | 40/40 | 39/40 | 26/40 |  |  |  | 8 / 8 | 1044 | 3.6 |
+| gemma-4-31B-it-qat-q4_0-vision | flow-window-v1 | describe | 40/40 | 3/40 | 7/40 |  |  |  | 8 / 8 | 568 | 7.1 |
+| gemma-4-31B-it-qat-q4_0-vision | flow-window-v2 | describe | 40/40 | 35/40 | 38/40 |  |  |  | 8 / 8 | 1044 | 9.2 |
+
+fixed-answer score: what one fixed answer per plotted range would get; flow-window-v1, flow-window-v2: one fixed answer for the whole set (every request has its own window) (describe: fastest / lowest p; sequence: speed / p / region). Paired lines count items right in both, one or neither set (describe: fastest flow within 10 %; sequence: speed trend).
+

@@ -2,6 +2,32 @@
 
 날짜는 실행이나 변경이 있었던 날입니다. 기록된 실행에는 그 실행을 만든 코드 버전을 적었습니다.
 
+## 2026-10-27, 변화 읽기, 4비트 Qwen, 원기둥 흐름, 250걸음마다 요청, MPI (영문 저장소의 `6afbdeb`, `df72c24`, `ab6b943`)
+
+- `readable_request.py`: 정답의 기준을 적거나(`thresholds=True`), 시각마다 극값을 메모에 더하거나
+  (`numbers=`), 그림 없이 메모만 보내는(`images=False`) sequence 프롬프트. 기본값이면 본문은 바이트까지 그대로.
+  새 `sequence_test.py`는 저장 상태로 변화 읽기 묶음을 다섯 가지로 만듦. `window_test.py`와
+  `sequence_test.py`가 `--dt`와 `--y-span`을 받음.
+- `python_module.py`: `LLM_ANALYSIS_EVERY=N`이면 N걸음마다 describe 요청을 보내고(v2만), 요청마다
+  `llm_requests/step-NNNNNN/`에 기록하고 목록을 씀. 워커 파이프로 오간 바이트를 기록. `LLM_KILL_JOIN_S`
+  기본값 0.1 s. 새 `run_periodic.py`와 `hpc/periodic_v2.slurm`은 요청이 있는 긴 실행과 그 쌍둥이를 돌려 비교함.
+- PODFoam: 병렬 실행에서 격자와 필드를 마스터 rank로 모으고(`PythonGather.H`), 마스터만 `mesh_func`와
+  `analysis_func`를 부름. Python 경로에 경우의 최상위 폴더가 들어감. `pod_image.py`는 2차원 패치가 두 면을
+  모두 담고 있어도 칸마다 다각형 하나만 남김.
+- GPU 스크립트: `models.tsv`에 4비트 Qwen 줄; `start_server.sh`가 `LLM_IMAGE_MIN_TOKENS`를 넘김;
+  `window_test.slurm`이 `PICTURE_TEST_SCRIPT`를 돌리고 `POD_HOST_MODULES`를 불러옴; `POD_SUITE_RUN`을 주면
+  `async_v2.slurm`은 sweep만 돌림. `pack_run.py`는 빌드 뒤에 바뀐 원본이 있으면 묶기를 거부하지 않고 기록함.
+- 테스트: 주기 요청, 그 기록과 거부; 전체 95개.
+- 실행: 변화 읽기 시험(작업 24903974, 24903975), 4비트 Qwen(24903976, 24903977), 원기둥 흐름(24903978과 흐름
+  계산), 24,000걸음 동안 250걸음마다 요청(24903264), 10월 22일 솔버 실행의 반복 두 번(24903298, 24903263과
+  24903755), MPI(24903786), POD 파일(24903065), 불안정 흐름 시도. 보고서
+  [docs/results-20261027.md](docs/results-20261027.md), 기록
+  [docs/evidence/2026-10-27-picture-tests/](docs/evidence/2026-10-27-picture-tests/README.md)와
+  [docs/evidence/2026-10-27-solver/](docs/evidence/2026-10-27-solver/README.md), 압축 파일은 영문 저장소의
+  `tests-2026-10-27` 릴리스.
+- README, 근거 자료 목록, 페이지 목록, `llm_demo/README.md`, `hpc/README.md`에 결과를 넣고, 남은 문제와
+  다음 단계를 고침.
+
 ## 2026-10-22, 돌고 있는 솔버가 그린 v2 그림, 무작위 창, Qwen 모델 (`354caf9`에 커밋하지 않은 변경으로 실행; 코드 `dee7731`, 이 저장소의 `f26bac5`로 공개)
 
 - `llm_demo/`에 새로: `readable_request.py`(v2 요청 빌더. `picture_test.py`에서 옮겨 와 그림 시험과 콜백이

@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "suite": "async",
+  "server_pid": 2070141,
+  "mmproj_loaded": true,
+  "settings": {
+    "steps": 6000,
+    "delta_t_s": 5e-06,
+    "write_every": 250,
+    "request_step": 250,
+    "sequence_steps": [
+      3000,
+      3250,
+      3750
+    ],
+    "image_x_window": "0,0.12",
+    "image_y_window": "0,0.04",
+    "deadline_s": "120",
+    "image_style": "v2",
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "max_tokens_env": "320",
+    "fixture_deadline_s": 4.0,
+    "start_time_s": 0.1,
+    "start_dir": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261022/long-100ms/0.1",
+    "start_files_sha256": {
+      "U": "5e89b31d71d8fc8a3a7ae6e44eef1ed478cda488f5aeb98488c17fd5fb50b5af",
+      "p": "7e7291a1a194da52419addf3d2b41de6eea8ac28503e98a593d909d332c9dabd",
+      "phi": "3e5221f6aca5724a9486e235bd6bf94ae1de21ad6dd4637627cfe23198d76774"
+    }
+  },
+  "timings": {
+    "async-no-llm": 348.97496648319066,
+    "async-describe": 347.59709341451526,
+    "async-sequence": 347.5680837761611,
+    "async-server-error": 347.9154570233077,
+    "async-timeout": 347.4060383159667
+  },
+  "cases": {
+    "async-no-llm": {
+      "request_step": 3750,
+      "arrived_at_step": 3763,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "disabled",
+      "callback_wall_s": {
+        "request_step": 0.016754932,
+        "arrival_step": 0.037782251,
+        "last_step": 0.241282883,
+        "max_other_steps": 0.013604015,
+        "median_all_steps": 9.02365e-05
+      },
+      "solver_stall_s": 0.016095923259854317,
+      "inference_wall_s": 0.0,
+      "structured_output": null
+    },
+    "async-describe": {
+      "request_step": 250,
+      "arrived_at_step": 336,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "ok",
+      "callback_wall_s": {
+        "request_step": 0.016992716,
+        "arrival_step": 0.032619853,
+        "last_step": 0.229117617,
+        "max_other_steps": 0.018455556,
+        "median_all_steps": 8.801149999999999e-05
+      },
+      "solver_stall_s": 0.016341183334589005,
+      "inference_wall_s": 4.2198465168476105,
+      "structured_output": {
+        "flow_description": "The flow is fastest in the upper half of the domain, particularly around x=40% and x=60%, where velocity magnitude is highest. The flow is slowest in the bottom third of the domain. The lowest pressure is located in a concentrated region near the center-left at x=35%, while higher pressure is seen on the far right and top edges.",
+        "fastest_flow_x_percent": 40,
+        "fastest_flow_y_percent": 45,
+        "lowest_pressure_x_percent": 35,
+        "lowest_pressure_y_percent": 30,
+        "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range."
+      }
+    },
+    "async-sequence": {
+      "request_step": 3750,
+      "arrived_at_step": 3851,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "ok",
+      "callback_wall_s": {
+        "request_step": 0.008258967,
+        "arrival_step": 0.039266628,
+        "last_step": 0.227002915,
+        "max_other_steps": 0.011341896,
+        "median_all_steps": 8.9061e-05
+      },
+      "solver_stall_s": 0.007323732599616051,
+      "inference_wall_s": 4.757040578871965,
+      "structured_output": {
+        "change_description": "The high-velocity region shifts from approximately x=40% to x=60% and slightly higher in y. The pressure minimum moves from x=45% to x=60% and becomes less negative. The overall flow structure shows a slight downstream progression of the primary features.",
+        "max_speed_trend": "decreasing",
+        "min_pressure_trend": "less_negative",
+        "fastest_flow_region": "moves",
+        "uncertainties": "The exact magnitude of the pressure change is difficult to quantify due to the shifting color scales."
+      }
+    },
+    "async-server-error": {
+      "request_step": 250,
+      "arrived_at_step": 261,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "error",
+      "callback_wall_s": {
+        "request_step": 0.028081495,
+        "arrival_step": 0.027931842,
+        "last_step": 0.236019414,
+        "max_other_steps": 0.014199839,
+        "median_all_steps": 8.5646e-05
+      },
+      "solver_stall_s": 0.02744663506746292,
+      "inference_wall_s": 0.010190946981310844,
+      "structured_output": null
+    },
+    "async-timeout": {
+      "request_step": 250,
+      "arrived_at_step": 320,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "timeout",
+      "callback_wall_s": {
+        "request_step": 0.018502606,
+        "arrival_step": 0.05425583,
+        "last_step": 0.236086873,
+        "max_other_steps": 0.012357817,
+        "median_all_steps": 8.53265e-05
+      },
+      "solver_stall_s": 0.017855096608400345,
+      "inference_wall_s": null,
+      "structured_output": null
+    }
+  },
+  "source_HEAD": "df72c24cfa8b7dfe8749c974902816276df25c46",
+  "source_HEAD_error": null
+}

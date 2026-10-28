@@ -179,6 +179,7 @@ def pooled_constant_answer_baseline(mode, keys):
 
 
 def main(argv=None):
+    global Y_SPAN_M
     argv = sys.argv[1:] if argv is None else argv
     pt.SETS = tuple(pt.SETS) + NEW_SETS
     pt.constant_answer_baseline = pooled_constant_answer_baseline
@@ -193,9 +194,16 @@ def main(argv=None):
         parser.add_argument("--describe-every", type=int, default=500)
         parser.add_argument("--last-step", type=int, default=6000)
         parser.add_argument("--windows-per-state", type=int, default=4)
+        parser.add_argument("--y-span", default=f"{Y_SPAN_M[0]},{Y_SPAN_M[1]}",
+                            help="window height range in metres (the step case: 0.03,0.114)")
+        parser.add_argument("--dt", type=float, default=pt.DELTA_T_S,
+                            help="time step the state names are divided by (step = time / dt)")
         parser.add_argument("--seed", type=int, default=SEED, help="window placement seed")
         parser.add_argument("--output", required=True, help="new directory")
-        return build(parser.parse_args(argv))
+        args = parser.parse_args(argv)
+        pt.DELTA_T_S = args.dt
+        Y_SPAN_M = tuple(float(v) for v in args.y_span.split(","))
+        return build(args)
     return pt.main(argv)
 
 

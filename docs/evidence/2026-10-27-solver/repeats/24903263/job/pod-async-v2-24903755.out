@@ -1,0 +1,47 @@
+server ok on port 23755, pid 2076787, log server-20261027T152205Z.log
+Suite run reused: /cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903263/pod-llm-async.2yctEn
+{
+  "requests": 11,
+  "ok": 11,
+  "all_bodies_equal_tested_builder": true,
+  "all_arrived_while_running": true,
+  "fastest_flow_within_10_percent": 9,
+  "lowest_pressure_within_10_percent": 10,
+  "median_distance_percent": {
+    "fastest_flow": 4.044324195599448,
+    "lowest_pressure": 2.8623556149995717
+  },
+  "one_fixed_answer_for_all": {
+    "fastest_flow": 4,
+    "lowest_pressure": 4,
+    "note": "one fixed answer for the whole set (every request has its own window)"
+  },
+  "max_request_step_wall_s": 0.027440246,
+  "arrival_delay_steps": [
+    85,
+    119,
+    89,
+    113,
+    117,
+    116,
+    115,
+    124,
+    100,
+    107,
+    109
+  ],
+  "inference_wall_s": [
+    4.088716369122267,
+    4.848883040249348,
+    4.680326472967863,
+    4.503481477499008,
+    4.719953062012792,
+    4.703383741900325,
+    4.837760904803872,
+    4.990449376404285,
+    4.742311704903841,
+    4.831088477745652,
+    4.41753226518631
+  ]
+}
+done: /cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903263/pod-llm-async.2yctEn (suite exit 0, sweep exit 0)

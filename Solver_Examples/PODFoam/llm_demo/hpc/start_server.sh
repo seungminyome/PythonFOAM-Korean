@@ -7,7 +7,8 @@
 # tokens at 128 because --ubatch-size is 128.
 # picture_test.slurm sets LLM_MODEL_FILE, LLM_PROJECTOR_FILE, LLM_CTX, LLM_BATCH
 # and LLM_UBATCH for other models and a larger context, and POD_LLM_STATE for
-# its own pid, log and port files; unset, nothing changes.
+# its own pid, log and port files; LLM_PARALLEL sets the number of server slots
+# (default 1; llama-server shares the context among them); unset, nothing changes.
 set -euo pipefail
 runtime_dir="${POD_LLM_RUNTIME:?set POD_LLM_RUNTIME}"
 state="${POD_LLM_STATE:-$runtime_dir}"
@@ -27,10 +28,10 @@ fi
 stamp=$(date -u +%Y%m%dT%H%M%SZ)
 command=("$bindir/llama-server"
     --model "$model" --mmproj "$projector" --alias "$alias"
-    --host 127.0.0.1 --port "$port" --ctx-size "${LLM_CTX:-2048}" --parallel 1
+    --host 127.0.0.1 --port "$port" --ctx-size "${LLM_CTX:-2048}" --parallel "${LLM_PARALLEL:-1}"
     --threads "${LLM_THREADS:-4}" --threads-batch "${LLM_THREADS:-4}"
     --batch-size "${LLM_BATCH:-128}" --ubatch-size "${LLM_UBATCH:-128}" --n-gpu-layers "${LLM_GPU_LAYERS:-99}"
-    --image-max-tokens "${LLM_IMAGE_TOKENS:-256}" --mtmd-batch-max-tokens "${LLM_IMAGE_TOKENS:-256}"
+    --image-max-tokens "${LLM_IMAGE_TOKENS:-256}" --mtmd-batch-max-tokens "${LLM_IMAGE_TOKENS:-256}" ${LLM_IMAGE_MIN_TOKENS:+--image-min-tokens "$LLM_IMAGE_MIN_TOKENS"}
     --reasoning off --reasoning-budget 0 --chat-template-kwargs '{"enable_thinking":false}'
     --no-webui --metrics --log-timestamps)
 printf '%q ' "${command[@]}" > "$state/server-$stamp.cmd"

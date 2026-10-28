@@ -1,0 +1,132 @@
+{
+  "parent_pid": 2076663,
+  "run_id": "pod-llm-async.RyMooN-sweep/describe-step000500",
+  "step": 500,
+  "time_s": 0.1025000000000025,
+  "mode": "describe",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.2,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "callback_started_at": "2026-10-27T15:22:23.362547+00:00",
+  "request_step": 500,
+  "solver_stall_s": 0.017154831439256668,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.5950424764305353,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step000500/llm_observation/step-000500",
+    "step": 500,
+    "time_s": 0.1025000000000025,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        -0.03737250207013163,
+        0.21823591691934843
+      ],
+      "y": [
+        -0.0410010909690117,
+        0.05270342315437517
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046805
+      ],
+      "y": [
+        5.781735398474376e-06,
+        0.11429523559299273
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step000500/llm_observation/step-000500/fields.npz",
+    "fields_sha256": "7a12434fa8187b437b77f7dd9ab1f16c71ea645c6ab3121a1440aaa991afaf8f",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step000500/llm_observation/step-000500/U.png",
+        "sha256": "6e55f762428da17a903b168e91202d0da1a1af3b39f9c9141a999ccde30ec14d",
+        "bytes": 73635,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          0.002471316597751262,
+          34.89995808721363
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24903298/pod-llm-async.RyMooN-sweep/describe-step000500/llm_observation/step-000500/p.png",
+        "sha256": "ed639ccc31205aaa13666dc2c265c2b425b1eafe1aaa4b32a7aefb93f1fb6a7b",
+        "bytes": 70021,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -226.11967688427177,
+          41.46663745600481
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.5950424764305353
+  },
+  "request_before_at": "2026-10-27T15:22:24.012900+00:00",
+  "arrived_at_step": 593,
+  "worker_reaped": true,
+  "ipc_select_calls": 98,
+  "ipc_bytes_received": 4297,
+  "response_after_at": "2026-10-27T15:22:28.762302+00:00",
+  "callback_elapsed_s": 5.410831497982144,
+  "elapsed_since_request_s": 4.740067446604371,
+  "worker_wait_elapsed_s": 5.410692946985364,
+  "cleanup_elapsed_before_result_write_s": 0.01836327835917473,
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity boundary layer or wake structure extending horizontally across the middle. Pressure is generally higher on the right side and shows localized low-pressure spots or vortices in the center-left region where the velocity gradient is sharp.\",\n  \"fastest_flow_x_percent\": 40,\n  \"fastest_flow_y_percent\": 65,\n  \"lowest_pressure_x_percent\": 38,\n  \"lowest_pressure_y_percent\": 53,\n  \"uncertainties\": \"The exact physical nature of the flow (e.g., internal vs. external) and the specific boundary conditions are not provided.\"\n}",
+  "request_sha256": "e7360f8f07998d3f115e3a51b399f274ba0d8b984f49a1bc3850a2ab43390b91",
+  "request_bytes": 194440,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1316,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 175,
+    "prompt_tokens": 1060,
+    "total_tokens": 1235,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1060,
+    "prompt_ms": 1102.864,
+    "prompt_per_token_ms": 1.0404377358490566,
+    "prompt_per_second": 961.1339204108576,
+    "predicted_n": 175,
+    "predicted_ms": 2753.253,
+    "predicted_per_token_ms": 15.823293103448277,
+    "predicted_per_second": 63.19796981970055
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity boundary layer or wake structure extending horizontally across the middle. Pressure is generally higher on the right side and shows localized low-pressure spots or vortices in the center-left region where the velocity gradient is sharp.",
+    "fastest_flow_x_percent": 40,
+    "fastest_flow_y_percent": 65,
+    "lowest_pressure_x_percent": 38,
+    "lowest_pressure_y_percent": 53,
+    "uncertainties": "The exact physical nature of the flow (e.g., internal vs. external) and the specific boundary conditions are not provided."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.6938653364777565
+}

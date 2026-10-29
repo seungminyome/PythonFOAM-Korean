@@ -11,6 +11,9 @@ Three request modes share the client:
             flow and the lowest pressure as percent of the plotted ranges
   sequence  several snapshot images in time order; how the flow changes, with
             the trends of the colour-bar extrema as fixed vocabulary
+A fourth reply schema, stability (stable, unstable or cannot_tell, with a reason), is
+used by the instability picture test (instability_test.py); the solver callback does
+not send it, so it is not in MODES (the LLM_MODE values).
 """
 import base64
 import hashlib
@@ -38,6 +41,7 @@ MAX_SEQUENCE_IMAGES = 6
 TREND_SPEED = ("increasing", "decreasing", "roughly_constant", "cannot_tell")
 TREND_PRESSURE = ("more_negative", "less_negative", "roughly_constant", "cannot_tell")
 TREND_REGION = ("same_place", "moves", "cannot_tell")
+STABILITY_WORDS = ("stable", "unstable", "cannot_tell")
 RESPONSE_SCHEMAS = {
     "observe": {
         "type": "object",
@@ -71,6 +75,17 @@ RESPONSE_SCHEMAS = {
         },
         "required": ["change_description", "max_speed_trend", "min_pressure_trend",
                      "fastest_flow_region", "uncertainties"],
+        "additionalProperties": False,
+    },
+    # 2026-10-28, picture tests only (not an LLM_MODE); the reason comes first, as the
+    # description does in the sequence schema, and the server keeps this order
+    "stability": {
+        "type": "object",
+        "properties": {
+            "reason": {"type": "string", "minLength": 1, "maxLength": 300},
+            "stability": {"type": "string", "enum": list(STABILITY_WORDS)},
+        },
+        "required": ["reason", "stability"],
         "additionalProperties": False,
     },
 }
@@ -161,7 +176,7 @@ def write_json(path, value):
 def response_format(mode="observe"):
     # llama.cpp d81235049 server-common.cpp reads response_format.json_schema.schema;
     # a top-level response_format.schema is ignored for type=json_schema.
-    if mode not in MODES:
+    if mode not in RESPONSE_SCHEMAS:
         raise ValueError(f"unknown request mode {mode!r}")
     return {
         "type": "json_schema",
@@ -404,7 +419,7 @@ def _cleanup_http_worker(process):
 
 def validate_structured(content, mode="observe"):
     """Exactly the schema's keys, each within its type, length, range or vocabulary."""
-    if mode not in MODES:
+    if mode not in RESPONSE_SCHEMAS:
         raise ValueError(f"unknown request mode {mode!r}")
     schema = RESPONSE_SCHEMAS[mode]
     structured = json.loads(content)

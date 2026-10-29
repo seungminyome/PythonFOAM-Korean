@@ -11,25 +11,35 @@ PODFoam은 선택한 계산 단계에서 속도·압력장의 수치 요약과 �
 시작할 때와 각 단계에서 부르는 함수입니다.
 
 ```
-PythonCreate.H   startup    mesh_func(centres, volumes, solutionD, rank, cell polygons)   optional, once
-PythonComm.H     each step  snapshot_func(U), svd_func(rank) at the SVD interval           as before
-PythonAnalysis.H each step  analysis_func(state)                                           optional
+PythonCreate.H   startup    mesh_func(centres, volumes, solutionD, rank, cell polygons[, slice plane])   optional, once
+PythonComm.H     each step  snapshot_func(U), svd_func(rank) at the SVD interval                         as before
+PythonAnalysis.H each step  analysis_func(state)                                                         optional
 ```
 
 `state`에는 해당 단계의 시간, 시간 간격 dt, `solverPerformanceDict`에서 가져온 잔차가 들어 있습니다. 잔차 기록은 Ux, Uy, p 각각의 첫 번째·마지막 초기 잔차, 최종 잔차, 선형 방정식 풀이 횟수와 반복 횟수입니다. 계산을 마친 단계의 `phi`로 다시 구한 Courant 수와 연속성 오차, 운동학적 압력의 복사본인 `p_cells`도 전달합니다. 같은 단계의 U는 이미 `snapshot_func`를 통해 전달된 상태입니다.
 
 배열은 모두 복사본입니다. Python이 솔버의 원래 저장 공간을 직접 보지 않습니다. 병렬 실행에서는 격자와 필드를 마스터 rank로 모으고(`PythonGather.H`, 칸은 rank 순서), 마스터만 `mesh_func`와 `analysis_func`를 부릅니다. POD 스냅샷과 SVD는 전처럼 rank마다 따로 합니다. 2026-10-27에 rank 2개로 시험했습니다([보고서](../../../docs/results-20261027.md#mpi와-pod-파일)).
 
+3차원 경우(2026-10-28). 3차원 격자에는 `empty` 패치가 없으므로, 칸 다각형은 대신 평면 단면에서 얻습니다(`PythonSlice.H`). OpenFOAM의 `cuttingPlane`을 z = `LLM_SLICE_Z`(기본값: 격자 z 범위의 가운데)에 두고, 법선은 (0 0 1)이며, 삼각형으로 나누지 않으므로 잘린 칸마다 다각형 하나, 곧 그 칸의 단면이 나옵니다. 격자점을 지나는 평면(고른 층이 짝수 개일 때의 가운데)은 두 칸 사이의 면 위에 놓이게 되므로, 위쪽 다음 점 평면까지의 절반만큼 옮깁니다. 다각형은 같은 세 인자로, 같은 rank별 칸 오프셋과 모으기를 거쳐 넘어가고, 여덟 번째 인자가 평면을 설명합니다. 2차원 경우는 전처럼 인자 일곱 개로 부릅니다. 그러면 v2 그림은 단면 칸만, 저마다 제 색을 칠한 다각형 하나로 그리고, v2 프레임에는 그 칸만 들어갑니다. `fields.npz`에는 그 칸들의 중심(3차원 칸 중심), U, p, 그리고 `mesh_cells`, `polygon_points`, `polygon_offsets`가 있고, `readable-metadata.json`에는 `slice`(z, 요청한 z, 그 값의 출처, 옮겼는지, 단면과 격자의 칸 수)가 들어갑니다. 요청은 2차원과 같이 만들고, 그림도 요청도 단면을 보여 준다고 말하지 않습니다. 읽을 수 없는 `LLM_SLICE_Z`나 아무 칸도 자르지 않는 평면이면 솔버는 계속 돌고 v2 요청은 이유와 함께 거부되며, `pod_image.plane_slice`의 검사를 통과하지 못한 단면 다각형도 마찬가지입니다. 3차원 경우의 v1 그림은 모든 칸의 최근접 칸 래스터를 그대로 씁니다. 단면은 평면으로 보간한 값이 아니라 잘린 칸 자신의 U와 p(|U|에는 Uz가 들어감)를 보여 줍니다. 시험 경우에서 `LLM_SLICE_Z=0.002`이면 잘린 칸의 중심은 z = 0.00238 m에 있습니다. 3차원 경우에는 2026-10-28 이후의 `python_module.py`가 필요합니다. 예전 `mesh_func`는 인자 일곱 개를 받으므로 여덟 번째에서 실패하고, 그 경우는 그림 없이 남습니다. 쐐기(축대칭) 격자와, symmetry나 cyclic 패치로 둘러싸인 한 층짜리 격자에도 `empty` 패치가 없으므로 z 가운데에서 잘리게 되는데, 시도하지 않았습니다. z 방향으로 칸 8개만큼 늘인 계단 경우에서 직렬과 rank 2개로 시험했고([근거 자료](../../../docs/evidence/2026-10-28-3d/README.md)), 다른 3차원 격자나 모델로는 시험하지 않았습니다.
+
 콜백 구현은 `llm_demo/python_module.py`에 있습니다. 선택한 한 단계(기본값 5)에서 별도 작업 프로세스를 만들어 다음 작업을 수행합니다.
 
-1. 단계별 측정 기록을 저장하고, 그때까지 모은 스냅샷을 속도 성분별로 나누어 SVD 요약을 계산합니다.
+1. 그때까지 모은 스냅샷을 속도 성분별로 나누어 SVD 요약을 계산합니다(2026-10-27까지는 작업 프로세스가 여기서 `telemetry.jsonl`도 다시 썼습니다. [아래](#telemetryjsonl)를 보십시오).
 2. `llm_observation/state.png`를 만듭니다. 크기는 640×360이며, 위에는 속력 |U|, 아래에는 p를 표시합니다. 2차원 사례에서는 C++가 `empty` 경계 패치의 면 정보를 넘겨주므로, 값을 보간하지 않고 각 셀을 다각형으로 그립니다. 그림에 사용한 배열은 `fields.npz`에 저장하고, 그 파일의 SHA-256 해시는 PNG 메타데이터에 넣습니다.
 3. 요약과 PNG 데이터 URL을 `/v1/chat/completions`로 POST 요청합니다. 응답 형식에는 `observations`, `possible_interpretation`, `checks`라는 문자열 항목 3개가 필요합니다.
 4. 요청 기록, 실제 HTTP 요청 본문, 원본 응답과 소요 시간을 저장합니다.
 
 부모 프로세스는 메시지 길이를 표시한 파이프로 결과를 기다립니다. 전체 대기 기한은 `LLM_CALLBACK_DEADLINE_S`로 정하며 기본값은 120초입니다. 기한을 넘기면 작업 프로세스를 종료하도록 처리합니다. 부모가 결과 파일을 직접 쓰지는 않습니다. 별도의 짧게 실행되는 자식 프로세스가 0.2초의 시간 한도 안에서 최종 결과 파일을 씁니다. HTTP 클라이언트는 같은 컴퓨터의 루프백 주소만 허용하고 요청·응답 크기를 제한합니다. 연결, 응답 데이터가 오지 않는 시간, 전체 호출에 각각 시간 제한을 둡니다.
 
-그림 생성에는 matplotlib이 필요합니다. 3차원 대체 방식인 최근접 셀 기반 래스터 그림에는 scipy도 필요합니다. matplotlib은 시작할 때 `mesh_func`에서 한 번 불러오며, 매 계산 단계에서 다시 불러오지 않습니다. `LLM_IMAGE_XRANGE="x0,x1"`(와 `LLM_IMAGE_YRANGE`)를 주면 그 창(단위 m)만 그립니다. 색 범위는 창 안의 셀로 정하고, 요청에 그린 범위를 적습니다.
+그림 생성에는 matplotlib이 필요합니다. v1의 3차원 대체 방식인 최근접 셀 기반 래스터 그림에는 scipy도 필요합니다. matplotlib은 시작할 때 `mesh_func`에서 한 번 불러오며, 매 계산 단계에서 다시 불러오지 않습니다. `LLM_IMAGE_XRANGE="x0,x1"`(와 `LLM_IMAGE_YRANGE`)를 주면 그 창(단위 m)만 그립니다. 색 범위는 창 안의 셀로 정하고, 요청에 그린 범위를 적습니다.
+
+### telemetry.jsonl
+
+`telemetry.jsonl`에는 걸음마다 한 줄이 있습니다. 솔버가 넘긴 상태(`p_cells`와 `u_cells` 제외), `null`로 적고 `feature_issues`에 나열한 유한하지 않은 값, 그리고 `run_id`입니다. 2026-10-28부터 콜백은 걸음이 오면 그 걸음의 줄을 인코딩하고, 아직 디스크에 없는 줄만 들고 있습니다. 마감(0.2 s, 또는 대기 중인 줄마다 1e-4 s로 셈한 값이 더 크면 그 값)이 있는 포크한 자식 프로세스가 500줄 또는 60 s마다 그 줄들을 `telemetry.jsonl.tmp`에 덧붙입니다. 마지막 걸음은 나머지를 덧붙이고 파일 이름을 `telemetry.jsonl`로 바꾸며 한 줄을 출력합니다. `PYTHON LLM telemetry lines=... appends=... failed_appends=... file=telemetry.jsonl`. 그래서 `telemetry.jsonl`은 마지막 걸음에서만, 완전한 채로 나타납니다. 실행 뒤에 `telemetry.jsonl`이 없거나 `telemetry.jsonl.tmp`가 남아 있으면 텔레메트리가 완료되지 않은 것입니다. `verify_async.py`와 `verify_demo.py`가 둘 다 확인합니다. 콜백은 상태 가운데 첫 상태(SVD 요약의 창 시작)와 마지막 세 상태(그 잔차 추세)만 남깁니다.
+
+2026-10-27까지 콜백은 마지막 걸음까지 모든 상태를 들고 있다가(Python 3.11에서 걸음당 약 1.35 KiB) 파일 전체를 다시 썼고, 마감은 상태마다 1e-4 s였습니다. 요청 워커도 요청 걸음에서 파일을 다시 썼습니다. 끝난 파일의 바이트는 같습니다. `test_callback.TelemetryTests`는 2,345걸음에서 main의 콜백과 비교하고, [10월 28일 점검](../../../docs/evidence/2026-10-28-callback/README.md)은 PODFoam 실행에서, 그리고 10월 27일 주기 실행의 상태 24,000개에서 비교합니다. 거기서 Python 힙은 31.7 MiB까지 느는 대신 최대 0.515 MiB에 머물렀고(tracemalloc의 최댓값. 대기 중인 줄을 최대 한 묶음까지 들고 있으며, 마지막 상태 뒤에는 0.067 MiB가 남았는데 그 상태는 덧붙인 직후에 왔습니다), 마지막 걸음은 0.699 s 대신 0.023 s 걸렸습니다. 비용은 모든 걸음으로 옮겨 갔습니다. CPU 노드의 PODFoam에서 걸음당 콜백 시간 중앙값은 0.079~0.107 ms 대신 0.163~0.217 ms였고(줄 인코딩), 덧붙이는 걸음은 13.7~22.0 ms 걸렸습니다.
+
+자식 프로세스는 성공을 파이프로 알립니다. 쓰지 못했을 수도 있는 줄은 대기 상태로 남고, 다음 자식 프로세스가 한 묶음 뒤에 같은 오프셋에 다시 씁니다. 그래서 끊기거나 실패한 덧붙이기가 끝난 파일에 빈틈이나 잘린 줄을 남기지 않습니다. 대기 중인 줄이 10,000개를 넘으면 콜백은 그 줄을 버리고, `telemetry.jsonl`을 쓰지 않으며, `llm_errors.jsonl`에 한 번 알립니다. 인코딩할 수 없는 상태(앞선 줄은 전처럼 `.tmp`에 남음), 그리고 실패하거나 마감 전에 결과를 알리지 않은 마지막 덧붙이기(main의 마지막 쓰기는 알리지 않았음)에도 똑같이 합니다. 이때 마지막 줄은 `file=telemetry.jsonl.tmp incomplete: <reason>`이고, `.tmp`가 없으면 이유와 함께 `file=none`입니다. 마감에 끊긴 마지막 자식 프로세스는 줄을 출력하지 않으며, `llm_errors.jsonl`의 항목(`PYTHON LLM callback failed open: ...`으로도 출력됨)이 기록입니다. 마지막 걸음 전에 멈춘 실행은 `.tmp`만 남기고 아무것도 알리지 않습니다. 실패하거나 느린 텔레메트리 쓰기는 솔버를 멈추지 않습니다. 그 걸음을 길어야 자식 프로세스의 마감까지 붙잡고, 실패를 알리는 마지막 걸음은 최대 0.2 s 더 붙잡습니다. 마지막 걸음 뒤의 걸음은 `LLM_FINAL_STEP`을 실행 끝보다 앞으로 정했을 때만 생기며, 줄을 받지 않습니다. 전에는 그 뒤의 요청이 그 걸음들을 넣어 파일을 다시 썼습니다. 시험하지 않은 것: 실행 중 실제 디스크 고장이나 가득 찬 디스크.
 
 ## 요청 모드
 
@@ -57,7 +67,7 @@ PythonAnalysis.H each step  analysis_func(state)                                
 | `async-server-error` | describe | 닫힌 포트 | `error`, 확인 과정에서 발견 |
 | `async-timeout` | describe | 조금씩 응답하는 시험 서버 | `timeout`, 확인 과정에서 종료 |
 
-`verify_async.py`는 저장된 모든 시각 폴더가 기준과 같은지, 프레임의 배열이 저장된 필드와 기준의 프레임과 같은지, 요청 걸음이 0.5 s 안에 끝났는지, 요청·도착·마지막 걸음을 뺀 모든 걸음이 1 s 안에 끝났는지, 답(또는 오류)이 도착 걸음과 함께 기록됐는지 확인합니다. sequence 조건에서는 요청 본문의 그림 해시도 확인합니다. `LLM_LONG_CASES=async-no-llm`은 기준 조건만 돌리므로 모델 요청 없이 프레임을 얻는 방법입니다. 다만 실행기가 첫 조건 전에 서버를 확인하므로 모델을 띄운 llama-server는 있어야 합니다.
+`verify_async.py`는 저장된 모든 시각 폴더가 기준과 같은지, 프레임의 배열이 저장된 필드와 기준의 프레임과 같은지, 요청 걸음이 0.5 s 안에 끝났는지, 요청·도착·마지막 걸음을 뺀 모든 걸음이 1 s 안에 끝났는지, 답(또는 오류)이 도착 걸음과 함께 기록됐는지 확인합니다. sequence 조건에서는 요청 본문의 그림 해시도 확인하고, 2026-10-28부터 v2 실행에서는 `computed_trends`와 `computed_trends_agreement`가 자기 정답과 점수와 같은지, `t`나 `tn` 본문이 빌더의 그 형태인지도 확인합니다. `LLM_LONG_CASES=async-no-llm`은 기준 조건만 돌리므로 모델 요청 없이 프레임을 얻는 방법입니다. 다만 실행기가 첫 조건 전에 서버를 확인하므로 모델을 띄운 llama-server는 있어야 합니다.
 
 ## 솔버가 그리는 v2 그림 (`LLM_IMAGE_STYLE=v2`)
 
@@ -66,7 +76,9 @@ PythonAnalysis.H each step  analysis_func(state)                                
 - v2 프레임은 모두 `llm_observation/step-NNNNNN/` 폴더 하나이고, 안에 `fields.npz`, `U.png`, `p.png`, 그리고 마지막에 쓰는 `readable-metadata.json`이 있습니다. 요청 걸음의 프레임도 같습니다. 폴더가 이미 있으면(같은 경우 폴더에서 다시 돌린 경우. 걸음 번호는 솔버 프로세스마다 처음부터 다시 셉니다) 덮어쓰지도 보내지도 않고, 그 프레임 저장이나 요청을 거부합니다.
 - 요청은 그림 시험과 같은 함수로 `readable_request.py`가 만듭니다. `describe_v2_payload`, 그리고 sequence에는 그림마다 제 색 범위를 쓰는(v2own 프롬프트) `sequence_v2_payload`입니다. v2 sequence는 두세 걸음(그림 최대 여섯 장)을 받습니다. 요청에는 언제나 `max_tokens` 320, 시드 20261021, `cache_prompt: false`가 들어가므로 `LLM_MAX_TOKENS`는 비워 두거나 320이어야 합니다. `test_picture_test.GoldenV2RequestTests`는 발표된 2026-10-22 요청의 바이트를 고정하고, `verify_async.py`는 실시간 본문이 디스크의 프레임에 빌더를 적용한 결과와 바이트까지 같은지 확인합니다.
 - v2 describe 요청은 SVD 요약을 보내지 않으므로, 콜백은 스냅샷 창을 쌓지도 계산하지도 않습니다. 그래서 긴 실행의 늦은 걸음에 요청해도 워커가 느려지지 않습니다.
-- 그린 범위는 `LLM_IMAGE_XRANGE`/`LLM_IMAGE_YRANGE`, 없으면 전체 영역입니다. v2는 x-y 평면의 2차원 경우이고 칸마다 다각형 하나가 있어야 합니다(래스터 대체 없음).
+- 계산한 증감 단어(2026-10-28). v2 sequence에서 워커는 증감 단어 세 개도 프레임 배열에서, 그린 범위 안의 칸들로, 그림 시험의 정답 규칙으로 계산합니다(`snapshot_runner.py`: 가장 큰 |U|와 가장 낮은 p는 마지막 값이 첫 값과 두 크기 중 큰 쪽의 2 % 이하로 다르면 거의 그대로이고, 가장 빠른 칸은 그린 범위의 5 % 이하로 움직였으면 같은 자리입니다). `llm_result.json`에 `computed_trends`(`snapshot_runner.sequence_truth`가 그 프레임들에 대해 주는 사전, 시각마다의 극값 포함)로, 모델이 답했으면 `computed_trends_agreement`(그것과 견준 모델의 단어, `snapshot_runner.score_sequence`와 같이)로 기록합니다. 이것은 보내지 않고 `llm_request.json`에도 없으며, 시간이 초과된 요청도 기록합니다. `test_async.ComputedTrendTests`는 시드를 정한 무작위 경우 400개(그린 창 안에 칸이 없으면 다음 뽑기로 바꿈)와 기준값에서 그림 시험의 함수와 견주어 확인합니다.
+- `LLM_SEQUENCE_PROMPT`(v2 sequence): `own`(기본)은 2026-10-22 요청을 바이트까지 그대로 보내고, `t`는 정답의 기준을 프롬프트에 적으며, `tn`은 여기에 시각마다 그린 범위 안의 가장 큰 |U|와 가장 낮은 p를 메모에 더합니다. [10월 27일 변화 읽기 시험](../../../docs/results-20261027.md#스냅샷-사이의-변화-읽기)의 `dev-sequence-v2own-t`와 `-tn` 형태이고, 같은 `readable_request.sequence_v2_payload`가 만듭니다. 결과에 `sequence_prompt`를 기록합니다. 다른 값, 그리고 v1 그림에 준 `t`나 `tn`은 프레임을 그리기 전에 거부합니다.
+- 그린 범위는 `LLM_IMAGE_XRANGE`/`LLM_IMAGE_YRANGE`, 없으면 전체 영역(3차원 경우는 단면 칸의 영역)입니다. v2에는 칸마다 다각형 하나가 있어야 합니다. x-y 평면의 2차원 경우, 또는 2026-10-28부터 평면 단면을 거친 3차원 경우입니다([솔버 안에서 호출되는 순서](#솔버-안에서-호출되는-순서) 참고). 래스터 대체는 없습니다.
 - 서버 컨텍스트는 그림 시험처럼 4096토큰, batch/ubatch 512로 하세요. 세 시각 v2 sequence는 프롬프트가 약 2,200토큰입니다.
 
 `LLM_KILL_JOIN_S`(기본 0.1 s, 2026-10-27 전에는 0.02 s; 최대 2 s)는 끊은 워커를 거두는 데 기다리는 시간입니다. 자식 프로세스가 쓰는 메모리가 클수록 오래 걸립니다. MedicineBow 노드에서는 200 MB에 약 16 ms, 500 MB에 38 ms였고, 0.5 GB 솔버에서 포크한 워커는 0.02 s 안에 거둬지지 않습니다. 그래서 그곳 작업은 0.2 s를 씁니다.
@@ -81,7 +93,7 @@ PythonAnalysis.H each step  analysis_func(state)                                
 
 ### N걸음마다 요청 (`LLM_ANALYSIS_EVERY`)
 
-`LLM_ANALYSIS_EVERY=N`(v2 그림의 describe)이면 `LLM_ANALYSIS_STEP`에서, 그 뒤 N걸음마다 describe 요청을 보냅니다. 대기 중인 요청이 `LLM_ASYNC_MAX_PENDING`보다 적을 때만 보내고, 한도에 걸린 걸음은 건너뛰고 기록합니다. 요청마다 늘 쓰는 파일(`llm_request.json`, `llm_request_body.json`, `llm_response.json`, `llm_result.json`, 원래 답)을 자기 폴더 `llm_requests/step-NNNNNN/`에 쓰고, 마지막 걸음에서 `llm_requests/index.json`(걸음, 상태, 도착 걸음, 모델 시간, 솔버 멈춤)을 씁니다. `run_periodic.py <시험 실행> <PODFoam> <출력>`은 v2 시험의 기준 준비 폴더에서 이런 경우 하나와 요청 없는 쌍둥이를 돌려 저장 파일을 모두 비교하고, 요청 본문을 빌더와, 프레임을 저장 필드와 대조하고, 답을 채점하고, 걸린 시간, 메모리(솔버 프로세스들의 RSS와 PSS, 0.5 s마다), 요청마다 워커 파이프로 오간 바이트(결과의 `ipc_bytes_received`)를 기록합니다. `hpc/periodic_v2.slurm`이 GPU 노드에서 돌립니다.
+`LLM_ANALYSIS_EVERY=N`(v2 그림의 describe)이면 `LLM_ANALYSIS_STEP`에서, 그 뒤 N걸음마다 describe 요청을 보냅니다. 대기 중인 요청이 `LLM_ASYNC_MAX_PENDING`보다 적을 때만 보내고, 한도에 걸린 걸음은 건너뛰고 기록합니다. 요청마다 늘 쓰는 파일(`llm_request.json`, `llm_request_body.json`, `llm_response.json`, `llm_result.json`, 원래 답)을 자기 폴더 `llm_requests/step-NNNNNN/`에 쓰고, 마지막 걸음에서 `llm_requests/index.json`(걸음, 상태, 도착 걸음, 모델 시간, 솔버 멈춤, 그리고 2026-10-29부터 `record_written`: 기록 폴더가 0.2 s 한도 안에 써졌는지. 답이 도착한 요청도 이를 놓칠 수 있음)을 씁니다. `run_periodic.py <시험 실행> <PODFoam> <출력>`은 v2 시험의 기준 준비 폴더에서 이런 경우 하나와 요청 없는 쌍둥이를 돌려 저장 파일을 모두 비교하고, 요청 본문을 빌더와, 프레임을 저장 필드와 대조하고, 답을 채점하고, 걸린 시간, 메모리(솔버 프로세스들의 RSS와 PSS, 0.5 s마다), 요청마다 워커 파이프로 오간 바이트(결과의 `ipc_bytes_received`)를 기록합니다. `hpc/periodic_v2.slurm`이 GPU 노드에서 돌립니다.
 
 ### 발달한 흐름의 변화 읽기 시험 (`sequence_test.py`)
 
@@ -90,6 +102,10 @@ PythonAnalysis.H each step  analysis_func(state)                                
 ### 무작위 창 그림 시험 (`window_test.py`)
 
 `window_test.py build`는 한 실행의 저장 상태(어떤 시각 폴더든; `--first-step`, `--describe-every`, `--last-step`은 5e-7 s 걸음 단위)를 상태마다 여러 번 그리면서, 그린 범위를 가장 빠른 칸 둘레에 무작위로 놓습니다. 그 칸은 모든 가장자리에서 15 % 이상 떨어지고, 안에 칸이 200개 이상 있고, 높이 0.03~0.114 m, 너비는 높이의 1.5~4배입니다. `flow-window-v1`과 `flow-window-v2` 묶음을 쓰고, `check`, `run`, `report`는 `picture_test.py`처럼 동작하며, 고정 답 점수는 묶음 전체에 답 하나로 셉니다. `hpc/window_test.slurm`이 GPU 노드에서 묶음 하나를 돌립니다.
+
+### 불안정 시험 (`instability_test.py`)
+
+`instability_test.py build --design <design.json> --centres <fields.npz> --output <묶음>`은 pimpleFoam 실행을 받습니다. `log.pimpleFoam`과 저장한 시각 폴더가 있는 경우 폴더들이고, 모두 같은 격자입니다. 로그에 `End` 줄이 있는 실행은 끝까지 돈 것입니다. 로그에 부동소수점 예외의 스택 추적(`Foam::sigFpe`)이 있고 `End`가 없는 실행은 로그의 마지막 걸음에서 중단된 것입니다. 그 밖의 로그(아직 도는 실행, 또는 시간 제한이나 손으로, 다른 오류로 멈춘 실행)는 거부합니다. 중단된 실행에서 중단 1~`--within`(기본 10)걸음 전에 끝나는 세 장 묶음은 `unstable`로 이름 붙여 채점합니다. 설계의 `early_steps_to_crash`는 더 앞의 묶음을 더하는데, 답이 얼마나 일찍 바뀌는지 보이려는 것이고 채점하지 않습니다. 끝까지 돈 실행은 실행 전체에 퍼진 `stable` 묶음을 주고, 묶음마다 실행 끝에서 `--margin`(기본 100)걸음 이상 앞에서 끝납니다. 묶음 하나가 `instability-v2own` 요청 하나입니다. 설계의 창(기본은 솔버의 x 0~0.12 m, y 0~0.04 m)에 그린 v2 프레임 세 장(|U|와 p, 저마다 제 색 범위)과, `readable_request.STABILITY_V2OWN_SYSTEM_PROMPT`(수치 불안정의 징후, 예를 들어 이웃한 칸 사이의 진동, 바둑판 무늬, 물리적 원인 없이 커지는 극값), 그리고 `llm_client.py`의 `stability` 답 스키마(`reason`, 최대 300자, 그다음 `stable`, `unstable`, `cannot_tell` 중 하나)입니다. 솔버 콜백은 이 요청을 보내지 않습니다. `LLM_MODE`에 그런 값이 없습니다. `check`와 `run`은 `picture_test.py`처럼 동작합니다. `report`는 균형 점수, 중단까지 남은 걸음별 `unstable` 답, 실행별 답, 고정 답, 그리고 배열에서 구한 기준선 두 개(창 안에서 첫 프레임부터 마지막 프레임까지 최고 |U|의 증가와 이웃한 칸 사이 가장 큰 |U| 차이의 증가)를 냅니다. 서로 다른 정답으로 만든 실행 폴더는 거부합니다. `hpc/window_test.slurm`이 `PICTURE_TEST_SCRIPT=instability_test.py`로 돌립니다. 테스트: `test_instability_test.py`. 2026-10-28에 돌렸습니다([근거 자료](../../../docs/evidence/2026-10-28-instability/README.md)). 모델 네 개는 최고 |U|가 30.8 % 이상 커진 곳에서만, 대부분 필드가 이미 발산한 프레임에서 `unstable`이라 했고, 중단되지 않은 실행에는 한 번도 그렇게 말하지 않았습니다. 최고 |U| 하나만 보는 규칙도 그만큼 맞혔습니다. 그 묶음에는 결함이 있습니다. 요청마다 프레임의 걸음과 시각을 적는데(메모, 캡션, 그림 제목), 중단된 실행의 프레임은 2×10⁻⁵~1.2×10⁻⁴ s 간격이고 끝까지 돈 실행은 2×10⁻⁴~2×10⁻³ s 간격이어서, 적힌 시각만으로 두 부류가 갈립니다. 새 묶음은 두 부류 모두 프레임을 같은 간격으로 두거나 시각을 빼야 합니다.
 
 ## 저장한 프레임 재생 (describe, sequence)
 
@@ -162,10 +178,12 @@ python3 llm_demo/runtime.py stop       # when the server is no longer needed
 - `LLM_MODE`: `observe`(기본), `describe`, `sequence`
 - `LLM_ASYNC`: `1`이면 비동기(기본 `0`)
 - `LLM_SEQUENCE_STEPS`: sequence 프레임을 그릴 걸음 2~6개(예: `250,750,1250`)
+- `LLM_SEQUENCE_PROMPT`: `own`, `t`, `tn`(v2)
 - `LLM_ASYNC_MAX_PENDING`: 동시에 진행하는 요청 수, 기본 1(1~8)
 - `LLM_ASYNC_END`: 마지막 걸음에서 `wait`(기본) 또는 `detach`
 - `LLM_FINAL_STEP`: 마지막 걸음을 직접 지정(기본은 솔버가 넘기는 `end_time_s`로 판단)
 - `LLM_IMAGE_XRANGE`, `LLM_IMAGE_YRANGE`: 그릴 창 `"x0,x1"`(m)
+- `LLM_SLICE_Z`: 3차원 경우의 평면 단면 z(m), 솔버가 읽음
 - `POD_SUITE`: `async`이면 긴 비동기 다섯 조건(기본 `sync`)
 - `LLM_LONG_STEPS`, `LLM_LONG_DT`, `LLM_LONG_WRITE`, `LLM_LONG_STEP`, `LLM_LONG_SEQUENCE_STEPS`, `LLM_LONG_CASES`: 비동기 다섯 조건의 설정
 
@@ -199,8 +217,10 @@ python3 llm_demo/runtime.py stop       # when the server is no longer needed
 
 ```bash
 cd Solver_Examples/PODFoam/llm_demo
-python3 -m unittest test_llm_client test_callback test_ablation_runner test_async -v
+python3 -m unittest test_llm_client test_callback test_ablation_runner test_async test_picture_test test_instability_test -v
 ```
+
+2026-10-29에 125개(Python 3.11, numpy와 matplotlib 필요; 불안정 시험과 단면 시험을 합치기 전인 2026-10-28에는 108개)이고, `TMPDIR`를 노드의 로컬 디스크에 둔 경우와 NFS에 둔 경우에서 돌렸습니다. `test_callback.TelemetryTests` 중 여섯 개는 2026-10-27의 main 콜백과 비교하며, 그 콜백은 [docs/evidence/2026-10-28-callback/callback-main/python_module.py](../../../docs/evidence/2026-10-28-callback/callback-main/python_module.py)에 보관해 두었습니다. 저장소의 `docs/`가 없는 코드 사본에서는 이 여섯 개를 건너뜁니다.
 
 ## 저장한 상태를 그림 있이, 없이 다시 보내기
 

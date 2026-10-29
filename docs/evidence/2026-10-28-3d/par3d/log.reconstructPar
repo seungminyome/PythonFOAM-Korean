@@ -1,0 +1,169 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2212                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _c9081d5d-20230220 OPENFOAM=2212 patch=230110 version=2212
+Arch   : "LSB;label=32;scalar=64"
+Exec   : reconstructPar -case /cluster/medbow/gscratch/syome/github_repos/pod-3d-20261028/run-24929629/par3d
+Date   : Oct 28 2026
+Time   : 17:34:52
+Host   : mbcpu-008.cluster
+PID    : 310689
+I/O    : uncollated
+Case   : /cluster/medbow/gscratch/syome/github_repos/pod-3d-20261028/run-24929629/par3d
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Reconstructing fields
+region=region0
+
+Time = 0.1
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        p
+
+    Reconstructing volVectorFields
+
+        U
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+No FA fields
+
+Time = 0.10025
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        p
+        upod_0
+        upod_1
+        upod_2
+        upod_3
+        upod_4
+        vpod_0
+        vpod_1
+        vpod_2
+        vpod_3
+        vpod_4
+        wpod_0
+        wpod_1
+        wpod_2
+        wpod_3
+        wpod_4
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+No FA fields
+
+Time = 0.1005
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        p
+        upod_0
+        upod_1
+        upod_2
+        upod_3
+        upod_4
+        vpod_0
+        vpod_1
+        vpod_2
+        vpod_3
+        vpod_4
+        wpod_0
+        wpod_1
+        wpod_2
+        wpod_3
+        wpod_4
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+No FA fields
+
+Time = 0.10075
+
+Reconstructing FV fields
+
+    Reconstructing volScalarFields
+
+        p
+        upod_0
+        upod_1
+        upod_2
+        upod_3
+        upod_4
+        vpod_0
+        vpod_1
+        vpod_2
+        vpod_3
+        vpod_4
+        wpod_0
+        wpod_1
+        wpod_2
+        wpod_3
+        wpod_4
+
+    Reconstructing volVectorFields
+
+        U
+
+    Reconstructing surfaceScalarFields
+
+        phi
+
+Reconstructing point fields
+
+No point fields
+
+No lagrangian fields
+
+No FA fields
+
+
+End
+

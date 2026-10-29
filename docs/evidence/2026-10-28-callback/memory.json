@@ -1,0 +1,268 @@
+{
+ "python": "3.11.16",
+ "states": "2026-10-27-solver/periodic/periodic-no-llm/telemetry.jsonl.gz",
+ "recorded_sha256": "f1b44c6819f7fb33dde9ae03680482d85dcfb0b8522406f324868c27632030b3",
+ "runs": [
+  {
+   "version": "main",
+   "pass": "traced",
+   "steps": 24000,
+   "callback_sha256": "baf091a5d0007cf0226dde074258d41644bd8553e74080a9d59ad8ae30401343",
+   "heap_after_steps": [
+    {
+     "step": 1000,
+     "mib": 1.321
+    },
+    {
+     "step": 2000,
+     "mib": 2.64
+    },
+    {
+     "step": 3000,
+     "mib": 3.962
+    },
+    {
+     "step": 4000,
+     "mib": 5.281
+    },
+    {
+     "step": 5000,
+     "mib": 6.602
+    },
+    {
+     "step": 6000,
+     "mib": 7.925
+    },
+    {
+     "step": 7000,
+     "mib": 9.244
+    },
+    {
+     "step": 8000,
+     "mib": 10.564
+    },
+    {
+     "step": 9000,
+     "mib": 11.884
+    },
+    {
+     "step": 10000,
+     "mib": 13.206
+    },
+    {
+     "step": 11000,
+     "mib": 14.529
+    },
+    {
+     "step": 12000,
+     "mib": 15.853
+    },
+    {
+     "step": 13000,
+     "mib": 17.165
+    },
+    {
+     "step": 14000,
+     "mib": 18.49
+    },
+    {
+     "step": 15000,
+     "mib": 19.803
+    },
+    {
+     "step": 16000,
+     "mib": 21.13
+    },
+    {
+     "step": 17000,
+     "mib": 22.442
+    },
+    {
+     "step": 18000,
+     "mib": 23.771
+    },
+    {
+     "step": 19000,
+     "mib": 25.084
+    },
+    {
+     "step": 20000,
+     "mib": 26.415
+    },
+    {
+     "step": 21000,
+     "mib": 27.727
+    },
+    {
+     "step": 22000,
+     "mib": 29.06
+    },
+    {
+     "step": 23000,
+     "mib": 30.373
+    },
+    {
+     "step": 24000,
+     "mib": 31.685
+    }
+   ],
+   "heap_peak_mib": 31.686,
+   "heap_per_step_kib_last_10000": 1.3512
+  },
+  {
+   "version": "main",
+   "pass": "timed",
+   "steps": 24000,
+   "callback_sha256": "baf091a5d0007cf0226dde074258d41644bd8553e74080a9d59ad8ae30401343",
+   "wall_s_last_step": 0.699,
+   "wall_s_other_steps": {
+    "median": 2e-05,
+    "mean": 2.4e-05,
+    "max": 0.0462,
+    "max_step": 22401
+   },
+   "wall_s_steps_500_1000_1500": {
+    "500": 1.9e-05,
+    "1000": 2e-05,
+    "1500": 1.9e-05
+   },
+   "telemetry_bytes": 19864369,
+   "telemetry_sha256": "f1b44c6819f7fb33dde9ae03680482d85dcfb0b8522406f324868c27632030b3",
+   "telemetry_equals_recorded": true,
+   "tmp_left": false
+  },
+  {
+   "version": "branch",
+   "pass": "traced",
+   "steps": 24000,
+   "callback_sha256": "5c684219ca23d06a4b19a59d9bcdc18c88f93eb5d1129705e5231a5e3d261039",
+   "heap_after_steps": [
+    {
+     "step": 1000,
+     "mib": 0.068
+    },
+    {
+     "step": 2000,
+     "mib": 0.029
+    },
+    {
+     "step": 3000,
+     "mib": 0.04
+    },
+    {
+     "step": 4000,
+     "mib": 0.049
+    },
+    {
+     "step": 5000,
+     "mib": 0.061
+    },
+    {
+     "step": 6000,
+     "mib": 0.071
+    },
+    {
+     "step": 7000,
+     "mib": 0.034
+    },
+    {
+     "step": 8000,
+     "mib": 0.044
+    },
+    {
+     "step": 9000,
+     "mib": 0.053
+    },
+    {
+     "step": 10000,
+     "mib": 0.066
+    },
+    {
+     "step": 11000,
+     "mib": 0.075
+    },
+    {
+     "step": 12000,
+     "mib": 0.038
+    },
+    {
+     "step": 13000,
+     "mib": 0.045
+    },
+    {
+     "step": 14000,
+     "mib": 0.058
+    },
+    {
+     "step": 15000,
+     "mib": 0.07
+    },
+    {
+     "step": 16000,
+     "mib": 0.031
+    },
+    {
+     "step": 17000,
+     "mib": 0.042
+    },
+    {
+     "step": 18000,
+     "mib": 0.05
+    },
+    {
+     "step": 19000,
+     "mib": 0.062
+    },
+    {
+     "step": 20000,
+     "mib": 0.072
+    },
+    {
+     "step": 21000,
+     "mib": 0.036
+    },
+    {
+     "step": 22000,
+     "mib": 0.043
+    },
+    {
+     "step": 23000,
+     "mib": 0.054
+    },
+    {
+     "step": 24000,
+     "mib": 0.067
+    }
+   ],
+   "heap_peak_mib": 0.515,
+   "heap_per_step_kib_last_10000": 0.0009
+  },
+  {
+   "version": "branch",
+   "pass": "timed",
+   "steps": 24000,
+   "callback_sha256": "5c684219ca23d06a4b19a59d9bcdc18c88f93eb5d1129705e5231a5e3d261039",
+   "wall_s_last_step": 0.023,
+   "wall_s_other_steps": {
+    "median": 4.6e-05,
+    "mean": 6.7e-05,
+    "max": 0.0166,
+    "max_step": 19000
+   },
+   "wall_s_steps_500_1000_1500": {
+    "500": 0.009104,
+    "1000": 0.009219,
+    "1500": 0.011632
+   },
+   "telemetry_bytes": 19864369,
+   "telemetry_sha256": "f1b44c6819f7fb33dde9ae03680482d85dcfb0b8522406f324868c27632030b3",
+   "telemetry_equals_recorded": true,
+   "tmp_left": false,
+   "appends": {
+    "done": 49,
+    "failed": 0,
+    "batch_lines": 500
+   }
+  }
+ ]
+}

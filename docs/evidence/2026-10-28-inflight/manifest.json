@@ -1,0 +1,235 @@
+{
+ "source_runs": [
+  "pod-periodic-v2 run-24929296 (Slurm 24929296)",
+  "for comparison ../2026-10-27-solver/periodic (Slurm 24903264)"
+ ],
+ "scope": "A v2 describe request every 50 steps with at most two pending and a two-slot server, 6,000 steps from the developed flow, and its twin without requests (Slurm 24929296, NVIDIA L40S).",
+ "release": "https://github.com/seungminyome/PythonFOAM/releases/tag/tests-2026-10-28",
+ "notes": [
+  "Sources are paths inside inflight-24929296.tar.gz of the release, or written for this folder.",
+  "Files of kind gzip copy are gzip -9 copies (no name, mtime 0) of the named source; source_sha256 is the hash of the uncompressed bytes.",
+  "Original records contain cluster paths and process ids as provenance."
+ ],
+ "files": [
+  {
+   "path": "README.md",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 5822,
+   "sha256": "978595659e9a004eb003e5d99dd7d91956a535521127d5693057d2f3b20189ac"
+  },
+  {
+   "path": "executed-callback-source.sha256",
+   "source": "inflight-24929296.tar.gz: run-24929296/executed-callback-source.sha256",
+   "kind": "byte-preserved",
+   "bytes": 1354,
+   "sha256": "201f54f97fbb3d89a9dab53e4205b4db39f78dc51a1acd0786f161ec8e68df98"
+  },
+  {
+   "path": "git/HEAD",
+   "source": "inflight-24929296.tar.gz: run-24929296/git/HEAD",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "9ddb3a11e13ae5fb8b53758410b643ff371058f56d3cc6735eb6b599d3c88d33"
+  },
+  {
+   "path": "git/git-status.txt",
+   "source": "inflight-24929296.tar.gz: run-24929296/git/git-status.txt",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "gpu-20261028T224210Z.txt",
+   "source": "inflight-24929296.tar.gz: run-24929296/gpu-20261028T224210Z.txt",
+   "kind": "byte-preserved",
+   "bytes": 77,
+   "sha256": "2cb1289a32ef59f37bf5aac5c65ec996926f83f0656e60ecccae38b12ebdf0a0"
+  },
+  {
+   "path": "gpu-samples.csv.gz",
+   "source": "inflight-24929296.tar.gz: run-24929296/gpu-samples.csv",
+   "kind": "gzip copy",
+   "bytes": 2776,
+   "sha256": "a5ee48464686b5b02839c0d5d4a332d67210f7d50dc21ed3b17dd9cf8964d71b",
+   "source_sha256": "cd9d34607d5c2c57609a1614cda1d5b374dc13a6ad593ffcc571900679006250"
+  },
+  {
+   "path": "inflight.json",
+   "source": "inflight.py run in this folder",
+   "kind": "derived",
+   "bytes": 1683,
+   "sha256": "3131c2b89f64ef77aa87889ff8ef881d43ca3746c4d0a53b8ed8c85ebc13cf51"
+  },
+  {
+   "path": "inflight.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 3061,
+   "sha256": "be798e82d1cfa7e086d6e89739741e188ea29cf75afe271ebb1c8567c1cab1f5"
+  },
+  {
+   "path": "models-20261028T224210Z.json",
+   "source": "inflight-24929296.tar.gz: run-24929296/models-20261028T224210Z.json",
+   "kind": "byte-preserved",
+   "bytes": 778,
+   "sha256": "71aff3c7c331c1b490c31a28dd777d6eff96fead785093dc23cd017d5dfebf63"
+  },
+  {
+   "path": "nvidia-smi.txt",
+   "source": "inflight-24929296.tar.gz: run-24929296/nvidia-smi.txt",
+   "kind": "byte-preserved",
+   "bytes": 1689,
+   "sha256": "d0b8c24fea5ac611da56e2ef05874ed2a08fd906c69950c373c34f2bb2584808"
+  },
+  {
+   "path": "periodic-describe/llm_requests/index.json",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-describe/llm_requests/index.json",
+   "kind": "byte-preserved",
+   "bytes": 24825,
+   "sha256": "b73d1d968e9dd98bda1889b24c1f24e470523fcb15566e25b1c4e4d4e6ae6504"
+  },
+  {
+   "path": "periodic-describe/log.PODFoam.gz",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-describe/log.PODFoam",
+   "kind": "gzip copy",
+   "bytes": 1368969,
+   "sha256": "c10e80d86e92d2b80a25e6781174e3fa927f0ab8756b68b2e7be19b16755cc09",
+   "source_sha256": "d4ad6758eab8c0593cb1bca03ffaef1ebe9fba03b9659d834d1828efb571aee2"
+  },
+  {
+   "path": "periodic-describe/memory-samples.json.gz",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-describe/memory-samples.json",
+   "kind": "gzip copy",
+   "bytes": 18427,
+   "sha256": "a9833b8866259e98b63a89dc664b4c5d179a14c17828415fdcbaf16e72ce0660",
+   "source_sha256": "f43d746f3a304f8cca832baf096d9d431374f373b10b96a85354e7024e94c225"
+  },
+  {
+   "path": "periodic-describe/telemetry.jsonl.gz",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-describe/telemetry.jsonl",
+   "kind": "gzip copy",
+   "bytes": 742215,
+   "sha256": "66574507e226b34311b992003ab28f7180c05b940b7f5cec3fc403ef9c11e982",
+   "source_sha256": "dd3aec9c329787080838d2968ee23861c7959cbe6254e158e3f353581e4bd18a"
+  },
+  {
+   "path": "periodic-describe/timeline.json.gz",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-describe/timeline.json",
+   "kind": "gzip copy",
+   "bytes": 17579,
+   "sha256": "4e7055de059065563cdabe1af188cd4f2bbeb6ae39be87ed5ce5bfb14c73bc7d",
+   "source_sha256": "595ac155d95ab9528e4b5591ee78db1792d915975ef3ea14a881954497af036c"
+  },
+  {
+   "path": "periodic-no-llm/log.PODFoam.gz",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-no-llm/log.PODFoam",
+   "kind": "gzip copy",
+   "bytes": 1368845,
+   "sha256": "659b152e094a4f72724c75681e8c662c557ac4f9693fd1d72d76ee582c7acb0c",
+   "source_sha256": "9cdc7b15f6d409485380ca9a39f9f33bf46ea455776009569b2094bc3208400e"
+  },
+  {
+   "path": "periodic-no-llm/memory-samples.json.gz",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-no-llm/memory-samples.json",
+   "kind": "gzip copy",
+   "bytes": 14089,
+   "sha256": "76543d27df4c12d44b6794191e2357c88239f6bba961680d25fe8ac7a05063a4",
+   "source_sha256": "df6b0fd8ef64868f8e208f2b31d1d2305a1a96e914bc5eb836e900cad0afe5bb"
+  },
+  {
+   "path": "periodic-no-llm/telemetry.jsonl.gz",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-no-llm/telemetry.jsonl",
+   "kind": "gzip copy",
+   "bytes": 742230,
+   "sha256": "648c32906c702ffee4cc2993a4dc7ad7fc7f2aa5b47f54ad2e68482ffd26070f",
+   "source_sha256": "a51624646c7fa00e9f4d8ca8827b68f191c60ac527e5e5bbadd8e5bb05b5c2b7"
+  },
+  {
+   "path": "periodic-no-llm/timeline.json.gz",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-no-llm/timeline.json",
+   "kind": "gzip copy",
+   "bytes": 17246,
+   "sha256": "7ee8ab900515e9c63086e3c229df621f899924dec805a6ee82782bd96f409a63",
+   "source_sha256": "f3122744e8dfcd2a01c6b0b1c2149d433ca9f7cbe48708066aa8f179b5c44637"
+  },
+  {
+   "path": "periodic-summary.json",
+   "source": "run_periodic.py --summary-only of c85c79c applied to inflight-24929296.tar.gz: run-24929296 (the job's own summary step stopped at the missing record of step 4100)",
+   "kind": "derived",
+   "bytes": 276819,
+   "sha256": "4cec59ca5788f5378923ab30f93d9e0f92f6363e35d0b2b56e65b3f0251a9bbc"
+  },
+  {
+   "path": "periodic.log",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic.log",
+   "kind": "byte-preserved",
+   "bytes": 74,
+   "sha256": "c7f14fc42de4ceee0dbf71edc7ccae02dbb0f678cd4f6add7382f7cb689aaa5d"
+  },
+  {
+   "path": "pod-periodic-v2-24929296.out",
+   "source": "inflight-24929296.tar.gz: run-24929296/pod-periodic-v2-24929296.out",
+   "kind": "byte-preserved",
+   "bytes": 1084,
+   "sha256": "a2aaaeaa15a122436a91441c05e5506d872f8c2f6321c69d5ec832c9bea28f42"
+  },
+  {
+   "path": "resident-server.json",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/resident-server.json",
+   "kind": "byte-preserved",
+   "bytes": 1071,
+   "sha256": "81aa3fbef4ec59c09ae6ccd311c7153c8fe9f3a1a38ebd4498356cdc6279e2ce"
+  },
+  {
+   "path": "runtime_manifest_12b.json",
+   "source": "inflight-24929296.tar.gz: run-24929296/runtime_manifest_12b.json",
+   "kind": "byte-preserved",
+   "bytes": 866,
+   "sha256": "2168afb62aedc294d83447ed08675da94c78fd22f4cc3f44f488c468b96bcba6"
+  },
+  {
+   "path": "server-20261028T224210Z.cmd",
+   "source": "inflight-24929296.tar.gz: run-24929296/server-20261028T224210Z.cmd",
+   "kind": "byte-preserved",
+   "bytes": 686,
+   "sha256": "4409f0a5022e01998c3bc2995ee824985734d50ca4b84cdfc83b57fa6d178282"
+  },
+  {
+   "path": "server-20261028T224210Z.log.gz",
+   "source": "inflight-24929296.tar.gz: run-24929296/server-20261028T224210Z.log",
+   "kind": "gzip copy",
+   "bytes": 15539,
+   "sha256": "1586e5912c9c9edfe984610cb8e6dc40cebb62e80a42fec255c0b471bba1e311",
+   "source_sha256": "121c74969d3c19dc883cb9c1f5bfc6f336d2683c98f5f304077783029f42cf55"
+  },
+  {
+   "path": "step-004100/llm_http_response.raw",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-describe/llm_requests/step-004100/llm_http_response.raw",
+   "kind": "byte-preserved",
+   "bytes": 1305,
+   "sha256": "b63aa8fe69f1699b600430d151d9638be022e8db2b84871cc5c1af6e6aa2c8ee"
+  },
+  {
+   "path": "step-004100/llm_request.json",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-describe/llm_requests/step-004100/llm_request.json",
+   "kind": "byte-preserved",
+   "bytes": 9661,
+   "sha256": "8d048cb31e3cfb9bc8e85a583ed61e1feaa14889e2063e302beb70c9e370e9b1"
+  },
+  {
+   "path": "step-004100/llm_response.json",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/periodic-describe/llm_requests/step-004100/llm_response.json",
+   "kind": "byte-preserved",
+   "bytes": 4319,
+   "sha256": "fcddd5c642c213a12c9877d4da09580154caae86ba626fc16a060224595dae9d"
+  },
+  {
+   "path": "timings.json",
+   "source": "inflight-24929296.tar.gz: run-24929296/periodic/timings.json",
+   "kind": "byte-preserved",
+   "bytes": 637,
+   "sha256": "0161074c89777e5e7eb6482971d59b9aafdbd9754a385cb4a0a6c0e3964853d0"
+  }
+ ]
+}

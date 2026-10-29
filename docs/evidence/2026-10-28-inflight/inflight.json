@@ -1,0 +1,84 @@
+{
+ "two_in_flight_24929296": {
+  "every": 50,
+  "max_pending": 2,
+  "steps": 6000,
+  "requests_planned": 120,
+  "answered": 118,
+  "skipped_pending": 2,
+  "records_missing": [
+   4100
+  ],
+  "sent_while_another_pending": 112,
+  "written_files_identical_to_twin": 2520,
+  "written_files_differing": 0,
+  "seconds_per_step": {
+   "periodic-no-llm": 0.06164515757684906,
+   "periodic-describe": 0.0636337736217926
+  },
+  "extra_wall_percent": 3.23,
+  "extra_wall_per_request_s": 0.101,
+  "callback_s_max_at_request_steps_except_last": 0.045585693,
+  "reply_delay_steps_except_last": [
+   50,
+   111
+  ],
+  "model_time_s": [
+   2.54,
+   3.8,
+   4.65
+  ],
+  "fastest_flow_within_10_percent": [
+   81,
+   117
+  ],
+  "lowest_pressure_within_10_percent": [
+   106,
+   117
+  ],
+  "one_fixed_answer": {
+   "fastest_flow": 62,
+   "lowest_pressure": 78
+  }
+ },
+ "one_in_flight_24903264": {
+  "every": 250,
+  "max_pending": 1,
+  "steps": 24000,
+  "requests_planned": 96,
+  "answered": 96,
+  "skipped_pending": 0,
+  "records_missing": [],
+  "sent_while_another_pending": 0,
+  "written_files_identical_to_twin": 2016,
+  "written_files_differing": 0,
+  "seconds_per_step": {
+   "periodic-no-llm": 0.05793892490817234,
+   "periodic-describe": 0.05832590712831977
+  },
+  "extra_wall_percent": 0.67,
+  "extra_wall_per_request_s": 0.097,
+  "callback_s_max_at_request_steps_except_last": 0.017173456,
+  "reply_delay_steps_except_last": [
+   85,
+   144
+  ],
+  "model_time_s": [
+   4.15,
+   4.73,
+   5.25
+  ],
+  "fastest_flow_within_10_percent": [
+   65,
+   96
+  ],
+  "lowest_pressure_within_10_percent": [
+   89,
+   96
+  ],
+  "one_fixed_answer": {
+   "fastest_flow": 53,
+   "lowest_pressure": 65
+  }
+ }
+}

@@ -79,6 +79,10 @@ for name in CASES:
     for filename in CALLBACK_FILES:
         assert (case/filename).read_bytes() == (root/'executed-callback-source'/filename).read_bytes()
     log = (case/'log.PODFoam').read_text()
+    # telemetry.jsonl exists only complete: a leftover .tmp, or no file at all, means the
+    # telemetry did not complete; llm_errors.jsonl and the solver log say why
+    assert not (case/'telemetry.jsonl.tmp').exists(), (name, 'final telemetry write did not complete')
+    assert (case/'telemetry.jsonl').exists(), (name, 'no telemetry.jsonl: the telemetry did not complete')
     states = [json.loads(line) for line in (case/'telemetry.jsonl').read_text().splitlines()]
     assert len(states) == 10
     assert all('p_cells' not in state for state in states)

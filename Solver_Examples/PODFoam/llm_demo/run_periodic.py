@@ -9,7 +9,10 @@ answers are scored against the arrays. Memory (RSS, PSS) of the solver tree and 
 sampled every 0.5 s; the pipe bytes each request moved come from the callback's records.
 
 usage: run_periodic.py <suite run directory> <PODFoam executable> <output directory>
-       [--steps 24000] [--first 250] [--every 250] [--max-pending 1] [--write 250]
+       [--steps 24000] [--first 250] [--every 250] [--max-pending 1] [--write 250] [--summary-only]
+--summary-only rebuilds periodic-summary.json from an output directory that has already run (same
+arguments). A request the callback answered whose record was not written (its bounded writer was
+stopped at the cleanup budget) is listed in 'records_missing' and left out of the scores.
 The server and the environment are the suite's (LLM_ENDPOINT, LLM_MODEL, POD_LLM_STATE,
 LLM_IMAGE_XRANGE/YRANGE).
 """
@@ -83,6 +86,7 @@ def main():
     parser.add_argument('--every', type=int, default=250)
     parser.add_argument('--max-pending', type=int, default=1)
     parser.add_argument('--write', type=int, default=250)
+    parser.add_argument('--summary-only', action='store_true')
     args = parser.parse_args()
     suite, output = Path(args.suite).resolve(), Path(args.output).resolve()
     settings = json.loads((suite / 'async-settings.json').read_text())
@@ -94,12 +98,13 @@ def main():
     import picture_test
     import snapshot_runner
     import window_test
-    server = resident_server(os.environ['LLM_ENDPOINT'], Path(os.environ.get('POD_LLM_RUNTIME', '.')))
     baseline = suite / 'async-no-llm'
     t0, dt = settings.get('start_time_s', 0.0), settings['delta_t_s']
     start_name = Path(settings['start_dir']).name if settings.get('start_dir') else None
-    output.mkdir(parents=True, exist_ok=False)
-    (output / 'resident-server.json').write_text(json.dumps(server, indent=2) + '\n')
+    if not args.summary_only:
+        server = resident_server(os.environ['LLM_ENDPOINT'], Path(os.environ.get('POD_LLM_RUNTIME', '.')))
+        output.mkdir(parents=True, exist_ok=False)
+        (output / 'resident-server.json').write_text(json.dumps(server, indent=2) + '\n')
     common = dict(os.environ, LLM_IMAGE_INPUT='1', LLM_ASYNC='1', LLM_MODE='describe', LLM_IMAGE_STYLE='v2',
                   LLM_ANALYSIS_STEP=str(args.first), LLM_ANALYSIS_EVERY=str(args.every),
                   LLM_ASYNC_MAX_PENDING=str(args.max_pending), OPENBLAS_NUM_THREADS='1', OMP_NUM_THREADS='1',
@@ -110,8 +115,8 @@ def main():
             'max_pending': args.max_pending, 'write_every': args.write, 'delta_t_s': dt, 'start_time_s': t0,
             'window_m': {'x': os.environ.get('LLM_IMAGE_XRANGE'), 'y': os.environ.get('LLM_IMAGE_YRANGE')},
             'model': os.environ.get('LLM_MODEL'), 'cases': {}}
-    timings = {}
-    for name, enabled in (('periodic-no-llm', '0'), ('periodic-describe', '1')):
+    timings = json.loads((output / 'timings.json').read_text()) if args.summary_only else {}
+    for name, enabled in () if args.summary_only else (('periodic-no-llm', '0'), ('periodic-describe', '1')):
         case = output / name
         stage(baseline, case, start_name, t0 + args.steps * dt)
         control = (case / 'system/controlDict').read_text()
@@ -167,10 +172,16 @@ def main():
                     report['structured_output'] = result['structured_output']
                     truths.append(truth)
         reports.append(report)
-    ok = [r for r in reports if r.get('status') == 'ok']
+    answered = [r for r in reports if r.get('status') == 'ok']
+    ok = [r for r in answered if 'scores' in r]   # answered and recorded
+    # requests in flight at once: each counts from its request step until the step its reply arrived
+    spans = [(r['step'], r['arrived_at_step']) for r in answered if r.get('arrived_at_step') is not None]
+    in_flight = max((sum(a <= s < b for a, b in spans) for s, _ in spans), default=0)
     plan['cases'] = {name: timings[name] for name in timings}
     summary = {
-        'requests_planned': len(reports), 'ok': len(ok),
+        'requests_planned': len(reports), 'ok': len(answered), 'scored': len(ok),
+        'records_missing': [r['step'] for r in answered if 'scores' not in r],
+        'max_requests_in_flight': in_flight,
         'statuses': {s: sum(r['status'] == s for r in reports) for s in {r['status'] for r in reports}},
         'all_bodies_equal_tested_builder': all(r.get('request_equals_tested_builder') for r in ok),
         'all_frames_equal_written_fields': all(r.get('fields_equal_written') for r in ok),
@@ -180,9 +191,9 @@ def main():
         'median_distance_percent': {k: statistics.median(r['scores'][k]['distance_percent'] for r in ok) if ok else None
                                     for k in ('fastest_flow', 'lowest_pressure')},
         'one_fixed_answer_for_all': picture_test.constant_answer_baseline('describe', truths) if truths else None,
-        'arrival_delay_steps': [r['arrived_at_step'] - r['step'] for r in ok],
-        'inference_wall_s': [r['inference_wall_s'] for r in ok],
-        'solver_stall_s_max': max((r['solver_stall_s'] for r in ok), default=None),
+        'arrival_delay_steps': [r['arrived_at_step'] - r['step'] for r in answered],
+        'inference_wall_s': [r['inference_wall_s'] for r in answered],
+        'solver_stall_s_max': max((r['solver_stall_s'] for r in answered), default=None),
         'request_step_wall_s_max': max((r['request_step_wall_s'] or 0 for r in reports), default=None),
         'arrival_step_wall_s_max': max((r.get('arrival_step_wall_s') or 0 for r in ok), default=None),
         'ipc_bytes_per_request': [r.get('ipc_bytes_received') for r in ok],

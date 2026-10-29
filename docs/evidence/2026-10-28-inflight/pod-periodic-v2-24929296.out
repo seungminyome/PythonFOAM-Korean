@@ -1,0 +1,14 @@
+server ok on port 29296, pid 2710967, log server-20261028T224210Z.log
+periodic-no-llm: exit=0 wall=369.9s
+periodic-describe: exit=0 wall=381.8s
+Traceback (most recent call last):
+  File "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/Solver_Examples/PODFoam/llm_demo/run_periodic.py", line 201, in <module>
+    main()
+  File "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/Solver_Examples/PODFoam/llm_demo/run_periodic.py", line 178, in main
+    'fastest_flow_within_10_percent': sum(r['scores']['fastest_flow']['within_10_percent'] for r in ok),
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/Solver_Examples/PODFoam/llm_demo/run_periodic.py", line 178, in <genexpr>
+    'fastest_flow_within_10_percent': sum(r['scores']['fastest_flow']['within_10_percent'] for r in ok),
+                                          ~^^^^^^^^^^
+KeyError: 'scores'
+done: /cluster/medbow/gscratch/syome/github_repos/PythonFOAM/../pod-periodic-v2/run-24929296 (exit 1)

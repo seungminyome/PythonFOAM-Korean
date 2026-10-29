@@ -2,6 +2,93 @@
 
 날짜는 실행이나 변경이 있었던 날입니다. 기록된 실행에는 그 실행을 만든 코드 버전을 적었습니다.
 
+## 2026-10-29, 솔버 실행으로 확인한 병합한 코드 (영문 저장소의 `eff951b`)
+
+- 콜백, instability-test, observer-3d 브랜치를 병합한 뒤: 빌드와 연결 검증 PASS. 2차원 v2 프레임과 요청 본문은
+  2026-10-27 MPI 시험의 것과, 3차원 단면 프레임과 요청 본문은 단면 시험(작업 24929629)의 것과 같음. 두 경우 모두
+  `telemetry.jsonl`이 완전함(Slurm 작업 24936949). 기록
+  [docs/evidence/2026-10-29-merged-check/](docs/evidence/2026-10-29-merged-check/README.md).
+
+## 2026-10-28, 요청 두 개 동시 진행 (영문 저장소의 `2ed6da2`로 실행; `c85c79c`, `56646b9`)
+
+- `start_server.sh`: `LLM_PARALLEL`이 서버 슬롯 수를 정함. `periodic_v2.slurm`이 `LLM_CTX`와 `PERIODIC_WRITE`를
+  환경에서 받음(`289f72c`).
+- 실행: 기다리는 요청 최대 둘, 서버 슬롯 둘로 50걸음마다 describe 요청, 6,000걸음, 그리고 그 쌍둥이(작업
+  24929296). 답을 받은 요청 하나에 `llm_result.json`이 없어서 실행기가 요약에서 멈춤. 한도가 있는 쓰기 프로세스가
+  0.2 s 정리 한도에서 멈췄기 때문.
+- `run_periodic.py --summary-only`는 끝난 실행의 요약을 다시 만듦. 답을 받았지만 기록이 없는 요청은 `records_missing`에
+  적고 점수에서 뺌. `max_requests_in_flight`(`c85c79c`).
+- `python_module.py`: 요청 목록이 요청마다 `record_written`을 기록함. 한도를 넘게 느려진 쓰기 프로세스로 하는
+  새 테스트(`56646b9`, 2026-10-29).
+- 보고서 [docs/results-20261028.md](docs/results-20261028.md), 기록
+  [docs/evidence/2026-10-28-inflight/](docs/evidence/2026-10-28-inflight/README.md), 압축 파일은 영문 저장소의
+  `tests-2026-10-28` 릴리스.
+
+## 2026-10-28, 콜백: 모든 상태를 쌓아 두지 않는 텔레메트리, 계산한 증감 단어 (영문 저장소의 `16d665e`)
+
+- `python_module.py`: 마지막 걸음에서 모든 상태의 기록으로 `telemetry.jsonl`을 다시 쓰지 않음. 걸음이 오면 그
+  줄을 인코딩하고, 마감이 있는 포크한 자식 프로세스가 500줄 또는 60 s마다 대기 중인 줄을
+  `telemetry.jsonl.tmp`에 덧붙이며, 마지막 걸음이 나머지를 덧붙이고 파일 이름을 바꿈. 끝난 파일은 전과 바이트가
+  같음. 콜백은 첫 상태와 마지막 세 상태(SVD 요약의 창 시작과 잔차 추세)만 남김. 요청 워커는 더는 텔레메트리를
+  쓰지 않음. 10월 27일 주기 실행에서 기록된 상태 24,000개에서 Python 힙은 31.7 MiB까지 느는 대신 최대
+  0.515 MiB(tracemalloc의 최댓값; 마지막 상태 뒤 0.067 MiB, 그 상태는 덧붙인 직후에 옴)에 머물렀고, 마지막
+  걸음은 0.699 s 대신 0.023 s 걸림. 이제 걸음마다 줄을 인코딩하고(PODFoam에서 걸음당 콜백 시간 중앙값이
+  0.079~0.107 ms에서 0.163~0.217 ms로 오름), 덧붙이는 걸음은 13.7~22.0 ms 걸림.
+- v2 sequence: `llm_result.json`이 `computed_trends`(그린 범위 안 프레임 배열에서 구한 정답의 증감 단어 세 개)와,
+  모델의 단어와 견준 `computed_trends_agreement`를 기록함. 새로 보내는 것은 없음. `LLM_SEQUENCE_PROMPT=t`나
+  `tn`은 10월 27일 변화 읽기 시험의 `-t`나 `-tn` 형태를 보냄. 기본 요청은 바이트까지 그대로.
+- `verify_async.py`는 실행에 `computed_trends`와 `t`/`tn` 본문이 있으면 확인함.
+- 테스트: main의 콜백과 견준 텔레메트리(2,345걸음, 묶음 크기 둘), 6,000걸음 동안의 메모리, 끊기거나 실패하거나
+  버려진 덧붙이기, 인코딩할 수 없는 상태, 시간 조건; 그림 시험의 함수와 견준 계산한
+  증감 단어, `t`와 `tn` 본문, 거부; 전체 107개.
+- 실행: Slurm 작업 24929555(CPU, mbcpu-010): 준비한 계단 경우에서 main의 콜백과 이 콜백, LLM_ENABLED=0으로
+  1,250걸음, 100걸음에 describe, 100, 150, 200걸음에 sequence, `tn` 형태, rank 2개의 describe 경우. 저장 파일,
+  `telemetry.jsonl`(1,250줄), 요청 본문이 모두 main과 브랜치 사이에 같음. 기록은 실행마다 달라지는 값과 새
+  `computed_trends`만 다름. `tn` 본문은 시험한 빌더와 같음. rank 2개에서는 로그 줄이 정렬한 목록으로만 맞고,
+  POD 점검 파일은 두 실행 모두에서 읽을 수 없음(두 rank가 모두 씀). 그것을 처리해 비교를 다시 돌림(작업
+  24929607). 기록 [docs/evidence/2026-10-28-callback/](docs/evidence/2026-10-28-callback/README.md).
+
+## 2026-10-28, 불안정 시험 (영문 저장소의 `8d6a10a`, 보고서 `c9a1ba1`, 검토 뒤 수정 `660f8c4`)
+
+- `readable_request.py`: `STABILITY_V2OWN_SYSTEM_PROMPT`와 `stability_v2_payload()`는 v2 프레임 세 장(그림마다
+  제 색 범위)에 수치 불안정의 징후가 보이는지 물음. `llm_client.py`에 `stability` 답 스키마(`reason`, 그다음
+  `stable`, `unstable`, `cannot_tell` 중 하나). `LLM_MODE`가 아니므로 솔버는 여전히 거부함.
+  `snapshot_runner.py`가 채점하고 `picture_test.py`가 요약함. 기존 요청 본문은 바이트까지 그대로(골든 테스트).
+- 새 `instability_test.py`: pimpleFoam 실행으로 묶음을 만들고(중단된 실행은 중단까지 남은 걸음으로 이름 붙인
+  `unstable` 묶음, 끝까지 돈 실행은 `stable` 묶음), `picture_test.py`로 돌리며, 균형 점수, `unstable`이라고
+  얼마나 일찍 말하는지, 실행별 답, 숫자 기준선 두 개를 보고함. 새 `test_instability_test.py`(`660f8c4`부터
+  12개; `test_llm_client`, `test_callback`, `test_ablation_runner`, `test_async`, `test_picture_test`와 함께
+  107개, 어떤 순서로든, `unittest discover`로도).
+- 실행: t = 0.1 s부터 다시 돌린 `central-dt2e-5`는 467걸음에서 중단(작업 24929408). 풍상 실행 두 개(2,000걸음)와
+  `central-dt5e-6`(4,000걸음)은 끝까지 돎(24929452, 24929449). 시험 묶음 만들기(24929495). 그 요청 70개에
+  Gemma 4 12B, 26B-A4B, 31B, Qwen3.5-35B-A3B(24929533, 24929534). 기록
+  [docs/evidence/2026-10-28-instability/](docs/evidence/2026-10-28-instability/README.md).
+- 검토 뒤 수정(`660f8c4`). `instability_test.main()`이 `picture_test`의 묶음 목록을 바꾸고 되돌리지 않아서,
+  `unittest discover`처럼 한 프로세스에서 `test_instability_test` 뒤에 `test_picture_test`가 돌면 실패했음(오류
+  3개). 이제 `main()`이 오류가 나도 되돌림. 로그에 부동소수점 예외 추적(`Foam::sigFpe`)이 있고 `End`가 없을
+  때만 중단으로 셈. `report`는 서로 다른 정답으로 만든 실행 폴더를 거부함. 이 코드로 다시 만든 묶음은 정답과
+  요청 본문이 같고, `report`는 같은 보고서를 냄(작업 24929764). 근거 자료 README에 이제 적음: 요청에 적힌
+  프레임 시각만으로 두 부류가 갈린다는 것(채점 항목 54개 중 54개), 풍상 실행이 중단된 실행의 Courant 수와
+  대부분 겹치지만 전부는 아니라는 것, 중심 차분 실행의 창 밖에서 가장 큰 |U|가 어디인지
+  (`flow/domain_max.py`).
+
+## 2026-10-28, 평면 단면으로 그린 3차원 경우의 v2 그림 (영문 저장소의 `07759b0`, `127a1dc`, 검토 뒤 수정 `5706021`)
+
+- PODFoam: 3차원 경우(`empty` 패치 없음)는 이제 관찰 기능에 평면 단면의 다각형을 줌(`PythonSlice.H`).
+  OpenFOAM의 `cuttingPlane`을 z = `LLM_SLICE_Z`에(기본은 격자 z 범위의 가운데; 격자점을 지나는 평면은 위쪽
+  다음 점 평면까지의 절반만큼 옮김), 법선 (0 0 1), 삼각형으로 나누지 않고, 잘린 칸마다 다각형 하나. 기존
+  `mesh_func` 인자로, rank별 오프셋과 마스터로 모으기를 거쳐 넘어가고, 여덟 번째 인자가 평면을 설명함. 2차원
+  경우는 전과 같은 인자 일곱 개 호출. `Make/options`: surfMesh와 fileFormats include, `-lsurfMesh`.
+- `python_module.py`, `pod_image.plane_slice`, `readable_request.py`: 3차원 경우의 v2 프레임은 단면 칸만
+  담고(중심, U, p, 그리고 `fields.npz`에 그 격자 칸과 다각형), 메타데이터에 단면을 기록함. 요청은 2차원과 같이
+  만듦. v1은 3차원에서 래스터를 그대로 씀. 2차원 프레임은 전과 바이트까지 같게 씀.
+- 테스트: `test_async.py`에 합성 형상으로 하는 단면 테스트 네 개; 전체 99개.
+- 실행: 작업 24929629(그리고 `07759b0`로 돈 24929500, 파일 같음), z 방향으로 칸 8개만큼 늘이고 앞뒤를 벽으로
+  막은 계단 경우, 모델 없음. 직렬과 rank 2개의 단면 프레임이 같은 칸 20,540개를 담고, U는 2.5×10⁻³ m/s, p는
+  0.036 m²/s² 안. 관찰 기능이 있는 실행의 저장 필드가 없는 실행과 같음(파일 63개). 2차원 프레임은 2026-10-27의
+  것과 같음. 연결 검증 통과. 기록 [docs/evidence/2026-10-28-3d/](docs/evidence/2026-10-28-3d/README.md).
+- `llm_demo/README.md`: "솔버 안에서 호출되는 순서"에 3차원 경우; `LLM_SLICE_Z`. 근거 자료 목록: 새 폴더.
+
 ## 2026-10-27, 변화 읽기, 4비트 Qwen, 원기둥 흐름, 250걸음마다 요청, MPI (영문 저장소의 `6afbdeb`, `df72c24`, `ab6b943`)
 
 - `readable_request.py`: 정답의 기준을 적거나(`thresholds=True`), 시각마다 극값을 메모에 더하거나

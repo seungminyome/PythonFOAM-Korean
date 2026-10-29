@@ -1,0 +1,148 @@
+node mbcpu-010.cluster start 2026-10-28T16:47:09-06:00
+validation ran
+  "status": "PASS"
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-3d-20261028/run-24929500/pod-v2212.zaeQcl
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-3d-20261028/run-24929500/pod-v2212.zaeQcl/bin/PODFoam
+/cluster/medbow/gscratch/syome/github_repos/pod-3d-20261028/run-24929500/case3d/system/blockMeshDict: 6 blocks with 8 cells in z, front and back walls
+    cells:            164320
+Failed 1 mesh checks.
+/cluster/medbow/gscratch/syome/github_repos/pod-3d-20261028/run-24929500/case3d/0.1: U and p for 164320 cells from 20540 2D cells (8 per 2D cell)
+{
+ "cells_2d": 20540,
+ "cells_3d": 164320,
+ "3d_cells_per_2d_cell": [
+  8
+ ],
+ "max_abs_xy_difference_m": 1.000000082740371e-11,
+ "layer_centres_z_m": [
+  0.00079375,
+  0.00238125,
+  0.00396875,
+  0.00555625,
+  0.00714375,
+  0.00873125,
+  0.01031875,
+  0.01190625
+ ],
+ "z_range_of_centres_m": [
+  0.00079375,
+  0.01190625
+ ],
+ "min_distance_between_2d_centres_m": 1.2294263275124394e-05,
+ "xy_tolerance_m": 1e-09,
+ "map_ok": true
+}
+U
+p
+serial3d exit 0
+POD observer plane slice: z=0.00714375 requested=0.00635 (middle of the mesh z range) moved off mesh points mesh z range=(0 0.0127) cut cells=20540
+PYTHON LLM mesh geometry received: cells=164320 cell_polygons=0 slice_cells=20540 slice_z_m=0.00714375 solution_d=[1, 1, 1] backend_ready=True backend_import_wall_s=1.942
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=20540 ranks=1 slice z=0.00714375
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=3.394927s async=1 arrived_at_step=101 solver_stall=0.014014s
+Python finalized successfully
+End
+par3d exit 0
+POD observer plane slice: z=0.00714375 requested=0.00635 (middle of the mesh z range) moved off mesh points mesh z range=(0 0.0127) cut cells=20540
+PYTHON LLM mesh geometry received: cells=164320 cell_polygons=0 slice_cells=20540 slice_z_m=0.00714375 solution_d=[1, 1, 1] backend_ready=True backend_import_wall_s=1.376
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=20540 ranks=2 slice z=0.00714375
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=1.707840s async=1 arrived_at_step=101 solver_stall=0.020462s
+Python finalized successfully
+End
+noobs3d exit 0
+Python finalized successfully
+End
+slicez3d exit 0
+POD observer plane slice: z=0.002 requested=0.002 (LLM_SLICE_Z) mesh z range=(0 0.0127) cut cells=20540
+PYTHON LLM mesh geometry received: cells=164320 cell_polygons=0 slice_cells=20540 slice_z_m=0.002 solution_d=[1, 1, 1] backend_ready=True backend_import_wall_s=1.445
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=20540 ranks=1 slice z=0.002
+PYTHON LLM step=5 time=0.100025 status=disabled image_input=True analysis_wait=2.485162s async=1 arrived_at_step=6 solver_stall=0.013442s
+Python finalized successfully
+End
+badz3d exit 0
+    No plane slice for the observer: LLM_SLICE_Z is not a finite number: 'abc'
+PYTHON LLM mesh geometry received: cells=164320 cell_polygons=0 slice_cells=0 slice_z_m=None slice_unusable="no plane slice: LLM_SLICE_Z is not a finite number: 'abc'" solution_d=[1, 1, 1] backend_ready=True backend_import_wall_s=1.407
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=0 ranks=1 slice z=0
+PYTHON LLM step=2 time=0.10001 status=callback_error image_input=None analysis_wait=25.868136s async=1 arrived_at_step=3 solver_stall=0.012595s
+Python finalized successfully
+End
+outz3d exit 0
+POD observer plane slice: z=1 requested=1 (LLM_SLICE_Z) mesh z range=(0 0.0127) cut cells=0
+PYTHON LLM mesh geometry received: cells=164320 cell_polygons=0 slice_cells=0 slice_z_m=1.0 slice_unusable='the plane z = 1 m cuts no cells' solution_d=[1, 1, 1] backend_ready=True backend_import_wall_s=1.305
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=0 ranks=1 slice z=1
+PYTHON LLM step=2 time=0.10001 status=callback_error image_input=None analysis_wait=24.441218s async=1 arrived_at_step=3 solver_stall=0.014230s
+Python finalized successfully
+End
+serial2d exit 0
+PYTHON LLM mesh geometry received: cells=20540 cell_polygons=20540 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.236
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=0.725223s async=1 arrived_at_step=113 solver_stall=0.010632s
+Python finalized successfully
+End
+runs done
+{
+ "serial_vs_par2": {
+  "cells": [
+   20540,
+   20540
+  ],
+  "by_mesh_cell_label": {
+   "same_cells": true,
+   "max_abs_diff_centres_m": 4.163336342344337e-17,
+   "max_abs_diff_U": 0.002473375613372575,
+   "max_abs_diff_p": 0.036396988368309735,
+   "max_abs_diff_polygon_vertices_m": 0.0,
+   "identical_U_cells": 0
+  },
+  "sorted_by_centre": {
+   "max_abs_diff_centres_m": 4.163336342344337e-17,
+   "max_abs_diff_U": 0.002473375613372575,
+   "max_abs_diff_p": 0.036396988368309735
+  },
+  "max_abs_U": 37.22799394365147,
+  "max_abs_p": 281.60278827161943,
+  "par2_slice_cells_per_rank": [
+   10293,
+   10247
+  ],
+  "par2_mesh_cells_per_rank": [
+   82344,
+   81976
+  ]
+ },
+ "frame_vs_written_fields": {
+  "serial": {
+   "time": "0.1005",
+   "cells": 20540,
+   "max_abs_diff_U": 5.000089231543825e-11,
+   "max_abs_diff_p": 4.995968083676416e-10,
+   "max_rel_diff_U": 4.939722695002679e-12,
+   "max_rel_diff_p": 4.939367011519797e-12,
+   "equal_within_rtol_1e-11": true,
+   "note": "the written fields have 12 significant digits (writePrecision 12)"
+  },
+  "par2_reconstructed": {
+   "time": "0.1005",
+   "cells": 20540,
+   "max_abs_diff_U": 5.000089231543825e-11,
+   "max_abs_diff_p": 4.997389169147937e-10,
+   "max_rel_diff_U": 4.93920775949871e-12,
+   "max_rel_diff_p": 4.896893275488841e-12,
+   "equal_within_rtol_1e-11": true,
+   "note": "the written fields have 12 significant digits (writePrecision 12)"
+  }
+ },
+ "observer_vs_no_observer": {
+  "times": [
+   "0.10025",
+   "0.1005",
+   "0.10075"
+  ],
+  "files": 63,
+  "identical": 63,
+  "differing": [],
+  "same_time_directories": true
+ }
+}
+2D frame identical to 2026-10-27: True request body identical: True
+request body equals builder: True
+end 2026-10-28T17:17:20-06:00

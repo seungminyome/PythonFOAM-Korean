@@ -1,0 +1,720 @@
+.................PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:17.644307+00:00","parent_pid":10471,"writer_pid":11113,"run_id":"tmpwz5ny4lq","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:17.651071+00:00","parent_pid":10471,"writer_pid":11115,"run_id":"tmpwz5ny4lq","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=False analysis_wait=0.006898s
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:17.680892+00:00","parent_pid":10471,"writer_pid":11126,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:17.685604+00:00","parent_pid":10471,"writer_pid":11126,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:17.690527+00:00","parent_pid":10471,"writer_pid":11130,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.009707s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+...PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:17.770864+00:00","parent_pid":10471,"writer_pid":11155,"run_id":"tmpaej3y583","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:17.777126+00:00","parent_pid":10471,"writer_pid":11158,"run_id":"tmpaej3y583","step":5,"time_s":5e-07}
+..PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:19.129597+00:00","parent_pid":10471,"writer_pid":11360,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:19.136249+00:00","parent_pid":10471,"writer_pid":11360,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:19.141231+00:00","parent_pid":10471,"writer_pid":11362,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.011716s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:19.185565+00:00","parent_pid":10471,"writer_pid":11367,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:21.705852+00:00","parent_pid":10471,"writer_pid":11367,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:21.774673+00:00","parent_pid":10471,"writer_pid":11519,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=True analysis_wait=2.589203s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM callback failed open: ValueError: LLM_KILL_JOIN_S must be in (0, 2]
+PYTHON LLM callback failed open: ValueError: LLM_KILL_JOIN_S must be in (0, 2]
+PYTHON LLM callback failed open: ValueError: LLM_KILL_JOIN_S must be in (0, 2]
+PYTHON LLM callback failed open: ValueError: LLM_KILL_JOIN_S must be a number in (0, 2]
+.PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:22.087280+00:00","parent_pid":10471,"writer_pid":11552,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:22.093456+00:00","parent_pid":10471,"writer_pid":11552,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:22.100776+00:00","parent_pid":10471,"writer_pid":11553,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.013580s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:22.140662+00:00","parent_pid":10471,"writer_pid":11557,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:22.147208+00:00","parent_pid":10471,"writer_pid":11557,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:22.152309+00:00","parent_pid":10471,"writer_pid":11558,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.011740s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:22.196405+00:00","parent_pid":10471,"writer_pid":11563,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:22.206159+00:00","parent_pid":10471,"writer_pid":11564,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=None analysis_wait=0.009838s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+..PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:22.249769+00:00","parent_pid":10471,"writer_pid":11567,"run_id":"tmpd72rswaj","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=None analysis_wait=0.008276s
+.PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:22.275606+00:00","parent_pid":10471,"writer_pid":11569,"run_id":"tmph5tzb7oq","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=None analysis_wait=0.000176s
+..PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:22.773235+00:00","parent_pid":10471,"writer_pid":11627,"run_id":"tmpiwqyuoux","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:22.777997+00:00","parent_pid":10471,"writer_pid":11627,"run_id":"tmpiwqyuoux","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:22.782870+00:00","parent_pid":10471,"writer_pid":11628,"run_id":"tmpiwqyuoux","step":5,"time_s":5e-07}
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:23.006062+00:00","parent_pid":10471,"writer_pid":11659,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:23.210632+00:00","parent_pid":10471,"writer_pid":11684,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=timeout image_input=None analysis_wait=0.204663s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:23.245397+00:00","parent_pid":10471,"writer_pid":11691,"run_id":"tmpt85b3t18","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:23.250054+00:00","parent_pid":10471,"writer_pid":11691,"run_id":"tmpt85b3t18","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:23.254941+00:00","parent_pid":10471,"writer_pid":11692,"run_id":"tmpt85b3t18","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.009668s
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:23.493865+00:00","parent_pid":10471,"writer_pid":11729,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:23.499608+00:00","parent_pid":10471,"writer_pid":11729,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:23.748363+00:00","parent_pid":10471,"writer_pid":11744,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=timeout image_input=False analysis_wait=0.254583s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:24.028018+00:00","parent_pid":10471,"writer_pid":11746,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:24.033102+00:00","parent_pid":10471,"writer_pid":11746,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:24.038332+00:00","parent_pid":10471,"writer_pid":11747,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=error image_input=False analysis_wait=0.010389s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+..PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:24.088781+00:00","parent_pid":10471,"writer_pid":11749,"run_id":"tmp7mig7hhx","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:24.096506+00:00","parent_pid":10471,"writer_pid":11749,"run_id":"tmp7mig7hhx","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:24.103705+00:00","parent_pid":10471,"writer_pid":11750,"run_id":"tmp7mig7hhx","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.015052s
+.PYTHON LLM telemetry lines=400 appends=7 failed_appends=2 file=telemetry.jsonl
+.PYTHON LLM callback failed open: RuntimeError: telemetry.jsonl will not be written: line 12 could not be encoded (TypeError: Object of type set is not JSON serializable); telemetry.jsonl.tmp keeps the lines before it
+PYTHON LLM telemetry lines=11 appends=1 failed_appends=0 file=telemetry.jsonl.tmp incomplete: line 12 could not be encoded (TypeError: Object of type set is not JSON serializable); telemetry.jsonl.tmp keeps the lines before it
+.PYTHON LLM callback failed open: RuntimeError: telemetry.jsonl will not be written: 4 appends failed and 40 lines were pending; they were dropped
+PYTHON LLM telemetry lines=40 appends=1 failed_appends=4 file=telemetry.jsonl.tmp incomplete: 4 appends failed and 40 lines were pending; they were dropped
+.PYTHON LLM telemetry lines=2345 appends=5 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM telemetry lines=2345 appends=47 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM telemetry lines=30 appends=31 failed_appends=0 file=telemetry.jsonl
+..PYTHON LLM telemetry lines=120 appends=3 failed_appends=0 file=telemetry.jsonl
+.................{
+  "output": "/tmp/tmpxnap6ofy/prepared",
+  "mode": "offline_preparation",
+  "prepared_requests": 4,
+  "executed_requests": 0
+}
+{
+  "output": "/tmp/tmpvukf_kya/executed",
+  "mode": "execute",
+  "prepared_requests": 2,
+  "executed_requests": 2
+}
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:30.037521+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:30.035093+00:00","parent_pid":10471,"writer_pid":12044,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:31.187208+00:00","parent_pid":10471,"writer_pid":12044,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:31.562354+00:00","parent_pid":10471,"writer_pid":12454,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true,"arrived_at_step":8,"solver_stall_s":0.002463752869516611}
+PYTHON LLM step=5 time=5e-07 status=ok image_input=True analysis_wait=1.527354s async=1 arrived_at_step=8 solver_stall=0.002464s
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:34.182172+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:34.180023+00:00","parent_pid":10471,"writer_pid":12696,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:35.429198+00:00","parent_pid":10471,"writer_pid":12696,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:35.531022+00:00","parent_pid":10471,"writer_pid":13524,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true,"arrived_at_step":10,"solver_stall_s":0.002190086990594864}
+PYTHON LLM step=5 time=5e-07 status=error image_input=True analysis_wait=1.351115s async=1 arrived_at_step=10 solver_stall=0.002190s
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:35.689375+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:35.687374+00:00","parent_pid":10471,"writer_pid":13567,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:35.690827+00:00","parent_pid":10471,"writer_pid":13568,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true,"arrived_at_step":10,"solver_stall_s":0.002037129132077098}
+PYTHON LLM step=5 time=5e-07 status=detached image_input=None analysis_wait=0.003531s async=1 arrived_at_step=10 solver_stall=0.002037s
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:36.985836+00:00","parent_pid":10471,"writer_pid":13567,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:38.017456+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:38.015030+00:00","parent_pid":10471,"writer_pid":13954,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:39.185441+00:00","parent_pid":10471,"writer_pid":13954,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:39.761717+00:00","parent_pid":10471,"writer_pid":14212,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true,"arrived_at_step":10,"solver_stall_s":0.0024586040526628494}
+PYTHON LLM step=5 time=5e-07 status=ok image_input=True analysis_wait=1.746793s async=1 arrived_at_step=10 solver_stall=0.002459s
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:40.216487+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM step=6 request skipped: 1 request(s) still pending
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:40.214368+00:00","parent_pid":10471,"writer_pid":14221,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:41.549989+00:00","parent_pid":10471,"writer_pid":14221,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:42.133191+00:00","parent_pid":10471,"writer_pid":14229,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true,"arrived_at_step":10,"solver_stall_s":0.0021592990960925817}
+PYTHON LLM step=5 time=5e-07 status=ok image_input=True analysis_wait=1.918916s async=1 arrived_at_step=10 solver_stall=0.002159s
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:42.583972+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:42.582039+00:00","parent_pid":10471,"writer_pid":14237,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:43.222984+00:00","parent_pid":10471,"writer_pid":14238,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true,"arrived_at_step":8,"solver_stall_s":0.001981481909751892}
+PYTHON LLM step=5 time=5e-07 status=timeout image_input=None analysis_wait=0.641043s async=1 arrived_at_step=8 solver_stall=0.001981s
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.....PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON LLM callback failed open: ValueError: LLM_SEQUENCE_PROMPT must be own, t or tn
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON LLM callback failed open: ValueError: LLM_SEQUENCE_PROMPT=t or tn needs LLM_IMAGE_STYLE=v2
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM frame step=2 capture started async=1 wall=0.002s
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON LLM frame step=4 capture started async=1 wall=0.003s
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:45.411348+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:45.409321+00:00","parent_pid":10471,"writer_pid":14248,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:45.672564+00:00","parent_pid":10471,"writer_pid":14248,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:46.013121+00:00","parent_pid":10471,"writer_pid":14250,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true,"arrived_at_step":8,"solver_stall_s":0.0022287468891590834}
+PYTHON LLM step=6 time=6e-07 status=ok image_input=True analysis_wait=0.604046s async=1 arrived_at_step=8 solver_stall=0.002229s
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM frame step=2 capture started async=1 wall=0.002s
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON LLM frame step=4 capture started async=1 wall=0.002s
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:48.414141+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:48.412080+00:00","parent_pid":10471,"writer_pid":14279,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:48.672806+00:00","parent_pid":10471,"writer_pid":14279,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:49.015843+00:00","parent_pid":10471,"writer_pid":14284,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true,"arrived_at_step":8,"solver_stall_s":0.002242226852104068}
+PYTHON LLM step=6 time=6e-07 status=ok image_input=True analysis_wait=0.603990s async=1 arrived_at_step=8 solver_stall=0.002242s
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM frame step=2 capture started async=1 wall=0.002s
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON LLM frame step=4 capture started async=1 wall=0.002s
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:51.527871+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:51.525504+00:00","parent_pid":10471,"writer_pid":14289,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:51.783083+00:00","parent_pid":10471,"writer_pid":14289,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:52.129528+00:00","parent_pid":10471,"writer_pid":14291,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true,"arrived_at_step":8,"solver_stall_s":0.00258933799341321}
+PYTHON LLM step=6 time=6e-07 status=ok image_input=True analysis_wait=0.604290s async=1 arrived_at_step=8 solver_stall=0.002589s
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM frame step=2 capture started async=1 wall=0.002s
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON LLM frame step=4 capture started async=1 wall=0.002s
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:54.531452+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:54.529242+00:00","parent_pid":10471,"writer_pid":14298,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:54.777675+00:00","parent_pid":10471,"writer_pid":14298,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:08:54.832939+00:00","parent_pid":10471,"writer_pid":14300,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true,"arrived_at_step":7,"solver_stall_s":0.002393243135884404}
+PYTHON LLM step=6 time=6e-07 status=disabled image_input=True analysis_wait=0.303939s async=1 arrived_at_step=7 solver_stall=0.002393s
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM frame step=2 capture started async=1 wall=0.003s
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON LLM frame step=4 capture started async=1 wall=0.002s
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:08:57.531492+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:08:57.529410+00:00","parent_pid":10471,"writer_pid":14317,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:08:57.767273+00:00","parent_pid":10471,"writer_pid":14317,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:00.045118+00:00","parent_pid":10471,"writer_pid":14567,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true,"arrived_at_step":10,"solver_stall_s":0.0022538648918271065}
+PYTHON LLM step=6 time=6e-07 status=timeout image_input=True analysis_wait=2.515939s async=1 arrived_at_step=10 solver_stall=0.002254s
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:00.800087+00:00","parent_pid":10471,"writer_pid":14797,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:02.030559+00:00","parent_pid":10471,"writer_pid":14797,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:02.091308+00:00","parent_pid":10471,"writer_pid":14922,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=ok image_input=True analysis_wait=1.291312s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:02.556102+00:00","parent_pid":10471,"writer_pid":14925,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:03.681763+00:00","parent_pid":10471,"writer_pid":14925,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:03.742762+00:00","parent_pid":10471,"writer_pid":14927,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=ok image_input=True analysis_wait=1.186758s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:09:04.218344+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":1,"time_s":1e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:04.216073+00:00","parent_pid":10471,"writer_pid":14930,"run_id":"unit-test-async","step":1,"time_s":1e-07,"async":true}
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM step=2 request skipped: 1 request(s) still pending
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON LLM step=3 request skipped: 1 request(s) still pending
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:04.465171+00:00","parent_pid":10471,"writer_pid":14930,"run_id":"unit-test-async","step":1,"time_s":1e-07,"async":true}
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON LLM step=4 request skipped: 1 request(s) still pending
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM step=5 request skipped: 1 request(s) still pending
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM step=6 request skipped: 1 request(s) still pending
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON LLM step=7 request skipped: 1 request(s) still pending
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON LLM step=8 request skipped: 1 request(s) still pending
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON LLM step=9 request skipped: 1 request(s) still pending
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:05.122985+00:00","parent_pid":10471,"writer_pid":15202,"run_id":"unit-test-async","step":1,"time_s":1e-07,"async":true,"arrived_at_step":10,"solver_stall_s":0.00245196302421391}
+PYTHON LLM step=1 time=1e-07 status=ok image_input=True analysis_wait=0.907135s async=1 arrived_at_step=10 solver_stall=0.002452s
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:09:05.133108+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":10,"time_s":1e-06,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:05.131596+00:00","parent_pid":10471,"writer_pid":15204,"run_id":"unit-test-async","step":10,"time_s":1e-06,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:05.385053+00:00","parent_pid":10471,"writer_pid":15204,"run_id":"unit-test-async","step":10,"time_s":1e-06,"async":true}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:06.002029+00:00","parent_pid":10471,"writer_pid":15638,"run_id":"unit-test-async","step":10,"time_s":1e-06,"async":true,"arrived_at_step":10,"solver_stall_s":0.010384472087025642}
+PYTHON LLM step=10 time=1e-06 status=ok image_input=True analysis_wait=0.879350s async=1 arrived_at_step=10 solver_stall=0.010384s
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM callback failed open: ValueError: LLM_ANALYSIS_EVERY needs LLM_MODE=describe and LLM_IMAGE_STYLE=v2
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:09:06.861923+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":2,"time_s":2e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:06.859804+00:00","parent_pid":10471,"writer_pid":15732,"run_id":"unit-test-async","step":2,"time_s":2e-07,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:07.103633+00:00","parent_pid":10471,"writer_pid":15732,"run_id":"unit-test-async","step":2,"time_s":2e-07,"async":true}
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:07.263144+00:00","parent_pid":10471,"writer_pid":15817,"run_id":"unit-test-async","step":2,"time_s":2e-07,"async":true,"arrived_at_step":3,"solver_stall_s":0.0022956510074436665}
+PYTHON LLM step=2 time=2e-07 status=ok image_input=True analysis_wait=0.403562s async=1 arrived_at_step=3 solver_stall=0.002296s
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:09:08.077002+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:08.073299+00:00","parent_pid":10471,"writer_pid":15990,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:08.316398+00:00","parent_pid":10471,"writer_pid":15990,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:08.478603+00:00","parent_pid":10471,"writer_pid":16031,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true,"arrived_at_step":6,"solver_stall_s":0.003979150205850601}
+PYTHON LLM step=5 time=5e-07 status=ok image_input=True analysis_wait=0.405664s async=1 arrived_at_step=6 solver_stall=0.003979s
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:09:09.293560+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":8,"time_s":8e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:09.291019+00:00","parent_pid":10471,"writer_pid":16035,"run_id":"unit-test-async","step":8,"time_s":8e-07,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:09.542783+00:00","parent_pid":10471,"writer_pid":16035,"run_id":"unit-test-async","step":8,"time_s":8e-07,"async":true}
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:09.695013+00:00","parent_pid":10471,"writer_pid":16037,"run_id":"unit-test-async","step":8,"time_s":8e-07,"async":true,"arrived_at_step":9,"solver_stall_s":0.0027629679534584284}
+PYTHON LLM step=8 time=8e-07 status=ok image_input=True analysis_wait=0.404290s async=1 arrived_at_step=9 solver_stall=0.002763s
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM frame step=2 capture started async=1 wall=0.003s
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON LLM frame step=4 capture started async=1 wall=0.003s
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:09:11.785548+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:11.783132+00:00","parent_pid":10471,"writer_pid":16042,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:12.794268+00:00","parent_pid":10471,"writer_pid":16042,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:13.159110+00:00","parent_pid":10471,"writer_pid":16044,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true,"arrived_at_step":10,"solver_stall_s":0.002625423949211836}
+PYTHON LLM step=6 time=6e-07 status=ok image_input=True analysis_wait=1.376299s async=1 arrived_at_step=10 solver_stall=0.002625s
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM frame step=2 capture started async=0 wall=1.107s
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON LLM frame step=4 capture started async=0 wall=1.153s
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:16.082054+00:00","parent_pid":10471,"writer_pid":16255,"run_id":"unit-test-async","step":6,"time_s":6e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:17.214464+00:00","parent_pid":10471,"writer_pid":16255,"run_id":"unit-test-async","step":6,"time_s":6e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:17.272454+00:00","parent_pid":10471,"writer_pid":16387,"run_id":"unit-test-async","step":6,"time_s":6e-07}
+PYTHON LLM step=6 time=6e-07 status=ok image_input=True analysis_wait=1.190556s
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM frame step=2 capture started async=0 wall=0.268s
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON LLM frame step=4 capture started async=0 wall=0.276s
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:18.295149+00:00","parent_pid":10471,"writer_pid":16392,"run_id":"unit-test-async","step":6,"time_s":6e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:18.557224+00:00","parent_pid":10471,"writer_pid":16392,"run_id":"unit-test-async","step":6,"time_s":6e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:18.577130+00:00","parent_pid":10471,"writer_pid":16394,"run_id":"unit-test-async","step":6,"time_s":6e-07}
+PYTHON LLM step=6 time=6e-07 status=ok image_input=True analysis_wait=0.282137s
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=11 shape=(20, 3) finite=true
+PYTHON snapshot=12 shape=(20, 3) finite=true
+PYTHON LLM callback failed open: FileExistsError: /tmp/tmp9lsek44g/llm_observation/step-000002 holds a frame of an earlier run in this case folder
+PYTHON snapshot=13 shape=(20, 3) finite=true
+PYTHON snapshot=14 shape=(20, 3) finite=true
+PYTHON snapshot=15 shape=(20, 3) finite=true
+PYTHON LLM frame step=5 capture started async=0 wall=0.264s
+PYTHON snapshot=16 shape=(20, 3) finite=true
+PYTHON snapshot=17 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:18.887361+00:00","parent_pid":10471,"writer_pid":16398,"run_id":"unit-test-async","step":7,"time_s":7e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:19.132603+00:00","parent_pid":10471,"writer_pid":16420,"run_id":"unit-test-async","step":7,"time_s":7e-07}
+PYTHON LLM step=7 time=7e-07 status=callback_error image_input=True analysis_wait=0.245391s
+PYTHON snapshot=18 shape=(20, 3) finite=true
+PYTHON snapshot=19 shape=(20, 3) finite=true
+PYTHON snapshot=20 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:09:19.597553+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:19.594060+00:00","parent_pid":10471,"writer_pid":16509,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:19.846205+00:00","parent_pid":10471,"writer_pid":16509,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true}
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:20.199633+00:00","parent_pid":10471,"writer_pid":16604,"run_id":"unit-test-async","step":5,"time_s":5e-07,"async":true,"arrived_at_step":7,"solver_stall_s":0.003530882066115737}
+PYTHON LLM step=5 time=5e-07 status=ok image_input=True analysis_wait=0.605670s async=1 arrived_at_step=7 solver_stall=0.003531s
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:21.882448+00:00","parent_pid":10471,"writer_pid":16783,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:22.110281+00:00","parent_pid":10471,"writer_pid":16783,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:22.126092+00:00","parent_pid":10471,"writer_pid":16856,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=ok image_input=True analysis_wait=0.243759s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM callback failed open: ValueError: LLM_IMAGE_STYLE=v2 applies to describe and sequence; observe sends the v1 picture
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON LLM callback failed open: ValueError: a v2 sequence takes at most 3 steps (two pictures per step)
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM mesh geometry received: cells=20 cell_polygons=20 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON LLM frame step=2 capture started async=1 wall=0.002s
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON LLM frame step=4 capture started async=1 wall=0.002s
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"request_started_async","timestamp_utc":"2026-10-28T23:09:24.009137+00:00","parent_pid":10471,"writer_pid":10471,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:24.006790+00:00","parent_pid":10471,"writer_pid":17208,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-10-28T23:09:24.268831+00:00","parent_pid":10471,"writer_pid":17208,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true}
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:24.611391+00:00","parent_pid":10471,"writer_pid":17384,"run_id":"unit-test-async","step":6,"time_s":6e-07,"async":true,"arrived_at_step":8,"solver_stall_s":0.0025343119632452726}
+PYTHON LLM step=6 time=6e-07 status=ok image_input=True analysis_wait=0.604835s async=1 arrived_at_step=8 solver_stall=0.002534s
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.307
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-10-28T23:09:25.810938+00:00","parent_pid":10471,"writer_pid":17687,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-10-28T23:09:25.823034+00:00","parent_pid":10471,"writer_pid":17688,"run_id":"unit-test-async","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=None analysis_wait=0.012200s
+PYTHON LLM telemetry lines=1200 appends=3 failed_appends=0 file=telemetry.jsonl
+.............oct20-replay/d1: ok 0.1s
+oct20-replay/s1: ok 0.1s
+..{
+  "output": "/tmp/tmp2afh7qwt/out",
+  "failures": 0
+}
+| model | set | mode | answered | fastest within 10 % | lowest p within 10 % | speed trend | p trend | region | fixed-answer score | median prompt tokens | median s |
+|---|---|---|---:|---:|---:|---:|---:|---:|---|---:|---:|
+| m | oct20-replay | describe | 1/1 | 1/1 | 1/1 |  |  |  | 1 / 1 | 10 | 0.1 |
+| m | oct20-replay | sequence | 1/1 |  |  | 1/1 | 0/1 | 1/1 | 1 / 1 / 1 | 10 | 0.1 |
+| m | flow-describe-v2 | | no summary (run incomplete) | | | | | | | | |
+
+fixed-answer score: what one fixed answer per plotted range would get (describe: fastest / lowest p; sequence: speed / p / region). Paired lines count items right in both, one or neither set (describe: fastest flow within 10 %; sequence: speed trend).
+
+3 requests checked, 0 problems
+changed requests/flow-describe-v1/d1.request.json
+3 requests checked, 1 problems
+oct17-paired/pair-001-numeric_only: ok 0.1s
+flow-describe-v1/d1: ok 0.1s
+flow-sequence-v1/s1: ok 0.1s
+.
+----------------------------------------------------------------------
+Ran 107 tests in 75.871s
+
+OK
+{
+  "output": "/tmp/tmp1mykslnf/out",
+  "failures": 0
+}
+| model | set | mode | answered | fastest within 10 % | lowest p within 10 % | speed trend | p trend | region | fixed-answer score | median prompt tokens | median s |
+|---|---|---|---:|---:|---:|---:|---:|---:|---|---:|---:|
+| other-model | oct17-paired | observe | 1/1 | numeric_only: 0 located ; numeric_plus_image: 0 located |  |  |  |  |  | 10 | 0.1 |
+| other-model | flow-describe-v1 | describe | 1/1 | 1/1 | 1/1 |  |  |  | 1 / 1 | 10 | 0.1 |
+| other-model | flow-sequence-v1 | sequence | 1/1 |  |  | 1/1 | 0/1 | 1/1 | 1 / 1 / 1 | 10 | 0.1 |
+
+fixed-answer score: what one fixed answer per plotted range would get (describe: fastest / lowest p; sequence: speed / p / region). Paired lines count items right in both, one or neither set (describe: fastest flow within 10 %; sequence: speed trend).
+

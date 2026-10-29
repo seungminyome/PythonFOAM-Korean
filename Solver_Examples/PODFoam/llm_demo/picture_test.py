@@ -730,6 +730,8 @@ def constant_answer_baseline(mode, keys):
         return out
     if mode == "sequence":
         return {word: max(sum(k[word] == v for k in keys) for v in {k[word] for k in keys}) for word in WORDS}
+    if mode == "stability":
+        return {"stability": max(sum(k["stability"] == v for k in keys) for v in {k["stability"] for k in keys})}
     return None
 
 
@@ -750,6 +752,14 @@ def summarize_mode(mode, rows, keys):
                            "cannot_tell": sum(r["scores"][word]["cannot_tell"] for r in ok),
                            "answers": [r["scores"][word]["answer"] for r in ok],
                            "truth": [r["scores"][word]["truth"] for r in ok]}
+    elif mode == "stability":
+        table = {}
+        for r in ok:
+            cell = table.setdefault(r["scores"]["stability"]["truth"], {})
+            cell[r["scores"]["stability"]["answer"]] = cell.get(r["scores"]["stability"]["answer"], 0) + 1
+        block["stability"] = {"match": sum(r["scores"]["stability"]["match"] for r in ok),
+                              "cannot_tell": sum(r["scores"]["stability"]["cannot_tell"] for r in ok),
+                              "answers_by_truth": table}
     else:
         block["paired"] = ablation_runner.summarize(rows)
     block["constant_answer_baseline"] = constant_answer_baseline(mode, keys)
@@ -764,7 +774,7 @@ def summarize_set(set_name, rows, keys):
               "completion_tokens": [_usage(r, "completion_tokens") for r in rows],
               "cache_n": [((r.get("server_timings") or {}).get("cache_n")) for r in rows],
               "by_mode": {}, "by_group": {}}
-    for mode in ("describe", "sequence", "observe"):
+    for mode in ("describe", "sequence", "observe", "stability"):
         chosen = [(r, k) for r, k in zip(rows, keys) if r["mode"] == mode]
         if chosen:
             report["by_mode"][mode] = summarize_mode(mode, [r for r, _ in chosen], [k for _, k in chosen])
@@ -858,6 +868,9 @@ def report(args):
                 elif mode == "sequence":
                     cells[2:5] = [f"{b[w]['match']}/{n}" for w in WORDS]
                     fixed = " / ".join(str(base.get(w)) for w in WORDS)
+                elif mode == "stability":
+                    cells[0] = f"stability word {b['stability']['match']}/{n}"
+                    fixed = str(base.get("stability"))
                 else:
                     paired = b["paired"]
                     cells[0] = " ; ".join(f"{c}: {paired[c]['location_scored']} located" for c in ablation_runner.CONDITIONS if c in paired)

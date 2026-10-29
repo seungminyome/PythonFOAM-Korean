@@ -1,0 +1,33 @@
+node mbcpu-010.cluster start 2026-10-28T16:45:10-06:00
+validation ran
+  "status": "PASS"
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-3d-20261028/run-24929484/pod-v2212.Qvy0OZ
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-3d-20261028/run-24929484/pod-v2212.Qvy0OZ/bin/PODFoam
+/cluster/medbow/gscratch/syome/github_repos/pod-3d-20261028/run-24929484/case3d/system/blockMeshDict: 6 blocks with 8 cells in z, front and back walls
+    cells:            164320
+Failed 1 mesh checks.
+/cluster/medbow/gscratch/syome/github_repos/pod-3d-20261028/run-24929484/case3d/0.1: U and p for 164320 cells from 20540 2D cells (8 per 2D cell)
+{
+ "cells_2d": 20540,
+ "cells_3d": 164320,
+ "3d_cells_per_2d_cell": [
+  8
+ ],
+ "max_abs_xy_difference_m": 1.000000082740371e-11,
+ "layer_centres_z_m": [
+  0.00079375,
+  0.00238125,
+  0.00396875,
+  0.00555625,
+  0.00714375,
+  0.00873125,
+  0.01031875,
+  0.01190625
+ ],
+ "z_range_of_centres_m": [
+  0.00079375,
+  0.01190625
+ ],
+ "map_ok": false
+}
+cell map check failed

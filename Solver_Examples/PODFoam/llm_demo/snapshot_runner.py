@@ -157,6 +157,17 @@ def score_sequence(structured, truth):
     return out
 
 
+def score_stability(structured, truth):
+    """The answer word against the key's stability word (2026-10-28 instability test)."""
+    answer = structured["stability"]
+    return {"stability": {"answer": answer, "truth": truth["stability"],
+                          "match": answer == truth["stability"],
+                          "cannot_tell": answer == "cannot_tell"}}
+
+
+SCORERS = {"describe": score_describe, "sequence": score_sequence, "stability": score_stability}
+
+
 def run_trial(payload, output, mode, truth, endpoint, timeout_s):
     start = time.perf_counter()
     output = Path(output)
@@ -173,7 +184,7 @@ def run_trial(payload, output, mode, truth, endpoint, timeout_s):
     structured = result.get("structured_output") if successful else None
     scores = None
     if successful:
-        scores = score_describe(structured, truth) if mode == "describe" else score_sequence(structured, truth)
+        scores = SCORERS[mode](structured, truth)
     metrics = {"status": result["status"], "successful_response": successful,
                "error": result.get("error"),
                "request_sha256": sha256(body), "request_bytes": len(body),

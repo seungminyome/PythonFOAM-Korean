@@ -1,0 +1,45 @@
+validation ran
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-merged-20261029/run-24936949/pod-v2212.Q7jzEk
+serial2d exit 0
+PYTHON LLM mesh geometry received: cells=20540 cell_polygons=20540 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=1.324
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=0.864132s async=1 arrived_at_step=110 solver_stall=0.011355s
+PYTHON LLM telemetry lines=110 appends=1 failed_appends=0 file=telemetry.jsonl
+Python finalized successfully
+End
+serial3d exit 0
+POD observer plane slice: z=0.00714375 requested=0.00635 (middle of the mesh z range) moved off mesh points mesh z range=(0 0.0127) cut cells=20540
+PYTHON LLM mesh geometry received: cells=164320 cell_polygons=0 slice_cells=20540 slice_z_m=0.00714375 solution_d=[1, 1, 1] backend_ready=True backend_import_wall_s=1.147
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=2.784846s async=1 arrived_at_step=101 solver_stall=0.023903s
+PYTHON LLM telemetry lines=110 appends=7 failed_appends=0 file=telemetry.jsonl
+Python finalized successfully
+End
+{
+ "HEAD": "eff951be0b214b3bf7b0795b2f58230d57327542",
+ "serial2d": {
+  "frame_files_identical": {
+   "U.png": true,
+   "fields.npz": true,
+   "p.png": true,
+   "readable-metadata.json": true
+  },
+  "request_body_identical": true,
+  "telemetry_lines": 110,
+  "telemetry_tmp_left": false,
+  "ended": true,
+  "result_status": "disabled"
+ },
+ "serial3d": {
+  "frame_files_identical": {
+   "U.png": true,
+   "fields.npz": true,
+   "p.png": true,
+   "readable-metadata.json": true
+  },
+  "request_body_identical": true,
+  "telemetry_lines": 110,
+  "telemetry_tmp_left": false,
+  "ended": true,
+  "result_status": "disabled"
+ },
+ "pass": true
+}

@@ -1,0 +1,77 @@
+diff --git a/Solver_Examples/PODFoam/llm_demo/README.md b/Solver_Examples/PODFoam/llm_demo/README.md
+index a0a3e34..301937b 100644
+--- a/Solver_Examples/PODFoam/llm_demo/README.md
++++ b/Solver_Examples/PODFoam/llm_demo/README.md
+@@ -24,9 +24,9 @@ only define `snapshot_func` and `svd_func` keep working as before.
+ ## How it fits into the solver
+ 
+ ```
+-PythonCreate.H   startup    mesh_func(centres, volumes, solutionD, rank, cell polygons)   optional, once
+-PythonComm.H     each step  snapshot_func(U), svd_func(rank) at the SVD interval           as before
+-PythonAnalysis.H each step  analysis_func(state)                                           optional
++PythonCreate.H   startup    mesh_func(centres, volumes, solutionD, rank, cell polygons[, slice plane])   optional, once
++PythonComm.H     each step  snapshot_func(U), svd_func(rank) at the SVD interval                         as before
++PythonAnalysis.H each step  analysis_func(state)                                                         optional
+ ```
+ 
+ `state` holds the step's time, dt, residuals from `solverPerformanceDict`
+@@ -40,6 +40,28 @@ order) and only the master calls `mesh_func` and `analysis_func`; the POD
+ snapshot and SVD stay per rank as before. Tested on 2 ranks on 2026-10-27
+ ([report](../../../docs/results-20261027.md#mpi-and-the-pod-files)).
+ 
++3D cases (2026-10-28). A 3D mesh has no `empty` patch, so the cell polygons
++come from a plane slice instead (`PythonSlice.H`): OpenFOAM's `cuttingPlane`
++at z = `LLM_SLICE_Z` (default: the middle of the mesh's z range), normal
++(0 0 1), not triangulated, so each cut cell gives one polygon, its section. A
++plane through mesh points (the middle of an even number of uniform layers)
++would lie on the faces between two cells; it is moved halfway to the next
++point plane above. The polygons go through the same three arguments, with the
++same per-rank cell offsets and gather, and an eighth argument describes the
++plane; a 2D case gets the seven-argument call as before. v2 pictures then
++draw the slice cells only, each as its own polygon in its own colour, and the
++v2 frame holds only those cells: `fields.npz` keeps their centres (the 3D
++cell centres), U and p, plus `mesh_cells`, `polygon_points` and
++`polygon_offsets`; `readable-metadata.json` gets `slice` (z, requested z,
++where it came from, whether it was moved, cells in the slice and in the mesh).
++The request is built as for 2D; neither the pictures nor the request say that
++they show a slice. An unreadable `LLM_SLICE_Z` or a plane that cuts no cells
++leaves the solver running and v2 requests refused with the reason. v1
++pictures of a 3D case keep the nearest-cell raster of all cells. Tested on
++the step case extruded to 8 cells in z, serially and on 2 ranks
++([evidence](../../../docs/evidence/2026-10-28-3d/README.md)); not tested on
++other 3D meshes or with a model.
++
+ `llm_demo/python_module.py` is the callback. At one chosen step (default 5)
+ it forks a worker that:
+ 
+@@ -61,7 +83,7 @@ files with a 0.2 s budget. The HTTP client accepts local loopback endpoints,
+ limits request and response sizes, and has separate connect,
+ read-inactivity and whole-call timeouts.
+ 
+-Rendering needs matplotlib; the 3D fallback (nearest-cell raster) also needs
++Rendering needs matplotlib; the 3D fallback of v1 (nearest-cell raster) also needs
+ scipy. matplotlib is imported once at startup inside `mesh_func`, not in the
+ time loop. `LLM_IMAGE_XRANGE="x0,x1"` (and `LLM_IMAGE_YRANGE`) plot only that
+ window in metres; the colour range then spans the cells inside the window and
+@@ -153,8 +175,10 @@ the v1 picture; `observe` with v2 is refused.
+   snapshot window and computes none; the request step can be late in a long
+   run without the worker slowing down.
+ - The plotted range is `LLM_IMAGE_XRANGE`/`LLM_IMAGE_YRANGE` or the whole
+-  domain. v2 needs a 2D case in the x-y plane with one polygon per cell (no
+-  raster fallback).
++  domain (for a 3D case, of the slice cells). v2 needs one polygon per cell:
++  a 2D case in the x-y plane, or since 2026-10-28 a 3D case through its plane
++  slice (see [How it fits into the solver](#how-it-fits-into-the-solver)); no
++  raster fallback.
+ - Use a server context of 4096 tokens and batch/ubatch 512, as in the
+   picture test: a three-time v2 sequence has about 2,200 prompt tokens.
+ 
+@@ -325,7 +349,7 @@ Environment variables: `OPENFOAM_BASHRC`, `PYTHON`, `POD_WORKSPACE`,
+ checkout), `POD_LLM_PORT` (8088), `POD_REFERENCE_RUN` (newest passed
+ validation run by default), `LLM_ANALYSIS_STEP`, `LLM_IMAGE_INPUT` (1/0),
+ `LLM_CALLBACK_DEADLINE_S`, `LLM_CONNECT_TIMEOUT_S`, `LLM_READ_TIMEOUT_S`,
+-`LLM_MAX_TOKENS` (up to 192 for `observe`, 320 for the other modes), `LLM_MODE`, `LLM_ASYNC`, `LLM_SEQUENCE_STEPS`, `LLM_ASYNC_MAX_PENDING` (1 to 8), `LLM_ASYNC_END`, `LLM_FINAL_STEP`, `LLM_IMAGE_XRANGE`, `LLM_IMAGE_YRANGE`, `POD_SUITE` (`async` for the long asynchronous suite), and for that suite `LLM_LONG_STEPS`, `LLM_LONG_DT`, `LLM_LONG_WRITE`, `LLM_LONG_STEP`, `LLM_LONG_SEQUENCE_STEPS`, `LLM_LONG_CASES`.
++`LLM_MAX_TOKENS` (up to 192 for `observe`, 320 for the other modes), `LLM_MODE`, `LLM_ASYNC`, `LLM_SEQUENCE_STEPS`, `LLM_ASYNC_MAX_PENDING` (1 to 8), `LLM_ASYNC_END`, `LLM_FINAL_STEP`, `LLM_IMAGE_XRANGE`, `LLM_IMAGE_YRANGE`, `LLM_SLICE_Z` (3D cases: z of the plane slice in metres, read by the solver), `POD_SUITE` (`async` for the long asynchronous suite), and for that suite `LLM_LONG_STEPS`, `LLM_LONG_DT`, `LLM_LONG_WRITE`, `LLM_LONG_STEP`, `LLM_LONG_SEQUENCE_STEPS`, `LLM_LONG_CASES`.
+ 
+ `run_demo.sh` sets `LLM_MAX_TOKENS=192` for every mode unless it is already
+ set, so the October 20 in-solver describe and sequence requests used 192 (the

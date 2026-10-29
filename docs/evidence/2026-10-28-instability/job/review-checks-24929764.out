@@ -1,0 +1,44 @@
+== commit
+660f8c46f533a34414807ae5e4fc5ce068c01186
+ M docs/evidence/2026-10-28-instability/README.md
+f59896f1cb51437a790163ce65c8e5ba250892be07200a993a80a5c8d23c7f6a  instability_test.py
+d0f8cbb11d5abe8fc4a1138452ac3fb762480943f24f3660ff21301775714c50  test_instability_test.py
+41480a8459ee95d554860f0d56cbb518f875b5caf71376a74f3d8de78d7c58af  picture_test.py
+d232c8c4b4b1bffb84bda6639764371e14c278eca47f6ee7c0e2497c0bbbd574  /cluster/medbow/gscratch/syome/github_repos/PythonFOAM-inst/docs/evidence/2026-10-28-instability/independent-recount.py
+3a7d0d23f4e43b59e8378cd4b49379da6e0a4a7e15860a987817372cf6f15b82  /cluster/medbow/gscratch/syome/github_repos/PythonFOAM-inst/docs/evidence/2026-10-28-instability/flow/domain_max.py
+Python 3.11.16
+Python 3.9.25
+== unit tests, documented order
+exit 0
+Ran 107 tests in 56.712s
+OK
+== unit tests, discover
+exit 0
+Ran 107 tests in 56.370s
+OK
+== unit tests, test_instability_test then test_picture_test
+exit 0
+Ran 27 tests in 7.924s
+OK
+== test set built again
+{"output":"/cluster/medbow/gscratch/syome/github_repos/picture-test-20261021/instability-rebuild-24929764","requests":70,"items_by_group_and_run":{"stable central-dt5e-6":6,"stable developed":7,"stable upwind-dt2e-5":7,"stable upwind-dt4e-5":7,"unstable-early central-dt2e-5":12,"unstable-early central-dt3e-5":4,"unstable-last central-dt2e-5":10,"unstable-last central-dt3e-5":10,"unstable-last central-dt4e-5":7}}
+70 requests checked, 0 problems
+answer key identical: True; request bodies: 70 before, 70 now, 70 identical
+manifest entries that differ: ['build_args', 'code_sha256', 'label_rule']
+code hashes that differ: ['instability_test.py']
+identical; removed /cluster/medbow/gscratch/syome/github_repos/picture-test-20261021/instability-rebuild-24929764
+== report on the committed results
+report exit 0
+window-test-24929533: same as reports/window-test-24929533.md
+report exit 0
+window-test-24929534: same as reports/window-test-24929534.md
+== independent recount
+70 items, key problems: 0; 1410 report cells checked, 0 differ
+independent-recount.json unchanged
+== domain_max.py
+{"states": 159, "window_max_differs_from_key": 0, "by_run": {"central-dt2e-5": [47, 37, 37], "central-dt3e-5": [23, 0, 0], "central-dt4e-5": [9, 0, 0], "central-dt5e-6": [18, 17, 16], "developed": [20, 0, 0], "upwind-dt2e-5": [21, 0, 0], "upwind-dt4e-5": [21, 0, 0]}}
+7afcbaa25e72a8c571c85166ea3d33be68514dddf7432754abc85f5592d37966  /cluster/medbow/gscratch/syome/github_repos/PythonFOAM-inst/docs/evidence/2026-10-28-instability/flow/domain-max.json
+ M CHANGELOG.md
+ M Solver_Examples/PODFoam/llm_demo/README.md
+ M docs/evidence/2026-10-28-instability/README.md
+?? docs/evidence/2026-10-28-instability/flow/domain-max.json

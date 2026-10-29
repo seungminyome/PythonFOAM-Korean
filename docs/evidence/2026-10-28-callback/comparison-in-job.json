@@ -1,0 +1,545 @@
+{
+ "run": "/cluster/medbow/gscratch/syome/github_repos/pod-callback-20261028/run-24929555",
+ "pairs": {
+  "describe": {
+   "callback_sources_sha256": {
+    "main": {
+     "bounded_ipc.py": "18d604ba0e3d3070c70d350c7028890ef81603a9ea54a366efd5c30ed88f726a",
+     "llm_client.py": "a8aa4546e9fd1edfcff2b24bfbd9dbf238f02653c7adf9a3aef401e06bd2a8e4",
+     "pod_image.py": "3099dc1505e2f31a6ee9e8883ee2d01c5b0578afaeeb2da12e61f339582ff867",
+     "pod_svd.py": "110e5e70b77bced27587808349c155ef0797b5eac3f059fce16bcad862772123",
+     "python_module.py": "baf091a5d0007cf0226dde074258d41644bd8553e74080a9d59ad8ae30401343",
+     "readable_image.py": "8043e4eefad5ea5472ccb8a51b9d3d3136171d65480d304032b62472c9f0a657",
+     "readable_request.py": "d50f37dbe302851b1b15b8ff380ee5ab10c3f0cf23d63238347165c9109aa887"
+    },
+    "branch": {
+     "bounded_ipc.py": "18d604ba0e3d3070c70d350c7028890ef81603a9ea54a366efd5c30ed88f726a",
+     "llm_client.py": "a8aa4546e9fd1edfcff2b24bfbd9dbf238f02653c7adf9a3aef401e06bd2a8e4",
+     "pod_image.py": "3099dc1505e2f31a6ee9e8883ee2d01c5b0578afaeeb2da12e61f339582ff867",
+     "pod_svd.py": "110e5e70b77bced27587808349c155ef0797b5eac3f059fce16bcad862772123",
+     "python_module.py": "5c684219ca23d06a4b19a59d9bcdc18c88f93eb5d1129705e5231a5e3d261039",
+     "readable_image.py": "8043e4eefad5ea5472ccb8a51b9d3d3136171d65480d304032b62472c9f0a657",
+     "readable_request.py": "d50f37dbe302851b1b15b8ff380ee5ab10c3f0cf23d63238347165c9109aa887"
+    }
+   },
+   "only_main": [],
+   "only_branch": [],
+   "identical": {
+    "inputs": 26,
+    "written time directories": 105,
+    "frames": 4,
+    "llm_request_body.json": 1,
+    "python_svd_audit.npz": 1,
+    "telemetry.jsonl": 1
+   },
+   "differing": [],
+   "telemetry": {
+    "lines": [
+     1250,
+     1250
+    ],
+    "sha256": "cf0ceffffe8acc088acf9cd66f05843d9868c955889341044cecb79827babdf9",
+    "identical": true,
+    "tmp_left": [
+     false,
+     false
+    ]
+   },
+   "solver_log_lines": {
+    "compared": 18761,
+    "identical": true
+   },
+   "records": {
+    "llm_request.json": {
+     "keys_compared": 174,
+     "run_dependent_keys_that_differ": [
+      "callback_started_at",
+      "image_render_wall_s",
+      "parent_pid",
+      "render_wall_s",
+      "request_before_at"
+     ],
+     "keys_only_the_branch_writes": [],
+     "unexpected_differences": []
+    },
+    "llm_response.json": {
+     "keys_compared": 69,
+     "run_dependent_keys_that_differ": [
+      "arrived_at_step",
+      "callback_elapsed_s",
+      "callback_started_at",
+      "elapsed_since_request_s",
+      "image_render_wall_s",
+      "ipc_bytes_received",
+      "ipc_select_calls",
+      "parent_pid",
+      "render_wall_s",
+      "request_before_at",
+      "response_after_at",
+      "solver_stall_s",
+      "worker_wait_elapsed_s"
+     ],
+     "keys_only_the_branch_writes": [],
+     "unexpected_differences": []
+    },
+    "llm_result.json": {
+     "keys_compared": 69,
+     "run_dependent_keys_that_differ": [
+      "arrived_at_step",
+      "callback_elapsed_s",
+      "callback_started_at",
+      "cleanup_elapsed_before_result_write_s",
+      "elapsed_since_request_s",
+      "image_render_wall_s",
+      "ipc_bytes_received",
+      "ipc_select_calls",
+      "parent_pid",
+      "render_wall_s",
+      "request_before_at",
+      "response_after_at",
+      "solver_stall_s",
+      "worker_wait_elapsed_s"
+     ],
+     "keys_only_the_branch_writes": [],
+     "unexpected_differences": []
+    }
+   },
+   "branch_telemetry_line": "PYTHON LLM telemetry lines=1250 appends=3 failed_appends=0 file=telemetry.jsonl",
+   "callback_wall": {
+    "main": {
+     "steps": 1250,
+     "median_s": 7.8782e-05,
+     "at_steps_s": {
+      "100": 0.010009977,
+      "499": 8.2919e-05,
+      "500": 0.001681535,
+      "501": 9.0009e-05,
+      "999": 8.7205e-05,
+      "1000": 0.000103801,
+      "1001": 8.6936e-05,
+      "1249": 8.4872e-05,
+      "1250": 0.056911482
+     }
+    },
+    "branch": {
+     "steps": 1250,
+     "median_s": 0.000162603,
+     "at_steps_s": {
+      "100": 0.011258618,
+      "499": 0.000156653,
+      "500": 0.013691431,
+      "501": 0.000238481,
+      "999": 0.000184658,
+      "1000": 0.01983161,
+      "1001": 0.000251841,
+      "1249": 0.00018032,
+      "1250": 0.023062113
+     }
+    }
+   },
+   "pass": true
+  },
+  "sequence": {
+   "callback_sources_sha256": {
+    "main": {
+     "bounded_ipc.py": "18d604ba0e3d3070c70d350c7028890ef81603a9ea54a366efd5c30ed88f726a",
+     "llm_client.py": "a8aa4546e9fd1edfcff2b24bfbd9dbf238f02653c7adf9a3aef401e06bd2a8e4",
+     "pod_image.py": "3099dc1505e2f31a6ee9e8883ee2d01c5b0578afaeeb2da12e61f339582ff867",
+     "pod_svd.py": "110e5e70b77bced27587808349c155ef0797b5eac3f059fce16bcad862772123",
+     "python_module.py": "baf091a5d0007cf0226dde074258d41644bd8553e74080a9d59ad8ae30401343",
+     "readable_image.py": "8043e4eefad5ea5472ccb8a51b9d3d3136171d65480d304032b62472c9f0a657",
+     "readable_request.py": "d50f37dbe302851b1b15b8ff380ee5ab10c3f0cf23d63238347165c9109aa887"
+    },
+    "branch": {
+     "bounded_ipc.py": "18d604ba0e3d3070c70d350c7028890ef81603a9ea54a366efd5c30ed88f726a",
+     "llm_client.py": "a8aa4546e9fd1edfcff2b24bfbd9dbf238f02653c7adf9a3aef401e06bd2a8e4",
+     "pod_image.py": "3099dc1505e2f31a6ee9e8883ee2d01c5b0578afaeeb2da12e61f339582ff867",
+     "pod_svd.py": "110e5e70b77bced27587808349c155ef0797b5eac3f059fce16bcad862772123",
+     "python_module.py": "5c684219ca23d06a4b19a59d9bcdc18c88f93eb5d1129705e5231a5e3d261039",
+     "readable_image.py": "8043e4eefad5ea5472ccb8a51b9d3d3136171d65480d304032b62472c9f0a657",
+     "readable_request.py": "d50f37dbe302851b1b15b8ff380ee5ab10c3f0cf23d63238347165c9109aa887"
+    }
+   },
+   "only_main": [],
+   "only_branch": [],
+   "identical": {
+    "inputs": 26,
+    "written time directories": 105,
+    "frames": 12,
+    "llm_request_body.json": 1,
+    "python_svd_audit.npz": 1,
+    "telemetry.jsonl": 1
+   },
+   "differing": [],
+   "telemetry": {
+    "lines": [
+     1250,
+     1250
+    ],
+    "sha256": "0ef27322162cc0cce11838ca27a06f7d3d9be370a93c01285b0a88f301d3c451",
+    "identical": true,
+    "tmp_left": [
+     false,
+     false
+    ]
+   },
+   "solver_log_lines": {
+    "compared": 18761,
+    "identical": true
+   },
+   "records": {
+    "llm_request.json": {
+     "keys_compared": 312,
+     "run_dependent_keys_that_differ": [
+      "callback_started_at",
+      "image_render_wall_s",
+      "parent_pid",
+      "render_wall_s",
+      "request_before_at"
+     ],
+     "keys_only_the_branch_writes": [],
+     "unexpected_differences": []
+    },
+    "llm_response.json": {
+     "keys_compared": 202,
+     "run_dependent_keys_that_differ": [
+      "arrived_at_step",
+      "callback_elapsed_s",
+      "callback_started_at",
+      "elapsed_since_request_s",
+      "image_render_wall_s",
+      "ipc_bytes_received",
+      "ipc_select_calls",
+      "parent_pid",
+      "render_wall_s",
+      "request_before_at",
+      "response_after_at",
+      "solver_stall_s",
+      "worker_wait_elapsed_s"
+     ],
+     "keys_only_the_branch_writes": [
+      "computed_trends"
+     ],
+     "unexpected_differences": []
+    },
+    "llm_result.json": {
+     "keys_compared": 202,
+     "run_dependent_keys_that_differ": [
+      "arrived_at_step",
+      "callback_elapsed_s",
+      "callback_started_at",
+      "cleanup_elapsed_before_result_write_s",
+      "elapsed_since_request_s",
+      "image_render_wall_s",
+      "ipc_bytes_received",
+      "ipc_select_calls",
+      "parent_pid",
+      "render_wall_s",
+      "request_before_at",
+      "response_after_at",
+      "solver_stall_s",
+      "worker_wait_elapsed_s"
+     ],
+     "keys_only_the_branch_writes": [
+      "computed_trends"
+     ],
+     "unexpected_differences": []
+    }
+   },
+   "branch_telemetry_line": "PYTHON LLM telemetry lines=1250 appends=3 failed_appends=0 file=telemetry.jsonl",
+   "callback_wall": {
+    "main": {
+     "steps": 1250,
+     "median_s": 9.3605e-05,
+     "at_steps_s": {
+      "100": 0.003390702,
+      "499": 8.8458e-05,
+      "500": 0.006255348,
+      "501": 8.6254e-05,
+      "999": 0.000103761,
+      "1000": 0.000114608,
+      "1001": 8.4902e-05,
+      "1249": 8.1657e-05,
+      "1250": 0.05297468
+     }
+    },
+    "branch": {
+     "steps": 1250,
+     "median_s": 0.000176755,
+     "at_steps_s": {
+      "100": 0.003799889,
+      "499": 0.000174692,
+      "500": 0.02199252,
+      "501": 0.000247175,
+      "999": 0.000159438,
+      "1000": 0.016085024,
+      "1001": 0.000232541,
+      "1249": 0.000176054,
+      "1250": 0.020398882
+     }
+    }
+   },
+   "pass": true
+  },
+  "par2-describe": {
+   "callback_sources_sha256": {
+    "main": {
+     "bounded_ipc.py": "18d604ba0e3d3070c70d350c7028890ef81603a9ea54a366efd5c30ed88f726a",
+     "llm_client.py": "a8aa4546e9fd1edfcff2b24bfbd9dbf238f02653c7adf9a3aef401e06bd2a8e4",
+     "pod_image.py": "3099dc1505e2f31a6ee9e8883ee2d01c5b0578afaeeb2da12e61f339582ff867",
+     "pod_svd.py": "6a58a554e514fa0db226ab81b01cd3ec679f087ddb1a84ec65124565cdde5d32",
+     "python_module.py": "baf091a5d0007cf0226dde074258d41644bd8553e74080a9d59ad8ae30401343",
+     "readable_image.py": "8043e4eefad5ea5472ccb8a51b9d3d3136171d65480d304032b62472c9f0a657",
+     "readable_request.py": "d50f37dbe302851b1b15b8ff380ee5ab10c3f0cf23d63238347165c9109aa887"
+    },
+    "branch": {
+     "bounded_ipc.py": "18d604ba0e3d3070c70d350c7028890ef81603a9ea54a366efd5c30ed88f726a",
+     "llm_client.py": "a8aa4546e9fd1edfcff2b24bfbd9dbf238f02653c7adf9a3aef401e06bd2a8e4",
+     "pod_image.py": "3099dc1505e2f31a6ee9e8883ee2d01c5b0578afaeeb2da12e61f339582ff867",
+     "pod_svd.py": "6a58a554e514fa0db226ab81b01cd3ec679f087ddb1a84ec65124565cdde5d32",
+     "python_module.py": "5c684219ca23d06a4b19a59d9bcdc18c88f93eb5d1129705e5231a5e3d261039",
+     "readable_image.py": "8043e4eefad5ea5472ccb8a51b9d3d3136171d65480d304032b62472c9f0a657",
+     "readable_request.py": "d50f37dbe302851b1b15b8ff380ee5ab10c3f0cf23d63238347165c9109aa887"
+    }
+   },
+   "only_main": [],
+   "only_branch": [],
+   "identical": {
+    "inputs": 26,
+    "frames": 4,
+    "llm_request_body.json": 1,
+    "processor directories": 234,
+    "telemetry.jsonl": 1
+   },
+   "differing": [
+    "python_svd_audit.npz"
+   ],
+   "telemetry": {
+    "lines": [
+     1250,
+     1250
+    ],
+    "sha256": "fba16a3704889c14ec3b2f4272bc2852a3cf65ed253e40ab0cf22537e2fdd40b",
+    "identical": true,
+    "tmp_left": [
+     false,
+     false
+    ]
+   },
+   "solver_log_lines": {
+    "compared": 20016,
+    "identical": false
+   },
+   "records": {
+    "llm_request.json": {
+     "keys_compared": 174,
+     "run_dependent_keys_that_differ": [
+      "callback_started_at",
+      "image_render_wall_s",
+      "parent_pid",
+      "render_wall_s",
+      "request_before_at"
+     ],
+     "keys_only_the_branch_writes": [],
+     "unexpected_differences": []
+    },
+    "llm_response.json": {
+     "keys_compared": 69,
+     "run_dependent_keys_that_differ": [
+      "arrived_at_step",
+      "callback_elapsed_s",
+      "callback_started_at",
+      "elapsed_since_request_s",
+      "image_render_wall_s",
+      "ipc_bytes_received",
+      "ipc_select_calls",
+      "parent_pid",
+      "render_wall_s",
+      "request_before_at",
+      "response_after_at",
+      "solver_stall_s",
+      "worker_wait_elapsed_s"
+     ],
+     "keys_only_the_branch_writes": [],
+     "unexpected_differences": []
+    },
+    "llm_result.json": {
+     "keys_compared": 69,
+     "run_dependent_keys_that_differ": [
+      "arrived_at_step",
+      "callback_elapsed_s",
+      "callback_started_at",
+      "cleanup_elapsed_before_result_write_s",
+      "elapsed_since_request_s",
+      "image_render_wall_s",
+      "ipc_bytes_received",
+      "ipc_select_calls",
+      "parent_pid",
+      "render_wall_s",
+      "request_before_at",
+      "response_after_at",
+      "solver_stall_s",
+      "worker_wait_elapsed_s"
+     ],
+     "keys_only_the_branch_writes": [],
+     "unexpected_differences": []
+    }
+   },
+   "branch_telemetry_line": "PYTHON LLM telemetry lines=1250 appends=3 failed_appends=0 file=telemetry.jsonl",
+   "callback_wall": {
+    "main": {
+     "steps": 1250,
+     "median_s": 0.000106736,
+     "at_steps_s": {
+      "100": 0.012477213,
+      "499": 7.8622e-05,
+      "500": 0.0004567,
+      "501": 0.000103241,
+      "999": 8.6715e-05,
+      "1000": 0.004949477,
+      "1001": 0.000100606,
+      "1249": 0.000106276,
+      "1250": 0.053197777
+     }
+    },
+    "branch": {
+     "steps": 1250,
+     "median_s": 0.000216597,
+     "at_steps_s": {
+      "100": 0.014897958,
+      "499": 0.000207823,
+      "500": 0.017272811,
+      "501": 0.000508691,
+      "999": 0.000217638,
+      "1000": 0.016581176,
+      "1001": 0.000771039,
+      "1249": 0.000192769,
+      "1250": 0.02113314
+     }
+    }
+   },
+   "pass": false
+  }
+ },
+ "computed_trends": {
+  "recorded": {
+   "max_speed_trend": "increasing",
+   "max_speed_relative_change": 0.02441143509489651,
+   "max_speed_first_last": [
+    37.210299087808764,
+    38.14138503297058
+   ],
+   "min_pressure_trend": "more_negative",
+   "min_pressure_relative_change": -0.10940130362320755,
+   "min_pressure_first_last": [
+    -335.03879473013546,
+    -376.195020375808
+   ],
+   "fastest_flow_region": "moves",
+   "fastest_flow_moved_percent": 6.924749915066403,
+   "tolerances": {
+    "relative_change": 0.02,
+    "region_percent": 5.0
+   },
+   "frames": [
+    {
+     "step": 100,
+     "time_s": 0.1005000000000005,
+     "max_speed_m_per_s": 37.210299087808764,
+     "min_pressure_m2_per_s2": -335.03879473013546,
+     "fastest_flow_percent": [
+      27.495947331666244,
+      42.32432987370333
+     ]
+    },
+    {
+     "step": 150,
+     "time_s": 0.10075000000000076,
+     "max_speed_m_per_s": 38.09109480076278,
+     "min_pressure_m2_per_s2": -367.852437753326,
+     "fastest_flow_percent": [
+      30.987293302783783,
+      43.180345586539964
+     ]
+    },
+    {
+     "step": 200,
+     "time_s": 0.101000000000001,
+     "max_speed_m_per_s": 38.14138503297058,
+     "min_pressure_m2_per_s2": -376.195020375808,
+     "fastest_flow_percent": [
+      33.60573061504495,
+      45.583579728556174
+     ]
+    }
+   ]
+  },
+  "equal_to_answer_key": true,
+  "status": "disabled"
+ },
+ "tn_form": {
+  "body_equals_builder": true,
+  "system_prompt_is_tn": true,
+  "frames_identical_to_sequence_new": true,
+  "body_bytes": 667051,
+  "body_sha256": "6976b120bec710faa8b51a8aa6a4d7136b4fb1cc36f9eb99a30259d6e445a02c",
+  "note": {
+   "task": "describe how the flow changes from the first time to the last",
+   "times": 3,
+   "images": 6,
+   "frames": [
+    {
+     "time": 1,
+     "step": 100,
+     "time_s": 0.1005000000000005,
+     "images": [
+      1,
+      2
+     ],
+     "max_speed_m_per_s": 37.2103,
+     "min_pressure_m2_per_s2": -335.039
+    },
+    {
+     "time": 2,
+     "step": 150,
+     "time_s": 0.10075000000000076,
+     "images": [
+      3,
+      4
+     ],
+     "max_speed_m_per_s": 38.0911,
+     "min_pressure_m2_per_s2": -367.852
+    },
+    {
+     "time": 3,
+     "step": 200,
+     "time_s": 0.101000000000001,
+     "images": [
+      5,
+      6
+     ],
+     "max_speed_m_per_s": 38.1414,
+     "min_pressure_m2_per_s2": -376.195
+    }
+   ],
+   "plotted_axes": [
+    "x",
+    "y"
+   ],
+   "plotted_range_m": {
+    "x": [
+     0.0,
+     0.12
+    ],
+    "y": [
+     0.0,
+     0.04
+    ]
+   }
+  },
+  "sequence_prompt": "tn",
+  "computed_trends_equal_to_sequence_new": true
+ },
+ "sequence_body_equals_default_builder": true,
+ "status": "FAIL"
+}

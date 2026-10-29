@@ -1,0 +1,2595 @@
+{
+ "key_problems": [],
+ "items": 70,
+ "groups": {
+  "scored unstable": 27,
+  "early unstable": 16,
+  "scored stable": 27
+ },
+ "jobs": {
+  "window-test-24929533": {
+   "models": {
+    "gemma-4-12b-it-qat-q4_0-vision": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 32,
+      "unstable": {
+       "items": 27,
+       "unstable": 5,
+       "stable": 22,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       1
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       3,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     },
+     "first_unstable_answer_by_run": {
+      "central-dt2e-5": {
+       "largest_steps_to_crash_said_unstable": 4,
+       "said_unstable_at": [
+        1,
+        3,
+        4
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        15,
+        20,
+        30,
+        50,
+        75,
+        100,
+        150,
+        200,
+        300,
+        400,
+        460
+       ]
+      },
+      "central-dt3e-5": {
+       "largest_steps_to_crash_said_unstable": 1,
+       "said_unstable_at": [
+        1
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        16,
+        20,
+        24
+       ]
+      },
+      "central-dt4e-5": {
+       "largest_steps_to_crash_said_unstable": 1,
+       "said_unstable_at": [
+        1
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+       ]
+      }
+     },
+     "invalid_answers": [],
+     "answer_words": {
+      "unstable": 5,
+      "stable": 65
+     },
+     "unstable_items_said_unstable_where_peak_rule_20_and_jump_rule_50_say_stable": [],
+     "false_alarms": [],
+     "reasons": {
+      "central-dt2e-5-steps00464-00465-00466": "The velocity magnitude |U| jumps from values around 10^1 to 10^40 between time 2 and time 3, and the pressure p jumps from 10^2 to 10^39 in the same interval. This extreme, non-physical growth in magnitude indicates a numerical explosion.",
+      "central-dt2e-5-steps00463-00464-00465": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00460-00462-00464": "The velocity magnitude |U| shows a rapid and non-physical increase in the maximum value from 39.75 m/s at time 1 to 51.99 m/s at time 2, and then to 96.52 m/s at time 3 within a very short time interval. This exponential growth of the maximum value without a clear physical cause suggests numerical-D",
+      "central-dt2e-5-steps00461-00462-00463": "The velocity magnitude |U| shows a rapid and non-physical increase in the maximum value from 41.31 m/s at time 1 to 51.99 m/s at time 2, and then to 86.42 m/s at time 3 within a very short time interval (0.00004 s). This exponential growth of extremes without a clear physical cause suggests a lackof",
+      "central-dt2e-5-steps00460-00461-00462": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and consistent structures across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00457-00459-00461": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous gradients and coherent structures. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values over the three time steps.",
+      "central-dt2e-5-steps00454-00457-00460": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00457-00458-00459": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00456-00457-00458": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00453-00455-00457": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00453-00454-00455": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00450-00451-00452": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00441-00444-00447": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00431-00434-00437": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00415-00416-00417": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00388-00390-00392": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00363-00365-00367": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous gradients and coherent structures. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values between time steps.",
+      "central-dt2e-5-steps00315-00316-00317": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00263-00265-00267": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00165-00166-00167": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00065-00066-00067": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt2e-5-steps00003-00005-00007": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00020-00023-00026": "The velocity magnitude |U| shows a sudden, non-physical jump in the maximum value from approximately 39 m/s at time 2 to over 84 m/s at time 3, accompanied by a localized high-gradient spike that does not correspond to a smooth flow evolution.",
+      "central-dt3e-5-steps00019-00022-00025": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00022-00023-00024": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00019-00021-00023": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00016-00019-00022": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00019-00020-00021": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00018-00019-00020": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00013-00016-00019": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00012-00015-00018": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00015-00016-00017": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00013-00014-00015": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00005-00008-00011": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00005-00006-00007": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00001-00002-00003": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt4e-5-steps00003-00006-00009": "The velocity magnitude |U| jumps from ~36 m/s in the first two steps to ~3.05e+08 m/s in the final step, indicating a massive numerical explosion. The pressure field also shows extreme values and high-frequency oscillations in the final frame.",
+      "central-dt4e-5-steps00006-00007-00008": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt4e-5-steps00005-00006-00007": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt4e-5-steps00002-00004-00006": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt4e-5-steps00001-00003-00005": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt4e-5-steps00002-00003-00004": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "central-dt4e-5-steps00001-00002-00003": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "upwind-dt2e-5-steps00060-00080-00100": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values over the three time steps.",
+      "upwind-dt2e-5-steps00270-00280-00290": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and consistent structures across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in values.",
+      "upwind-dt2e-5-steps00650-00660-00670": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and consistent evolution over the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "upwind-dt2e-5-steps00800-00820-00840": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve consistently over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values.",
+      "upwind-dt2e-5-steps01320-01340-01360": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous transitions between cells. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values over the three time steps.",
+      "upwind-dt2e-5-steps01550-01560-01570": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "upwind-dt2e-5-steps01680-01690-01700": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "upwind-dt4e-5-steps00170-00190-00210": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous transitions between cells. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in extreme values over the three time steps.",
+      "upwind-dt4e-5-steps00270-00280-00290": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and consistent evolution over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "upwind-dt4e-5-steps00610-00630-00650": "The flow fields for velocity magnitude and kinematic pressure show smooth, continuous transitions and coherent structures (like the moving vortex/recirculation zone) across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in values.",
+      "upwind-dt4e-5-steps00970-00980-00990": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous transitions and coherent structures. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values between time steps.",
+      "upwind-dt4e-5-steps01200-01210-01220": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values over the three time steps.",
+      "upwind-dt4e-5-steps01550-01570-01590": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous transitions between cells. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values over the three time steps.",
+      "upwind-dt4e-5-steps01720-01740-01760": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and continuous evolution of features over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values.",
+      "developed-steps07908-08308-08708": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth of extreme values over time.",
+      "developed-steps09908-10308-10708": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve consistently over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+      "developed-steps11508-11708-11908": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and coherent structures (like the moving vortex/wake) that evolve consistently over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values.",
+      "developed-steps13708-13908-14108": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth of extreme values over the three time steps.",
+      "developed-steps15708-16108-16508": "The flow fields show smooth transitions in velocity and pressure. The structures, such as the pressure fluctuations and velocity gradients, evolve consistently over time without any high-frequency oscillations, checkerboard patterns, or non-physical growth in extreme values.",
+      "developed-steps16508-16908-17308": "The flow fields for velocity and pressure show smooth, continuous transitions and physical evolution of features (like the moving vortex/recirculation zone) over time. There are no signs of checkerboard patterns, high-frequency oscillations, or non-physical growth in values.",
+      "developed-steps19908-20108-20308": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous transitions and evolving structures (vortices and pressure gradients) over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme",
+      "central-dt5e-6-steps00200-00300-00400": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous transitions between cells. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth of extreme values over the three time steps.",
+      "central-dt5e-6-steps01150-01200-01250": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous gradients and coherent structures. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values over the three time steps.",
+      "central-dt5e-6-steps01350-01400-01450": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous transitions between cells. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in extreme values over the three time steps.",
+      "central-dt5e-6-steps02250-02300-02350": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and consistent evolution of features (like the central vortex and boundary layer) across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth inि",
+      "central-dt5e-6-steps02600-02650-02700": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous transitions between time steps. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in extreme values.",
+      "central-dt5e-6-steps03300-03400-03500": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous transitions and coherent structures (vortices) that evolve physically over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth in the/a"
+     },
+     "reasons_giving_a_short_time_between_frames": {
+      "central-dt2e-5-steps00460-00462-00464": {
+       "answer": "unstable",
+       "interval_s": []
+      },
+      "central-dt2e-5-steps00461-00462-00463": {
+       "answer": "unstable",
+       "interval_s": [
+        4e-05
+       ]
+      }
+     }
+    },
+    "gemma-4-26B-A4B-it-qat-q4_0-vision": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 30,
+      "unstable": {
+       "items": 27,
+       "unstable": 3,
+       "stable": 24,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       0
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       1,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     },
+     "first_unstable_answer_by_run": {
+      "central-dt2e-5": {
+       "largest_steps_to_crash_said_unstable": 1,
+       "said_unstable_at": [
+        1
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        15,
+        20,
+        30,
+        50,
+        75,
+        100,
+        150,
+        200,
+        300,
+        400,
+        460
+       ]
+      },
+      "central-dt3e-5": {
+       "largest_steps_to_crash_said_unstable": 1,
+       "said_unstable_at": [
+        1
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        16,
+        20,
+        24
+       ]
+      },
+      "central-dt4e-5": {
+       "largest_steps_to_crash_said_unstable": 1,
+       "said_unstable_at": [
+        1
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+       ]
+      }
+     },
+     "invalid_answers": [],
+     "answer_words": {
+      "unstable": 3,
+      "stable": 67
+     },
+     "unstable_items_said_unstable_where_peak_rule_20_and_jump_rule_50_say_stable": [],
+     "false_alarms": [],
+     "reasons": {
+      "central-dt2e-5-steps00464-00465-00466": "At the final time step, the velocity magnitude and pressure values explode to extreme, unphysical magnitudes (e.g., |U| ~ 10^40 m/s and p ~ 10^39 m^2/s^2), indicating a severe numerical divergence.",
+      "central-dt2e-5-steps00463-00464-00465": "The velocity and pressure fields show smooth, consistent evolution over the three time steps. There are no signs of checkerboard patterns, unphysical oscillations, or diverging extremes.",
+      "central-dt2e-5-steps00460-00462-00464": "The flow features, including velocity magnitude and pressure distributions, appear smooth and evolve consistently across the three time steps without any signs of checkerboard patterns or unphysical oscillations.",
+      "central-dt2e-5-steps00461-00462-00463": "The velocity magnitude and pressure fields show smooth, continuous transitions between time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00460-00461-00462": "The velocity and pressure fields show smooth, consistent spatial distributions across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00457-00459-00461": "The velocity and pressure fields show smooth, consistent evolution over time. The features, such as the high-velocity region and the pressure gradient, move and change in a physically plausible manner without oscillations or checkerboard patterns.",
+      "central-dt2e-5-steps00454-00457-00460": "The velocity and pressure fields show smooth, consistent evolution over time. The flow structures, including the velocity gradients and pressure distribution, develop naturally without any signs of checkerboard patterns, oscillations, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00457-00458-00459": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of oscillating values, checkerboard patterns, or uncontrolled growth in extremes.",
+      "central-dt2e-5-steps00456-00457-00458": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00453-00455-00457": "The velocity and pressure fields appear smooth and consistent across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00453-00454-00455": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00450-00451-00452": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00441-00444-00447": "The velocity and pressure fields show smooth, continuous distributions across all time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00431-00434-00437": "The velocity and pressure fields show smooth, consistent evolution over time. There are no signs of checkerboard patterns, unphysical oscillations, or diverging extremes in the magnitude or pressure values.",
+      "central-dt2e-5-steps00415-00416-00417": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00388-00390-00392": "The velocity and pressure fields show smooth, consistent spatial distributions across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00363-00365-00367": "The velocity and pressure fields show smooth, consistent evolution over time. There are no signs of checkerboard patterns, unphysical oscillations, or diverging extremes.",
+      "central-dt2e-5-steps00315-00316-00317": "The velocity and pressure fields show smooth, continuous patterns across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00263-00265-00267": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00165-00166-00167": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of oscillations, checkerboard patterns, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00065-00066-00067": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of oscillations, checkerboard patterns, or unphysical growth in extremes.",
+      "central-dt2e-5-steps00003-00005-00007": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt3e-5-steps00020-00023-00026": "In the final time step, the velocity magnitude |U| shows a localized, extreme spike (checkerboard-like pattern) near x=15%, y=30% that was not present in previous steps, indicating numerical instability.",
+      "central-dt3e-5-steps00019-00022-00025": "The velocity and pressure fields show smooth, continuous transitions and evolving structures over time without any signs of checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes.",
+      "central-dt3e-5-steps00022-00023-00024": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt3e-5-steps00019-00021-00023": "The velocity and pressure fields show smooth, continuous transitions and evolving structures over time without any signs of checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes.",
+      "central-dt3e-5-steps00016-00019-00022": "The velocity and pressure fields show smooth, continuous transitions and consistent patterns across the three time steps. There are no signs of checkerboard patterns, unphysical oscillations, or diverging extremes.",
+      "central-dt3e-5-steps00019-00020-00021": "The velocity and pressure fields show smooth, continuous transitions between time steps. The features, such as the high-velocity regions and pressure fluctuations, evolve smoothly without any signs of checkerboard patterns, oscillations, or unphysical growth in extremes.",
+      "central-dt3e-5-steps00018-00019-00020": "The velocity and pressure fields show smooth, continuous transitions and consistent patterns over the three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt3e-5-steps00013-00016-00019": "The velocity and pressure fields show smooth, continuous structures that evolve steadily over time without any signs of checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes.",
+      "central-dt3e-5-steps00012-00015-00018": "The velocity and pressure fields show smooth, continuous spatial distributions and consistent temporal evolution of features (like the pressure vortices) without any signs of checkerboard patterns, oscillations, or unphysical growth in extremes.",
+      "central-dt3e-5-steps00015-00016-00017": "The velocity magnitude and kinematic pressure fields show smooth, consistent evolution over the three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt3e-5-steps00013-00014-00015": "The velocity and pressure fields show smooth, consistent patterns across all three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt3e-5-steps00005-00008-00011": "The velocity and pressure fields show smooth, continuous spatial distributions and temporal evolution. There are no signs of checkerboard patterns, unphysical oscillations between adjacent cells, or diverging extremes.",
+      "central-dt3e-5-steps00005-00006-00007": "The velocity and pressure fields show smooth, continuous spatial distributions and consistent temporal evolution of features (like the pressure pockets) without any signs of checkerboard patterns, oscillations, or diverging extremes.",
+      "central-dt3e-5-steps00001-00002-00003": "The velocity and pressure fields show smooth, consistent evolution over time. There are no signs of checkerboard patterns, oscillating values between adjacent cells, or unphysical growth in extremes.",
+      "central-dt4e-5-steps00003-00006-00009": "The velocity magnitude and pressure values explode from ~36 m/s and ~47 m^2/s^2 to ~3e8 m/s and ~4e8 m^2/s^2 in a very short time interval, indicating a severe numerical divergence.",
+      "central-dt4e-5-steps00006-00007-00008": "The velocity magnitude and kinematic pressure fields show smooth, continuous spatial distributions and consistent temporal evolution without oscillations, checkerboard patterns, or diverging extremes.",
+      "central-dt4e-5-steps00005-00006-00007": "The velocity and pressure fields show smooth, continuous spatial distributions and consistent temporal evolution. There are no signs of checkerboard patterns, unphysical oscillations, or diverging extremes.",
+      "central-dt4e-5-steps00002-00004-00006": "The velocity and pressure fields show smooth, continuous spatial distributions and consistent temporal evolution without oscillations, checkerboard patterns, or unphysical growth in extremes.",
+      "central-dt4e-5-steps00001-00003-00005": "The velocity and pressure fields show smooth, consistent evolution over the three time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt4e-5-steps00002-00003-00004": "The velocity and pressure fields show smooth, consistent evolution over time. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "central-dt4e-5-steps00001-00002-00003": "The velocity and pressure fields show smooth, continuous distributions across all time steps. There are no signs of checkerboard patterns, oscillating cell values, or unphysical growth in extremes.",
+      "upwind-dt2e-5-steps00060-00080-00100": "The velocity and pressure fields show smooth, continuous evolution of features (vortices and pressure fluctuations) over time without any signs of checkerboard patterns, unphysical oscillations, or diverging extremes.",
+      "upwind-dt2e-5-steps00270-00280-00290": "The velocity magnitude and pressure fields show smooth, consistent evolution over time. There are no signs of checkerboard patterns, unphysical oscillations, or diverging extremes in the scalar values.",
+      "upwind-dt2e-5-steps00650-00660-00670": "The velocity magnitude and kinematic pressure fields show smooth, continuous spatial distributions and consistent temporal evolution without oscillations, checkerboard patterns, or unphysical growth in extremes.",
+      "upwind-dt2e-5-steps00800-00820-00840": "The velocity and pressure fields show smooth, continuous transitions and evolving structures (vortices) without checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes.",
+      "upwind-dt2e-5-steps01320-01340-01360": "The velocity and pressure fields show smooth, continuous spatial distributions and temporal evolution of features (like the moving low-pressure/low-velocity regions) without checkerboard patterns or unphysical oscillations.",
+      "upwind-dt2e-5-steps01550-01560-01570": "The velocity magnitude and kinematic pressure fields show smooth, continuous spatial distributions and consistent temporal evolution without checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes.",
+      "upwind-dt2e-5-steps01680-01690-01700": "The velocity and pressure fields show smooth, continuous spatial distributions and temporal evolution. There are no signs of checkerboard patterns, unphysical oscillations between adjacent cells, or diverging extremes.",
+      "upwind-dt4e-5-steps00170-00190-00210": "The velocity and pressure fields show smooth, continuous transitions and evolving structures (vortices) over time without any signs of checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes.",
+      "upwind-dt4e-5-steps00270-00280-00290": "The velocity and pressure fields show smooth, continuous transitions and evolving flow structures without checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes.",
+      "upwind-dt4e-5-steps00610-00630-00650": "The velocity and pressure fields show smooth, continuous transitions and evolving structures (vortices) over time without any signs of checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes.",
+      "upwind-dt4e-5-steps00970-00980-00990": "The velocity and pressure fields show smooth, continuous spatial distributions and temporal evolution of features (like the moving low-pressure region) without checkerboard patterns or unphysical oscillations.",
+      "upwind-dt4e-5-steps01200-01210-01220": "The velocity and pressure fields show smooth, continuous transitions and consistent patterns over time. There are no signs of checkerboard patterns, unphysical oscillations, or diverging extremes.",
+      "upwind-dt4e-5-steps01550-01570-01590": "The velocity and pressure fields show smooth, continuous spatial distributions and temporal evolution of features (like the pressure pockets) without any signs of checkerboard patterns, oscillations between adjacent cells, or unphysical growth in magnitude.",
+      "upwind-dt4e-5-steps01720-01740-01760": "The velocity and pressure fields show smooth, continuous transitions and moving features (vortices/pressure fluctuations) consistent with unsteady flow. No checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes are visible.",
+      "developed-steps07908-08308-08708": "The velocity and pressure fields show smooth, continuous transitions and evolving structures (vortices/pressure fluctuations) without checkerboard patterns, oscillations between adjacent cells, or unphysical growth in magnitude.",
+      "developed-steps09908-10308-10708": "The velocity and pressure fields show smooth, continuous spatial distributions and temporal evolution of features (like the moving high-velocity/low-pressure region) without checkerboard patterns or unphysical oscillations.",
+      "developed-steps11508-11708-11908": "The velocity and pressure fields show smooth, continuous evolution of features (vortices and pressure fluctuations) over time without any signs of checkerboard patterns, unphysical oscillations, or diverging extremes.",
+      "developed-steps13708-13908-14108": "The velocity and pressure fields show smooth, continuous transitions and evolving structures (vortices/pressure fluctuations) over time without any signs of checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes.",
+      "developed-steps15708-16108-16508": "The velocity and pressure fields show smooth, continuous transitions and evolving structures (vortices/pressure fluctuations) without checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes.",
+      "developed-steps16508-16908-17308": "The velocity and pressure fields show smooth, continuous transitions and moving features (vortices/pressure fluctuations) consistent with unsteady flow. No checkerboard patterns or unphysical oscillations are visible.",
+      "developed-steps19908-20108-20308": "The velocity and pressure fields show smooth, continuous spatial distributions and temporal evolution. There are no signs of checkerboard patterns, unphysical oscillations between adjacent cells, or diverging extremes.",
+      "central-dt5e-6-steps00200-00300-00400": "The velocity and pressure fields show smooth, evolving structures consistent with unsteady flow. No checkerboard patterns, unphysical oscillations, or diverging extremes are visible across the three time steps.",
+      "central-dt5e-6-steps01150-01200-01250": "The velocity and pressure fields show smooth, evolving structures consistent with unsteady flow. No checkerboard patterns, oscillations between adjacent cells, or unphysical growth in extremes are visible across the three time steps.",
+      "central-dt5e-6-steps01350-01400-01450": "The velocity and pressure fields show smooth, evolving structures (vortices) that move and change shape over time without any signs of checkerboard patterns, oscillations between adjacent cells, or unphysical growth in magnitude.",
+      "central-dt5e-6-steps02250-02300-02350": "The velocity and pressure fields show smooth, continuous spatial distributions and consistent temporal evolution of features like vortices and pressure gradients without checkerboard patterns or unphysical oscillations.",
+      "central-dt5e-6-steps02600-02650-02700": "The velocity and pressure fields show smooth, continuous spatial distributions and consistent temporal evolution of the flow structures without checkerboard patterns or unphysical oscillations.",
+      "central-dt5e-6-steps03300-03400-03500": "The velocity and pressure fields show smooth, evolving structures (vortices and pressure gradients) consistent with unsteady flow. No checkerboard patterns, unphysical oscillations, or diverging extremes are visible across the three time steps."
+     },
+     "reasons_giving_a_short_time_between_frames": {
+      "central-dt4e-5-steps00003-00006-00009": {
+       "answer": "unstable",
+       "interval_s": []
+      }
+     }
+    },
+    "gemma-4-31B-it-qat-q4_0-vision": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 33,
+      "unstable": {
+       "items": 27,
+       "unstable": 6,
+       "stable": 21,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       4,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     },
+     "first_unstable_answer_by_run": {
+      "central-dt2e-5": {
+       "largest_steps_to_crash_said_unstable": 5,
+       "said_unstable_at": [
+        1,
+        3,
+        4,
+        5
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        15,
+        20,
+        30,
+        50,
+        75,
+        100,
+        150,
+        200,
+        300,
+        400,
+        460
+       ]
+      },
+      "central-dt3e-5": {
+       "largest_steps_to_crash_said_unstable": 1,
+       "said_unstable_at": [
+        1
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        16,
+        20,
+        24
+       ]
+      },
+      "central-dt4e-5": {
+       "largest_steps_to_crash_said_unstable": 1,
+       "said_unstable_at": [
+        1
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+       ]
+      }
+     },
+     "invalid_answers": [],
+     "answer_words": {
+      "unstable": 6,
+      "stable": 64
+     },
+     "unstable_items_said_unstable_where_peak_rule_20_and_jump_rule_50_say_stable": [],
+     "false_alarms": [],
+     "reasons": {
+      "central-dt2e-5-steps00464-00465-00466": "The velocity magnitude |U| and kinematic pressure p exhibit an explosive increase in values between time 2 and time 3, jumping from magnitudes of ~10^2 to ~10^40, which is a clear sign of numerical divergence.",
+      "central-dt2e-5-steps00463-00464-00465": "The velocity and pressure fields evolve smoothly over the three time steps. There are no signs of checkerboarding, high-frequency oscillations between cells, or non-physical growth of extrema.",
+      "central-dt2e-5-steps00460-00462-00464": "The maximum velocity magnitude |U| increases rapidly from 39.75 m/s to 96.52 m/s over a very short time interval (0.00008 s) in a localized region, indicating a non-physical growth of extremes.",
+      "central-dt2e-5-steps00461-00462-00463": "The maximum velocity magnitude |U| increases rapidly from 41.31 m/s to 86.42 m/s over a very short time interval (0.00004 s) without a corresponding physical change in the flow structure, indicating numerical instability.",
+      "central-dt2e-5-steps00460-00461-00462": "The velocity magnitude |U| shows a rapid increase in its maximum value from 39.75 to 51.99 m/s over a very short time interval (0.00004 s), and high-frequency spatial oscillations are appearing in the velocity field near the shear layer.",
+      "central-dt2e-5-steps00457-00459-00461": "The velocity and pressure fields evolve smoothly over the three time steps. There are no signs of checkerboarding, high-frequency oscillations between adjacent cells, or non-physical growth of extrema.",
+      "central-dt2e-5-steps00454-00457-00460": "The velocity and pressure fields evolve smoothly over the three time steps. There are no checkerboard patterns, cell-to-cell oscillations, or uncontrolled growth of extreme values.",
+      "central-dt2e-5-steps00457-00458-00459": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or diverging extrema.",
+      "central-dt2e-5-steps00456-00457-00458": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or diverging extrema.",
+      "central-dt2e-5-steps00453-00455-00457": "The velocity and pressure fields evolve smoothly over the three time steps. There are no signs of checkerboarding, high-frequency oscillations between adjacent cells, or non-physical growth of extrema.",
+      "central-dt2e-5-steps00453-00454-00455": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values.",
+      "central-dt2e-5-steps00450-00451-00452": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values.",
+      "central-dt2e-5-steps00441-00444-00447": "The velocity and pressure fields evolve smoothly over the three time steps. There are no signs of checkerboarding, high-frequency oscillations between cells, or uncontrolled growth of extreme values.",
+      "central-dt2e-5-steps00431-00434-00437": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging extrema.",
+      "central-dt2e-5-steps00415-00416-00417": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging extrema. The changes between frames are minimal and physically consistent.",
+      "central-dt2e-5-steps00388-00390-00392": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or uncontrolled growth of extrema.",
+      "central-dt2e-5-steps00363-00365-00367": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or uncontrolled growth of extrema. The changes between frames are minimal and physically consistent.",
+      "central-dt2e-5-steps00315-00316-00317": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values.",
+      "central-dt2e-5-steps00263-00265-00267": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or unphysical growth in extrema. The changes between frames are gradual and consistent.",
+      "central-dt2e-5-steps00165-00166-00167": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or diverging values.",
+      "central-dt2e-5-steps00065-00066-00067": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values.",
+      "central-dt2e-5-steps00003-00005-00007": "The velocity and pressure fields are smooth and evolve consistently across the three time steps. There are no signs of checkerboarding, high-frequency oscillations, or uncontrolled growth of extrema.",
+      "central-dt3e-5-steps00020-00023-00026": "In Time 3, the velocity magnitude |U| shows a sudden, localized spike (reaching 84.63 m/s compared to ~39 m/s in previous times) with a checkerboard-like oscillation pattern around x=15%, y=30%, indicating numerical instability.",
+      "central-dt3e-5-steps00019-00022-00025": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between cells, or non-physical growth of extrema.",
+      "central-dt3e-5-steps00022-00023-00024": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging extrema.",
+      "central-dt3e-5-steps00019-00021-00023": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between cells, or non-physical growth of extremes.",
+      "central-dt3e-5-steps00016-00019-00022": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or non-physical growth of extrema.",
+      "central-dt3e-5-steps00019-00020-00021": "The velocity and pressure fields are smooth and evolve consistently across the three time steps. There are no signs of checkerboarding, high-frequency oscillations, or diverging values.",
+      "central-dt3e-5-steps00018-00019-00020": "The velocity and pressure fields evolve smoothly over time without any signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in extreme values.",
+      "central-dt3e-5-steps00013-00016-00019": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or non-physical growth of extrema.",
+      "central-dt3e-5-steps00012-00015-00018": "The velocity and pressure fields evolve smoothly over time without any signs of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes.",
+      "central-dt3e-5-steps00015-00016-00017": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values.",
+      "central-dt3e-5-steps00013-00014-00015": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth in extrema.",
+      "central-dt3e-5-steps00005-00008-00011": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or uncontrolled growth of extrema.",
+      "central-dt3e-5-steps00005-00006-00007": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values. The maximum and minimum values on the colour bars are stable.",
+      "central-dt3e-5-steps00001-00002-00003": "The velocity and pressure fields are smooth and evolve consistently across the three time steps. There are no signs of checkerboarding, high-frequency oscillations, or uncontrolled growth of extrema.",
+      "central-dt4e-5-steps00003-00006-00009": "At time 3, the velocity magnitude and pressure show extreme, non-physical growth (up to 10^8) and a high-frequency checkerboard oscillation pattern, indicating a complete numerical breakdown compared to the smooth fields at times 1 and 2.",
+      "central-dt4e-5-steps00006-00007-00008": "The velocity magnitude and kinematic pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or diverging extremes.",
+      "central-dt4e-5-steps00005-00006-00007": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values. The maximum and minimum values on the colour bars are stable over time.",
+      "central-dt4e-5-steps00002-00004-00006": "The velocity and pressure fields are smooth and evolve consistently across the three time steps. There are no signs of checkerboarding, high-frequency oscillations, or uncontrolled growth of extrema.",
+      "central-dt4e-5-steps00001-00003-00005": "The velocity and pressure fields remain smooth across all time steps, with no evidence of cell-to-cell oscillations, checkerboard patterns, or uncontrolled growth of extrema.",
+      "central-dt4e-5-steps00002-00003-00004": "The velocity and pressure fields are smooth and show no signs of cell-to-cell oscillations or checkerboard patterns. The maximum and minimum values remain consistent across the three time steps.",
+      "central-dt4e-5-steps00001-00002-00003": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or diverging values. The flow features evolve consistently and stably.",
+      "upwind-dt2e-5-steps00060-00080-00100": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or diverging values. The changes are consistent with a physical unsteady flow.",
+      "upwind-dt2e-5-steps00270-00280-00290": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth in extrema.",
+      "upwind-dt2e-5-steps00650-00660-00670": "The velocity and pressure fields evolve smoothly over time without any high-frequency spatial oscillations, checkerboard patterns, or non-physical growth in extreme values.",
+      "upwind-dt2e-5-steps00800-00820-00840": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or divergent values. The changes in the flow structures are consistent and physically plausible.",
+      "upwind-dt2e-5-steps01320-01340-01360": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or non-physical growth of extremes.",
+      "upwind-dt2e-5-steps01550-01560-01570": "The velocity and pressure fields are smooth and evolve consistently across the three time steps. There are no signs of checkerboarding, high-frequency oscillations, or unphysical growth in magnitudes.",
+      "upwind-dt2e-5-steps01680-01690-01700": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or uncontrolled growth of extrema.",
+      "upwind-dt4e-5-steps00170-00190-00210": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth of extrema.",
+      "upwind-dt4e-5-steps00270-00280-00290": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or uncontrolled growth of extrema.",
+      "upwind-dt4e-5-steps00610-00630-00650": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or non-physical growth in extrema.",
+      "upwind-dt4e-5-steps00970-00980-00990": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes.",
+      "upwind-dt4e-5-steps01200-01210-01220": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or non-physical growth of extremes.",
+      "upwind-dt4e-5-steps01550-01570-01590": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or non-physical growth in extrema.",
+      "upwind-dt4e-5-steps01720-01740-01760": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extrema.",
+      "developed-steps07908-08308-08708": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or uncontrolled growth of extrema. The changes are consistent with unsteady flow development.",
+      "developed-steps09908-10308-10708": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or uncontrolled growth of extrema.",
+      "developed-steps11508-11708-11908": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth of extremes. The changes are consistent with unsteady flow development.",
+      "developed-steps13708-13908-14108": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth in extrema.",
+      "developed-steps15708-16108-16508": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or non-physical growth of extremes.",
+      "developed-steps16508-16908-17308": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth in magnitudes.",
+      "developed-steps19908-20108-20308": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or non-physical growth of extrema.",
+      "central-dt5e-6-steps00200-00300-00400": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extrema.",
+      "central-dt5e-6-steps01150-01200-01250": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or non-physical growth of extremes. The changes observed are consistent with unsteady flow development.",
+      "central-dt5e-6-steps01350-01400-01450": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or uncontrolled growth of extrema.",
+      "central-dt5e-6-steps02250-02300-02350": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or non-physical growth in extrema.",
+      "central-dt5e-6-steps02600-02650-02700": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extrema.",
+      "central-dt5e-6-steps03300-03400-03500": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth in extreme values."
+     },
+     "reasons_giving_a_short_time_between_frames": {
+      "central-dt2e-5-steps00460-00461-00462": {
+       "answer": "unstable",
+       "interval_s": [
+        4e-05
+       ]
+      },
+      "central-dt2e-5-steps00460-00462-00464": {
+       "answer": "unstable",
+       "interval_s": [
+        8e-05
+       ]
+      },
+      "central-dt2e-5-steps00461-00462-00463": {
+       "answer": "unstable",
+       "interval_s": [
+        4e-05
+       ]
+      }
+     }
+    }
+   },
+   "rules": {
+    "peak |U| grows > 5 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 30,
+      "unstable": {
+       "items": 27,
+       "unstable": 6,
+       "stable": 21,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 3,
+       "stable": 24,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       4,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       1,
+       7
+      ],
+      "developed": [
+       1,
+       7
+      ],
+      "central-dt5e-6": [
+       1,
+       6
+      ]
+     }
+    },
+    "peak |U| grows > 10 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 33,
+      "unstable": {
+       "items": 27,
+       "unstable": 6,
+       "stable": 21,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       4,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "peak |U| grows > 20 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 33,
+      "unstable": {
+       "items": 27,
+       "unstable": 6,
+       "stable": 21,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       4,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "peak |U| grows > 50 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 32,
+      "unstable": {
+       "items": 27,
+       "unstable": 5,
+       "stable": 22,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       1
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       3,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "peak |U| grows > 100 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 32,
+      "unstable": {
+       "items": 27,
+       "unstable": 5,
+       "stable": 22,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       1
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       3,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "largest |U| jump grows > 20 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 36,
+      "unstable": {
+       "items": 27,
+       "unstable": 14,
+       "stable": 13,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 5,
+       "stable": 22,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       2
+      ],
+      [
+       9,
+       5
+      ],
+      [
+       9,
+       4
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       1
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       7,
+       10
+      ],
+      "central-dt3e-5": [
+       6,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       1,
+       7
+      ],
+      "upwind-dt4e-5": [
+       1,
+       7
+      ],
+      "developed": [
+       3,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "largest |U| jump grows > 50 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 38,
+      "unstable": {
+       "items": 27,
+       "unstable": 11,
+       "stable": 16,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       2
+      ],
+      [
+       9,
+       4
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       6,
+       10
+      ],
+      "central-dt3e-5": [
+       4,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "largest |U| jump grows > 100 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 36,
+      "unstable": {
+       "items": 27,
+       "unstable": 9,
+       "stable": 18,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       2
+      ],
+      [
+       9,
+       4
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       5,
+       10
+      ],
+      "central-dt3e-5": [
+       3,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "largest |U| jump grows > 200 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 32,
+      "unstable": {
+       "items": 27,
+       "unstable": 5,
+       "stable": 22,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       1
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       3,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "best threshold on peak |U|": {
+     "threshold": 0.9935504182934018,
+     "right": 45
+    },
+    "best threshold above 1 on peak |U|": {
+     "threshold": 1.0011563106968446,
+     "right": 38
+    },
+    "best threshold on largest |U| jump": {
+     "threshold": 1.3552122894210121,
+     "right": 39
+    },
+    "best threshold above 1 on largest |U| jump": {
+     "threshold": 1.3552122894210121,
+     "right": 39
+    }
+   }
+  },
+  "window-test-24929534": {
+   "models": {
+    "qwen3.5-35b-a3b-q8_0-vision": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 32,
+      "unstable": {
+       "items": 27,
+       "unstable": 5,
+       "stable": 22,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       1
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       3,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     },
+     "first_unstable_answer_by_run": {
+      "central-dt2e-5": {
+       "largest_steps_to_crash_said_unstable": 5,
+       "said_unstable_at": [
+        1,
+        3,
+        5
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        15,
+        20,
+        30,
+        50,
+        75,
+        100,
+        150,
+        200,
+        300,
+        400,
+        460
+       ]
+      },
+      "central-dt3e-5": {
+       "largest_steps_to_crash_said_unstable": 1,
+       "said_unstable_at": [
+        1
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        16,
+        20,
+        24
+       ]
+      },
+      "central-dt4e-5": {
+       "largest_steps_to_crash_said_unstable": 1,
+       "said_unstable_at": [
+        1
+       ],
+       "items_steps_to_crash": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+       ]
+      }
+     },
+     "invalid_answers": [],
+     "answer_words": {
+      "unstable": 5,
+      "stable": 65
+     },
+     "unstable_items_said_unstable_where_peak_rule_20_and_jump_rule_50_say_stable": [],
+     "false_alarms": [],
+     "reasons": {
+      "central-dt2e-5-steps00464-00465-00466": "At time 3, velocity magnitude jumps to ~1.5e40 m/s and pressure to ~5.8e39 m²/s² — physically impossible values indicating numerical blow-up. Previous times show smooth, bounded fields (~100 m/s, ~400 m²/s²). This extreme growth without physical cause is instability.",
+      "central-dt2e-5-steps00463-00464-00465": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Velocity max decreases slightly (86→90→90 m/s), pressure min stable (~-421 to -425). No instability signs.",
+      "central-dt2e-5-steps00460-00462-00464": "Velocity magnitude increases from 39.75 to 96.52 m/s over 0.00008 s without physical cause; pressure extrema also grow (e.g., min p: -418 → -423.1). No checkerboard or oscillations, but unphysical growth suggests instability.",
+      "central-dt2e-5-steps00461-00462-00463": "Velocity magnitude |U| shows smooth vortex-like structures moving downstream without oscillations or checkerboard patterns. Pressure p also evolves smoothly. No extreme growth or unphysical jumps between time steps. Changes are consistent with unsteady flow, not instability.",
+      "central-dt2e-5-steps00460-00461-00462": "Velocity magnitude max increases from 39.75 to 51.99 m/s over 0.00004 s without physical cause; pressure extrema also grow slightly. No checkerboard or oscillations visible, but unphysical growth suggests instability.",
+      "central-dt2e-5-steps00457-00459-00461": "Velocity and pressure fields evolve smoothly across time steps. Max |U| increases slightly (39.82→41.31), p min changes mildly (-415.4→-418.6). No checkerboard, oscillations, or unphysical spikes. Flow structures appear coherent and physically plausible.",
+      "central-dt2e-5-steps00454-00457-00460": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Max/min values change gradually (e.g., |U| max: 39.69 → 39.82 → 39.75; p min: -415.1 → -415.4 → -418), consistent with physical evolution.",
+      "central-dt2e-5-steps00457-00458-00459": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical growth. Max/min values change gradually (e.g., |U| max: 39.82 → 39.75 → 39.75; p min: -415.4 → -416.3 → -416.3), consistent with physical unsteady flow.",
+      "central-dt2e-5-steps00456-00457-00458": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical growth. Max/min values change gradually (e.g., |U| max: 39.83 → 39.75; p min: -413.8 → -416.3), consistent with physical unsteady flow.",
+      "central-dt2e-5-steps00453-00455-00457": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical extremes. Max/min values change gradually (e.g., |U| max: 39.67→39.77→39.82; p min: -414.8→-414.1→-415.4), consistent with physical unsteady flow.",
+      "central-dt2e-5-steps00453-00454-00455": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical growth. Max values change slightly (e.g., |U|: 39.67→39.77, p: -414.8→-414.1), consistent with physical evolution. No signs of numerical instability.",
+      "central-dt2e-5-steps00450-00451-00452": "No checkerboard, oscillations, or unphysical extremes. Velocity and pressure fields evolve smoothly across time steps with consistent color scales and no abrupt changes. Vortex structures move naturally without numerical artifacts.",
+      "central-dt2e-5-steps00441-00444-00447": "No checkerboard, oscillations, or unphysical extremes. Flow structures evolve smoothly; max |U| and p vary slightly but within expected range for unsteady flow.",
+      "central-dt2e-5-steps00431-00434-00437": "All fields show smooth, coherent structures with no checkerboard patterns or cell-to-cell oscillations. Velocity and pressure evolve gradually across time steps without unphysical spikes or divergence. Max/min values change slightly but consistently, indicating physical evolution rather than numer. ",
+      "central-dt2e-5-steps00415-00416-00417": "All fields show smooth, coherent structures with no checkerboard patterns or cell-to-cell oscillations. Velocity and pressure extrema vary only slightly between timesteps (e.g., |U| max: 46.11 → 45.85; p min: -490.4 → -490.7), consistent with physical evolution, not numerical instability.",
+      "central-dt2e-5-steps00388-00390-00392": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Max |U| and p vary slightly but consistently with vortex motion.",
+      "central-dt2e-5-steps00363-00365-00367": "All fields show smooth, continuous evolution with no checkerboard patterns, oscillations, or unphysical extremes. Velocity and pressure magnitudes change gradually across time steps, consistent with physical flow development.",
+      "central-dt2e-5-steps00315-00316-00317": "All fields show smooth, coherent structures with no checkerboard patterns or cell-to-cell oscillations. Velocity and pressure extrema change gradually over time (e.g., |U| max: 43.67 → 43.74; p min: -716.2 → -714.2), consistent with physical evolution of an unsteady flow. No signs of numerical inst.",
+      "central-dt2e-5-steps00263-00265-00267": "Flow structures (vortices, high-velocity regions) evolve smoothly across time steps without oscillations, checkerboard patterns, or unphysical extreme growth. Pressure and velocity fields remain coherent and physically plausible.",
+      "central-dt2e-5-steps00165-00166-00167": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical growth. Max values change slightly (e.g., |U|: 42.73→42.89→42.98; p: -524.8→-527.2→-531.9), consistent with physical evolution. No signs of numerical instability.",
+      "central-dt2e-5-steps00065-00066-00067": "All fields show smooth, coherent structures with no checkerboard patterns or cell-to-cell oscillations. Velocity and pressure extrema change gradually over time (e.g., |U| max: 39.56 → 39.51 → 39.39; p min: -455.9 → -455.2 → -454.2), consistent with physical evolution. No signs of numerical inst.",
+      "central-dt2e-5-steps00003-00005-00007": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Max/min values change gradually (e.g., |U| max: 36.96 → 36.93 → 36.91; p min: -357.5 → -354.3 → -351.7), consistent with physical evolution.",
+      "central-dt3e-5-steps00020-00023-00026": "At t=0.10078s, |U| max jumps to 84.63 (from ~39) with a localized spike; p min drops to -411.5 (from ~-378). No physical cause visible; suggests numerical instability.",
+      "central-dt3e-5-steps00019-00022-00025": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Max |U| increases slightly (38.31→39.42), max |p| grows modestly (371→408), consistent with physical evolution. No signs of numerical instability.",
+      "central-dt3e-5-steps00022-00023-00024": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical extremes. Max values change slightly but consistently (e.g., |U|: 38.97→39.12→39.33; p min: -391.5→-396.7→-402.8), indicating physical evolution, not instability.",
+      "central-dt3e-5-steps00019-00021-00023": "Velocity and pressure fields evolve smoothly across time steps with no checkerboard patterns, oscillations, or unphysical extremes. Max values change gradually (e.g., |U|: 38.31→38.75→39.12; p min: -371.1→-385.6→-396.7), consistent with physical evolution.",
+      "central-dt3e-5-steps00016-00019-00022": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Changes in vortex positions and magnitudes are consistent with unsteady flow behavior, not numerical instability.",
+      "central-dt3e-5-steps00019-00020-00021": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical growth. Max values change slightly (e.g., |U|: 38.31→38.53→38.75; p min: -371.1→-378.7→-385.6), consistent with physical evolution. No signs of numerical instability.",
+      "central-dt3e-5-steps00018-00019-00020": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Max/min values change gradually (e.g., |U| max: 38.06 → 38.53; p min: -365.3 → -378.7), consistent with physical evolution of an unsteady flow.",
+      "central-dt3e-5-steps00013-00016-00019": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical growth in extremes are visible. Vortex structures move and deform naturally, consistent with unsteady flow.",
+      "central-dt3e-5-steps00012-00015-00018": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Vortex structures move and change shape naturally, consistent with unsteady flow, not numerical instability.",
+      "central-dt3e-5-steps00015-00016-00017": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Max/min values change gradually (e.g., |U| max: 37.38 → 37.61 → 37.85; p min: -343.8 → -351.4 → -358.6), consistent with physical evolution.",
+      "central-dt3e-5-steps00013-00014-00015": "Velocity and pressure fields evolve smoothly across time steps; no checkerboard patterns, oscillations, or unphysical extreme growth observed. Vortex structures move naturally without numerical artifacts.",
+      "central-dt3e-5-steps00005-00008-00011": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Max |U| varies slightly (36.88→36.66), p min changes gradually (-351→-337.6). Features like vortices move naturally without distortion.",
+      "central-dt3e-5-steps00005-00006-00007": "All fields show smooth, coherent structures with no checkerboard patterns or cell-to-cell oscillations. Velocity and pressure extrema remain stable in magnitude across time steps (e.g., |U| max ~36.8–36.9, p min ~-346 to -351). No unphysical growth or noise is visible.",
+      "central-dt3e-5-steps00001-00002-00003": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical extremes. Max/min values change gradually (e.g., |U| max: 36.99 → 36.96 → 36.93; p min: -359.7 → -357.7 → -355.4), consistent with physical evolution. No signs of numerical inst.",
+      "central-dt4e-5-steps00003-00006-00009": "At t=0.10036s, |U| jumps to ~3e8 m/s (from ~36 m/s) and p to ~4.5e8 (from ~48), with checkerboard noise in pressure — unphysical extremes indicating numerical instability.",
+      "central-dt4e-5-steps00006-00007-00008": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical growth. Max values change slightly (e.g., |U|: 36.73→36.68→36.61; p min: -344→-341.5→-338.3), consistent with physical evolution. No signs of numerical instability.",
+      "central-dt4e-5-steps00005-00006-00007": "Velocity and pressure fields evolve smoothly across time steps; no checkerboard patterns, oscillations, or unphysical extreme growth observed. Vortex structures move naturally without numerical artifacts.",
+      "central-dt4e-5-steps00002-00004-00006": "No checkerboard, oscillations, or unphysical extremes. Velocity and pressure fields evolve smoothly; max |U| decreases slightly (36.91→36.73), pressure range stable (~-356 to -344). Vortex motion is physical.",
+      "central-dt4e-5-steps00001-00003-00005": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Max values change slightly but consistently (e.g., |U| max: 36.97 → 36.87 → 36.79; p min: -359.3 → -352.8 → -347.3), indicating physical evolution, not numerics",
+      "central-dt4e-5-steps00002-00003-00004": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical growth. Max values change slightly but consistently (e.g., |U| max: 36.91 → 36.87 → 36.84; p min: -356.4 → -352.8 → -350.3), indicating physical evolution, not instability.",
+      "central-dt4e-5-steps00001-00002-00003": "Velocity and pressure fields evolve smoothly across time steps with no oscillations, checkerboard patterns, or unphysical growth. Max values change slightly but consistently (e.g., |U|: 36.97→36.91→36.87; p: -359.3→-356.4→-352.8), indicating physical evolution, not instability.",
+      "upwind-dt2e-5-steps00060-00080-00100": "Velocity and pressure fields evolve smoothly over time with no checkerboard patterns, oscillations, or unphysical extremes. Max values decrease slightly (e.g., |U|: 37.49→35.75), consistent with physical decay. No signs of numerical instability.",
+      "upwind-dt2e-5-steps00270-00280-00290": "No checkerboard, oscillations, or unphysical extremes. Velocity and pressure fields evolve smoothly; vortex structures move consistently. Max values change slightly but within expected physical range.",
+      "upwind-dt2e-5-steps00650-00660-00670": "Velocity and pressure fields evolve smoothly over time with no oscillations, checkerboard patterns, or unphysical extremes. Max |U| increases slightly (38.54→38.63), min p becomes more negative (-355.5→-411.6), consistent with physical flow development. No signs of numerical instability.",
+      "upwind-dt2e-5-steps00800-00820-00840": "Velocity and pressure fields evolve smoothly over time with no checkerboard patterns, oscillations, or unphysical extremes. Max values decrease slightly (e.g., |U|: 37.4 → 35.92; p min: -316.4 → -238.8), consistent with physical dissipation. No signs of numerical instability.",
+      "upwind-dt2e-5-steps01320-01340-01360": "Velocity and pressure fields evolve smoothly over time with no checkerboard patterns, oscillations, or unphysical extremes. Changes in vortex positions and magnitudes are consistent with unsteady flow behavior, not numerical instability.",
+      "upwind-dt2e-5-steps01550-01560-01570": "Flow features evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Pressure and velocity magnitudes change gradually with time, consistent with physical unsteadiness.",
+      "upwind-dt2e-5-steps01680-01690-01700": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Velocity and pressure fields show coherent vortices moving downstream without divergence or noise growth.",
+      "upwind-dt4e-5-steps00170-00190-00210": "Velocity and pressure fields evolve smoothly across time steps; no checkerboard patterns, oscillations, or unphysical extreme growth. Vortex structures move and deform naturally, consistent with unsteady flow.",
+      "upwind-dt4e-5-steps00270-00280-00290": "Velocity and pressure fields evolve smoothly over time with no oscillations, checkerboard patterns, or unphysical growth. Vortex structures move and deform naturally, consistent with unsteady flow behavior.",
+      "upwind-dt4e-5-steps00610-00630-00650": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Pressure and velocity fields show coherent vortices moving downstream without divergence or noise growth.",
+      "upwind-dt4e-5-steps00970-00980-00990": "Velocity and pressure fields evolve smoothly over time with no checkerboard patterns, cell-to-cell oscillations, or unphysical extreme growth. Max values increase gradually (e.g., |U|: 35.19 → 37.83 m/s; p min: -229.1 → -326.5 m²/s²), consistent with physical unsteady flow development.",
+      "upwind-dt4e-5-steps01200-01210-01220": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Changes in vortex positions and magnitudes are consistent with unsteady flow physics.",
+      "upwind-dt4e-5-steps01550-01570-01590": "Flow features evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Pressure and velocity magnitudes change gradually with time, consistent with unsteady flow.",
+      "upwind-dt4e-5-steps01720-01740-01760": "No checkerboard, oscillations, or unphysical extremes. Flow features evolve smoothly; max |U| decreases slightly, p range narrows — consistent with physical damping.",
+      "developed-steps07908-08308-08708": "Velocity and pressure fields evolve smoothly over time with no checkerboard patterns, oscillations, or unphysical extremes. Max values change gradually (e.g., |U|: 38.58 → 38.14 → 36.42; p min: -388.1 → -351.5 → -309.2), consistent with physical decay or advection. No signs of numerical instability.",
+      "developed-steps09908-10308-10708": "Velocity and pressure fields evolve smoothly over time with no checkerboard patterns, oscillations, or unphysical extremes. Max values change gradually (e.g., |U|: 38.65 → 37.91 → 37.86; p: -393.3 → -374.1 → -330), consistent with physical unsteady flow.",
+      "developed-steps11508-11708-11908": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Velocity max increases slightly (36→38 m/s), pressure min deepens (-270→-380 m²/s²), consistent with vortex development. No instability signs.",
+      "developed-steps13708-13908-14108": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Pressure and velocity fields show coherent vortices moving downstream without divergence or noise growth.",
+      "developed-steps15708-16108-16508": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Velocity and pressure fields show coherent vortices moving without divergence or blow-up.",
+      "developed-steps16508-16908-17308": "No checkerboard, oscillations, or unphysical extremes. Flow structures evolve smoothly; velocity max varies 35–38 m/s, pressure min -253 to -391 m²/s² — consistent with unsteady physics, not instability.",
+      "developed-steps19908-20108-20308": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Velocity max decreases slightly (39.34→36.94), pressure range shrinks — consistent with physical dissipation.",
+      "central-dt5e-6-steps00200-00300-00400": "No checkerboard patterns, oscillations, or unphysical extremes. Flow structures evolve smoothly; max |U| decreases slightly, p ranges remain bounded. Consistent with stable unsteady flow.",
+      "central-dt5e-6-steps01150-01200-01250": "Velocity and pressure fields evolve smoothly across time steps. No checkerboard patterns, oscillations, or unphysical extremes are visible. Vortex structures move and deform naturally, consistent with unsteady flow. Color scales change slightly but within expected physical ranges.",
+      "central-dt5e-6-steps01350-01400-01450": "Flow structures evolve smoothly across time steps; no checkerboard patterns, oscillations, or unphysical extreme growth. Vortex motion and shape changes are consistent with unsteady flow, not instability.",
+      "central-dt5e-6-steps02250-02300-02350": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Velocity max varies slightly (42.98→41.75→43.4), pressure min stable (~-785→-752.5→-773). No signs of instability.",
+      "central-dt5e-6-steps02600-02650-02700": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Vortex motion is expected in unsteady flow.",
+      "central-dt5e-6-steps03300-03400-03500": "Flow structures evolve smoothly; no checkerboard, oscillations, or unphysical extremes. Max |U| and p remain stable in magnitude across time steps."
+     },
+     "reasons_giving_a_short_time_between_frames": {
+      "central-dt2e-5-steps00460-00461-00462": {
+       "answer": "unstable",
+       "interval_s": [
+        4e-05
+       ]
+      },
+      "central-dt2e-5-steps00460-00462-00464": {
+       "answer": "unstable",
+       "interval_s": [
+        8e-05
+       ]
+      }
+     }
+    }
+   },
+   "rules": {
+    "peak |U| grows > 5 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 30,
+      "unstable": {
+       "items": 27,
+       "unstable": 6,
+       "stable": 21,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 3,
+       "stable": 24,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       4,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       1,
+       7
+      ],
+      "developed": [
+       1,
+       7
+      ],
+      "central-dt5e-6": [
+       1,
+       6
+      ]
+     }
+    },
+    "peak |U| grows > 10 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 33,
+      "unstable": {
+       "items": 27,
+       "unstable": 6,
+       "stable": 21,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       4,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "peak |U| grows > 20 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 33,
+      "unstable": {
+       "items": 27,
+       "unstable": 6,
+       "stable": 21,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       4,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "peak |U| grows > 50 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 32,
+      "unstable": {
+       "items": 27,
+       "unstable": 5,
+       "stable": 22,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       1
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       3,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "peak |U| grows > 100 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 32,
+      "unstable": {
+       "items": 27,
+       "unstable": 5,
+       "stable": 22,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       1
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       3,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "largest |U| jump grows > 20 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 36,
+      "unstable": {
+       "items": 27,
+       "unstable": 14,
+       "stable": 13,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 5,
+       "stable": 22,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       2
+      ],
+      [
+       9,
+       5
+      ],
+      [
+       9,
+       4
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       1
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       7,
+       10
+      ],
+      "central-dt3e-5": [
+       6,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       1,
+       7
+      ],
+      "upwind-dt4e-5": [
+       1,
+       7
+      ],
+      "developed": [
+       3,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "largest |U| jump grows > 50 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 38,
+      "unstable": {
+       "items": 27,
+       "unstable": 11,
+       "stable": 16,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       2
+      ],
+      [
+       9,
+       4
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       6,
+       10
+      ],
+      "central-dt3e-5": [
+       4,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "largest |U| jump grows > 100 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 36,
+      "unstable": {
+       "items": 27,
+       "unstable": 9,
+       "stable": 18,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       2
+      ],
+      [
+       9,
+       4
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       5,
+       10
+      ],
+      "central-dt3e-5": [
+       3,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "largest |U| jump grows > 200 %": {
+     "balanced": {
+      "answered": 54,
+      "items": 54,
+      "right": 32,
+      "unstable": {
+       "items": 27,
+       "unstable": 5,
+       "stable": 22,
+       "cannot_tell": 0
+      },
+      "stable": {
+       "items": 27,
+       "unstable": 0,
+       "stable": 27,
+       "cannot_tell": 0
+      }
+     },
+     "said_unstable_by_steps_to_crash": [
+      [
+       3,
+       3
+      ],
+      [
+       6,
+       1
+      ],
+      [
+       9,
+       1
+      ],
+      [
+       9,
+       0
+      ],
+      [
+       7,
+       0
+      ],
+      [
+       4,
+       0
+      ],
+      [
+       5,
+       0
+      ]
+     ],
+     "by_run": {
+      "central-dt2e-5": [
+       3,
+       10
+      ],
+      "central-dt3e-5": [
+       1,
+       10
+      ],
+      "central-dt4e-5": [
+       1,
+       7
+      ],
+      "upwind-dt2e-5": [
+       0,
+       7
+      ],
+      "upwind-dt4e-5": [
+       0,
+       7
+      ],
+      "developed": [
+       0,
+       7
+      ],
+      "central-dt5e-6": [
+       0,
+       6
+      ]
+     }
+    },
+    "best threshold on peak |U|": {
+     "threshold": 0.9935504182934018,
+     "right": 45
+    },
+    "best threshold above 1 on peak |U|": {
+     "threshold": 1.0011563106968446,
+     "right": 38
+    },
+    "best threshold on largest |U| jump": {
+     "threshold": 1.3552122894210121,
+     "right": 39
+    },
+    "best threshold above 1 on largest |U| jump": {
+     "threshold": 1.3552122894210121,
+     "right": 39
+    }
+   }
+  }
+ },
+ "checks": 1410,
+ "differences": [],
+ "frame_spacing": {
+  "by_group": {
+   "scored unstable": {
+    "items": 27,
+    "time_between_frames_s": [
+     2e-05,
+     0.00012
+    ],
+    "note_steps_between_frames": [
+     40,
+     240
+    ]
+   },
+   "early unstable (not scored)": {
+    "items": 16,
+    "time_between_frames_s": [
+     2e-05,
+     9e-05
+    ],
+    "note_steps_between_frames": [
+     40,
+     180
+    ]
+   },
+   "stable": {
+    "items": 27,
+    "time_between_frames_s": [
+     0.0002,
+     0.002
+    ],
+    "note_steps_between_frames": [
+     400,
+     4000
+    ]
+   }
+  },
+  "by_run": {
+   "central-dt2e-5": [
+    2e-05,
+    4e-05,
+    6e-05
+   ],
+   "central-dt3e-5": [
+    3e-05,
+    6e-05,
+    9e-05
+   ],
+   "central-dt4e-5": [
+    4e-05,
+    8e-05,
+    0.00012
+   ],
+   "central-dt5e-6": [
+    0.00025,
+    0.0005
+   ],
+   "developed": [
+    0.001,
+    0.002
+   ],
+   "upwind-dt2e-5": [
+    0.0002,
+    0.0004
+   ],
+   "upwind-dt4e-5": [
+    0.0004,
+    0.0008
+   ]
+  },
+  "both_gaps_equal_in_every_item": true,
+  "rule_unstable_when_frames_closer_than": {
+   "threshold_s": 0.00016,
+   "right_scored": 54,
+   "scored_items": 54,
+   "right_all": 70,
+   "items": 70
+  }
+ },
+ "courant_of_frames": {
+  "by_run": {
+   "central-dt2e-5": {
+    "frames_2_or_more_steps_before_the_crash": 46,
+    "range": [
+     1.16060373305,
+     2.93849036978
+    ],
+    "last_state_before_the_crash": [
+     1.726427878e+38
+    ]
+   },
+   "central-dt3e-5": {
+    "frames_2_or_more_steps_before_the_crash": 22,
+    "range": [
+     1.71951603529,
+     2.67427598546
+    ],
+    "last_state_before_the_crash": [
+     4.61952204618
+    ]
+   },
+   "central-dt4e-5": {
+    "frames_2_or_more_steps_before_the_crash": 8,
+    "range": [
+     2.30058788428,
+     2.85634961514
+    ],
+    "last_state_before_the_crash": [
+     14487525.8257
+    ]
+   },
+   "central-dt5e-6": {
+    "frames": 18,
+    "range": [
+     0.378874342858,
+     0.907411255709
+    ]
+   },
+   "developed": {
+    "frames": 20,
+    "range": [
+     0.242624016007,
+     0.325681806991
+    ]
+   },
+   "upwind-dt2e-5": {
+    "frames": 21,
+    "range": [
+     0.941031180885,
+     1.26360809214
+    ]
+   },
+   "upwind-dt4e-5": {
+    "frames": 21,
+    "range": [
+     1.83898657561,
+     2.47901543377
+    ]
+   }
+  },
+  "largest_in_a_stable_frame": 2.47901543377,
+  "crashed_frames_2_or_more_steps_before_the_crash_at_or_below_it": [
+   62,
+   76
+  ],
+  "same_for_the_frames_of_scored_triples": [
+   20,
+   34
+  ]
+ }
+}

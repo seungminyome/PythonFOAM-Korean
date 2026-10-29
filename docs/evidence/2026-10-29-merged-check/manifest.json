@@ -1,0 +1,77 @@
+{
+ "source_runs": [
+  "pod-merged-20261029 run-24936949 (Slurm 24936949)"
+ ],
+ "scope": "The merged main (eff951b) in a solver run: build, bridge validation, a 2D and a 3D v2 frame compared with earlier runs.",
+ "notes": [
+  "Files of kind gzip copy are gzip -9 copies (no name, mtime 0) of the named source; source_sha256 is the hash of the uncompressed bytes.",
+  "Original records contain cluster paths as provenance."
+ ],
+ "files": [
+  {
+   "path": "HEAD",
+   "source": "MedicineBow pod-merged-20261029/run-24936949/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "fd86c62c49a6477dba9a642d57fb0f9768ae71c3c3542a522890c9853127f393"
+  },
+  {
+   "path": "README.md",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 1622,
+   "sha256": "80b520ae5f7944b0db20f677343158e392ec098496047e19556ddb8071e2759c"
+  },
+  {
+   "path": "git-status.txt",
+   "source": "MedicineBow pod-merged-20261029/run-24936949/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "merged-check-24936949.out",
+   "source": "MedicineBow pod-merged-20261029/merged-check-24936949.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1747,
+   "sha256": "25c8ad80a700f7b1aa6046e54c75fe9ec5275434cb9cfa57f890aae762a2d724"
+  },
+  {
+   "path": "merged-check.json",
+   "source": "MedicineBow pod-merged-20261029/run-24936949/merged-check.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 639,
+   "sha256": "ae0526c13272d13aefc416f293e1a20b450ccacec17abd1c130210d13e7ec2f9"
+  },
+  {
+   "path": "merged_check.sbatch",
+   "source": "the job script as submitted (Slurm 24936949)",
+   "kind": "byte-preserved",
+   "bytes": 4469,
+   "sha256": "ca43ff8f53f369e2f3a126bea069a09b0f11f48750376a4b63a43358bf795889"
+  },
+  {
+   "path": "serial2d/log.PODFoam.gz",
+   "source": "MedicineBow pod-merged-20261029/run-24936949/serial2d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 26446,
+   "sha256": "3f036c229ca34c53dc3c1f7fb2c233ce98233d9f3d25464acab878648d3637ef",
+   "source_sha256": "4cc8f92177b30ccd39714f23354a941fa642dffbe25c03bb98e525d23f7bbd00"
+  },
+  {
+   "path": "serial3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-merged-20261029/run-24936949/serial3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 29118,
+   "sha256": "3a1e086183bb57068d61e0da350e866122ac0d165bdcfbc3eb84eea7d1a5083b",
+   "source_sha256": "98c57368c95064b5ca5d47d1d220514757728091c69ac03a95ef0e238796f067"
+  },
+  {
+   "path": "validation.log",
+   "source": "MedicineBow pod-merged-20261029/run-24936949/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1999,
+   "sha256": "c23c321eb694c4836bda23767a614e8d97842df2e5cf4c676de2272678c4ab95"
+  }
+ ]
+}

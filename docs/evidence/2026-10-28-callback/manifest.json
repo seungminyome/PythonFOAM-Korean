@@ -1,0 +1,149 @@
+{
+ "scope": "The Python callback of branch callback-telemetry-trends (16d665e) against main's (2ed6da2) in PODFoam on MedicineBow (Slurm 24929555, CPU): the staged step case, 1,250 steps without model requests, describe, sequence, the tn sequence form and 2 MPI ranks; every written file, telemetry.jsonl and the records compared; the telemetry of 24,000 recorded states replayed under tracemalloc; unit tests; verify_async.py on the October 22 suite.",
+ "source_runs": [
+  "callback check 24929555",
+  "comparison rerun 24929607"
+ ],
+ "notes": [
+  "The run folder (1.1 GB) stays on the cluster at /cluster/medbow/gscratch/syome/github_repos/pod-callback-20261028/run-24929555 and is not released.",
+  "Files of kind gzip copy are gzip -9 copies (no name, mtime 0) of the named source; source_sha256 is the hash of the uncompressed bytes.",
+  "Original records contain cluster paths and process ids as provenance."
+ ],
+ "files": [
+  {
+   "path": "README.md",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 9792,
+   "sha256": "cbfcb4a1b12a27439093f2ad8113d8e848ad85c9ed192df164f6a90e4ddffa56"
+  },
+  {
+   "path": "callback-main/python_module.py",
+   "source": "git show 2ed6da2:Solver_Examples/PODFoam/llm_demo/python_module.py (main)",
+   "kind": "byte-preserved",
+   "bytes": 56637,
+   "sha256": "baf091a5d0007cf0226dde074258d41644bd8553e74080a9d59ad8ae30401343"
+  },
+  {
+   "path": "callback_check.sbatch",
+   "source": "the job script as submitted (Slurm 24929555)",
+   "kind": "byte-preserved",
+   "bytes": 5077,
+   "sha256": "8b1290a611c7667d30254d38ddfde7c5bab94b4be50adbf866d9f32d5790a974"
+  },
+  {
+   "path": "compare.py",
+   "source": "written for this folder (the version of the rerun, Slurm 24929607)",
+   "kind": "derived",
+   "bytes": 12751,
+   "sha256": "a80570ff050a33036f9220a3604bc7736647d0a17e39a1916b2bfc1acecf671d"
+  },
+  {
+   "path": "memory.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 7048,
+   "sha256": "e4b890b9b79d580970b7a25d902101baba57bf9ae050e2ac443018035b2dcd36"
+  },
+  {
+   "path": "callback-check-24929555.out",
+   "source": "MedicineBow pod-callback-20261028/callback-check-24929555.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2447,
+   "sha256": "347d8aa553dc09f71b195eb69dc0c81549649aaadb27ab66a93a7485ccfd16bb"
+  },
+  {
+   "path": "comparison.json",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/comparison.json, written by compare.py of this folder in Slurm 24929607 (not released)",
+   "kind": "byte-preserved",
+   "bytes": 15783,
+   "sha256": "b36f83156e4123462e9c2fb043c747575182d90998d7225e119122c43bb8c148"
+  },
+  {
+   "path": "comparison-in-job.json",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/comparison.json as compare.py of 16d665e wrote it in Slurm 24929555, kept as comparison-in-job.json before the rerun (not released)",
+   "kind": "byte-preserved",
+   "bytes": 15377,
+   "sha256": "6e08c99beb7255ade3ff048cd09b09cc8e2b1c1af2326471ae64a58e0f64b6a3"
+  },
+  {
+   "path": "memory.json",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/memory.json, memory.py in Slurm 24929555 (not released)",
+   "kind": "byte-preserved",
+   "bytes": 4429,
+   "sha256": "c3834c21e821a68d3ade469c6328a8f27ad241e091214a00203ae1dcf22ebf69"
+  },
+  {
+   "path": "validation.log",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2003,
+   "sha256": "91463afcfdfc1d6555af26d8531905b7edda4db210f0e92d3f50573719328268"
+  },
+  {
+   "path": "unit-tests.log",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/unit-tests.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 62912,
+   "sha256": "d63277faffeec2d829cc9074593098fe92ccecfe8999beebb9b79fe511f1a8ca"
+  },
+  {
+   "path": "verify-oct22-suite.json",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/verify-oct22-suite.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 15906,
+   "sha256": "971561e05c7a538009b55788d1cff5ffe93af0c56d176c75bf8c853b5d410c85"
+  },
+  {
+   "path": "HEAD",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "02b2c16f799581ceeece2022bfbd227977226210587e4dba2dfb49fcf3109f06"
+  },
+  {
+   "path": "git-status.txt",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "changes.patch",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/changes.patch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "sequence-new/llm_result.json",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/sequence-new/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 10282,
+   "sha256": "e9d424ce3f5c4d31ac55fa2d227db2d7c4e789b97e22351fa53fecf6d9177141"
+  },
+  {
+   "path": "sequence-tn-new/llm_result.json",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/sequence-tn-new/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 10357,
+   "sha256": "11209e69b3fa6da8aa084c4fd70cc62e856b9b59491a1db3808de6898378af25"
+  },
+  {
+   "path": "describe-main/log.PODFoam.gz",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/describe-main/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 273923,
+   "sha256": "c5307f7b462d1787af28a367e24e00f41b592165d750b85122f3bb502703533c",
+   "source_sha256": "2437e154537daf96f825f58e84e5fa65bf4e6d93eb5742e13121c8d759ad99f8"
+  },
+  {
+   "path": "describe-new/log.PODFoam.gz",
+   "source": "MedicineBow pod-callback-20261028/run-24929555/describe-new/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 273987,
+   "sha256": "6c917dc2e254cb178e3ef29fb135c3b3f1a1bf082bd5202758a3311531994237",
+   "source_sha256": "0ae0d359e39f01445ba0a0b432337e49fd022570b8c20956a7213f773c70972d"
+  }
+ ]
+}

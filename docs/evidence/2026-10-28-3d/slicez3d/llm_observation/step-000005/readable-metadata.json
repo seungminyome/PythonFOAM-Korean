@@ -1,0 +1,90 @@
+{
+  "style": "readable-v2",
+  "view": "window",
+  "step": 5,
+  "time_s": 0.10002500000000003,
+  "cells": 20540,
+  "projection_axes": [
+    "x",
+    "y"
+  ],
+  "plotted_range_m": {
+    "x": [
+      0.0,
+      0.12
+    ],
+    "y": [
+      0.0,
+      0.04
+    ]
+  },
+  "domain_extent_m": {
+    "x": [
+      -1.5533076923100004,
+      0.6012246511046805
+    ],
+    "y": [
+      5.781735398474374e-06,
+      0.11429523559299273
+    ]
+  },
+  "fields_npz": "fields.npz",
+  "fields_sha256": "3d4078ecb759b848e4c26601a04221d5c2237fac2c6e99244f7abc4a4ffaea2f",
+  "images": [
+    {
+      "field": "U",
+      "symbol": "|U|",
+      "unit": "m/s",
+      "path": "U.png",
+      "sha256": "0ca5ec70ba471782b7757a1fbbf78587b1c104121e5115afd9f1b74373f31b92",
+      "bytes": 85279,
+      "width": 1024,
+      "height": 576,
+      "colour_range": [
+        0.0063427437601484855,
+        36.960116578402705
+      ],
+      "colour_range_shared": false,
+      "range_inside_window": [
+        0.0063427437601484855,
+        36.960116578402705
+      ]
+    },
+    {
+      "field": "p",
+      "symbol": "p",
+      "unit": "m^2/s^2",
+      "path": "p.png",
+      "sha256": "31c328fb892d9730166532820b527905e7d59f7c8c32e5e29a20a07159e100cf",
+      "bytes": 80927,
+      "width": 1024,
+      "height": 576,
+      "colour_range": [
+        -309.16190385949494,
+        93.37167637481802
+      ],
+      "colour_range_shared": false,
+      "range_inside_window": [
+        -309.16190385949494,
+        93.37167637481802
+      ]
+    }
+  ],
+  "slice": {
+    "normal": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "z_m": 0.002,
+    "requested_z_m": 0.002,
+    "z_source": "LLM_SLICE_Z",
+    "moved_off_mesh_points": false,
+    "mesh_z_range_m": [
+      0.0,
+      0.0127
+    ],
+    "cells": 20540,
+    "mesh_cells_total": 164320
+  }
+}

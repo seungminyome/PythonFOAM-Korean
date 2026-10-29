@@ -1,0 +1,316 @@
+{
+ "scope": "Solver runs of 2026-10-28 on MedicineBow: v2 observer pictures of a 3D case through a plane slice. The step case extruded to 8 cells in z with walls front and back, run with the observer (no model) serially and on 2 ranks, without the observer, with LLM_SLICE_Z set and with two refused values; the 2D case and the bridge validation with the same build.",
+ "source_runs": [
+  "slice test 24929629 (code c7a25d3)",
+  "slice test 24929500 (code 07759b0)",
+  "first attempt 24929484 (stopped at its cell-map check)"
+ ],
+ "notes": [
+  "Sources are paths in the run folders on MedicineBow (/cluster/medbow/gscratch/syome/github_repos/); they are not released.",
+  "Files of kind gzip copy are gzip -9 copies (no name, mtime 0) of the named source; source_sha256 is the hash of the uncompressed bytes.",
+  "Original records contain cluster paths and process ids as provenance."
+ ],
+ "files": [
+  {
+   "path": "HEAD",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "eddf7f6ac66b0f7af5a44cb4c0e1d081c8975a3168f91f969eef6a18012639f9"
+  },
+  {
+   "path": "README.md",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 14630,
+   "sha256": "288e0f45080f8bbdd4673fb5a64ca371d5ea87cfe018df0b2a2999ce686d91b9"
+  },
+  {
+   "path": "badz3d/llm_result.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/badz3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1076,
+   "sha256": "0d7b62d2015e15f7788cb9d5a0cc68f4ba36aca3f3a123ebd5b8d868b2bf2c08"
+  },
+  {
+   "path": "badz3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/badz3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 2852,
+   "sha256": "ed5e2d8199bf417f7e32567b3ac62fc5f41ebc026e16be249ad8a74b2dbe4921",
+   "source_sha256": "07e9fd6efdcb853b150c6dbd531641cfd14f0dd1371de7ab0b9aa2140dce4edb"
+  },
+  {
+   "path": "case3d-check.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/case3d-check.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 432,
+   "sha256": "d9b1d5f92f96d8598d7a375d2d551a078e0a60ad0013a372fb01255cdee5775a"
+  },
+  {
+   "path": "case3d/log.blockMesh",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/case3d/log.blockMesh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3635,
+   "sha256": "afd9b6bebdaab7d80c4fb00cb9337da47625246b7aceb2e792386caa749eff09"
+  },
+  {
+   "path": "case3d/log.checkMesh",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/case3d/log.checkMesh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 4221,
+   "sha256": "0b65b19240be71017db4b77a678b68009c2ce8d611e89d3293ca409689f23f92"
+  },
+  {
+   "path": "case3d/system/blockMeshDict",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/case3d/system/blockMeshDict (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3595,
+   "sha256": "d832367d3d2c6ab22edb2386ffaf1311ae79c079fd27c4401d22f3eb1cfd1496"
+  },
+  {
+   "path": "changes.patch",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/changes.patch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5715,
+   "sha256": "fdcfd8a1b6a2acd9f9b047b4a719b56376f8f0966b2451d48330e77410cbdd57"
+  },
+  {
+   "path": "compare_3d.py",
+   "source": "run by the job script (Slurm 24929629, also 24929500; job 24929484 ran an earlier version with a 1e-12 m tolerance)",
+   "kind": "byte-preserved",
+   "bytes": 12418,
+   "sha256": "ffc2abec6d8404b09ac891803291d4ec78b9144fb8379fc62b9be94c945bb52b"
+  },
+  {
+   "path": "compare_runs.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 1678,
+   "sha256": "345240870867d368ef70da0e3b7265668c6f2b1a8e32731def768bc2c11ce05e"
+  },
+  {
+   "path": "frame-comparison.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/frame-comparison.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 13432,
+   "sha256": "79281c7a5a446d63136b43a6881825c3d4a94f81dcb21455ca1e3db4d290ed6f"
+  },
+  {
+   "path": "git-status.txt",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 46,
+   "sha256": "d161019b0a0686794c7c8aef87e25c428716f889689f18ffddf373a80cc3ae60"
+  },
+  {
+   "path": "make_case3d.py",
+   "source": "run by the job script (Slurm 24929629, also 24929500; job 24929484 ran an earlier version with a 1e-12 m tolerance)",
+   "kind": "byte-preserved",
+   "bytes": 8027,
+   "sha256": "c7b80efbc8d8c2da6a6c9ec22d2f32eb3debce42dfb9fe428b3b2aed631a8309"
+  },
+  {
+   "path": "noobs3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/noobs3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 36805,
+   "sha256": "ee1cd5c2a47ad299c2952237108488c84bb637a13a941b3b62cf2949bc160211",
+   "source_sha256": "37072fb35e124598d8faea6bf55ec6b55b009f7276372b0e9c4b164389c53b9a"
+  },
+  {
+   "path": "outz3d/llm_result.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/outz3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1051,
+   "sha256": "8af162c5bf976e9de8a861d5eb80bc7df1da48e85606db8856d71eb6a9dc7e48"
+  },
+  {
+   "path": "outz3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/outz3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 2904,
+   "sha256": "7228d5dd2ef7bf1c36d83c1f13a1647d4507ce8c0466520672c548c0989b65ee",
+   "source_sha256": "57f44e338e6cc0a38257db3082a15d58b596d7f8e456f3ee88aec9e242609ac9"
+  },
+  {
+   "path": "par3d/llm_observation/step-000100/readable-metadata.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/par3d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1823,
+   "sha256": "0fa829bd88abdb9760d1263700da6b3df9e27fc84f5c2b0b778a292e4138bed7"
+  },
+  {
+   "path": "par3d/llm_result.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/par3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3279,
+   "sha256": "5029398aaadea60fe53e34645ad309206ca7e5cb839a2134767781373f9a9b33"
+  },
+  {
+   "path": "par3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/par3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 40530,
+   "sha256": "d50fdc3e1b68a873be223b1b5a09e672054c443511c7e048149808d9aa8607ed",
+   "source_sha256": "c9e9076e6cb5d2ee57d68ef13cd7c949ac4a2eaa023046e79b10f83420c45acf"
+  },
+  {
+   "path": "par3d/log.decomposePar",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/par3d/log.decomposePar (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2418,
+   "sha256": "acb8bd11d37c0cc563f84eb21cd5820ab8566658002bad71e320b02d230acca2"
+  },
+  {
+   "path": "par3d/log.reconstructPar",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/par3d/log.reconstructPar (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3087,
+   "sha256": "d66f7d8effe6bc396724d37eed1c67a35e417b9110bccf33e46661a6ae8c9e7f"
+  },
+  {
+   "path": "par3d/system/decomposeParDict",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/par3d/system/decomposeParDict (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1026,
+   "sha256": "1fa7f05aff78dbabdbdec13ff8c3a8c13bb565667134954525a7c65158c6070c"
+  },
+  {
+   "path": "repeat-comparison.json",
+   "source": "compare_runs.py applied to run-24929500 and run-24929629",
+   "kind": "derived",
+   "bytes": 706,
+   "sha256": "f2922326cd14024af4c6326d830819aa7f7e8a61d4c0d71167e2c3a0f7d0a98b"
+  },
+  {
+   "path": "run-24929500/frame-comparison.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929500/frame-comparison.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 13370,
+   "sha256": "b483c009c9c88b6a9d0c61f53436f61e87e6b57756ae3a842a1d6bc59747315e"
+  },
+  {
+   "path": "run-24929500/slice-test-24929500.out",
+   "source": "MedicineBow pod-3d-20261028/slice-test-24929500.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 6287,
+   "sha256": "135f17c732b5e26b1218c42f839b1b8c29efa0c72dc4bea9cb3b52f05a021517"
+  },
+  {
+   "path": "serial2d/llm_result.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/serial2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3013,
+   "sha256": "d4af8cb7a1cf7baf1d1d76579e84008764bbf78c230537367d674bc9ded02eea"
+  },
+  {
+   "path": "serial2d/log.PODFoam.gz",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/serial2d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 28720,
+   "sha256": "b10af36850ce771945439be3df00548396d6a2b8ed61ec00723f378bd788a0d1",
+   "source_sha256": "09d8719df741fe4f8c0bf6a5beee210f09efadc6f28a58edcdc51d4fe6b777f0"
+  },
+  {
+   "path": "serial3d/llm_observation/step-000100/U.png",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/serial3d/llm_observation/step-000100/U.png (not released)",
+   "kind": "byte-preserved",
+   "bytes": 86024,
+   "sha256": "ca36f4255f8996f4150c118aa8fb579d3cc951051813ad4580b9fa6e8550e1f3"
+  },
+  {
+   "path": "serial3d/llm_observation/step-000100/p.png",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/serial3d/llm_observation/step-000100/p.png (not released)",
+   "kind": "byte-preserved",
+   "bytes": 82385,
+   "sha256": "f2bbcfcfa7359128efbc35ca003bce2d287112fb1691ece6aa4b1b43a93b2d66"
+  },
+  {
+   "path": "serial3d/llm_observation/step-000100/readable-metadata.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/serial3d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1821,
+   "sha256": "9e5859e4b61b6acbb26b24a385503ecf65ec8091f037df38c43d6fbc8d072b4e"
+  },
+  {
+   "path": "serial3d/llm_request.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/serial3d/llm_request.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 10347,
+   "sha256": "bfb82ede468334758798f3df5840c7caf74ec56a39f88dc76a828a13d4e68e47"
+  },
+  {
+   "path": "serial3d/llm_result.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/serial3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3293,
+   "sha256": "aade2486af7db0799c355390f7da2d637488af656f6b2ee3fc419eff3aeb6e4e"
+  },
+  {
+   "path": "serial3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/serial3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 38824,
+   "sha256": "2402ffcc657379cb9dec3647a4e3483af1438f142a7360b7c49f50af229107ba",
+   "source_sha256": "1b965489e938577c7726110c30ad35f709be7d498647427f82584fefea6fdfe6"
+  },
+  {
+   "path": "slice-test-24929484.out",
+   "source": "MedicineBow pod-3d-20261028/slice-test-24929484.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1006,
+   "sha256": "e798969cb8c82b86bc731b01dec6ad7af21a5ee475738ae8a4426b709fca5d39"
+  },
+  {
+   "path": "slice-test-24929629.out",
+   "source": "MedicineBow pod-3d-20261028/slice-test-24929629.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 6288,
+   "sha256": "09832a3966e46f41811c383dfe22a84ba5d6b1a012e9ff6d71321b3c233e1108"
+  },
+  {
+   "path": "slice_test.sbatch",
+   "source": "the job script as submitted (Slurm 24929629, also 24929500; job 24929484 ran an earlier version)",
+   "kind": "byte-preserved",
+   "bytes": 1806,
+   "sha256": "00172fdce03b43f77f0515968fa9a945d773df9ef8b6c220d659b6ee99e976df"
+  },
+  {
+   "path": "slice_test_inner.sh",
+   "source": "the job script as submitted (Slurm 24929629, also 24929500; job 24929484 ran an earlier version)",
+   "kind": "byte-preserved",
+   "bytes": 5278,
+   "sha256": "a4029bfef1c62561ac0c714660a0a6f540de6ca7ffd4673cf963d27cc8989a68"
+  },
+  {
+   "path": "slicez3d/llm_observation/step-000005/readable-metadata.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/slicez3d/llm_observation/step-000005/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1802,
+   "sha256": "8986fa73820670b8abbee2fedb1d81341c353c6a481aa208c5ad90b7e991a9ae"
+  },
+  {
+   "path": "slicez3d/llm_result.json",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/slicez3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3268,
+   "sha256": "51fde69957f999b7bdbf9af014b74880e52b9c9ac5088ca7851d78faab9fa178"
+  },
+  {
+   "path": "slicez3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/slicez3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "bytes": 4453,
+   "sha256": "a0e0750a5bc1d3e37757ec623eb5507a4ef1143a4144dd4c99a7b289eb2f45c4",
+   "source_sha256": "82a365481d78d0cc6025e2eade0b5bffc323f6a2c04209fbe58ab5e6865e1333"
+  },
+  {
+   "path": "validation.log",
+   "source": "MedicineBow pod-3d-20261028/run-24929629/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1991,
+   "sha256": "30f909cd05d5904418a3304d001c7c18a4543f60b4bf71124bd20fe7782450ea"
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+Balanced score: 54 scored items, 27 'unstable' (last frame 1 to 10 steps before the crash) and 27 'stable'; a fixed answer gets 27/54.
+
+| answers from | answered | right | unstable said unstable | unstable said stable | unstable cannot_tell | stable said stable | stable said unstable | stable cannot_tell |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| qwen3.5-35b-a3b-q8_0-vision | 54/54 | 32/54 | 5/27 | 22 | 0 | 27/27 | 0 | 0 |
+| peak \|U\| grows > 5 % | 54/54 | 30/54 | 6/27 | 21 | 0 | 24/27 | 3 | 0 |
+| peak \|U\| grows > 10 % | 54/54 | 33/54 | 6/27 | 21 | 0 | 27/27 | 0 | 0 |
+| peak \|U\| grows > 20 % | 54/54 | 33/54 | 6/27 | 21 | 0 | 27/27 | 0 | 0 |
+| peak \|U\| grows > 50 % | 54/54 | 32/54 | 5/27 | 22 | 0 | 27/27 | 0 | 0 |
+| peak \|U\| grows > 100 % | 54/54 | 32/54 | 5/27 | 22 | 0 | 27/27 | 0 | 0 |
+| largest \|U\| jump grows > 20 % | 54/54 | 36/54 | 14/27 | 13 | 0 | 22/27 | 5 | 0 |
+| largest \|U\| jump grows > 50 % | 54/54 | 38/54 | 11/27 | 16 | 0 | 27/27 | 0 | 0 |
+| largest \|U\| jump grows > 100 % | 54/54 | 36/54 | 9/27 | 18 | 0 | 27/27 | 0 | 0 |
+| largest \|U\| jump grows > 200 % | 54/54 | 32/54 | 5/27 | 22 | 0 | 27/27 | 0 | 0 |
+
+Best single threshold on the peak |U| ratio (last / first frame), chosen on these items: 0.9936, 45/54 right; above 1 (growth) only: 1.001, 38/54 right.
+
+Best single threshold on the largest |U| jump ratio (last / first frame), chosen on these items: 1.355, 39/54 right; above 1 (growth) only: 1.355, 39/54 right.
+
+How early 'unstable' is said: items from the runs that crashed (scored and early), said unstable / items.
+
+| last frame, steps before the crash | items | qwen3.5-35b-a3b-q8_0-vision | peak \|U\| grows > 5 % | peak \|U\| grows > 10 % | peak \|U\| grows > 20 % | peak \|U\| grows > 50 % | peak \|U\| grows > 100 % | largest \|U\| jump grows > 20 % | largest \|U\| jump grows > 50 % | largest \|U\| jump grows > 100 % | largest \|U\| jump grows > 200 % |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 2 to 3 | 6 | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 1 |
+| 4 to 6 | 9 | 1 | 2 | 2 | 2 | 1 | 1 | 5 | 4 | 4 | 1 |
+| 7 to 10 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 2 | 0 | 0 |
+| 11 to 25 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 26 to 100 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| over 100 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
+
+Said unstable / scored items, by run.
+
+| run | truth | qwen3.5-35b-a3b-q8_0-vision | peak \|U\| grows > 20 % | largest \|U\| jump grows > 50 % |
+|---|---|---:|---:|---:|
+| central-dt2e-5 | unstable | 3/10 | 4/10 | 6/10 |
+| central-dt3e-5 | unstable | 1/10 | 1/10 | 4/10 |
+| central-dt4e-5 | unstable | 1/7 | 1/7 | 1/7 |
+| central-dt5e-6 | stable | 0/6 | 0/6 | 0/6 |
+| developed | stable | 0/7 | 0/7 | 0/7 |
+| upwind-dt2e-5 | stable | 0/7 | 0/7 | 0/7 |
+| upwind-dt4e-5 | stable | 0/7 | 0/7 | 0/7 |
+
+Every item: steps from the last frame to the crash (blank: a run that ended), the two numeric ratios and each answer (u unstable, s stable, ? cannot_tell, - no answer).
+
+| item | truth | scored | steps to crash | peak \|U\| ratio | jump ratio | qwen3.5-35b-a3b-q8_0-vision |
+|---|---|---|---:|---:|---:|---|
+| central-dt2e-5-steps00464-00465-00466 | unstable | yes | 1 | 1.57e+38 | 1.675e+38 | u |
+| central-dt2e-5-steps00463-00464-00465 | unstable | yes | 2 | 1.042 | 1.021 | s |
+| central-dt2e-5-steps00460-00462-00464 | unstable | yes | 3 | 2.428 | 5.674 | u |
+| central-dt2e-5-steps00461-00462-00463 | unstable | yes | 4 | 2.092 | 2.389 | s |
+| central-dt2e-5-steps00460-00461-00462 | unstable | yes | 5 | 1.308 | 2.883 | u |
+| central-dt2e-5-steps00457-00459-00461 | unstable | yes | 6 | 1.037 | 3.591 | s |
+| central-dt2e-5-steps00454-00457-00460 | unstable | yes | 7 | 1.002 | 1.763 | s |
+| central-dt2e-5-steps00457-00458-00459 | unstable | yes | 8 | 0.9983 | 1.26 | s |
+| central-dt2e-5-steps00456-00457-00458 | unstable | yes | 9 | 0.998 | 0.9954 | s |
+| central-dt2e-5-steps00453-00455-00457 | unstable | yes | 10 | 1.004 | 0.9996 | s |
+| central-dt2e-5-steps00453-00454-00455 | unstable | no | 12 | 1.002 | 0.9786 | s |
+| central-dt2e-5-steps00450-00451-00452 | unstable | no | 15 | 1 | 0.8964 | s |
+| central-dt2e-5-steps00441-00444-00447 | unstable | no | 20 | 1.002 | 1.116 | s |
+| central-dt2e-5-steps00431-00434-00437 | unstable | no | 30 | 0.994 | 0.8867 | s |
+| central-dt2e-5-steps00415-00416-00417 | unstable | no | 50 | 0.9944 | 1.023 | s |
+| central-dt2e-5-steps00388-00390-00392 | unstable | no | 75 | 1.008 | 0.9794 | s |
+| central-dt2e-5-steps00363-00365-00367 | unstable | no | 100 | 1.001 | 0.9233 | s |
+| central-dt2e-5-steps00315-00316-00317 | unstable | no | 150 | 1.002 | 1.036 | s |
+| central-dt2e-5-steps00263-00265-00267 | unstable | no | 200 | 0.9997 | 1.25 | s |
+| central-dt2e-5-steps00165-00166-00167 | unstable | no | 300 | 1.006 | 1.012 | s |
+| central-dt2e-5-steps00065-00066-00067 | unstable | no | 400 | 0.9957 | 0.9762 | s |
+| central-dt2e-5-steps00003-00005-00007 | unstable | no | 460 | 0.9985 | 0.944 | s |
+| central-dt3e-5-steps00020-00023-00026 | unstable | yes | 1 | 2.196 | 7.799 | u |
+| central-dt3e-5-steps00019-00022-00025 | unstable | yes | 2 | 1.029 | 2.113 | s |
+| central-dt3e-5-steps00022-00023-00024 | unstable | yes | 3 | 1.009 | 0.8112 | s |
+| central-dt3e-5-steps00019-00021-00023 | unstable | yes | 4 | 1.021 | 0.9812 | s |
+| central-dt3e-5-steps00016-00019-00022 | unstable | yes | 5 | 1.036 | 2.65 | s |
+| central-dt3e-5-steps00019-00020-00021 | unstable | yes | 6 | 1.012 | 1.3 | s |
+| central-dt3e-5-steps00018-00019-00020 | unstable | yes | 7 | 1.012 | 1.507 | s |
+| central-dt3e-5-steps00013-00016-00019 | unstable | yes | 8 | 1.037 | 1.36 | s |
+| central-dt3e-5-steps00012-00015-00018 | unstable | yes | 9 | 1.036 | 1.013 | s |
+| central-dt3e-5-steps00015-00016-00017 | unstable | yes | 10 | 1.012 | 0.9955 | s |
+| central-dt3e-5-steps00013-00014-00015 | unstable | no | 12 | 1.012 | 0.985 | s |
+| central-dt3e-5-steps00005-00008-00011 | unstable | no | 16 | 0.994 | 1.085 | s |
+| central-dt3e-5-steps00005-00006-00007 | unstable | no | 20 | 0.9986 | 1.031 | s |
+| central-dt3e-5-steps00001-00002-00003 | unstable | no | 24 | 0.9983 | 0.9666 | s |
+| central-dt4e-5-steps00003-00006-00009 | unstable | yes | 1 | 8.269e+06 | 3.683e+07 | u |
+| central-dt4e-5-steps00006-00007-00008 | unstable | yes | 2 | 0.9968 | 0.9809 | s |
+| central-dt4e-5-steps00005-00006-00007 | unstable | yes | 3 | 0.9968 | 1.062 | s |
+| central-dt4e-5-steps00002-00004-00006 | unstable | yes | 4 | 0.995 | 1.056 | s |
+| central-dt4e-5-steps00001-00003-00005 | unstable | yes | 5 | 0.9952 | 0.9758 | s |
+| central-dt4e-5-steps00002-00003-00004 | unstable | yes | 6 | 0.998 | 1.011 | s |
+| central-dt4e-5-steps00001-00002-00003 | unstable | yes | 7 | 0.9973 | 0.9575 | s |
+| central-dt5e-6-steps00200-00300-00400 | stable | yes |  | 0.8995 | 1.026 | s |
+| central-dt5e-6-steps01150-01200-01250 | stable | yes |  | 1.076 | 0.9551 | s |
+| central-dt5e-6-steps01350-01400-01450 | stable | yes |  | 1.001 | 0.9353 | s |
+| central-dt5e-6-steps02250-02300-02350 | stable | yes |  | 1.01 | 0.8138 | s |
+| central-dt5e-6-steps02600-02650-02700 | stable | yes |  | 1.026 | 0.9716 | s |
+| central-dt5e-6-steps03300-03400-03500 | stable | yes |  | 0.9623 | 1.188 | s |
+| developed-steps07908-08308-08708 | stable | yes |  | 0.9441 | 1.255 | s |
+| developed-steps09908-10308-10708 | stable | yes |  | 0.9796 | 1.137 | s |
+| developed-steps11508-11708-11908 | stable | yes |  | 1.066 | 0.8699 | s |
+| developed-steps13708-13908-14108 | stable | yes |  | 0.9778 | 1.315 | s |
+| developed-steps15708-16108-16508 | stable | yes |  | 0.9728 | 1.103 | s |
+| developed-steps16508-16908-17308 | stable | yes |  | 0.9293 | 1.116 | s |
+| developed-steps19908-20108-20308 | stable | yes |  | 0.9392 | 1.349 | s |
+| upwind-dt2e-5-steps00060-00080-00100 | stable | yes |  | 0.9538 | 0.933 | s |
+| upwind-dt2e-5-steps00270-00280-00290 | stable | yes |  | 0.9813 | 1.114 | s |
+| upwind-dt2e-5-steps00650-00660-00670 | stable | yes |  | 1.002 | 1.084 | s |
+| upwind-dt2e-5-steps00800-00820-00840 | stable | yes |  | 0.9604 | 0.7125 | s |
+| upwind-dt2e-5-steps01320-01340-01360 | stable | yes |  | 1.047 | 1.015 | s |
+| upwind-dt2e-5-steps01550-01560-01570 | stable | yes |  | 0.9904 | 1.35 | s |
+| upwind-dt2e-5-steps01680-01690-01700 | stable | yes |  | 0.9921 | 0.9551 | s |
+| upwind-dt4e-5-steps00170-00190-00210 | stable | yes |  | 0.9629 | 0.7726 | s |
+| upwind-dt4e-5-steps00270-00280-00290 | stable | yes |  | 0.9857 | 1.132 | s |
+| upwind-dt4e-5-steps00610-00630-00650 | stable | yes |  | 1.018 | 0.7174 | s |
+| upwind-dt4e-5-steps00970-00980-00990 | stable | yes |  | 1.075 | 0.8718 | s |
+| upwind-dt4e-5-steps01200-01210-01220 | stable | yes |  | 0.9889 | 1.337 | s |
+| upwind-dt4e-5-steps01550-01570-01590 | stable | yes |  | 0.9534 | 0.8082 | s |
+| upwind-dt4e-5-steps01720-01740-01760 | stable | yes |  | 0.9715 | 0.7194 | s |

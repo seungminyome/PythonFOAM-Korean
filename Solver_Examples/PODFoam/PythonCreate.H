@@ -69,7 +69,9 @@ if (analysis_func)
     {
         // 2D cases: every face of the first 'empty' patch outlines exactly one
         // cell, so Python can paint true cell polygons (no interpolation).
-        // 3D cases pass empty arrays and Python falls back to a raster.
+        // 3D cases (no empty patch): the polygons of a plane slice, one per
+        // cut cell (PythonSlice.H), and an eighth argument that says where the
+        // plane is; v2 pictures then show the slice cells, v1 keeps its raster.
         label emptyPatch = -1;
         forAll(mesh.boundaryMesh(), patchi)
         {
@@ -98,6 +100,32 @@ if (analysis_func)
                 forAll(f, pointi) localPolyPoints[k++] = mesh.points()[f[pointi]];
                 localPolySizes[facei] = f.size();
                 localPolyCells[facei] = faceCells[facei];
+            }
+        }
+        const bool sliced = (emptyPatch < 0);
+        PythonPlaneSlice planeSlice;
+        if (sliced)
+        {
+            planeSlice = pythonPlaneSlice(mesh, localPolyPoints, localPolySizes, localPolyCells);
+            const label nCut = returnReduce(planeSlice.localCells, sumOp<label>());
+            if (!planeSlice.ok)
+            {
+                WarningInFunction << "No plane slice for the observer: "
+                    << planeSlice.error.c_str() << endl;
+            }
+            else
+            {
+                Info<< "POD observer plane slice: z=" << planeSlice.z
+                    << " requested=" << planeSlice.requestedZ
+                    << (planeSlice.fromEnvironment ? " (LLM_SLICE_Z)" : " (middle of the mesh z range)")
+                    << (planeSlice.moved ? " moved off mesh points" : "")
+                    << " mesh z range=(" << planeSlice.zMin << " " << planeSlice.zMax << ")"
+                    << " cut cells=" << nCut << endl;
+                if (nCut == 0)
+                {
+                    WarningInFunction << "The observer's plane slice z=" << planeSlice.z
+                        << " cuts no cells; v2 pictures will be refused" << endl;
+                }
             }
         }
         // Gathered to the master in rank order; cell labels shifted by where
@@ -156,8 +184,36 @@ if (analysis_func)
                 cells[facei] = allPolyCells[facei];
             }
         }
+        // 3D: where the slice is, for the frame records (Python checks the
+        // polygons against it); z_m is None when no cut was made.
+        PyObject* slicePlane = nullptr;
+        if (sliced)
+        {
+            slicePlane = planeSlice.ok
+                ? Py_BuildValue
+                (
+                    "{s:(ddd),s:d,s:d,s:s,s:O,s:(dd)}",
+                    "normal", 0.0, 0.0, 1.0,
+                    "z_m", double(planeSlice.z),
+                    "requested_z_m", double(planeSlice.requestedZ),
+                    "z_source", planeSlice.fromEnvironment
+                        ? "LLM_SLICE_Z" : "middle of the mesh z range",
+                    "moved_off_mesh_points", planeSlice.moved ? Py_True : Py_False,
+                    "mesh_z_range_m", double(planeSlice.zMin), double(planeSlice.zMax)
+                )
+                : Py_BuildValue
+                (
+                    "{s:(ddd),s:O,s:s,s:s,s:(dd)}",
+                    "normal", 0.0, 0.0, 1.0,
+                    "z_m", Py_None,
+                    "z_source", "LLM_SLICE_Z",
+                    "error", planeSlice.error.c_str(),
+                    "mesh_z_range_m", double(planeSlice.zMin), double(planeSlice.zMax)
+                );
+        }
         PyObject* meshResult = nullptr;
-        if (centres && volumes && solutionD && polyPoints && polyOffsets && polyCells)
+        if (centres && volumes && solutionD && polyPoints && polyOffsets && polyCells
+         && (!sliced || slicePlane))
         {
             double* c = static_cast<double*>
             (
@@ -175,11 +231,17 @@ if (analysis_func)
                 }
                 v[celli] = allVolumes[celli];
             }
-            meshResult = PyObject_CallFunction
-            (
-                mesh_func, "OOOiOOO", centres, volumes, solutionD, Pstream::myProcNo(),
-                polyPoints, polyOffsets, polyCells
-            );
+            meshResult = sliced
+                ? PyObject_CallFunction
+                (
+                    mesh_func, "OOOiOOOO", centres, volumes, solutionD, Pstream::myProcNo(),
+                    polyPoints, polyOffsets, polyCells, slicePlane
+                )
+                : PyObject_CallFunction
+                (
+                    mesh_func, "OOOiOOO", centres, volumes, solutionD, Pstream::myProcNo(),
+                    polyPoints, polyOffsets, polyCells
+                );
         }
         Py_XDECREF(centres);
         Py_XDECREF(volumes);
@@ -187,6 +249,7 @@ if (analysis_func)
         Py_XDECREF(polyPoints);
         Py_XDECREF(polyOffsets);
         Py_XDECREF(polyCells);
+        Py_XDECREF(slicePlane);
         if (!meshResult)
         {
             PyObject *errorType = nullptr, *errorValue = nullptr, *errorTrace = nullptr;
@@ -205,7 +268,16 @@ if (analysis_func)
             Info<< "POD mesh geometry passed to Python: cells=" << nAllCells
                 << " solutionD=" << mesh.solutionD()
                 << " cellPolygons=" << nPolyFaces
-                << " ranks=" << Pstream::nProcs() << endl;
+                << " ranks=" << Pstream::nProcs();
+            if (sliced && planeSlice.ok)
+            {
+                Info<< " slice z=" << planeSlice.z;
+            }
+            else if (sliced)
+            {
+                Info<< " slice none";
+            }
+            Info<< endl;
         }
         Py_XDECREF(meshResult);
         }   // master

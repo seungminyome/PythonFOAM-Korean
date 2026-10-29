@@ -52,6 +52,7 @@ Description
 #include "sigFpe.H"
 #include "emptyPolyPatch.H"
 #include "PythonGather.H"
+#include "PythonSlice.H"
 
 // Some time related libraries
 #include <ctime>

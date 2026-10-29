@@ -376,6 +376,8 @@ def fake_server():
                 output = {"change_description": "slower", "max_speed_trend": "decreasing",
                           "min_pressure_trend": "cannot_tell", "fastest_flow_region": "same_place",
                           "uncertainties": "none"}
+            elif "stability" in properties:
+                output = {"reason": "A small bright spot grows.", "stability": "unstable"}
             else:
                 output = {"observations": "Maximum speed 82.5 m/s.", "possible_interpretation": "May be inflow.",
                           "checks": "Check the inlet."}

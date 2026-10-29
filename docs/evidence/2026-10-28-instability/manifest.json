@@ -1,0 +1,677 @@
+{
+ "scope": "Instability picture test of 2026-10-28 on MedicineBow: 70 three-frame v2 requests (|U| and p, own colour scales, the solver's window x 0 to 0.12 m, y 0 to 0.04 m) from three pimpleFoam runs of the step case that crashed and four that ended, asked whether the run shows signs of numerical instability; Gemma 4 12B, 26B-A4B, 31B and Qwen3.5-35B-A3B on one NVIDIA L40S each; the flow reruns that showed central-dt2e-5 crashing in step 467 and the others ending; answer key, numeric baselines and a recount. No solver ran in the picture jobs.",
+ "source_runs": [
+  "window-test-24929533",
+  "window-test-24929534",
+  "build 24929495",
+  "flow runs 24929408, 24929449, 24929452 (and 24929300, 24903182, 24903082 used as they were)",
+  "checks after the review 24929764 (24929739 cancelled)"
+ ],
+ "notes": [
+  "Sources are paths under /cluster/medbow/gscratch/syome/github_repos/ on MedicineBow, or 'written for this folder'.",
+  "Files of kind gzip copy are gzip -9 copies (no name, mtime 0) of the named source; source_sha256 is the hash of the uncompressed bytes.",
+  "pictures/ holds PNG bytes decoded from the base64 image_url parts of the named request body.",
+  "Every byte-preserved file with a named path was compared with its source when this manifest was written.",
+  "Added after the review (commit after 660f8c4): flow/domain-max.json, job/review_checks_20261028.sbatch, job/review-checks-24929764.out and job/sacct.txt; independent-recount.py and .json and flow/domain_max.py changed or added in 660f8c4."
+ ],
+ "files": [
+  {
+   "path": "README.md",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 32899,
+   "sha256": "3b652f158cc8cd35b1fbbeee06774fc3c7d69e5881fe53e91ca9bd5c5fe84ae6"
+  },
+  {
+   "path": "flow/cases/0.U",
+   "source": "flow-states-20261028/central-dt2e-5-long/0/U (the same in all seven cases)",
+   "kind": "byte-preserved",
+   "bytes": 1309,
+   "sha256": "75dadbe8bbbf44f34c406491061585de6fb9722f6d7f801300ae6ac095168c3b"
+  },
+  {
+   "path": "flow/cases/0.p",
+   "source": "flow-states-20261028/central-dt2e-5-long/0/p (the same in all seven cases)",
+   "kind": "byte-preserved",
+   "bytes": 1303,
+   "sha256": "f151e72da28b8a1372bd6ffe4528bc9b93cfbb68518d906559ea77301e17d9da"
+  },
+  {
+   "path": "flow/cases/central-dt2e-5.controlDict",
+   "source": "flow-states-20261028/central-dt2e-5-long/system/controlDict",
+   "kind": "byte-preserved",
+   "bytes": 499,
+   "sha256": "d58a668f6b1ae7f02530ce6a60c980add7de6704361ecd5c280893c2ebfdf085"
+  },
+  {
+   "path": "flow/cases/central-dt3e-5.controlDict",
+   "source": "flow-states-20261027/unstable/central-dt3e-5/system/controlDict",
+   "kind": "byte-preserved",
+   "bytes": 500,
+   "sha256": "9cf53ad7af664212f17b44f9a31258c1782f6ff5e9fec28c7406e52172b4b64c"
+  },
+  {
+   "path": "flow/cases/central-dt4e-5.controlDict",
+   "source": "flow-states-20261027/unstable/central-dt4e-5/system/controlDict",
+   "kind": "byte-preserved",
+   "bytes": 500,
+   "sha256": "036916de6da318851091be4ec03b2f723d9ceb5a4dd664f187b00abe810f589a"
+  },
+  {
+   "path": "flow/cases/central-dt5e-6.controlDict",
+   "source": "flow-states-20261028/central-dt5e-6-long/system/controlDict",
+   "kind": "byte-preserved",
+   "bytes": 500,
+   "sha256": "df2cfec100ab45b9ec947504e67d2e56620a103f9dec83a4db9a4da737204733"
+  },
+  {
+   "path": "flow/cases/developed.controlDict",
+   "source": "flow-states-20261022/long-100ms/system/controlDict",
+   "kind": "byte-preserved",
+   "bytes": 510,
+   "sha256": "5b621bba8266369c07d3002b5ebaa57baedc71db314ec4c4b9c495fa0b3d0bab"
+  },
+  {
+   "path": "flow/cases/fvSchemes.central",
+   "source": "flow-states-20261027/unstable/central-dt3e-5/system/fvSchemes (the same in every run with this scheme)",
+   "kind": "byte-preserved",
+   "bytes": 1490,
+   "sha256": "b548460d7a33fcf672e7c7de8de48ecd0cb8e451898fa99af2017915acf60a53"
+  },
+  {
+   "path": "flow/cases/fvSchemes.upwind",
+   "source": "flow-states-20261028/upwind-dt2e-5-long/system/fvSchemes (the same in every run with this scheme)",
+   "kind": "byte-preserved",
+   "bytes": 1490,
+   "sha256": "8a7c041530d5bce5a16fc8aa824f62001ac650a2efecd4a87175d59c43294d97"
+  },
+  {
+   "path": "flow/cases/fvSolution",
+   "source": "flow-states-20261028/central-dt2e-5-long/system/fvSolution (the same in all seven cases)",
+   "kind": "byte-preserved",
+   "bytes": 2006,
+   "sha256": "c9fe34124d231bd28963deafc67b94beece421f9d3d53437a8188e169009bf59"
+  },
+  {
+   "path": "flow/cases/transportProperties",
+   "source": "flow-states-20261028/central-dt2e-5-long/constant/transportProperties (the same in all seven cases)",
+   "kind": "byte-preserved",
+   "bytes": 944,
+   "sha256": "6f9fa1e438ca49f6784363a2652b432fe6c1eed43fd3a5951b9d7c565be66958"
+  },
+  {
+   "path": "flow/cases/turbulenceProperties",
+   "source": "flow-states-20261028/central-dt2e-5-long/constant/turbulenceProperties (the same in all seven cases)",
+   "kind": "byte-preserved",
+   "bytes": 2273,
+   "sha256": "47b6ff067fab1cdf69f54ffe232ea8016cf6a10fd241e93518ec88e50283cb3b"
+  },
+  {
+   "path": "flow/cases/upwind-dt2e-5.controlDict",
+   "source": "flow-states-20261028/upwind-dt2e-5-long/system/controlDict",
+   "kind": "byte-preserved",
+   "bytes": 500,
+   "sha256": "d22db4ff628a690f0325c0734945be5c06a6e3ee3cab856100bb0ce242837329"
+  },
+  {
+   "path": "flow/cases/upwind-dt4e-5.controlDict",
+   "source": "flow-states-20261028/upwind-dt4e-5-long/system/controlDict",
+   "kind": "byte-preserved",
+   "bytes": 500,
+   "sha256": "33e18fd05e6ba93ae66448b02b2aa89b5469ff7d7a92b0c80d0ab915a99a7ac0"
+  },
+  {
+   "path": "flow/domain-max.json",
+   "source": "flow/domain_max.py (job 24929764) applied to the U files named in test-set/manifest.json (extra.flow_states; their SHA-256 checked) and flow-states-20261022/long-100ms/0.1/U, with the mesh of flow-states-20261028/central-dt2e-5-long/constant/polyMesh and the cell centres named in test-set/manifest.json",
+   "kind": "derived",
+   "bytes": 89434,
+   "sha256": "7afcbaa25e72a8c571c85166ea3d33be68514dddf7432754abc85f5592d37966"
+  },
+  {
+   "path": "flow/domain_max.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 8836,
+   "sha256": "3a7d0d23f4e43b59e8378cd4b49379da6e0a4a7e15860a987817372cf6f15b82"
+  },
+  {
+   "path": "flow/logs/central-dt2e-5.log.gz",
+   "source": "flow-states-20261028/central-dt2e-5-long/log.pimpleFoam",
+   "kind": "gzip copy",
+   "bytes": 99197,
+   "sha256": "0973cb5d5dfa49cfe00d1f448b0476ddc54568a937f0b8621b76254da743bfd9",
+   "source_sha256": "395289fdf7e150ddcf054146a3a8dad1a695715c842e7111457bef398e455848"
+  },
+  {
+   "path": "flow/logs/central-dt3e-5.log.gz",
+   "source": "flow-states-20261027/unstable/central-dt3e-5/log.pimpleFoam",
+   "kind": "gzip copy",
+   "bytes": 7373,
+   "sha256": "24e8abf0b6380e160bba24baed32ce6a7b26b0b3c62169d8eca5e5eae24fc191",
+   "source_sha256": "dc1e4a258294bfdbbe0b41abbb3c8ab545b7444d22b225586fc36abfecd6e845"
+  },
+  {
+   "path": "flow/logs/central-dt4e-5.log.gz",
+   "source": "flow-states-20261027/unstable/central-dt4e-5/log.pimpleFoam",
+   "kind": "gzip copy",
+   "bytes": 3533,
+   "sha256": "d4757b00e5729612d75ce622b8ea9524c0fefed03ca62905669ab3c93bb88f98",
+   "source_sha256": "0b59a6b20b3946a4a56c0da60e6c310e3748f61a2240ced94fb20b9b73032b39"
+  },
+  {
+   "path": "flow/logs-summary.json",
+   "source": "flow/summarize_logs.py applied to the seven runs' log.pimpleFoam: central-dt2e-5=flow-states-20261028/central-dt2e-5-long/log.pimpleFoam, central-dt3e-5=flow-states-20261027/unstable/central-dt3e-5/log.pimpleFoam, central-dt4e-5=flow-states-20261027/unstable/central-dt4e-5/log.pimpleFoam, upwind-dt2e-5=flow-states-20261028/upwind-dt2e-5-long/log.pimpleFoam, upwind-dt4e-5=flow-states-20261028/upwind-dt4e-5-long/log.pimpleFoam, central-dt5e-6=flow-states-20261028/central-dt5e-6-long/log.pimpleFoam, developed=flow-states-20261022/long-100ms/log.pimpleFoam",
+   "kind": "derived",
+   "bytes": 11692,
+   "sha256": "aaf023e52e6bc83e2d5ffbcb58bd15f82d6aeebd4000fa7d338a6ea420cf8f1d"
+  },
+  {
+   "path": "flow/run-central-dt5e-6-long-24929449.out",
+   "source": "flow-states-20261028/run-central-dt5e-6-long-24929449.out",
+   "kind": "byte-preserved",
+   "bytes": 332,
+   "sha256": "fd1da1bfe3f261854ed931bc5e9daa030da0b9ab8db76fb5aea36276ace54df2"
+  },
+  {
+   "path": "flow/run-central-long-24929408.out",
+   "source": "flow-states-20261028/run-central-long-24929408.out",
+   "kind": "byte-preserved",
+   "bytes": 1038,
+   "sha256": "488b158aa0efa3575cd3b3774964e490dea5ad16076f9f345eeb52079afb3c5c"
+  },
+  {
+   "path": "flow/run-unstable-24903082.out",
+   "source": "flow-states-20261027/run-unstable-24903082.out",
+   "kind": "byte-preserved",
+   "bytes": 234,
+   "sha256": "dcd9c4e806566ca4b072b26b55fda9c108f08f05c3495227c372ab83b0684dce"
+  },
+  {
+   "path": "flow/run-unstable-24903182.out",
+   "source": "flow-states-20261027/run-unstable-24903182.out",
+   "kind": "byte-preserved",
+   "bytes": 175,
+   "sha256": "2c8e56794203d0dc2a9c7035af48d2666491a989446bc638b29187cb6ad80959"
+  },
+  {
+   "path": "flow/run-unstable2-24929300.out",
+   "source": "flow-states-20261027/run-unstable2-24929300.out",
+   "kind": "byte-preserved",
+   "bytes": 1249,
+   "sha256": "99438117c2d5d18a0b016b0f15e4aa7fb74207449044096452c1eed947a769c8"
+  },
+  {
+   "path": "flow/run-upwind-long-24929452.out",
+   "source": "flow-states-20261028/run-upwind-long-24929452.out",
+   "kind": "byte-preserved",
+   "bytes": 529,
+   "sha256": "912839d56b1a404217a1e9797a970c80254352563e5e37c3710a8b94405f195f"
+  },
+  {
+   "path": "flow/run_central_dt5e-6_long.sbatch",
+   "source": "flow-states-20261028/run_central_dt5e-6_long.sbatch",
+   "kind": "byte-preserved",
+   "bytes": 1442,
+   "sha256": "d7fc4275870ca6d39c9a1a27839c4045de353c668fd813979ad9d38f25ba588f"
+  },
+  {
+   "path": "flow/run_central_long.sbatch",
+   "source": "flow-states-20261028/run_central_long.sbatch",
+   "kind": "byte-preserved",
+   "bytes": 1849,
+   "sha256": "57fb78e7410441464c8cea9a21207aa28de6c80a84d70692da0ea8fa74fa089a"
+  },
+  {
+   "path": "flow/run_unstable.sbatch",
+   "source": "flow-states-20261027/run_unstable.sbatch",
+   "kind": "byte-preserved",
+   "bytes": 784,
+   "sha256": "26afd613d613163026d57ca18f5068bfc85630f4ef7d2c5527a42d3a458f0e71"
+  },
+  {
+   "path": "flow/run_unstable2.sbatch",
+   "source": "flow-states-20261027/run_unstable2.sbatch",
+   "kind": "byte-preserved",
+   "bytes": 972,
+   "sha256": "b1aca27a21cb7068015586e4c182a05771a5b770a67b6269ff7155df7ce3eae7"
+  },
+  {
+   "path": "flow/run_upwind_long.sbatch",
+   "source": "flow-states-20261028/run_upwind_long.sbatch",
+   "kind": "byte-preserved",
+   "bytes": 1651,
+   "sha256": "ccf173034a154a451c3c65d254235114178db89af541c691fe9a032496bf4d31"
+  },
+  {
+   "path": "flow/summarize_logs.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 1779,
+   "sha256": "db63f4a827279e2214189db6499cbd4d3a29e496b23b5f815e284751fe1e673d"
+  },
+  {
+   "path": "independent-recount.json",
+   "source": "independent-recount.py applied to test-set/, results/ and reports/",
+   "kind": "derived",
+   "bytes": 110961,
+   "sha256": "dd5e6b37b89031804629f4f95c5555ea7108b858106578de6e4b4ffc0d21c258"
+  },
+  {
+   "path": "independent-recount.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 17525,
+   "sha256": "d232c8c4b4b1bffb84bda6639764371e14c278eca47f6ee7c0e2497c0bbbd574"
+  },
+  {
+   "path": "job/build-instability-set-24929495.out",
+   "source": "picture-test-20261021/build-instability-set-24929495.out",
+   "kind": "byte-preserved",
+   "bytes": 1011,
+   "sha256": "524fb9a767295d41d0c32786e162a95580d850332babc8cf20f93b702d819b65"
+  },
+  {
+   "path": "job/build_instability_set.sbatch",
+   "source": "the script submitted as job 24929495 (written for this folder)",
+   "kind": "byte-preserved",
+   "bytes": 1167,
+   "sha256": "b7d6a805852077c41a581dd1f96ac54cedb199f735e34c756bb82dba12432f37"
+  },
+  {
+   "path": "job/review-checks-24929764.out",
+   "source": "picture-test-20261021/review-checks-24929764.out (Slurm output of job 24929764)",
+   "kind": "byte-preserved",
+   "bytes": 2711,
+   "sha256": "efa9588f43841be014501bc27f9ab3fe892d46e0f01abea027200d9ab64db576"
+  },
+  {
+   "path": "job/review_checks_20261028.sbatch",
+   "source": "picture-test-20261021/review_checks_20261028.sbatch (the script submitted as job 24929764; written for this folder)",
+   "kind": "byte-preserved",
+   "bytes": 4310,
+   "sha256": "593f3939ca5948a3be7a52d58a12689f4d07438bc4fce57c0e170286ea67e366"
+  },
+  {
+   "path": "job/sacct.txt",
+   "source": "sacct -X -j 24757429,24903082,24903182,24929300,24929408,24929449,24929452,24929495,24929533,24929534,24929739,24929764 --format=JobID,JobName%28,Account,Partition,NodeList%14,Start,End,State,ExitCode, run on the login node on 2026-10-28 after job 24929764 (times MDT)",
+   "kind": "derived",
+   "bytes": 1960,
+   "sha256": "09e36021e053515f0f55a0b13bbde6fa0e97653f54d23c95e2275329f1a383b9"
+  },
+  {
+   "path": "job/window-test-24929533.out",
+   "source": "PythonFOAM-inst/pod-window-test-24929533.out (Slurm output of job 24929533)",
+   "kind": "byte-preserved",
+   "bytes": 24509,
+   "sha256": "a72c4a3407b437276834d82556b264bc845c5d1fa496f113f438c0863079e555"
+  },
+  {
+   "path": "job/window-test-24929534.out",
+   "source": "PythonFOAM-inst/pod-window-test-24929534.out (Slurm output of job 24929534)",
+   "kind": "byte-preserved",
+   "bytes": 13728,
+   "sha256": "780424aad71100b5f3bd1982ced6da5bb9189bbe39d9d634cb434546e765703e"
+  },
+  {
+   "path": "pictures/instability-v2own-central-dt2e-5-steps00461-00462-00463-t1-U.png",
+   "source": "picture-test-20261021/instability-test-20261028/requests/instability-v2own/central-dt2e-5-steps00461-00462-00463.request.json, image 1",
+   "kind": "decoded from a request body",
+   "bytes": 86556,
+   "sha256": "a3f6085164ad953433912cb7f0e3f158e3b39c97a3919e9dcbabd40e17231902"
+  },
+  {
+   "path": "pictures/instability-v2own-central-dt2e-5-steps00461-00462-00463-t3-U.png",
+   "source": "picture-test-20261021/instability-test-20261028/requests/instability-v2own/central-dt2e-5-steps00461-00462-00463.request.json, image 5",
+   "kind": "decoded from a request body",
+   "bytes": 75832,
+   "sha256": "0d4eec93b814cfe77fb7e1fcb09210c6b16cd2e8bdad624359ff2f7bc1223cc1"
+  },
+  {
+   "path": "pictures/instability-v2own-central-dt2e-5-steps00463-00464-00465-t3-U.png",
+   "source": "picture-test-20261021/instability-test-20261028/requests/instability-v2own/central-dt2e-5-steps00463-00464-00465.request.json, image 5",
+   "kind": "decoded from a request body",
+   "bytes": 74854,
+   "sha256": "c05ea1e02efb8fc0c1828457d60f26a3dc4ae6cf94ba2d3fd4f9929af9cd1baa"
+  },
+  {
+   "path": "pictures/instability-v2own-central-dt2e-5-steps00464-00465-00466-t3-p.png",
+   "source": "picture-test-20261021/instability-test-20261028/requests/instability-v2own/central-dt2e-5-steps00464-00465-00466.request.json, image 6",
+   "kind": "decoded from a request body",
+   "bytes": 54557,
+   "sha256": "bce23a344e7af582789815e94ed4d39a38181983c4524b9b012133739664ba20"
+  },
+  {
+   "path": "pictures/instability-v2own-central-dt3e-5-steps00019-00022-00025-t3-U.png",
+   "source": "picture-test-20261021/instability-test-20261028/requests/instability-v2own/central-dt3e-5-steps00019-00022-00025.request.json, image 5",
+   "kind": "decoded from a request body",
+   "bytes": 86295,
+   "sha256": "eea5363cd82bea220f2307499993d91032922f0e7980f5a8bf81d19eaa4ba0a4"
+  },
+  {
+   "path": "pictures/instability-v2own-central-dt4e-5-steps00003-00006-00009-t3-U.png",
+   "source": "picture-test-20261021/instability-test-20261028/requests/instability-v2own/central-dt4e-5-steps00003-00006-00009.request.json, image 5",
+   "kind": "decoded from a request body",
+   "bytes": 55863,
+   "sha256": "6ac32747f2cfa2469cc2048bbefcb12bb158b6013608ca556962963b439751e6"
+  },
+  {
+   "path": "pictures/instability-v2own-central-dt5e-6-steps01150-01200-01250-t3-U.png",
+   "source": "picture-test-20261021/instability-test-20261028/requests/instability-v2own/central-dt5e-6-steps01150-01200-01250.request.json, image 5",
+   "kind": "decoded from a request body",
+   "bytes": 89853,
+   "sha256": "b0df8c28f1f1d7ea036b2e59ddaad425446b0636ea6e64d7ce5a6cf3dfb1e22f"
+  },
+  {
+   "path": "pictures/instability-v2own-upwind-dt4e-5-steps00970-00980-00990-t3-U.png",
+   "source": "picture-test-20261021/instability-test-20261028/requests/instability-v2own/upwind-dt4e-5-steps00970-00980-00990.request.json, image 5",
+   "kind": "decoded from a request body",
+   "bytes": 83635,
+   "sha256": "0450b84f2aa6f463c00dd7de5c97288e2a6f12c6f065a8ca17b1677d5c3e552a"
+  },
+  {
+   "path": "reports/window-test-24929533.job.md",
+   "source": "PythonFOAM-inst/results/window-test-24929533/report.md (written by the job)",
+   "kind": "byte-preserved",
+   "bytes": 9840,
+   "sha256": "8fecbd410a496372e8abeb37fd65746573098d990cc027b3759de16ffb9d8eee"
+  },
+  {
+   "path": "reports/window-test-24929533.md",
+   "source": "instability_test.py report (code of c9a1ba1) applied to PythonFOAM-inst/results/window-test-24929533/<model> and picture-test-20261021/instability-test-20261028",
+   "kind": "derived",
+   "bytes": 10049,
+   "sha256": "f1a674887da7bcecb047a8939214af903e5e9afb8a52f636611018d9711bac1f"
+  },
+  {
+   "path": "reports/window-test-24929534.job.md",
+   "source": "PythonFOAM-inst/results/window-test-24929534/report.md (written by the job)",
+   "kind": "byte-preserved",
+   "bytes": 8716,
+   "sha256": "fd1d52abf155bb4d5675e79709846fe0eed4609c58cc29f003b0714a6dd24e0e"
+  },
+  {
+   "path": "reports/window-test-24929534.md",
+   "source": "instability_test.py report (code of c9a1ba1) applied to PythonFOAM-inst/results/window-test-24929534/<model> and picture-test-20261021/instability-test-20261028",
+   "kind": "derived",
+   "bytes": 8925,
+   "sha256": "92d9277cf7f18df3bd2e32554d338889892a6a992a920155d79159b80b4fa915"
+  },
+  {
+   "path": "results/window-test-24929533/12b/instability-v2own/metrics.jsonl",
+   "source": "PythonFOAM-inst/results/window-test-24929533/12b/instability-v2own/metrics.jsonl (also in results/window-test-24929533.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 87402,
+   "sha256": "ea75f2d9150c0ec0f69eab28f5e54580ab422fb79578ed62688a1268aa0d4805"
+  },
+  {
+   "path": "results/window-test-24929533/12b/instability-v2own/summary.json",
+   "source": "PythonFOAM-inst/results/window-test-24929533/12b/instability-v2own/summary.json (also in results/window-test-24929533.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 4657,
+   "sha256": "8db43fb8b158d438e207bb5f9c33f68d23f7e0dc260070276ffc866f598314c3"
+  },
+  {
+   "path": "results/window-test-24929533/12b/run.json",
+   "source": "PythonFOAM-inst/results/window-test-24929533/12b/run.json (also in results/window-test-24929533.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 850,
+   "sha256": "cefa70414c8e2d1b4e991296ac80a5d96f7405d5743ba339358ebbd5610351f2"
+  },
+  {
+   "path": "results/window-test-24929533/26b/instability-v2own/metrics.jsonl",
+   "source": "PythonFOAM-inst/results/window-test-24929533/26b/instability-v2own/metrics.jsonl (also in results/window-test-24929533.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 83728,
+   "sha256": "428fe1d24d17aee8db07b14871b4be143ead583b4c18b9178818616ef9424ae8"
+  },
+  {
+   "path": "results/window-test-24929533/26b/instability-v2own/summary.json",
+   "source": "PythonFOAM-inst/results/window-test-24929533/26b/instability-v2own/summary.json (also in results/window-test-24929533.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 4656,
+   "sha256": "f0c460cd26178b5322bbd3bfa89e80d7fb39aead6c22b3165c92e6a69befec98"
+  },
+  {
+   "path": "results/window-test-24929533/26b/run.json",
+   "source": "PythonFOAM-inst/results/window-test-24929533/26b/run.json (also in results/window-test-24929533.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 846,
+   "sha256": "4f8f0f2de2c821d397053276f37ad469d565d3bc83ad7386c28b895cd5291e89"
+  },
+  {
+   "path": "results/window-test-24929533/31b/instability-v2own/metrics.jsonl",
+   "source": "PythonFOAM-inst/results/window-test-24929533/31b/instability-v2own/metrics.jsonl (also in results/window-test-24929533.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 82273,
+   "sha256": "7a0b925b4b4cb27bdcd284605eba6b03abfb70746e008d2d26f14006e235445b"
+  },
+  {
+   "path": "results/window-test-24929533/31b/instability-v2own/summary.json",
+   "source": "PythonFOAM-inst/results/window-test-24929533/31b/instability-v2own/summary.json (also in results/window-test-24929533.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 4634,
+   "sha256": "95a0b89e41a5be5f0111323e01a2166955bf7ce328020a57d239f39c6472fa2e"
+  },
+  {
+   "path": "results/window-test-24929533/31b/run.json",
+   "source": "PythonFOAM-inst/results/window-test-24929533/31b/run.json (also in results/window-test-24929533.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 837,
+   "sha256": "0624bff692d3b1c890d478ba86b70371b2a02322cf8acc4d5464770a2b27fe03"
+  },
+  {
+   "path": "results/window-test-24929534/qwen35-35b/instability-v2own/metrics.jsonl",
+   "source": "PythonFOAM-inst/results/window-test-24929534/qwen35-35b/instability-v2own/metrics.jsonl (also in results/window-test-24929534.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 85962,
+   "sha256": "4734e51ff1be672f7285c8f1559088e172cf249a10e67fc9a43978b7c5f3fb43"
+  },
+  {
+   "path": "results/window-test-24929534/qwen35-35b/instability-v2own/summary.json",
+   "source": "PythonFOAM-inst/results/window-test-24929534/qwen35-35b/instability-v2own/summary.json (also in results/window-test-24929534.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 4662,
+   "sha256": "1df261b0a0892d8c0f4bc65ca53ec30d901fbe3d328c98e2349d3b697eec55f4"
+  },
+  {
+   "path": "results/window-test-24929534/qwen35-35b/run.json",
+   "source": "PythonFOAM-inst/results/window-test-24929534/qwen35-35b/run.json (also in results/window-test-24929534.tar.gz)",
+   "kind": "byte-preserved",
+   "bytes": 836,
+   "sha256": "2a79a071ad82c2b1fa75d75a468a3a4cc47d95c8f8b1adffc778923f8bf04d19"
+  },
+  {
+   "path": "runtime/window-test-24929533/llama-server-version.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929533/llama-server-version.txt",
+   "kind": "byte-preserved",
+   "bytes": 84,
+   "sha256": "f9f53a7907882cc441fa32c90b58e41385d5a550e0a5451f231376bafff686f9"
+  },
+  {
+   "path": "runtime/window-test-24929533/modules.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929533/modules.txt",
+   "kind": "byte-preserved",
+   "bytes": 337,
+   "sha256": "f421011c3236d7ca66a0057a0c04910c5637f72d3dbaf72fc2a9110a09e26ea3"
+  },
+  {
+   "path": "runtime/window-test-24929533/nvidia-smi.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929533/nvidia-smi.txt",
+   "kind": "byte-preserved",
+   "bytes": 1689,
+   "sha256": "3a6e04fb3fec1b76e3568814460bf21fa04ec1990067b9d3e60e87ba496bdc7d"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/12b.cmd",
+   "source": "PythonFOAM-inst/results/window-test-24929533/server-12b.cmd",
+   "kind": "byte-preserved",
+   "bytes": 690,
+   "sha256": "63f6b2a49fe3d0da13aa2d5358582bdbfc29b763deddc4862c5ec2ea2fe49252"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/12b.gpu.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929533/gpu-12b.txt",
+   "kind": "byte-preserved",
+   "bytes": 77,
+   "sha256": "0de2cc52b250cca5980338febd3dcd4f81c07a9bd096599f4a72ffd55b39f17a"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/12b.log.gz",
+   "source": "PythonFOAM-inst/results/window-test-24929533/server-12b.log",
+   "kind": "gzip copy",
+   "bytes": 8174,
+   "sha256": "5268f6ab11f541b3e48ca780fab4f1e46d3960a2515ecaf91008a01b2f47a354",
+   "source_sha256": "573e068526247f62a19892d7de954d66d3d7159c11fbc689bc93d3a311106987"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/12b.models.json",
+   "source": "PythonFOAM-inst/results/window-test-24929533/models-12b.json",
+   "kind": "byte-preserved",
+   "bytes": 778,
+   "sha256": "d148890429c19669251207702d4b284002c7bbbfdd7f98d385896f493e4b01e8"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/26b.cmd",
+   "source": "PythonFOAM-inst/results/window-test-24929533/server-26b.cmd",
+   "kind": "byte-preserved",
+   "bytes": 699,
+   "sha256": "e3ba0584ce20835483c89352006221840e7b054d7608880bade54bf82c5447ff"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/26b.gpu.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929533/gpu-26b.txt",
+   "kind": "byte-preserved",
+   "bytes": 78,
+   "sha256": "55d6935337fba9e2af746180fc99347fe9501bca199abc13905ed16390da0a71"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/26b.log.gz",
+   "source": "PythonFOAM-inst/results/window-test-24929533/server-26b.log",
+   "kind": "gzip copy",
+   "bytes": 8007,
+   "sha256": "ae082f05cd1f359a09957db280b28d2c0993ce10b5af978c71f468d9b776f025",
+   "source_sha256": "dd8f84632b9ea5e4198952fc671e4fce4acad53f725da6d4e6cb96ec3457c042"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/26b.models.json",
+   "source": "PythonFOAM-inst/results/window-test-24929533/models-26b.json",
+   "kind": "byte-preserved",
+   "bytes": 787,
+   "sha256": "cfd2defd89e30e9e4c7a46778c4cdb17b7ceedbe70c8c307054b3943da0ee22b"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/31b.cmd",
+   "source": "PythonFOAM-inst/results/window-test-24929533/server-31b.cmd",
+   "kind": "byte-preserved",
+   "bytes": 695,
+   "sha256": "9a182f7c9bc876baca0e8f7151c63a93aae5123353b228ad039b7d35183b7a1d"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/31b.gpu.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929533/gpu-31b.txt",
+   "kind": "byte-preserved",
+   "bytes": 78,
+   "sha256": "1bc7c6a9c181b223b6e2f02209a2a204aaeb8da5f5718f0b4d8d92a450bf2121"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/31b.log.gz",
+   "source": "PythonFOAM-inst/results/window-test-24929533/server-31b.log",
+   "kind": "gzip copy",
+   "bytes": 8216,
+   "sha256": "22934dd0bba8d47a498cb38bbaea75580c32207adf4606f829293403edcb9e21",
+   "source_sha256": "419d2db7cd576b3da58c3b076a3f104ab8bbbd71e2a4fb538ac2843be1ad902b"
+  },
+  {
+   "path": "runtime/window-test-24929533/server/31b.models.json",
+   "source": "PythonFOAM-inst/results/window-test-24929533/models-31b.json",
+   "kind": "byte-preserved",
+   "bytes": 771,
+   "sha256": "8153bd5c6c5d286b975e6d3d89c4a9cbdfc3967abf01cb319aaba68764b388b7"
+  },
+  {
+   "path": "runtime/window-test-24929533/sha256.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929533/sha256.txt",
+   "kind": "byte-preserved",
+   "bytes": 11384,
+   "sha256": "887c890cb3d0757df87b41ec8d716c73b8d970119e8237a3f8d0579d8bf6f6f3"
+  },
+  {
+   "path": "runtime/window-test-24929534/llama-server-version.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929534/llama-server-version.txt",
+   "kind": "byte-preserved",
+   "bytes": 84,
+   "sha256": "f9f53a7907882cc441fa32c90b58e41385d5a550e0a5451f231376bafff686f9"
+  },
+  {
+   "path": "runtime/window-test-24929534/modules.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929534/modules.txt",
+   "kind": "byte-preserved",
+   "bytes": 337,
+   "sha256": "f421011c3236d7ca66a0057a0c04910c5637f72d3dbaf72fc2a9110a09e26ea3"
+  },
+  {
+   "path": "runtime/window-test-24929534/nvidia-smi.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929534/nvidia-smi.txt",
+   "kind": "byte-preserved",
+   "bytes": 1689,
+   "sha256": "8ffcf0c931e645db36b4968d4d8822225f85c548360a1ca866a8c68dd7b1d4bf"
+  },
+  {
+   "path": "runtime/window-test-24929534/server/qwen35-35b.cmd",
+   "source": "PythonFOAM-inst/results/window-test-24929534/server-qwen35-35b.cmd",
+   "kind": "byte-preserved",
+   "bytes": 713,
+   "sha256": "195a08c8ed297e0c929d0178ecf380f945711f2ebff7a28cf949f4d9b9b961d5"
+  },
+  {
+   "path": "runtime/window-test-24929534/server/qwen35-35b.gpu.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929534/gpu-qwen35-35b.txt",
+   "kind": "byte-preserved",
+   "bytes": 78,
+   "sha256": "de11c7389df421cf29d01f19a7e35e88e83431827cd22b37ce57096698e5c24d"
+  },
+  {
+   "path": "runtime/window-test-24929534/server/qwen35-35b.log.gz",
+   "source": "PythonFOAM-inst/results/window-test-24929534/server-qwen35-35b.log",
+   "kind": "gzip copy",
+   "bytes": 20851,
+   "sha256": "875ba880aeffb31cfaaf50e55aafe7c7d3e306afbdf51e9a6711bca6f1f3ed49",
+   "source_sha256": "2e0eebe3b649bcae0ba3bc24379a9e5d4e6565cc73a9ac4e0366efc217dd25ca"
+  },
+  {
+   "path": "runtime/window-test-24929534/server/qwen35-35b.models.json",
+   "source": "PythonFOAM-inst/results/window-test-24929534/models-qwen35-35b.json",
+   "kind": "byte-preserved",
+   "bytes": 759,
+   "sha256": "d7e374b38e1744443d4135e6554c95003abd6580a9d67ec909dacd1a91cdcbf8"
+  },
+  {
+   "path": "runtime/window-test-24929534/sha256.txt",
+   "source": "PythonFOAM-inst/results/window-test-24929534/sha256.txt",
+   "kind": "byte-preserved",
+   "bytes": 11384,
+   "sha256": "887c890cb3d0757df87b41ec8d716c73b8d970119e8237a3f8d0579d8bf6f6f3"
+  },
+  {
+   "path": "test-set/design.json",
+   "source": "written for this folder: the --design input of job 24929495",
+   "kind": "derived",
+   "bytes": 1531,
+   "sha256": "4929f2d32022a86af44b9d2f2e8bf455f0b683a4497200331dd13d026da0ca17"
+  },
+  {
+   "path": "test-set/manifest.json",
+   "source": "picture-test-20261021/instability-test-20261028/manifest.json (built by job 24929495)",
+   "kind": "byte-preserved",
+   "bytes": 127777,
+   "sha256": "daa6db18ec47f9fb31a378afa741ef5f2b961098446a56ae74231df67d9110f6"
+  },
+  {
+   "path": "test-set/truth.private.json",
+   "source": "picture-test-20261021/instability-test-20261028/truth.private.json (built by job 24929495)",
+   "kind": "byte-preserved",
+   "bytes": 176270,
+   "sha256": "2701d7d27526e18be9456069bf970d03702eedbe6f24b0c08470a197542d330d"
+  }
+ ]
+}

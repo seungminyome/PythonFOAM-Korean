@@ -1,0 +1,28 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object controlDict;
+}
+application pimpleFoam;
+startFrom startTime;
+startTime 0.1;
+stopAt endTime;
+endTime 0.13;
+deltaT 2e-5;
+writeControl timeStep;
+writeInterval 1;
+purgeWrite 0;
+writeFormat ascii;
+writePrecision 12;
+writeCompression off;
+timeFormat general;
+timePrecision 10;
+runTimeModifiable false;
+adjustTimeStep no;
+maxCo 0.5;
+maxDeltaT 5e-6;
+podSvdInterval 10;
+functions {}
+libs ("libincompressibleTurbulenceModels.so");

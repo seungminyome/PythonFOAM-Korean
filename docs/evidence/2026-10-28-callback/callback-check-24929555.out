@@ -1,0 +1,49 @@
+validation ran
+  "status": "PASS"
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-callback-20261028/run-24929555/pod-v2212.Dhv1P6
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-callback-20261028/run-24929555/pod-v2212.Dhv1P6/bin/PODFoam
+describe-main exit 0
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=0.737564s async=1 arrived_at_step=114 solver_stall=0.009619s
+Python finalized successfully
+End
+describe-new exit 0
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=0.984862s async=1 arrived_at_step=119 solver_stall=0.010967s
+PYTHON LLM telemetry lines=1250 appends=3 failed_appends=0 file=telemetry.jsonl
+Python finalized successfully
+End
+sequence-main exit 0
+PYTHON LLM step=200 time=0.101 status=disabled image_input=True analysis_wait=1.007316s async=1 arrived_at_step=216 solver_stall=0.003460s
+Python finalized successfully
+End
+sequence-new exit 0
+PYTHON LLM step=200 time=0.101 status=disabled image_input=True analysis_wait=0.832094s async=1 arrived_at_step=214 solver_stall=0.003599s
+PYTHON LLM telemetry lines=1250 appends=3 failed_appends=0 file=telemetry.jsonl
+Python finalized successfully
+End
+sequence-tn-new exit 0
+PYTHON LLM step=200 time=0.101 status=disabled image_input=True analysis_wait=0.847676s async=1 arrived_at_step=213 solver_stall=0.003421s
+PYTHON LLM telemetry lines=1250 appends=3 failed_appends=0 file=telemetry.jsonl
+Python finalized successfully
+End
+par2-describe-main exit 0
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=0.834659s async=1 arrived_at_step=121 solver_stall=0.012022s
+Python finalized successfully
+End
+par2-describe-new exit 0
+PYTHON LLM step=100 time=0.1005 status=disabled image_input=True analysis_wait=1.596053s async=1 arrived_at_step=138 solver_stall=0.014325s
+PYTHON LLM telemetry lines=1250 appends=3 failed_appends=0 file=telemetry.jsonl
+Python finalized successfully
+End
+compare exit 1
+}
+computed trends equal to the answer key: True ; tn body equals builder: True ; status: FAIL
+memory exit 0
+main heap after 24000 steps: 31.685 MiB; peak 31.686 MiB
+main last step 0.699 s; other steps median 2e-05 s; file equals recorded: True
+branch heap after 24000 steps: 0.067 MiB; peak 0.515 MiB
+branch last step 0.023 s; other steps median 4.6e-05 s; file equals recorded: True
+unit tests exit 0
+Ran 107 tests in 75.871s
+OK
+verify_async on the October 22 suite exit 0
+  "status": "PASS"

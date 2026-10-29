@@ -74,6 +74,58 @@ def cell_polygons(points, offsets, cells, n_cells):
     return {"points": points, "offsets": offsets, "cells": cells}
 
 
+def plane_slice(points, offsets, cells, centres, plane):
+    """The plane slice of a 3D case from the solver (PythonSlice.H); never raises for a missing cut.
+
+    points/offsets/cells describe one polygon per cut cell, as in cell_polygons; cells
+    are mesh cells and each may appear once. plane is the solver's description of the
+    plane z = z_m: normal, z_m (None when no cut was made), requested_z_m, z_source,
+    moved_off_mesh_points, mesh_z_range_m, and error when no cut was made.
+    Returns {"record", "mesh_cells", "centres", "polygons", "reason"}: the record for the
+    frame metadata, the slice cells in increasing mesh order with their centres, their
+    polygons numbered 0..n-1 in that order, and reason, None or why nothing can be drawn.
+    """
+    centres = np.asarray(centres, dtype=float)
+    record = {"normal": [float(v) for v in plane.get("normal", (0.0, 0.0, 1.0))],
+              "z_m": None if plane.get("z_m") is None else float(plane["z_m"]),
+              "requested_z_m": (None if plane.get("requested_z_m") is None
+                                else float(plane["requested_z_m"])),
+              "z_source": plane.get("z_source"),
+              "moved_off_mesh_points": bool(plane.get("moved_off_mesh_points", False)),
+              "mesh_z_range_m": [float(v) for v in plane["mesh_z_range_m"]],
+              "cells": 0, "mesh_cells_total": int(centres.shape[0])}
+    empty = {"record": record, "mesh_cells": None, "centres": None, "polygons": None}
+    if record["normal"] != [0.0, 0.0, 1.0]:
+        raise ValueError("a plane slice must be normal to z")
+    if record["z_m"] is None:
+        return dict(empty, reason="no plane slice: " + str(plane.get("error", "no cut made")))
+    points = np.array([] if points is None else points, dtype=float, copy=True).reshape(-1, 3)
+    offsets = np.array([0] if offsets is None else offsets, dtype=np.int64, copy=True).ravel()
+    cells = np.array([] if cells is None else cells, dtype=np.int64, copy=True).ravel()
+    if cells.size == 0:
+        return dict(empty, reason=f"the plane z = {record['z_m']:g} m cuts no cells")
+    if offsets.size != cells.size + 1 or offsets[0] != 0 or offsets[-1] != points.shape[0]:
+        raise ValueError("inconsistent slice polygon offsets")
+    if not np.all(np.diff(offsets) >= 3):
+        raise ValueError("slice polygon with fewer than three vertices")
+    if cells.min() < 0 or cells.max() >= centres.shape[0] or np.unique(cells).size != cells.size:
+        raise ValueError("slice polygons must map one polygon to one distinct cell")
+    if not np.isfinite(points).all():
+        raise ValueError("nonfinite slice polygon points")
+    z_low, z_high = record["mesh_z_range_m"]
+    if np.abs(points[:, 2] - record["z_m"]).max() > 1e-6 * max(z_high - z_low, 1e-300):
+        raise ValueError(f"slice polygon points do not lie in the plane z = {record['z_m']:g} m")
+    order = np.argsort(cells, kind="stable")
+    sizes = np.diff(offsets)[order]
+    points = np.concatenate([points[offsets[k]:offsets[k + 1]] for k in order])
+    record["cells"] = int(cells.size)
+    return {"record": record, "mesh_cells": cells[order], "centres": centres[cells[order]],
+            "polygons": {"points": points,
+                         "offsets": np.concatenate([[0], np.cumsum(sizes)]).astype(np.int64),
+                         "cells": np.arange(cells.size, dtype=np.int64)},
+            "reason": None}
+
+
 def parse_window(text):
     """'x0,x1' in metres from an environment variable, or None for the whole domain."""
     if not text or not text.strip():

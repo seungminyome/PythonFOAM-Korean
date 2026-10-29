@@ -117,8 +117,10 @@ for name in CASES:
     log = (case/'log.PODFoam').read_text()
     assert re.search(r'^End$', log, re.M) and 'Python finalized successfully' in log
     assert not re.search(r'(?i)\b(nan|inf)\b|FOAM FATAL', log)
-    # a leftover .tmp means the final telemetry write was killed at its deadline
+    # telemetry.jsonl exists only complete: a leftover .tmp, or no file at all, means the
+    # telemetry did not complete; llm_errors.jsonl and the solver log say why
     assert not (case/'telemetry.jsonl.tmp').exists(), (name, 'final telemetry write did not complete')
+    assert (case/'telemetry.jsonl').exists(), (name, 'no telemetry.jsonl: the telemetry did not complete')
     states = [json.loads(line) for line in (case/'telemetry.jsonl').read_text().splitlines()]
     assert len(states) == STEPS, (name, len(states))
     assert all('p_cells' not in s for s in states)
@@ -193,11 +195,28 @@ for name in CASES:
             for part, field in zip(images[2 * k:2 * k + 2], ('U', 'p')):
                 data = part['image_url']['url'].split(',', 1)[1]
                 assert hashlib.sha256(base64.b64decode(data)).hexdigest() == frame['image_sha256'][field]
-        assert body['messages'][0]['content'] == readable_request.SEQUENCE_V2OWN_SYSTEM_PROMPT
+        # LLM_SEQUENCE_PROMPT (2026-10-28): own (default), t or tn, the forms of the trend test
+        form = result.get('sequence_prompt', 'own')
+        truths = [picture_test.load_v2(f['directory'])[1] for f in frames]
+        options, system = {}, readable_request.SEQUENCE_V2OWN_SYSTEM_PROMPT
+        if form == 't':
+            options, system = {'thresholds': True}, readable_request.SEQUENCE_V2OWN_T_SYSTEM_PROMPT
+        elif form == 'tn':
+            import sequence_test
+            options = {'thresholds': True, 'numbers': [sequence_test.numbers_of(t) for t in truths]}
+            system = readable_request.SEQUENCE_V2OWN_TN_SYSTEM_PROMPT
+        assert body['messages'][0]['content'] == system
         assert body['response_format']['json_schema']['name'] == 'fluid_sequence'
         # live request == the tested builder applied to the frames on disk, byte for byte
         assert body_bytes == encode_json(readable_request.sequence_v2_payload(
-            frames, model=body['model'], own_ranges=True)), name
+            frames, model=body['model'], own_ranges=True, **options)), name
+        if 'computed_trends' in result:
+            # callbacks since 2026-10-28 record the answer key they computed from the frames
+            key = snapshot_runner.sequence_truth(truths)
+            assert result['computed_trends'] == json.loads(json.dumps(key)), name
+            if 'computed_trends_agreement' in result:
+                assert result['computed_trends_agreement'] == snapshot_runner.score_sequence(
+                    result['structured_output'], result['computed_trends']), name
         if name == 'async-sequence':
             scores = score_v2(name, result, frames)
     elif STYLE == 'v2' and result['mode'] == 'describe':

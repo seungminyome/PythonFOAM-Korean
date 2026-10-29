@@ -1,0 +1,19 @@
+{
+  "note": "Runs of the instability test of 2026-10-28. All are pimpleFoam (OpenFOAM v2212, laminar) runs of the 2D step case from the same developed state at t = 0.1 s, except developed (the run that made that state, from t = 0). Runs that crashed give 'unstable' triples; runs that ended give 'stable' ones (instability_test.py).",
+  "window_m": [[0.0, 0.12], [0.0, 0.04]],
+  "runs": [
+    {"name": "central-dt2e-5", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261028/central-dt2e-5-long",
+     "early_steps_to_crash": [12, 15, 20, 30, 50, 75, 100, 150, 200, 300, 400, 460]},
+    {"name": "central-dt3e-5", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261027/unstable/central-dt3e-5",
+     "early_steps_to_crash": [12, 16, 20, 24]},
+    {"name": "central-dt4e-5", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261027/unstable/central-dt4e-5"},
+    {"name": "upwind-dt2e-5", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261028/upwind-dt2e-5-long",
+     "stable_items": 7},
+    {"name": "upwind-dt4e-5", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261028/upwind-dt4e-5-long",
+     "stable_items": 7},
+    {"name": "developed", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261022/long-100ms",
+     "stable_items": 7, "first_time_s": 0.032},
+    {"name": "central-dt5e-6", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261028/central-dt5e-6-long",
+     "stable_items": 6}
+  ]
+}

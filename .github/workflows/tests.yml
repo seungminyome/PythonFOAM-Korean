@@ -19,4 +19,4 @@ jobs:
       - run: pip install -r Solver_Examples/PODFoam/llm_demo/requirements.txt
       - name: llm_demo unit tests (no OpenFOAM, no model)
         working-directory: Solver_Examples/PODFoam/llm_demo
-        run: python -m unittest test_llm_client test_callback test_ablation_runner test_async test_picture_test -v
+        run: python -m unittest test_llm_client test_callback test_ablation_runner test_async test_picture_test test_instability_test -v

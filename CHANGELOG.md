@@ -8,6 +8,7 @@
   2026-10-27 MPI 시험의 것과, 3차원 단면 프레임과 요청 본문은 단면 시험(작업 24929629)의 것과 같음. 두 경우 모두
   `telemetry.jsonl`이 완전함(Slurm 작업 24936949). 기록
   [docs/evidence/2026-10-29-merged-check/](docs/evidence/2026-10-29-merged-check/README.md).
+- CI도 `test_instability_test`를 돌림: 테스트 모듈 여섯 개, 125개로 `make test`와 같음.
 
 ## 2026-10-28, 요청 두 개 동시 진행 (영문 저장소의 `2ed6da2`로 실행; `c85c79c`, `56646b9`)
 

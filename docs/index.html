@@ -13,62 +13,77 @@
 <header>
 <p class="eyebrow">PythonFOAM 포크 · PODFoam · llama.cpp</p>
 <h1>비전-언어 모델로<br>OpenFOAM 계산 관찰하기</h1>
-<p>PythonFOAM의 PODFoam 예제에 붙인 선택 사항인 관찰 기능입니다. OpenFOAM 계산 중에 솔버가 상태를 Python에 넘기면, Python은 |U|와 p 이미지를 생성하고 llama.cpp로 로컬에서 실행하는 비전-언어 모델(VLM)에 이미지 설명을 요청합니다. 그동안 솔버는 응답을 기다리거나, 기다리지 않고 다음 시간 단계로 진행합니다. 응답은 기록만 하며, 모델 출력은 솔버 계산에 반영하지 않습니다.</p>
-<div class="links"><a class="primary" href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">최신 보고서 · 10월 28일</a><a href="https://github.com/seungminyome/PythonFOAM-Korean#readme">저장소와 README</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/progress.ko.md">작업 기록</a></div>
+<p>PythonFOAM의 PODFoam 예제에 선택 사항으로 붙인 관찰 기능입니다. OpenFOAM 계산 중에 솔버가 상태를 Python에 넘기면, Python은 |U|와 p 이미지를 생성하고 llama.cpp로 로컬에서 실행하는 비전-언어 모델(VLM)에 이미지 설명을 요청합니다. 그동안 솔버는 응답을 기다리거나, 기다리지 않고 다음 시간 단계로 진행합니다. 응답은 기록만 하며, 모델 출력은 솔버 계산에 반영하지 않습니다. 실행 방법은 <a href="https://github.com/seungminyome/PythonFOAM-Korean#readme">저장소 README</a>에 있습니다.</p>
+<div class="links"><a class="primary" href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">최신 보고서 · 10월 28일</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/progress.ko.md">작업 기록</a></div>
 </header>
 
-<section aria-labelledby="images">
-<h2 id="images">모델에 보내는 이미지</h2>
+<section aria-label="모델에 보낸 v2 이미지">
 <figure>
 <img src="evidence/2026-10-22-live-v2/suite/async-describe/llm_observation/step-000250/U.png" width="1024" height="576" alt="t = 0.10125 s의 |U|, 표시 영역 x 0~0.12 m, y 0~0.04 m: 계단 뒤에 늘어선 와류">
-<img src="evidence/2026-10-22-live-v2/suite/async-describe/llm_observation/step-000250/p.png" width="1024" height="576" alt="같은 시점의 p: y 약 25~30 %에 있는 저압 와류 중심">
-<figcaption>발달한 후향 계단 유동의 250단계(t = 0.10125&nbsp;s)에서 실행 중인 솔버가 Gemma 4 12B에 보낸 이미지 두 장입니다. 이 v2 이미지는 이미지 한 장에 필드 하나를 그리며, 축을 표시 영역의 퍼센트로 적고 10&nbsp;%마다 격자선을 긋습니다. 시퀀스에서는 v2own이 각 이미지를 이미지별 색 범위로 그립니다. 솔버의 기본 이미지(v1)는 |U|와 p를 두 패널에 그리며, 축은 미터 단위입니다.</figcaption>
+<img src="evidence/2026-10-22-live-v2/suite/async-describe/llm_observation/step-000250/p.png" width="1024" height="576" alt="같은 시점의 p: y 약 20~30 %에 있는 저압 와류 중심">
+<figcaption>발달한 후향 계단 유동의 250단계(t = 0.10125&nbsp;s)에서 실행 중인 솔버가 Gemma 4 12B에 보낸 v2 이미지 두 장입니다. |U|와 p는 각각 별도의 색 범위로 그렸고, 표시 영역은 x 0~0.12&nbsp;m, y 0~0.04&nbsp;m입니다.</figcaption>
 </figure>
 </section>
 
 <section aria-labelledby="results">
 <h2 id="results">결과</h2>
-<p>응답한 위치가 정답 셀에서 표시 영역 크기의 10&nbsp;% 이내에 있으면 맞힌 것으로 셉니다. 상수 기준선은 모든 이미지에 같은 답을 낼 때의 최고 점수입니다.</p>
-<div class="table"><table><caption>시험별 결과와 상수 기준선</caption><thead><tr><th scope="col">시험</th><th scope="col">결과</th><th scope="col" style="white-space:nowrap">상수 기준선</th></tr></thead><tbody>
-<tr><td>최대 속도 지점과 최저 압력 지점, 표시 영역을 무작위로 정한 이미지 48장, 시드 세 개 (Gemma 4 12B, 26B-A4B, 31B, Qwen3.5-35B-A3B; v2)</td><td>시드마다 48장 중 45~48장 (v1: 2~17장)</td><td style="white-space:nowrap">7~10</td></tr>
-<tr><td>실행 중인 솔버, 요청마다 표시 영역을 달리한 <code>describe</code> 요청 11개 (Gemma 4 12B; v2)</td><td>11개 중 최대 속도 지점 9개, 최저 압력 지점 10개</td><td style="white-space:nowrap">4, 4</td></tr>
-<tr><td>실행 중인 솔버, 24,000단계 동안 250단계마다 <code>describe</code> 요청 (Gemma 4 12B; v2)</td><td>96개 중 최대 속도 지점 65개, 최저 압력 지점 89개</td><td style="white-space:nowrap">53, 65</td></tr>
-<tr><td>세 시점에 걸친 최대 속도 추세, 시퀀스 45개 (Gemma 4 12B; v2own)</td><td>45개 중 32개 (v1: 14개). 최대 속도가 2&nbsp;% 이상 바뀐 시퀀스 30개 중 29개</td><td style="white-space:nowrap">15</td></tr>
-<tr><td>불안정 여부, 계산 중단 전 또는 정상 종료한 실행의 프레임 세 장 시퀀스 54개 (모델 네 개; v2own)</td><td>54개 중 30~33개. 배열에서 계산한 규칙은 33개와 38개</td><td style="white-space:nowrap">27</td></tr>
-<tr><td>요청 비용 (Gemma 4 12B)</td><td>250단계마다 요청을 하나씩 진행하면 단계당 벽시계 시간 +0.7&nbsp;%. 50단계마다 두 개까지 동시에 진행하면 요청당 약 0.1&nbsp;s. 저장 파일은 기준 실행(요청 없음)과 같음</td><td style="white-space:nowrap">-</td></tr>
+<p>이 저장소에서는 이런 모델이 솔버 필드를 얼마나 잘 읽는지, 요청이 실행에 얼마나 부담을 주는지 측정하고, 모델 응답을 배열에서 계산한 간단한 수치와 비교합니다.</p>
+<p>응답한 위치가 정답 셀에서 표시 영역 크기의 10&nbsp;% 이내에 있으면 맞힌 것으로 셉니다. 상수 기준선은 모든 이미지에 같은 답을 낼 때의 최고 점수입니다. v1은 솔버의 원래 이미지로, |U|를 위 패널에, p를 아래 패널에 그리며 축은 미터 단위입니다. 위에 보인 v2는 이미지 한 장에 필드 하나를 그리며, 축을 표시 영역의 퍼센트로 적고 10&nbsp;%마다 격자선을 긋습니다. v2own은 시퀀스의 각 이미지를 이미지별 색 범위로 그린 v2입니다. 따로 적지 않으면 케이스는 후향 계단을 지나는 2차원 층류 유동입니다.</p>
+<div class="table"><table style="min-width:760px"><caption>시험별 결과와 상수 기준선</caption><thead><tr><th scope="col">시험</th><th scope="col">모델, 이미지</th><th scope="col">결과</th><th scope="col" style="white-space:nowrap">상수 기준선</th><th scope="col">보고서</th></tr></thead><tbody>
+<tr><td>최대 속도 지점과 최저 압력 지점, 시작 직후 상태(처음 3&nbsp;ms), 표시 영역을 무작위로 정한 이미지 48장, 표시 영역 시드 세 개</td><td>Gemma 4 12B, 26B-A4B, 31B, <span style="white-space:nowrap">Qwen3.5-35B-A3B;</span> v2 (v1)</td><td>시드마다 48장 중 45~48장 (v1: 2~17장)</td><td>7~10</td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">10월 22일 이어서</a></td></tr>
+<tr><td>같은 시험, 발달한 유동 상태 35개의 이미지 140장</td><td>같은 모델; v2</td><td>최대 속도 지점 106~121장, 최저 압력 지점 130~139장</td><td>16, 17</td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">10월 22일 이어서</a></td></tr>
+<tr><td>실행 중인 솔버, 요청마다 표시 영역을 달리한 <code>describe</code> 요청 11개</td><td>Gemma 4 12B; v2</td><td>11개 중 최대 속도 지점 9개, 최저 압력 지점 10개</td><td>4, 4</td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">10월 22일 이어서</a></td></tr>
+<tr><td>실행 중인 솔버, 24,000단계 동안 250단계마다 <code>describe</code> 요청</td><td>Gemma 4 12B; v2</td><td>96개 중 최대 속도 지점 65개, 최저 압력 지점 89개</td><td>53, 65</td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
+<tr><td>세 시점에 걸친 최대 속도 / 최저 압력 추세, 시퀀스 45개</td><td>Gemma 4 12B; v2own (v1)</td><td>45개 중 32 / 28개 (v1: 14 / 15개). 최대 속도가 2&nbsp;% 이상 바뀐 시퀀스 30개 중 29개에서 최대 속도 추세를 맞힘</td><td>15 / 20</td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
+<tr><td>불안정 여부: 계산 중단 1~10단계 전에 끝나는 프레임 세 장 시퀀스(27개) 또는 정상 종료한 실행의 시퀀스(27개)</td><td>Gemma 4 12B, 26B-A4B, 31B, <span style="white-space:nowrap">Qwen3.5-35B-A3B;</span> v2own</td><td>54개 중 30~33개</td><td>27; 배열에서 계산한 규칙: 33(최대 |U| 증가), 38(인접 셀 간 차이)</td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">10월 28일</a></td></tr>
+<tr><td>비용: 250단계마다 요청, 동시에 하나까지 진행</td><td>Gemma 4 12B</td><td>같은 이미지를 생성한 기준 실행(요청 없음)보다 단계당 벽시계 시간 +0.7&nbsp;%. 저장 파일 2,016개 중 2,016개 동일</td><td></td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
+<tr><td>비용: 50단계마다 요청, 동시에 두 개까지 진행</td><td>Gemma 4 12B, 서버 슬롯 2개</td><td>벽시계 시간 +3.2&nbsp;%, 요청당 약 0.1&nbsp;s로 하나씩 진행할 때와 같음. 저장 파일 2,520개 중 2,520개 동일</td><td></td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">10월 28일</a></td></tr>
 </tbody></table></div>
-<p class="note"><strong>한계</strong><br>CPU 구성의 모델인 Gemma 4 E2B는 실용적인 수준의 응답을 내지 못합니다. Gemma 4 12B는 2&nbsp;% 미만의 최대 속도 변화를 대부분 잘못 읽습니다. 계산 중단보다 5단계 넘게 앞서 경고한 모델은 없었고, 배열에서 계산한 간단한 수치가 모델과 같거나 더 많이 맞혔습니다. 시험 범위는 2차원 층류 유동과 압출한 3차원 케이스 하나, 모델 요청 없이 실행한 MPI rank 2개, 동시에 진행하는 요청 최대 두 개입니다.</p>
+<p>v2 이미지에서는 표의 모든 모델이 모든 위치 시험에서 상수 기준선을 넘었고, Gemma 4 12B는 24,000단계 동안 실행 중인 솔버에서도 상수 기준선을 넘었습니다. 발달한 유동에서 최대 속도 지점을 틀린 응답은 대부분 최대 속도의 90&nbsp;% 이상인 다른 지점을 지목했습니다. 24,000단계 실행에서 최저 압력 지점은 와류 중심 사이를 옮겨 다녔고, 응답한 위치도 이를 따라갔습니다(x 방향 상관계수 0.78). 솔버의 v1 이미지로는 추세 시험에서 상수 기준선보다 뚜렷하게 나은 모델이 없었습니다.</p>
+<p>4비트 파일과 llama.cpp 권장 이미지 토큰 설정으로 실행한 Qwen3.5-35B-A3B와 27B는 발달한 유동의 최대 속도 지점을 이미지 140장 중 각각 133장과 128장에서 맞혔고, 이는 어느 Gemma 모델보다 많습니다. 다만 두 모델 계열은 서로 다른 파일과 설정으로 실행했습니다. 두 번째 형상인 원기둥 주위 층류 유동(<code>offsetCylinder</code>)에서는 Gemma 모델 세 개가 표시 영역 40개 중 32~39개에서 최대 속도 지점을 맞혔고, 상수 기준선은 8입니다. 넓고 어두운 후류 옆의 작은 점인 최저 압력 지점은 31B가 38개, 12B가 18개에서 맞혔습니다. CPU 구성의 모델인 Gemma 4 E2B는 합성 이미지에 넣은 고립된 최대 속도 지점을 v1 이미지 32장 중 4장, v2 이미지 32장 중 11장에서 맞혔고, 상수 기준선은 5입니다.</p>
+<p>불안정 감지 시험에서 계산 중단 1단계 전에 끝나는 시퀀스는 필드가 이미 발산한 상태이며, 모든 모델이 이 시퀀스에 <code>unstable</code>이라고 응답했습니다. 중단보다 5단계 넘게 앞서 경고한 모델은 없었습니다. 최대 |U| 증가를 보는 규칙은 가장 나은 모델만큼 맞혔고, 인접 셀 간 차이를 보는 규칙은 더 많이 맞혔습니다.</p>
 </section>
 
-<h2 id="reports">보고서와 근거 자료</h2>
-<p class="small">최신 보고서부터 실었습니다. 근거 자료 폴더마다 해시 목록이 있습니다.</p>
+<section aria-labelledby="limitations">
+<h2 id="limitations">한계</h2>
+<div class="note"><ul>
+<li>Gemma 4 E2B는 실용적인 수준의 응답을 내지 못합니다. Gemma 4 12B는 2&nbsp;% 미만의 최대 속도 변화를 대부분 잘못 읽고, 원기둥 케이스의 최저 압력 지점처럼 비슷한 색의 넓은 영역 옆에 있는 작은 압력 극값을 놓칩니다. 시험한 다른 모델은 뚜렷한 속도 변화도 놓칩니다. 채점한 것은 위치와 추세 레이블뿐이며, 설명 문장은 채점하지 않았습니다.</li>
+<li>불안정 감지 시험 세트에는 결함이 있습니다. 요청마다 프레임의 시점을 적었는데, 프레임 사이 시간 차이만으로도 두 부류가 구분됩니다.</li>
+<li>같은 노드에서는 같은 요청이 같은 응답을 냅니다. 다른 GPU에서는 응답 문장과 일부 위치가 바뀌지만, 10&nbsp;% 이내에 든 개수는 같습니다.</li>
+<li>2차원 층류 유동과 압출한 3차원 케이스 하나에서 시험했으며, 3차원 케이스의 단면 이미지를 읽은 모델은 없습니다. MPI는 rank 2개에서 모델 요청 없이 시험했고, 동시에 진행한 요청은 최대 두 개입니다.</li>
+<li>요청별 기록은 포크한 쓰기 프로세스가 0.2&nbsp;s 제한 시간 안에 씁니다. 솔버가 그보다 오래 기다리지 않게 하려는 설계입니다. 요청 두 개를 동시에 진행한 실행에서는 응답을 받은 요청 118개 중 1개의 기록이 남지 않았습니다.</li>
+</ul></div>
+</section>
+
+<h2 id="reports">보고서</h2>
+<p class="small">보고서마다 실행 조건, 하드웨어, 코드 리비전을 적었고, 최근 보고서는 이를 '기록' 절에 모았습니다(<a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md#기록">10월 28일</a>, <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md#기록">10월 27일</a>, <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md#기록">10월 22일 이어서</a>). 근거 자료 폴더마다 해시 목록(manifest)이 있으며, <code>make evidence</code>와 CI에서 확인합니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료 목록</a>에는 폴더마다 실행과 코드가 정리되어 있습니다. 근거 자료, 실행 방법, 변경 기록, 10월 22일까지의 보고서, 이 저장소에만 있는 문서는 이전 용어를 씁니다: 걸음 = 시간 단계, 칸 = 셀, 창 = 표시 영역, 답 하나로 고정 = 상수 기준선, 묶음 = 시퀀스 또는 시험 세트, 그림 = 이미지, 흐름 = 유동.</p>
 
 <article class="latest" aria-labelledby="oct28">
 <p class="tag">최신 보고서</p>
 <h3 id="oct28"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">10월 28일</a></h3>
-<p>요청 두 개 동시 진행, 3차원 단면, 불안정 감지 시험, 실행 중에 쓰는 텔레메트리, 콜백에서 계산한 추세 레이블</p>
-<p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-inflight/README.md">요청 두 개 동시 진행</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-callback/README.md">콜백</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-3d/README.md">3차원 단면</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-instability/README.md">불안정 감지 시험</a></p>
+<p>요청 두 개 동시 진행, 3차원 단면, 불안정 감지 시험, 실행 중에 쓰는 텔레메트리, 콜백에서 계산한 추세 레이블 (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/tests-2026-10-28">내려받기</a>)</p>
+<p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-inflight/README.md">요청 두 개 동시 진행</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-callback/README.md">콜백</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-3d/README.md">3차원 단면</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-instability/README.md">불안정 감지 시험</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-29-merged-check/README.md">합친 코드 실행</a></p>
 </article>
 
 <div class="cards">
 <article aria-labelledby="oct27">
 <h3 id="oct27"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></h3>
-<p>추세 판독, 두 번째 형상(원기둥), 4비트 Qwen, 250단계마다 요청, 재현성, MPI</p>
+<p>추세 판독, 두 번째 형상(원기둥), 4비트 Qwen, 250단계마다 요청, 재현성, MPI (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/tests-2026-10-27">내려받기</a>)</p>
 <p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-27-solver/README.md">솔버 실행</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-27-picture-tests/README.md">이미지 시험</a></p>
 </article>
 <article aria-labelledby="oct22-live">
 <h3 id="oct22-live"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">10월 22일 이어서</a></h3>
-<p>실행 중인 솔버가 생성한 v2 이미지, 무작위 표시 영역, 발달한 유동, Qwen 모델</p>
+<p>실행 중인 솔버가 생성한 v2 이미지와 12B, 무작위 표시 영역, 발달한 유동, Qwen 모델 (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/pod-insitu-v2-2026-10-22">내려받기</a>)</p>
 <p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-22-live-v2/README.md">솔버 실행</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-22-window-test/README.md">이미지 시험</a></p>
 </article>
 <article aria-labelledby="oct22">
 <h3 id="oct22"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022.md">10월 22일</a></h3>
-<p>이미지 판독 시험, E2B부터 31B까지 Gemma 4 모델 일곱 개, 이미지 방식 두 가지</p>
+<p>이미지 판독 시험, E2B부터 31B까지 Gemma 4 모델 일곱 개, 이미지 방식 두 가지 (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/picture-test-2026-10-22">내려받기</a>)</p>
 <p class="small"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-22-picture-test/README.md">근거 자료</a></p>
 </article>
 <article aria-labelledby="oct20">
 <h3 id="oct20"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261020.md">10월 20일</a></h3>
-<p>비동기 실행, 스냅샷 하나와 시퀀스 재생, CPU의 E2B</p>
+<p>비동기 실행, 스냅샷 하나와 시퀀스 재생, CPU의 E2B (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/pod-insitu-async-2026-10-20">내려받기</a>)</p>
 <p class="small"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-20/README.md">근거 자료</a></p>
 </article>
 <article aria-labelledby="oct19">
@@ -78,12 +93,13 @@
 </article>
 <article aria-labelledby="oct17">
 <h3 id="oct17"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results.md">10월 17일</a></h3>
-<p>동기 조건과 이미지 유무 쌍별 재생, CPU의 E2B</p>
-<p class="small"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-17/README.md">근거 자료</a></p>
+<p>동기 조건과 이미지 유무 쌍별 재생, CPU의 E2B (<a href="https://github.com/seungminyome/PythonFOAM-Korean/releases/tag/korean-docs-2026-10-18">내려받기</a>), <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results.md#2026-10-19-반복">10월 19일 반복</a></p>
+<p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-17/README.md">실행과 재생</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-19/README.md">반복</a></p>
 </article>
 <article aria-labelledby="oct13">
 <h3 id="oct13"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261013.md">10월 13일</a></h3>
-<p>이미지 경로를 넣은 첫 다섯 케이스 실행</p>
+<p>이미지 경로를 넣은 첫 다섯 케이스 실행 (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/pod-insitu-demo-2026-10-13">내려받기</a>)</p>
+<p class="small"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-13/README.md">근거 자료</a></p>
 </article>
 <article aria-labelledby="ko-pages">
 <h3 id="ko-pages">한국어판 해설 페이지</h3>
@@ -91,5 +107,5 @@
 </article>
 </div>
 
-<footer><a href="https://github.com/argonne-lcf/PythonFOAM">argonne-lcf/PythonFOAM</a>을 바탕으로 한 포크입니다. <a href="https://github.com/seungminyome/PythonFOAM">영문 저장소</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/LICENSE">라이선스</a></footer>
+<footer><a href="https://github.com/argonne-lcf/PythonFOAM">argonne-lcf/PythonFOAM</a>을 바탕으로 한 포크입니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean#readme">저장소와 README</a> · <a href="https://seungminyome.github.io/PythonFOAM/">영문판</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/LICENSE">라이선스</a></footer>
 </main></body></html>

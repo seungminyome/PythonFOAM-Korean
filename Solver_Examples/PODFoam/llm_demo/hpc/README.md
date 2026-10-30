@@ -212,7 +212,7 @@ sbatch --account=<account> --partition=mb-a6000 Solver_Examples/PODFoam/llm_demo
 ```
 
 기본값: 시작 상태에서 5e-6 s 간격 6000걸음, 250걸음마다 저장, describe 요청은 250걸음, sequence 프레임은
-3000·3250·3750걸음, 창 x 0~0.12 m, y 0~0.04 m, 그다음 500걸음마다 sweep 요청 열한 개(`SWEEP_STEPS`,
+3000·3250·3750걸음, 창 x 0\~0.12 m, y 0\~0.04 m, 그다음 500걸음마다 sweep 요청 열한 개(`SWEEP_STEPS`,
 `SWEEP_PARALLEL`). `LLM_KILL_JOIN_S=0.2`: 이 노드에서는 0.5 GB 솔버에서 포크한 워커를 끊고 거두는 데 약
 40 ms가 걸려 당시 기본값 0.02 s보다 깁니다(2026-10-27부터 기본 0.1 s). 발달한 상태는 같은 이미지의 `pimpleFoam`으로, 연결 검증 실행의
 `fixed-pimple` 경우에서 `controlDict`만 바꿔 얻었습니다. 시간 간격을 스스로 맞추며(`maxCo 0.5`,
@@ -246,7 +246,7 @@ POD_SUITE_RUN=<PASS한 async_v2.slurm 실행의 pod-llm-async.XXXXXX> \
   sbatch --account=<account> --partition=mb-a30 Solver_Examples/PODFoam/llm_demo/hpc/periodic_v2.slurm
 ```
 
-작업 24903974~24903978(그림 시험), 24903264(주기 요청), 24903298과 24903263(`async_v2.slurm`으로 10월 22일
+작업 24903974\~24903978(그림 시험), 24903264(주기 요청), 24903298과 24903263(`async_v2.slurm`으로 10월 22일
 시험 반복. `POD_SUITE_RUN`을 주면 `async_v2.slurm`은 sweep만 돌리며, 작업 24903755가 그렇게 돌았음).
 그림 시험의 첫 제출 가운데 시작한 두 개는 `window_test.slurm`이 CUDA 모듈을 더 이상 불러오지 않아 바로
 멈췄고(`libcudart.so.12`를 못 찾음), 그래서 `POD_HOST_MODULES`를 넣었습니다. 결과는

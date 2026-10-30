@@ -1,7 +1,7 @@
 # 10월 22일 근거: 돌고 있는 솔버가 그린 v2 그림
 
 MedicineBow(와이오밍 대학교)의 Slurm 작업 24757460, NVIDIA RTX A6000 한 장(49,140 MiB), 2026-10-22
-09:49~10:57 MDT. OpenFOAM v2212는 Apptainer 이미지에서 돌렸고, PODFoam은 그 안에서 conda Python 3.11에
+09:49\~10:57 MDT. OpenFOAM v2212는 Apptainer 이미지에서 돌렸고, PODFoam은 그 안에서 conda Python 3.11에
 맞춰 빌드했습니다. 호스트 GPU에서는 llama.cpp b11429(커밋 `d812350`)가 Gemma 4 12B QAT Q4_0을 띄웠습니다.
 코드는 영문 저장소의 `354caf9`에 커밋하지 않은 변경을 얹은 체크아웃입니다([job/code-state/](job/code-state/)).
 
@@ -17,7 +17,7 @@ MedicineBow(와이오밍 대학교)의 Slurm 작업 24757460, NVIDIA RTX A6000 �
   `suite/async-settings.json`에, 그 실행의 설정과 출력은
   [../2026-10-22-window-test/flow/](../2026-10-22-window-test/flow/)에, 저장 상태는 릴리스에 있습니다.
 - 다섯 조건(`run_async_cases.py`, `pod-llm-async.UM1RyJ`): 5e-6 s 간격 6000걸음, 250걸음마다 저장, 그림은
-  모두 창 x 0~0.12 m, y 0~0.04 m. describe, 연결 거부, 멈춤은 250걸음; sequence 프레임은 3000, 3250,
+  모두 창 x 0\~0.12 m, y 0\~0.04 m. describe, 연결 거부, 멈춤은 250걸음; sequence 프레임은 3000, 3250,
   3750걸음이고 3750걸음에 보냄.
 - sweep(`run_live_sweep.py`): 같은 상태에서 경우 열한 개를 더. 500, 1000, …, 5500걸음에 describe 요청
   하나씩, 창은 경우마다 무작위, 300걸음 더 가서 멈춤, 한 번에 두 경우씩.

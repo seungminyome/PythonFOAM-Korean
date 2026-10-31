@@ -1,0 +1,14 @@
+{
+  "model": "qwen3.5-35b-a3b-q8_0-vision",
+  "endpoint": "http://127.0.0.1:27089/v1/chat/completions",
+  "server_note": "ggml-org/Qwen3.5-35B-A3B-GGUF@3127ef0b7fd4f12626506419ceefde54fa8db53c Qwen3.5-35B-A3B-Q8_0.gguf + mmproj-Qwen3.5-35B-A3B-Q8_0.gguf; llama.cpp b11429 CUDA (llama-server-version.txt); NVIDIA L40S; all layers on GPU; context 4096, batch 512, ubatch 512, image token limit 256, parallel 1, temperature 0",
+  "sets": [
+    "wrong-setup-v2own"
+  ],
+  "limit": 0,
+  "timeout_s": 300.0,
+  "test_set": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-20261030/wrong-setup-test-20261030",
+  "test_set_manifest_sha256": "40f6ea0a1104835be9b2bcf2d33fcc50d9853de675db31952c59c0011246c514",
+  "truth_sha256": "a252474ac7cffb3a313a58f9087de2fe1637c2185a6822f43eae5d7962a7fad7",
+  "started_unix_s": 1793398278.9505172
+}

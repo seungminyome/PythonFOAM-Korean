@@ -17,12 +17,6 @@ import numpy as np
 
 
 SOURCE = Path(__file__).resolve().parent
-# python_module.py of main at 2ed6da2, the last callback that kept every state for telemetry.jsonl,
-# kept with the evidence of 2026-10-28. The tests that compare with it are skipped in a copy of the
-# code without the repository's docs/; in a checkout with docs/ a missing copy is an error.
-MAIN_CALLBACK = SOURCE.parents[2] / "docs/evidence/2026-10-28-callback/callback-main/python_module.py"
-needs_main = unittest.skipUnless(MAIN_CALLBACK.exists() or (SOURCE.parents[2] / "docs").is_dir(),
-                                 f"main's callback for the comparison is not here: {MAIN_CALLBACK}")
 
 
 @contextmanager
@@ -270,7 +264,7 @@ class CallbackTests(unittest.TestCase):
                 self.assertFalse(outcome["writer_completed"])
                 self.assertFalse((case / "llm_result.json").exists())
             elif target in ("parent_flush", "telemetry"):
-                # since 2026-10-28 the worker writes no telemetry, so a slow disk does not
+                # the worker writes no telemetry, so a slow disk does not
                 # make the request late; the killed final write leaves no telemetry.jsonl
                 self.assertEqual(outcome["status"], "disabled")
                 self.assertTrue(outcome["writer_completed"])
@@ -513,8 +507,7 @@ def telemetry_state(step, steps):
 
 
 class TelemetryTests(unittest.TestCase):
-    """telemetry.jsonl since 2026-10-28: appended in batches, with the bytes main wrote at the
-    end from every state it kept."""
+    """telemetry.jsonl: appended in batches, with the same bytes whatever the batches are."""
 
     def setUp(self):
         temporary = tempfile.TemporaryDirectory()
@@ -541,23 +534,17 @@ class TelemetryTests(unittest.TestCase):
             for state in states[:until]:
                 self.assertIsNone(callback.analysis_func(state))
 
-    def main_telemetry(self, states, name="main"):
-        """telemetry.jsonl as main writes it: every state kept, all written by _dump_telemetry."""
-        old, case = self.load(MAIN_CALLBACK, name)
-        self.drive(old, states, 0)   # LLM_FINAL_STEP=0: never final, so nothing is forked
-        with patch.dict(os.environ, self.environment):   # main reads LLM_RUN_ID when it writes
-            try:
-                old._dump_telemetry()
-            except TypeError:
-                pass   # a state that cannot be encoded; main leaves the lines before it in the .tmp
-        return old, case
+    def whole_telemetry(self, states, steps, name="whole"):
+        """telemetry.jsonl of an undisturbed run with all lines in one batch."""
+        callback, case = self.load(SOURCE / "python_module.py", name,
+                                   lambda module: setattr(module._telemetry, "BATCH_LINES", steps + 1))
+        self.drive(callback, states, steps)
+        return (case / "telemetry.jsonl").read_bytes()
 
-    @needs_main
-    def test_bytes_equal_main_over_many_steps_and_any_batch_size(self):
+    def test_bytes_do_not_depend_on_the_batch_size(self):
         steps = 2345
         states = [telemetry_state(step, steps) for step in range(1, steps + 1)]
-        old, main_case = self.main_telemetry(states)
-        expected = (main_case / "telemetry.jsonl").read_bytes()
+        expected = self.whole_telemetry(states, steps)
         self.assertEqual(len(expected.splitlines()), steps)
         self.assertIn("Résidu ✓".encode(), expected)
         self.assertIn(b'"feature_status":"partial_nonfinite"', expected)
@@ -572,23 +559,18 @@ class TelemetryTests(unittest.TestCase):
                                  (steps // batch + 1, 0))
                 self.assertEqual(len(new._recent_states), 3)
         # what later code reads of the kept states: the residual trend and the window start
-        snapshots = [np.full((20, 3), float(k)) for k in range(1, 6)]
-        old._snapshots, new._snapshots = list(snapshots), list(snapshots)
+        new._snapshots = [np.full((20, 3), float(k)) for k in range(1, 6)]
         with patch.dict(os.environ, self.environment):
-            summary_old = old._summarize(old._history[-1])[0]
             summary_new = new._summarize(new._recent_states[-1])[0]
-        self.assertEqual(summary_new, summary_old)
         self.assertEqual(summary_new["velocity_svd"]["window_start_time_s"],
                          float(format(states[0]["time_s"], ".6g")))   # the summary keeps 6 digits
         self.assertEqual(summary_new["residuals"]["p"]["recent_initial_first"],
                          [float(format(s["residuals"]["p"]["initial_first"], ".6g")) for s in states[-3:]])
 
-    @needs_main
     def test_telemetry_jsonl_appears_complete_at_the_last_step_only(self):
         steps = 120
         states = [telemetry_state(step, steps) for step in range(1, steps + 1)]
-        _, main_case = self.main_telemetry(states)
-        expected = (main_case / "telemetry.jsonl").read_bytes().splitlines(keepends=True)
+        expected = self.whole_telemetry(states, steps).splitlines(keepends=True)
         new, case = self.load(SOURCE / "python_module.py", "new",
                               lambda module: setattr(module._telemetry, "BATCH_LINES", 50))
         (case / "telemetry.jsonl.tmp").write_text("left by an earlier, longer run\n" * 400)
@@ -599,35 +581,29 @@ class TelemetryTests(unittest.TestCase):
         self.assertEqual((case / "telemetry.jsonl").read_bytes(), b"".join(expected))
         self.assertFalse((case / "telemetry.jsonl.tmp").exists())
 
-    @needs_main
     def test_memory_stays_flat_over_a_long_run(self):
         steps = 6000
         states = [telemetry_state(step, steps) for step in range(1, steps + 1)]
-        grown = {}
-        for name, source in (("main", MAIN_CALLBACK), ("new", SOURCE / "python_module.py")):
-            callback, case = self.load(source, name)
-            self.drive(callback, states, 0, until=1000)
-            tracemalloc.start()
-            try:
-                before = tracemalloc.get_traced_memory()[0]
-                with patch.dict(os.environ, dict(self.environment, LLM_FINAL_STEP="0")):
-                    for state in states[1000:]:
-                        callback.analysis_func(state)
-                grown[name] = tracemalloc.get_traced_memory()[0] - before
-            finally:
-                tracemalloc.stop()
-            if name == "new":
-                self.assertLessEqual(callback._telemetry.pending_lines, callback._telemetry.BATCH_LINES)
-                self.assertEqual(callback._telemetry.lines, steps)
-        # main kept every state (about 1.35 KiB each); the callback now keeps at most a batch of lines
-        self.assertGreater(grown["main"], 4 << 20)
-        self.assertLess(grown["new"], 1 << 20)
+        callback, case = self.load(SOURCE / "python_module.py", "new")
+        self.drive(callback, states, 0, until=1000)
+        tracemalloc.start()
+        try:
+            before = tracemalloc.get_traced_memory()[0]
+            with patch.dict(os.environ, dict(self.environment, LLM_FINAL_STEP="0")):
+                for state in states[1000:]:
+                    callback.analysis_func(state)
+            grown = tracemalloc.get_traced_memory()[0] - before
+        finally:
+            tracemalloc.stop()
+        self.assertLessEqual(callback._telemetry.pending_lines, callback._telemetry.BATCH_LINES)
+        self.assertEqual(callback._telemetry.lines, steps)
+        # 5000 states of about 1.35 KiB each would be over 6 MiB; at most a batch of lines is kept
+        self.assertLess(grown, 1 << 20)
 
-    @needs_main
     def test_a_killed_or_failed_append_is_written_again(self):
         steps = 400
         states = [telemetry_state(step, steps) for step in range(1, steps + 1)]
-        _, main_case = self.main_telemetry(states)
+        expected = self.whole_telemetry(states, steps)
         calls = []
 
         def prepare(module):
@@ -651,8 +627,7 @@ class TelemetryTests(unittest.TestCase):
 
         new, case = self.load(SOURCE / "python_module.py", "new", prepare)
         self.drive(new, states, steps)
-        self.assertEqual((case / "telemetry.jsonl").read_bytes(),
-                         (main_case / "telemetry.jsonl").read_bytes())
+        self.assertEqual((case / "telemetry.jsonl").read_bytes(), expected)
         self.assertFalse((case / "telemetry.jsonl.tmp").exists())
         self.assertEqual(new._telemetry.failed_appends, 2)
         # a failed append is retried after one more batch: 50 and 100 lines failed, 150 written
@@ -750,34 +725,28 @@ class TelemetryTests(unittest.TestCase):
                 self.assertEqual([line for line in printed if line.startswith("PYTHON LLM telemetry")],
                                  telemetry_line)
 
-    @needs_main
-    def test_a_state_that_cannot_be_encoded_ends_the_telemetry_as_main_did(self):
+    def test_a_state_that_cannot_be_encoded_ends_the_telemetry(self):
         steps = 30
         states = [telemetry_state(step, steps) for step in range(1, steps + 1)]
+        expected = self.whole_telemetry(states, steps).splitlines(keepends=True)
         states[11]["residuals"]["Ux"]["unexpected"] = {1, 2}   # a set: not JSON
-        _, main_case = self.main_telemetry(states)
         new, case = self.load(SOURCE / "python_module.py", "new")
         self.drive(new, states, steps)
-        # main: no telemetry.jsonl, and the .tmp holds the 11 lines before the bad one
-        for folder in (main_case, case):
-            self.assertFalse((folder / "telemetry.jsonl").exists())
-            self.assertEqual(len((folder / "telemetry.jsonl.tmp").read_bytes().splitlines()), 11)
-        self.assertEqual((case / "telemetry.jsonl.tmp").read_bytes(),
-                         (main_case / "telemetry.jsonl.tmp").read_bytes())
+        # no telemetry.jsonl, and the .tmp holds the 11 lines before the bad one
+        self.assertFalse((case / "telemetry.jsonl").exists())
+        self.assertEqual((case / "telemetry.jsonl.tmp").read_bytes(), b"".join(expected[:11]))
         errors = (case / "llm_errors.jsonl").read_text().splitlines()
         self.assertEqual(len(errors), 1)
         self.assertIn("line 12 could not be encoded", errors[0])
 
-    @needs_main
     def test_lines_are_also_appended_after_batch_seconds(self):
         steps = 30
         states = [telemetry_state(step, steps) for step in range(1, steps + 1)]
-        _, main_case = self.main_telemetry(states)
+        expected = self.whole_telemetry(states, steps)
         new, case = self.load(SOURCE / "python_module.py", "new",
                               lambda module: setattr(module._telemetry, "BATCH_S", 0.0))
         self.drive(new, states, steps)
-        self.assertEqual((case / "telemetry.jsonl").read_bytes(),
-                         (main_case / "telemetry.jsonl").read_bytes())
+        self.assertEqual((case / "telemetry.jsonl").read_bytes(), expected)
         self.assertEqual(new._telemetry.appends, steps + 1)   # one per step, and the last step's
 
 

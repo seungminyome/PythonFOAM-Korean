@@ -1,0 +1,76 @@
+Validation directory: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/v2012-24950780/pod-v2012.A8myVA
+{
+  "fixed-pimple": {
+    "steps": 10,
+    "residual_values": 160,
+    "checked_field_files": 30,
+    "max_Co": 0.211076243341,
+    "max_abs_U": 74.7948606622,
+    "max_abs_p": 26997779.3771,
+    "finite": true,
+    "normal_exit": true
+  },
+  "fixed-pod": {
+    "steps": 10,
+    "residual_values": 160,
+    "checked_field_files": 45,
+    "max_Co": 0.211076243341,
+    "max_abs_U": 74.7948606622,
+    "max_abs_p": 26997779.3771,
+    "finite": true,
+    "normal_exit": true
+  },
+  "bridge": {
+    "snapshots": 10,
+    "svd_shape": [
+      61620,
+      5
+    ],
+    "returned_field_files": 15,
+    "max_snapshot_error": 5.000089231543825e-11,
+    "max_mode_error": 4.94174146048465e-13,
+    "singular_values": [
+      [
+        13236.330777350344,
+        82.63749410346605,
+        25.825712232626596,
+        4.991104106309787,
+        0.8212480338494301,
+        0.4160514829530607,
+        0.1634522606555526,
+        0.04648773674431763,
+        0.00830435313104354,
+        0.0007142530649639199
+      ],
+      [
+        1515.6402106839882,
+        15.34251127718149,
+        6.513423655629353,
+        1.1805328261655061,
+        0.5674636746704719,
+        0.1546984183350682,
+        0.06286065288001182,
+        0.019511305419429612,
+        0.004847290919724751,
+        0.0016588495440401807
+      ],
+      [
+        1.2547283073076356e-13,
+        2.663057558881112e-16,
+        4.5100407942146186e-17,
+        5.2968973356868e-18,
+        1.4740577653693151e-18,
+        1.630962018556934e-19,
+        7.412896493551152e-20,
+        1.3097415873113248e-20,
+        3.697648579908583e-21,
+        1.2590549290804559e-21
+      ]
+    ],
+    "python_finalized": true
+  },
+  "pimple_POD_velocity_agreement": true,
+  "pimple_POD_pressure_agreement": true,
+  "status": "PASS"
+}
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/v2012-24950780/pod-v2012.A8myVA

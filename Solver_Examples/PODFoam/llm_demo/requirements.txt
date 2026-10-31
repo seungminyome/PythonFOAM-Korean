@@ -1,5 +1,5 @@
-# Python side of the PODFoam callback. OpenFOAM v2106 and llama.cpp are installed separately.
-# Tested with Python 3.10.12, numpy 1.21.5, matplotlib 3.5.1, scipy 1.8.0.
+# Python side of the PODFoam callback. OpenFOAM and llama.cpp are installed separately.
+# Needs Python 3.10 to 3.12. Unit tests ran on 3.10 and 3.12; solver runs on 3.11 with numpy 2.4.
 numpy>=1.21
 matplotlib>=3.5
 scipy>=1.8        # only for the 3D nearest-cell raster fallback

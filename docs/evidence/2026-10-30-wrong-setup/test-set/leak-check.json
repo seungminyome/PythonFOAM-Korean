@@ -1,0 +1,159 @@
+{
+  "requests": 80,
+  "classes": {
+    "wrong": 40,
+    "normal": 40
+  },
+  "bodies_apart_from_pictures_step_and_time": 1,
+  "distinct_texts": 8,
+  "by_text": [
+    {
+      "step": 4500,
+      "time_s": 0.1225,
+      "normal": 5,
+      "wrong": 5
+    },
+    {
+      "step": 5000,
+      "time_s": 0.125,
+      "normal": 5,
+      "wrong": 5
+    },
+    {
+      "step": 5500,
+      "time_s": 0.1275,
+      "normal": 5,
+      "wrong": 5
+    },
+    {
+      "step": 6000,
+      "time_s": 0.13,
+      "normal": 5,
+      "wrong": 5
+    },
+    {
+      "step": 6500,
+      "time_s": 0.1325,
+      "normal": 5,
+      "wrong": 5
+    },
+    {
+      "step": 7000,
+      "time_s": 0.135,
+      "normal": 5,
+      "wrong": 5
+    },
+    {
+      "step": 7500,
+      "time_s": 0.1375,
+      "normal": 5,
+      "wrong": 5
+    },
+    {
+      "step": 8000,
+      "time_s": 0.14,
+      "normal": 5,
+      "wrong": 5
+    }
+  ],
+  "most_right_by_any_rule_on_the_text": 40,
+  "constant_baseline": 40,
+  "picture_pixel_sizes": [
+    [
+      1024,
+      576
+    ]
+  ],
+  "png_text_apart_from_step_time_hash": {
+    "0": [
+      "{\"Field\": \"U\", \"Software\": \"Matplotlib version3.11.2, https://matplotlib.org/\", \"Style\": \"readable-v2\"}"
+    ],
+    "1": [
+      "{\"Field\": \"p\", \"Software\": \"Matplotlib version3.11.2, https://matplotlib.org/\", \"Style\": \"readable-v2\"}"
+    ]
+  },
+  "most_right_by_a_threshold_on_request_bytes": 51,
+  "text_sha256_by_request": {
+    "M1-inlet-speed-step07500": "6b98e10528bb839218ab69de3ef295fa326ecd770a2aec6245128e69ba55b50a",
+    "N4-step05000": "8126ca540d7240cb637519c0f8e7277e39764422ce7f48c66366f1b71014e539",
+    "N2-step04500": "4aabad18988e2f499a46ea737590820154af52b3c29726e8b382bacd51072ac9",
+    "N4-step04500": "4aabad18988e2f499a46ea737590820154af52b3c29726e8b382bacd51072ac9",
+    "M3-slip-walls-step05500": "609c9a4c935e0872b4cccedb6c561e16810d28a78f6119329332fec60fcd9c19",
+    "N3-step05500": "609c9a4c935e0872b4cccedb6c561e16810d28a78f6119329332fec60fcd9c19",
+    "N2-step07500": "6b98e10528bb839218ab69de3ef295fa326ecd770a2aec6245128e69ba55b50a",
+    "M2-viscosity-step08000": "4b9a78ecd602571269e9a7fc0cd3e52fd4bdb3ce6daafbd78130626f41fd6dc8",
+    "M1-inlet-speed-step05500": "609c9a4c935e0872b4cccedb6c561e16810d28a78f6119329332fec60fcd9c19",
+    "N4-step07500": "6b98e10528bb839218ab69de3ef295fa326ecd770a2aec6245128e69ba55b50a",
+    "N1-step05000": "8126ca540d7240cb637519c0f8e7277e39764422ce7f48c66366f1b71014e539",
+    "N5-step06000": "0625040e30c74f4dffb1a3c59df513a1b6279ad6c5ee1e5f5e05589f0e7567e1",
+    "M4-moving-wall-step05500": "609c9a4c935e0872b4cccedb6c561e16810d28a78f6119329332fec60fcd9c19",
+    "M5-half-inlet-step05500": "609c9a4c935e0872b4cccedb6c561e16810d28a78f6119329332fec60fcd9c19",
+    "M3-slip-walls-step06000": "0625040e30c74f4dffb1a3c59df513a1b6279ad6c5ee1e5f5e05589f0e7567e1",
+    "M3-slip-walls-step07000": "cc04d8c540bdf4b717fe5d6d932b59e6a504de24ae769ed624d5484834d62430",
+    "N1-step05500": "609c9a4c935e0872b4cccedb6c561e16810d28a78f6119329332fec60fcd9c19",
+    "M1-inlet-speed-step08000": "4b9a78ecd602571269e9a7fc0cd3e52fd4bdb3ce6daafbd78130626f41fd6dc8",
+    "N2-step05500": "609c9a4c935e0872b4cccedb6c561e16810d28a78f6119329332fec60fcd9c19",
+    "N2-step06000": "0625040e30c74f4dffb1a3c59df513a1b6279ad6c5ee1e5f5e05589f0e7567e1",
+    "M4-moving-wall-step04500": "4aabad18988e2f499a46ea737590820154af52b3c29726e8b382bacd51072ac9",
+    "M2-viscosity-step07500": "6b98e10528bb839218ab69de3ef295fa326ecd770a2aec6245128e69ba55b50a",
+    "M1-inlet-speed-step06500": "20eb73969179a7e2d4bad311d8f5cdcc92d34c5f2e276a1d4e1a1705028426c7",
+    "M5-half-inlet-step05000": "8126ca540d7240cb637519c0f8e7277e39764422ce7f48c66366f1b71014e539",
+    "N5-step05500": "609c9a4c935e0872b4cccedb6c561e16810d28a78f6119329332fec60fcd9c19",
+    "M4-moving-wall-step07000": "cc04d8c540bdf4b717fe5d6d932b59e6a504de24ae769ed624d5484834d62430",
+    "M3-slip-walls-step07500": "6b98e10528bb839218ab69de3ef295fa326ecd770a2aec6245128e69ba55b50a",
+    "M1-inlet-speed-step05000": "8126ca540d7240cb637519c0f8e7277e39764422ce7f48c66366f1b71014e539",
+    "M2-viscosity-step05000": "8126ca540d7240cb637519c0f8e7277e39764422ce7f48c66366f1b71014e539",
+    "N1-step06500": "20eb73969179a7e2d4bad311d8f5cdcc92d34c5f2e276a1d4e1a1705028426c7",
+    "M1-inlet-speed-step06000": "0625040e30c74f4dffb1a3c59df513a1b6279ad6c5ee1e5f5e05589f0e7567e1",
+    "M4-moving-wall-step06500": "20eb73969179a7e2d4bad311d8f5cdcc92d34c5f2e276a1d4e1a1705028426c7",
+    "M3-slip-walls-step06500": "20eb73969179a7e2d4bad311d8f5cdcc92d34c5f2e276a1d4e1a1705028426c7",
+    "N2-step05000": "8126ca540d7240cb637519c0f8e7277e39764422ce7f48c66366f1b71014e539",
+    "N4-step08000": "4b9a78ecd602571269e9a7fc0cd3e52fd4bdb3ce6daafbd78130626f41fd6dc8",
+    "M1-inlet-speed-step04500": "4aabad18988e2f499a46ea737590820154af52b3c29726e8b382bacd51072ac9",
+    "M4-moving-wall-step07500": "6b98e10528bb839218ab69de3ef295fa326ecd770a2aec6245128e69ba55b50a",
+    "N1-step07000": "cc04d8c540bdf4b717fe5d6d932b59e6a504de24ae769ed624d5484834d62430",
+    "N5-step07500": "6b98e10528bb839218ab69de3ef295fa326ecd770a2aec6245128e69ba55b50a",
+    "N3-step08000": "4b9a78ecd602571269e9a7fc0cd3e52fd4bdb3ce6daafbd78130626f41fd6dc8",
+    "N1-step08000": "4b9a78ecd602571269e9a7fc0cd3e52fd4bdb3ce6daafbd78130626f41fd6dc8",
+    "N5-step04500": "4aabad18988e2f499a46ea737590820154af52b3c29726e8b382bacd51072ac9",
+    "M3-slip-walls-step04500": "4aabad18988e2f499a46ea737590820154af52b3c29726e8b382bacd51072ac9",
+    "M3-slip-walls-step05000": "8126ca540d7240cb637519c0f8e7277e39764422ce7f48c66366f1b71014e539",
+    "M5-half-inlet-step07000": "cc04d8c540bdf4b717fe5d6d932b59e6a504de24ae769ed624d5484834d62430",
+    "M2-viscosity-step07000": "cc04d8c540bdf4b717fe5d6d932b59e6a504de24ae769ed624d5484834d62430",
+    "N4-step07000": "cc04d8c540bdf4b717fe5d6d932b59e6a504de24ae769ed624d5484834d62430",
+    "M2-viscosity-step05500": "609c9a4c935e0872b4cccedb6c561e16810d28a78f6119329332fec60fcd9c19",
+    "M5-half-inlet-step06000": "0625040e30c74f4dffb1a3c59df513a1b6279ad6c5ee1e5f5e05589f0e7567e1",
+    "N3-step07000": "cc04d8c540bdf4b717fe5d6d932b59e6a504de24ae769ed624d5484834d62430",
+    "M3-slip-walls-step08000": "4b9a78ecd602571269e9a7fc0cd3e52fd4bdb3ce6daafbd78130626f41fd6dc8",
+    "N3-step05000": "8126ca540d7240cb637519c0f8e7277e39764422ce7f48c66366f1b71014e539",
+    "M2-viscosity-step06000": "0625040e30c74f4dffb1a3c59df513a1b6279ad6c5ee1e5f5e05589f0e7567e1",
+    "N2-step08000": "4b9a78ecd602571269e9a7fc0cd3e52fd4bdb3ce6daafbd78130626f41fd6dc8",
+    "N2-step07000": "cc04d8c540bdf4b717fe5d6d932b59e6a504de24ae769ed624d5484834d62430",
+    "M2-viscosity-step06500": "20eb73969179a7e2d4bad311d8f5cdcc92d34c5f2e276a1d4e1a1705028426c7",
+    "N1-step07500": "6b98e10528bb839218ab69de3ef295fa326ecd770a2aec6245128e69ba55b50a",
+    "N4-step05500": "609c9a4c935e0872b4cccedb6c561e16810d28a78f6119329332fec60fcd9c19",
+    "N5-step07000": "cc04d8c540bdf4b717fe5d6d932b59e6a504de24ae769ed624d5484834d62430",
+    "M4-moving-wall-step05000": "8126ca540d7240cb637519c0f8e7277e39764422ce7f48c66366f1b71014e539",
+    "N5-step05000": "8126ca540d7240cb637519c0f8e7277e39764422ce7f48c66366f1b71014e539",
+    "M2-viscosity-step04500": "4aabad18988e2f499a46ea737590820154af52b3c29726e8b382bacd51072ac9",
+    "N3-step06000": "0625040e30c74f4dffb1a3c59df513a1b6279ad6c5ee1e5f5e05589f0e7567e1",
+    "M4-moving-wall-step08000": "4b9a78ecd602571269e9a7fc0cd3e52fd4bdb3ce6daafbd78130626f41fd6dc8",
+    "N3-step04500": "4aabad18988e2f499a46ea737590820154af52b3c29726e8b382bacd51072ac9",
+    "N1-step04500": "4aabad18988e2f499a46ea737590820154af52b3c29726e8b382bacd51072ac9",
+    "N4-step06500": "20eb73969179a7e2d4bad311d8f5cdcc92d34c5f2e276a1d4e1a1705028426c7",
+    "N3-step07500": "6b98e10528bb839218ab69de3ef295fa326ecd770a2aec6245128e69ba55b50a",
+    "M5-half-inlet-step04500": "4aabad18988e2f499a46ea737590820154af52b3c29726e8b382bacd51072ac9",
+    "M5-half-inlet-step07500": "6b98e10528bb839218ab69de3ef295fa326ecd770a2aec6245128e69ba55b50a",
+    "M1-inlet-speed-step07000": "cc04d8c540bdf4b717fe5d6d932b59e6a504de24ae769ed624d5484834d62430",
+    "N5-step08000": "4b9a78ecd602571269e9a7fc0cd3e52fd4bdb3ce6daafbd78130626f41fd6dc8",
+    "N1-step06000": "0625040e30c74f4dffb1a3c59df513a1b6279ad6c5ee1e5f5e05589f0e7567e1",
+    "N4-step06000": "0625040e30c74f4dffb1a3c59df513a1b6279ad6c5ee1e5f5e05589f0e7567e1",
+    "M5-half-inlet-step08000": "4b9a78ecd602571269e9a7fc0cd3e52fd4bdb3ce6daafbd78130626f41fd6dc8",
+    "N5-step06500": "20eb73969179a7e2d4bad311d8f5cdcc92d34c5f2e276a1d4e1a1705028426c7",
+    "N2-step06500": "20eb73969179a7e2d4bad311d8f5cdcc92d34c5f2e276a1d4e1a1705028426c7",
+    "M5-half-inlet-step06500": "20eb73969179a7e2d4bad311d8f5cdcc92d34c5f2e276a1d4e1a1705028426c7",
+    "M4-moving-wall-step06000": "0625040e30c74f4dffb1a3c59df513a1b6279ad6c5ee1e5f5e05589f0e7567e1",
+    "N3-step06500": "20eb73969179a7e2d4bad311d8f5cdcc92d34c5f2e276a1d4e1a1705028426c7"
+  },
+  "problems": []
+}

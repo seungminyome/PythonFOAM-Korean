@@ -1,0 +1,20 @@
+b17763dc78599612401bee335ce7146dfc1b340f
+Python 3.6.9
+g++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+=== validation: only an OpenFOAM sourced, no variable set
+validation exit 0
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/docker-24950798/ws/pod-8.cQCcDL
+=== wclean && wmake as in the top-level README
+wmake exit 0
+     -lm -o /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/docker-24950798/bin/PODFoam
+=== shipped Run_Case with upstream's python_module.py, 120 s
+PODFoam exit 124 (124 = stopped by the timeout)
+Numpy array cast time: 1336
+Snapshot collection wall time: 1336
+SVD Computation wall time: 13
+Data copy back to OF wall time: 13
+PDE Compute wall time: 1349
+IO wall time: 1349
+POD snapshot accepted: 1336
+POD SVD returned: 13
+inner exit 0

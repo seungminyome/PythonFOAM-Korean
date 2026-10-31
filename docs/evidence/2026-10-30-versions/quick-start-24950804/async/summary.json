@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "suite": "async",
+  "server_pid": 3026165,
+  "mmproj_loaded": true,
+  "settings": {
+    "steps": 3000,
+    "delta_t_s": 5e-07,
+    "write_every": 250,
+    "request_step": 250,
+    "sequence_steps": [
+      250,
+      750,
+      1250
+    ],
+    "image_x_window": null,
+    "image_y_window": null,
+    "deadline_s": "120",
+    "image_style": "v1",
+    "model": "gemma-4-E2B-it-Q4_0-vision",
+    "max_tokens_env": "192",
+    "fixture_deadline_s": 4.0,
+    "start_time_s": 0.0
+  },
+  "timings": {
+    "async-no-llm": 159.635930466,
+    "async-describe": 165.83724405616522,
+    "async-sequence": 160.95569516089745,
+    "async-server-error": 160.01434193109162,
+    "async-timeout": 161.67661599908024
+  },
+  "cases": {
+    "async-no-llm": {
+      "request_step": 1250,
+      "arrived_at_step": 1260,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "disabled",
+      "callback_wall_s": {
+        "request_step": 0.003554756,
+        "arrival_step": 0.038483383,
+        "last_step": 0.030125907,
+        "max_other_steps": 0.017167927,
+        "median_all_steps": 0.00014037849999999998
+      },
+      "solver_stall_s": 0.0032383129000663757,
+      "inference_wall_s": 0.0,
+      "structured_output": null
+    },
+    "async-describe": {
+      "request_step": 250,
+      "arrived_at_step": 494,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "ok",
+      "callback_wall_s": {
+        "request_step": 0.00359567,
+        "arrival_step": 0.036795214,
+        "last_step": 0.035889823,
+        "max_other_steps": 0.026569549,
+        "median_all_steps": 0.000143604
+      },
+      "solver_stall_s": 0.003304847050458193,
+      "inference_wall_s": 10.572992060799152,
+      "structured_output": {
+        "flow_description": "The velocity magnitude |U| is relatively uniform across the domain, with a slight increase towards the right side. The kinematic pressure p is generally high in the lower-left and lower-right regions, and lowest in the central-top area.",
+        "fastest_flow_x_percent": 90,
+        "fastest_flow_y_percent": 10,
+        "lowest_pressure_x_percent": 50,
+        "lowest_pressure_y_percent": 10,
+        "uncertainties": "The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the plotted ranges."
+      }
+    },
+    "async-sequence": {
+      "request_step": 1250,
+      "arrived_at_step": 1543,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "ok",
+      "callback_wall_s": {
+        "request_step": 0.003694023,
+        "arrival_step": 0.026324327,
+        "last_step": 0.028770406,
+        "max_other_steps": 0.015779434,
+        "median_all_steps": 0.00014133
+      },
+      "solver_stall_s": 0.0033632267732173204,
+      "inference_wall_s": 15.60821949900128,
+      "structured_output": {
+        "change_description": "The velocity magnitude |U| shows a peak around x=0.0 and y=0.0, and the peak magnitude appears to increase in intensity (brighter color) over time. The kinematic pressure p also shows a peak around x=0.0 and y=0.0, and the peak pressure magnitude also appears to increase in intensity (brighter color) over time.",
+        "max_speed_trend": "increasing",
+        "min_pressure_trend": "less_negative",
+        "fastest_flow_region": "same_place",
+        "uncertainties": "The exact trend is based on visual inspection of the color bar maxima."
+      }
+    },
+    "async-server-error": {
+      "request_step": 250,
+      "arrived_at_step": 282,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "error",
+      "callback_wall_s": {
+        "request_step": 0.003887955,
+        "arrival_step": 0.029668765,
+        "last_step": 0.037430333,
+        "max_other_steps": 0.023085583,
+        "median_all_steps": 0.000142041
+      },
+      "solver_stall_s": 0.0035884189419448376,
+      "inference_wall_s": 0.0093050308059901,
+      "structured_output": null
+    },
+    "async-timeout": {
+      "request_step": 250,
+      "arrived_at_step": 335,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "timeout",
+      "callback_wall_s": {
+        "request_step": 0.003908767,
+        "arrival_step": 0.042949948,
+        "last_step": 0.037416271,
+        "max_other_steps": 0.01871099,
+        "median_all_steps": 0.000140929
+      },
+      "solver_stall_s": 0.003611092921346426,
+      "inference_wall_s": null,
+      "structured_output": null
+    }
+  },
+  "source_HEAD": null,
+  "source_HEAD_error": "FileNotFoundError(2, 'No such file or directory')"
+}

@@ -146,6 +146,14 @@ def cmdline(pid):
     return [c.decode() for c in Path(f"/proc/{pid}/cmdline").read_bytes().split(b"\0") if c]
 
 
+def server_output(flag):
+    """The server's output for a flag; if it cannot run, the error says why."""
+    try:
+        return subprocess.check_output([str(SERVER), flag], text=True, stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as error:
+        raise RuntimeError(f"{SERVER} {flag} failed: {error.output.strip()}") from None
+
+
 def verify():
     for path, expected in ((MODEL, MODEL_SHA), (PROJECTOR, PROJECTOR_SHA), (ARCHIVE, ARCHIVE_SHA)):
         if not path.exists():
@@ -154,7 +162,7 @@ def verify():
             raise RuntimeError(f"SHA-256 mismatch for {path.name}")
     if not SERVER.exists():
         raise RuntimeError(f"Missing {SERVER}; extract {ARCHIVE.name}")
-    help_text = subprocess.check_output([str(SERVER), "--help"], text=True, stderr=subprocess.STDOUT)
+    help_text = server_output("--help")
     for flag in ("--mmproj", "--no-mmproj-offload", "--image-max-tokens", "--reasoning"):
         if flag not in help_text:
             raise RuntimeError(f"Installed llama-server does not support {flag}")
@@ -166,8 +174,7 @@ def verify():
         "projector_sha256": PROJECTOR_SHA,
         "projector_url": f"https://huggingface.co/{MODEL_REPO}/resolve/{REVISION}/{PROJECTOR.name}",
         "llama_cpp_tag": LLAMA_TAG,
-        "llama_cpp_version": subprocess.check_output([str(SERVER), "--version"], text=True,
-                                                    stderr=subprocess.STDOUT).strip(),
+        "llama_cpp_version": server_output("--version").strip(),
         "server_archive_sha256": ARCHIVE_SHA,
         "server_archive_url": f"https://github.com/ggml-org/llama.cpp/releases/download/{LLAMA_TAG}/{ARCHIVE.name}",
         "alias": ALIAS, "base_url": BASE_URL,

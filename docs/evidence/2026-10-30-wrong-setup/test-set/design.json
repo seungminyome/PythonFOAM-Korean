@@ -1,0 +1,657 @@
+{
+  "test": "wrong-setup test 2026-10-30",
+  "long_run": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261022/long-100ms",
+  "window_m": [
+    [
+      0.0,
+      0.12
+    ],
+    [
+      0.0,
+      0.04
+    ]
+  ],
+  "inlet_speed_m_per_s": 32.2,
+  "start_time_s": 0.1,
+  "delta_t_s": 5e-06,
+  "run_steps": 8000,
+  "write_every_steps": 500,
+  "frame_steps": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000
+  ],
+  "runs": [
+    {
+      "name": "N1",
+      "class": "normal",
+      "start": "0.06",
+      "change": "none; start state t = 0.06 s of the developed flow",
+      "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/N1",
+      "expected_patches": {
+        "inlet": {
+          "type": "fixedValue",
+          "value": [
+            32.2,
+            0.0,
+            0.0
+          ]
+        },
+        "outlet": {
+          "type": "zeroGradient",
+          "value": null
+        },
+        "upperWall": {
+          "type": "noSlip",
+          "value": null
+        },
+        "lowerWall": {
+          "type": "noSlip",
+          "value": null
+        }
+      },
+      "nu": 1.56e-05
+    },
+    {
+      "name": "N2",
+      "class": "normal",
+      "start": "0.07",
+      "change": "none; start state t = 0.07 s of the developed flow",
+      "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/N2",
+      "expected_patches": {
+        "inlet": {
+          "type": "fixedValue",
+          "value": [
+            32.2,
+            0.0,
+            0.0
+          ]
+        },
+        "outlet": {
+          "type": "zeroGradient",
+          "value": null
+        },
+        "upperWall": {
+          "type": "noSlip",
+          "value": null
+        },
+        "lowerWall": {
+          "type": "noSlip",
+          "value": null
+        }
+      },
+      "nu": 1.56e-05
+    },
+    {
+      "name": "N3",
+      "class": "normal",
+      "start": "0.08",
+      "change": "none; start state t = 0.08 s of the developed flow",
+      "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/N3",
+      "expected_patches": {
+        "inlet": {
+          "type": "fixedValue",
+          "value": [
+            32.2,
+            0.0,
+            0.0
+          ]
+        },
+        "outlet": {
+          "type": "zeroGradient",
+          "value": null
+        },
+        "upperWall": {
+          "type": "noSlip",
+          "value": null
+        },
+        "lowerWall": {
+          "type": "noSlip",
+          "value": null
+        }
+      },
+      "nu": 1.56e-05
+    },
+    {
+      "name": "N4",
+      "class": "normal",
+      "start": "0.09",
+      "change": "none; start state t = 0.09 s of the developed flow",
+      "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/N4",
+      "expected_patches": {
+        "inlet": {
+          "type": "fixedValue",
+          "value": [
+            32.2,
+            0.0,
+            0.0
+          ]
+        },
+        "outlet": {
+          "type": "zeroGradient",
+          "value": null
+        },
+        "upperWall": {
+          "type": "noSlip",
+          "value": null
+        },
+        "lowerWall": {
+          "type": "noSlip",
+          "value": null
+        }
+      },
+      "nu": 1.56e-05
+    },
+    {
+      "name": "N5",
+      "class": "normal",
+      "start": "0.1",
+      "change": "none; start state t = 0.1 s of the developed flow",
+      "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/N5",
+      "expected_patches": {
+        "inlet": {
+          "type": "fixedValue",
+          "value": [
+            32.2,
+            0.0,
+            0.0
+          ]
+        },
+        "outlet": {
+          "type": "zeroGradient",
+          "value": null
+        },
+        "upperWall": {
+          "type": "noSlip",
+          "value": null
+        },
+        "lowerWall": {
+          "type": "noSlip",
+          "value": null
+        }
+      },
+      "nu": 1.56e-05
+    },
+    {
+      "name": "M1-inlet-speed",
+      "class": "wrong",
+      "start": "0.1",
+      "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+      "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/M1-inlet-speed",
+      "expected_patches": {
+        "inlet": {
+          "type": "fixedValue",
+          "value": [
+            3.22,
+            0.0,
+            0.0
+          ]
+        },
+        "outlet": {
+          "type": "zeroGradient",
+          "value": null
+        },
+        "upperWall": {
+          "type": "noSlip",
+          "value": null
+        },
+        "lowerWall": {
+          "type": "noSlip",
+          "value": null
+        }
+      },
+      "nu": 1.56e-05
+    },
+    {
+      "name": "M2-viscosity",
+      "class": "wrong",
+      "start": "0.1",
+      "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+      "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/M2-viscosity",
+      "expected_patches": {
+        "inlet": {
+          "type": "fixedValue",
+          "value": [
+            32.2,
+            0.0,
+            0.0
+          ]
+        },
+        "outlet": {
+          "type": "zeroGradient",
+          "value": null
+        },
+        "upperWall": {
+          "type": "noSlip",
+          "value": null
+        },
+        "lowerWall": {
+          "type": "noSlip",
+          "value": null
+        }
+      },
+      "nu": 0.00156
+    },
+    {
+      "name": "M3-slip-walls",
+      "class": "wrong",
+      "start": "0.1",
+      "change": "lowerWall and upperWall slip instead of noSlip",
+      "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/M3-slip-walls",
+      "expected_patches": {
+        "inlet": {
+          "type": "fixedValue",
+          "value": [
+            32.2,
+            0.0,
+            0.0
+          ]
+        },
+        "outlet": {
+          "type": "zeroGradient",
+          "value": null
+        },
+        "upperWall": {
+          "type": "slip",
+          "value": null
+        },
+        "lowerWall": {
+          "type": "slip",
+          "value": null
+        }
+      },
+      "nu": 1.56e-05
+    },
+    {
+      "name": "M4-moving-wall",
+      "class": "wrong",
+      "start": "0.1",
+      "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+      "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/M4-moving-wall",
+      "expected_patches": {
+        "inlet": {
+          "type": "fixedValue",
+          "value": [
+            32.2,
+            0.0,
+            0.0
+          ]
+        },
+        "outlet": {
+          "type": "zeroGradient",
+          "value": null
+        },
+        "upperWall": {
+          "type": "fixedValue",
+          "value": [
+            -32.2,
+            0.0,
+            0.0
+          ]
+        },
+        "lowerWall": {
+          "type": "noSlip",
+          "value": null
+        }
+      },
+      "nu": 1.56e-05
+    },
+    {
+      "name": "M5-half-inlet",
+      "class": "wrong",
+      "start": "0.1",
+      "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+      "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/M5-half-inlet",
+      "expected_patches": {
+        "inlet": {
+          "type": "fixedValue",
+          "value": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ],
+            [
+              32.2,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "outlet": {
+          "type": "zeroGradient",
+          "value": null
+        },
+        "upperWall": {
+          "type": "noSlip",
+          "value": null
+        },
+        "lowerWall": {
+          "type": "noSlip",
+          "value": null
+        }
+      },
+      "nu": 1.56e-05
+    }
+  ]
+}

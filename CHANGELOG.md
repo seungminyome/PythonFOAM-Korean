@@ -2,6 +2,68 @@
 
 날짜는 실행이나 변경이 있었던 날입니다. 기록된 실행에는 그 실행을 만든 코드 버전을 적었습니다.
 
+## 2026-10-30, 10월 30일 보고서; 최종 코드에서 버전 시험 (영문 저장소의 `cabcfc6`, PR 트리 `bf7a06e`)
+
+- `compat-final`(`cabcfc6`)을 `main`에 병합. PR 트리: 브랜치 `pr/podfoam-observer`, `bf7a06e`. 둘이 함께 가진
+  `Solver_Examples/PODFoam` 아래 코드는 blob이 같음
+  ([code-identity.txt](docs/evidence/2026-10-30-versions/code-identity.txt)).
+- 새 문서 [docs/results-20261030.md](docs/results-20261030.md),
+  [docs/evidence/2026-10-30-versions/](docs/evidence/2026-10-30-versions/README.md).
+  v2012, v2106, v2212, 8에서: 검증과 모델 없는 관찰 기능, 2차원과 3차원, 직렬과 rank 2개(작업 24950780\~24950783),
+  대역 서버로 돌린 시험 모음(24950794\~24950797), 12B 요청 하나(24950818, A30; 24949167, L40S). v2212의 12B 시험
+  모음(24950817, A30; 24949283, L40S), v2106에서 PR 트리의 E2B 빠른 시작(24950804), 원본의 Docker 이미지(24950798).
+- `bf7a06e`에서 원본 PODFoam과 비교(작업 24951136\~24951141): OpenFOAM 8에서 U, p, phi는 바이트까지 같음. Python에서
+  첫 스냅샷 덮어쓰기를 재현하면 POD 모드가 같음(30개 중 30개, 150개 중 150개). openfoam.com에서는 원본의 압력 줄도 쓰면 같음.
+- 단위 테스트: 병합한 `main`에서 Python 3.10과 3.12로 156개(작업 24951126). PR 트리는 모듈 여덟 개 중 세 개, 83개(작업 24951079).
+- `README.md`: OpenFOAM v2012, v2106, v2212, 8; 빠른 시작의 `PYTHON`; 12B 저장소가 토큰 없이 응답하므로 `HF_TOKEN`은
+  선택 사항(근거 자료의 `hf-no-token.txt`). `hpc/README.md`: 같은 내용; 지금의 `async_v2.slurm`을 GPU에서 돌림. 이 코드에서
+  `opencfd/openfoam-dev:2212`로 연결 검증(24952019). `llm_demo/README.md`: 버전, POD 일정, 테스트 수. 이전 수: 잘못된 설정 시험
+  전인 2026-10-29에 125개(Python 3.11), 불안정 시험과 단면 시험을 병합하기 전인 2026-10-28에 108개, `TMPDIR`를 노드의 로컬
+  디스크에 둔 경우와 NFS에 둔 경우.
+
+## 2026-10-30, PR 파일 검토
+
+- `PODFoam`: 모듈의 `SystemExit`가 더는 실행을 그 종료 코드로 끝내지 않음. 실행을 시작한 폴더가 `sys.path`에 남음. 원본의
+  시간 측정 줄 네 개가 돌아옴. 모든 rank가 같은 수의 POD 모드를 돌려주고 같은 훅을 정의해야 함. 셀이 없는 rank를 받아들임.
+  `LLM_SLICE_Z`는 이제 `POD_SLICE_Z`.
+- `validation/`: 기준 복사본은 기록만 함. 케이스 편집마다 해당 문장을 찾아야 함. Python 3.6에서 돎. 스크립트는 기본으로 이미
+  source한 OpenFOAM과 `PATH`의 `python3`를 씀.
+- `run_demo.sh`와 `pack_run.py`는 `runtime.py`와 같은 기본 런타임 폴더를 씀. `LLM_LONG_CASES`가 있으면 더는 `PASS`를 출력하지
+  않음. `setup_12b.sh`는 토큰이 필요 없고 토큰을 명령줄에 두지 않음. `LLM_HTTP_PYTHON`의 기본값은 실행 중인 Python.
+- PR을 위해 공유 파일에서 옮김: 안정성 요청은 `stability_request.py`로, sweep 작업은 `hpc/async_v2_sweep.slurm`으로, main의
+  콜백과의 비교는 `test_callback_main.py`로, `/results/`와 `/work/`는 각자의 `.gitignore`로. `async_v2.slurm`은 더는 추적하지
+  않는 파일을 묶지 않음.
+
+## 2026-10-30, OpenFOAM 버전; 클러스터 기본값 없는 HPC 스크립트 (영문 저장소의 `cc61adb`, `4a8f59c`, `cf61575`)
+
+- PODFoam이 OpenFOAM v2012, v2106, v2212, 8에서 빌드됨(`PythonCompat.H`). `cf61575`에서 네 버전 모두 연결 검증이 통과하고,
+  모델 없는 관찰 기능이 2차원 계단 케이스와 3차원 단면 케이스를 직렬과 rank 2개로 돌림(Slurm 작업 24947448\~24947451,
+  24947494, 24947501, 24947502, 24947507). openfoam.com 버전은 원래 케이스의 발산을 재현함. OpenFOAM 8에서 그 케이스는 트랩을
+  꺼도 켜도 발산하지 않음.
+- OpenFOAM 8의 한계 두 가지, `PythonCompat.H`에 적음: 실행 중 `maxIter 0`으로 풀이가 멈춘 필드는 마지막 목록을 계속 보고함(운동량
+  예측자를 끈 경우는 확인함). `moveMeshOuterCorrectors`가 있는 움직이는 격자에서는 마지막 외부 보정의 풀이만 보고함.
+- `frame_scoring.py`에 정답과 점수를 둠. 그래서 `verify_async.py`와 핵심 테스트에 실험 스크립트가 필요 없음. 이전 모듈은 같은
+  이름을 그대로 줌. `test_picture_test.py`는 시험 스크립트를 불러와 그 이름들을 확인함. 단위 테스트: 모듈 여섯 개에 127개.
+- `async_v2.slurm`, `periodic_v2.slurm`: `SIF`와 `PYTHON`이 필수이고, 없으면 작업이 바로 멈춤. 호스트 모듈은
+  `POD_HOST_MODULES`에서만 가져옴. 없으면 소스에서 빌드한 llama-server가 시작하지 않음(`libcudart.so.12`를 못 찾음). `site.txt`가
+  이 설정을 기록하고, `OPENFOAM_BASHRC`를 지정할 수 있음. 이 형태로 두 스크립트는 stub 명령으로만 돌림.
+- `picture_test.slurm`, `window_test.slurm`: 올리기에는 `RESULTS_REPO`가 필요하며 기본 저장소는 더 없음. `RESULTS_RELEASE`는 있고
+  `RESULTS_REPO`나 `GH_TOKEN`이 없는 작업은 아무것도 올리지 않는다고 출력함.
+
+## 2026-10-30, 잘못된 설정 시험 (영문 저장소의 `97db7eb`)
+
+- 새 파일 `wrong_setup_test.py`, `test_wrong_setup_test.py`(테스트 27개; `97db7eb`에서 모두 152개, 병합 뒤 154개; `make test`와 CI가
+  돌림). 시스템 프롬프트가 의도한 설정을 알려 주고 실수의 종류를 말하지 않을 때, 모델이 프레임 하나의 이미지에서 실행의 설정이
+  잘못된 것을 볼 수 있는가? `check`는 요청 문장으로 부류를 가를 수 있는 세트를 거부함. 10월 28일 불안정 세트의 결함임.
+- 실행: 정상 실행 다섯 개와 항목 하나를 바꾼 실행 다섯 개, 각 8,000단계(작업 24946879), 요청 80개, 모델 네 개(작업 24947089).
+  80개 중 맞힌 수: Gemma 4 31B 67, 12B 41, 26B-A4B 42, Qwen3.5-35B-A3B 45; 상수 기준선 40; 최대 |U| 규칙 56. 기록은
+  [docs/evidence/2026-10-30-wrong-setup/](docs/evidence/2026-10-30-wrong-setup/README.md).
+- 이 수의 근거, 답을 읽은 뒤 계산함: 점성 실행과 변경이 이미지에 없는 움직이는 벽 실행을 빼면 64개 중 31B 55, 규칙 56. 가장 큰
+  Courant 수가 1을 넘는지 보면 기준 실행 없이 잘못된 실행 다섯 개 중 세 개를 찾음(80개 중 64개). 정상 실행이 있으면 색 막대의 숫자만으로
+  80개 중 75개(정상 실행을 하나씩 빼면 68개). 점성 실행은 모델이 알아채는 듯하고 그런 수치로는 잡히지 않는 유일한 변경이며,
+  실행 하나이고 이유 대부분이 실제로 있는 재순환을 없다고 함. 이유는 AI 에이전트 하나가 판정함: 37개 중 14개는 변경이나 그 눈에 보이는
+  효과를 말하고, 17개는 부분적으로, 6개는 말하지 않음. `wrong_setup_test.py`, 실행, 질문, 채점은 바뀌지 않음.
+
 ## 2026-10-29, 문서
 
 - README는 비슷한 분야(솔버 연동과 in-situ 분석 도구, CFD 머신러닝, 멀티모달 평가)에서 널리 쓰이는 저장소 13개의 README 절

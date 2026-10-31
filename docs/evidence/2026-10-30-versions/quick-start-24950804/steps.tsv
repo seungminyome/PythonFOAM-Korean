@@ -1,0 +1,10 @@
+01-pip	0	2	python3 -m pip install -r requirements.txt
+02-unittest	0	79	python3 -m unittest test_llm_client test_callback test_async
+03-validation	0	36	./validation/run_v2106.sh
+04-observer	0	6	observer
+05-setup	0	12	./llm_demo/setup_runtime.sh
+06-start	0	2	python3 llm_demo/runtime.py start
+07-standalone	0	7	python3 llm_demo/runtime.py standalone
+08-demo	0	103	./llm_demo/run_demo.sh
+09-async	0	912	env POD_SUITE=async ./llm_demo/run_demo.sh
+10-stop	0	0	python3 llm_demo/runtime.py stop

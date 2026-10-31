@@ -1,0 +1,29 @@
+validation ran
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/v2106-24950781/pod-v2106.35DIuF
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/v2106-24950781/pod-v2106.35DIuF/bin/PODFoam
+serial2d exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+Python finalized successfully
+End
+serial3d exit 0
+POD plane slice: z=0.00714375 requested=0.00635 (middle of the mesh z range) moved off mesh points mesh z range=(0 0.0127) cut cells=20540
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=20540 ranks=1 slice z=0.00714375
+Python finalized successfully
+End
+par2d exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=2
+Python finalized successfully
+End
+
+End
+
+par3d exit 0
+POD plane slice: z=0.00714375 requested=0.00635 (middle of the mesh z range) moved off mesh points mesh z range=(0 0.0127) cut cells=20540
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=20540 ranks=2 slice z=0.00714375
+Python finalized successfully
+End
+
+End
+
+runs done
+inner exit 0

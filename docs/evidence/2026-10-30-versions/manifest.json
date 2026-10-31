@@ -1,0 +1,3046 @@
+{
+ "source_runs": [
+  "pod-versions-20261030 on MedicineBow: the Slurm jobs named in README.md"
+ ],
+ "scope": "PODFoam on OpenFOAM v2012, v2106, v2212 and 8; comparison with upstream 6fde869; the small records of each job. No binaries, images, solver builds, field dumps or model files.",
+ "notes": [
+  "Files of kind gzip copy are gzip -9 copies (no name, mtime 0) of the named source; source_sha256 is the hash of the uncompressed bytes.",
+  "Original records contain cluster paths as provenance."
+ ],
+ "files": [
+  {
+   "path": "README.md",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 10213,
+   "sha256": "6e3374e560cbbaf669bd92dfc905ba104b6642a0c536415b05d2e0089c6611ef"
+  },
+  {
+   "path": "code-identity.txt",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 6172,
+   "sha256": "9da513983b0599c6942239839a1f37431340112c880760263cd4d54911759728"
+  },
+  {
+   "path": "commits/refix-commit-2-8-24950790.log",
+   "source": "MedicineBow pod-versions-20261030/logs/refix-commit-2-8-24950790.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2208,
+   "sha256": "31b73244720737ba7ff09649ed259023dc533ada4441b3ec5381cc507033ed2d"
+  },
+  {
+   "path": "commits/refix-commit-2-v2012-24950784.log",
+   "source": "MedicineBow pod-versions-20261030/logs/refix-commit-2-v2012-24950784.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2234,
+   "sha256": "009e1d531c2c97660284759e36a9edd0bd3aca2e8aa2ad2b7ad2b83f09b5c74a"
+  },
+  {
+   "path": "commits/refix-commit-2-v2106-24950786.log",
+   "source": "MedicineBow pod-versions-20261030/logs/refix-commit-2-v2106-24950786.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2234,
+   "sha256": "ee20c8c917f5b3645f9dc363cf6c5352d730ee65d0b3885e943b96e215478d95"
+  },
+  {
+   "path": "commits/refix-commit-2-v2212-24950788.log",
+   "source": "MedicineBow pod-versions-20261030/logs/refix-commit-2-v2212-24950788.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2234,
+   "sha256": "61cd94a3ff4563e45adf28dbbc169e5bbf237224d6a9b1011b0f8121c401662f"
+  },
+  {
+   "path": "commits/refix-commit-3-8-24950791.log",
+   "source": "MedicineBow pod-versions-20261030/logs/refix-commit-3-8-24950791.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2208,
+   "sha256": "fd79d483d321153d2a7b73f796d8ec22d867b2638d52bd8248d30d0e018c0d28"
+  },
+  {
+   "path": "commits/refix-commit-3-v2012-24950785.log",
+   "source": "MedicineBow pod-versions-20261030/logs/refix-commit-3-v2012-24950785.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2234,
+   "sha256": "e11de2317ba2f4d305f4d63a707fbf7de5f65621b808cc38cda645d8cb503570"
+  },
+  {
+   "path": "commits/refix-commit-3-v2106-24950787.log",
+   "source": "MedicineBow pod-versions-20261030/logs/refix-commit-3-v2106-24950787.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2234,
+   "sha256": "11f60b954819f5158da2a4b00afdf7057e9eb9e83c2c452a545ae56aebb69cf3"
+  },
+  {
+   "path": "commits/refix-commit-3-v2212-24950789.log",
+   "source": "MedicineBow pod-versions-20261030/logs/refix-commit-3-v2212-24950789.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2234,
+   "sha256": "8630a9045f7cf9d540a4ae5be408cf74a7975d68cd33f9520d1c69c4b98e8f8c"
+  },
+  {
+   "path": "compare.out",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/compare.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3587,
+   "sha256": "455490b72e222bdd67e15c3e74858ff6d5ab2180a4992eee66b25bdc2efed680"
+  },
+  {
+   "path": "dev2212-24952019/dev2212-24952019.out",
+   "source": "pod-versions-20261030/pr/refix/dev2212-final",
+   "kind": "record",
+   "bytes": 2359,
+   "sha256": "7f4be443eba51e2753d0193a87eb65c5120e464557eab4b3230b33ed60b96553"
+  },
+  {
+   "path": "dev2212-24952019/dev2212_validation.sbatch",
+   "source": "pod-versions-20261030/pr/refix/dev2212-final",
+   "kind": "record",
+   "bytes": 1008,
+   "sha256": "6dcbf50c9f8cef683d9dde518936d2d47b8a143c24ef8ba1d8816a4016ebf3d4"
+  },
+  {
+   "path": "docker-24950798/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-docker-24950798.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 805,
+   "sha256": "1eea44f4b64e17066ad62d6e76ef7ae8bcea57023cf6cb9246714074a36d0d1b"
+  },
+  {
+   "path": "docker-24950798/validation.log",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/docker-24950798/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2025,
+   "sha256": "10df15cc398f6ae49bfa18bdf66462cd2018b4f5ee57f850a5babe60f8854279"
+  },
+  {
+   "path": "documented-commands/8-24950843.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-doc-8-24950843.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2293,
+   "sha256": "17ba87243069199720643a7daf1d068bbb9ef1c8abb47a9ddba5488d515c8d78"
+  },
+  {
+   "path": "documented-commands/v2012-24950840.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-doc-v2012-24950840.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2405,
+   "sha256": "0b96168ce2aef2493a393b0ba49a5165cdf2dae1fa47bba5095e461b61281327"
+  },
+  {
+   "path": "documented-commands/v2106-24950841.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-doc-v2106-24950841.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2405,
+   "sha256": "c0e2cd917a0b7ea1351e5beb1d54747d416b26cf54ff7c882e6b5ba83d00b6e1"
+  },
+  {
+   "path": "documented-commands/v2212-24950842.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-doc-v2212-24950842.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2361,
+   "sha256": "085e5653fa6fee2ff0d2e1971eb7ece3981cfe2ad57d377ce22a34ad47f99f6d"
+  },
+  {
+   "path": "frame-hashes.json",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 6166,
+   "sha256": "b4e6ffc34a36586e2893c7165657217f357e9d7900351f8f50a1bc188c28a90b"
+  },
+  {
+   "path": "gpu-constraints.txt",
+   "source": "sacct on MedicineBow, 2026-10-30",
+   "kind": "record",
+   "bytes": 753,
+   "sha256": "ee5f58031314f7ae896cdade30b559ae78a9ae1d618be22df8ff624d61033b6a"
+  },
+  {
+   "path": "gpu-suite-24949283/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-suite/pod-async-v2/run-24949283/git/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "f28e908b597e262331d5d5c79ca2075bf47a1dd19b57e1e2005a500412981e06"
+  },
+  {
+   "path": "gpu-suite-24949283/async-verification.json",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-suite/pod-async-v2/run-24949283/pod-llm-async.zppZ91/async-verification.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 16026,
+   "sha256": "2819d0042b4643e57054536d8a69936be13e9a32167acfac69d59e1cc4691f29"
+  },
+  {
+   "path": "gpu-suite-24949283/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-suite/pod-async-v2/run-24949283/git/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "gpu-suite-24949283/nvidia-smi.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-suite/pod-async-v2/run-24949283/nvidia-smi.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1689,
+   "sha256": "69a92d78dfb8d3293f15e32b46d640329218d808f86aefa1a4e286c9a6795bfe"
+  },
+  {
+   "path": "gpu-suite-24949283/server.cmd",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-suite/pod-async-v2/run-24949283/server/server-20261031T011934Z.cmd (not released)",
+   "kind": "byte-preserved",
+   "bytes": 686,
+   "sha256": "433ef7883b4f6c2686d1fb92fe8150a4ede51a957cbb6e9ab4c8e42aed0ad836"
+  },
+  {
+   "path": "gpu-suite-24949283/site.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-suite/pod-async-v2/run-24949283/site.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 489,
+   "sha256": "e360623b83629f4e27065e81125c324a01db12cdf7d528a9ec1d689291a3f140"
+  },
+  {
+   "path": "gpu-suite-24949283/suite.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-suite/pod-async-v2/run-24949283/suite.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "a116965cf2e5585a8049ffc18aef0db34c13f4a8a30efd5f7bcbe28437df282c",
+   "bytes": 3611,
+   "sha256": "edac55ee74edc2c38b6c3997be99697733481353e334a612d55f25034e1bb00f"
+  },
+  {
+   "path": "gpu-suite-24949283/summary.json",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-suite/pod-async-v2/run-24949283/pod-llm-async.zppZ91/summary.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5149,
+   "sha256": "5dbd18a72d66ed8182f3d37651b73d8ac16af74ed4c0da0cdc81e2413b002dea"
+  },
+  {
+   "path": "gpu-suite-24950817/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-b/pod-async-v2/run-24950817/git/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0898990bb75f98984e3fcc54336232c0d85611490ec55760d6175e78a5d51638"
+  },
+  {
+   "path": "gpu-suite-24950817/async-verification.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-b/pod-async-v2/run-24950817/pod-llm-async.tnX3LI/async-verification.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 16027,
+   "sha256": "3047b16d8b64d2d8af8c104883c8e4b9e9234f31e21474a782b439fedff195d8"
+  },
+  {
+   "path": "gpu-suite-24950817/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-b/pod-async-v2/run-24950817/git/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "gpu-suite-24950817/nvidia-smi.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-b/pod-async-v2/run-24950817/nvidia-smi.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1689,
+   "sha256": "23de32908739bd5b3a85429c094f1a5a03a804195590e78fcfca1950784b6f47"
+  },
+  {
+   "path": "gpu-suite-24950817/reference-24950816.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-gpu-ref-24950816.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2023,
+   "sha256": "301afe8ee10ea579975dc06168c699ec4dc0aa091c8929c0a0c3d4f81dff940f"
+  },
+  {
+   "path": "gpu-suite-24950817/server.cmd",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-b/pod-async-v2/run-24950817/server/server-20261031T031527Z.cmd (not released)",
+   "kind": "byte-preserved",
+   "bytes": 686,
+   "sha256": "9eeaed7baa330fad7000f01133d37593219dcd75421e68e939e42cc4ab63a2d0"
+  },
+  {
+   "path": "gpu-suite-24950817/site.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-b/pod-async-v2/run-24950817/site.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 489,
+   "sha256": "e360623b83629f4e27065e81125c324a01db12cdf7d528a9ec1d689291a3f140"
+  },
+  {
+   "path": "gpu-suite-24950817/suite.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-b/pod-async-v2/run-24950817/suite.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "23bc1d5630dc9b8f11678df3f8daf3816730db71b57b4aa1fd5f786de28f4f63",
+   "bytes": 3642,
+   "sha256": "7de55f586d740b4c80a92a55ee86aedfade3624f2f9b7a3c9ab6394038e4b4d8"
+  },
+  {
+   "path": "gpu-suite-24950817/summary.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-b/pod-async-v2/run-24950817/pod-llm-async.tnX3LI/summary.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5139,
+   "sha256": "7142a01949f210542837aeb4fce8cdf7fc3f7ba24f43c76ee133bf5b66752dc3"
+  },
+  {
+   "path": "gpu-versions-24949167/8/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/8/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 148,
+   "sha256": "39e85c27e86a88c7f0259d24137407554628e8908ec94f7b77fdec8839085ca2"
+  },
+  {
+   "path": "gpu-versions-24949167/8/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/8/case2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5259,
+   "sha256": "07e470283d5f6b76e4d0dad62f65710512f3f1f48895985fd5dd06389d067c6f"
+  },
+  {
+   "path": "gpu-versions-24949167/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "f28e908b597e262331d5d5c79ca2075bf47a1dd19b57e1e2005a500412981e06"
+  },
+  {
+   "path": "gpu-versions-24949167/check.out",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/check.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3044,
+   "sha256": "25573dde932ed54a8bbcae4ac6d7b5d3d384f588493db3d817713503be0c07de"
+  },
+  {
+   "path": "gpu-versions-24949167/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "gpu-versions-24949167/gpu-after.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/gpu-after.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 132,
+   "sha256": "5cac1e8cd059e3c74e4bcbd3bf14d6384613f0756fd90fd9693241c1ca72dc6d"
+  },
+  {
+   "path": "gpu-versions-24949167/gpu.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/gpu.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 68,
+   "sha256": "126bbd61e960c7d6c176b4370ad5c282becc37dcd210528d8254a3ccba46e2a6"
+  },
+  {
+   "path": "gpu-versions-24949167/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/pod-gpu-versions-24949167.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5295,
+   "sha256": "e07d8f81ae7adf2588efe347622d05d3fb2582435fbad1c6a06addb6b332aa14"
+  },
+  {
+   "path": "gpu-versions-24949167/node.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/node.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 19,
+   "sha256": "ad254463fe8bda555d4f5d100d554491630431539baafe047ca688b701dc9b57"
+  },
+  {
+   "path": "gpu-versions-24949167/nvidia-smi.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/nvidia-smi.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1689,
+   "sha256": "1eefcb8801a499cfe82e0d9b90f4d04b0f06ad40f25dccfb5b801be08f9b8b66"
+  },
+  {
+   "path": "gpu-versions-24949167/part-a.json",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/part-a.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 16232,
+   "sha256": "017036f0bca386ca96eb026e07b3688ed41d4731c922a5105f72cd46d5b0e430"
+  },
+  {
+   "path": "gpu-versions-24949167/v2012/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/v2012/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 156,
+   "sha256": "9655838950d093cf3babd0538a9531997dc95dee1106940217648480a3aaba41"
+  },
+  {
+   "path": "gpu-versions-24949167/v2012/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/v2012/case2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5380,
+   "sha256": "bb32d7ae0846579afb8ae6e1a9674088e6af9598b5c5e89391b9371b7c971322"
+  },
+  {
+   "path": "gpu-versions-24949167/v2106/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/v2106/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 156,
+   "sha256": "8d23966156c18f47f880c03a0e7ed7fed70dda5e2fc5b9469463326aa7fba8be"
+  },
+  {
+   "path": "gpu-versions-24949167/v2106/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/v2106/case2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5378,
+   "sha256": "5f59a6c1fbfded1e174d6e286c8010277fe6c63c32eea295e22aeb75551c0a0f"
+  },
+  {
+   "path": "gpu-versions-24949167/v2212/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/v2212/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 112,
+   "sha256": "03cab88afaf97d1ea96970f1bd2ae490a63680454fa4282d116c717f49aa4a5d"
+  },
+  {
+   "path": "gpu-versions-24949167/v2212/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/gpu-versions/run-24949167/v2212/case2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5379,
+   "sha256": "aaa2c8746dc999aef9367a5da2b392d174deb49db411e373f370a62236bb3128"
+  },
+  {
+   "path": "gpu-versions-24950818/8/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/8/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 148,
+   "sha256": "39e85c27e86a88c7f0259d24137407554628e8908ec94f7b77fdec8839085ca2"
+  },
+  {
+   "path": "gpu-versions-24950818/8/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/8/case2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5164,
+   "sha256": "10bfa91538dd3f744f26ad5e6422811f7c2677ebb7eaf9d666222c0297339835"
+  },
+  {
+   "path": "gpu-versions-24950818/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0898990bb75f98984e3fcc54336232c0d85611490ec55760d6175e78a5d51638"
+  },
+  {
+   "path": "gpu-versions-24950818/check.out",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/check.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3044,
+   "sha256": "2360a1448b732a6eaa6af0360cdbd12e37732fbad95b0f905df9394398ddd786"
+  },
+  {
+   "path": "gpu-versions-24950818/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "gpu-versions-24950818/gpu-after.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/gpu-after.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 128,
+   "sha256": "1fa8b0a712e51ce401570840ef2571c1ab210371d9713680147e6bed5d25ecae"
+  },
+  {
+   "path": "gpu-versions-24950818/gpu.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/gpu.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 67,
+   "sha256": "f2e55f1375fbc2345cfd6538b679fbae3826e6a0f9511051783be1c0bcc09b36"
+  },
+  {
+   "path": "gpu-versions-24950818/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-gpu-a-24950818.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5283,
+   "sha256": "8ca065d8e75e5e43cd87233c5b1c524afe65d4110d3e34524651a0838ed9f9b4"
+  },
+  {
+   "path": "gpu-versions-24950818/node.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/node.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 18,
+   "sha256": "0959af68c016c9155d05e32cca866de17ab84084c06385bb15945f6ead349099"
+  },
+  {
+   "path": "gpu-versions-24950818/nvidia-smi.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/nvidia-smi.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1689,
+   "sha256": "01eb060f9fac4cbcd4b04dab52a9103a1322285df7f82db5d90927f94c04f1f3"
+  },
+  {
+   "path": "gpu-versions-24950818/part-a.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/part-a.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 16029,
+   "sha256": "f25f8a327eee327cecd70fffc1a96d4d19211bdad1da7965c5f5085fa27fafae"
+  },
+  {
+   "path": "gpu-versions-24950818/v2012/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2012/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 156,
+   "sha256": "9655838950d093cf3babd0538a9531997dc95dee1106940217648480a3aaba41"
+  },
+  {
+   "path": "gpu-versions-24950818/v2012/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2012/case2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5376,
+   "sha256": "cbb04871d3c6616f7beebc95fd616672739ad35c01d538fe11d6a228e876ca14"
+  },
+  {
+   "path": "gpu-versions-24950818/v2106/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2106/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 156,
+   "sha256": "8d23966156c18f47f880c03a0e7ed7fed70dda5e2fc5b9469463326aa7fba8be"
+  },
+  {
+   "path": "gpu-versions-24950818/v2106/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2106/case2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5375,
+   "sha256": "bc56979a68652de89c889fa9bec553951f15c18f11ffccd4cbe20ac2bfeadfb5"
+  },
+  {
+   "path": "gpu-versions-24950818/v2212/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2212/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 112,
+   "sha256": "03cab88afaf97d1ea96970f1bd2ae490a63680454fa4282d116c717f49aa4a5d"
+  },
+  {
+   "path": "gpu-versions-24950818/v2212/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2212/case2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5373,
+   "sha256": "249e362608ee86bf3bce9d19b912cbcc87811576c444ed1eabefaf12eecc235c"
+  },
+  {
+   "path": "hf-no-token.txt",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 349,
+   "sha256": "75b615f9b873b29c34f63717b80fcd92796ff36a15c5ccf3b2ce097d56d50454"
+  },
+  {
+   "path": "matrix/8-24950783/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0898990bb75f98984e3fcc54336232c0d85611490ec55760d6175e78a5d51638"
+  },
+  {
+   "path": "matrix/8-24950783/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "matrix/8-24950783/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 148,
+   "sha256": "39e85c27e86a88c7f0259d24137407554628e8908ec94f7b77fdec8839085ca2"
+  },
+  {
+   "path": "matrix/8-24950783/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-mx-8-24950783.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1170,
+   "sha256": "87bda40abca42642e7607b242283b704ac925e118de1268c4749419fc68a4ea6"
+  },
+  {
+   "path": "matrix/8-24950783/node.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/node.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 13,
+   "sha256": "7d87914817c0cc405d4bbf5b699bcf438ff82b7f2b636a913f2abafc1c57e627"
+  },
+  {
+   "path": "matrix/8-24950783/par2d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par2d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/8-24950783/par2d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par2d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1513,
+   "sha256": "a47c508fbef18e1fc1ed195317a824d2e27ffbc9749439dc4f98a86e1cc600d8"
+  },
+  {
+   "path": "matrix/8-24950783/par2d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3089,
+   "sha256": "b53cd8a5b4b329ed6543af87b26fab6f8d5026d8944fe243686a579d3e7f3659"
+  },
+  {
+   "path": "matrix/8-24950783/par2d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par2d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "d1d6ccca4c2c75ab828783c4ec397c4e2813b1b2f17dcfa8a3bac649ee064414",
+   "bytes": 28910,
+   "sha256": "3adc8154d54749daefb452e6982b0ed8dc7865b479680e80d02426f6ba710ffe"
+  },
+  {
+   "path": "matrix/8-24950783/par2d/log.decomposePar.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par2d/log.decomposePar (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "cd651e16d67cc89342ecc50b9aa00cbe1cc3e4383e4daa18e59c6f1fc51c3de1",
+   "bytes": 828,
+   "sha256": "ef8a9dc5f5c1f0ceb0ec6570a236cd839cf36e1575279206b897f528a4fbfd3e"
+  },
+  {
+   "path": "matrix/8-24950783/par2d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par2d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "105e9183abaf02fead58ca9bd8fcbb9a4552706c83340199de0e9bcb2170aa89",
+   "bytes": 16103,
+   "sha256": "bef1a622347c4401f6d985af4a6fe9b931574882697a4cc3bb595782120d9099"
+  },
+  {
+   "path": "matrix/8-24950783/par3d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par3d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/8-24950783/par3d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par3d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1822,
+   "sha256": "968e38fd03698e6db9e2f555d44b1646b67479a83342e17af69e20eef322f6e2"
+  },
+  {
+   "path": "matrix/8-24950783/par3d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3364,
+   "sha256": "36970081590f6a4cc469217bc80d77c9a1e25660832635caed0e5c4182680c02"
+  },
+  {
+   "path": "matrix/8-24950783/par3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "28e33f44a7e46d3eb68b5a904104d84a55edca5fc9449c88b3a59a4126a39bf9",
+   "bytes": 32433,
+   "sha256": "9e8693e5dc26657cb344a5b5478696f6eb9445fd24954bf3a8e508f3a28a4d95"
+  },
+  {
+   "path": "matrix/8-24950783/par3d/log.decomposePar.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par3d/log.decomposePar (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "90427063c0e633c337f5ea1fc221ce8dc795c8ab7641d38198c8b17a9802300c",
+   "bytes": 833,
+   "sha256": "54daaa776a0b69eeebd905c8ac70a09526cb83a035d2aa7a838d7e04248964fe"
+  },
+  {
+   "path": "matrix/8-24950783/par3d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/par3d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "c29f6a875ab768d51896c601d174862d5741731dbc5b463ba2d949656634ccbc",
+   "bytes": 19436,
+   "sha256": "2a36fa1a24d9dc79455fd511650264c739af70e45057d318da0b6799f3294137"
+  },
+  {
+   "path": "matrix/8-24950783/serial2d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/serial2d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/8-24950783/serial2d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/serial2d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1509,
+   "sha256": "d81e771434df311bbba960095cd1e981b37ca0cfc0c55f6ad61b9c44f1b427aa"
+  },
+  {
+   "path": "matrix/8-24950783/serial2d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/serial2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3103,
+   "sha256": "d938eb88a1d8e0f975e6db431b93ea73eeffecf56d5a22ee1b93ce9266b85f6f"
+  },
+  {
+   "path": "matrix/8-24950783/serial2d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/serial2d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "32fb923bee66480e626e3240777af083f8c14c20123a2c2f87c46b9bc1197e73",
+   "bytes": 27380,
+   "sha256": "c9f9201a1158df9f8bd9b48e37ae7f4e25bc9b4ca91d78d1820093ef7b799c25"
+  },
+  {
+   "path": "matrix/8-24950783/serial2d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/serial2d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "94a58f5250ad1b8d41517e649debb7a4778ecde761462a8c1c3d1e685015cdb3",
+   "bytes": 16248,
+   "sha256": "f276d40b6a7699e6985b9406e35d1dae14d48666c4e30f4b572ee112f9db87c6"
+  },
+  {
+   "path": "matrix/8-24950783/serial3d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/serial3d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/8-24950783/serial3d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/serial3d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1822,
+   "sha256": "4973aca0e953d4200f9ecd6a1773409774a6014f3e0b9ec9dc15fa25ceecd95e"
+  },
+  {
+   "path": "matrix/8-24950783/serial3d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/serial3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3377,
+   "sha256": "165bd85b07480c99cd01aa8dacac35a3df4a4508fa66b886db1b022e3782dcaa"
+  },
+  {
+   "path": "matrix/8-24950783/serial3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/serial3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "c00d0409d39373d3b6ff64a15fb5be373612de06eb0165d11c4e5a30f488b4cc",
+   "bytes": 30106,
+   "sha256": "6c89e94dd1714c61af15160d37f5d7b613a47f30d2dcd5ef4af69cf6840137d9"
+  },
+  {
+   "path": "matrix/8-24950783/serial3d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/serial3d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "c9943786b61768e4c2a53f84135b812c084e9a9f8cafff6dcb642bf622525269",
+   "bytes": 19388,
+   "sha256": "634ff4cf60cd1ad8c5e59312f55c5a90e5bd4dfc4c7fec5aaec84491367a37f9"
+  },
+  {
+   "path": "matrix/8-24950783/validation.log",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/8-24950783/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2025,
+   "sha256": "05ff00cc0a3eb0daa29c7c29f3a6dc8492fef8a65e8adea792a45a6edd12180a"
+  },
+  {
+   "path": "matrix/v2012-24950780/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0898990bb75f98984e3fcc54336232c0d85611490ec55760d6175e78a5d51638"
+  },
+  {
+   "path": "matrix/v2012-24950780/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "matrix/v2012-24950780/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 156,
+   "sha256": "9655838950d093cf3babd0538a9531997dc95dee1106940217648480a3aaba41"
+  },
+  {
+   "path": "matrix/v2012-24950780/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-mx-v2012-24950780.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1186,
+   "sha256": "1596e50f533afb3327c196943a2dd33e6ab88fa81479dca95d1a0c543bca568b"
+  },
+  {
+   "path": "matrix/v2012-24950780/node.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/node.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 13,
+   "sha256": "5d9e96e0b243b9fb24858b0fe01d170f35b0b5ada19ab54081e36a5a3ee653b8"
+  },
+  {
+   "path": "matrix/v2012-24950780/par2d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par2d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2012-24950780/par2d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par2d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1507,
+   "sha256": "4dea03422e158f0583143e7946f65dfc8f1a22c4060fd8a4dbec94ef65032b45"
+  },
+  {
+   "path": "matrix/v2012-24950780/par2d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3107,
+   "sha256": "37d0c156c365ca9d4225003ab5c17e685c3eaec425a7797764e2207d65589e53"
+  },
+  {
+   "path": "matrix/v2012-24950780/par2d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par2d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "86d94ddbbf73e9073087e024b64a25e088045a4a1b22ddda73c367bb63ae06ea",
+   "bytes": 28563,
+   "sha256": "844a3888d74aa45b76209eeb3907c9e10e53f96d61172bd05263761f7fcffe48"
+  },
+  {
+   "path": "matrix/v2012-24950780/par2d/log.decomposePar.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par2d/log.decomposePar (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "ff8c0eb36a04a01c35958e354823a2d1e45c2bebdca5e71e2ae7ecc604ff880a",
+   "bytes": 896,
+   "sha256": "50067f6ba9cf5dad97720a82dd64a0a611a9fd2712a87cdbdf58b3cbd442c005"
+  },
+  {
+   "path": "matrix/v2012-24950780/par2d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par2d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "26b97e88c1f2528cc1b4fd50a2a6a41d8bb08b9f2ccda8635e827d979da43757",
+   "bytes": 14206,
+   "sha256": "e493cf1811707c5a8eb616b0c22aced0ca95cafbc22875e91437416b6b587ab3"
+  },
+  {
+   "path": "matrix/v2012-24950780/par3d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par3d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2012-24950780/par3d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par3d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1823,
+   "sha256": "0fa829bd88abdb9760d1263700da6b3df9e27fc84f5c2b0b778a292e4138bed7"
+  },
+  {
+   "path": "matrix/v2012-24950780/par3d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3387,
+   "sha256": "f328b7154b356774e687e16ff64937733f4135f131144a752af0a32da82a6e07"
+  },
+  {
+   "path": "matrix/v2012-24950780/par3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "ab566186cf69b0487c8f273d18bb86b6d48847702e2b0644ba0def04816fca68",
+   "bytes": 31386,
+   "sha256": "4b0ac37f823b375bc95d25087c54d49aba5a208a67f901fe6e6e72f907728771"
+  },
+  {
+   "path": "matrix/v2012-24950780/par3d/log.decomposePar.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par3d/log.decomposePar (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "8d94b0e009ac6d074b6915b010f2af67728997cea80c09836003a7bc6fa2e606",
+   "bytes": 903,
+   "sha256": "3f62d74543d0eb30b6ca1ff04efe1ab1a8f2ddea97afd8754c14b15d1c35c54c"
+  },
+  {
+   "path": "matrix/v2012-24950780/par3d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/par3d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "eaf13fb24551fe0b2aca9d6d859282722d5ec879d605febbdffd071c1ec1a157",
+   "bytes": 16729,
+   "sha256": "749e8d6301ad97548bfc4ab34aaf1caf9bd1c99c15536503451e67b915546608"
+  },
+  {
+   "path": "matrix/v2012-24950780/serial2d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/serial2d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2012-24950780/serial2d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/serial2d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1511,
+   "sha256": "98edf15fb1de54fb0f328a09c2f862b5965d560678e57964c36ae036130b328e"
+  },
+  {
+   "path": "matrix/v2012-24950780/serial2d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/serial2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3124,
+   "sha256": "5995728118e3f43b1ad9732d77f261d1bdae0337241633d60b14a6bd12b48f4e"
+  },
+  {
+   "path": "matrix/v2012-24950780/serial2d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/serial2d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "34617ed5f8da87e416c1d678c3284cc49768545c871fdee844e6f5ef0fd40ea9",
+   "bytes": 26847,
+   "sha256": "4c3641d315fc3f5d4422618c70798ca166f4821c9536d8e3ee845c710e766839"
+  },
+  {
+   "path": "matrix/v2012-24950780/serial2d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/serial2d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "e4c8907844d807232094ee627904eadf61ba9ce238b2036ad956c90eb0c74564",
+   "bytes": 14287,
+   "sha256": "efd12d68a4c774a123278058313c5e18681c3aee0a9df4636ede2c0baa200e5c"
+  },
+  {
+   "path": "matrix/v2012-24950780/serial3d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/serial3d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2012-24950780/serial3d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/serial3d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1821,
+   "sha256": "9e5859e4b61b6acbb26b24a385503ecf65ec8091f037df38c43d6fbc8d072b4e"
+  },
+  {
+   "path": "matrix/v2012-24950780/serial3d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/serial3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3395,
+   "sha256": "057efb2207ed8f41da9e118e84566a640a0bc58644eda5b6d1114596ac095b51"
+  },
+  {
+   "path": "matrix/v2012-24950780/serial3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/serial3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "4abc14b569060b84a70324a905b6b1a14f83fa0a633e2d9b1a3e607207746604",
+   "bytes": 29559,
+   "sha256": "f51d8f72b3f94d3fd6abcb204aeecafa5a1a3183cb40f1e1f38caeb5ea951486"
+  },
+  {
+   "path": "matrix/v2012-24950780/serial3d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/serial3d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "6ed442fcae160ea3cd3cd3a721eba1f2df3e771e0787fb413a5cef46c028986e",
+   "bytes": 16703,
+   "sha256": "46bb254388acfb735e43db378ec33c508d42782b5f5051ab6903583a0f320c97"
+  },
+  {
+   "path": "matrix/v2012-24950780/validation.log",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2012-24950780/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2038,
+   "sha256": "1af51bb823d5a99f64d622c1f433013172d05187f7bfe69621fbdd5093587a0a"
+  },
+  {
+   "path": "matrix/v2106-24950781/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0898990bb75f98984e3fcc54336232c0d85611490ec55760d6175e78a5d51638"
+  },
+  {
+   "path": "matrix/v2106-24950781/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "matrix/v2106-24950781/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 156,
+   "sha256": "8d23966156c18f47f880c03a0e7ed7fed70dda5e2fc5b9469463326aa7fba8be"
+  },
+  {
+   "path": "matrix/v2106-24950781/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-mx-v2106-24950781.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1186,
+   "sha256": "2f1b4265fb94d9faf57ea92a401db657105056e63c5ff76f0cdac22e369467c3"
+  },
+  {
+   "path": "matrix/v2106-24950781/node.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/node.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 14,
+   "sha256": "efde9dff707f279c2e727ea8a32a2cf77297fea1ba5ad9cc8af2673d18f195d6"
+  },
+  {
+   "path": "matrix/v2106-24950781/par2d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par2d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2106-24950781/par2d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par2d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1507,
+   "sha256": "4dea03422e158f0583143e7946f65dfc8f1a22c4060fd8a4dbec94ef65032b45"
+  },
+  {
+   "path": "matrix/v2106-24950781/par2d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3106,
+   "sha256": "27ed604755d0c08e59ac566a3ab86a9270e0c09b989bcb380dc4745f42d3c484"
+  },
+  {
+   "path": "matrix/v2106-24950781/par2d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par2d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "ef3a78db8119f433eae75697457be80c9b3f8c0fd549c3f21b53a5cf6b336031",
+   "bytes": 28042,
+   "sha256": "53c17067a64f69abb211aff5c0e2e8efe8b3e3920c12e4310975809d74eb7db9"
+  },
+  {
+   "path": "matrix/v2106-24950781/par2d/log.decomposePar.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par2d/log.decomposePar (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "2ccdd0db40a1fd5f8fd51421fe47559bfa8018eccbb895eda2d4677c42cd5ee1",
+   "bytes": 895,
+   "sha256": "1299da1c4c04d3071479781a435cd87a606a9fb641fd250654c292f5531a5137"
+  },
+  {
+   "path": "matrix/v2106-24950781/par2d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par2d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "da21d8f757bfc4d824a916b5d6f52d0953daa342b1f95fe32ac551ab5c4f7dd1",
+   "bytes": 14205,
+   "sha256": "219a54ab2534d16248db2e01c0082984352e9e74b0e3e83e08eceb4d51b3c38c"
+  },
+  {
+   "path": "matrix/v2106-24950781/par3d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par3d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2106-24950781/par3d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par3d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1823,
+   "sha256": "0fa829bd88abdb9760d1263700da6b3df9e27fc84f5c2b0b778a292e4138bed7"
+  },
+  {
+   "path": "matrix/v2106-24950781/par3d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3387,
+   "sha256": "0c31335f1d96d45bc914f55bab879526818be5bc5809d6f89e2a7ff754b2626f"
+  },
+  {
+   "path": "matrix/v2106-24950781/par3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "5db669400ba0599a0c5fb586baa47fb783f97e7d86dbba2bd091e0e1e13ca8e6",
+   "bytes": 31286,
+   "sha256": "eb4d6a4406a0b3e50765532b9f34a0dbbe6e21c8663bfb018ed65f1a3bc97c0b"
+  },
+  {
+   "path": "matrix/v2106-24950781/par3d/log.decomposePar.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par3d/log.decomposePar (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "7f5ded12c48aab298059c64af5bb1d01e6112907278e5d3b25365a2cdc9f97ce",
+   "bytes": 901,
+   "sha256": "b6b8c9aa0ae23159dec338ab2f9a6e2d35ff46f93f49cad8bc2e71b83168e845"
+  },
+  {
+   "path": "matrix/v2106-24950781/par3d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/par3d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "ce7dd9624a129caf765f4efe2dc9d577de24e1bc647b00da6cc2d40f3455b94b",
+   "bytes": 16732,
+   "sha256": "927ff552efe1c7667129bc60cd46371ccaff9c92ba88bdf310dcf75aecacc758"
+  },
+  {
+   "path": "matrix/v2106-24950781/serial2d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/serial2d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2106-24950781/serial2d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/serial2d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1511,
+   "sha256": "98edf15fb1de54fb0f328a09c2f862b5965d560678e57964c36ae036130b328e"
+  },
+  {
+   "path": "matrix/v2106-24950781/serial2d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/serial2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3126,
+   "sha256": "536ff9ae80e14e632f9b2765242ff35d7c913ed0ea19df4ad5f86df67e14b0e0"
+  },
+  {
+   "path": "matrix/v2106-24950781/serial2d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/serial2d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "77ccf8ad2314bdbef56026849239fe015bc495f4f7f8a3cb5be217149e1debe0",
+   "bytes": 26779,
+   "sha256": "ad4c8526770ce269690c9b833a85a346c92ed50ef8355cceaecb82a2ec476122"
+  },
+  {
+   "path": "matrix/v2106-24950781/serial2d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/serial2d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "7d9f0cf62e9dc7914ab613d506970ab18d37284573e91ba4e233f2041b0d8557",
+   "bytes": 14287,
+   "sha256": "6d375f9775b79d10df4f150d64a3904c40d9d6930df336c3b3f141dea9601bc7"
+  },
+  {
+   "path": "matrix/v2106-24950781/serial3d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/serial3d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2106-24950781/serial3d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/serial3d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1821,
+   "sha256": "9e5859e4b61b6acbb26b24a385503ecf65ec8091f037df38c43d6fbc8d072b4e"
+  },
+  {
+   "path": "matrix/v2106-24950781/serial3d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/serial3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3400,
+   "sha256": "7d72eeccb3aa08caec482a34d0a9c91f6dab5534e7492600e47c83326799f341"
+  },
+  {
+   "path": "matrix/v2106-24950781/serial3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/serial3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "b04398053f9c917bcca27f6ef7b333ae10ce7d8081b4d2779589f30cb478ff38",
+   "bytes": 29780,
+   "sha256": "70df569c59d6a4609dd0db813465574ee88707b030bda94e600b7e96b0dda4f7"
+  },
+  {
+   "path": "matrix/v2106-24950781/serial3d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/serial3d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "bc09d9cdbd8905f51744abbb78b83e77c627315a19f433e0f50812f30f62437b",
+   "bytes": 16702,
+   "sha256": "593701f3c76f3e28fe4863f8dbeafb55b686b8cce68ebff6503e77d08251001d"
+  },
+  {
+   "path": "matrix/v2106-24950781/validation.log",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2106-24950781/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2039,
+   "sha256": "b7b0d249b0c7fd26e449f06239a28df907ffc3998a9cad8d5f7497358adab3af"
+  },
+  {
+   "path": "matrix/v2212-24950782/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0898990bb75f98984e3fcc54336232c0d85611490ec55760d6175e78a5d51638"
+  },
+  {
+   "path": "matrix/v2212-24950782/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "matrix/v2212-24950782/image-sha256.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/image-sha256.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 112,
+   "sha256": "03cab88afaf97d1ea96970f1bd2ae490a63680454fa4282d116c717f49aa4a5d"
+  },
+  {
+   "path": "matrix/v2212-24950782/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-mx-v2212-24950782.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1186,
+   "sha256": "471c89ef310eeaa3ee0c11cba6c56a00cfefab57e271add4e226e619c42f9c58"
+  },
+  {
+   "path": "matrix/v2212-24950782/node.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/node.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 13,
+   "sha256": "7d87914817c0cc405d4bbf5b699bcf438ff82b7f2b636a913f2abafc1c57e627"
+  },
+  {
+   "path": "matrix/v2212-24950782/par2d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par2d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2212-24950782/par2d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par2d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1507,
+   "sha256": "4dea03422e158f0583143e7946f65dfc8f1a22c4060fd8a4dbec94ef65032b45"
+  },
+  {
+   "path": "matrix/v2212-24950782/par2d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3103,
+   "sha256": "05fc52672365093b8987c6b0ab8b005ae370ea309d374b80541331aee3b3011b"
+  },
+  {
+   "path": "matrix/v2212-24950782/par2d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par2d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "10369a7255b98d2faa0c72e1b4e01372511c296cc875ef8ae81b69007a4326a1",
+   "bytes": 28159,
+   "sha256": "a36880840def08f4c8172263a7fae4de534439bcaeb1acbcc977f2150614fb83"
+  },
+  {
+   "path": "matrix/v2212-24950782/par2d/log.decomposePar.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par2d/log.decomposePar (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "06e3a30ce966b77ef524d29820c2f59d3ea6235cb7785d431d7ce698bdb73d9c",
+   "bytes": 913,
+   "sha256": "1dfc27eb098971d9f29b57c7021beadf6b2eaf1a739d593bf9960bdda0018fb3"
+  },
+  {
+   "path": "matrix/v2212-24950782/par2d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par2d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "24edac54bea90f758952313581bc030e250bc5258731e9795799a4411ec28b6a",
+   "bytes": 14205,
+   "sha256": "e110afdc808b60d73b985a5de874dc031eaa803273f1ac75be488f7e322fd1c9"
+  },
+  {
+   "path": "matrix/v2212-24950782/par3d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par3d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2212-24950782/par3d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par3d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1823,
+   "sha256": "0fa829bd88abdb9760d1263700da6b3df9e27fc84f5c2b0b778a292e4138bed7"
+  },
+  {
+   "path": "matrix/v2212-24950782/par3d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3382,
+   "sha256": "c6faa7bf1291974530b50153c901a492992790a5db65e63af9ff42ebda203ce8"
+  },
+  {
+   "path": "matrix/v2212-24950782/par3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "d3df59dbace17682300421221dc503f1ea372ed2c225a717d89c64cb1debf619",
+   "bytes": 31554,
+   "sha256": "8fae9ac864987de0e6a388c57435a6c49c51bf711b335a9ccfdde7d77dabe1bf"
+  },
+  {
+   "path": "matrix/v2212-24950782/par3d/log.decomposePar.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par3d/log.decomposePar (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "1b8d8388c761c33cbc249f8f9bdb47abf68c012f547478cf35be608a9a2eef18",
+   "bytes": 920,
+   "sha256": "2ef225d90fa1d9c419dadfece9ecde38e5fa3b7b4c8d2eaaa79e00e8aec50c96"
+  },
+  {
+   "path": "matrix/v2212-24950782/par3d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/par3d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "2c834bad4eee3ea89b176bbacafe8af9135c2cafb468bef745c9ca838b2872a8",
+   "bytes": 16730,
+   "sha256": "82dfe89bcb29cd624eaeb7c3fb5e81cad0441150bcedc235576882f5f24d69e2"
+  },
+  {
+   "path": "matrix/v2212-24950782/serial2d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/serial2d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2212-24950782/serial2d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/serial2d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1511,
+   "sha256": "98edf15fb1de54fb0f328a09c2f862b5965d560678e57964c36ae036130b328e"
+  },
+  {
+   "path": "matrix/v2212-24950782/serial2d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/serial2d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3122,
+   "sha256": "84b7b0dee21924a31887cd6b545ae776fda062c0f36acd80273716773a865662"
+  },
+  {
+   "path": "matrix/v2212-24950782/serial2d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/serial2d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "5d0bc3b7587c2b189575a7387519a0a6170863bc886eda4c3e72b76ee00223b7",
+   "bytes": 26984,
+   "sha256": "f11537e151ebcd6913dff40d350439c768c9f02397d9a37d1634bb47ae47d6a6"
+  },
+  {
+   "path": "matrix/v2212-24950782/serial2d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/serial2d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "48f06ed988a80f9ab230ab905b0806bb1bf5d06287301d270f3d1d289866c0c3",
+   "bytes": 14287,
+   "sha256": "e3b071172cd3785807f42e7bb15561392bce6e025dcf89e7a229cb6082f242cf"
+  },
+  {
+   "path": "matrix/v2212-24950782/serial3d/exit-status",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/serial3d/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+   "path": "matrix/v2212-24950782/serial3d/frame-step-000100-readable-metadata.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/serial3d/llm_observation/step-000100/readable-metadata.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1821,
+   "sha256": "9e5859e4b61b6acbb26b24a385503ecf65ec8091f037df38c43d6fbc8d072b4e"
+  },
+  {
+   "path": "matrix/v2212-24950782/serial3d/llm_result.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/serial3d/llm_result.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3395,
+   "sha256": "003f2b85b6979f4c13b90b7390fcdb53ce12cceac8dbeece04327e25a0bb8710"
+  },
+  {
+   "path": "matrix/v2212-24950782/serial3d/log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/serial3d/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "e77f4cff9ab59416b4fe81601e51ff2cf976de56ac09c7ed984c63eb06bb8ea6",
+   "bytes": 29956,
+   "sha256": "eadfd56b7db9fb3726811826597f128eb34afa91e1296ad00d80aed03d5779c7"
+  },
+  {
+   "path": "matrix/v2212-24950782/serial3d/telemetry.jsonl.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/serial3d/telemetry.jsonl (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "525f3358be381b44a465a8995227a44799afbd11217cabb05e13605ed1498aab",
+   "bytes": 16703,
+   "sha256": "2912e0bd957a933cd5adb3d5812d75c8fbc83d7781b63973221198577ef27d36"
+  },
+  {
+   "path": "matrix/v2212-24950782/validation.log",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/matrix/v2212-24950782/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2039,
+   "sha256": "8fe4eadddbd9a195449a37125e7a2b8f817fc2c88f5af01d0d4edb477fdc145d"
+  },
+  {
+   "path": "quick-start-24950804/async/async-verification.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/quick/pod-llm-async.WlIbtS/async-verification.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 10290,
+   "sha256": "19482d12b08a25481cc0f13033a34454ee02101f16aafb07e8b2f1110b23bda6"
+  },
+  {
+   "path": "quick-start-24950804/async/environment.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/quick/pod-llm-async.WlIbtS/environment.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5540,
+   "sha256": "31a6694998b6cd94f626d72e1ee02af639540f46f041545131d39e4c77459ee7"
+  },
+  {
+   "path": "quick-start-24950804/async/summary.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/quick/pod-llm-async.WlIbtS/summary.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 4671,
+   "sha256": "53746de726207437b3b434831745b2c386e4ccf12f6eba7a93f2f4a7d6d467fe"
+  },
+  {
+   "path": "quick-start-24950804/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-quick-24950804.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "777a414d9f7e53315f82a7d8d10bc32c7653145c6f722c76d4cef1220551fec3",
+   "bytes": 12091,
+   "sha256": "e294d0a5b0c4fcbcee993c3051c8ffe89926213fa793a4553d44cba0b8b2fcbf"
+  },
+  {
+   "path": "quick-start-24950804/steps.tsv",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/quick/logs/steps.tsv (not released)",
+   "kind": "byte-preserved",
+   "bytes": 488,
+   "sha256": "773c896d2dfd0d33af6055c4988974c8e5dfd0fdda5af5dc62e728b09322bb9c"
+  },
+  {
+   "path": "quick-start-24950804/sync/demo-verification.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/quick/pod-llm-demo.s5a90R/demo-verification.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 12901,
+   "sha256": "9d9f20c734210a807a650ba5524aaabbbdb9f389f4edcd63a4da92eeebee8ddf"
+  },
+  {
+   "path": "quick-start-24950804/sync/environment.txt",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/quick/pod-llm-demo.s5a90R/environment.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5540,
+   "sha256": "5b105cb1d0261772233e3794614f11dd99d541e4d9b9ba21106490e59fc8a61e"
+  },
+  {
+   "path": "quick-start-24950804/sync/summary.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/quick/pod-llm-demo.s5a90R/summary.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1881,
+   "sha256": "0914d07dcbf4954dfd4fee77f694267ae8a020c157fed12432e22e2f3be2ec5c"
+  },
+  {
+   "path": "quick-start-24950804/sync/verification.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/quick/pod-llm-demo.s5a90R/verification.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1783,
+   "sha256": "ae6e75ed05210f08e1f576928a70f2a10a9aa7410e4ad058da590071124a19a4"
+  },
+  {
+   "path": "report-numbers.json",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 56866,
+   "sha256": "a984dfdde3776107500b942943e72882f9fa0e5c0c5cdb15c1452bb03d007f5a"
+  },
+  {
+   "path": "report_numbers.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 10913,
+   "sha256": "551959a924b5e399752daff824ad86e6cb8220b5807b1be4658787fe61a3b792"
+  },
+  {
+   "path": "sacct.txt",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 5360,
+   "sha256": "4dfff3d42209f4769dbfec59189d70170bc3f051d4c3a44604c0e24721d6304c"
+  },
+  {
+   "path": "schedule/ef78700-8-24950749/job.out",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/slurm/scen-8-24950749.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 15216,
+   "sha256": "5b64e96bfd89f20713ab49bf273aa1f01a5ad2b21fa985311d2ae8c745976a8c"
+  },
+  {
+   "path": "schedule/ef78700-8-24950749/scenarios.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/scen-8/scenarios.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 63911,
+   "sha256": "b162ad476cf0c39216ab47054691c72d8df5f0c524ccce04fcee29e4fd16863d"
+  },
+  {
+   "path": "schedule/ef78700-8-24950749/schedule.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/sched-8/schedule.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 9886,
+   "sha256": "85864ff080c7e36960d507948b4517ddab1c7c74eea8e74cd6ffec242b16970f"
+  },
+  {
+   "path": "schedule/ef78700-HEADS",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/HEADS (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "19ee3172991e286938e46a0008d9072a732852efdcfc70ccad5bdcd8908f40b7"
+  },
+  {
+   "path": "schedule/ef78700-v2106-24950748/job.out",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/slurm/scen-v2106-24950748.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 15638,
+   "sha256": "a223ede4721229f975f766a8a344f7c35ecc75c4bb3408ecf2d5dc89d034bc7c"
+  },
+  {
+   "path": "schedule/ef78700-v2106-24950748/scenarios.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/scen-v2106/scenarios.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 64472,
+   "sha256": "572758d4c6426e91d2ed6b4217f38316c675463820d90bbad9a4c1497ff7a507"
+  },
+  {
+   "path": "schedule/ef78700-v2106-24950748/schedule.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/sched-v2106/schedule.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 9990,
+   "sha256": "22d605017b95ebabb6673e5e6dbdefc9f23b6f3f3c9396942e10dd1ebb7d7034"
+  },
+  {
+   "path": "schedule/fae10ba-8-24949782/job.out",
+   "source": "MedicineBow pod-versions-20261030/pr/review-cpp/slurm/sched-8-24949782.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3748,
+   "sha256": "d9414347243147b29eb190ac1a8bbe8ae63a41461966de79d62a43a36067efc8"
+  },
+  {
+   "path": "schedule/fae10ba-8-24949782/schedule.json",
+   "source": "MedicineBow pod-versions-20261030/pr/review-cpp/sched-8/schedule.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 9886,
+   "sha256": "9e70a3cce0d51c33caecc4584aa67bc83ae4b9d1d00928a2780cadbff5a85dd1"
+  },
+  {
+   "path": "schedule/fae10ba-HEADS",
+   "source": "MedicineBow pod-versions-20261030/pr/review-cpp/HEADS (not released)",
+   "kind": "byte-preserved",
+   "bytes": 82,
+   "sha256": "898075553df4b534164bf1b49a45e4000064dd4577527eea541fc8c246745d8e"
+  },
+  {
+   "path": "schedule/fae10ba-v2106-24949780/job.out",
+   "source": "MedicineBow pod-versions-20261030/pr/review-cpp/slurm/sched-v2106-24949780.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3836,
+   "sha256": "25a2cfa14b95ef004ee77aee26bec9437db4212bbce473e4a7575268d3e799fe"
+  },
+  {
+   "path": "schedule/fae10ba-v2106-24949780/schedule.json",
+   "source": "MedicineBow pod-versions-20261030/pr/review-cpp/sched-v2106/schedule.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 10092,
+   "sha256": "a5e086528f3e17eaa66b4e0538f5fe1e9db03d5bc8c6db87ca67da3c7ed668ec"
+  },
+  {
+   "path": "scripts/gpu/part_a.sbatch",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/part_a.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2612,
+   "sha256": "007affd08a5a56f1f1842ee334ff70bb7eb0e19bcc5fc6a457b9cb7181c04258"
+  },
+  {
+   "path": "scripts/gpu/part_a_check.py",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/part_a_check.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 6336,
+   "sha256": "1154da54b49c8fbdac63e62e0ce98eb9627a630ab98154025e4e66cc1af8053a"
+  },
+  {
+   "path": "scripts/gpu/part_a_inner.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-a/part_a_inner.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2300,
+   "sha256": "9b01564fbe38978bb60c87c35cc7de1b9105ee7592b4e5d99bbeac7f186e6719"
+  },
+  {
+   "path": "scripts/gpu/reference.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-b/reference.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 773,
+   "sha256": "0ba831533b34d0a11df7ce689921b074ae8314456af8427ff07f5a25ec64c240"
+  },
+  {
+   "path": "scripts/gpu/submit_suite.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/gpu-b/submit.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 991,
+   "sha256": "8d41f1a9fd6548c8f01c6e539855fd8710c88ccd862c1fee1e5c591a4879de23"
+  },
+  {
+   "path": "scripts/matrix/compare_pod_account.py",
+   "source": "MedicineBow pod-versions-20261030/matrix/compare_pod_account.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 4403,
+   "sha256": "2df7bf41d77ba55b32b1d7b2734ec9ff398a556509d22d01308d121d5c9eee5c"
+  },
+  {
+   "path": "scripts/matrix/compare_regression.py",
+   "source": "MedicineBow pod-versions-20261030/matrix/compare_regression.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2652,
+   "sha256": "eb32c923928b538c432a5d16885e5e13feba22e40bc2e9bc6eb0d17bb595b5c4"
+  },
+  {
+   "path": "scripts/matrix/compare_versions.py",
+   "source": "MedicineBow pod-versions-20261030/matrix/compare_versions.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 8156,
+   "sha256": "3ca8ad3ad2ab3227971bb483f903962384a85172684bdcefb13cf021fe1539ef"
+  },
+  {
+   "path": "scripts/matrix/pod_account.sbatch",
+   "source": "MedicineBow pod-versions-20261030/matrix/pod_account.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3841,
+   "sha256": "9f38e11ea2e1081e6a62c1027caa29213100e80ae02c89f5cd837ad7a7f6bab0"
+  },
+  {
+   "path": "scripts/matrix/pod_account_inner.sh",
+   "source": "MedicineBow pod-versions-20261030/matrix/pod_account_inner.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2694,
+   "sha256": "c25dbf9ccf7a7ca96599ee5fa7fcb13d7d9ae1028804c3b74720689ea2bfe6b6"
+  },
+  {
+   "path": "scripts/matrix/unit_tests.sbatch",
+   "source": "MedicineBow pod-versions-20261030/matrix/unit_tests.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 869,
+   "sha256": "0da446f78faaa97a64e223d44289eeba87fd58ca6431a030eceb5c7d6db5bfaa"
+  },
+  {
+   "path": "scripts/matrix/upstream_regression.sbatch",
+   "source": "MedicineBow pod-versions-20261030/matrix/upstream_regression.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1718,
+   "sha256": "a86bf40f70f8f06124ac5fb6e1b35c620d690f709f910e03c671bea6c4ba09df"
+  },
+  {
+   "path": "scripts/matrix/upstream_regression_inner.sh",
+   "source": "MedicineBow pod-versions-20261030/matrix/upstream_regression_inner.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2892,
+   "sha256": "362d8f754a85fe6ef6b6342e0ca8aecadfcfb756b94d6b4acacca171c1d5ee2c"
+  },
+  {
+   "path": "scripts/matrix/version_check.sbatch",
+   "source": "MedicineBow pod-versions-20261030/matrix/version_check.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1557,
+   "sha256": "58d7ea6a70b7ebaa9055501c586c89d925f640d9d350e991214a61d86893f03e"
+  },
+  {
+   "path": "scripts/matrix/version_check_inner.sh",
+   "source": "MedicineBow pod-versions-20261030/matrix/version_check_inner.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3506,
+   "sha256": "4686b6f2fffe47cdd076776be91b02d15ff1ea9b27c61f2c6656af20dc6f9f6b"
+  },
+  {
+   "path": "scripts/refix-jobs/doc_commands.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/jobs/doc_commands.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3041,
+   "sha256": "edf9d3987d570bb83c2ec966787f7850036b9b72f48cea7db85e4548e157e185"
+  },
+  {
+   "path": "scripts/refix-jobs/docker.sbatch",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/jobs/docker.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 550,
+   "sha256": "2f588c47aaa74a98f4bf9243a87a6679907ccb5d61a71135164ab7fd865b54a2"
+  },
+  {
+   "path": "scripts/refix-jobs/docker_inner.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/jobs/docker_inner.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1689,
+   "sha256": "6009ab15f90d81a2845ce8aa8101b354a8d54909fc4b4db71e74c6765ee71b19"
+  },
+  {
+   "path": "scripts/refix-jobs/func_image.sbatch",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/jobs/func_image.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 711,
+   "sha256": "0826dfb1c1c4dd1bb795a2f239ff3fbc1efd6d435afb669001b126d05d873376"
+  },
+  {
+   "path": "scripts/refix-jobs/func_of8.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/jobs/func_of8.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 661,
+   "sha256": "3135fdcdc38479d21960507b961685a27df5586728211c5e673279f5e7e561a5"
+  },
+  {
+   "path": "scripts/refix-jobs/func_v2106.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/jobs/func_v2106.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2982,
+   "sha256": "ba093cc683bc93b053f3f14ecd867e9da85fab0c118132d0f7a34909a4e502bc"
+  },
+  {
+   "path": "scripts/refix-jobs/quick.sbatch",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/jobs/quick.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 388,
+   "sha256": "d1422c6ed7e0a0870056c5188e2409e59fbbca23be6f44079eeed914767ab46a"
+  },
+  {
+   "path": "scripts/refix-jobs/quick_steps.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/jobs/quick_steps.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2096,
+   "sha256": "a7f7e6f7239681b761a7ea56cf55bebce50e959122d2bafdda368649d77e9dc6"
+  },
+  {
+   "path": "scripts/refix-jobs/subset.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/jobs/subset.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1122,
+   "sha256": "f027b351304eb8834032f57bdebf4653c3dc3730121134caf4680e1ecca36646"
+  },
+  {
+   "path": "scripts/schedule/HEADS",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/HEADS (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "19ee3172991e286938e46a0008d9072a732852efdcfc70ccad5bdcd8908f40b7"
+  },
+  {
+   "path": "scripts/schedule/build_inner.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/build_inner.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 360,
+   "sha256": "b2ee38cf514a89ed4b348a3987955b1557aa6444a4dffa0c2064beac1ca3d9ee"
+  },
+  {
+   "path": "scripts/schedule/diff_scen.py",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/diff_scen.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1422,
+   "sha256": "10588a7f369fbc751a18165cc58a3d62a812c789b57cf367bc1c08ddc849272a"
+  },
+  {
+   "path": "scripts/schedule/env.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/env.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 940,
+   "sha256": "ec462ca62a78f1296905f496f0343b839a4d1f6858e42251c9dc773dda1a2eea"
+  },
+  {
+   "path": "scripts/schedule/job.sbatch",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/job.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 749,
+   "sha256": "021b85441a6f4570a30155267577e661cf30d18ced983986304e779cb66dd9d4"
+  },
+  {
+   "path": "scripts/schedule/scenarios.py",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/scenarios.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 17955,
+   "sha256": "8ef626d7130855b461872ebf5793d8ae5402e89bcd000ed39e3a22f3d59e71c3"
+  },
+  {
+   "path": "scripts/schedule/schedule.py",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/cpp/schedule.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 10519,
+   "sha256": "5c67e5e66b07f1c1deeb7d347c3ea6ac2096f2e3532c8c413d14a7c460e17177"
+  },
+  {
+   "path": "scripts/stand-in/stub_server.py",
+   "source": "MedicineBow pod-versions-20261030/pr/stub/stub_server.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2579,
+   "sha256": "4cd3d433afad33410af117bdc0cfdfc16390f7ebbb06b7a9fc0fcc8bd3d60826"
+  },
+  {
+   "path": "scripts/stand-in/suites.sbatch",
+   "source": "MedicineBow pod-versions-20261030/pr/stub/suites.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1234,
+   "sha256": "dc8a94d8385b369304cae610c51700e34fc2f0611181e38e8e57e6f8206146aa"
+  },
+  {
+   "path": "scripts/stand-in/suites_inner.sh",
+   "source": "MedicineBow pod-versions-20261030/pr/stub/suites_inner.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1710,
+   "sha256": "94a2667ceb80f7777eabed166b147aba3641bd4c73a8fcdeee6b765457eb2bb7"
+  },
+  {
+   "path": "scripts/try_version.sh",
+   "source": "MedicineBow pod-versions-20261030/try_version.sh (not released)",
+   "kind": "byte-preserved",
+   "bytes": 1494,
+   "sha256": "b57c752edfa0380f6589dfa1462613860f114b68bf55e1789820662f819ae8e8"
+  },
+  {
+   "path": "scripts/unit_merged.sbatch",
+   "source": "MedicineBow pod-versions-20261030/publish/unit_merged.sbatch (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2124,
+   "sha256": "4d97d269f98911f504aaf1cc9ca341336690bb7941e194e6d71a863017a680e6"
+  },
+  {
+   "path": "stand-in/8-24950797/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/8-24950797/git/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0898990bb75f98984e3fcc54336232c0d85611490ec55760d6175e78a5d51638"
+  },
+  {
+   "path": "stand-in/8-24950797/async-v1.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/8-24950797/async-v1.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "aeb1c374df87e0f367db1b23ca24b3aad5896dd51af6ebe89c45a430c45486cd",
+   "bytes": 1978,
+   "sha256": "fe4408982958dc5a44cc5fd4b15175c9ccc78a062c408d481502f6fa360aae07"
+  },
+  {
+   "path": "stand-in/8-24950797/async-v2.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/8-24950797/async-v2.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "8fecfbf4b545516dbaf5323af7886e4959bd73c3ff56b0ec955fae1891ce734d",
+   "bytes": 3008,
+   "sha256": "8f067eedb37cda9f60d7497bb9fe6ecf4fe5b2f0d92f7e07dcaf6ce9658b4461"
+  },
+  {
+   "path": "stand-in/8-24950797/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-stub-8-24950797.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 732,
+   "sha256": "abab1aa5de88f1b914eead86519e2e68c5e92ed9f06008c76657644dc44f4ec0"
+  },
+  {
+   "path": "stand-in/8-24950797/sync.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/8-24950797/sync.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "4bb62620743a740a3c7555fd83af9795d8974f435e7afa2d973bd2f2e00e1308",
+   "bytes": 2028,
+   "sha256": "e8eeda216b6d9f276dedd4680c89bfa4aacb2ad7b3874688e6bb5badb2e3e7ac"
+  },
+  {
+   "path": "stand-in/8-24950797/validation.log",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/8-24950797/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2019,
+   "sha256": "796a157c179a46c4df3f092e664de776bde1640ec59614d8274bbdc0b40337be"
+  },
+  {
+   "path": "stand-in/v2012-24950794/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2012-24950794/git/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0898990bb75f98984e3fcc54336232c0d85611490ec55760d6175e78a5d51638"
+  },
+  {
+   "path": "stand-in/v2012-24950794/async-v1.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2012-24950794/async-v1.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "caf5c24e06b9fc3a54695b33917f798f4960014dd4df14bd87ea0f0f0ac7f2cc",
+   "bytes": 1984,
+   "sha256": "7090ede059b43ecae663471d447d1351471ff254fbcd81e46fd0c9b37fd7e960"
+  },
+  {
+   "path": "stand-in/v2012-24950794/async-v2.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2012-24950794/async-v2.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "e9d5eec7c2406c4c1d40956ba2e1392edba19275ab570e682ad8fb3647e3c83c",
+   "bytes": 3033,
+   "sha256": "1fb8548f452d0c5a0be6890a1308dccee301217e91878f8c8869776cb5821959"
+  },
+  {
+   "path": "stand-in/v2012-24950794/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-stub-v2012-24950794.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 747,
+   "sha256": "16d3b5713fcd57ff699a0e405b34267a76057f49a4b0961db3e0de02f5f9bfed"
+  },
+  {
+   "path": "stand-in/v2012-24950794/sync.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2012-24950794/sync.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "e31c811aaf9e940edfb1a7999b1b35b5bf238df1fa187e7cee6d843fe067bc92",
+   "bytes": 2033,
+   "sha256": "f60b6a5c6c1d1a2defb4cc1a7a0ef50bb2f94d4f0e76d14ab204d48d92928f12"
+  },
+  {
+   "path": "stand-in/v2012-24950794/validation.log",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2012-24950794/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2033,
+   "sha256": "5c35e6907bac88709753839152cd5327c41076f38b891af68c3ad35b3c1d0fe4"
+  },
+  {
+   "path": "stand-in/v2106-24950795/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2106-24950795/git/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0898990bb75f98984e3fcc54336232c0d85611490ec55760d6175e78a5d51638"
+  },
+  {
+   "path": "stand-in/v2106-24950795/async-v1.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2106-24950795/async-v1.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "8407a30636961301e40416a7fd2e09d471e49bed47712da5cb5536e0d6f4b3c3",
+   "bytes": 1980,
+   "sha256": "b9be710437e0f95b0a6dfd79a85939961980f939d47e2b0c443467cec3ef6731"
+  },
+  {
+   "path": "stand-in/v2106-24950795/async-v2.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2106-24950795/async-v2.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "0bff3910c8e35d60783f19197cb8585f669956a06ee09232db1051e7fc64a7ae",
+   "bytes": 3035,
+   "sha256": "aabf2868a3fc1b26aa3fcafa3a58b1b958d3250943fd3daafb398fcfbaedcf5d"
+  },
+  {
+   "path": "stand-in/v2106-24950795/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-stub-v2106-24950795.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 747,
+   "sha256": "40e1fc9d08936f1d5fd22e2fb2ccf488d3cf8ec1e17cd969cef3547975ea6146"
+  },
+  {
+   "path": "stand-in/v2106-24950795/sync.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2106-24950795/sync.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "ead8fba4147b1ff0c758cc1967e6af76b00c5aa5f252fb5e55bb6520c1174545",
+   "bytes": 2029,
+   "sha256": "b851b7ab168d2a2ec7f899e9d650e134886e9109523011fc225331dd1a6d7d55"
+  },
+  {
+   "path": "stand-in/v2106-24950795/validation.log",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2106-24950795/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2033,
+   "sha256": "a34da5b4eba09990c591d2e586b33cc5761c972f83c89d890e15dfe3a34182a0"
+  },
+  {
+   "path": "stand-in/v2212-24950796/HEAD",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2212-24950796/git/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0898990bb75f98984e3fcc54336232c0d85611490ec55760d6175e78a5d51638"
+  },
+  {
+   "path": "stand-in/v2212-24950796/async-v1.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2212-24950796/async-v1.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "bccf0007ffab68c06faa3d3693a53e04021f39e917bd086521248b915922c962",
+   "bytes": 1968,
+   "sha256": "b9f9671177ff1ac2a0863fa3c43a797e14a27304dc13bc21950db69555d455ad"
+  },
+  {
+   "path": "stand-in/v2212-24950796/async-v2.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2212-24950796/async-v2.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "24b2080c855671f3c6f38eb5925ecb2c8b3ae859e7dafc326b835457ead2f2d4",
+   "bytes": 3036,
+   "sha256": "1281d87f8ad957659c5b76c4f25c5f91be895d233e898c611a9f370f2704fd21"
+  },
+  {
+   "path": "stand-in/v2212-24950796/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-stub-v2212-24950796.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 747,
+   "sha256": "9c9dff096284bcbf8c3e8a9b5132f283716571d9e3d97372fc46aaf1483be039"
+  },
+  {
+   "path": "stand-in/v2212-24950796/sync.log.gz",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2212-24950796/sync.log (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "4a26fb36b8f51dec24249ce3be35b3dae829653f0ff366f187471c23fcffb482",
+   "bytes": 2027,
+   "sha256": "9908ff2a775922c50b7f9a998d34f76ee281fd6eb9d8a72d25a9696105d730d8"
+  },
+  {
+   "path": "stand-in/v2212-24950796/validation.log",
+   "source": "MedicineBow pod-versions-20261030/pr/stub-runs/v2212-24950796/validation.log (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2033,
+   "sha256": "93a81ade4220973f547a970b1e06374a22dc8392fd4c82f77a5e62415aca324a"
+  },
+  {
+   "path": "unit-tests/cabcfc6-24950761.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-unit-final-24950761.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 302,
+   "sha256": "0e5bfb9cb4a61c5bf1ced42535b246605e90a36a7cade074955482d766624e92"
+  },
+  {
+   "path": "unit-tests/merged-main-24951126.out",
+   "source": "MedicineBow pod-versions-20261030/publish/slurm/unit-merged-24951126.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 4643,
+   "sha256": "328d56ca1631d5cecaf596ae33f9eec3687b9840428f526e70506eb49bd04d5b"
+  },
+  {
+   "path": "unit-tests/pr-tree-bf7a06e-24951079.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-unit-head-24951079.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 196,
+   "sha256": "4b769400e748d57ca44a69b2f8236b8d28c3334dac772b7264d5051cb947d7ba"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24950800/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24950800/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0e66a242911807254cfb7e479e37ed631254a156cf8225e37ac645645d2568d6"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24950800/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24950800/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24950800/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24950800/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3779,
+   "sha256": "074a9de9b573eda0815403885ea1c56daffd69910509ffff3023f38a5a1000d1"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24950800/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24950800/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "6eedc2c9432fbde9a7e83dc63b82a08f57091c2dc54d16bf0f500e68397ec512",
+   "bytes": 40180,
+   "sha256": "ea7533bfe84ad09390ea31143eb1bed83a0b9dbbc17c5d0833c0e92dcc77f91d"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24950800/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24950800/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "9f13c9458b504bb3096f87f31ae10b66da3da96fea0146f6dfab32bb7d25cdeb",
+   "bytes": 40164,
+   "sha256": "747d5c92b4574436ad49ebb1ad35d6924adf2263333f8760f8cbab2fa820d62a"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24950800/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24950800/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "b51c8b324e5780570203fb6a98f96f926189f012d045fabddfbb813e4ad4e7ce",
+   "bytes": 35111,
+   "sha256": "2f78195b2aab81840809278fea3f96c014aedd0a93fc3f228cea8cca7cde5eef"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24950800/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24950800/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24950800/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-acct-shipped-8-24950800.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "f0538d75a7de757500aa76da553268cfeda9dbc4aec07284caeb1644ec2bcb33",
+   "bytes": 681,
+   "sha256": "8641987ec30994c83c6f6df2e3d0ee609536d73c25e80282795e3cbeb366e31b"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24950800/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24950800/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24950800/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24950800/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24951136/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24951136/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "e81f2e1d6dd903aeb4e52f41f0290fe15cfe2c82734c897c07d978b54b595d99"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24951136/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24951136/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24951136/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24951136/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 3779,
+   "sha256": "bcd1d0c5883453453e6e385df5df5460e6cd62773094923dd42d5ba424c1161d"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24951136/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24951136/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "9d702c8c657f7e358f2150acd8224b2dee441ea6329b6c310b043a97b23599c0",
+   "bytes": 40137,
+   "sha256": "1eba489e43fd6bdab536e09b38e6f8fa17ca0c9a7dd0f84bdb61899cf32977d8"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24951136/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24951136/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "80c5faed346d4d3b685d1a44faa2fd49dab6eb623bb456221d02d43a12071b1e",
+   "bytes": 40161,
+   "sha256": "c6fb62f34f40a787868beb1615fd9ed548ca4d252cd62ac568d5ce5d5cdf72b7"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24951136/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24951136/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "aaf96066755a846b9b103d75919a47f31854548cd71657638e270ff925452d30",
+   "bytes": 35165,
+   "sha256": "1e264c5c8a838dd56b9f0d40930ed600ff4c3db6214687374a014a52272dc92b"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24951136/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24951136/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24951136/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/publish/slurm/acct-shipped-8-24951136.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "3d2b99761c662a8b728be8b137255c70b2438b835f135d019d4251e7aa88e4c1",
+   "bytes": 680,
+   "sha256": "97d2d2d323ef0b5b016209143a49a86ab72dea6e7115371f900e8ba2aee9eba4"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24951136/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24951136/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/shipped-8-24951136/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/shipped-8-24951136/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24948191/HEAD",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24948191/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "614bd619e1e3e634345dafc9975e6b1db88e0d42502ada3f4d9d512aa8171795"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24948191/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24948191/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24948191/case-fork.exit-status",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24948191/case-fork/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 4,
+   "sha256": "748ea33db356501af68a9e37a1583cfa57192a894aab2a692c5475f031d1e81a"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24948191/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24948191/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "a5c2776acfb1ca58ccd43ecf0f9c8ac69016239a00e590ba698c95d5e3810d1d",
+   "bytes": 16536,
+   "sha256": "43d9902abffcafdb92527a5b0c22f6f7d96c143fe6e35d0fe6163b0123fbd5f2"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24948191/case-upstream.exit-status",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24948191/case-upstream/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24948191/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24948191/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "73771d37c6632978ea9d4ed38f7a501e3bf79a1311cb74caa062428459c23b42",
+   "bytes": 15981,
+   "sha256": "46409556310323b424ca28b411e02833d9a45b24d416c380f1614b77b5f78196"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24948191/job.out",
+   "source": "MedicineBow pod-versions-20261030/slurm/upstream-regression-acc3-shipped-v2106-24948191.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 945,
+   "sha256": "d3cb015d831992a5cedb3691529f44725a5abdbb336a8ea0ccbc02af2f4b886c"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24948191/regression.json",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24948191/regression.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 199,
+   "sha256": "7b44a5c19be6906c61fd9c0656464f44e00d6f7c13ca7cb07040871b86bdcc1c"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24951141/HEAD",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24951141/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "e81f2e1d6dd903aeb4e52f41f0290fe15cfe2c82734c897c07d978b54b595d99"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24951141/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24951141/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24951141/case-fork.exit-status",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24951141/case-fork/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 4,
+   "sha256": "748ea33db356501af68a9e37a1583cfa57192a894aab2a692c5475f031d1e81a"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24951141/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24951141/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "b74e3fb912ddcf878d811456d7aa36f73f5443537bb8385ba91b7e2c3dcc74c0",
+   "bytes": 17054,
+   "sha256": "62d4693207b2d53637fbbaa728a1b3cc2e3b546275691715373f8c33515f5ad1"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24951141/case-upstream.exit-status",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24951141/case-upstream/exit-status (not released)",
+   "kind": "byte-preserved",
+   "bytes": 2,
+   "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24951141/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24951141/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "efe025cdbf2b52131511bf73c5b929304e3c1945f941d50f7e1ef7973571c733",
+   "bytes": 16106,
+   "sha256": "a9b59f21ab4db9358b67c312c857da8e074e977b7e037237d53266a0d70a9110"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24951141/job.out",
+   "source": "MedicineBow pod-versions-20261030/publish/slurm/regression-shipped-v2106-24951141.out (not released)",
+   "kind": "byte-preserved",
+   "bytes": 945,
+   "sha256": "4508e96e74f190d22de14b08ef75fb7b10b2f7806a35e34cc7e4d3dda4b1a4be"
+  },
+  {
+   "path": "upstream-comparison/shipped-v2106-24951141/regression.json",
+   "source": "MedicineBow pod-versions-20261030/regression-runs/shipped-v2106-24951141/regression.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 199,
+   "sha256": "7b44a5c19be6906c61fd9c0656464f44e00d6f7c13ca7cb07040871b86bdcc1c"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24950801/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24950801/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0e66a242911807254cfb7e479e37ed631254a156cf8225e37ac645645d2568d6"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24950801/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24950801/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24950801/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24950801/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 16681,
+   "sha256": "88816705641874fa5ca861e4955bf8405a7e963d91f88ffc693c79428d7e12c9"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24950801/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24950801/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "e09f532e74a24a4d56b07c83e5b9431e16b02146348fc1a560be6b9aef4207d7",
+   "bytes": 45188,
+   "sha256": "d360f5ab78d31266c2a9d1a1b66b41af09e32a183465008ded7e1e2b13878818"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24950801/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24950801/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "ca9b4ef53c967fc0f7dd29a7dab204e3fc2f456e605476630a51608a535569d4",
+   "bytes": 45201,
+   "sha256": "5f0323b10a8efa6172dacdda97ba474cb717a45f0a5189c5c457e3efcf0851fb"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24950801/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24950801/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "3cb8928bf9735a8c34130b85f4ec23c146ec2e613ea9cbe20aafccdf3f13e6a6",
+   "bytes": 42301,
+   "sha256": "34b0cf9c5df1d20b74b5b2437eaf20a04c1e407f2940eee4d3da79edd487e867"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24950801/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24950801/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24950801/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-acct-stabilised-8-24950801.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "8009c4cd7f39298bba76b7ea92c79eb0adf8878d3d971818ac3b570ab585798d",
+   "bytes": 1320,
+   "sha256": "f1c1f12c9d11bf2abe7009b114159837e6ab8989d8cda658629b1d582a5d5f91"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24950801/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24950801/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24950801/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24950801/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24951137/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24951137/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "e81f2e1d6dd903aeb4e52f41f0290fe15cfe2c82734c897c07d978b54b595d99"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24951137/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24951137/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24951137/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24951137/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 16677,
+   "sha256": "651e163000ca3c97157b10ac85a804f1672ba788cbd61d4634d3cf63adccb830"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24951137/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24951137/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "65337f7a004a418abc196736cb82922af630dc34422747c929c68fc588b79e14",
+   "bytes": 45153,
+   "sha256": "0f194f63eea8fdfc357bfeb6119dd0cb1c2bdf624fcd446efdefbb90e41d7ab8"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24951137/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24951137/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "e7a61f0b8b0602a2d6340fde1869b02d37082a32b5bd5f91d457921dcd8d834b",
+   "bytes": 45131,
+   "sha256": "61363fe6e9cd3544e9c8375284dc540fd53e2ce9d9318e5caaae8ddbf72f866c"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24951137/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24951137/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "e730fb9efa8407764015bc649997c24e226bae9e2d69b52d562e8ddd5c934b42",
+   "bytes": 42231,
+   "sha256": "2081ca3e89dd06518a8439751947fec208f818744dddf4cc8c0c5aed0b08d690"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24951137/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24951137/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24951137/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/publish/slurm/acct-stabilised-8-24951137.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "794d981d4b3db5123a2449de17ef644b7403467695f5e5c31b61b8c5a83c52e2",
+   "bytes": 1312,
+   "sha256": "d6b9eb678ec92d98031326f9fd1bef705d36c44ebfa2d14b23c255d9550d3254"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24951137/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24951137/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-8-24951137/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-8-24951137/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24948188/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "614bd619e1e3e634345dafc9975e6b1db88e0d42502ada3f4d9d512aa8171795"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24948188/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24948188/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 24709,
+   "sha256": "36a3bb1969145c5d214c478098818177dab050efa24ada8e6d4370e81f8ce87d"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24948188/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "df263efbb7add0a197e10f01927a24d95d79b793b1f3f2d55805ee8a0b63897f",
+   "bytes": 44472,
+   "sha256": "53f9fee73b8b843cfeb4ac708f318c3b625881b0fb0a6671145d865e187a32eb"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/case-fork-plainp.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24948188/case-fork-plainp/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "a53c61bcb081a7e41fe94240537765eecae93b1b925fdf8fc060f4f419b2b2c5",
+   "bytes": 44895,
+   "sha256": "869fbd76a8c6d80842b20e2954b8978e2da237d8cec07fb8af824664f9a6b441"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24948188/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "d510d8b1968291b3518f53587e13798306d1680ab96d8a909b15612842f560c0",
+   "bytes": 44455,
+   "sha256": "c1dc590ce66b307ce1decc5f0742100107ae5638b103cc75f9b44fdef0dc9b49"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24948188/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "5b47afae2abef4c799a2c6862536f3cccff2a948f210a9aa8c68a7d824e6971c",
+   "bytes": 42855,
+   "sha256": "be3ff6fb136fa1e97ac1c55946f412bc5debc2922e5057e0e85e1e320d204641"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24948188/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/slurm/pod-account-acc3-stabilised-v2012-24948188.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "f9307b2bd3d9d30bce323c54b2ea83831f1ecbc3523ffbdbabb36aa73b9da21a",
+   "bytes": 2256,
+   "sha256": "7b215040b37fde380f6ba895ff2602e8f2cdbd04f70132facf46fa1e546fe75b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24948188/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24948188/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24948188/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24951138/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "e81f2e1d6dd903aeb4e52f41f0290fe15cfe2c82734c897c07d978b54b595d99"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24951138/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24951138/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 24709,
+   "sha256": "689fd56040b421d3eb5c711c8e922355e82307daf8622694585422e9609ecc63"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24951138/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "07ae6b75ea5d10e2e919a089735971244c63ccfbfa1ee7ffe0f9f176a80fefbd",
+   "bytes": 45491,
+   "sha256": "3fe9cab1e80ad0e15c38c4c15fc9608d3b0b0f366ed0dd4582ec45bc3640f022"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/case-fork-plainp.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24951138/case-fork-plainp/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "54d41ac86ee8b5aa7949ba3e82a6ca8a32565a98113c8f1c8bbb30f09d7bc4e8",
+   "bytes": 45930,
+   "sha256": "5ca28898e1f6b469a784f7ba89989c89fab3eaf7790d5e54c1829e36373f842f"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24951138/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "d7b5711e01605677cafe6da18e4755a554bd51429a0868b59c5cedd6bd8d13eb",
+   "bytes": 45485,
+   "sha256": "284fd4fab53a1c3bd7e072c4f5464f93e93e1b18869e41fce0b5ff197b867f14"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24951138/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "d668c9ce5f6345742b2d5155a147ad7670cacfe513edefd1b548815867862d4b",
+   "bytes": 42752,
+   "sha256": "1591b4926a369d83694c538991dc70f04e24d27e085e65cc39cbd30a45851f0e"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24951138/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/publish/slurm/acct-stabilised-v2012-24951138.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "c57a177b72a8d8874c147ff112be5f80d08637be4231c70dc2297d51151d1d56",
+   "bytes": 2254,
+   "sha256": "875200dcca2ae10126ddf6976126ecd8019781b67d744b3f808d251221329c64"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24951138/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2012-24951138/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2012-24951138/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24948189/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "614bd619e1e3e634345dafc9975e6b1db88e0d42502ada3f4d9d512aa8171795"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24948189/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24948189/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 24709,
+   "sha256": "6a48a044f02504645acd9043e7b8721a122f5ea902a5cbab73bb867ec78ebdc9"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24948189/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "0317b3ddf12a10001bdbbac50bbdc4a7e3427556dbd3a74b1014d726f1c94cac",
+   "bytes": 44401,
+   "sha256": "1317b1d899f02e9ce866cfd47502b9807e27b31da11222c9141f131e0788e111"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/case-fork-plainp.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24948189/case-fork-plainp/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "940882db3e24d197dab3e175de01a9b387d1ca4c71566fb1c653610089628f33",
+   "bytes": 44834,
+   "sha256": "c34f53c4ea8b1f7e132b53aad5c99176164deb971323b00c5e1acaabfa97af14"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24948189/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "aa0b269cb7fe26c889508f4db97d107855ec139cdc9b522907ec1dcdb826af69",
+   "bytes": 44358,
+   "sha256": "0c11a57b5351e111b233dfe31e20fdba510526ae0ddda9fe0d70150104d96c7c"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24948189/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "cee9d3b61b96c23dc865ed30c4cae4150b70dce3434030bb434b7653f024f240",
+   "bytes": 42611,
+   "sha256": "521258364fb3836c39fd9190b7f9ff5146ad485589065a3249cbd86ca0bc1d31"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24948189/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/slurm/pod-account-acc3-stabilised-v2106-24948189.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "11a5d226df600121551aeca95bdfb053bca0a0674ee068cf997e4b62d2f99d6d",
+   "bytes": 2254,
+   "sha256": "b096655def179d6f2cd9f35548d404b0b692cf38f4ea952c60bc26376fddd8e2"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24948189/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24948189/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24948189/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24950802/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0e66a242911807254cfb7e479e37ed631254a156cf8225e37ac645645d2568d6"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24950802/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24950802/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 24710,
+   "sha256": "95f02c679ca46f46ffcddb1aa7b76d44db5edfb57a5e43cfd208a75dc29ff589"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24950802/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "32ed50c4dbab0bdf1b990ff1e445f896f63d5bfdcaf0f2679849818620465c58",
+   "bytes": 45593,
+   "sha256": "cc21eda0850681fe3a3c204d1b4d5308e5b809d45f7aaf4fda76cb2134631bb4"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/case-fork-plainp.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24950802/case-fork-plainp/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "61a3cf7c98e47ff3e3d5d3663df31e99dcb67f10bfa879c2016b1bd759a99626",
+   "bytes": 46086,
+   "sha256": "0be3742649c54a396ea81fefd5a89da1bf1ddb7cea0714296844fb5849df7295"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24950802/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "95bc07e996ebbd61020472a605081436b77454fe6cef1fe54555019594bc74a1",
+   "bytes": 45612,
+   "sha256": "40a567fd241b3d81d007c08599ed40a40d92c222e399a44ca7410d7bd598dc46"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24950802/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "821e38c77bff883115cbecac64399e085ab1a32f9ab08c57feb4177f8d586f0e",
+   "bytes": 42880,
+   "sha256": "2e7f17e01cf429986eceeef3bceeef17e3b9abc989bf3da0ebc1cc0357929538"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24950802/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-acct-stabilised-v2106-24950802.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "9900b46c4b76d60be3aa05bc4b6417e1d2a8ec0c9299fc9786c2f1f328cc9021",
+   "bytes": 2255,
+   "sha256": "dc1fea465229523d18bd54e316c581bd7b6332a8761134bff7d5760944f17f15"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24950802/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24950802/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24950802/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24951139/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "e81f2e1d6dd903aeb4e52f41f0290fe15cfe2c82734c897c07d978b54b595d99"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24951139/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24951139/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 24709,
+   "sha256": "c9b302e2c94581c1ab593d59b893e20bc8cdef77e5611530f2a553ac3ee00a9b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24951139/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "0acc202ecce3a9a29b8cc239b5c6319f303f5c90d931de4a8fc5b9b8b638deb4",
+   "bytes": 45487,
+   "sha256": "1806ba3f6730278cf169cad45afa835425b7d065b974cb677a31324b470c0db9"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/case-fork-plainp.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24951139/case-fork-plainp/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "2a60c2c88c8ebb8bead636cc8ed634698e0ea2bba14e8d3cebd89854d057f882",
+   "bytes": 45980,
+   "sha256": "1f158e8637354fa85ed5faf6c04eba4a1d73143133477191f9476148abe6d525"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24951139/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "9365a249efeb2af75b36758b602ee8c74edf734741aeee68a5143c15fb06a902",
+   "bytes": 45470,
+   "sha256": "e356e60627055fb62132306fc3630e2fb14d5276d8f999c0fd491c9963a05f4a"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24951139/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "ab089bf51eb1a3e00555ca3e7fa81bb51e4b69fd5e8d170ebf5a9cc54b372f16",
+   "bytes": 42780,
+   "sha256": "7b586822e8b141da2f475ea013ea3cd4e731ac09ac1b93e0fb542bde03f74d44"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24951139/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/publish/slurm/acct-stabilised-v2106-24951139.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "47eb3b819004f2458066960de6acbfa6c84962dc0b60659e0adc6ca5ab48d939",
+   "bytes": 2252,
+   "sha256": "796bb4e9b1406b4a371f285d488efe29d1dc78350cd135f14136ae9520adb346"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24951139/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2106-24951139/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2106-24951139/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24948190/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "614bd619e1e3e634345dafc9975e6b1db88e0d42502ada3f4d9d512aa8171795"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24948190/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24948190/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 24709,
+   "sha256": "c0d2c1e7d53dd06717759f4a07d0a1c220aae98e07ee08c3e3cbb64d3f3ae60e"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24948190/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "da93ea280cc126e3b95b4335ac489edf4f2d0a95ca3a417ce0673e05cb4c9275",
+   "bytes": 44417,
+   "sha256": "3e0dd748a72f00112c58ad56c803ceded128592a83c314aa7ee3d96071128e29"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/case-fork-plainp.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24948190/case-fork-plainp/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "e01a5996bb4f74d0359cc1a9e66e7c1f8656e00b574ddc4157b3695f7b4c7303",
+   "bytes": 44847,
+   "sha256": "5af55b7593dffd43b53064d7ea4a8f56b0112875f61d1bbad2a9570dc1ae722a"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24948190/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "a0e968e659ec6e16764a9f38d8ad23e4761b474fc7bc73962e751d582488a726",
+   "bytes": 44392,
+   "sha256": "345ee775aa68daa6047105368604fb81caed728283d8ff19112ac2b8034cafe9"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24948190/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "b2358d138d504a6b08deb9ad04534de597602c4abadcb9584bbdd6ba3f7bbbc0",
+   "bytes": 42605,
+   "sha256": "2e3163d3f3de81e4df0dc005126125b662a5cfc3ae02cd8e2747fd60425d123a"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24948190/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/slurm/pod-account-acc3-stabilised-v2212-24948190.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "626c08f9465eda623d8d903a14579731374226901fd73eedafb4740f5ae70f38",
+   "bytes": 2257,
+   "sha256": "57fcf5ced812dd977e114d846abbdddd755c7d54c44c5f1827ef6d239f72f83a"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24948190/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24948190/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24948190/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24950803/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "0e66a242911807254cfb7e479e37ed631254a156cf8225e37ac645645d2568d6"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24950803/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24950803/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 24709,
+   "sha256": "541ac69f724e40e79dc74acf0732de77ab34e58cbfd7b71a765975cd08829de3"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24950803/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "d951afc71e75a19c9d62bc663843a38bde84a69dbddb96caf6dbe8eabb8e10b7",
+   "bytes": 45372,
+   "sha256": "356c2ec49af6f3b8e7b0db0783ebebc25c9a39f4ce550a917f7620087d43cef7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/case-fork-plainp.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24950803/case-fork-plainp/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "bcf7fe4c1ef37d5a388d783747236ef1af64ddf2cf1087cdaffb22a170b32e0a",
+   "bytes": 45819,
+   "sha256": "2f11587c8dad32f9eff8c4ea710d48cf350d05a10c39188f9922da0139395df1"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24950803/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "2baecea8691288db113373a1dc6e5c2d88e0587d5b21fa14e20d1d675c6a315f",
+   "bytes": 45416,
+   "sha256": "1d3aba70138b8be8a0a48a6917b2cb84e0422d5405f082384dd4161a8c1280c8"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24950803/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "0439a03cb9b3f6b46c455a7499bebd62b0a4df3d1786d7ce5fcdf3ab2218928c",
+   "bytes": 42728,
+   "sha256": "849e0aa201a0a2db1b3d60189e7fef279a7ed981e3808998c09896a9c93f2786"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24950803/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/slurm/refix-acct-stabilised-v2212-24950803.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "a4b3a1bff17c73678ce2f5fedb1830be46e735b3173750d3e312961445bb0e0b",
+   "bytes": 2252,
+   "sha256": "046465452773ace0fbf163c90c839890a7a2d5574313cc1021949fcaec29b964"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24950803/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24950803/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24950803/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/HEAD",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24951140/HEAD (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "e81f2e1d6dd903aeb4e52f41f0290fe15cfe2c82734c897c07d978b54b595d99"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/UPSTREAM",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24951140/UPSTREAM (not released)",
+   "kind": "byte-preserved",
+   "bytes": 41,
+   "sha256": "70c2a32cb9d31c523a60e4ae8179ccc04226f23c439085b1919d580b5ff5187b"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/account.json",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24951140/account.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 24709,
+   "sha256": "c067c436eab1d6b3bd604009ff2f7c8305554fda3ce3a25d70e485f96f4db39f"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/case-fork-overwrite.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24951140/case-fork-overwrite/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "7753e5516abc9e030d32370da76e63a29c9bfa146788f7334c122e2f181778ba",
+   "bytes": 45828,
+   "sha256": "230b2f3b0c08e0dedde91a4a176547ae606b3ec7a7c617d6c2b1e6d52b2a44c1"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/case-fork-plainp.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24951140/case-fork-plainp/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "3b458906f3f770353f4d30dc4592b8552f354528e501f288439eedd0fef85cca",
+   "bytes": 46204,
+   "sha256": "cb0ee438226ee2787e6a208541ede249bcf94367fe57ce4e6dec0123a4ebd9b5"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/case-fork.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24951140/case-fork/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "3735112c17182e0b443dabc755911f64b589b6179ae11c04ea228f0ca581d670",
+   "bytes": 45790,
+   "sha256": "30777efe19b0016aecf20f684771969f985ae7f5c4559ba2df2a9f8f9706ee79"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/case-upstream.log.PODFoam.gz",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24951140/case-upstream/log.PODFoam (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "767849934f0a05595ccc8e7c3d6d5e3a3b756536bdaa4df9cea89d0574fadbca",
+   "bytes": 42853,
+   "sha256": "459fab0784787e061dfd33d629c00b7a596adf60da4a2afc5ad6ed098cde626c"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/git-status.txt",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24951140/git-status.txt (not released)",
+   "kind": "byte-preserved",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/job.out.gz",
+   "source": "MedicineBow pod-versions-20261030/publish/slurm/acct-stabilised-v2212-24951140.out (not released)",
+   "kind": "gzip copy",
+   "source_sha256": "8c729d9d9346775c6c061855331cdf5fab4271ed8b3dc335368aff1c31c330a6",
+   "bytes": 2254,
+   "sha256": "b6bad7795a91e29039efe59641a839cd944f4cd51f830b337b041d1d04f0d7de"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/module-overwrite.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24951140/module-overwrite.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5758,
+   "sha256": "7dd92799ca7690bf14f23475d8d49d23880470f22e313331b3e0c2307d6569e7"
+  },
+  {
+   "path": "upstream-comparison/stabilised-v2212-24951140/module-recording.py",
+   "source": "MedicineBow pod-versions-20261030/account-runs/stabilised-v2212-24951140/module-recording.py (not released)",
+   "kind": "byte-preserved",
+   "bytes": 5616,
+   "sha256": "a3d45893be7bc7a799208b4bbece5d00da8b1cdffd691b277fdcd1f6ac715a16"
+  },
+  {
+   "path": "version-compare.json",
+   "source": "MedicineBow pod-versions-20261030/pr/refix/version-compare.json (not released)",
+   "kind": "byte-preserved",
+   "bytes": 17035,
+   "sha256": "e44b0f81bb61f498cc1c02cea9f78eb79fe03a11052f94b21da21ab9b8fc60ad"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+node t507.cluster version v2106 image /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/images/of-v2106-dev.sif copy of b17763d in /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD
+validation exit 0
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv
++ case=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/observer
++ mkdir /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/observer
++ cp -r /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/fixed-pod/0 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/fixed-pod/constant /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/fixed-pod/system /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/observer/
++ cp llm_demo/python_module.py llm_demo/bounded_ipc.py llm_demo/llm_client.py llm_demo/pod_image.py llm_demo/readable_image.py llm_demo/readable_request.py /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/observer/
++ cp validation/python_module.py /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/observer/pod_svd.py
++ LLM_ENABLED=0
++ LLM_MODE=describe
++ LLM_IMAGE_STYLE=v2
++ /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/bin/PODFoam -case /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/observer
++ echo 'observer exit 0'
+observer exit 0
++ ls /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/doc-runs/v2106-0CxBcD/pod-v2106.K1STdv/observer/llm_observation/step-000005
+U.png
+fields.npz
+p.png
+readable-metadata.json
++ set +x
+Python finalized successfully
+End
+
+status disabled telemetry lines 10 frame files ['U.png', 'fields.npz', 'p.png', 'readable-metadata.json'] errors file False
+written files equal to fixed-pod: 45 of 45
+DOC COMMANDS PASS
+exit 0

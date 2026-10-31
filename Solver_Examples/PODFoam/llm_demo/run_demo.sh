@@ -2,15 +2,24 @@
 # Build PODFoam into a scratch directory and run the five observation cases
 # against the resident llama-server. Needs a PASSed validation run
 # (validation/run_v2106.sh) as the reference case; the newest one is used
-# unless POD_REFERENCE_RUN is set. POD_OPENFOAM_VERSION (default v2106) is the
-# OpenFOAM version the bashrc must report, e.g. v2212 in the MedicineBow image.
+# unless POD_REFERENCE_RUN is set. POD_OPENFOAM_VERSION (default: the sourced
+# OpenFOAM, else v2106) is the version the bashrc must report, e.g. v2212.
 set -eo pipefail
 source_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 workspace=${POD_WORKSPACE:-$(cd -- "$source_dir/../../.." && pwd)}
-python=${PYTHON:-/usr/bin/python3}
+# An OpenFOAM already sourced gives the version and the bashrc, unless they are set; else v2106.
+# (Not named "version": the openfoam.org bashrc sets that.)
+pod_version=${POD_OPENFOAM_VERSION:-${WM_PROJECT_VERSION:-v2106}}
+bashrc=${OPENFOAM_BASHRC:-${WM_PROJECT_DIR:+$WM_PROJECT_DIR/etc/bashrc}}
+bashrc=${bashrc:-/usr/lib/openfoam/openfoam2106/etc/bashrc}
+python=${PYTHON:-$(command -v python3 || true)}
+if ! "${python:-false}" -c 'import numpy' 2> /dev/null; then
+    echo "Set PYTHON to a Python with numpy (now: '${python:-no python3 on PATH}')" >&2
+    exit 1
+fi
 
 if [[ -z "${POD_REFERENCE_RUN:-}" ]]; then
-    for candidate in $(ls -dt "$workspace"/pod-"${POD_OPENFOAM_VERSION:-v2106}".* 2>/dev/null); do
+    for candidate in $(ls -dt "$workspace"/pod-"$pod_version".* 2>/dev/null); do
         if [[ -f "$candidate/verification.json" ]] \
            && grep -q '"status": "PASS"' "$candidate/verification.json"; then
             POD_REFERENCE_RUN=$candidate
@@ -33,10 +42,12 @@ printf 'Reference run: %s\nDemo directory: %s\n' "$reference" "$output"
 
 # OpenFOAM's bashrc is not errexit-safe.
 set +e
-source "${OPENFOAM_BASHRC:-/usr/lib/openfoam/openfoam2106/etc/bashrc}" > "$output/log.environment-setup" 2>&1
+source "$bashrc" > "$output/log.environment-setup" 2>&1
 set -eu
-# v2106 is the tested version; POD_OPENFOAM_VERSION=v2212 for the MedicineBow container
-[[ "$WM_PROJECT_VERSION" == "${POD_OPENFOAM_VERSION:-v2106}" ]]
+[[ "${WM_PROJECT_VERSION:-}" == "$pod_version" ]] || {
+    echo "The bashrc reports OpenFOAM version '${WM_PROJECT_VERSION:-}', not '$pod_version': set OPENFOAM_BASHRC and POD_OPENFOAM_VERSION" >&2
+    exit 1
+}
 export PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 unset PYTHONHOME PYTHONPATH
 work=$workspace/llm-demo-work
@@ -63,10 +74,10 @@ fi
 
 export LLM_ENDPOINT=${LLM_ENDPOINT:-http://127.0.0.1:${POD_LLM_PORT:-8088}/v1/chat/completions}
 export LLM_MODEL=${LLM_MODEL:-gemma-4-E2B-it-Q4_0-vision}
-export POD_LLM_RUNTIME=${POD_LLM_RUNTIME:-$workspace/llm-runtime}
+export POD_LLM_RUNTIME=${POD_LLM_RUNTIME:-$(cd -- "$source_dir/../../.." && pwd)/llm-runtime}
 export LLM_IMAGE_INPUT=${LLM_IMAGE_INPUT:-1}
 export LLM_TIMEOUT_S=${LLM_TIMEOUT_S:-120}
-# v2 requests (LLM_IMAGE_STYLE=v2, async suite) always send 320, as in the picture tests
+# v2 requests (LLM_IMAGE_STYLE=v2, async suite) always send 320
 default_tokens=192
 [[ "$suite" == async && "${LLM_IMAGE_STYLE:-v1}" == v2 ]] && default_tokens=320
 export LLM_MAX_TOKENS=${LLM_MAX_TOKENS:-$default_tokens}
@@ -83,5 +94,7 @@ else
 fi
 if [[ -z "${LLM_LONG_CASES:-}" ]]; then
     "$python" "$source_dir/llm_demo/pack_run.py" "$output"
+    printf 'PASS: %s\n' "$output"
+else
+    printf 'Cases finished, not checked (LLM_LONG_CASES): %s\n' "$output"
 fi
-printf 'PASS: %s\n' "$output"

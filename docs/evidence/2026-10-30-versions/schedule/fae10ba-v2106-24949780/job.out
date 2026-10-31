@@ -1,0 +1,28 @@
+{"module": "upstream", "analysis": false, "writeInterval": 1, "podSvdInterval": 0, "exit": 0, "schedule": "cVcVcVcVcVcV", "modes": [1, 2, 3, 4, 5, 5]} problems: []
+{"module": "upstream", "analysis": false, "writeInterval": 3, "podSvdInterval": 0, "exit": 0, "schedule": "ccVccVccVccVccVccVcc", "modes": [2, 4, 5, 5, 5, 5]} problems: []
+{"module": "upstream", "analysis": false, "writeInterval": 25, "podSvdInterval": 0, "exit": 0, "schedule": "ccccccccccccccccccccccccVccccccccccccccccccccccccVcccccccccc", "modes": [5, 5]} problems: []
+{"module": "upstream", "analysis": true, "writeInterval": 1, "podSvdInterval": 0, "exit": 0, "schedule": "SSSSSSSSSSSS", "modes": [1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5]} problems: []
+{"module": "upstream", "analysis": true, "writeInterval": 3, "podSvdInterval": 0, "exit": 0, "schedule": "ccSccSccSccSccSccScc", "modes": [3, 5, 5, 5, 5, 5]} problems: []
+{"module": "upstream", "analysis": true, "writeInterval": 25, "podSvdInterval": 0, "exit": 0, "schedule": "ccccccccccccccccccccccccSccccccccccccccccccccccccScccccccccc", "modes": [5, 5]} problems: []
+{"module": "validation", "analysis": false, "writeInterval": 1, "podSvdInterval": 0, "exit": 0, "schedule": "cVcVcVcVcVcV", "modes": [1, 1, 1, 1, 1, 1]} problems: []
+{"module": "validation", "analysis": false, "writeInterval": 3, "podSvdInterval": 0, "exit": 0, "schedule": "ccVccVccVccVccVccVcc", "modes": [2, 2, 2, 2, 2, 2]} problems: []
+{"module": "validation", "analysis": false, "writeInterval": 25, "podSvdInterval": 0, "exit": 0, "schedule": "ccccccccccccccccccccccccVccccccccccccccccccccccccVcccccccccc", "modes": [5, 5]} problems: []
+{"module": "validation", "analysis": true, "writeInterval": 1, "podSvdInterval": 0, "exit": 0, "schedule": "SSSSSSSSSSSS", "modes": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} problems: []
+{"module": "validation", "analysis": true, "writeInterval": 3, "podSvdInterval": 0, "exit": 0, "schedule": "ccSccSccSccSccSccScc", "modes": [3, 3, 3, 3, 3, 3]} problems: []
+{"module": "validation", "analysis": true, "writeInterval": 25, "podSvdInterval": 0, "exit": 0, "schedule": "ccccccccccccccccccccccccSccccccccccccccccccccccccScccccccccc", "modes": [5, 5]} problems: []
+{"module": "validation", "analysis": false, "writeInterval": 25, "podSvdInterval": 7, "exit": 0, "schedule": "ccccccSccccccSccccccSccccccSccccccSccccccSccccccSccccccScccc", "modes": [5, 5, 5, 5, 5, 5, 5, 5]} problems: []
+{"module": "upstream", "analysis": false, "writeInterval": 3, "podSvdInterval": 7, "exit": 0, "schedule": "ccccccSccccccSccccccS", "modes": [5, 5, 5]} problems: []
+{"module": "upstream", "analysis": true, "writeInterval": 3, "podSvdInterval": 2, "exit": 0, "schedule": "cScScScScScScScScScSc", "modes": [2, 4, 5, 5, 5, 5, 5, 5, 5, 5]} problems: []
+{"ranks": 2, "analysis": false, "writeInterval": 1, "podSvdInterval": 0, "exit": 0} problems: []
+{"ranks": 2, "analysis": false, "writeInterval": 3, "podSvdInterval": 0, "exit": 0} problems: ['step 4: 0 snapshots in C++ log, expected 1']
+{"ranks": 2, "analysis": false, "writeInterval": 25, "podSvdInterval": 0, "exit": 0} problems: []
+{"ranks": 2, "analysis": true, "writeInterval": 3, "podSvdInterval": 0, "exit": 0} problems: []
+{"ranks": 2, "analysis": false, "writeInterval": 3, "podSvdInterval": 7, "exit": 0} problems: ['step 1: 0 snapshots in C++ log, expected 1']
+{"module": "upstream", "writeInterval": 1, "exit": -11, "python_collect": 0}
+{"module": "upstream", "writeInterval": 3, "exit": 0, "python_collect": 14}
+{"module": "upstream", "writeInterval": 25, "exit": 0, "python_collect": 58}
+{"module": "validation", "writeInterval": 1, "exit": -11, "python_collect": 0}
+{"module": "validation", "writeInterval": 3, "exit": -11, "python_collect": 0}
+{"module": "validation", "writeInterval": 25, "exit": -11, "python_collect": 0}
+fork runs 20 with problems 2
+exit 0

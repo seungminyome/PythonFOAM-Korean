@@ -8,11 +8,13 @@ import subprocess
 import sys
 import tarfile
 
+if len(sys.argv) != 2:
+    sys.exit(f'usage: {sys.argv[0]} RUN_DIRECTORY')
 out = Path(sys.argv[1]).resolve()
 source = Path(__file__).resolve().parent.parent
 repo = source.parents[1]
 workspace = Path(os.environ.get('POD_WORKSPACE', repo.parent))
-runtime = Path(os.environ.get('POD_LLM_RUNTIME', workspace/'llm-runtime'))
+runtime = Path(os.environ.get('POD_LLM_RUNTIME', repo.parent/'llm-runtime'))
 
 
 def save(name, value):
@@ -54,7 +56,7 @@ except (subprocess.CalledProcessError, FileNotFoundError) as error:
     # no git inside an OpenFOAM image: use what the job recorded on the host (POD_GIT_RECORDS)
     records = Path(os.environ['POD_GIT_RECORDS']) if os.environ.get('POD_GIT_RECORDS') else None
     if records and (records/'HEAD').exists():
-        for name in ('HEAD', 'git-status.txt', 'changes.patch', 'untracked.tar.gz'):
+        for name in ('HEAD', 'git-status.txt', 'changes.patch'):
             if (records/name).exists():
                 shutil.copy2(records/name, out/name)
     else:

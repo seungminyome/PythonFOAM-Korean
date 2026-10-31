@@ -5,7 +5,7 @@
 # requested, reasoning off); the only changes are all layers on the GPU and the
 # projector offloaded as well. With the 12B projector the server caps image
 # tokens at 128 because --ubatch-size is 128.
-# picture_test.slurm sets LLM_MODEL_FILE, LLM_PROJECTOR_FILE, LLM_CTX, LLM_BATCH
+# A job can set LLM_MODEL_FILE, LLM_PROJECTOR_FILE, LLM_CTX, LLM_BATCH
 # and LLM_UBATCH for other models and a larger context, and POD_LLM_STATE for
 # its own pid, log and port files; LLM_PARALLEL sets the number of server slots
 # (default 1; llama-server shares the context among them); unset, nothing changes.

@@ -1,0 +1,525 @@
+[
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "analysis": false,
+  "writeInterval": 1,
+  "podSvdInterval": 0,
+  "steps": 12,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "cVcVcVcVcVcV",
+  "modes": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "analysis": false,
+  "writeInterval": 3,
+  "podSvdInterval": 0,
+  "steps": 20,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "ccVccVccVccVccVccVcc",
+  "modes": [
+   2,
+   4,
+   5,
+   5,
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "analysis": false,
+  "writeInterval": 25,
+  "podSvdInterval": 0,
+  "steps": 60,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "ccccccccccccccccccccccccVccccccccccccccccccccccccVcccccccccc",
+  "modes": [
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "analysis": true,
+  "writeInterval": 1,
+  "podSvdInterval": 0,
+  "steps": 12,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "SSSSSSSSSSSS",
+  "modes": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "analysis": true,
+  "writeInterval": 3,
+  "podSvdInterval": 0,
+  "steps": 20,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "ccSccSccSccSccSccScc",
+  "modes": [
+   3,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "analysis": true,
+  "writeInterval": 25,
+  "podSvdInterval": 0,
+  "steps": 60,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "ccccccccccccccccccccccccSccccccccccccccccccccccccScccccccccc",
+  "modes": [
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "validation",
+  "analysis": false,
+  "writeInterval": 1,
+  "podSvdInterval": 0,
+  "steps": 12,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "cVcVcVcVcVcV",
+  "modes": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "validation",
+  "analysis": false,
+  "writeInterval": 3,
+  "podSvdInterval": 0,
+  "steps": 20,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "ccVccVccVccVccVccVcc",
+  "modes": [
+   2,
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "validation",
+  "analysis": false,
+  "writeInterval": 25,
+  "podSvdInterval": 0,
+  "steps": 60,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "ccccccccccccccccccccccccVccccccccccccccccccccccccVcccccccccc",
+  "modes": [
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "validation",
+  "analysis": true,
+  "writeInterval": 1,
+  "podSvdInterval": 0,
+  "steps": 12,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "SSSSSSSSSSSS",
+  "modes": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "validation",
+  "analysis": true,
+  "writeInterval": 3,
+  "podSvdInterval": 0,
+  "steps": 20,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "ccSccSccSccSccSccScc",
+  "modes": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "validation",
+  "analysis": true,
+  "writeInterval": 25,
+  "podSvdInterval": 0,
+  "steps": 60,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "ccccccccccccccccccccccccSccccccccccccccccccccccccScccccccccc",
+  "modes": [
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "validation",
+  "analysis": false,
+  "writeInterval": 25,
+  "podSvdInterval": 7,
+  "steps": 60,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "ccccccSccccccSccccccSccccccSccccccSccccccSccccccSccccccScccc",
+  "modes": [
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "analysis": false,
+  "writeInterval": 3,
+  "podSvdInterval": 7,
+  "steps": 21,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "ccccccSccccccSccccccS",
+  "modes": [
+   5,
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "analysis": true,
+  "writeInterval": 3,
+  "podSvdInterval": 2,
+  "steps": 21,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "schedule": "cScScScScScScScScScSc",
+  "modes": [
+   2,
+   4,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5
+  ],
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "ranks": 2,
+  "analysis": false,
+  "writeInterval": 1,
+  "podSvdInterval": 0,
+  "steps": 12,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "ranks": 2,
+  "analysis": false,
+  "writeInterval": 3,
+  "podSvdInterval": 0,
+  "steps": 20,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "ranks": 2,
+  "analysis": false,
+  "writeInterval": 25,
+  "podSvdInterval": 0,
+  "steps": 60,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "ranks": 2,
+  "analysis": true,
+  "writeInterval": 3,
+  "podSvdInterval": 0,
+  "steps": 20,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "fork",
+  "module": "upstream",
+  "ranks": 2,
+  "analysis": false,
+  "writeInterval": 3,
+  "podSvdInterval": 7,
+  "steps": 21,
+  "exit": 0,
+  "finalized": true,
+  "fatal": false,
+  "problems": []
+ },
+ {
+  "version": "v2106",
+  "build": "upstream",
+  "module": "upstream",
+  "writeInterval": 1,
+  "steps": 12,
+  "exit": -11,
+  "python_collect": 0,
+  "written": {},
+  "tail": ":  Solving for p, Initial residual = 0.0413400059269, Final residual = 8.46519847328e-07, No Iterations 19\nGAMG:  Solving for p, Initial residual = 0.040167021211, Final residual = 7.88399581466e-07, No Iterations 19\ntime step continuity errors : sum local = 5.24025846147e-12, global = -1.66423313676e-13, cumulative = -6.88620935596e-14\nPerforming online SVD on snapshots rankwise - initialization\n"
+ },
+ {
+  "version": "v2106",
+  "build": "upstream",
+  "module": "upstream",
+  "writeInterval": 3,
+  "steps": 20,
+  "exit": 0,
+  "python_collect": 14,
+  "written": {
+   "3": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "6": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "9": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "12": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "15": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "18": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "tail": " 5\nGAMG:  Solving for p, Initial residual = 0.0131529490873, Final residual = 9.73747263234e-07, No Iterations 4\ntime step continuity errors : sum local = 1.73860185026e-14, global = -2.53122048708e-16, cumulative = -1.26173325989e-13\nCollecting snapshots iteration:  1\nPDE Compute wall time: 177.90 ms\nNumpy array cast time: 0.12 ms\nSnapshot collection wall time: 0.29 ms\nIO wall time: 0.00 ms\nEnd\n\n"
+ },
+ {
+  "version": "v2106",
+  "build": "upstream",
+  "module": "upstream",
+  "writeInterval": 25,
+  "steps": 60,
+  "exit": 0,
+  "python_collect": 58,
+  "written": {
+   "25": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "50": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "tail": "3\nGAMG:  Solving for p, Initial residual = 0.00443048762325, Final residual = 4.58862103239e-07, No Iterations 3\ntime step continuity errors : sum local = 3.67808999875e-15, global = -1.48490785161e-16, cumulative = -1.23242990836e-13\nCollecting snapshots iteration:  9\nPDE Compute wall time: 122.29 ms\nNumpy array cast time: 0.11 ms\nSnapshot collection wall time: 2.33 ms\nIO wall time: 0.00 ms\nEnd\n\n"
+ },
+ {
+  "version": "v2106",
+  "build": "upstream",
+  "module": "validation",
+  "writeInterval": 1,
+  "steps": 12,
+  "exit": -11,
+  "python_collect": 0,
+  "written": {},
+  "tail": "24, Final residual = 6.65950737654e-07, No Iterations 21\nGAMG:  Solving for p, Initial residual = 0.0413400059269, Final residual = 8.46519847328e-07, No Iterations 19\nGAMG:  Solving for p, Initial residual = 0.040167021211, Final residual = 7.88399581466e-07, No Iterations 19\ntime step continuity errors : sum local = 5.24025846147e-12, global = -1.66423313676e-13, cumulative = -6.88620935596e-14\n"
+ },
+ {
+  "version": "v2106",
+  "build": "upstream",
+  "module": "validation",
+  "writeInterval": 3,
+  "steps": 20,
+  "exit": -11,
+  "python_collect": 0,
+  "written": {},
+  "tail": "36, Final residual = 5.87511962999e-07, No Iterations 8\nGAMG:  Solving for p, Initial residual = 0.00387154212771, Final residual = 7.81499076523e-07, No Iterations 6\nGAMG:  Solving for p, Initial residual = 0.00395366407891, Final residual = 7.65074327369e-07, No Iterations 5\ntime step continuity errors : sum local = 1.04584683803e-13, global = -4.34916004279e-15, cumulative = -1.32539438249e-13\n"
+ },
+ {
+  "version": "v2106",
+  "build": "upstream",
+  "module": "validation",
+  "writeInterval": 25,
+  "steps": 60,
+  "exit": -11,
+  "python_collect": 0,
+  "written": {},
+  "tail": "4411, Final residual = 5.05047233177e-07, No Iterations 5\nGAMG:  Solving for p, Initial residual = 0.0114270330311, Final residual = 9.85053407423e-07, No Iterations 4\nGAMG:  Solving for p, Initial residual = 0.0114017972239, Final residual = 7.02982392312e-07, No Iterations 4\ntime step continuity errors : sum local = 1.04844184093e-14, global = -1.75634482154e-16, cumulative = -1.20136550142e-13\n"
+ }
+]

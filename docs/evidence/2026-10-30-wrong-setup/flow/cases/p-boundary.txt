@@ -1,0 +1,39 @@
+boundaryField
+{
+    inlet
+    {
+        type            zeroGradient;
+    }
+    outlet
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+    lowerWallStartup
+    {
+        type            symmetryPlane;
+    }
+    upperWallStartup
+    {
+        type            symmetryPlane;
+    }
+    upperWall
+    {
+        type            zeroGradient;
+    }
+    lowerWall
+    {
+        type            zeroGradient;
+    }
+    front
+    {
+        type            empty;
+    }
+    back
+    {
+        type            empty;
+    }
+}
+
+
+// ************************************************************************* //

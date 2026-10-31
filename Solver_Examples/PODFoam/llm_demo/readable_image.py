@@ -1,4 +1,4 @@
-"""Single-field pictures for the 2026-10-21 picture-reading test.
+"""Single-field pictures of a v2 frame.
 
 One field per PNG, 1024x576 pixels. Both axes are in percent of the plotted
 range (0 at the left and bottom edges) with a grid line every 10 %, so a

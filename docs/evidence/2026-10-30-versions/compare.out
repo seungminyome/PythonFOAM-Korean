@@ -1,0 +1,36 @@
+| Version | Validation | serial2d | serial3d | par2d | par3d |
+|---|---|---|---|---|---|
+| 8 | PASS | ok Ux/Uy/p 75 ms/step, p 2 it | ok Ux/Uy/Uz/p 13404 ms/step, p 64 it | ok Ux/Uy/p 50 ms/step, p 3 it | ok Ux/Uy/Uz/p 6749 ms/step, p 64 it |
+| v2012 | PASS | ok Ux/Uy/p 78 ms/step, p 2 it | ok Ux/Uy/Uz/p 5134 ms/step, p 24 it | ok Ux/Uy/p 54 ms/step, p 3 it | ok Ux/Uy/Uz/p 2709 ms/step, p 24 it |
+| v2106 | PASS | ok Ux/Uy/p 71 ms/step, p 2 it | ok Ux/Uy/Uz/p 5378 ms/step, p 24 it | ok Ux/Uy/p 44 ms/step, p 3 it | ok Ux/Uy/Uz/p 2651 ms/step, p 24 it |
+| v2212 | PASS | ok Ux/Uy/p 75 ms/step, p 2 it | ok Ux/Uy/Uz/p 5294 ms/step, p 24 it | ok Ux/Uy/p 47 ms/step, p 3 it | ok Ux/Uy/Uz/p 2706 ms/step, p 24 it |
+
+ 8 HEAD b17763d node t527.cluster clean
+  serial vs 2 ranks 2d: cells 20540 max |dU| 0.00119 of peak 36.9 m/s, rms 5.68e-05; max |dp| 0.0178 of range 369, rms 0.00655
+  serial vs 2 ranks 3d: cells 20540 max |dU| 0.00176 of peak 36.9 m/s, rms 9.07e-05; max |dp| 0.00998 of range 416, rms 0.00261
+  against v2212 serial2d: max |dU| 3.11 of peak 37.2 m/s, rms 0.301; max |dp| 23.2 of range 379, rms 4.87; centres 6.7e-16 m
+  against v2212 serial3d: max |dU| 3.18 of peak 37.2 m/s, rms 0.305; max |dp| 23.5 of range 425, rms 4.91; centres 1e-15 m
+  against v2212 par2d: max |dU| 3.11 of peak 37.2 m/s, rms 0.301; max |dp| 23.2 of range 379, rms 4.87; centres 6.7e-16 m
+  against v2212 par3d: max |dU| 3.18 of peak 37.2 m/s, rms 0.305; max |dp| 23.5 of range 425, rms 4.91; centres 1e-15 m
+
+ v2012 HEAD b17763d node t441.cluster clean
+  serial vs 2 ranks 2d: cells 20540 max |dU| 0.000778 of peak 37.2 m/s, rms 7.12e-05; max |dp| 0.0187 of range 379, rms 0.00388
+  serial vs 2 ranks 3d: cells 20540 max |dU| 0.00249 of peak 37.2 m/s, rms 0.000144; max |dp| 0.0344 of range 425, rms 0.00286
+  against v2212 serial2d: max |dU| 0 of peak 37.2 m/s, rms 0; max |dp| 0 of range 379, rms 0; centres 0 m
+  against v2212 serial3d: max |dU| 0 of peak 37.2 m/s, rms 0; max |dp| 0 of range 425, rms 0; centres 0 m
+  against v2212 par2d: max |dU| 0 of peak 37.2 m/s, rms 0; max |dp| 0 of range 379, rms 0; centres 0 m
+  against v2212 par3d: max |dU| 0 of peak 37.2 m/s, rms 0; max |dp| 0 of range 425, rms 0; centres 0 m
+
+ v2106 HEAD b17763d node wi004.cluster clean
+  serial vs 2 ranks 2d: cells 20540 max |dU| 0.000778 of peak 37.2 m/s, rms 7.12e-05; max |dp| 0.0187 of range 379, rms 0.00388
+  serial vs 2 ranks 3d: cells 20540 max |dU| 0.00249 of peak 37.2 m/s, rms 0.000144; max |dp| 0.0344 of range 425, rms 0.00286
+  against v2212 serial2d: max |dU| 0 of peak 37.2 m/s, rms 0; max |dp| 0 of range 379, rms 0; centres 0 m
+  against v2212 serial3d: max |dU| 0 of peak 37.2 m/s, rms 0; max |dp| 0 of range 425, rms 0; centres 0 m
+  against v2212 par2d: max |dU| 0 of peak 37.2 m/s, rms 0; max |dp| 0 of range 379, rms 0; centres 0 m
+  against v2212 par3d: max |dU| 0 of peak 37.2 m/s, rms 0; max |dp| 0 of range 425, rms 0; centres 0 m
+
+ v2212 HEAD b17763d node t527.cluster clean
+  serial vs 2 ranks 2d: cells 20540 max |dU| 0.000778 of peak 37.2 m/s, rms 7.12e-05; max |dp| 0.0187 of range 379, rms 0.00388
+  serial vs 2 ranks 3d: cells 20540 max |dU| 0.00249 of peak 37.2 m/s, rms 0.000144; max |dp| 0.0344 of range 425, rms 0.00286
+
+v2212 against earlier frames: {"serial2d": {"bytes_identical": {"U.png": true, "p.png": true, "fields.npz": true}, "arrays_identical": true, "telemetry_lines_differ_only_in_run_id": false}, "serial3d": {"bytes_identical": {"U.png": true, "p.png": true, "fields.npz": true}, "arrays_identical": true, "telemetry_lines_differ_only_in_run_id": false}}

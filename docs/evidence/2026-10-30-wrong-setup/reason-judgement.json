@@ -1,0 +1,1597 @@
+{
+ "what": "Labels on the stated reasons of the wrong-setup test of 2026-10-30.",
+ "judge": "A judgement by one AI agent (Claude Opus 5.5). No second judge, no human check, no agreement figure.",
+ "source": {
+  "run": "results/window-test-24947089/<model>/wrong-setup-v2own/<frame>/result.json",
+  "answers_read": 320,
+  "answers_labelled": 39,
+  "models": {
+   "12b": "gemma-4-12b-it-qat-q4_0-vision",
+   "26b": "gemma-4-26B-A4B-it-qat-q4_0-vision",
+   "31b": "gemma-4-31B-it-qat-q4_0-vision",
+   "qwen35-35b": "qwen3.5-35b-a3b-q8_0-vision"
+  }
+ },
+ "blinding": {
+  "method": "Answers were shuffled under ids A001 to A039 with model names in a separate key. Labels were written and hashed before the key was opened.",
+  "labels_sha256_before_key_opened": "572c8ea9beb363c1880a904b541aa6ed4ab6ffe9d7d10b3de564ae11af09321b",
+  "limits": [
+   "Before blinding, the model name and the first 40 characters of the reason of one row were seen (M1-inlet-speed step 6000, 12b).",
+   "One unlabelled answer (12b, M1-inlet-speed step 4500, consistent) was read when checking the file layout.",
+   "Repeated wording can hint that answers come from one model, without showing which.",
+   "The judge knew the run of each answer, which the question requires."
+  ],
+  "not_read": "The builder's report tables and summaries. reasons-to-judge.jsonl was compared by script after the labels were fixed.",
+  "cross_check_with_reasons_to_judge": {
+   "builder_rows": 37,
+   "my_rows_on_wrong_frames": 37,
+   "same_rows": 37,
+   "in_builder_only": 0,
+   "in_mine_only_wrong_frames": 0
+  }
+ },
+ "label_rule": {
+  "wrong_frames": {
+   "question": "Does the reason name the actual change or its direct visible effect?",
+   "names_it": "A ground for 'inconsistent' states the change or the listed effect: M1 speeds far too low; M2 smooth, steady, no vortices, thick boundary layers; M3 no boundary layer at the walls; M4 reverse flow along the top wall; M5 closed lower half, jet, different flow near the step. Other clauses may be wrong; those are in the note.",
+   "partly": "The reason holds a true observation caused by the change, or a phrase close to the listed effect, but its main ground is something else, or it gives the observation another cause.",
+   "no": "The reason rests on something else; nothing in it follows from the change."
+  },
+  "normal_frames": {
+   "question": "Is the stated reason something that is really there?",
+   "names_it": "The fault it states is really in the frame.",
+   "partly": "Part of the fault it states is really in the frame.",
+   "no": "The fault it states is not in the frame. True descriptive clauses are listed in the note."
+  },
+  "strict_reading": "Counting only names_it as a hit moves all 17 partly answers to not named (M2 9, M5 8)."
+ },
+ "counts": {
+  "totals": {
+   "wrong_frames": {
+    "names_it": 14,
+    "partly": 17,
+    "no": 6,
+    "inconsistent_answers": 37
+   },
+   "normal_frames": {
+    "names_it": 0,
+    "partly": 0,
+    "no": 2,
+    "inconsistent_answers": 2
+   }
+  },
+  "per_model": {
+   "12b": {
+    "wrong_frames_seen": 40,
+    "names_it": 1,
+    "partly": 0,
+    "no": 0,
+    "inconsistent_answers": 1,
+    "normal_frames_seen": 40,
+    "normal_inconsistent_answers": 0,
+    "normal_reason_really_there": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 0
+    }
+   },
+   "26b": {
+    "wrong_frames_seen": 40,
+    "names_it": 0,
+    "partly": 1,
+    "no": 1,
+    "inconsistent_answers": 2,
+    "normal_frames_seen": 40,
+    "normal_inconsistent_answers": 0,
+    "normal_reason_really_there": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 0
+    }
+   },
+   "31b": {
+    "wrong_frames_seen": 40,
+    "names_it": 8,
+    "partly": 16,
+    "no": 5,
+    "inconsistent_answers": 29,
+    "normal_frames_seen": 40,
+    "normal_inconsistent_answers": 2,
+    "normal_reason_really_there": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 2
+    }
+   },
+   "qwen35-35b": {
+    "wrong_frames_seen": 40,
+    "names_it": 5,
+    "partly": 0,
+    "no": 0,
+    "inconsistent_answers": 5,
+    "normal_frames_seen": 40,
+    "normal_inconsistent_answers": 0,
+    "normal_reason_really_there": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 0
+    }
+   }
+  },
+  "per_run": {
+   "M1-inlet-speed": {
+    "frames_seen_all_models": 32,
+    "names_it": 9,
+    "partly": 0,
+    "no": 0,
+    "inconsistent_answers": 9
+   },
+   "M2-viscosity": {
+    "frames_seen_all_models": 32,
+    "names_it": 5,
+    "partly": 9,
+    "no": 1,
+    "inconsistent_answers": 15
+   },
+   "M3-slip-walls": {
+    "frames_seen_all_models": 32,
+    "names_it": 0,
+    "partly": 0,
+    "no": 1,
+    "inconsistent_answers": 1
+   },
+   "M4-moving-wall": {
+    "frames_seen_all_models": 32,
+    "names_it": 0,
+    "partly": 0,
+    "no": 4,
+    "inconsistent_answers": 4
+   },
+   "M5-half-inlet": {
+    "frames_seen_all_models": 32,
+    "names_it": 0,
+    "partly": 8,
+    "no": 0,
+    "inconsistent_answers": 8
+   },
+   "N1": {
+    "frames_seen_all_models": 32,
+    "inconsistent_answers": 0,
+    "reason_really_there": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 0
+    }
+   },
+   "N2": {
+    "frames_seen_all_models": 32,
+    "inconsistent_answers": 0,
+    "reason_really_there": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 0
+    }
+   },
+   "N3": {
+    "frames_seen_all_models": 32,
+    "inconsistent_answers": 0,
+    "reason_really_there": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 0
+    }
+   },
+   "N4": {
+    "frames_seen_all_models": 32,
+    "inconsistent_answers": 1,
+    "reason_really_there": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 1
+    }
+   },
+   "N5": {
+    "frames_seen_all_models": 32,
+    "inconsistent_answers": 1,
+    "reason_really_there": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 1
+    }
+   }
+  },
+  "per_model_and_run": {
+   "12b": {
+    "M1-inlet-speed": {
+     "names_it": 1,
+     "partly": 0,
+     "no": 0,
+     "inconsistent_answers": 1
+    }
+   },
+   "26b": {
+    "M2-viscosity": {
+     "names_it": 0,
+     "partly": 1,
+     "no": 1,
+     "inconsistent_answers": 2
+    }
+   },
+   "31b": {
+    "M1-inlet-speed": {
+     "names_it": 8,
+     "partly": 0,
+     "no": 0,
+     "inconsistent_answers": 8
+    },
+    "M2-viscosity": {
+     "names_it": 0,
+     "partly": 8,
+     "no": 0,
+     "inconsistent_answers": 8
+    },
+    "M3-slip-walls": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 1,
+     "inconsistent_answers": 1
+    },
+    "M4-moving-wall": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 4,
+     "inconsistent_answers": 4
+    },
+    "M5-half-inlet": {
+     "names_it": 0,
+     "partly": 8,
+     "no": 0,
+     "inconsistent_answers": 8
+    },
+    "N4": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 1,
+     "inconsistent_answers": 1
+    },
+    "N5": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 1,
+     "inconsistent_answers": 1
+    }
+   },
+   "qwen35-35b": {
+    "M2-viscosity": {
+     "names_it": 5,
+     "partly": 0,
+     "no": 0,
+     "inconsistent_answers": 5
+    }
+   }
+  }
+ },
+ "what_the_reasons_said": {
+  "words_over_all_320_answers": {
+   "viscosity or viscous": {
+    "all_320_answers": 1,
+    "inconsistent_answers": 0,
+    "by_run_assessment": {
+     "M2-viscosity/consistent": 1
+    }
+   },
+   "slip (any, including no-slip)": {
+    "all_320_answers": 1,
+    "inconsistent_answers": 0,
+    "by_run_assessment": {
+     "M2-viscosity/consistent": 1
+    }
+   },
+   "moving, top or upper wall": {
+    "all_320_answers": 0,
+    "inconsistent_answers": 0,
+    "by_run_assessment": {}
+   },
+   "reverse or backflow": {
+    "all_320_answers": 0,
+    "inconsistent_answers": 0,
+    "by_run_assessment": {}
+   },
+   "jet": {
+    "all_320_answers": 17,
+    "inconsistent_answers": 1,
+    "by_run_assessment": {
+     "M1-inlet-speed/consistent": 12,
+     "M4-moving-wall/consistent": 1,
+     "M4-moving-wall/inconsistent": 1,
+     "M5-half-inlet/consistent": 1,
+     "N1/consistent": 1,
+     "N3/consistent": 1
+    }
+   },
+   "half, closed or blocked": {
+    "all_320_answers": 0,
+    "inconsistent_answers": 0,
+    "by_run_assessment": {}
+   },
+   "smooth": {
+    "all_320_answers": 8,
+    "inconsistent_answers": 5,
+    "by_run_assessment": {
+     "M2-viscosity/consistent": 3,
+     "M2-viscosity/inconsistent": 5
+    }
+   },
+   "laminar or steady": {
+    "all_320_answers": 3,
+    "inconsistent_answers": 1,
+    "by_run_assessment": {
+     "M2-viscosity/consistent": 1,
+     "M4-moving-wall/inconsistent": 1,
+     "N2/consistent": 1
+    }
+   },
+   "thick": {
+    "all_320_answers": 0,
+    "inconsistent_answers": 0,
+    "by_run_assessment": {}
+   },
+   "boundary layer": {
+    "all_320_answers": 51,
+    "inconsistent_answers": 3,
+    "by_run_assessment": {
+     "M1-inlet-speed/consistent": 5,
+     "M2-viscosity/consistent": 8,
+     "M2-viscosity/inconsistent": 3,
+     "M3-slip-walls/consistent": 3,
+     "M4-moving-wall/consistent": 4,
+     "M5-half-inlet/consistent": 3,
+     "N1/consistent": 5,
+     "N2/consistent": 5,
+     "N3/consistent": 7,
+     "N4/consistent": 3,
+     "N5/consistent": 5
+    }
+   }
+  },
+  "missing_step_ground": {
+   "pattern": "no (evidence of a )?backward-facing step|without the geometry of a backward-facing step",
+   "answers": 15,
+   "by_run": {
+    "M2-viscosity": 8,
+    "M3-slip-walls": 1,
+    "M4-moving-wall": 4,
+    "N4": 1,
+    "N5": 1
+   },
+   "by_model": {
+    "31b": 15
+   }
+  },
+  "speed_below_32_2_ground": {
+   "pattern": "significantly lower|far below",
+   "answers": 17,
+   "by_run": {
+    "M1-inlet-speed": 9,
+    "M5-half-inlet": 8
+   },
+   "by_model": {
+    "12b": 1,
+    "31b": 16
+   }
+  }
+ },
+ "false_alarm_twins": {
+  "note": "For each inconsistent answer on a normal frame: what the same model answered on the near-identical state with a different title.",
+  "rows": [
+   {
+    "id": "A001",
+    "model": "31b",
+    "frame": "N4-step06500",
+    "twin_frame": "N5-step04500",
+    "twin_assessment": "consistent",
+    "twin_reason": "The velocity magnitude shows a recirculation zone and shear layer consistent with a backward-facing step, and the maximum velocity is close to the specified 32.2 m/s."
+   },
+   {
+    "id": "A026",
+    "model": "31b",
+    "frame": "N5-step05500",
+    "twin_frame": "N4-step07500",
+    "twin_assessment": "consistent",
+    "twin_reason": "The velocity magnitude shows a flow separation and recirculation zone at the bottom left, consistent with a backward-facing step, and the maximum velocity is near the intended 32.2 m/s."
+   }
+  ]
+ },
+ "answer_patterns": {
+  "inconsistent_answers_per_model_and_run_of_8_frames": {
+   "12b": {
+    "M1-inlet-speed": 1,
+    "M2-viscosity": 0,
+    "M3-slip-walls": 0,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 0,
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0
+   },
+   "26b": {
+    "M1-inlet-speed": 0,
+    "M2-viscosity": 2,
+    "M3-slip-walls": 0,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 0,
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0
+   },
+   "31b": {
+    "M1-inlet-speed": 8,
+    "M2-viscosity": 8,
+    "M3-slip-walls": 1,
+    "M4-moving-wall": 4,
+    "M5-half-inlet": 8,
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 1,
+    "N5": 1
+   },
+   "qwen35-35b": {
+    "M1-inlet-speed": 0,
+    "M2-viscosity": 5,
+    "M3-slip-walls": 0,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 0,
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0
+   }
+  },
+  "missing_step_wording_31b_per_run_of_8_frames": {
+   "M1-inlet-speed": 0,
+   "M2-viscosity": 8,
+   "M3-slip-walls": 1,
+   "M4-moving-wall": 4,
+   "M5-half-inlet": 0,
+   "N1": 0,
+   "N2": 0,
+   "N3": 0,
+   "N4": 1,
+   "N5": 1
+  },
+  "smooth_wording_per_model_and_run": {
+   "12b": {},
+   "26b": {},
+   "31b": {},
+   "qwen35-35b": {
+    "M2-viscosity": {
+     "consistent": 3,
+     "inconsistent": 5
+    }
+   }
+  },
+  "31b_on_M4_and_N5_at_the_same_step": [
+   {
+    "step": 4500,
+    "M4": "inconsistent",
+    "N5": "consistent"
+   },
+   {
+    "step": 5000,
+    "M4": "consistent",
+    "N5": "consistent"
+   },
+   {
+    "step": 5500,
+    "M4": "inconsistent",
+    "N5": "inconsistent"
+   },
+   {
+    "step": 6000,
+    "M4": "consistent",
+    "N5": "consistent"
+   },
+   {
+    "step": 6500,
+    "M4": "inconsistent",
+    "N5": "consistent"
+   },
+   {
+    "step": 7000,
+    "M4": "consistent",
+    "N5": "consistent"
+   },
+   {
+    "step": 7500,
+    "M4": "consistent",
+    "N5": "consistent"
+   },
+   {
+    "step": 8000,
+    "M4": "inconsistent",
+    "N5": "consistent"
+   }
+  ],
+  "one_number_comparison": {
+   "rule": "colour-bar maximum of |U| below 32.2 m/s (written after the answers were seen, as a comparison only)",
+   "flags_by_run": {
+    "M1-inlet-speed": 8,
+    "M2-viscosity": 0,
+    "M3-slip-walls": 0,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 8,
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0
+   },
+   "frames_by_run": {
+    "M1-inlet-speed": 8,
+    "M2-viscosity": 8,
+    "M3-slip-walls": 8,
+    "M4-moving-wall": 8,
+    "M5-half-inlet": 8,
+    "N1": 8,
+    "N2": 8,
+    "N3": 8,
+    "N4": 8,
+    "N5": 8
+   }
+  }
+ },
+ "measured_facts": {
+  "source": "fields.npz, readable-metadata.json and the PNGs under wrong-setup-test-20261030/frames; cell counts, not area weighted",
+  "picture_window_m": {
+   "x": [
+    0.0,
+    0.12
+   ],
+   "y": [
+    0.0,
+    0.04
+   ]
+  },
+  "domain_m": {
+   "x": [
+    -1.553,
+    0.601
+   ],
+   "y": [
+    0.0,
+    0.1143
+   ]
+  },
+  "step_lip_m": {
+   "x": 0.0,
+   "y": 0.0127,
+   "note": "32 % of the picture height, on the left edge; no cells at x < 0 below y = 0.0127"
+  },
+  "white_pixels_inside_axes": {
+   "images": 160,
+   "white_pixels": 0
+  },
+  "quoted_maxima_vs_colour_bar": {
+   "numbers_quoted": 17,
+   "mismatches": 0
+  },
+  "colour_bar_max_of_U_by_run": {
+   "M1-inlet-speed": {
+    "min": 11.58,
+    "max": 13.62,
+    "frames_below_32.2": 8,
+    "frames": 8
+   },
+   "M2-viscosity": {
+    "min": 36.95,
+    "max": 38.12,
+    "frames_below_32.2": 0,
+    "frames": 8
+   },
+   "M3-slip-walls": {
+    "min": 36.69,
+    "max": 37.3,
+    "frames_below_32.2": 0,
+    "frames": 8
+   },
+   "M4-moving-wall": {
+    "min": 35.62,
+    "max": 39.51,
+    "frames_below_32.2": 0,
+    "frames": 8
+   },
+   "M5-half-inlet": {
+    "min": 18.1,
+    "max": 19.7,
+    "frames_below_32.2": 8,
+    "frames": 8
+   },
+   "N1": {
+    "min": 35.07,
+    "max": 39.22,
+    "frames_below_32.2": 0,
+    "frames": 8
+   },
+   "N2": {
+    "min": 34.9,
+    "max": 39.34,
+    "frames_below_32.2": 0,
+    "frames": 8
+   },
+   "N3": {
+    "min": 34.9,
+    "max": 39.44,
+    "frames_below_32.2": 0,
+    "frames": 8
+   },
+   "N4": {
+    "min": 36.35,
+    "max": 39.44,
+    "frames_below_32.2": 0,
+    "frames": 8
+   },
+   "N5": {
+    "min": 34.73,
+    "max": 39.12,
+    "frames_below_32.2": 0,
+    "frames": 8
+   }
+  },
+  "reverse_flow_percent_of_window_cells_by_run": {
+   "M1-inlet-speed": [
+    77.8,
+    81.7
+   ],
+   "M2-viscosity": [
+    43.0,
+    45.1
+   ],
+   "M3-slip-walls": [
+    28.4,
+    32.2
+   ],
+   "M4-moving-wall": [
+    28.6,
+    31.1
+   ],
+   "M5-half-inlet": [
+    14.1,
+    23.5
+   ],
+   "N1": [
+    29.3,
+    33.7
+   ],
+   "N2": [
+    22.5,
+    33.7
+   ],
+   "N3": [
+    22.5,
+    31.6
+   ],
+   "N4": [
+    26.1,
+    30.8
+   ],
+   "N5": [
+    28.5,
+    31.7
+   ]
+  },
+  "mean_speed_cells_within_0.8_mm_of_lower_wall_by_run": {
+   "M1-inlet-speed": [
+    2.91,
+    3.85
+   ],
+   "M2-viscosity": [
+    0.31,
+    0.39
+   ],
+   "M3-slip-walls": [
+    14.7,
+    16.68
+   ],
+   "M4-moving-wall": [
+    4.0,
+    6.08
+   ],
+   "M5-half-inlet": [
+    1.88,
+    3.63
+   ],
+   "N1": [
+    3.65,
+    5.24
+   ],
+   "N2": [
+    3.52,
+    6.01
+   ],
+   "N3": [
+    3.52,
+    6.01
+   ],
+   "N4": [
+    3.78,
+    5.65
+   ],
+   "N5": [
+    3.73,
+    5.65
+   ]
+  },
+  "mean_p_right_10pct_minus_left_10pct_by_run": {
+   "M1-inlet-speed": [
+    -5.5,
+    11.4
+   ],
+   "M2-viscosity": [
+    65.4,
+    101.8
+   ],
+   "M3-slip-walls": [
+    172.3,
+    235.3
+   ],
+   "M4-moving-wall": [
+    58.0,
+    151.4
+   ],
+   "M5-half-inlet": [
+    41.0,
+    45.5
+   ],
+   "N1": [
+    64.7,
+    118.4
+   ],
+   "N2": [
+    3.4,
+    122.7
+   ],
+   "N3": [
+    3.4,
+    170.0
+   ],
+   "N4": [
+    71.3,
+    170.0
+   ],
+   "N5": [
+    71.3,
+    143.0
+   ]
+  },
+  "M4": {
+   "reverse_layer_lower_edge_y_m_at_x_0.06": {
+    "0.1225": 0.11327673122561431,
+    "0.13": 0.11327673122561431,
+    "0.14": 0.11327673122561431
+   },
+   "mean_difference_of_U_from_N5_same_step_as_fraction_of_32.2": {
+    "N4": [
+     [
+      4500,
+      0.152,
+      0.081
+     ],
+     [
+      6000,
+      0.099,
+      0.062
+     ],
+     [
+      8000,
+      0.095,
+      0.064
+     ]
+    ],
+    "M1-inlet-speed": [
+     [
+      4500,
+      0.531,
+      0.379
+     ],
+     [
+      6000,
+      0.522,
+      0.369
+     ],
+     [
+      8000,
+      0.555,
+      0.375
+     ]
+    ],
+    "M2-viscosity": [
+     [
+      4500,
+      0.183,
+      0.17
+     ],
+     [
+      6000,
+      0.187,
+      0.177
+     ],
+     [
+      8000,
+      0.219,
+      0.206
+     ]
+    ],
+    "M3-slip-walls": [
+     [
+      4500,
+      0.272,
+      0.205
+     ],
+     [
+      6000,
+      0.271,
+      0.205
+     ],
+     [
+      8000,
+      0.308,
+      0.22
+     ]
+    ],
+    "M4-moving-wall": [
+     [
+      4500,
+      0.031,
+      0.02
+     ],
+     [
+      6000,
+      0.026,
+      0.019
+     ],
+     [
+      8000,
+      0.036,
+      0.026
+     ]
+    ],
+    "M5-half-inlet": [
+     [
+      4500,
+      0.327,
+      0.252
+     ],
+     [
+      6000,
+      0.283,
+      0.232
+     ],
+     [
+      8000,
+      0.261,
+      0.239
+     ]
+    ]
+   },
+   "note": "Each entry is (step, mean |dU|/32.2, mean |d|U||/32.2). M4 frames differ from N5 less than the normal run N4 does."
+  },
+  "M5": {
+   "inlet_x_m": -1.553,
+   "Ux_just_upstream_of_step_lip_at_x_-0.0093_step_8000": {
+    "y_m": [
+     0.0127,
+     0.0132,
+     0.0155,
+     0.026,
+     0.0667,
+     0.1028,
+     0.1118,
+     0.1138,
+     0.1143
+    ],
+    "N5": [
+     0.33,
+     10.33,
+     31.02,
+     33.34,
+     33.01,
+     32.83,
+     27.74,
+     5.52,
+     0.11
+    ],
+    "M5": [
+     0.15,
+     4.74,
+     14.91,
+     16.96,
+     16.77,
+     16.82,
+     6.55,
+     -0.09,
+     0.0
+    ]
+   },
+   "note": "No jet at the step: the core profile is flat at about 17 m/s against 33 m/s in N5."
+  },
+  "M1": {
+   "note": "Colour-bar maximum 11.6 to 13.6 m/s and median 4.7 to 5.3 m/s in the window, not 3 m/s, because the fastest motion is decaying reverse flow; 78 to 82 % of window cells have Ux < 0."
+  },
+  "M2": {
+   "note": "Reverse flow in 43 to 45 % of window cells, so recirculation exists; what is absent is the vortices of the normal frames."
+  },
+  "M3": {
+   "note": "Near-wall speed 14.7 to 16.7 m/s against 3.5 to 6.0 m/s in normal runs: the missing boundary layer is in the picture."
+  },
+  "near_identical_states": {
+   "N4 step 6500 and N5 step 4500": "same flow state, largest difference in U 1.6e-4 m/s; the picture titles differ",
+   "N4 step 7500 and N5 step 5500": "same flow state, largest difference in U 2.5e-5 m/s; the picture titles differ"
+  }
+ },
+ "examples": {
+  "rule": "Per wrong run: inconsistent answers first, models taken in turn in the order 12b, 26b, 31b, qwen35-35b, earliest step first, skipping wording already taken (numbers ignored); then repeated wording; then, only when fewer than 5 inconsistent answers exist, consistent answers by the same rule, marked as such.",
+  "by_run": {
+   "M1-inlet-speed": [
+    {
+     "model": "12b",
+     "frame": "M1-inlet-speed-step06000",
+     "assessment": "inconsistent",
+     "label": "names_it",
+     "reason": "The velocity magnitude shows a high-speed region near the bottom wall and a recirculation zone behind a step-like geometry, while the pressure field shows a characteristic low-pressure wake. However, the maximum velocity of 12.47 m/s is significantly lower than the 32.2 m/s inlet speed."
+    },
+    {
+     "model": "31b",
+     "frame": "M1-inlet-speed-step04500",
+     "assessment": "inconsistent",
+     "label": "names_it",
+     "reason": "The maximum velocity magnitude shown is 13.62 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s."
+    },
+    {
+     "model": "31b",
+     "frame": "M1-inlet-speed-step05000",
+     "assessment": "inconsistent",
+     "label": "names_it",
+     "reason": "The velocity magnitude is far below the intended inlet speed of 32.2 m/s, with a maximum of only 13.24 m/s, and the flow field does not show the characteristic recirculation zone of a backward-facing step."
+    },
+    {
+     "model": "31b",
+     "frame": "M1-inlet-speed-step06000",
+     "assessment": "inconsistent",
+     "label": "names_it",
+     "reason": "The maximum velocity magnitude shown is 12.47 m/s, which is significantly lower than the intended uniform inlet speed of 32.2 m/s."
+    },
+    {
+     "model": "31b",
+     "frame": "M1-inlet-speed-step05500",
+     "assessment": "inconsistent",
+     "label": "names_it",
+     "reason": "The maximum velocity magnitude shown is 12.84 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s."
+    }
+   ],
+   "M2-viscosity": [
+    {
+     "model": "26b",
+     "frame": "M2-viscosity-step04500",
+     "assessment": "inconsistent",
+     "label": "partly",
+     "reason": "The velocity magnitude shows a uniform profile at the inlet (left) and a pressure gradient consistent with flow acceleration/deceleration, but the flow field lacks the characteristic recirculation zone or separation expected in a backward-facing step geometry."
+    },
+    {
+     "model": "31b",
+     "frame": "M2-viscosity-step04500",
+     "assessment": "inconsistent",
+     "label": "partly",
+     "reason": "The images show a continuous rectangular domain without the geometry of a backward-facing step, and the velocity profile does not show the expected separation or recirculation zone."
+    },
+    {
+     "model": "qwen35-35b",
+     "frame": "M2-viscosity-step06000",
+     "assessment": "inconsistent",
+     "label": "names_it",
+     "reason": "Velocity shows smooth gradient with no recirculation or step effect; pressure lacks expected low-pressure zone downstream of step—both inconsistent with backward-facing step flow."
+    },
+    {
+     "model": "26b",
+     "frame": "M2-viscosity-step08000",
+     "assessment": "inconsistent",
+     "label": "no",
+     "reason": "The velocity magnitude shows a uniform profile at the inlet (left) and a high-speed region, but the pressure field shows a significant pressure increase towards the outlet (right), which is inconsistent with a zero-gradient outlet in a developed flow."
+    },
+    {
+     "model": "31b",
+     "frame": "M2-viscosity-step05000",
+     "assessment": "inconsistent",
+     "label": "partly",
+     "reason": "The images show a continuous rectangular domain with no backward-facing step geometry (no white area representing the step) and a velocity profile that does not show the expected separation and recirculation zone."
+    }
+   ],
+   "M3-slip-walls": [
+    {
+     "model": "31b",
+     "frame": "M3-slip-walls-step06000",
+     "assessment": "inconsistent",
+     "label": "no",
+     "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity core, but there is no evidence of a backward-facing step geometry (no white area or sudden change in boundary height), and the pressure field does not show the expected recovery for such a case."
+    },
+    {
+     "model": "12b",
+     "frame": "M3-slip-walls-step04500",
+     "assessment": "consistent",
+     "label": null,
+     "reason": "The velocity magnitude shows a high-speed flow developing over a step-like geometry at y=40%, with a clear recirculation zone and a shear layer. The pressure field shows a characteristic pressure drop and recovery consistent with flow over a backward-facing step."
+    },
+    {
+     "model": "26b",
+     "frame": "M3-slip-walls-step04500",
+     "assessment": "consistent",
+     "label": null,
+     "reason": "The velocity magnitude shows a high-speed region at the top and a low-speed recirculation zone at the bottom, consistent with flow over a backward-facing step. The pressure distribution shows a high-pressure region downstream of the step, which is physically expected."
+    },
+    {
+     "model": "31b",
+     "frame": "M3-slip-walls-step04500",
+     "assessment": "consistent",
+     "label": null,
+     "reason": "The velocity magnitude shows a recirculation zone and reattachment characteristic of a backward-facing step, with a maximum velocity near 32.2 m/s, and the pressure field shows a recovery downstream of the step."
+    },
+    {
+     "model": "qwen35-35b",
+     "frame": "M3-slip-walls-step04500",
+     "assessment": "consistent",
+     "label": null,
+     "reason": "Velocity shows recirculation zone below step and pressure drop consistent with backward-facing step flow; no inconsistencies visible."
+    }
+   ],
+   "M4-moving-wall": [
+    {
+     "model": "31b",
+     "frame": "M4-moving-wall-step04500",
+     "assessment": "inconsistent",
+     "label": "no",
+     "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity jet, but there is no evidence of a backward-facing step geometry (no white area representing the step) and the pressure field is highly oscillatory and inconsistent with a steady flow."
+    },
+    {
+     "model": "31b",
+     "frame": "M4-moving-wall-step05500",
+     "assessment": "inconsistent",
+     "label": "no",
+     "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity core, but there is no evidence of a backward-facing step (no sudden change in wall geometry or characteristic recirculation zone)."
+    },
+    {
+     "model": "31b",
+     "frame": "M4-moving-wall-step06500",
+     "assessment": "inconsistent",
+     "label": "no",
+     "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity core, but there is no evidence of a backward-facing step geometry (no white area or sudden change in wall height) and the flow field does not show the expected recirculation zone."
+    },
+    {
+     "model": "31b",
+     "frame": "M4-moving-wall-step08000",
+     "assessment": "inconsistent",
+     "label": "no",
+     "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity core above, but there is no evidence of a backward-facing step geometry (no white area indicating a missing block at the bottom left)."
+    },
+    {
+     "model": "12b",
+     "frame": "M4-moving-wall-step04500",
+     "assessment": "consistent",
+     "label": null,
+     "reason": "The velocity magnitude shows a high-speed region near the top and a low-speed recirculation zone near the bottom, consistent with flow over a backward-facing step. The pressure field shows expected fluctuations and gradients in the wake region."
+    }
+   ],
+   "M5-half-inlet": [
+    {
+     "model": "31b",
+     "frame": "M5-half-inlet-step04500",
+     "assessment": "inconsistent",
+     "label": "partly",
+     "reason": "The velocity magnitude shows a recirculation zone and reattachment characteristic of a backward-facing step, but the maximum velocity of 18.93 m/s is significantly lower than the specified inlet speed of 32.2 m/s."
+    },
+    {
+     "model": "31b",
+     "frame": "M5-half-inlet-step05000",
+     "assessment": "inconsistent",
+     "label": "partly",
+     "reason": "The maximum velocity magnitude shown is 18.74 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s."
+    },
+    {
+     "model": "31b",
+     "frame": "M5-half-inlet-step05500",
+     "assessment": "inconsistent",
+     "label": "partly",
+     "reason": "The maximum velocity magnitude is 18.65 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s."
+    },
+    {
+     "model": "31b",
+     "frame": "M5-half-inlet-step08000",
+     "assessment": "inconsistent",
+     "label": "partly",
+     "reason": "The velocity magnitude maximum is 18.1 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s."
+    },
+    {
+     "model": "31b",
+     "frame": "M5-half-inlet-step06000",
+     "assessment": "inconsistent",
+     "label": "partly",
+     "reason": "The maximum velocity magnitude shown is 18.46 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s."
+    }
+   ]
+  }
+ },
+ "labels": [
+  {
+   "id": "A011",
+   "model": "31b",
+   "frame": "M1-inlet-speed-step04500",
+   "run": "M1-inlet-speed",
+   "step": 4500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude shown is 13.62 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s.",
+   "label": "names_it",
+   "note": "States the speed is far below 32.2 m/s; quoted maximum matches the colour bar."
+  },
+  {
+   "id": "A002",
+   "model": "31b",
+   "frame": "M1-inlet-speed-step05000",
+   "run": "M1-inlet-speed",
+   "step": 5000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude is far below the intended inlet speed of 32.2 m/s, with a maximum of only 13.24 m/s, and the flow field does not show the characteristic recirculation zone of a backward-facing step.",
+   "label": "names_it",
+   "note": "States the speed is far below 32.2 m/s. Its second clause, no recirculation zone, is false: 81 % of window cells have Ux < 0."
+  },
+  {
+   "id": "A039",
+   "model": "31b",
+   "frame": "M1-inlet-speed-step05500",
+   "run": "M1-inlet-speed",
+   "step": 5500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude shown is 12.84 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s.",
+   "label": "names_it",
+   "note": "States the speed is far below 32.2 m/s; quoted maximum matches the colour bar."
+  },
+  {
+   "id": "A006",
+   "model": "12b",
+   "frame": "M1-inlet-speed-step06000",
+   "run": "M1-inlet-speed",
+   "step": 6000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a high-speed region near the bottom wall and a recirculation zone behind a step-like geometry, while the pressure field shows a characteristic low-pressure wake. However, the maximum velocity of 12.47 m/s is significantly lower than the 32.2 m/s inlet speed.",
+   "label": "names_it",
+   "note": "States the speed is far below 32.2 m/s after saying the rest looks like a step flow; quoted maximum matches the colour bar."
+  },
+  {
+   "id": "A016",
+   "model": "31b",
+   "frame": "M1-inlet-speed-step06000",
+   "run": "M1-inlet-speed",
+   "step": 6000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude shown is 12.47 m/s, which is significantly lower than the intended uniform inlet speed of 32.2 m/s.",
+   "label": "names_it",
+   "note": "States the speed is far below 32.2 m/s; quoted maximum matches the colour bar."
+  },
+  {
+   "id": "A027",
+   "model": "31b",
+   "frame": "M1-inlet-speed-step06500",
+   "run": "M1-inlet-speed",
+   "step": 6500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude shown is 12.19 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s.",
+   "label": "names_it",
+   "note": "States the speed is far below 32.2 m/s; quoted maximum matches the colour bar."
+  },
+  {
+   "id": "A035",
+   "model": "31b",
+   "frame": "M1-inlet-speed-step07000",
+   "run": "M1-inlet-speed",
+   "step": 7000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude shown is 11.93 m/s, which is significantly lower than the intended uniform inlet speed of 32.2 m/s.",
+   "label": "names_it",
+   "note": "States the speed is far below 32.2 m/s; quoted maximum matches the colour bar."
+  },
+  {
+   "id": "A003",
+   "model": "31b",
+   "frame": "M1-inlet-speed-step07500",
+   "run": "M1-inlet-speed",
+   "step": 7500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude shown is 11.74 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s.",
+   "label": "names_it",
+   "note": "States the speed is far below 32.2 m/s; quoted maximum matches the colour bar."
+  },
+  {
+   "id": "A008",
+   "model": "31b",
+   "frame": "M1-inlet-speed-step08000",
+   "run": "M1-inlet-speed",
+   "step": 8000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude shown is 11.58 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s.",
+   "label": "names_it",
+   "note": "States the speed is far below 32.2 m/s; quoted maximum matches the colour bar."
+  },
+  {
+   "id": "A014",
+   "model": "26b",
+   "frame": "M2-viscosity-step04500",
+   "run": "M2-viscosity",
+   "step": 4500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a uniform profile at the inlet (left) and a pressure gradient consistent with flow acceleration/deceleration, but the flow field lacks the characteristic recirculation zone or separation expected in a backward-facing step geometry.",
+   "label": "partly",
+   "note": "'Lacks recirculation' is close to the vortex-free look, but it does not say smooth, and its 'uniform profile at the left' is not in the frame."
+  },
+  {
+   "id": "A017",
+   "model": "31b",
+   "frame": "M2-viscosity-step04500",
+   "run": "M2-viscosity",
+   "step": 4500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The images show a continuous rectangular domain without the geometry of a backward-facing step, and the velocity profile does not show the expected separation or recirculation zone.",
+   "label": "partly",
+   "note": "'No separation or recirculation' is close to the vortex-free look, but the main ground is a missing step, and that holds in all 80 frames."
+  },
+  {
+   "id": "A038",
+   "model": "31b",
+   "frame": "M2-viscosity-step05000",
+   "run": "M2-viscosity",
+   "step": 5000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The images show a continuous rectangular domain with no backward-facing step geometry (no white area representing the step) and a velocity profile that does not show the expected separation and recirculation zone.",
+   "label": "partly",
+   "note": "'No separation and recirculation' is close to the vortex-free look, but the main ground is a missing step, and that holds in all 80 frames."
+  },
+  {
+   "id": "A036",
+   "model": "31b",
+   "frame": "M2-viscosity-step05500",
+   "run": "M2-viscosity",
+   "step": 5500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The images show a simple channel flow with a boundary layer at the bottom, but there is no backward-facing step geometry (no white area representing the step) and no recirculation zone in the velocity field.",
+   "label": "partly",
+   "note": "'Simple channel flow with a boundary layer' is close to the smooth look, but the main ground is a missing step, and that holds in all 80 frames."
+  },
+  {
+   "id": "A018",
+   "model": "31b",
+   "frame": "M2-viscosity-step06000",
+   "run": "M2-viscosity",
+   "step": 6000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The images show a continuous rectangular domain without the geometry of a backward-facing step, and the velocity profile does not show the expected separation or recirculation zone.",
+   "label": "partly",
+   "note": "'No separation or recirculation' is close to the vortex-free look, but the main ground is a missing step, and that holds in all 80 frames."
+  },
+  {
+   "id": "A019",
+   "model": "qwen35-35b",
+   "frame": "M2-viscosity-step06000",
+   "run": "M2-viscosity",
+   "step": 6000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "Velocity shows smooth gradient with no recirculation or step effect; pressure lacks expected low-pressure zone downstream of step—both inconsistent with backward-facing step flow.",
+   "label": "names_it",
+   "note": "Names the smooth velocity field as a ground. Does not name viscosity; its 'no recirculation' is false as a flow fact (44 % of window cells have Ux < 0)."
+  },
+  {
+   "id": "A004",
+   "model": "31b",
+   "frame": "M2-viscosity-step06500",
+   "run": "M2-viscosity",
+   "step": 6500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The images show a simple channel flow with no backward-facing step; there is no geometry change or flow separation visible in the velocity or pressure fields.",
+   "label": "partly",
+   "note": "'Simple channel flow' and 'no separation' are close to the smooth look, but the main ground is a missing step, and that holds in all 80 frames."
+  },
+  {
+   "id": "A021",
+   "model": "qwen35-35b",
+   "frame": "M2-viscosity-step06500",
+   "run": "M2-viscosity",
+   "step": 6500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "Velocity shows smooth gradient with no recirculation or step effect; pressure lacks expected low-pressure zone downstream of step—both inconsistent with backward-facing step flow.",
+   "label": "names_it",
+   "note": "Names the smooth velocity field as a ground. Does not name viscosity; its 'no recirculation' is false as a flow fact (44 % of window cells have Ux < 0)."
+  },
+  {
+   "id": "A009",
+   "model": "31b",
+   "frame": "M2-viscosity-step07000",
+   "run": "M2-viscosity",
+   "step": 7000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The images show a full rectangular domain with no backward-facing step geometry (no white area representing the step), and the velocity profile does not show the expected separation and recirculation zone.",
+   "label": "partly",
+   "note": "'No separation and recirculation' is close to the vortex-free look, but the main ground is a missing step, and that holds in all 80 frames."
+  },
+  {
+   "id": "A005",
+   "model": "qwen35-35b",
+   "frame": "M2-viscosity-step07000",
+   "run": "M2-viscosity",
+   "step": 7000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "Velocity shows smooth gradient without recirculation or step features; pressure lacks expected low-pressure zone downstream of step—both inconsistent with backward-facing step flow.",
+   "label": "names_it",
+   "note": "Names the smooth velocity field as a ground. Does not name viscosity; its 'no recirculation' is false as a flow fact (45 % of window cells have Ux < 0)."
+  },
+  {
+   "id": "A022",
+   "model": "31b",
+   "frame": "M2-viscosity-step07500",
+   "run": "M2-viscosity",
+   "step": 7500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The images show a simple channel flow with a boundary layer at the bottom, but there is no backward-facing step (no white area or geometry change) and the velocity profile does not show the expected separation and recirculation zone.",
+   "label": "partly",
+   "note": "'Simple channel flow with a boundary layer' is close to the smooth look, but the main ground is a missing step, and that holds in all 80 frames."
+  },
+  {
+   "id": "A032",
+   "model": "qwen35-35b",
+   "frame": "M2-viscosity-step07500",
+   "run": "M2-viscosity",
+   "step": 7500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "Velocity shows smooth gradient without step-induced recirculation; pressure lacks expected drop over step. Inconsistent with backward-facing step flow.",
+   "label": "names_it",
+   "note": "Names the smooth velocity field as a ground. Does not name viscosity; 'without step-induced recirculation' is false as a flow fact (45 % of window cells have Ux < 0)."
+  },
+  {
+   "id": "A024",
+   "model": "26b",
+   "frame": "M2-viscosity-step08000",
+   "run": "M2-viscosity",
+   "step": 8000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a uniform profile at the inlet (left) and a high-speed region, but the pressure field shows a significant pressure increase towards the outlet (right), which is inconsistent with a zero-gradient outlet in a developed flow.",
+   "label": "no",
+   "note": "The pressure rise to the right is in the frame, but normal frames have it too, and the zero-gradient outlet it cites is at x = 0.60 m, outside the picture."
+  },
+  {
+   "id": "A023",
+   "model": "31b",
+   "frame": "M2-viscosity-step08000",
+   "run": "M2-viscosity",
+   "step": 8000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The images show a simple channel flow with a boundary layer at the bottom, but there is no backward-facing step geometry (no white area indicating a missing cell region) and no recirculation zone characteristic of such a setup.",
+   "label": "partly",
+   "note": "'Simple channel flow with a boundary layer' is close to the smooth look, but the main ground is a missing step, and that holds in all 80 frames."
+  },
+  {
+   "id": "A037",
+   "model": "qwen35-35b",
+   "frame": "M2-viscosity-step08000",
+   "run": "M2-viscosity",
+   "step": 8000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "Velocity shows smooth gradient with no recirculation or step effect; pressure lacks expected low-pressure zone downstream of step—both inconsistent with backward-facing step flow.",
+   "label": "names_it",
+   "note": "Names the smooth velocity field as a ground. Does not name viscosity; its 'no recirculation' is false as a flow fact (45 % of window cells have Ux < 0)."
+  },
+  {
+   "id": "A013",
+   "model": "31b",
+   "frame": "M3-slip-walls-step06000",
+   "run": "M3-slip-walls",
+   "step": 6000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity core, but there is no evidence of a backward-facing step geometry (no white area or sudden change in boundary height), and the pressure field does not show the expected recovery for such a case.",
+   "label": "no",
+   "note": "Does not mention slip or the missing boundary layer; near-wall speed in this frame is about three times normal, the opposite of what it stresses. The frame does show a pressure rise to the right, which it denies."
+  },
+  {
+   "id": "A029",
+   "model": "31b",
+   "frame": "M4-moving-wall-step04500",
+   "run": "M4-moving-wall",
+   "step": 4500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity jet, but there is no evidence of a backward-facing step geometry (no white area representing the step) and the pressure field is highly oscillatory and inconsistent with a steady flow.",
+   "label": "no",
+   "note": "Rests on a missing step and on an oscillating pressure field, which normal frames also show. The reverse-flow layer is at y >= 0.113 m, outside the picture."
+  },
+  {
+   "id": "A025",
+   "model": "31b",
+   "frame": "M4-moving-wall-step05500",
+   "run": "M4-moving-wall",
+   "step": 5500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity core, but there is no evidence of a backward-facing step (no sudden change in wall geometry or characteristic recirculation zone).",
+   "label": "no",
+   "note": "Rests on a missing step, which holds in all 80 frames. The reverse-flow layer is at y >= 0.113 m, outside the picture (top y = 0.04 m)."
+  },
+  {
+   "id": "A020",
+   "model": "31b",
+   "frame": "M4-moving-wall-step06500",
+   "run": "M4-moving-wall",
+   "step": 6500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity core, but there is no evidence of a backward-facing step geometry (no white area or sudden change in wall height) and the flow field does not show the expected recirculation zone.",
+   "label": "no",
+   "note": "Rests on a missing step, which holds in all 80 frames. The reverse-flow layer is at y >= 0.113 m, outside the picture (top y = 0.04 m)."
+  },
+  {
+   "id": "A007",
+   "model": "31b",
+   "frame": "M4-moving-wall-step08000",
+   "run": "M4-moving-wall",
+   "step": 8000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity core above, but there is no evidence of a backward-facing step geometry (no white area indicating a missing block at the bottom left).",
+   "label": "no",
+   "note": "Rests on a missing step, which holds in all 80 frames. The reverse-flow layer is at y >= 0.113 m, outside the picture (top y = 0.04 m)."
+  },
+  {
+   "id": "A031",
+   "model": "31b",
+   "frame": "M5-half-inlet-step04500",
+   "run": "M5-half-inlet",
+   "step": 4500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a recirculation zone and reattachment characteristic of a backward-facing step, but the maximum velocity of 18.93 m/s is significantly lower than the specified inlet speed of 32.2 m/s.",
+   "label": "partly",
+   "note": "Speeds about half of normal are a real effect of half the inflow, but it reads them as a low inlet speed and calls the flow near the step characteristic."
+  },
+  {
+   "id": "A028",
+   "model": "31b",
+   "frame": "M5-half-inlet-step05000",
+   "run": "M5-half-inlet",
+   "step": 5000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude shown is 18.74 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s.",
+   "label": "partly",
+   "note": "Speeds about half of normal are a real effect of half the inflow, but it reads them as a low inlet speed and does not name the closed half, a jet or the flow near the step."
+  },
+  {
+   "id": "A010",
+   "model": "31b",
+   "frame": "M5-half-inlet-step05500",
+   "run": "M5-half-inlet",
+   "step": 5500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude is 18.65 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s.",
+   "label": "partly",
+   "note": "Speeds about half of normal are a real effect of half the inflow, but it reads them as a low inlet speed and does not name the closed half, a jet or the flow near the step."
+  },
+  {
+   "id": "A015",
+   "model": "31b",
+   "frame": "M5-half-inlet-step06000",
+   "run": "M5-half-inlet",
+   "step": 6000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude shown is 18.46 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s.",
+   "label": "partly",
+   "note": "Speeds about half of normal are a real effect of half the inflow, but it reads them as a low inlet speed and does not name the closed half, a jet or the flow near the step."
+  },
+  {
+   "id": "A033",
+   "model": "31b",
+   "frame": "M5-half-inlet-step06500",
+   "run": "M5-half-inlet",
+   "step": 6500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a recirculation zone and reattachment characteristic of a backward-facing step, but the maximum velocity of 19.46 m/s is significantly lower than the specified inlet speed of 32.2 m/s.",
+   "label": "partly",
+   "note": "Speeds about half of normal are a real effect of half the inflow, but it reads them as a low inlet speed and calls the flow near the step characteristic."
+  },
+  {
+   "id": "A034",
+   "model": "31b",
+   "frame": "M5-half-inlet-step07000",
+   "run": "M5-half-inlet",
+   "step": 7000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a recirculation zone and reattachment characteristic of a backward-facing step, but the maximum velocity of 19.7 m/s is significantly lower than the specified inlet speed of 32.2 m/s.",
+   "label": "partly",
+   "note": "Speeds about half of normal are a real effect of half the inflow, but it reads them as a low inlet speed and calls the flow near the step characteristic."
+  },
+  {
+   "id": "A030",
+   "model": "31b",
+   "frame": "M5-half-inlet-step07500",
+   "run": "M5-half-inlet",
+   "step": 7500,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The maximum velocity magnitude shown is 18.12 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s.",
+   "label": "partly",
+   "note": "Speeds about half of normal are a real effect of half the inflow, but it reads them as a low inlet speed and does not name the closed half, a jet or the flow near the step."
+  },
+  {
+   "id": "A012",
+   "model": "31b",
+   "frame": "M5-half-inlet-step08000",
+   "run": "M5-half-inlet",
+   "step": 8000,
+   "class": "wrong",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude maximum is 18.1 m/s, which is significantly lower than the specified uniform inlet speed of 32.2 m/s.",
+   "label": "partly",
+   "note": "Speeds about half of normal are a real effect of half the inflow, but it reads them as a low inlet speed and does not name the closed half, a jet or the flow near the step."
+  },
+  {
+   "id": "A001",
+   "model": "31b",
+   "frame": "N4-step06500",
+   "run": "N4",
+   "step": 6500,
+   "class": "normal",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity core, but there is no evidence of a backward-facing step geometry (no white area representing the step) or the characteristic recirculation zone associated with such a setup.",
+   "label": "no",
+   "note": "The fault it states is not there: the shear layer leaves the step lip at y = 32 % on the left edge, and 29.5 % of window cells have Ux < 0. Its low-speed region, high-speed core and no white area are there, but no white area holds in all 80 frames."
+  },
+  {
+   "id": "A026",
+   "model": "31b",
+   "frame": "N5-step05500",
+   "run": "N5",
+   "step": 5500,
+   "class": "normal",
+   "assessment": "inconsistent",
+   "reason": "The velocity magnitude shows a low-velocity region near the bottom wall and a high-velocity core, but there is no evidence of a backward-facing step geometry (no white area or sudden change in wall height) and the flow field does not show the expected recirculation zone.",
+   "label": "no",
+   "note": "The fault it states is not there: the shear layer leaves the step lip at y = 32 % on the left edge, and 28.7 % of window cells have Ux < 0. Its low-speed region, high-speed core and no white area are there, but no white area holds in all 80 frames."
+  }
+ ]
+}

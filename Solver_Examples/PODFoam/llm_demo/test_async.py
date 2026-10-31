@@ -11,12 +11,14 @@ import json
 import os
 from pathlib import Path
 import shutil
+import struct
 import sys
 import tempfile
 import threading
 import time
 import unittest
 from unittest.mock import patch
+import zlib
 
 import numpy as np
 
@@ -31,6 +33,16 @@ def load_module(name, path):
     sys.modules[name] = module
     spec.loader.exec_module(module)
     return module
+
+
+def small_png():
+    """The bytes of a valid PNG of one grey pixel."""
+    def chunk(kind, data):
+        return (struct.pack(">I", len(data)) + kind + data
+                + struct.pack(">I", zlib.crc32(kind + data) & 0xffffffff))
+
+    return (b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", 1, 1, 8, 0, 0, 0, 0))
+            + chunk(b"IDAT", zlib.compress(b"\0\0")) + chunk(b"IEND", b""))
 
 
 ANSWERS = {
@@ -171,18 +183,20 @@ class ClientModeTests(unittest.TestCase):
             llm_client.validate_structured(good, "nonsense")
 
     def test_sequence_request_order(self):
-        png = SOURCE.parents[2] / "docs/evidence/2026-10-17/pod-llm-demo.LRfJBN/fixed-pod/llm_observation/state.png"
-        frames = [{"path": str(png), "step": 5, "time_s": 5e-7},
-                  {"path": str(png), "step": 10, "time_s": 1e-6}]
-        request = llm_client.build_sequence_request(frames)
-        parts = request["messages"][1]["content"]
-        self.assertEqual([p["type"] for p in parts], ["text", "text", "image_url", "text", "image_url"])
-        self.assertEqual(request["response_format"]["json_schema"]["name"], "fluid_sequence")
-        self.assertIn("Image 2: step 10", parts[3]["text"])
-        with self.assertRaises(ValueError):
-            llm_client.build_sequence_request(frames[::-1])
-        with self.assertRaises(ValueError):
-            llm_client.build_sequence_request(frames[:1])
+        with tempfile.TemporaryDirectory() as directory:
+            png = Path(directory) / "state.png"
+            png.write_bytes(small_png())
+            frames = [{"path": str(png), "step": 5, "time_s": 5e-7},
+                      {"path": str(png), "step": 10, "time_s": 1e-6}]
+            request = llm_client.build_sequence_request(frames)
+            parts = request["messages"][1]["content"]
+            self.assertEqual([p["type"] for p in parts], ["text", "text", "image_url", "text", "image_url"])
+            self.assertEqual(request["response_format"]["json_schema"]["name"], "fluid_sequence")
+            self.assertIn("Image 2: step 10", parts[3]["text"])
+            with self.assertRaises(ValueError):
+                llm_client.build_sequence_request(frames[::-1])
+            with self.assertRaises(ValueError):
+                llm_client.build_sequence_request(frames[:1])
 
     def test_describe_needs_image(self):
         with self.assertRaises(ValueError):
@@ -235,7 +249,7 @@ class AsyncTests(unittest.TestCase):
         with fixture(delay_s=0.3) as (endpoint, received):
             harness = Harness({"LLM_MODE": "describe", "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1"})
             try:
-                result = harness.run(sleep_after=5, sleep_s=0.5)
+                result = harness.run(sleep_after=5, sleep_s=1.0)
                 walls = dict(harness.walls)
                 telemetry = (harness.case / "telemetry.jsonl").read_text().splitlines()
             finally:
@@ -416,7 +430,7 @@ class V2Harness(Harness):
 
 
 class V2PictureTests(unittest.TestCase):
-    """LLM_IMAGE_STYLE=v2: the solver sends what the 2026-10-22 picture tests sent."""
+    """LLM_IMAGE_STYLE=v2: the solver sends what readable_request.py builds."""
 
     def frame_folder(self, harness, step):
         return harness.case / "llm_observation" / f"step-{step:06d}"
@@ -561,7 +575,7 @@ class V2PictureTests(unittest.TestCase):
         self.assertEqual(len(received), 1)
 
     def test_telemetry_budget_follows_the_pending_lines_not_the_run(self):
-        # before 2026-10-28 the last step rewrote every state, with 1e-4 s per state
+        # the last step appends the pending lines, not one line per state of the run
         harness = Harness({"LLM_MODE": "describe", "LLM_ENABLED": "0", "LLM_FINAL_STEP": "1200"})
         budgets, real = [], harness.callback._bounded_writer
 
@@ -591,16 +605,38 @@ class V2PictureTests(unittest.TestCase):
         self.assertGreater(budgets[3][1], 0.7)
 
 
+class ScoreDescribeTests(unittest.TestCase):
+    def test_distances_and_the_ten_percent_limit(self):
+        import frame_scoring
+        truth = {"fastest_flow": {"x_percent": 20.0, "y_percent": 30.0},
+                 "lowest_pressure": {"x_percent": 80.0, "y_percent": 50.0},
+                 "x_span_m": 0.12, "y_span_m": 0.04}
+        score = frame_scoring.score_describe(
+            {"fastest_flow_x_percent": 26.0, "fastest_flow_y_percent": 38.0,
+             "lowest_pressure_x_percent": 74.0, "lowest_pressure_y_percent": 58.5}, truth)
+        self.assertEqual(sorted(score), ["fastest_flow", "lowest_pressure"])
+        fastest, lowest = score["fastest_flow"], score["lowest_pressure"]
+        self.assertEqual(fastest["answer_percent"], [26.0, 38.0])
+        self.assertEqual(fastest["true_percent"], [20.0, 30.0])
+        self.assertEqual(fastest["error_percent"], [6.0, 8.0])
+        self.assertEqual(fastest["distance_percent"], 10.0)
+        self.assertTrue(fastest["within_10_percent"])     # exactly at the limit
+        self.assertEqual(lowest["error_percent"], [-6.0, 8.5])
+        self.assertFalse(lowest["within_10_percent"])
+        self.assertAlmostEqual(fastest["error_m"][0], 0.0072)
+        self.assertAlmostEqual(fastest["error_m"][1], 0.0032)
+        self.assertAlmostEqual(fastest["distance_m"], (0.0072 ** 2 + 0.0032 ** 2) ** 0.5)
+
+
 class ComputedTrendTests(unittest.TestCase):
-    """v2 sequences (2026-10-28): the answer key's trend words, computed from the frames' arrays,
+    """v2 sequences: the answer key's trend words, computed from the frames' arrays,
     in llm_result.json next to the answer; the request body changes only when asked."""
 
     def run_sequence(self, environment, trickle=False):
         """The run's result, request record, body, the answer keys of its three frames and the
         bodies the tested builder gives for those frames in each form."""
-        import picture_test
+        import frame_scoring
         import readable_request
-        import sequence_test
         if trickle:
             from test_llm_client import serve
             server = serve("trickle")
@@ -616,8 +652,8 @@ class ComputedTrendTests(unittest.TestCase):
                 raw = (harness.case / "llm_request_body.json").read_bytes()
                 folders = [harness.case / "llm_observation" / f"step-{s:06d}" for s in (2, 4, 6)]
                 frames = [readable_request.load_frame(folder)[0] for folder in folders]
-                truths = [picture_test.load_v2(folder)[1] for folder in folders]
-                numbers = [sequence_test.numbers_of(truth) for truth in truths]
+                truths = [frame_scoring.load_v2(folder)[1] for folder in folders]
+                numbers = [frame_scoring.numbers_of(truth) for truth in truths]
                 bodies = {form: llm_client.encode_json(readable_request.sequence_v2_payload(
                     frames, model="unit-test-model", own_ranges=True, **options))
                     for form, options in (("own", {}), ("t", {"thresholds": True}),
@@ -627,14 +663,14 @@ class ComputedTrendTests(unittest.TestCase):
         return result, request, raw, truths, bodies, received
 
     def test_trends_are_recorded_and_the_default_body_is_unchanged(self):
+        import frame_scoring
         import readable_request
-        import snapshot_runner
         result, request, raw, truths, bodies, received = self.run_sequence({})
-        key = json.loads(json.dumps(snapshot_runner.sequence_truth(truths)))
+        key = json.loads(json.dumps(frame_scoring.sequence_truth(truths)))
         self.assertEqual(result["status"], "ok", result)
         self.assertEqual(result["computed_trends"], key)
         self.assertEqual(result["computed_trends_agreement"],
-                         snapshot_runner.score_sequence(result["structured_output"], key))
+                         frame_scoring.score_sequence(result["structured_output"], key))
         # the 20-cell fields: |U| grows with the step, p gets lower, the fastest cell stays put;
         # the fixture answers decreasing, less_negative, same_place
         self.assertEqual([key[k] for k in ("max_speed_trend", "min_pressure_trend", "fastest_flow_region")],
@@ -691,8 +727,7 @@ class ComputedTrendTests(unittest.TestCase):
             self.assertEqual(len(telemetry), 10)
 
     def test_the_rules_are_the_answer_key_of_the_picture_tests(self):
-        import picture_test
-        import snapshot_runner
+        import frame_scoring
         harness = V2Harness({})
         callback = harness.callback
         harness.close()
@@ -718,20 +753,20 @@ class ComputedTrendTests(unittest.TestCase):
                        np.abs(rng.normal(size=cells)) * 10 + offset if offset else rng.normal(size=cells) * 100)
                       for _ in range(int(rng.integers(2, 4)))]
             times = [(100 * (k + 1), 1e-4 * (k + 1)) for k in range(len(fields))]
-            key = snapshot_runner.sequence_truth([picture_test.truth_from_arrays(centres, u, p, plotted, s, t)
-                                                  for (u, p), (s, t) in zip(fields, times)])
+            key = frame_scoring.sequence_truth([frame_scoring.truth_from_arrays(centres, u, p, plotted, s, t)
+                                                for (u, p), (s, t) in zip(fields, times)])
             ours = callback._sequence_trends([callback._frame_extrema(centres, u, p, plotted, s, t)
                                               for (u, p), (s, t) in zip(fields, times)])
             same(ours, key)
             answer = {"max_speed_trend": ("increasing", "decreasing", "roughly_constant", "cannot_tell")[case % 4],
                       "min_pressure_trend": ("more_negative", "less_negative", "roughly_constant")[case % 3],
                       "fastest_flow_region": ("same_place", "moves", "cannot_tell")[case % 3]}
-            same(callback._trend_agreement(answer, ours), snapshot_runner.score_sequence(answer, key))
+            same(callback._trend_agreement(answer, ours), frame_scoring.score_sequence(answer, key))
             compared += 1
         self.assertEqual(compared, 400)
         # values at the thresholds: 2 % relative change, 5 % of the plotted range
         for first, last in ((1.0, 1.02), (0.98, 1.0), (1.0, 0.98), (-1.0, -1.02), (0.0, 0.0), (-3.0, 3.0)):
-            self.assertEqual(callback._trend(first, last), snapshot_runner.trend(first, last))
+            self.assertEqual(callback._trend(first, last), frame_scoring.trend(first, last))
         # the fastest cell moves from x = 10 % to exactly 15 % of the range, or a little further
         centres = np.array([[10.0, 0.5, 0.0], [15.0, 0.5, 0.0], [15.000001, 0.5, 0.0]])
         box = [[0.0, 100.0], [0.0, 1.0]]
@@ -740,8 +775,8 @@ class ComputedTrendTests(unittest.TestCase):
             last = np.full((3, 3), 0.1)
             last[fastest] = [3.0, 0.0, 0.0]
             fields = [(first, np.zeros(3)), (last, np.zeros(3))]
-            key = snapshot_runner.sequence_truth([picture_test.truth_from_arrays(centres, u, p, box, k, k)
-                                                  for k, (u, p) in enumerate(fields)])
+            key = frame_scoring.sequence_truth([frame_scoring.truth_from_arrays(centres, u, p, box, k, k)
+                                                for k, (u, p) in enumerate(fields)])
             same(callback._sequence_trends([callback._frame_extrema(centres, u, p, box, k, k)
                                             for k, (u, p) in enumerate(fields)]), key)
             self.assertEqual(key["fastest_flow_region"], word)
@@ -786,7 +821,7 @@ class PeriodicRequestTests(unittest.TestCase):
         self.assertFalse(single)
 
     def test_index_says_when_a_record_was_not_written_in_its_budget(self):
-        # Slurm 24929296: a reply arrived (status ok) but the writer was stopped at the 0.2 s
+        # Seen in a real run: a reply arrived (status ok) but the writer was stopped at the 0.2 s
         # cleanup budget, so the folder had no llm_result.json while the index said ok.
         with fixture() as (endpoint, received):
             harness = V2Harness({"LLM_MODE": "describe", "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1",
@@ -890,7 +925,7 @@ class SliceHarness(V2Harness):
 
 
 class PlaneSliceTests(unittest.TestCase):
-    """v2 pictures of a 3D case: a plane slice, one polygon per cut cell (2026-10-28)."""
+    """v2 pictures of a 3D case: a plane slice, one polygon per cut cell."""
 
     def test_describe_v2_of_a_3d_case_draws_the_slice_cells_as_a_2d_case_would(self):
         import matplotlib.image
@@ -992,8 +1027,8 @@ class PlaneSliceTests(unittest.TestCase):
         self.assertEqual(empty["reason"], "the plane z = 1 m cuts no cells")
         self.assertEqual(empty["record"]["cells"], 0)
         failed = pod_image.plane_slice(np.zeros((0, 3)), [0], [], centres,
-                                       {"normal": (0.0, 0.0, 1.0), "z_m": None, "z_source": "LLM_SLICE_Z",
-                                        "error": "LLM_SLICE_Z is not a finite number: 'abc'",
+                                       {"normal": (0.0, 0.0, 1.0), "z_m": None, "z_source": "POD_SLICE_Z",
+                                        "error": "POD_SLICE_Z is not a finite number: 'abc'",
                                         "mesh_z_range_m": (0.0, 0.01)})
         self.assertIn("'abc'", failed["reason"])
 
@@ -1009,7 +1044,7 @@ class PlaneSliceTests(unittest.TestCase):
                                                        points, offsets, cut, dict(SLICE_PLANE))
                     self.assertEqual(count, 40)
                     self.assertIn("do not lie in the plane", harness.callback._geometry["slice"]["reason"])
-                elif plane is None:   # a solver that passes no slice (before 2026-10-28)
+                elif plane is None:   # a solver that passes no slice
                     harness.callback.mesh_func(harness.centres, np.full(40, 1e-9), (1, 1, 1), 0,
                                                np.zeros((0, 3)), np.zeros(1, dtype=np.int64),
                                                np.zeros(0, dtype=np.int64))

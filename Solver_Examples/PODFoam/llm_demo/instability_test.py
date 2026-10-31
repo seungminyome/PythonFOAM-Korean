@@ -5,7 +5,7 @@ run is going numerically unstable?
   instability-v2own   three times of one pimpleFoam run of the step case, |U| and p each on its
                       own colour scale (the pictures of dev-sequence-v2own), all in the window the
                       solver plots (x 0 to 0.12 m, y 0 to 0.04 m), asked with
-                      readable_request.STABILITY_V2OWN_SYSTEM_PROMPT for stable, unstable or
+                      stability_request.STABILITY_V2OWN_SYSTEM_PROMPT for stable, unstable or
                       cannot_tell and a reason
 
 build:  python3 instability_test.py build --design <design.json> --centres <fields.npz> \
@@ -43,6 +43,7 @@ import numpy as np
 import foam_fields
 import picture_test as pt
 import readable_request
+import stability_request
 from llm_client import encode_json, write_json
 
 SET = "instability-v2own"
@@ -290,13 +291,13 @@ def build(args):
         item_design = {"run": run["name"], "group": item["group"], "run_steps": run_steps,
                        "times_s": [s["time_s"] for s in item["frames"]],
                        "steps_to_crash_last": key["steps_to_crash_last"], "gap_run_steps": item["gap_run_steps"]}
-        builder.add(SET, name, "stability", readable_request.stability_v2_payload(frames), key, sources, item_design)
+        builder.add(SET, name, "stability", stability_request.stability_v2_payload(frames), key, sources, item_design)
     write_json(builder.output / "truth.private.json", builder.truth)
     shutil.rmtree(builder.output / ".mpl", ignore_errors=True)
     linked = pt.link_duplicate_arrays(builder.output / "frames")
     here = Path(__file__).resolve().parent
     code = {name: pt.file_sha256(here / name) for name in
-            ("instability_test.py", "picture_test.py", "readable_image.py", "readable_request.py",
+            ("instability_test.py", "stability_request.py", "picture_test.py", "frame_scoring.py", "readable_image.py", "readable_request.py",
              "foam_fields.py", "pod_image.py", "snapshot_runner.py", "llm_client.py")}
     groups = Counter(f"{e['design']['group']} {e['design']['run']}" for e in builder.entries)
     manifest = {"schema_version": 2, "test": f"{TEST_NAME} (seed {args.seed})", "seed": args.seed,

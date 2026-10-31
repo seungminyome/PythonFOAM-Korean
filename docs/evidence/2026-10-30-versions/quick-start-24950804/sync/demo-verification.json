@@ -1,0 +1,430 @@
+{
+  "fixed-pod-no-llm": {
+    "steps": 10,
+    "files_identical_to_no_request_baseline": 45,
+    "model_status": "disabled",
+    "image_input": true,
+    "cpp_measured_full_callback_s": 1.257042456,
+    "callback_limit_s": 120.35,
+    "worker_deadline_s": 120.0,
+    "timeout_kind": null,
+    "image": {
+      "png_sha256": "02599df79802ac77f890f46e3651d634f07f9fad3de17aabfc1ff5d2c0703273",
+      "png_bytes": 36900,
+      "fields_sha256": "61f8d19748de25b415bd76780af7122b0fc2fdd73a108ac5d64bb6fcd0e4a0d1",
+      "width": 640,
+      "height": 360,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "aspect": {
+        "mode": "auto",
+        "x_span_over_y_span": 18.851541158812854
+      },
+      "ranges": {
+        "speed_m_per_s": [
+          2.753965220748645,
+          82.52751611538334
+        ],
+        "p_m2_per_s2": [
+          -9362.826066967049,
+          12901.930047757134
+        ]
+      },
+      "render_wall_s": 1.1741630628239363
+    },
+    "final_U_p_comparison": {
+      "U": {
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      },
+      "p": {
+        "values": 20540,
+        "reference_L2": 192168.19659862717,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      }
+    }
+  },
+  "fixed-pod": {
+    "steps": 10,
+    "files_identical_to_no_request_baseline": 45,
+    "model_status": "ok",
+    "image_input": true,
+    "cpp_measured_full_callback_s": 17.310160671,
+    "callback_limit_s": 120.35,
+    "worker_deadline_s": 120.0,
+    "timeout_kind": null,
+    "image": {
+      "png_sha256": "02599df79802ac77f890f46e3651d634f07f9fad3de17aabfc1ff5d2c0703273",
+      "png_bytes": 36900,
+      "fields_sha256": "61f8d19748de25b415bd76780af7122b0fc2fdd73a108ac5d64bb6fcd0e4a0d1",
+      "width": 640,
+      "height": 360,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "aspect": {
+        "mode": "auto",
+        "x_span_over_y_span": 18.851541158812854
+      },
+      "ranges": {
+        "speed_m_per_s": [
+          2.753965220748645,
+          82.52751611538334
+        ],
+        "p_m2_per_s2": [
+          -9362.826066967049,
+          12901.930047757134
+        ]
+      },
+      "render_wall_s": 0.5217183767817914
+    },
+    "final_U_p_comparison": {
+      "U": {
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      },
+      "p": {
+        "values": 20540,
+        "reference_L2": 192168.19659862717,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      }
+    }
+  },
+  "fixed-pod-text-only": {
+    "steps": 10,
+    "files_identical_to_no_request_baseline": 45,
+    "model_status": "ok",
+    "image_input": false,
+    "cpp_measured_full_callback_s": 12.253803157,
+    "callback_limit_s": 120.35,
+    "worker_deadline_s": 120.0,
+    "timeout_kind": null,
+    "image": null,
+    "final_U_p_comparison": {
+      "U": {
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      },
+      "p": {
+        "values": 20540,
+        "reference_L2": 192168.19659862717,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      }
+    }
+  },
+  "fixed-pod-server-error": {
+    "steps": 10,
+    "files_identical_to_no_request_baseline": 45,
+    "model_status": "error",
+    "image_input": true,
+    "cpp_measured_full_callback_s": 0.624800323,
+    "callback_limit_s": 4.35,
+    "worker_deadline_s": 4.0,
+    "timeout_kind": null,
+    "image": {
+      "png_sha256": "02599df79802ac77f890f46e3651d634f07f9fad3de17aabfc1ff5d2c0703273",
+      "png_bytes": 36900,
+      "fields_sha256": "61f8d19748de25b415bd76780af7122b0fc2fdd73a108ac5d64bb6fcd0e4a0d1",
+      "width": 640,
+      "height": 360,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "aspect": {
+        "mode": "auto",
+        "x_span_over_y_span": 18.851541158812854
+      },
+      "ranges": {
+        "speed_m_per_s": [
+          2.753965220748645,
+          82.52751611538334
+        ],
+        "p_m2_per_s2": [
+          -9362.826066967049,
+          12901.930047757134
+        ]
+      },
+      "render_wall_s": 0.5251814499497414
+    },
+    "final_U_p_comparison": {
+      "U": {
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      },
+      "p": {
+        "values": 20540,
+        "reference_L2": 192168.19659862717,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      }
+    }
+  },
+  "fixed-pod-timeout": {
+    "steps": 10,
+    "files_identical_to_no_request_baseline": 45,
+    "model_status": "timeout",
+    "image_input": true,
+    "cpp_measured_full_callback_s": 4.051013693,
+    "callback_limit_s": 4.35,
+    "worker_deadline_s": 4.0,
+    "timeout_kind": "callback_deadline",
+    "image": {
+      "png_sha256": "02599df79802ac77f890f46e3651d634f07f9fad3de17aabfc1ff5d2c0703273",
+      "png_bytes": 36900,
+      "fields_sha256": "61f8d19748de25b415bd76780af7122b0fc2fdd73a108ac5d64bb6fcd0e4a0d1",
+      "width": 640,
+      "height": 360,
+      "projection_axes": [
+        "x",
+        "y"
+      ],
+      "aspect": {
+        "mode": "auto",
+        "x_span_over_y_span": 18.851541158812854
+      },
+      "ranges": {
+        "speed_m_per_s": [
+          2.753965220748645,
+          82.52751611538334
+        ],
+        "p_m2_per_s2": [
+          -9362.826066967049,
+          12901.930047757134
+        ]
+      },
+      "render_wall_s": 0.5254319799132645
+    },
+    "final_U_p_comparison": {
+      "U": {
+        "values": 61620,
+        "reference_L2": 4210.494020224732,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      },
+      "p": {
+        "values": 20540,
+        "reference_L2": 192168.19659862717,
+        "difference_L2": 0.0,
+        "difference_Linf": 0.0,
+        "relative_L2": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-10,
+        "file_identical": true
+      }
+    }
+  },
+  "timings": {
+    "without_request_seconds": 5.189839073922485,
+    "with_image_request_seconds": 21.25897632399574,
+    "with_text_request_seconds": 16.227149144979194,
+    "added_wall_seconds_image": 16.069137250073254,
+    "added_wall_seconds_text": 11.037310071056709,
+    "inference_wall_seconds_image": 16.69741623196751,
+    "inference_wall_seconds_text": 12.175758071942255,
+    "cpp_full_callback_seconds_image": 17.310160671,
+    "cpp_full_callback_seconds_text": 12.253803157
+  },
+  "resources": {
+    "fixed-pod-no-llm": {
+      "wall_seconds": 5.189839073922485,
+      "exit_status": 0,
+      "solver_pid": 3026797,
+      "llama_server_pid": 3026165,
+      "image_input_requested": true,
+      "model_request_enabled": false,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 270992,
+      "cfd_python_peak_pss_sum_kib": 202591,
+      "llama_server_peak_rss_kib": 4643928,
+      "llama_server_peak_pss_kib": 4641628,
+      "concurrent_samples": 40
+    },
+    "fixed-pod": {
+      "wall_seconds": 21.25897632399574,
+      "exit_status": 0,
+      "solver_pid": 3026804,
+      "llama_server_pid": 3026165,
+      "image_input_requested": true,
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 274356,
+      "cfd_python_peak_pss_sum_kib": 205988,
+      "llama_server_peak_rss_kib": 4664028,
+      "llama_server_peak_pss_kib": 4660444,
+      "concurrent_samples": 161
+    },
+    "fixed-pod-text-only": {
+      "wall_seconds": 16.227149144979194,
+      "exit_status": 0,
+      "solver_pid": 3026813,
+      "llama_server_pid": 3026165,
+      "image_input_requested": false,
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 232520,
+      "cfd_python_peak_pss_sum_kib": 150338,
+      "llama_server_peak_rss_kib": 4672052,
+      "llama_server_peak_pss_kib": 4669734,
+      "concurrent_samples": 123
+    },
+    "fixed-pod-server-error": {
+      "wall_seconds": 7.788700924953446,
+      "exit_status": 0,
+      "solver_pid": 3026820,
+      "llama_server_pid": 3026165,
+      "image_input_requested": true,
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 273208,
+      "cfd_python_peak_pss_sum_kib": 204683,
+      "llama_server_peak_rss_kib": 4672052,
+      "llama_server_peak_pss_kib": 4669294,
+      "concurrent_samples": 60
+    },
+    "fixed-pod-timeout": {
+      "wall_seconds": 9.66572206094861,
+      "exit_status": 0,
+      "solver_pid": 3026829,
+      "llama_server_pid": 3026165,
+      "image_input_requested": true,
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.1,
+      "cfd_python_peak_rss_sum_kib": 273512,
+      "cfd_python_peak_pss_sum_kib": 205456,
+      "llama_server_peak_rss_kib": 4672052,
+      "llama_server_peak_pss_kib": 4669272,
+      "concurrent_samples": 74
+    }
+  },
+  "resident_server": {
+    "pid": 3026165,
+    "mmproj_loaded": true,
+    "models": [
+      "gemma-4-E2B-it-Q4_0-vision"
+    ]
+  },
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "analysis_time_s": 5e-07,
+  "input_comparison": {
+    "image": {
+      "model": "gemma-4-E2B-it-Q4_0-vision",
+      "image_input": true,
+      "request_bytes": 53938,
+      "request_sha256": "4f9846b216584c27b9855e1b14a4e64db88cd2d1916805fd055cc4409fef21d5",
+      "usage": {
+        "completion_tokens": 90,
+        "prompt_tokens": 1543,
+        "total_tokens": 1633,
+        "prompt_tokens_details": {
+          "cached_tokens": 1
+        }
+      },
+      "server_timings": {
+        "cache_n": 1,
+        "prompt_n": 1542,
+        "prompt_ms": 13843.637,
+        "prompt_per_token_ms": 8.977715304798963,
+        "prompt_per_second": 111.38691371349884,
+        "predicted_n": 90,
+        "predicted_ms": 2800.92,
+        "predicted_per_token_ms": 31.471011235955057,
+        "predicted_per_second": 31.77527383859589
+      },
+      "inference_wall_s": 16.69741623196751,
+      "callback_elapsed_s": 17.285971008008346,
+      "summary_wall_s": 0.004013179801404476,
+      "image_render_wall_s": 0.5217183767817914,
+      "structured_output": {
+        "observations": "The velocity magnitude |U| shows a high value near x=0.0, with a maximum of 82.5 m/s.",
+        "possible_interpretation": "The flow exhibits a localized high-speed region near the center of the domain.",
+        "checks": "The pressure field shows a significant pressure gradient near the high-velocity region."
+      }
+    },
+    "text_only": {
+      "model": "gemma-4-E2B-it-Q4_0-vision",
+      "image_input": false,
+      "request_bytes": 3767,
+      "request_sha256": "1fbfca722eedfcadf98124fdaef47621e3ff8090e733ba9b608a0dfc2e336c66",
+      "usage": {
+        "completion_tokens": 109,
+        "prompt_tokens": 1082,
+        "total_tokens": 1191,
+        "prompt_tokens_details": {
+          "cached_tokens": 1
+        }
+      },
+      "server_timings": {
+        "cache_n": 1,
+        "prompt_n": 1081,
+        "prompt_ms": 8822.159,
+        "prompt_per_token_ms": 8.161109158186864,
+        "prompt_per_second": 122.53236424326518,
+        "predicted_n": 109,
+        "predicted_ms": 3329.815,
+        "predicted_per_token_ms": 30.83162037037037,
+        "predicted_per_second": 32.4342343343399
+      },
+      "inference_wall_s": 12.175758071942255,
+      "callback_elapsed_s": 12.229741273913532,
+      "summary_wall_s": 0.004495071014389396,
+      "image_render_wall_s": null,
+      "structured_output": {
+        "observations": "Residuals show small values, e.g., p final last is 9.19188e-07. Courant mean is 0.000337189.",
+        "possible_interpretation": "The simulation is running with small residuals. Velocity SVD shows high leading energy fractions.",
+        "checks": "Check if linear-solver residuals are physical force balance. Verify velocity SVD componentwise method."
+      }
+    }
+  },
+  "status": "PASS"
+}

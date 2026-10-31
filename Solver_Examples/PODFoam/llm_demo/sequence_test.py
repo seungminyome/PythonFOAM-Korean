@@ -27,6 +27,7 @@ from pathlib import Path
 
 import numpy as np
 
+from frame_scoring import numbers_of
 import picture_test as pt
 import pod_image
 import readable_request
@@ -67,12 +68,6 @@ def place_window_around(rng, points, domain, cells_xy, tries=500):
             continue
         return [[float(x0), float(x1)], [float(y0), float(y1)]]
     return None
-
-
-def numbers_of(truth):
-    return {"max_speed_m_per_s": truth["max_speed_m_per_s"],
-            "min_pressure_m2_per_s2": truth["min_pressure_m2_per_s2"],
-            "fastest_flow_percent": [truth["fastest_flow"]["x_percent"], truth["fastest_flow"]["y_percent"]]}
 
 
 def choose(candidates, count, rng):
@@ -172,8 +167,8 @@ def build(args):
     linked = pt.link_duplicate_arrays(builder.output / "frames")
     here = Path(__file__).resolve().parent
     code = {name: pt.file_sha256(here / name) for name in
-            ("sequence_test.py", "window_test.py", "picture_test.py", "readable_image.py", "readable_request.py",
-             "foam_fields.py", "pod_image.py", "snapshot_runner.py", "llm_client.py")}
+            ("sequence_test.py", "window_test.py", "picture_test.py", "frame_scoring.py", "readable_image.py",
+             "readable_request.py", "foam_fields.py", "pod_image.py", "snapshot_runner.py", "llm_client.py")}
     counts = {name: sum(e["set"] == name for e in builder.entries) for name in NEW_SETS}
     classes = Counter((c["truth"]["max_speed_trend"], c["truth"]["min_pressure_trend"], c["truth"]["fastest_flow_region"])
                       for c in kept)

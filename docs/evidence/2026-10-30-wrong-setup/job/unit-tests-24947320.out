@@ -1,0 +1,34 @@
+wi005.cluster
+e2a4d6e84910e609e72fe3b7506979f440c85d96
+?? docs/evidence/2026-10-30-wrong-setup/.origins.json
+?? docs/evidence/2026-10-30-wrong-setup/contact-sheet.png
+?? docs/evidence/2026-10-30-wrong-setup/flow/against-n5.json
+?? docs/evidence/2026-10-30-wrong-setup/flow/against_n5.py
+?? docs/evidence/2026-10-30-wrong-setup/flow/cases/
+?? docs/evidence/2026-10-30-wrong-setup/flow/flow-check.json
+?? docs/evidence/2026-10-30-wrong-setup/flow/logs/
+?? docs/evidence/2026-10-30-wrong-setup/job/
+?? docs/evidence/2026-10-30-wrong-setup/reasons-to-judge.jsonl
+?? docs/evidence/2026-10-30-wrong-setup/recount.json
+?? docs/evidence/2026-10-30-wrong-setup/recount.py
+?? docs/evidence/2026-10-30-wrong-setup/reports/
+?? docs/evidence/2026-10-30-wrong-setup/results/
+?? docs/evidence/2026-10-30-wrong-setup/runtime/
+?? docs/evidence/2026-10-30-wrong-setup/test-set/
+== /gscratch/syome/conda/ci-py310/bin/python
+Python 3.10.22
+........................................................................................................................................................
+----------------------------------------------------------------------
+Ran 152 tests in 90.282s
+
+OK
+== /gscratch/syome/conda/ci-py312/bin/python
+Python 3.12.15
+  self.pid = os.fork()
+../tmp/tmpmqf5bmzy/python_module.py:225: DeprecationWarning: This process (pid=2861277) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+........................................................
+----------------------------------------------------------------------
+Ran 152 tests in 89.223s
+
+OK

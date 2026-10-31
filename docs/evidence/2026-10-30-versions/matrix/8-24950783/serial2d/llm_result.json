@@ -1,0 +1,99 @@
+{
+  "parent_pid": 335157,
+  "run_id": "version-check/8/serial2d",
+  "step": 100,
+  "time_s": 0.1005000000000005,
+  "mode": "describe",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.1,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "callback_started_at": "2026-10-31T02:58:26.982678+00:00",
+  "request_step": 100,
+  "solver_stall_s": 0.013349564978852868,
+  "end_wait_started_at_step": 110,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.9390602989587933,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/8-24950783/serial2d/llm_observation/step-000100",
+    "step": 100,
+    "time_s": 0.1005000000000005,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046804
+      ],
+      "y": [
+        5.781735398474375e-06,
+        0.11429523559299272
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/8-24950783/serial2d/llm_observation/step-000100/fields.npz",
+    "fields_sha256": "7cb697fac44f56f01074c9a92d47a487073f634d2222ed67d843301c00f025c2",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/8-24950783/serial2d/llm_observation/step-000100/U.png",
+        "sha256": "e582ed85cf45e1e3f2732e03f1aba77714a37ddbd09efed3d9c083053b4dac1c",
+        "bytes": 84851,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          0.0007769978122337457,
+          36.89686286493246
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/8-24950783/serial2d/llm_observation/step-000100/p.png",
+        "sha256": "96176c142bf0cb18e612e8c38b8d16aa93fec5353636faa5e82d666fc92c7b0c",
+        "bytes": 80246,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -325.63159105645855,
+          43.53978376295744
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.9390602989587933
+  },
+  "request_before_at": "2026-10-31T02:58:27.958981+00:00",
+  "arrived_at_step": 110,
+  "worker_reaped": true,
+  "ipc_select_calls": 14,
+  "ipc_bytes_received": 2151,
+  "response_after_at": "2026-10-31T02:58:27.995281+00:00",
+  "callback_elapsed_s": 1.0226955879479647,
+  "elapsed_since_request_s": 0.036053648917004466,
+  "worker_wait_elapsed_s": 1.0038767298683524,
+  "end_wait_s": 0.20481410482898355,
+  "cleanup_elapsed_before_result_write_s": 0.03937587910331786,
+  "status": "disabled",
+  "inference_wall_s": 0.0,
+  "output_text": null
+}

@@ -1,0 +1,63 @@
+mba30-005.cluster
+b17763dc78599612401bee335ce7146dfc1b340f
+GPU 0: NVIDIA A30 (UUID: GPU-01f5e9b8-d41f-f0ac-7f3e-dfff85207dcf)
+server ok on port 20818, pid 2547608, log server-20261031T031930Z.log
+start_server exit 0
+=== v2012 03:19:35
+build + validation ran
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2012/pod-v2012.1PpU1Z
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2012/pod-v2012.1PpU1Z/bin/PODFoam
+case2d exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+Python finalized successfully
+End
+v2012 inner exit 0 03:20:28
+NVIDIA A30, 7953 MiB, 24576 MiB
+=== v2106 03:20:28
+build + validation ran
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2106/pod-v2106.UOQx8p
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2106/pod-v2106.UOQx8p/bin/PODFoam
+case2d exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+Python finalized successfully
+End
+v2106 inner exit 0 03:21:20
+NVIDIA A30, 7953 MiB, 24576 MiB
+=== v2212 03:21:20
+build + validation ran
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2212/pod-v2212.2eYexU
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/gpu-a/run-24950818/v2212/pod-v2212.2eYexU/bin/PODFoam
+case2d exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+Python finalized successfully
+End
+v2212 inner exit 0 03:22:13
+NVIDIA A30, 7953 MiB, 24576 MiB
+=== 8 03:22:14
+build + validation ran
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/gpu-a/run-24950818/8/pod-8.LWOsLi
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/gpu-a/run-24950818/8/pod-8.LWOsLi/bin/PODFoam
+case2d exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+Python finalized successfully
+End
+8 inner exit 0 03:23:02
+NVIDIA A30, 7953 MiB, 24576 MiB
+--- v2012: exit 0 End True status ok http 200 arrived 110 infer 4.40s stall 0.012s telemetry 110 body=builder True images=frame True same-as-no-model None
+  fastest_flow: answer [60, 50] true [np.float64(27.5), np.float64(42.3)] dist 33.4% within10 False
+  lowest_pressure: answer [60, 25] true [np.float64(31.0), np.float64(25.5)] dist 29.0% within10 False
+   {"flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% on the x-axis. The flow is slowest in the lower half, especially near the bottom edge. The lowest pressure is located in the lower-middle region, specifically around 30% and 60% on the x-axis, while higher pressure is seen in the upper right.", "fastest_flow_x_percent": 60, "fastest_flow_y_p
+--- v2106: exit 0 End True status ok http 200 arrived 110 infer 4.24s stall 0.011s telemetry 110 body=builder True images=frame True same-as-no-model None
+  fastest_flow: answer [60, 50] true [np.float64(27.5), np.float64(42.3)] dist 33.4% within10 False
+  lowest_pressure: answer [60, 25] true [np.float64(31.0), np.float64(25.5)] dist 29.0% within10 False
+   {"flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% on the x-axis. The flow is slowest in the lower half, especially near the bottom edge. The lowest pressure is located in the lower-middle region, specifically around 30% and 60% on the x-axis, while higher pressure is seen in the upper right.", "fastest_flow_x_percent": 60, "fastest_flow_y_p
+--- v2212: exit 0 End True status ok http 200 arrived 110 infer 4.27s stall 0.011s telemetry 110 body=builder True images=frame True same-as-no-model None
+  fastest_flow: answer [60, 50] true [np.float64(27.5), np.float64(42.3)] dist 33.4% within10 False
+  lowest_pressure: answer [60, 25] true [np.float64(31.0), np.float64(25.5)] dist 29.0% within10 False
+   {"flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% on the x-axis. The flow is slowest in the lower half, especially near the bottom edge. The lowest pressure is located in the lower-middle region, specifically around 30% and 60% on the x-axis, while higher pressure is seen in the upper right.", "fastest_flow_x_percent": 60, "fastest_flow_y_p
+--- 8: exit 0 End True status ok http 200 arrived 110 infer 4.56s stall 0.012s telemetry 110 body=builder True images=frame True same-as-no-model None
+  fastest_flow: answer [60, 50] true [np.float64(26.6), np.float64(42.1)] dist 34.3% within10 False
+  lowest_pressure: answer [60, 25] true [np.float64(30.1), np.float64(25.6)] dist 29.9% within10 False
+   {"flow_description": "The flow shows high velocity in the upper half of the domain, particularly between 40% and 70% x. The lower half exhibits much lower velocities. Pressure is lowest in localized pockets around 30% and 60% x at roughly 20-30% y, while higher pressure regions appear near 40% and 80% x at 20% y.", "fastest_flow_x_percent": 60, "fastest_flow_y_percent": 50, "lowest_pressure_x_perc
+check exit 0
+server stopped (pid 2547608 gone)

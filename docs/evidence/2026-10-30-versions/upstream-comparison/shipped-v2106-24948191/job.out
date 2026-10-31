@@ -1,0 +1,31 @@
+upstream built
+upstream case exit 1
+0
+    in file lnInclude/Scalar.C at line 172.
+
+FOAM exiting
+
+fork built
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/matrix/upstream_regression_inner.sh: line 36: 1328744 Floating point exception(core dumped) env MPLCONFIGDIR=$c/mpl "$FOAM_USER_APPBIN/PODFoam" -case "$c" > log.PODFoam 2>&1
+fork case exit 136
+86
+#9  ? in /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/regression-runs/shipped-v2106-24948191/bin-fork/PODFoam
+#10  ? in /lib/x86_64-linux-gnu/libc.so.6
+#11  __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+#12  ? in /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/regression-runs/shipped-v2106-24948191/bin-fork/PODFoam
+inner exit 0
+{
+ "exit": {
+  "case-upstream": "1",
+  "case-fork": "136"
+ },
+ "steps": {
+  "case-upstream": 90,
+  "case-fork": 87
+ },
+ "times": {
+  "case-upstream": [],
+  "case-fork": []
+ },
+ "written_times": []
+}

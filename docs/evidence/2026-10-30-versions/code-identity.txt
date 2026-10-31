@@ -1,0 +1,107 @@
+# Blob hashes of every file under Solver_Examples/PODFoam except the three READMEs (llm_demo/README.md,
+# llm_demo/hpc/README.md, validation/README.md), read from git objects: git ls-tree -r <commit> Solver_Examples/PODFoam
+# b17763d: the commit most jobs ran (a local commit, not on GitHub)
+# bf7a06e: branch pr/podfoam-observer
+# 41ca1bf: main after merging cabcfc6 (41ca1bf8da644155b56ac15df6949ddf06a685f9); cabcfc6 has the same blobs
+# Files compared: 64. Equal at all commits: 64. Different or missing: 0.
+#
+# blob at b17763d  blob at bf7a06e  blob at 41ca1bf  path
+f65c56a5a197 f65c56a5a197 f65c56a5a197 Make/files
+f45d3aa24515 f45d3aa24515 f45d3aa24515 Make/options
+a64f6ccbca9e a64f6ccbca9e a64f6ccbca9e PODFoam.C
+41beeb9c1204 41beeb9c1204 41beeb9c1204 PythonAnalysis.H
+c92ff116f6b0 c92ff116f6b0 c92ff116f6b0 PythonComm.H
+f4a859864535 f4a859864535 f4a859864535 PythonCompat.H
+7b66cce51afc 7b66cce51afc 7b66cce51afc PythonCreate.H
+61873e06a04f 61873e06a04f 61873e06a04f PythonGather.H
+4b2249881cfc 4b2249881cfc 4b2249881cfc PythonSlice.H
+08f7470c1dc0 08f7470c1dc0 08f7470c1dc0 Run_Case/0/U
+4a1fcc4d2511 4a1fcc4d2511 4a1fcc4d2511 Run_Case/0/k
+076d06ac1a05 076d06ac1a05 076d06ac1a05 Run_Case/0/nuTilda
+211ca0876d95 211ca0876d95 211ca0876d95 Run_Case/0/nut
+0a3cc64ff8f1 0a3cc64ff8f1 0a3cc64ff8f1 Run_Case/0/p
+e84985c2f06c e84985c2f06c e84985c2f06c Run_Case/0/uniform/time
+ec3928f64347 ec3928f64347 ec3928f64347 Run_Case/Allclean
+1f360d51fc1e 1f360d51fc1e 1f360d51fc1e Run_Case/Allrun
+7df337aad660 7df337aad660 7df337aad660 Run_Case/constant/momentumTransport
+2360174ab615 2360174ab615 2360174ab615 Run_Case/constant/transportProperties
+aee783cb3888 aee783cb3888 aee783cb3888 Run_Case/constant/turbulenceProperties
+f1bc08b99357 f1bc08b99357 f1bc08b99357 Run_Case/python_module.py
+275bbc4a6ade 275bbc4a6ade 275bbc4a6ade Run_Case/system/blockMeshDict
+9da48c6bc544 9da48c6bc544 9da48c6bc544 Run_Case/system/controlDict
+66c3fb0dbaa6 66c3fb0dbaa6 66c3fb0dbaa6 Run_Case/system/decomposeParDict
+50c2a9cbd43e 50c2a9cbd43e 50c2a9cbd43e Run_Case/system/fvSchemes
+0eb95caf30de 0eb95caf30de 0eb95caf30de Run_Case/system/fvSolution
+be84aefe8e1c be84aefe8e1c be84aefe8e1c Run_Case/system/pressureCoefficient
+64ca24184b8c 64ca24184b8c 64ca24184b8c Run_Case/system/sample
+69548f195294 69548f195294 69548f195294 Run_Case/system/sampleCp
+1451cb861d71 1451cb861d71 1451cb861d71 Run_Case/system/sampleDict
+be5de585444a be5de585444a be5de585444a Run_Case/system/stressComponents
+56ea579e867a 56ea579e867a 56ea579e867a UEqn.H
+a900e20d75db a900e20d75db a900e20d75db correctPhi.H
+fb0ff349aa45 fb0ff349aa45 fb0ff349aa45 createFields.H
+c1250c3e7bcb c1250c3e7bcb c1250c3e7bcb llm_demo/bounded_ipc.py
+0bf9d8ed1dd9 0bf9d8ed1dd9 0bf9d8ed1dd9 llm_demo/frame_scoring.py
+91262c4a665c 91262c4a665c 91262c4a665c llm_demo/hpc/async_v2.slurm
+8b6909ded5ec 8b6909ded5ec 8b6909ded5ec llm_demo/hpc/build_llama_cuda.sh
+a039835346d3 a039835346d3 a039835346d3 llm_demo/hpc/setup_12b.sh
+bae4f86c7e26 bae4f86c7e26 bae4f86c7e26 llm_demo/hpc/start_server.sh
+4eeb50793b28 4eeb50793b28 4eeb50793b28 llm_demo/hpc/stop_server.sh
+bef2e67d7273 bef2e67d7273 bef2e67d7273 llm_demo/llm_client.py
+b6b75bd9f7cb b6b75bd9f7cb b6b75bd9f7cb llm_demo/pack_run.py
+01c536e61c2f 01c536e61c2f 01c536e61c2f llm_demo/pod_image.py
+408740eafc85 408740eafc85 408740eafc85 llm_demo/python_module.py
+fe6b552ec4a2 fe6b552ec4a2 fe6b552ec4a2 llm_demo/readable_image.py
+d5c3a59d38cb d5c3a59d38cb d5c3a59d38cb llm_demo/readable_request.py
+bf2ea9a843cc bf2ea9a843cc bf2ea9a843cc llm_demo/requirements.txt
+ee7f0a0d78af ee7f0a0d78af ee7f0a0d78af llm_demo/run_async_cases.py
+7416ca62ace3 7416ca62ace3 7416ca62ace3 llm_demo/run_cases.py
+7e7aee8b9e36 7e7aee8b9e36 7e7aee8b9e36 llm_demo/run_demo.sh
+d9a8c0f2643d d9a8c0f2643d d9a8c0f2643d llm_demo/runtime.py
+9a01b13ce2d0 9a01b13ce2d0 9a01b13ce2d0 llm_demo/setup_runtime.sh
+27a3b8d31124 27a3b8d31124 27a3b8d31124 llm_demo/test_async.py
+9bc9e387a87e 9bc9e387a87e 9bc9e387a87e llm_demo/test_callback.py
+e199bc6ec198 e199bc6ec198 e199bc6ec198 llm_demo/test_llm_client.py
+884bbb97eb02 884bbb97eb02 884bbb97eb02 llm_demo/verify_async.py
+a1538b76e5c8 a1538b76e5c8 a1538b76e5c8 llm_demo/verify_demo.py
+736a7ee50c25 736a7ee50c25 736a7ee50c25 pEqn.H
+263012242c05 263012242c05 263012242c05 setRDeltaT.H
+af7912a73cf3 af7912a73cf3 af7912a73cf3 validation/prepare_case.py
+4c182b1d55e5 4c182b1d55e5 4c182b1d55e5 validation/python_module.py
+15f57dfd5a63 15f57dfd5a63 15f57dfd5a63 validation/run_v2106.sh
+7f839bb1c4fd 7f839bb1c4fd 7f839bb1c4fd validation/verify.py
+
+# Files only on main (24), not in the PR tree and not run by the jobs of this folder unless named in README.md:
+- - 300b171490e0 llm_demo/ablation_runner.py
+- - f8346227d9cb llm_demo/foam_fields.py
+- - 7cc62aee4b77 llm_demo/hpc/async_v2_sweep.slurm
+- - 9a5e23a8bfae llm_demo/hpc/demo_12b.slurm
+- - adec05c75814 llm_demo/hpc/fetch_models.sh
+- - c1bcaf05b647 llm_demo/hpc/models.tsv
+- - 3e58dd10c500 llm_demo/hpc/periodic_v2.slurm
+- - a06063ffb007 llm_demo/hpc/picture_test.slurm
+- - f7177119b35a llm_demo/hpc/replay_12b.slurm
+- - 6ef61201a5f5 llm_demo/hpc/window_test.slurm
+- - cd206715c3af llm_demo/instability_test.py
+- - 4cb16497d857 llm_demo/picture_test.py
+- - 29f8611d7aec llm_demo/run_live_sweep.py
+- - a3a81b6864d6 llm_demo/run_periodic.py
+- - e07774553ed2 llm_demo/sequence_test.py
+- - ee715fb837bb llm_demo/snapshot_runner.py
+- - e96a7bab53bc llm_demo/stability_request.py
+- - 20b4af089b65 llm_demo/test_ablation_runner.py
+- - 0145814d510b llm_demo/test_callback_main.py
+- - 13f21738bbdf llm_demo/test_instability_test.py
+- - 43b05988c9b2 llm_demo/test_picture_test.py
+- - 83d4fdb324d6 llm_demo/test_wrong_setup_test.py
+- - 265b59dced97 llm_demo/window_test.py
+- - 79e9ce382a94 llm_demo/wrong_setup_test.py
+
+# The three READMEs differ between these commits:
+4d57d56eee3b fc5bd75ecd26 f1d95cd00b89 llm_demo/README.md
+18453de668e8 9449919b2d03 8706003f47af llm_demo/hpc/README.md
+a6947d699a7e a6947d699a7e a6947d699a7e validation/README.md
+
+# git diff --stat b17763d ef78700 -- Solver_Examples/PODFoam (the schedule and scenario jobs ran ef78700):
+# Solver_Examples/PODFoam/llm_demo/README.md | 2 +-
+#  1 file changed, 1 insertion(+), 1 deletion(-)

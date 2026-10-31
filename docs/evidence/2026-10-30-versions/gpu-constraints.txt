@@ -1,0 +1,6 @@
+# sacct -X -p --delimiter=@ --format=JobID,Submit,Start,NodeList,Constraints,SubmitLine: requested constraint in SubmitLine, constraint at the start in Constraints
+JobID@Submit@Start@NodeList@Constraints@SubmitLine
+24949167@2026-10-30T19:15:25@2026-10-30T19:15:29@mbl40s-002@l40s|a6000@--partition=non-investor-gpu,mb-a6000 --constraint=l40s|a6000
+24949283@2026-10-30T19:19:23@2026-10-30T19:19:32@mbl40s-002@l40s|a6000@--partition=non-investor-gpu,mb-a6000 --constraint=l40s|a6000
+24950817@2026-10-30T20:59:27@2026-10-30T21:15:25@mba30-005@l40s|a6000|a30@--partition=non-investor-gpu,mb-a6000 --constraint=l40s|a6000
+24950818@2026-10-30T20:59:27@2026-10-30T21:19:27@mba30-005@l40s|a6000|a30@--partition=non-investor-gpu,mb-a6000 --constraint=l40s|a6000

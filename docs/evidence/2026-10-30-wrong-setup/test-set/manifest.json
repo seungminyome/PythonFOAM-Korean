@@ -1,0 +1,3032 @@
+{
+  "schema_version": 2,
+  "test": "wrong-setup test 2026-10-30 (seed 20261030)",
+  "seed": 20261030,
+  "max_tokens": 320,
+  "sets": {
+    "wrong-setup-v2own": 80
+  },
+  "requests": [
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M1-inlet-speed-step07500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M1-inlet-speed-step07500.request.json",
+      "request_sha256": "d7a0fa4227b8c0ef4c7471922047f762d636c51b709468d76d12013596562440",
+      "request_bytes": 225788,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M1-inlet-speed/0.1375",
+        "state": "M1-inlet-speed/0.1375"
+      },
+      "design": {
+        "run": "M1-inlet-speed",
+        "run_step": 7500,
+        "time_s": 0.1375
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N4-step05000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N4-step05000.request.json",
+      "request_sha256": "23c135ad0c1735ffcd0f0bb40f6a4d8beae35a574ce576a0d8e7caca72bfda4d",
+      "request_bytes": 218959,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N4/0.125",
+        "state": "N4/0.125"
+      },
+      "design": {
+        "run": "N4",
+        "run_step": 5000,
+        "time_s": 0.125
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N2-step04500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N2-step04500.request.json",
+      "request_sha256": "561164c9488c48249f69b6c7cefcc2dc4d6a2f703c82e9aa78997bc419eadfd5",
+      "request_bytes": 210668,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N2/0.1225",
+        "state": "N2/0.1225"
+      },
+      "design": {
+        "run": "N2",
+        "run_step": 4500,
+        "time_s": 0.1225
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N4-step04500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N4-step04500.request.json",
+      "request_sha256": "a1bc31906852df1a708314003fd74415b162274370f209697e9a0e40b2ff7032",
+      "request_bytes": 218984,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N4/0.1225",
+        "state": "N4/0.1225"
+      },
+      "design": {
+        "run": "N4",
+        "run_step": 4500,
+        "time_s": 0.1225
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M3-slip-walls-step05500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M3-slip-walls-step05500.request.json",
+      "request_sha256": "2ff772d64992375282aca2037ca17ef90e6dbd6c3d02131a69a83cc99dad7d71",
+      "request_bytes": 214288,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M3-slip-walls/0.1275",
+        "state": "M3-slip-walls/0.1275"
+      },
+      "design": {
+        "run": "M3-slip-walls",
+        "run_step": 5500,
+        "time_s": 0.1275
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N3-step05500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N3-step05500.request.json",
+      "request_sha256": "46ed046996d31439682b2d158ded5ecf586cafc59ae22d8c244f3eeb8553766e",
+      "request_bytes": 220904,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N3/0.1275",
+        "state": "N3/0.1275"
+      },
+      "design": {
+        "run": "N3",
+        "run_step": 5500,
+        "time_s": 0.1275
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N2-step07500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N2-step07500.request.json",
+      "request_sha256": "95004e8a8f2f9e3217f64508f50859e821463146d07fb6230df30c8d864fa32e",
+      "request_bytes": 221140,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N2/0.1375",
+        "state": "N2/0.1375"
+      },
+      "design": {
+        "run": "N2",
+        "run_step": 7500,
+        "time_s": 0.1375
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M2-viscosity-step08000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M2-viscosity-step08000.request.json",
+      "request_sha256": "723553c78d4374e6050dc9f3579989d4482d9e6f7977f894335ca198ac46ac85",
+      "request_bytes": 194314,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M2-viscosity/0.14",
+        "state": "M2-viscosity/0.14"
+      },
+      "design": {
+        "run": "M2-viscosity",
+        "run_step": 8000,
+        "time_s": 0.14
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M1-inlet-speed-step05500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M1-inlet-speed-step05500.request.json",
+      "request_sha256": "adeacb2d1a3bf54ac350ff60801f84fe659c25c5a279d7616377ee437bcbf8d9",
+      "request_bytes": 219468,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M1-inlet-speed/0.1275",
+        "state": "M1-inlet-speed/0.1275"
+      },
+      "design": {
+        "run": "M1-inlet-speed",
+        "run_step": 5500,
+        "time_s": 0.1275
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N4-step07500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N4-step07500.request.json",
+      "request_sha256": "0d1a321ce5f1c3df2d4be8d269b6969a698750f1f61bfcfa233b6376195b2caf",
+      "request_bytes": 228148,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N4/0.1375",
+        "state": "N4/0.1375"
+      },
+      "design": {
+        "run": "N4",
+        "run_step": 7500,
+        "time_s": 0.1375
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N1-step05000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N1-step05000.request.json",
+      "request_sha256": "f5768872e58ecd4e51d8bf8bac85799dff0e126740916bdee8cc050210c2f6a3",
+      "request_bytes": 225359,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N1/0.125",
+        "state": "N1/0.125"
+      },
+      "design": {
+        "run": "N1",
+        "run_step": 5000,
+        "time_s": 0.125
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N5-step06000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N5-step06000.request.json",
+      "request_sha256": "e76cf2412e7d71334609472a90d50f73593dce01a8be7136a564327c427f986f",
+      "request_bytes": 213662,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N5/0.13",
+        "state": "N5/0.13"
+      },
+      "design": {
+        "run": "N5",
+        "run_step": 6000,
+        "time_s": 0.13
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M4-moving-wall-step05500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M4-moving-wall-step05500.request.json",
+      "request_sha256": "f296cc7efdad42efc7cc858c8e5861d5cfb24b241eec6b15fee6f6c3789dcfeb",
+      "request_bytes": 226748,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M4-moving-wall/0.1275",
+        "state": "M4-moving-wall/0.1275"
+      },
+      "design": {
+        "run": "M4-moving-wall",
+        "run_step": 5500,
+        "time_s": 0.1275
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M5-half-inlet-step05500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M5-half-inlet-step05500.request.json",
+      "request_sha256": "1d7c887a28c0dc426e28b858502939b65f523f04c64e6a03d33da17c9092f13b",
+      "request_bytes": 216128,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M5-half-inlet/0.1275",
+        "state": "M5-half-inlet/0.1275"
+      },
+      "design": {
+        "run": "M5-half-inlet",
+        "run_step": 5500,
+        "time_s": 0.1275
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M3-slip-walls-step06000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M3-slip-walls-step06000.request.json",
+      "request_sha256": "98bff0a937e3677654d35ea056d3dc6b0efe6bd3b17264ea3b7fb9801fee3daf",
+      "request_bytes": 217150,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M3-slip-walls/0.13",
+        "state": "M3-slip-walls/0.13"
+      },
+      "design": {
+        "run": "M3-slip-walls",
+        "run_step": 6000,
+        "time_s": 0.13
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M3-slip-walls-step07000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M3-slip-walls-step07000.request.json",
+      "request_sha256": "ac4765885c1bab59da03c4a7717cc758ab666e938f7340dcb5d7f025f3de0c99",
+      "request_bytes": 217275,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M3-slip-walls/0.135",
+        "state": "M3-slip-walls/0.135"
+      },
+      "design": {
+        "run": "M3-slip-walls",
+        "run_step": 7000,
+        "time_s": 0.135
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N1-step05500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N1-step05500.request.json",
+      "request_sha256": "3f130a9e3ae1e8b79949a7e0581e8fbd16659c4651818b933680ebd6b082ec98",
+      "request_bytes": 212524,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N1/0.1275",
+        "state": "N1/0.1275"
+      },
+      "design": {
+        "run": "N1",
+        "run_step": 5500,
+        "time_s": 0.1275
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M1-inlet-speed-step08000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M1-inlet-speed-step08000.request.json",
+      "request_sha256": "cd37a76955a6d65365da2bd5a1647ae6ed6115c518ac0950de8ea770bedce719",
+      "request_bytes": 229114,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M1-inlet-speed/0.14",
+        "state": "M1-inlet-speed/0.14"
+      },
+      "design": {
+        "run": "M1-inlet-speed",
+        "run_step": 8000,
+        "time_s": 0.14
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N2-step05500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N2-step05500.request.json",
+      "request_sha256": "d168413a2b8ea5849f88fcfe331c39b73ecf1a985e144dd3cc71ad413c2ae1c5",
+      "request_bytes": 217020,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N2/0.1275",
+        "state": "N2/0.1275"
+      },
+      "design": {
+        "run": "N2",
+        "run_step": 5500,
+        "time_s": 0.1275
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N2-step06000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N2-step06000.request.json",
+      "request_sha256": "ae2a7057762a213a06232a9066c38239d8c4962abf87047a19f9cf17cdeeaede",
+      "request_bytes": 222982,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N2/0.13",
+        "state": "N2/0.13"
+      },
+      "design": {
+        "run": "N2",
+        "run_step": 6000,
+        "time_s": 0.13
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M4-moving-wall-step04500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M4-moving-wall-step04500.request.json",
+      "request_sha256": "f2fa382485a90bd45d2a31e6ce2c98455f63898db4dfab41815013630e906369",
+      "request_bytes": 221644,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M4-moving-wall/0.1225",
+        "state": "M4-moving-wall/0.1225"
+      },
+      "design": {
+        "run": "M4-moving-wall",
+        "run_step": 4500,
+        "time_s": 0.1225
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M2-viscosity-step07500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M2-viscosity-step07500.request.json",
+      "request_sha256": "2554450c43d8ad55a7d7ec94cff3672d17c5f6ad851f89cf0982376edde6c926",
+      "request_bytes": 196308,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M2-viscosity/0.1375",
+        "state": "M2-viscosity/0.1375"
+      },
+      "design": {
+        "run": "M2-viscosity",
+        "run_step": 7500,
+        "time_s": 0.1375
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M1-inlet-speed-step06500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M1-inlet-speed-step06500.request.json",
+      "request_sha256": "ba8dce72672b3313a5675a596292d34d0f180580b8ac931f08963435514bc9f9",
+      "request_bytes": 221940,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M1-inlet-speed/0.1325",
+        "state": "M1-inlet-speed/0.1325"
+      },
+      "design": {
+        "run": "M1-inlet-speed",
+        "run_step": 6500,
+        "time_s": 0.1325
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M5-half-inlet-step05000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M5-half-inlet-step05000.request.json",
+      "request_sha256": "e9b1d686fa2c676689b7187109ce996d710716baa3b2a6b7df57385652574855",
+      "request_bytes": 212703,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M5-half-inlet/0.125",
+        "state": "M5-half-inlet/0.125"
+      },
+      "design": {
+        "run": "M5-half-inlet",
+        "run_step": 5000,
+        "time_s": 0.125
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N5-step05500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N5-step05500.request.json",
+      "request_sha256": "565fbe02d893bad5dffa0409e32e12c2c461606c32739871221e17cf90c0b425",
+      "request_bytes": 227916,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N5/0.1275",
+        "state": "N5/0.1275"
+      },
+      "design": {
+        "run": "N5",
+        "run_step": 5500,
+        "time_s": 0.1275
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M4-moving-wall-step07000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M4-moving-wall-step07000.request.json",
+      "request_sha256": "ce843d8f989ca6879bd32554638c4b10b7573407cfdab0e26076aa6de160fe41",
+      "request_bytes": 214903,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M4-moving-wall/0.135",
+        "state": "M4-moving-wall/0.135"
+      },
+      "design": {
+        "run": "M4-moving-wall",
+        "run_step": 7000,
+        "time_s": 0.135
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M3-slip-walls-step07500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M3-slip-walls-step07500.request.json",
+      "request_sha256": "0f93a1edf1a5f49a22563369e8680b06416da410d2a84de5d3bf7b9df81f3d4d",
+      "request_bytes": 216668,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M3-slip-walls/0.1375",
+        "state": "M3-slip-walls/0.1375"
+      },
+      "design": {
+        "run": "M3-slip-walls",
+        "run_step": 7500,
+        "time_s": 0.1375
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M1-inlet-speed-step05000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M1-inlet-speed-step05000.request.json",
+      "request_sha256": "04c1a5319a47b92e9d9ff389d85334bbc5e1325b6cd8f3ccd479d9395d687453",
+      "request_bytes": 216379,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M1-inlet-speed/0.125",
+        "state": "M1-inlet-speed/0.125"
+      },
+      "design": {
+        "run": "M1-inlet-speed",
+        "run_step": 5000,
+        "time_s": 0.125
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M2-viscosity-step05000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M2-viscosity-step05000.request.json",
+      "request_sha256": "a563a0fb73fdd5ef0a111ba55e350203d7c787d31041c58a6ce7d65a2f4e6417",
+      "request_bytes": 197115,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M2-viscosity/0.125",
+        "state": "M2-viscosity/0.125"
+      },
+      "design": {
+        "run": "M2-viscosity",
+        "run_step": 5000,
+        "time_s": 0.125
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N1-step06500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N1-step06500.request.json",
+      "request_sha256": "aff544d07af926cc2f62a61fb01e1f5af56f9d14f0de0fc1f1a309b891dfdf24",
+      "request_bytes": 211444,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N1/0.1325",
+        "state": "N1/0.1325"
+      },
+      "design": {
+        "run": "N1",
+        "run_step": 6500,
+        "time_s": 0.1325
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M1-inlet-speed-step06000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M1-inlet-speed-step06000.request.json",
+      "request_sha256": "0184da9ba835695952487ad611d11cf8ce37e6769463cf729abd74fc533f649b",
+      "request_bytes": 219598,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M1-inlet-speed/0.13",
+        "state": "M1-inlet-speed/0.13"
+      },
+      "design": {
+        "run": "M1-inlet-speed",
+        "run_step": 6000,
+        "time_s": 0.13
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M4-moving-wall-step06500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M4-moving-wall-step06500.request.json",
+      "request_sha256": "955f271601152d5bdf7979a29597d379e9c633e1cca7bec9151cc945cf4a9efb",
+      "request_bytes": 226388,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M4-moving-wall/0.1325",
+        "state": "M4-moving-wall/0.1325"
+      },
+      "design": {
+        "run": "M4-moving-wall",
+        "run_step": 6500,
+        "time_s": 0.1325
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M3-slip-walls-step06500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M3-slip-walls-step06500.request.json",
+      "request_sha256": "c992eb5be1ea51cc4e0a7cbc806c8bb7e672556ec25d9c375b7074ecc82a486f",
+      "request_bytes": 221392,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M3-slip-walls/0.1325",
+        "state": "M3-slip-walls/0.1325"
+      },
+      "design": {
+        "run": "M3-slip-walls",
+        "run_step": 6500,
+        "time_s": 0.1325
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N2-step05000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N2-step05000.request.json",
+      "request_sha256": "96fa62ffa5eaab0f3116bdcf7869ab97e43540dadae21842c350d76129978dc4",
+      "request_bytes": 223683,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N2/0.125",
+        "state": "N2/0.125"
+      },
+      "design": {
+        "run": "N2",
+        "run_step": 5000,
+        "time_s": 0.125
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N4-step08000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N4-step08000.request.json",
+      "request_sha256": "91d8ee5c105a1c7ebea09885cb9b7039744d1c1d71ba27f9e2a4a7d880bc6977",
+      "request_bytes": 213534,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N4/0.14",
+        "state": "N4/0.14"
+      },
+      "design": {
+        "run": "N4",
+        "run_step": 8000,
+        "time_s": 0.14
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M1-inlet-speed-step04500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M1-inlet-speed-step04500.request.json",
+      "request_sha256": "e47f6c6e3998b578cd5e7adfc47384202ffce8c1cf36810213a10eebb8c61e53",
+      "request_bytes": 215728,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M1-inlet-speed/0.1225",
+        "state": "M1-inlet-speed/0.1225"
+      },
+      "design": {
+        "run": "M1-inlet-speed",
+        "run_step": 4500,
+        "time_s": 0.1225
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M4-moving-wall-step07500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M4-moving-wall-step07500.request.json",
+      "request_sha256": "b4c6f330e34cbea262bb304a67e3e3048d5399c293e211f15f2c57b2e6dfec23",
+      "request_bytes": 223608,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M4-moving-wall/0.1375",
+        "state": "M4-moving-wall/0.1375"
+      },
+      "design": {
+        "run": "M4-moving-wall",
+        "run_step": 7500,
+        "time_s": 0.1375
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N1-step07000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N1-step07000.request.json",
+      "request_sha256": "09081e70e5014d25e5aad2c0fdc893e1322bab38e971ba18bdc8e04f4eb11639",
+      "request_bytes": 224347,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N1/0.135",
+        "state": "N1/0.135"
+      },
+      "design": {
+        "run": "N1",
+        "run_step": 7000,
+        "time_s": 0.135
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N5-step07500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N5-step07500.request.json",
+      "request_sha256": "ed5f846c0497e1ab9c6c40714aa273ab479b7e49ce1acf1b95807685e3ea9cd2",
+      "request_bytes": 220888,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N5/0.1375",
+        "state": "N5/0.1375"
+      },
+      "design": {
+        "run": "N5",
+        "run_step": 7500,
+        "time_s": 0.1375
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N3-step08000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N3-step08000.request.json",
+      "request_sha256": "ec181e824b222bd41808af982159311630627220e82a5b7e71994b2d9cd34b24",
+      "request_bytes": 211778,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N3/0.14",
+        "state": "N3/0.14"
+      },
+      "design": {
+        "run": "N3",
+        "run_step": 8000,
+        "time_s": 0.14
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N1-step08000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N1-step08000.request.json",
+      "request_sha256": "2def674a719998f61da745f74140fbb1f9903e544f3e174c4f8416b6871e59d3",
+      "request_bytes": 222874,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N1/0.14",
+        "state": "N1/0.14"
+      },
+      "design": {
+        "run": "N1",
+        "run_step": 8000,
+        "time_s": 0.14
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N5-step04500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N5-step04500.request.json",
+      "request_sha256": "37f69ad0c47fe7aef4ed45486dc231c13ad2c180040876d5ca214696391e5423",
+      "request_bytes": 222524,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N5/0.1225",
+        "state": "N5/0.1225"
+      },
+      "design": {
+        "run": "N5",
+        "run_step": 4500,
+        "time_s": 0.1225
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M3-slip-walls-step04500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M3-slip-walls-step04500.request.json",
+      "request_sha256": "01b2c4eb7e51cb1f38ef4dc9243e050bcd8362ed3ea81454af40b56982ac814c",
+      "request_bytes": 217140,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M3-slip-walls/0.1225",
+        "state": "M3-slip-walls/0.1225"
+      },
+      "design": {
+        "run": "M3-slip-walls",
+        "run_step": 4500,
+        "time_s": 0.1225
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M3-slip-walls-step05000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M3-slip-walls-step05000.request.json",
+      "request_sha256": "83967460fe54f0291c22791522a3bc9d12bcebc418e68830b6fd7c8a4e3a1447",
+      "request_bytes": 218611,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M3-slip-walls/0.125",
+        "state": "M3-slip-walls/0.125"
+      },
+      "design": {
+        "run": "M3-slip-walls",
+        "run_step": 5000,
+        "time_s": 0.125
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M5-half-inlet-step07000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M5-half-inlet-step07000.request.json",
+      "request_sha256": "6a6edb71dfabb1351930e82256671457ebed71b56fdc5b3bbff8ead55e59e675",
+      "request_bytes": 219975,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M5-half-inlet/0.135",
+        "state": "M5-half-inlet/0.135"
+      },
+      "design": {
+        "run": "M5-half-inlet",
+        "run_step": 7000,
+        "time_s": 0.135
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M2-viscosity-step07000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M2-viscosity-step07000.request.json",
+      "request_sha256": "8bfaf1bd382fd4a26f9a0b92eeb8b72a29e9a838df6e6bb415c4d232757f83ca",
+      "request_bytes": 195711,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M2-viscosity/0.135",
+        "state": "M2-viscosity/0.135"
+      },
+      "design": {
+        "run": "M2-viscosity",
+        "run_step": 7000,
+        "time_s": 0.135
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N4-step07000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N4-step07000.request.json",
+      "request_sha256": "cd4517d5414b2f823c6379f230c83236c9c68736fc056e4ca671b1f42f8ef171",
+      "request_bytes": 219331,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N4/0.135",
+        "state": "N4/0.135"
+      },
+      "design": {
+        "run": "N4",
+        "run_step": 7000,
+        "time_s": 0.135
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M2-viscosity-step05500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M2-viscosity-step05500.request.json",
+      "request_sha256": "e2adfaa3788809af20d30ce5cdf5856081085474772554206c7e8c25fdc987ad",
+      "request_bytes": 196152,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M2-viscosity/0.1275",
+        "state": "M2-viscosity/0.1275"
+      },
+      "design": {
+        "run": "M2-viscosity",
+        "run_step": 5500,
+        "time_s": 0.1275
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M5-half-inlet-step06000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M5-half-inlet-step06000.request.json",
+      "request_sha256": "29d1317fb839f426dca591b401f39ad72f9a933c0919c8ada67bf32d06f28d23",
+      "request_bytes": 217974,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M5-half-inlet/0.13",
+        "state": "M5-half-inlet/0.13"
+      },
+      "design": {
+        "run": "M5-half-inlet",
+        "run_step": 6000,
+        "time_s": 0.13
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N3-step07000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N3-step07000.request.json",
+      "request_sha256": "73f9bcc316200b368d43ea45bc149e1a1705321cc0e9d851a7a69eb2bb0e9cf5",
+      "request_bytes": 219651,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N3/0.135",
+        "state": "N3/0.135"
+      },
+      "design": {
+        "run": "N3",
+        "run_step": 7000,
+        "time_s": 0.135
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M3-slip-walls-step08000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M3-slip-walls-step08000.request.json",
+      "request_sha256": "fb04ffdeb4b1aff2d12fa253cdea782938fc6d21c3feb6aadcc2d1679d6c8cce",
+      "request_bytes": 218442,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M3-slip-walls/0.14",
+        "state": "M3-slip-walls/0.14"
+      },
+      "design": {
+        "run": "M3-slip-walls",
+        "run_step": 8000,
+        "time_s": 0.14
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N3-step05000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N3-step05000.request.json",
+      "request_sha256": "822b8f5505c17f0c19eaa6db1a202fe1b885aec9c48b90eea4fc2be352a97c17",
+      "request_bytes": 219211,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N3/0.125",
+        "state": "N3/0.125"
+      },
+      "design": {
+        "run": "N3",
+        "run_step": 5000,
+        "time_s": 0.125
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M2-viscosity-step06000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M2-viscosity-step06000.request.json",
+      "request_sha256": "84dd5fb0effbf0adba0e0fe24d4c80d457b553a77e7e80a74664d3baf38f34c1",
+      "request_bytes": 195266,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M2-viscosity/0.13",
+        "state": "M2-viscosity/0.13"
+      },
+      "design": {
+        "run": "M2-viscosity",
+        "run_step": 6000,
+        "time_s": 0.13
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N2-step08000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N2-step08000.request.json",
+      "request_sha256": "3d64428e3bd41693376fa6253b3e734f874d8cea00fbac39d3b68828cf522604",
+      "request_bytes": 221850,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N2/0.14",
+        "state": "N2/0.14"
+      },
+      "design": {
+        "run": "N2",
+        "run_step": 8000,
+        "time_s": 0.14
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N2-step07000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N2-step07000.request.json",
+      "request_sha256": "9d345a23ebe0b226e9f9eeac8fc5e77ee7e0e3381191ace4ce72c864f5e23d58",
+      "request_bytes": 219887,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N2/0.135",
+        "state": "N2/0.135"
+      },
+      "design": {
+        "run": "N2",
+        "run_step": 7000,
+        "time_s": 0.135
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M2-viscosity-step06500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M2-viscosity-step06500.request.json",
+      "request_sha256": "d294e22c615893327858db2d280d0f417a927d03987514eded51289bcc428fc8",
+      "request_bytes": 196432,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M2-viscosity/0.1325",
+        "state": "M2-viscosity/0.1325"
+      },
+      "design": {
+        "run": "M2-viscosity",
+        "run_step": 6500,
+        "time_s": 0.1325
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N1-step07500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N1-step07500.request.json",
+      "request_sha256": "a9ac474c3dcc078154965b6f88d04f238e79a3485e7a186bd364225248209153",
+      "request_bytes": 217428,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N1/0.1375",
+        "state": "N1/0.1375"
+      },
+      "design": {
+        "run": "N1",
+        "run_step": 7500,
+        "time_s": 0.1375
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N4-step05500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N4-step05500.request.json",
+      "request_sha256": "52a049279f75255a566ec9c3ae220fff4004d69c75417b864edb65ea3337d0a4",
+      "request_bytes": 223580,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N4/0.1275",
+        "state": "N4/0.1275"
+      },
+      "design": {
+        "run": "N4",
+        "run_step": 5500,
+        "time_s": 0.1275
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N5-step07000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N5-step07000.request.json",
+      "request_sha256": "af43227790a9d8a1ca16da30748e56306c10ef72ac47a03fd9cffd48df359be4",
+      "request_bytes": 215555,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N5/0.135",
+        "state": "N5/0.135"
+      },
+      "design": {
+        "run": "N5",
+        "run_step": 7000,
+        "time_s": 0.135
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M4-moving-wall-step05000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M4-moving-wall-step05000.request.json",
+      "request_sha256": "494710693c327916c6a811b79d1fe7800a703d772ca384e3d135123d5cc5d415",
+      "request_bytes": 218687,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M4-moving-wall/0.125",
+        "state": "M4-moving-wall/0.125"
+      },
+      "design": {
+        "run": "M4-moving-wall",
+        "run_step": 5000,
+        "time_s": 0.125
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N5-step05000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N5-step05000.request.json",
+      "request_sha256": "954d79c8392b8153562e2d5fb190f9026386301d31b20b70bc51d14de5b268db",
+      "request_bytes": 218635,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N5/0.125",
+        "state": "N5/0.125"
+      },
+      "design": {
+        "run": "N5",
+        "run_step": 5000,
+        "time_s": 0.125
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M2-viscosity-step04500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M2-viscosity-step04500.request.json",
+      "request_sha256": "b89403cb580d902687f75d91eb9d110e30749b7d57ce1a0750adb55966e3c827",
+      "request_bytes": 197464,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M2-viscosity/0.1225",
+        "state": "M2-viscosity/0.1225"
+      },
+      "design": {
+        "run": "M2-viscosity",
+        "run_step": 4500,
+        "time_s": 0.1225
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N3-step06000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N3-step06000.request.json",
+      "request_sha256": "d65b524b274a33abe9236d103b1ab60037f76643397266d6dcf1d0eb5effa7d7",
+      "request_bytes": 221962,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N3/0.13",
+        "state": "N3/0.13"
+      },
+      "design": {
+        "run": "N3",
+        "run_step": 6000,
+        "time_s": 0.13
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M4-moving-wall-step08000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M4-moving-wall-step08000.request.json",
+      "request_sha256": "f6574901d6f7ac9ee098b03aaf6a6c9f89e34a65079f2bc1f76dd8afeaa5162a",
+      "request_bytes": 221514,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M4-moving-wall/0.14",
+        "state": "M4-moving-wall/0.14"
+      },
+      "design": {
+        "run": "M4-moving-wall",
+        "run_step": 8000,
+        "time_s": 0.14
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N3-step04500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N3-step04500.request.json",
+      "request_sha256": "2d8eb97db0dfb8df096714bc45032be8ac6ea6a6f6c27b1772bcd1e7a42963d7",
+      "request_bytes": 212888,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N3/0.1225",
+        "state": "N3/0.1225"
+      },
+      "design": {
+        "run": "N3",
+        "run_step": 4500,
+        "time_s": 0.1225
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N1-step04500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N1-step04500.request.json",
+      "request_sha256": "7bfef8292440b8a1dcf9939dcf0244712ad6a92de5a3813cfc5993e67e628d45",
+      "request_bytes": 209324,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N1/0.1225",
+        "state": "N1/0.1225"
+      },
+      "design": {
+        "run": "N1",
+        "run_step": 4500,
+        "time_s": 0.1225
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N4-step06500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N4-step06500.request.json",
+      "request_sha256": "a8d404619a07b45c91fffa0a4d8314690c30ade2f4e1884a3332ea1db6b470ae",
+      "request_bytes": 223332,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N4/0.1325",
+        "state": "N4/0.1325"
+      },
+      "design": {
+        "run": "N4",
+        "run_step": 6500,
+        "time_s": 0.1325
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N3-step07500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N3-step07500.request.json",
+      "request_sha256": "decfb2ea1302756890599e840f956433a121b02eb482ff028cdb23f0bef2a88f",
+      "request_bytes": 223816,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N3/0.1375",
+        "state": "N3/0.1375"
+      },
+      "design": {
+        "run": "N3",
+        "run_step": 7500,
+        "time_s": 0.1375
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M5-half-inlet-step04500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M5-half-inlet-step04500.request.json",
+      "request_sha256": "104f42fdcf02b49b217b536b3e5b82852cf8d3b0c0a16c31fdb1852220e7d18d",
+      "request_bytes": 212932,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M5-half-inlet/0.1225",
+        "state": "M5-half-inlet/0.1225"
+      },
+      "design": {
+        "run": "M5-half-inlet",
+        "run_step": 4500,
+        "time_s": 0.1225
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M5-half-inlet-step07500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M5-half-inlet-step07500.request.json",
+      "request_sha256": "bf80103771adc81a3ee48d5d7d0e304d8759f97e527f4d6f690daf5db55a61c3",
+      "request_bytes": 225800,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M5-half-inlet/0.1375",
+        "state": "M5-half-inlet/0.1375"
+      },
+      "design": {
+        "run": "M5-half-inlet",
+        "run_step": 7500,
+        "time_s": 0.1375
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M1-inlet-speed-step07000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M1-inlet-speed-step07000.request.json",
+      "request_sha256": "765cb1a531db367150b3f4f8ffe405492eac967b91db5dc59441cdcb3f95015c",
+      "request_bytes": 224215,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M1-inlet-speed/0.135",
+        "state": "M1-inlet-speed/0.135"
+      },
+      "design": {
+        "run": "M1-inlet-speed",
+        "run_step": 7000,
+        "time_s": 0.135
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N5-step08000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N5-step08000.request.json",
+      "request_sha256": "47f365ab5cb917288ef401337ff078d29907c7dd27743b25f006e14daf66ac95",
+      "request_bytes": 221382,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N5/0.14",
+        "state": "N5/0.14"
+      },
+      "design": {
+        "run": "N5",
+        "run_step": 8000,
+        "time_s": 0.14
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N1-step06000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N1-step06000.request.json",
+      "request_sha256": "6732da428c55ceb8e4b5a879e8a631ff96d08a3395b87728394be1f66dc6b1c3",
+      "request_bytes": 226550,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N1/0.13",
+        "state": "N1/0.13"
+      },
+      "design": {
+        "run": "N1",
+        "run_step": 6000,
+        "time_s": 0.13
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N4-step06000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N4-step06000.request.json",
+      "request_sha256": "851ef35da7f1d0e418513386cc5dbf78d0e5a2a2d218106babc6dbe372dcc01d",
+      "request_bytes": 211890,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N4/0.13",
+        "state": "N4/0.13"
+      },
+      "design": {
+        "run": "N4",
+        "run_step": 6000,
+        "time_s": 0.13
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M5-half-inlet-step08000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M5-half-inlet-step08000.request.json",
+      "request_sha256": "c78daf76ebd6c82b157628ba2d8b82e4b0eaa9b83838a7e45e396c4a16aea09f",
+      "request_bytes": 221922,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M5-half-inlet/0.14",
+        "state": "M5-half-inlet/0.14"
+      },
+      "design": {
+        "run": "M5-half-inlet",
+        "run_step": 8000,
+        "time_s": 0.14
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N5-step06500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N5-step06500.request.json",
+      "request_sha256": "9f2cca6cfae050c80cacdab5a43d2ac298e3fe984418aa07fffea9bd1beeca14",
+      "request_bytes": 225784,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N5/0.1325",
+        "state": "N5/0.1325"
+      },
+      "design": {
+        "run": "N5",
+        "run_step": 6500,
+        "time_s": 0.1325
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N2-step06500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N2-step06500.request.json",
+      "request_sha256": "59b4d3073f7003639663464623d323f017d97a9ad004eabd661f5ab37b86b25c",
+      "request_bytes": 213684,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N2/0.1325",
+        "state": "N2/0.1325"
+      },
+      "design": {
+        "run": "N2",
+        "run_step": 6500,
+        "time_s": 0.1325
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M5-half-inlet-step06500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M5-half-inlet-step06500.request.json",
+      "request_sha256": "727a3a38167f67f507898d7c693a6f800991bf6594987e5103a7c0d5f3d66205",
+      "request_bytes": 216288,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M5-half-inlet/0.1325",
+        "state": "M5-half-inlet/0.1325"
+      },
+      "design": {
+        "run": "M5-half-inlet",
+        "run_step": 6500,
+        "time_s": 0.1325
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "M4-moving-wall-step06000",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/M4-moving-wall-step06000.request.json",
+      "request_sha256": "564c1160eeddadd916ee59c2cc716423815feba62db9209b457c2da843e5ef36",
+      "request_bytes": 216446,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/M4-moving-wall/0.13",
+        "state": "M4-moving-wall/0.13"
+      },
+      "design": {
+        "run": "M4-moving-wall",
+        "run_step": 6000,
+        "time_s": 0.13
+      }
+    },
+    {
+      "set": "wrong-setup-v2own",
+      "name": "N3-step06500",
+      "mode": "setup",
+      "file": "requests/wrong-setup-v2own/N3-step06500.request.json",
+      "request_sha256": "2b8ead2bd831779383ba90d0ad45ed24421ef692e851d72e2980ac4bbb755b79",
+      "request_bytes": 219644,
+      "images": 2,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "frames/N3/0.1325",
+        "state": "N3/0.1325"
+      },
+      "design": {
+        "run": "N3",
+        "run_step": 6500,
+        "time_s": 0.1325
+      }
+    }
+  ],
+  "truth_sha256": "a252474ac7cffb3a313a58f9087de2fe1637c2185a6822f43eae5d7962a7fad7",
+  "build_args": {
+    "command": "build",
+    "design": "flow-states-20261030/design.json",
+    "centres": "docs/evidence/2026-10-20/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/fields.npz",
+    "seed": 20261030,
+    "output": "wrong-setup-test-20261030"
+  },
+  "design": {
+    "test": "wrong-setup test 2026-10-30",
+    "long_run": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261022/long-100ms",
+    "window_m": [
+      [
+        0.0,
+        0.12
+      ],
+      [
+        0.0,
+        0.04
+      ]
+    ],
+    "inlet_speed_m_per_s": 32.2,
+    "start_time_s": 0.1,
+    "delta_t_s": 5e-06,
+    "run_steps": 8000,
+    "write_every_steps": 500,
+    "frame_steps": [
+      4500,
+      5000,
+      5500,
+      6000,
+      6500,
+      7000,
+      7500,
+      8000
+    ],
+    "runs": [
+      {
+        "name": "N1",
+        "class": "normal",
+        "start": "0.06",
+        "change": "none; start state t = 0.06 s of the developed flow",
+        "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/N1",
+        "expected_patches": {
+          "inlet": {
+            "type": "fixedValue",
+            "value": [
+              32.2,
+              0.0,
+              0.0
+            ]
+          },
+          "outlet": {
+            "type": "zeroGradient",
+            "value": null
+          },
+          "upperWall": {
+            "type": "noSlip",
+            "value": null
+          },
+          "lowerWall": {
+            "type": "noSlip",
+            "value": null
+          }
+        },
+        "nu": 1.56e-05
+      },
+      {
+        "name": "N2",
+        "class": "normal",
+        "start": "0.07",
+        "change": "none; start state t = 0.07 s of the developed flow",
+        "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/N2",
+        "expected_patches": {
+          "inlet": {
+            "type": "fixedValue",
+            "value": [
+              32.2,
+              0.0,
+              0.0
+            ]
+          },
+          "outlet": {
+            "type": "zeroGradient",
+            "value": null
+          },
+          "upperWall": {
+            "type": "noSlip",
+            "value": null
+          },
+          "lowerWall": {
+            "type": "noSlip",
+            "value": null
+          }
+        },
+        "nu": 1.56e-05
+      },
+      {
+        "name": "N3",
+        "class": "normal",
+        "start": "0.08",
+        "change": "none; start state t = 0.08 s of the developed flow",
+        "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/N3",
+        "expected_patches": {
+          "inlet": {
+            "type": "fixedValue",
+            "value": [
+              32.2,
+              0.0,
+              0.0
+            ]
+          },
+          "outlet": {
+            "type": "zeroGradient",
+            "value": null
+          },
+          "upperWall": {
+            "type": "noSlip",
+            "value": null
+          },
+          "lowerWall": {
+            "type": "noSlip",
+            "value": null
+          }
+        },
+        "nu": 1.56e-05
+      },
+      {
+        "name": "N4",
+        "class": "normal",
+        "start": "0.09",
+        "change": "none; start state t = 0.09 s of the developed flow",
+        "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/N4",
+        "expected_patches": {
+          "inlet": {
+            "type": "fixedValue",
+            "value": [
+              32.2,
+              0.0,
+              0.0
+            ]
+          },
+          "outlet": {
+            "type": "zeroGradient",
+            "value": null
+          },
+          "upperWall": {
+            "type": "noSlip",
+            "value": null
+          },
+          "lowerWall": {
+            "type": "noSlip",
+            "value": null
+          }
+        },
+        "nu": 1.56e-05
+      },
+      {
+        "name": "N5",
+        "class": "normal",
+        "start": "0.1",
+        "change": "none; start state t = 0.1 s of the developed flow",
+        "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/N5",
+        "expected_patches": {
+          "inlet": {
+            "type": "fixedValue",
+            "value": [
+              32.2,
+              0.0,
+              0.0
+            ]
+          },
+          "outlet": {
+            "type": "zeroGradient",
+            "value": null
+          },
+          "upperWall": {
+            "type": "noSlip",
+            "value": null
+          },
+          "lowerWall": {
+            "type": "noSlip",
+            "value": null
+          }
+        },
+        "nu": 1.56e-05
+      },
+      {
+        "name": "M1-inlet-speed",
+        "class": "wrong",
+        "start": "0.1",
+        "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+        "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/M1-inlet-speed",
+        "expected_patches": {
+          "inlet": {
+            "type": "fixedValue",
+            "value": [
+              3.22,
+              0.0,
+              0.0
+            ]
+          },
+          "outlet": {
+            "type": "zeroGradient",
+            "value": null
+          },
+          "upperWall": {
+            "type": "noSlip",
+            "value": null
+          },
+          "lowerWall": {
+            "type": "noSlip",
+            "value": null
+          }
+        },
+        "nu": 1.56e-05
+      },
+      {
+        "name": "M2-viscosity",
+        "class": "wrong",
+        "start": "0.1",
+        "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+        "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/M2-viscosity",
+        "expected_patches": {
+          "inlet": {
+            "type": "fixedValue",
+            "value": [
+              32.2,
+              0.0,
+              0.0
+            ]
+          },
+          "outlet": {
+            "type": "zeroGradient",
+            "value": null
+          },
+          "upperWall": {
+            "type": "noSlip",
+            "value": null
+          },
+          "lowerWall": {
+            "type": "noSlip",
+            "value": null
+          }
+        },
+        "nu": 0.00156
+      },
+      {
+        "name": "M3-slip-walls",
+        "class": "wrong",
+        "start": "0.1",
+        "change": "lowerWall and upperWall slip instead of noSlip",
+        "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/M3-slip-walls",
+        "expected_patches": {
+          "inlet": {
+            "type": "fixedValue",
+            "value": [
+              32.2,
+              0.0,
+              0.0
+            ]
+          },
+          "outlet": {
+            "type": "zeroGradient",
+            "value": null
+          },
+          "upperWall": {
+            "type": "slip",
+            "value": null
+          },
+          "lowerWall": {
+            "type": "slip",
+            "value": null
+          }
+        },
+        "nu": 1.56e-05
+      },
+      {
+        "name": "M4-moving-wall",
+        "class": "wrong",
+        "start": "0.1",
+        "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+        "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/M4-moving-wall",
+        "expected_patches": {
+          "inlet": {
+            "type": "fixedValue",
+            "value": [
+              32.2,
+              0.0,
+              0.0
+            ]
+          },
+          "outlet": {
+            "type": "zeroGradient",
+            "value": null
+          },
+          "upperWall": {
+            "type": "fixedValue",
+            "value": [
+              -32.2,
+              0.0,
+              0.0
+            ]
+          },
+          "lowerWall": {
+            "type": "noSlip",
+            "value": null
+          }
+        },
+        "nu": 1.56e-05
+      },
+      {
+        "name": "M5-half-inlet",
+        "class": "wrong",
+        "start": "0.1",
+        "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+        "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261030/M5-half-inlet",
+        "expected_patches": {
+          "inlet": {
+            "type": "fixedValue",
+            "value": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ],
+              [
+                32.2,
+                0.0,
+                0.0
+              ]
+            ]
+          },
+          "outlet": {
+            "type": "zeroGradient",
+            "value": null
+          },
+          "upperWall": {
+            "type": "noSlip",
+            "value": null
+          },
+          "lowerWall": {
+            "type": "noSlip",
+            "value": null
+          }
+        },
+        "nu": 1.56e-05
+      }
+    ]
+  },
+  "design_sha256": "255b95ae8d53cc4ad6dda7ab3f4bf94b89fcb91dddb60a86934601b3c412fcd6",
+  "path_prefixes": {
+    "": "frames/ and requests/ are in this test set, docs/ is the repository",
+    "flow-states-20261030/": "a folder of pimpleFoam runs"
+  },
+  "mesh": {
+    "polymesh": {
+      "boundary": "e2e290c5d71885db1beb6f721a7dee08e61794511dab877da5ab2a46f78e62ad",
+      "faces": "9c942a604bb38d52a0467c428dff391dfecb449ee75e1f4f606f8f58f953c8ed",
+      "owner": "76b8c4a6b08de41adeec8cbb651c89121c59eec7855e43d9b9aad2d314f9712d",
+      "points": "399ad89ebb870febfcfda6259d9bb8b3b10488950a050769bff0975bfcdebea8"
+    },
+    "centres_npz": "docs/evidence/2026-10-20/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/fields.npz",
+    "centres_npz_sha256": "4d881d640231fbb1d2664e2a8fce7f754d21c0d779d93ae6a6da46fe6826e47a"
+  },
+  "plotted_range_m": {
+    "x": [
+      0.0,
+      0.12
+    ],
+    "y": [
+      0.0,
+      0.04
+    ]
+  },
+  "label_rule": {
+    "right": {
+      "normal": "consistent",
+      "wrong": "inconsistent"
+    },
+    "note": "A frame is right when a normal frame is answered consistent or a wrong frame inconsistent; cannot_tell and no answer are wrong on both. The request order is a seeded random permutation of (run, step)."
+  },
+  "runs": [
+    {
+      "name": "N1",
+      "case": "flow-states-20261030/N1",
+      "class": "normal",
+      "change": "none; start state t = 0.06 s of the developed flow",
+      "start_state": "0.06",
+      "scheme_div_phi_U": "Gauss upwind",
+      "delta_t_s": 5e-06,
+      "start_time_s": 0.1,
+      "logged_steps": 8000,
+      "ended": true,
+      "log": {
+        "steps": 8000,
+        "courant_max_step_1": 0.295942857355,
+        "courant_max_whole_run": 0.341394796362,
+        "courant_max_whole_run_at_step": 4974,
+        "courant_max_from_first_frame": 0.341394796362,
+        "courant_mean_from_first_frame": 0.017083737178079348,
+        "last_Ux_initial": 9.84268307113e-06,
+        "last_Uy_initial": 0.000310605880493,
+        "last_p_initial": 0.0253987714703,
+        "last_Ux_final": 9.84268307113e-06,
+        "last_Uy_final": 6.23313922954e-07,
+        "last_p_final": 9.54265239274e-07,
+        "last_continuity_local": 1.16668725829e-12,
+        "last_continuity_global_abs": 1.24095148769e-13,
+        "last_continuity_cumulative_abs": 7.23739651648e-09,
+        "inlet_flux_last_state": -0.0415483040000072
+      }
+    },
+    {
+      "name": "N2",
+      "case": "flow-states-20261030/N2",
+      "class": "normal",
+      "change": "none; start state t = 0.07 s of the developed flow",
+      "start_state": "0.07",
+      "scheme_div_phi_U": "Gauss upwind",
+      "delta_t_s": 5e-06,
+      "start_time_s": 0.1,
+      "logged_steps": 8000,
+      "ended": true,
+      "log": {
+        "steps": 8000,
+        "courant_max_step_1": 0.313074200003,
+        "courant_max_whole_run": 0.344109306113,
+        "courant_max_whole_run_at_step": 7248,
+        "courant_max_from_first_frame": 0.344109306113,
+        "courant_mean_from_first_frame": 0.017087898411241326,
+        "last_Ux_initial": 1.20299761279e-05,
+        "last_Uy_initial": 0.000436016223896,
+        "last_p_initial": 0.0102485971103,
+        "last_Ux_final": 2.43526642483e-08,
+        "last_Uy_final": 1.04331391786e-06,
+        "last_p_final": 6.90245951234e-07,
+        "last_continuity_local": 1.02379319926e-12,
+        "last_continuity_global_abs": 1.65325444028e-13,
+        "last_continuity_cumulative_abs": 6.33950629047e-09,
+        "inlet_flux_last_state": -0.0415483040000072
+      }
+    },
+    {
+      "name": "N3",
+      "case": "flow-states-20261030/N3",
+      "class": "normal",
+      "change": "none; start state t = 0.08 s of the developed flow",
+      "start_state": "0.08",
+      "scheme_div_phi_U": "Gauss upwind",
+      "delta_t_s": 5e-06,
+      "start_time_s": 0.1,
+      "logged_steps": 8000,
+      "ended": true,
+      "log": {
+        "steps": 8000,
+        "courant_max_step_1": 0.327552793647,
+        "courant_max_whole_run": 0.346668233504,
+        "courant_max_whole_run_at_step": 7413,
+        "courant_max_from_first_frame": 0.346668233504,
+        "courant_mean_from_first_frame": 0.017082267455936693,
+        "last_Ux_initial": 1.07290702164e-05,
+        "last_Uy_initial": 0.000316822301572,
+        "last_p_initial": 0.0111574039268,
+        "last_Ux_final": 2.15959848834e-08,
+        "last_Uy_final": 7.65642274383e-07,
+        "last_p_final": 8.51119439961e-07,
+        "last_continuity_local": 9.58203080523e-13,
+        "last_continuity_global_abs": 1.45517662552e-14,
+        "last_continuity_cumulative_abs": 5.23582653426e-09,
+        "inlet_flux_last_state": -0.0415483040000072
+      }
+    },
+    {
+      "name": "N4",
+      "case": "flow-states-20261030/N4",
+      "class": "normal",
+      "change": "none; start state t = 0.09 s of the developed flow",
+      "start_state": "0.09",
+      "scheme_div_phi_U": "Gauss upwind",
+      "delta_t_s": 5e-06,
+      "start_time_s": 0.1,
+      "logged_steps": 8000,
+      "ended": true,
+      "log": {
+        "steps": 8000,
+        "courant_max_step_1": 0.336392669504,
+        "courant_max_whole_run": 0.346668241387,
+        "courant_max_whole_run_at_step": 5413,
+        "courant_max_from_first_frame": 0.346668241387,
+        "courant_mean_from_first_frame": 0.017065592774231836,
+        "last_Ux_initial": 8.67276518116e-06,
+        "last_Uy_initial": 0.000223217819465,
+        "last_p_initial": 0.0299773024816,
+        "last_Ux_final": 8.67276518116e-06,
+        "last_Uy_final": 3.8948767464e-07,
+        "last_p_final": 8.90219200284e-07,
+        "last_continuity_local": 6.71774653307e-13,
+        "last_continuity_global_abs": 4.00682672551e-14,
+        "last_continuity_cumulative_abs": 5.21810931106e-09,
+        "inlet_flux_last_state": -0.0415483040000072
+      }
+    },
+    {
+      "name": "N5",
+      "case": "flow-states-20261030/N5",
+      "class": "normal",
+      "change": "none; start state t = 0.1 s of the developed flow",
+      "start_state": "0.1",
+      "scheme_div_phi_U": "Gauss upwind",
+      "delta_t_s": 5e-06,
+      "start_time_s": 0.1,
+      "logged_steps": 8000,
+      "ended": true,
+      "log": {
+        "steps": 8000,
+        "courant_max_step_1": 0.283615934459,
+        "courant_max_whole_run": 0.346668233526,
+        "courant_max_whole_run_at_step": 3413,
+        "courant_max_from_first_frame": 0.34406578431,
+        "courant_mean_from_first_frame": 0.017074340346877118,
+        "last_Ux_initial": 9.27159104231e-06,
+        "last_Uy_initial": 0.000292366256087,
+        "last_p_initial": 0.0264701524423,
+        "last_Ux_final": 9.27159104231e-06,
+        "last_Uy_final": 4.63284819768e-07,
+        "last_p_final": 8.83046845486e-07,
+        "last_continuity_local": 9.61773687028e-13,
+        "last_continuity_global_abs": 9.64580470584e-14,
+        "last_continuity_cumulative_abs": 4.34763941972e-09,
+        "inlet_flux_last_state": -0.0415483040000072
+      }
+    },
+    {
+      "name": "M1-inlet-speed",
+      "case": "flow-states-20261030/M1-inlet-speed",
+      "class": "wrong",
+      "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+      "start_state": "0.1",
+      "scheme_div_phi_U": "Gauss upwind",
+      "delta_t_s": 5e-06,
+      "start_time_s": 0.1,
+      "logged_steps": 8000,
+      "ended": true,
+      "log": {
+        "steps": 8000,
+        "courant_max_step_1": 0.283615934459,
+        "courant_max_whole_run": 10.6873661912,
+        "courant_max_whole_run_at_step": 3,
+        "courant_max_from_first_frame": 0.358577344056,
+        "courant_mean_from_first_frame": 0.002715309735966818,
+        "last_Ux_initial": 9.69350023233e-06,
+        "last_Uy_initial": 7.341902824e-05,
+        "last_p_initial": 0.00614682487971,
+        "last_Ux_final": 9.69350023233e-06,
+        "last_Uy_final": 7.63789978081e-09,
+        "last_p_final": 8.510365616e-07,
+        "last_continuity_local": 1.78914806986e-13,
+        "last_continuity_global_abs": 1.86557962553e-14,
+        "last_continuity_cumulative_abs": 9.89925489627e-09,
+        "inlet_flux_last_state": -0.00415483040000072
+      }
+    },
+    {
+      "name": "M2-viscosity",
+      "case": "flow-states-20261030/M2-viscosity",
+      "class": "wrong",
+      "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+      "start_state": "0.1",
+      "scheme_div_phi_U": "Gauss upwind",
+      "delta_t_s": 5e-06,
+      "start_time_s": 0.1,
+      "logged_steps": 8000,
+      "ended": true,
+      "log": {
+        "steps": 8000,
+        "courant_max_step_1": 0.283615934459,
+        "courant_max_whole_run": 0.283615934459,
+        "courant_max_whole_run_at_step": 1,
+        "courant_max_from_first_frame": 0.22566073779,
+        "courant_mean_from_first_frame": 0.01686975429252367,
+        "last_Ux_initial": 5.49329287109e-06,
+        "last_Uy_initial": 1.42796682278e-05,
+        "last_p_initial": 0.0230447387944,
+        "last_Ux_final": 5.49329287109e-06,
+        "last_Uy_final": 1.49753242477e-07,
+        "last_p_final": 9.18089078603e-07,
+        "last_continuity_local": 1.6633125906e-13,
+        "last_continuity_global_abs": 2.15106584522e-14,
+        "last_continuity_cumulative_abs": 2.48516562232e-08,
+        "inlet_flux_last_state": -0.0415483040000072
+      }
+    },
+    {
+      "name": "M3-slip-walls",
+      "case": "flow-states-20261030/M3-slip-walls",
+      "class": "wrong",
+      "change": "lowerWall and upperWall slip instead of noSlip",
+      "start_state": "0.1",
+      "scheme_div_phi_U": "Gauss upwind",
+      "delta_t_s": 5e-06,
+      "start_time_s": 0.1,
+      "logged_steps": 8000,
+      "ended": true,
+      "log": {
+        "steps": 8000,
+        "courant_max_step_1": 0.283615934459,
+        "courant_max_whole_run": 1.30934430692,
+        "courant_max_whole_run_at_step": 5432,
+        "courant_max_from_first_frame": 1.30934430692,
+        "courant_mean_from_first_frame": 0.017175223498902024,
+        "last_Ux_initial": 4.65195970253e-06,
+        "last_Uy_initial": 2.37671074406e-05,
+        "last_p_initial": 0.00364346134265,
+        "last_Ux_final": 4.65195970253e-06,
+        "last_Uy_final": 1.95013415072e-08,
+        "last_p_final": 9.11771463105e-07,
+        "last_continuity_local": 5.7273902867e-13,
+        "last_continuity_global_abs": 4.25632377975e-14,
+        "last_continuity_cumulative_abs": 3.42480786266e-09,
+        "inlet_flux_last_state": -0.0415483040000072
+      }
+    },
+    {
+      "name": "M4-moving-wall",
+      "case": "flow-states-20261030/M4-moving-wall",
+      "class": "wrong",
+      "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+      "start_state": "0.1",
+      "scheme_div_phi_U": "Gauss upwind",
+      "delta_t_s": 5e-06,
+      "start_time_s": 0.1,
+      "logged_steps": 8000,
+      "ended": true,
+      "log": {
+        "steps": 8000,
+        "courant_max_step_1": 0.283615934459,
+        "courant_max_whole_run": 0.347900990039,
+        "courant_max_whole_run_at_step": 3392,
+        "courant_max_from_first_frame": 0.346809895121,
+        "courant_mean_from_first_frame": 0.017244224354357796,
+        "last_Ux_initial": 9.13304807124e-06,
+        "last_Uy_initial": 0.000337360758805,
+        "last_p_initial": 0.0274338973854,
+        "last_Ux_final": 9.13304807124e-06,
+        "last_Uy_final": 5.10267985089e-07,
+        "last_p_final": 8.80901483092e-07,
+        "last_continuity_local": 9.3977400071e-13,
+        "last_continuity_global_abs": 9.40241626213e-14,
+        "last_continuity_cumulative_abs": 2.43373108099e-09,
+        "inlet_flux_last_state": -0.0415483040000072
+      }
+    },
+    {
+      "name": "M5-half-inlet",
+      "case": "flow-states-20261030/M5-half-inlet",
+      "class": "wrong",
+      "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+      "start_state": "0.1",
+      "scheme_div_phi_U": "Gauss upwind",
+      "delta_t_s": 5e-06,
+      "start_time_s": 0.1,
+      "logged_steps": 8000,
+      "ended": true,
+      "log": {
+        "steps": 8000,
+        "courant_max_step_1": 0.283615934459,
+        "courant_max_whole_run": 5.48849620105,
+        "courant_max_whole_run_at_step": 3,
+        "courant_max_from_first_frame": 0.208621406922,
+        "courant_mean_from_first_frame": 0.008768859649069745,
+        "last_Ux_initial": 2.54448747132e-05,
+        "last_Uy_initial": 0.000146564493207,
+        "last_p_initial": 0.00414915355786,
+        "last_Ux_final": 2.18285949614e-09,
+        "last_Uy_final": 4.25452107361e-08,
+        "last_p_final": 5.64767872878e-07,
+        "last_continuity_local": 2.56330056269e-13,
+        "last_continuity_global_abs": 1.4268505898e-14,
+        "last_continuity_cumulative_abs": 8.22642117695e-09,
+        "inlet_flux_last_state": -0.0207741520000013
+      }
+    }
+  ],
+  "code_sha256": {
+    "wrong_setup_test.py": "7443a63460220487ef4470369086107acbb82dde166efa9a0d51ceb5fc79aa20",
+    "instability_test.py": "f59896f1cb51437a790163ce65c8e5ba250892be07200a993a80a5c8d23c7f6a",
+    "picture_test.py": "41480a8459ee95d554860f0d56cbb518f875b5caf71376a74f3d8de78d7c58af",
+    "readable_image.py": "8043e4eefad5ea5472ccb8a51b9d3d3136171d65480d304032b62472c9f0a657",
+    "readable_request.py": "17699efc4a5974d65fcfe4fa1e48e15d08765dd4de81a82f9ec75bbb14674866",
+    "foam_fields.py": "ef0a28e09259cca8d66d94db97e5fb2fb4bc19395c9486c8f3eaaa25e822c1cf",
+    "pod_image.py": "f01e212be6f3499bbf46ffc2c459ea60ed62e7efdb0eec80106a7fa6ed1dd0aa",
+    "snapshot_runner.py": "e1af93e8a754b97d8fa788de2b28d0cec13cb182461bd897c75aaf61b4fa0e4f",
+    "llm_client.py": "f9941b55fd91b8f8e5686c55ac8d595419e9c8f2e2a79a31ac1c015987d2eb9b"
+  },
+  "matplotlib": "3.11.2",
+  "numpy": "2.4.6",
+  "extra": {
+    "oct17_numeric_summary": null,
+    "flow_states": {
+      "M1-inlet-speed/0.1375": {
+        "time_dir": "flow-states-20261030/M1-inlet-speed/0.1375",
+        "U_sha256": "b54499de7346a5824ab00126a9889d12f6446515e7de6bb30f790de4b3f8882f",
+        "p_sha256": "8e7271b227e2d4bf73460a19c59236d7b091c9db270161b936bdf82e0176013c"
+      },
+      "N4/0.125": {
+        "time_dir": "flow-states-20261030/N4/0.125",
+        "U_sha256": "6da9d43c6d2866bd0f200db8fb0d4e711e9cecf09ca6cf1aeac2f2b84fbd68b0",
+        "p_sha256": "45db4e5871977e963d69040a66043bcfd82207d955838dd46eda1f7feb00bd5b"
+      },
+      "N2/0.1225": {
+        "time_dir": "flow-states-20261030/N2/0.1225",
+        "U_sha256": "c64075e346cdfbfc7215624f4c81a0491a6771759e16105917deaa76401e3d4b",
+        "p_sha256": "75307004f63a6fcf197f22c5eb5f53056c6dc6ae5b423018f32bdddabf6c6750"
+      },
+      "N4/0.1225": {
+        "time_dir": "flow-states-20261030/N4/0.1225",
+        "U_sha256": "30fa6e8838818a379c5f6f8a74315af89f4b23c5f58b70317adc7a94a6c3f01d",
+        "p_sha256": "3e1e34cda1c9172bec8a2f38845416a9551b6b79963cb4db09b7eaae912ec370"
+      },
+      "M3-slip-walls/0.1275": {
+        "time_dir": "flow-states-20261030/M3-slip-walls/0.1275",
+        "U_sha256": "7b887f707bde31ab5c6b42d406c1551fc3ef883e62bf57cf8ef8fce99fc09b43",
+        "p_sha256": "bdfe6fd21d6211792aaa1d505b0a6aa7d43e3198e5f1be8f7df634b0a786f7e6"
+      },
+      "N3/0.1275": {
+        "time_dir": "flow-states-20261030/N3/0.1275",
+        "U_sha256": "e046c73712d86f9722e9902a655e0b0629fcbaa3cfdb2a43bef500a1ed23b9e4",
+        "p_sha256": "d4b033fa9b08def663daca8b0f9bf6cc007c1155a59293376a2f5206079bd448"
+      },
+      "N2/0.1375": {
+        "time_dir": "flow-states-20261030/N2/0.1375",
+        "U_sha256": "3e6d2f26e2ae4ff98426f64ba224019f2eab38faa85591b6d7590c0cfb9a1312",
+        "p_sha256": "d350c5792378417863db71bf82eb0556b1f9b047337bdf7c79d5ac24f7b3f596"
+      },
+      "M2-viscosity/0.14": {
+        "time_dir": "flow-states-20261030/M2-viscosity/0.14",
+        "U_sha256": "0669e342a7b5417760116db2a3b69d7daff435cb27b543aa6c05519b75ee0de8",
+        "p_sha256": "cb58992a15b2ec86392bc0938fb20b6f9af8b21eb91f1a716535ead325263245"
+      },
+      "M1-inlet-speed/0.1275": {
+        "time_dir": "flow-states-20261030/M1-inlet-speed/0.1275",
+        "U_sha256": "318b37fa79c1a108e469c5f1feded141c9977ca691085fecd0812cddc2ff2efa",
+        "p_sha256": "37a93330d06980061a9abc7f77b93a472d3137eb36fdbd69af7e6baee27b9819"
+      },
+      "N4/0.1375": {
+        "time_dir": "flow-states-20261030/N4/0.1375",
+        "U_sha256": "21a7e7a25bedff4f6590de9e30c9025294fbd2427c8061f6ae32a8eeadbbf6da",
+        "p_sha256": "2341436fdeb646e6ce5428f58d6b48ba90b848b69d7a0535aa9acbf36f1fddd7"
+      },
+      "N1/0.125": {
+        "time_dir": "flow-states-20261030/N1/0.125",
+        "U_sha256": "0976fc9409a27b32dc910c1e116bc3f0ee5f712a95eb3efe37c5e2ca3280ac1c",
+        "p_sha256": "1221786bd2424c36e605ec1d53181a3abfd8617021acf20265a2cfb5dcee3cc9"
+      },
+      "N5/0.13": {
+        "time_dir": "flow-states-20261030/N5/0.13",
+        "U_sha256": "d254c65103f9a5123dcfe95415aae65e6d5af7c8f6d37ea47ecd5411b4ec9693",
+        "p_sha256": "4d205f76d089fd09a6c38d39698bfd1e9b7fa5af07ccd1b3761b359f456aecaa"
+      },
+      "M4-moving-wall/0.1275": {
+        "time_dir": "flow-states-20261030/M4-moving-wall/0.1275",
+        "U_sha256": "90442dfb652a82c601031de765400db04cbd798362d19d95efe8164941584cb2",
+        "p_sha256": "1452f0b792b6985f1ee5f28fd9dee93d6a21fcbb3170629b61ad656e2c9f4235"
+      },
+      "M5-half-inlet/0.1275": {
+        "time_dir": "flow-states-20261030/M5-half-inlet/0.1275",
+        "U_sha256": "0f7dcd632ffc2fc1df09286b5272033d330c99ca70a727275d66e7ec2fac3d99",
+        "p_sha256": "8974e4895d02ee11bd34c99bf6bcdcb7a22924de11c54782a2cdef09eb9258cd"
+      },
+      "M3-slip-walls/0.13": {
+        "time_dir": "flow-states-20261030/M3-slip-walls/0.13",
+        "U_sha256": "a17bd14b87838528bb764270ce02fcd04b450c1d42d859841872b3757ad8ab67",
+        "p_sha256": "130021d0e6bc6cd33369bb3fe3a14ceef5d3579b0c4e4a07ff09228956c0e370"
+      },
+      "M3-slip-walls/0.135": {
+        "time_dir": "flow-states-20261030/M3-slip-walls/0.135",
+        "U_sha256": "ebf34f76d7169e14c9dc00b79e254344dcb778ad19a1dc6d1a81dc4ab6f72474",
+        "p_sha256": "fd54bb640ab3d90ae2816ab6fdd1696b36ceef8c9df6ce766cfca62b48f93845"
+      },
+      "N1/0.1275": {
+        "time_dir": "flow-states-20261030/N1/0.1275",
+        "U_sha256": "7132895c8073ad3993183133ea2c70ab613d5d8a85cf9ff8cd7d17699f8839a2",
+        "p_sha256": "1604d8b398896bfab5f1e82ec0f84d895d58bb7b4211a78eb757516ed9eb1a77"
+      },
+      "M1-inlet-speed/0.14": {
+        "time_dir": "flow-states-20261030/M1-inlet-speed/0.14",
+        "U_sha256": "d8ac03cf2b05319fa581362f570c6f8f0a6703f923aa27b3bd98b42a94b9e5b7",
+        "p_sha256": "83ece80c22973fbfe8fa0084bedd874f0848f139cf11ef247e6751c6f67ff467"
+      },
+      "N2/0.1275": {
+        "time_dir": "flow-states-20261030/N2/0.1275",
+        "U_sha256": "c32bbafee5726382e414bff5102ff4f76ef62e6110f80239c39f0d55940e403f",
+        "p_sha256": "9eb5d660d13454da53f63f840b74608b7a6a4924aec86b5a648869fc47adfa7c"
+      },
+      "N2/0.13": {
+        "time_dir": "flow-states-20261030/N2/0.13",
+        "U_sha256": "203839b803db8ec8a51e7f2603e9bdd32171d2f6f15572dae0bf2aa0584fb13c",
+        "p_sha256": "172f54760e69d74b57fd909ac5c5513e2e4e59e4a099d8ad83d8e16e0533edb4"
+      },
+      "M4-moving-wall/0.1225": {
+        "time_dir": "flow-states-20261030/M4-moving-wall/0.1225",
+        "U_sha256": "6a7fe7c50e785b795062fc0eb53b98b50378fe3b5a726dfd092f77c02e8fcb5b",
+        "p_sha256": "e50f0b160937c34a2d2ddf0e26b490c95956de0c0f63688d47066ef2a0bf2559"
+      },
+      "M2-viscosity/0.1375": {
+        "time_dir": "flow-states-20261030/M2-viscosity/0.1375",
+        "U_sha256": "7fd75b9d3dc2f3508d34803dfe8aaa17bc00e20c554585241763d1742a017094",
+        "p_sha256": "f93482e141ddc34ff3ad29e6031bf3b5ccf6fcda62f17771158aacfa0ddf7c1e"
+      },
+      "M1-inlet-speed/0.1325": {
+        "time_dir": "flow-states-20261030/M1-inlet-speed/0.1325",
+        "U_sha256": "e8583b028a25d3b4ca4c4449a7868a3db23aed5d53f02749d0698969c89a0602",
+        "p_sha256": "529814234cf0efdc59abaa4d8b180d595bfc37157abc9dfd03f29158b6e9b3fe"
+      },
+      "M5-half-inlet/0.125": {
+        "time_dir": "flow-states-20261030/M5-half-inlet/0.125",
+        "U_sha256": "a0d144517da21d0a3d487900f80eada4d71ed9f96cce0493f1b5f454bde5434c",
+        "p_sha256": "41e06fbddebf32ae609fb25bc7585d8b4d2aceadf3c650584124cd7e15b9b015"
+      },
+      "N5/0.1275": {
+        "time_dir": "flow-states-20261030/N5/0.1275",
+        "U_sha256": "67fcf96c3d3e30c3f681ce7702922132349c7ccf0236213bab61c2d6b61e2c5a",
+        "p_sha256": "81ef6313eed284f1418dac91787f81e7d980aa817d33f94e1981818c256b12a3"
+      },
+      "M4-moving-wall/0.135": {
+        "time_dir": "flow-states-20261030/M4-moving-wall/0.135",
+        "U_sha256": "0aaf499f81886b6039d4df635a570d8818ece2c615c7c2b8f5cc21e826751ac2",
+        "p_sha256": "a36bdfba04f1e9015d1974d5dc7977c1521c562b6fdd659045c39439afff43b7"
+      },
+      "M3-slip-walls/0.1375": {
+        "time_dir": "flow-states-20261030/M3-slip-walls/0.1375",
+        "U_sha256": "86faac36c406dcbcb8d4c2fcb8208d313af7c4090070a14fcb64379e0ebc8deb",
+        "p_sha256": "1776b0aa32aa252c73ab07cc0090b9bd304fcc73386593e5d448e914c7465aad"
+      },
+      "M1-inlet-speed/0.125": {
+        "time_dir": "flow-states-20261030/M1-inlet-speed/0.125",
+        "U_sha256": "0c9c252104440c18057f9628f2587fb6f93ea078c308a0b7096407de2f06b6ac",
+        "p_sha256": "d6dd7232be23d376779b15238e403bfc7ee49cc9f2ba963414a689791488f735"
+      },
+      "M2-viscosity/0.125": {
+        "time_dir": "flow-states-20261030/M2-viscosity/0.125",
+        "U_sha256": "b592e0b3d03e32880be6b76ab37b5a535a17fede1a5375035c6db6c20e8f68c4",
+        "p_sha256": "36e99ed66c185a0842d974569210b5e02cad660e5f457401be260e6821623d2a"
+      },
+      "N1/0.1325": {
+        "time_dir": "flow-states-20261030/N1/0.1325",
+        "U_sha256": "c1b9f00c45222a7c733ec139a6ec8fa8e689080ee8e70b2fa50936953b5d48cf",
+        "p_sha256": "35896992392cf657663ceaeab484b1d39ca6ddcac7bbafaecc5ea14e692e5195"
+      },
+      "M1-inlet-speed/0.13": {
+        "time_dir": "flow-states-20261030/M1-inlet-speed/0.13",
+        "U_sha256": "ef68fc20317caaa0d65910db577ad0845af40ece6c53cbb3d4f2d29afd78b913",
+        "p_sha256": "3e4747ed050e50e14ada1593b583b40090db986dd839d8333a3be70b33658bb8"
+      },
+      "M4-moving-wall/0.1325": {
+        "time_dir": "flow-states-20261030/M4-moving-wall/0.1325",
+        "U_sha256": "b8616a064e3aa715f46ce43e7954bf498fdf2c4a92fd62452f7be9dbd73138c6",
+        "p_sha256": "67f135da3cf385a920d2fbdcacf46365acc95a6d241bac0303d205ebb119f3e9"
+      },
+      "M3-slip-walls/0.1325": {
+        "time_dir": "flow-states-20261030/M3-slip-walls/0.1325",
+        "U_sha256": "49cf5b069a3f3788f3e8b1fac73a3e290286ed1b16220ad3ab6acad723e765ae",
+        "p_sha256": "c714081edc1197e0d3c1c6a80378b47539574f3730d8d9188d8e888434034fdb"
+      },
+      "N2/0.125": {
+        "time_dir": "flow-states-20261030/N2/0.125",
+        "U_sha256": "d6410d263ce444027e682ae008da8166e361cb4f270135d37f5019a647b5945f",
+        "p_sha256": "4adc8dda9a75067ff48c1d8e2b4a6d3a2d6dba9bfb58c6779f64c6f0b955b58f"
+      },
+      "N4/0.14": {
+        "time_dir": "flow-states-20261030/N4/0.14",
+        "U_sha256": "a0f8636adaa0ce4d46cb13cdcf53d43fd16c09e08d69c9ea812d34e2da8b8007",
+        "p_sha256": "ef4735789efb058f32af8b16a2baf1860b5d634444588555a0c62764023560fa"
+      },
+      "M1-inlet-speed/0.1225": {
+        "time_dir": "flow-states-20261030/M1-inlet-speed/0.1225",
+        "U_sha256": "00fc12cf3c0b8cced5952c1d94b59ad56e586e9f27d5afc87056a789cea912a2",
+        "p_sha256": "5bc86732d0ce70c1142e5cf69cce8c01591bee66e71d5b760835b8ab3344672b"
+      },
+      "M4-moving-wall/0.1375": {
+        "time_dir": "flow-states-20261030/M4-moving-wall/0.1375",
+        "U_sha256": "c479f6f4f0db5b7985439d8e44a9768da00fa00dda1c3e96a11d913faf559b1c",
+        "p_sha256": "febe8f87da7fed8a4c2e601f9dfb27cbbdefb95ed5e8109b118f7884cc813bf8"
+      },
+      "N1/0.135": {
+        "time_dir": "flow-states-20261030/N1/0.135",
+        "U_sha256": "719baec764e4a3dd18cb69fc9de425ed0780bb7672d2613e2ca55d9129b9d3a1",
+        "p_sha256": "976e1b279655f89882f42fa36fe7ce6b20cd5e38ab4ecdfc79954761fd2d1b60"
+      },
+      "N5/0.1375": {
+        "time_dir": "flow-states-20261030/N5/0.1375",
+        "U_sha256": "66af67a0f4a31510ea4d0414a58d731c4a44a7de875552a971b333eabca73e25",
+        "p_sha256": "7e8c26b69478831330945621950e5e02f34762f292d3ba08d90b8791f2221292"
+      },
+      "N3/0.14": {
+        "time_dir": "flow-states-20261030/N3/0.14",
+        "U_sha256": "2b3ec1e585f92195c7875fca7ee3cdb088af82c17b72ee5c203dd7b8a236897e",
+        "p_sha256": "cf3f92b57deb1edba031670c9e1c4e72afd1de395714336222579db3bc4c8ce2"
+      },
+      "N1/0.14": {
+        "time_dir": "flow-states-20261030/N1/0.14",
+        "U_sha256": "09a56930cbffdedefeb6ff10d02e03f8b254b7fe170c78a681567890995eaf1d",
+        "p_sha256": "090491cc00674640a835df4d1834d59b0843180225b5b51f050ff114d48c9734"
+      },
+      "N5/0.1225": {
+        "time_dir": "flow-states-20261030/N5/0.1225",
+        "U_sha256": "b8c1d3e879d7b50ac976b645ca2453ea7091be41518e1d8d765cca4495c8918f",
+        "p_sha256": "c4329940c88b4187cb6953eaaa7e3151168182fa06d3430971f6cec08a13260d"
+      },
+      "M3-slip-walls/0.1225": {
+        "time_dir": "flow-states-20261030/M3-slip-walls/0.1225",
+        "U_sha256": "52d1d72fff3f49aaa1d38a9f999adeaf327ad9fc4e77c6b69bbfe8041cbf7c9a",
+        "p_sha256": "eb29810523f87864714774fec6150df2ae4332ad301a620f6b6ffe0bf334ed0d"
+      },
+      "M3-slip-walls/0.125": {
+        "time_dir": "flow-states-20261030/M3-slip-walls/0.125",
+        "U_sha256": "3f03d1a203176f022636297edfd3b2513c6df3d765a5b7b5f4e16c269b3245cc",
+        "p_sha256": "3036d3bba0c98243f833fe8e96f2c340b13111477ee54e102e3a26456ce501e1"
+      },
+      "M5-half-inlet/0.135": {
+        "time_dir": "flow-states-20261030/M5-half-inlet/0.135",
+        "U_sha256": "2022bb1c6cd6a6bb44157c58c83c3531672264258cf2562324ee3e0801f1ec37",
+        "p_sha256": "006922ff8337d0a0e19c5d03dc609016ad49d6d2115b26070e9703d2ee79dfc5"
+      },
+      "M2-viscosity/0.135": {
+        "time_dir": "flow-states-20261030/M2-viscosity/0.135",
+        "U_sha256": "c045b6fc2222d0fb48c7b62fe910460be78c521051318c426affc321663c75b7",
+        "p_sha256": "a8d98704f7e106c0cf6ee25cd501e51fc8e8c061c4a60d50b9343b56bbfebdd4"
+      },
+      "N4/0.135": {
+        "time_dir": "flow-states-20261030/N4/0.135",
+        "U_sha256": "fcb5bcb86453e3746fd8396661a6441957ccfe803493b6a3d4d22dd565c53566",
+        "p_sha256": "cddd92cc8a2be145c4f34a95b9c47859d6cfa1871c44a332971249369ed813c5"
+      },
+      "M2-viscosity/0.1275": {
+        "time_dir": "flow-states-20261030/M2-viscosity/0.1275",
+        "U_sha256": "dd71b7ad2dc7fb48189c7d1c606163c1508b2eb75944bcb57e4e674796e3be0f",
+        "p_sha256": "51c4ea9bb1cb765867bee20588a1bcba7dbc620475c23aef3949ffcfa8097088"
+      },
+      "M5-half-inlet/0.13": {
+        "time_dir": "flow-states-20261030/M5-half-inlet/0.13",
+        "U_sha256": "86de63bfe123e7613df6aad206f67f03262086811dfc61e60fc2c780632eacd3",
+        "p_sha256": "ab0a37bb14e6b88a1f2cc0fd3f480c40735b88ee5ef797409a9472347c1b288b"
+      },
+      "N3/0.135": {
+        "time_dir": "flow-states-20261030/N3/0.135",
+        "U_sha256": "9c6a63db40ee4cd1d9e15c3bb560837bc66038730ff3f58e510772b05660f8aa",
+        "p_sha256": "1456bb58bf7023469d483b44a9ada93efce45b5cef6e28c209534b921574d268"
+      },
+      "M3-slip-walls/0.14": {
+        "time_dir": "flow-states-20261030/M3-slip-walls/0.14",
+        "U_sha256": "4717debfd95e7e3ac30a0619243ca8baa899f303ca17bc7a9f378c50de68b4d6",
+        "p_sha256": "ed7c6fdff73a6dbb2246b310ec5f7654fb4c560d030395041c278efc6e2f56a2"
+      },
+      "N3/0.125": {
+        "time_dir": "flow-states-20261030/N3/0.125",
+        "U_sha256": "1c75a2ecc5aecb9b584497b831ef0e5d977a522bbfd7ba6d74d29509038195c1",
+        "p_sha256": "3d8a05a93ec2f2edf02882044ea5d412297535cb394b45c5e35b97b9dee66a4e"
+      },
+      "M2-viscosity/0.13": {
+        "time_dir": "flow-states-20261030/M2-viscosity/0.13",
+        "U_sha256": "aac8c9962606b341c00902cd3acbdebdb5553981ac77a910ccbb2066dc2fa15a",
+        "p_sha256": "f943b536bec0efdf8c996c102e8d9b1b84cbd441fdeae553915ce5ac0053a83c"
+      },
+      "N2/0.14": {
+        "time_dir": "flow-states-20261030/N2/0.14",
+        "U_sha256": "a153c16e00d7964d6c923284413f264d02ab72f053c89947480f3430c2ec8618",
+        "p_sha256": "0e263e13e5df2aa1290df21edec67cad4c378aca7af38d5d27ffc9407d24b942"
+      },
+      "N2/0.135": {
+        "time_dir": "flow-states-20261030/N2/0.135",
+        "U_sha256": "0a38f0586fd72e4ce45919d7cdef710bab89cb40e1fe5d29364d9c69359ba549",
+        "p_sha256": "9a5bbafd67a01b44352b502b79db40bf49de9066bdfebd6fefe6dff45da80c25"
+      },
+      "M2-viscosity/0.1325": {
+        "time_dir": "flow-states-20261030/M2-viscosity/0.1325",
+        "U_sha256": "8bdcad854ac9f65a698b55c3d7473fd7b1d251df14bbf92a297d3b527e0165e7",
+        "p_sha256": "fb9a789fe128b4a86f2b7d352bdf5b5147a764e530f379ae454f9f6b673939e2"
+      },
+      "N1/0.1375": {
+        "time_dir": "flow-states-20261030/N1/0.1375",
+        "U_sha256": "8cd01173a59967e2c9547c3c90125ad2ec1506f865b3662dd2928307f2d11787",
+        "p_sha256": "8191e20f9db1eafc1903264910975e6de8eb8eb92355c96a6c66eb35fd525684"
+      },
+      "N4/0.1275": {
+        "time_dir": "flow-states-20261030/N4/0.1275",
+        "U_sha256": "3df534a08b7b2b18baa9bae1bdf54dedb3a8a013e339516c7f74e75a8afe2467",
+        "p_sha256": "7a5058edf6610de9c617554a6113a4e185197709a564ffae8b85d7b054e11be4"
+      },
+      "N5/0.135": {
+        "time_dir": "flow-states-20261030/N5/0.135",
+        "U_sha256": "b1cf542e7e25ef23f56fbafe90c65830e4ff3d743a32ee3eb1051f48ebdf18cb",
+        "p_sha256": "0c5bf3438039841cb69077ce1cc4c43b654097004285212e9c12c8f1161dd2ee"
+      },
+      "M4-moving-wall/0.125": {
+        "time_dir": "flow-states-20261030/M4-moving-wall/0.125",
+        "U_sha256": "5b3306a9bbb396361d6a7e5185a29ea2bb6559e72d516174600e3e634a5d17f4",
+        "p_sha256": "17398565cda35cd0906428f229e1c44c2d3a97a69d199341989e3835798bdd93"
+      },
+      "N5/0.125": {
+        "time_dir": "flow-states-20261030/N5/0.125",
+        "U_sha256": "3cfbf4b3f98a70684e844ca9d295f76eb63a8bbaf31e1af879bb30934239c5ee",
+        "p_sha256": "3aaf56087212aceaefe76700acda42757612bb6ef9da8faefe5b186de39ff4b4"
+      },
+      "M2-viscosity/0.1225": {
+        "time_dir": "flow-states-20261030/M2-viscosity/0.1225",
+        "U_sha256": "862dc723675183c45bea1ccff50fda93d60d1879a0fadd394257ad0cf093af62",
+        "p_sha256": "307c9c8e74c64d1e2fec3cb96b42b66c9b3391d36bb0148c7878050a5d9fe43e"
+      },
+      "N3/0.13": {
+        "time_dir": "flow-states-20261030/N3/0.13",
+        "U_sha256": "cdc2e04626d928a2eb6d88f5eb5bd186e739e30dc11c719257c665f8767293a5",
+        "p_sha256": "438a3125317696adb1ed0282608a6c75b1da8d1793759ed289e4a532c3cb0bdd"
+      },
+      "M4-moving-wall/0.14": {
+        "time_dir": "flow-states-20261030/M4-moving-wall/0.14",
+        "U_sha256": "a285ee4cb876c5096d78b1774cf06b055cbfc636d754f98952aab92822c8ab05",
+        "p_sha256": "37666e9057cc34b0b37169b4b17c91408a694478f3eeed915f35400f2e830377"
+      },
+      "N3/0.1225": {
+        "time_dir": "flow-states-20261030/N3/0.1225",
+        "U_sha256": "9a9ad3c791dd531e14c96f941c5b87966d68d09230a414540c94c750f181260d",
+        "p_sha256": "059f8f1598b82224137547c7d88998aac0de7d2a7059b0544b8a092a96ee04d5"
+      },
+      "N1/0.1225": {
+        "time_dir": "flow-states-20261030/N1/0.1225",
+        "U_sha256": "87c2d43d65f0dd39cb4e3dee76e2cf0793ec184e559bceb381221479f9f07825",
+        "p_sha256": "b1da14e1cedd6375756db5720fe8824c68fdc87cc1cd46fe6d3fde13823eda9b"
+      },
+      "N4/0.1325": {
+        "time_dir": "flow-states-20261030/N4/0.1325",
+        "U_sha256": "5537e53405d2b510171a12588be0abd903aabbe137e7bac11edbfc986422afed",
+        "p_sha256": "eaab765afa011dffab19e0ba7f3f5bf8f512a021db8b7c3cc73074af6735a3a4"
+      },
+      "N3/0.1375": {
+        "time_dir": "flow-states-20261030/N3/0.1375",
+        "U_sha256": "d59e30aa7d9d1c8b9a9dcdec7dcae68ec46137f8fdc89369d4147ffcaf710166",
+        "p_sha256": "504dbdc5f9604fd3b1852b4aa6750621d441a9f6d8a2108cee1a8a68b795adf2"
+      },
+      "M5-half-inlet/0.1225": {
+        "time_dir": "flow-states-20261030/M5-half-inlet/0.1225",
+        "U_sha256": "267ea7fba7ef8be926f88c232f421846c94cf5596c68ee3623c13e485b57214c",
+        "p_sha256": "d39c995b021eeb3ad5d351f1462416336af858a59647033535c820f5d9a16e00"
+      },
+      "M5-half-inlet/0.1375": {
+        "time_dir": "flow-states-20261030/M5-half-inlet/0.1375",
+        "U_sha256": "48edaf511b649cb0bba42f526053228b754b6f4e49a3e209560413abd3dccda4",
+        "p_sha256": "5495e4ebb743c8dea9b29bb63d94a593daeb530d18f5688b8aad46381117677e"
+      },
+      "M1-inlet-speed/0.135": {
+        "time_dir": "flow-states-20261030/M1-inlet-speed/0.135",
+        "U_sha256": "962318bde39eebfa05d42f765e884c59d27a66983a892833242b3f4650afa117",
+        "p_sha256": "ca795efbfc336bee5c9c15a4a288a977144280c69e2458df2037d2b38547a9ba"
+      },
+      "N5/0.14": {
+        "time_dir": "flow-states-20261030/N5/0.14",
+        "U_sha256": "4184d286efa20eed66d0f503c8d5674c58bbb3008224b3adb42d75c62c8d7912",
+        "p_sha256": "1f4f4e18615a43b9764c2bf55a182a350e0bbcdfdf12b3176239b0659d8aa777"
+      },
+      "N1/0.13": {
+        "time_dir": "flow-states-20261030/N1/0.13",
+        "U_sha256": "80c7cc2a6d7a887092c229c9f4f1ad6a496a9ee8240289973a21baad0af9c5ec",
+        "p_sha256": "8c6b091484ef4f1d3ff4739698c8d15a22b3fab4d76532032b47386b3bdc9371"
+      },
+      "N4/0.13": {
+        "time_dir": "flow-states-20261030/N4/0.13",
+        "U_sha256": "646712830aba23af75658826f36a4cd4669f0f06307bea5d6d16e0582cd3af82",
+        "p_sha256": "efe4816faaa299ae7614ad97658aba998faa7d38a565704d8003b3b8eb1017e8"
+      },
+      "M5-half-inlet/0.14": {
+        "time_dir": "flow-states-20261030/M5-half-inlet/0.14",
+        "U_sha256": "80fb440d8e1d6b1999b301df529f6c7a3d7ce56c84cee100468bb8fae926484c",
+        "p_sha256": "a323487d59da40ff267a972d3238817504c79b85e283f4926ea0a7d5b0f1e373"
+      },
+      "N5/0.1325": {
+        "time_dir": "flow-states-20261030/N5/0.1325",
+        "U_sha256": "c5fec8789425535fa65263b2c25417210062317afc12714e10329479290acfef",
+        "p_sha256": "7478bf2a4469e47659592301c0415206511b41764b37f3919c46229c3801cb8a"
+      },
+      "N2/0.1325": {
+        "time_dir": "flow-states-20261030/N2/0.1325",
+        "U_sha256": "26f07d5c8a740d76e3aadcda7144476f2c8d6c4da17ac0d9bb63576ba7939948",
+        "p_sha256": "28413d80c0aab1146392aacf10e9a96842f581b3246403f53eb461607fab657a"
+      },
+      "M5-half-inlet/0.1325": {
+        "time_dir": "flow-states-20261030/M5-half-inlet/0.1325",
+        "U_sha256": "32607c087dba528df8b8c59f6f74e795ec22ffeba544ba9b0447c6e8eabfc9ce",
+        "p_sha256": "52b904ec3f5cea7b524062a7ba6fdb234d993ce15f1cff348fc342646c81e0f0"
+      },
+      "M4-moving-wall/0.13": {
+        "time_dir": "flow-states-20261030/M4-moving-wall/0.13",
+        "U_sha256": "4219d0945a20407c20eaea05af6a66878f3a99c13acf35e1f43951a1a4d1563d",
+        "p_sha256": "52b9bbb06ca1a6336511f39423817a784980e1ea4ede5b2930e07ff719dd9a83"
+      },
+      "N3/0.1325": {
+        "time_dir": "flow-states-20261030/N3/0.1325",
+        "U_sha256": "2e7e910c944015e24f07b8e56e22d73348384468938d37606018eb02355fadd8",
+        "p_sha256": "4e8fd16a6985ab4645dfc8cfd491a378e856bd37e14b4395e6c8c6f2f15d663b"
+      }
+    }
+  },
+  "identical_arrays_hard_linked": 0,
+  "truth_withheld_from_model": true,
+  "model_name_in_bodies": "gemma-4-E2B-it-Q4_0-vision",
+  "note": "Each state is drawn once (frames/<run>/<time>/). The runner replaces only the model name."
+}

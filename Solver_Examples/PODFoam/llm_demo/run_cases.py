@@ -86,6 +86,8 @@ def resident_server(endpoint, runtime):
 
 
 def main():
+    if len(sys.argv) != 5:
+        sys.exit(f'usage: {sys.argv[0]} POD_SOURCE_DIRECTORY REFERENCE_RUN OUTPUT_DIRECTORY PODFOAM')
     source, reference, output, executable = map(Path, sys.argv[1:])
     endpoint = os.environ['LLM_ENDPOINT']
     runtime = Path(os.environ.get('POD_LLM_RUNTIME', source.parents[2]/'llm-runtime'))

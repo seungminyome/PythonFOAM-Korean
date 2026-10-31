@@ -10,13 +10,13 @@ E2B로 잰 것을 Gemma 4 12B QAT Q4_0으로 클러스터 GPU에서 다시 재�
 
 | 스크립트 | 하는 일 |
 |---|---|
-| `setup_12b.sh` | llama.cpp b11429 CUDA 빌드와 12B 가중치·이미지 프로젝터를 `google/gemma-4-12B-it-qat-q4_0-gguf`에서 내려받고, 이것들과 쓰고 있는 `llama-server`의 SHA-256을 기록. 약 8 GB. |
+| `setup_12b.sh` | llama.cpp b11429 CUDA 빌드와 12B 가중치·이미지 프로젝터를 `google/gemma-4-12B-it-qat-q4_0-gguf`에서 내려받고, 이것들과 쓰고 있는 `llama-server`의 SHA-256을 기록. 약 8 GB. `HF_TOKEN`이 있으면 함께 보내며, 토큰은 필요 없음. |
 | `start_server.sh` / `stop_server.sh` | 노드 GPU에서 llama-server를 E2B와 같은 설정(문맥 2048, 슬롯 1, 이미지 토큰 256 요청, reasoning off)으로 띄움. 모든 층을 GPU에. `server.pid` 기록. 12B 프로젝터에서는 `--ubatch-size`가 128이라서 서버가 이미지 토큰 상한을 128로 낮춤. |
 | `replay_12b.slurm` | 2026-10-17의 5단계 상태로 쌍별 재생: 수치만 vs 수치+그림 세 쌍, 시드 20261017. OpenFOAM 불필요. |
-| `demo_12b.slurm` | 연결 검증, 솔버 다섯 조건, 검증, 새 상태의 쌍별 재생. 노드에 OpenFOAM v2106 필요. |
+| `demo_12b.slurm` | 연결 검증, 솔버 다섯 조건, 검증, 새 상태의 쌍별 재생. 노드에 OpenFOAM 필요(기본 v2106, 다른 버전은 [검증 README](../../validation/README.md) 참고). |
 | `picture_test.slurm`, `fetch_models.sh`, `models.tsv` | 여러 크기의 모델로 하는 그림 읽기 시험(2026-10-21 준비, 2026-10-22 실행). [아래](#그림-읽기-시험-2026-10-22-실행) 참고. |
 | `window_test.slurm` | `MODELS`의 모델로 하는 무작위 창 그림 시험(`window_test.py`). [아래](#무작위-창-시험과-qwen-모델-2026-10-22-실행) 참고. |
-| `async_v2.slurm` | 발달한 흐름에서 시작해, 돌고 있는 솔버가 그린 v2 그림과 Gemma 4 12B로 하는 비동기 시험, 이어서 describe sweep. OpenFOAM은 Apptainer 이미지에서, llama-server는 호스트 GPU에서. [아래](#돌고-있는-솔버가-그린-v2-그림-async_v2slurm-2026-10-22-실행) 참고. |
+| `async_v2.slurm` | 발달한 흐름에서 시작해, 돌고 있는 솔버가 그린 v2 그림과 Gemma 4 12B로 하는 비동기 시험(`async_v2_sweep.slurm`: 이어서 describe sweep). OpenFOAM은 Apptainer 이미지에서, llama-server는 호스트 GPU에서. [아래](#돌고-있는-솔버가-그린-v2-그림-async_v2slurm-2026-10-22-실행) 참고. |
 | `periodic_v2.slurm` | v2 describe 요청을 N걸음마다 보내는 긴 실행과 요청 없는 쌍둥이(`run_periodic.py`). `async_v2.slurm` 실행의 기준 준비 폴더에서 시작. 비용, 메모리, 파이프 전송량. |
 | `build_llama_cuda.sh` | 예비: 미리 빌드된 바이너리가 안 돌면(glibc가 오래됨, CUDA 버전 다름) b11429를 소스에서 CUDA로 빌드. |
 
@@ -25,7 +25,7 @@ E2B로 잰 것을 Gemma 4 12B QAT Q4_0으로 클러스터 GPU에서 다시 재�
 둘 다 됩니다. 작업 스크립트가 폴더 구조를 알아서 찾습니다.
 
 ```bash
-git clone https://github.com/seungminyome/PythonFOAM.git && cd PythonFOAM
+git clone <이 저장소의 URL> PythonFOAM && cd PythonFOAM
 # 또는: tar -xzf pythonfoam-12b-hpc-20261019.tar.gz && cd pythonfoam-12b-hpc
 ```
 
@@ -34,24 +34,29 @@ git clone https://github.com/seungminyome/PythonFOAM.git && cd PythonFOAM
 없습니다. 계산 노드에 인터넷이 없으면 제출 전에 로그인 노드에서 한 번 내려받으세요.
 
 ```bash
-export HF_TOKEN=hf_... POD_LLM_RUNTIME=$PWD/llm-runtime-12b
+export POD_LLM_RUNTIME=$PWD/llm-runtime-12b
 bash Solver_Examples/PODFoam/llm_demo/hpc/setup_12b.sh
 ```
 
 ## 제출 전에
 
-1. [huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf](https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf)에서
-   Gemma 라이선스에 동의하고 read 토큰을 만든 뒤, 제출하는 셸에서 `export HF_TOKEN=hf_...`.
+1. 가중치에는 Gemma 라이선스가 적용됨:
+   [huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf](https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf) 참고.
+   이 저장소는 토큰 없이도 응답함([기록](../../../../docs/evidence/2026-10-30-versions/hf-no-token.txt)).
+   `HF_TOKEN`이 있으면 내려받을 때 함께 보냄.
 2. `.slurm` 파일의 클러스터 설정 줄을 고침 (CUDA 12.8 또는 13.4, numpy 있는 Python 3;
    demo는 matplotlib과 OpenFOAM v2106도 필요). `LLAMA_CUDA=13.4`는 CUDA 13 빌드를 고르며, 드라이버 580 이상이 필요함.
+   `async_v2.slurm`과 `periodic_v2.slurm`에는 고칠 줄이 없음. `SIF`와 `PYTHON`(필수), `POD_HOST_MODULES`(선택)를
+   환경에서 읽고 `module list`와 함께 `site.txt`에 씀. `SIF`는 컴파일러와 bashrc가
+   `/usr/lib/openfoam/openfoam2212/etc/bashrc`에 있는 OpenFOAM v2212 이미지이며(다른 곳이면 `OPENFOAM_BASHRC`를 지정),
+   예를 들어 `apptainer pull docker://opencfd/openfoam-dev:2212`로 받음. 연결 검증은 그 이미지에서 통과함(작업 24952019,
+   [기록](../../../../docs/evidence/2026-10-30-versions/dev2212-24952019/dev2212-24952019.out)). 시험 모음은 아래 실행의 이미지에서만 돌렸음.
 3. 파티션과 `--gres` 표기가 클러스터와 맞는지 확인. 계정과 파티션은 `sbatch` 명령줄에서 줌.
-4. `HF_TOKEN`은 가중치가 아직 `POD_LLM_RUNTIME`에 없을 때만 필요.
 
 ## 제출
 
 ```bash
 # 저장소 루트(또는 tar.gz를 푼 루트)에서
-export HF_TOKEN=hf_...
 sbatch Solver_Examples/PODFoam/llm_demo/hpc/replay_12b.slurm   # GPU 1장. 런타임이 준비돼 있으면 A30에서 35 s
 sbatch Solver_Examples/PODFoam/llm_demo/hpc/demo_12b.slurm     # OpenFOAM v2106이 있을 때만
 # tar.gz를 풀었으면 경로는 PODFoam/llm_demo/hpc/...
@@ -134,7 +139,7 @@ v2 sequence가 프롬프트 약 2,200토큰), batch와 ubatch 512(어느 프로�
 # 클러스터에서, 묶음을 푼 폴더에서
 export POD_LLM_RUNTIME=<12B 때 만든 llama-b11429-cuda/가 있는 폴더>
 bash PODFoam/llm_demo/hpc/fetch_models.sh e2b e2b-bf16 e2b-qat e4b 12b 26b 31b   # 계산 노드에 인터넷이 없으면 로그인 노드에서
-sbatch --account=<계정> --partition=mb-a30 PODFoam/llm_demo/hpc/picture_test.slurm
+sbatch --account=<계정> --partition=<파티션> PODFoam/llm_demo/hpc/picture_test.slurm
 # 모델 몇 개만: sbatch --export=ALL,MODELS="e2b 12b" ...
 ```
 
@@ -145,7 +150,7 @@ sbatch --account=<계정> --partition=mb-a30 PODFoam/llm_demo/hpc/picture_test.s
 스크립트), 실패가 있으면 `failed.txt`, 그때까지의 작업 로그, `report.md`가 들어 있습니다.
 `report.md`(`picture_test.py report`)에는 시도한 요청 수 기준 점수, 고정 답 점수, v1/v2와 v2/v2own
 문항별 비교, 모델마다 2026-10-17/20 답 중 공개된 E2B 답과 같은 답의 수가 있습니다. `GH_TOKEN`
-(contents 쓰기 권한)과 `RESULTS_RELEASE=<태그>`를 주면 결과 묶음을 그 GitHub 릴리스에 올립니다.
+(contents 쓰기 권한), `RESULTS_REPO=<소유자/이름>`, `RESULTS_RELEASE=<태그>`를 주면 결과 묶음을 그 GitHub 릴리스에 올립니다.
 `CLEANUP_MODELS=1`이면 이 작업이 직접 받은 모델 파일(`fetched.txt`)만, `CLEANUP_MODELS=all`이면
 `MODELS`에 있는 키의 `models/<키>` 폴더를 모두 지웁니다. 12B 파일은 지우지 않습니다. 다른 작업이 같은
 `POD_LLM_RUNTIME`을 쓰는 동안에는 둘 다 쓰지 마세요. 작업은 모델을 띄우기 전에
@@ -174,7 +179,7 @@ python3 Solver_Examples/PODFoam/llm_demo/window_test.py build --states <case> \
     --centres docs/evidence/2026-10-20/pod-llm-async.pp7agC/async-no-llm/llm_observation/step-000250/fields.npz \
     --old-manifest <picture-test-20261021/manifest.json> --output <set> [--seed N] [--first-step N --describe-every N --last-step N]
 export POD_LLM_RUNTIME=$PWD/llm-runtime-12b PICTURE_TEST_SET=<set>
-sbatch --export=ALL,MODELS="12b 26b 31b qwen35-35b" --account=<account> --partition=mb-a6000 \
+sbatch --export=ALL,MODELS="12b 26b 31b qwen35-35b" --account=<account> --partition=<partition> \
     Solver_Examples/PODFoam/llm_demo/hpc/window_test.slurm
 ```
 
@@ -202,17 +207,21 @@ apptainer exec <of2212.sif> bash -c '
 이미지는 호스트의 네트워크와 프로세스 이름공간을 함께 쓰므로, 이미지 안 솔버의 콜백이 호스트 GPU에 띄운
 llama-server에 127.0.0.1로 닿습니다. `async_v2.slurm`은 서버(12B, 문맥 4096, batch와 ubatch 512, 그림
 시험과 같은 설정)를 띄우고, 호스트에서 체크아웃의 git 상태를 기록하고(이미지에는 git이 없음. `pack_run.py`가
-복사), 이미지 안에서 `POD_SUITE=async`와 `LLM_IMAGE_STYLE=v2`로 `run_demo.sh`를 돌린 뒤
-`run_live_sweep.py`를 돌립니다.
+복사), 이미지 안에서 `POD_SUITE=async`와 `LLM_IMAGE_STYLE=v2`로 `run_demo.sh`를 돌립니다.
+`async_v2_sweep.slurm`은 같은 작업 뒤에 `run_live_sweep.py`를 돌리며, `POD_SUITE_RUN`을 주면 sweep만 돌립니다.
 
 ```bash
 # 저장소 최상위에서, 연결 검증 실행과 같은 격자의 발달한 실행이 있은 뒤
+export SIF=<of2212.sif> PYTHON=<conda>/bin/python3   # 필수: 이미지, numpy + matplotlib이 있는 Python 3
+export POD_HOST_MODULES="<modules>"                  # 선택: 소스에서 빌드한 llama-server가 쓰는 모듈
 export POD_REFERENCE_RUN=<pod-v2212.XXXXXX> LLM_LONG_START=<developed case>/0.1
-sbatch --account=<account> --partition=mb-a6000 Solver_Examples/PODFoam/llm_demo/hpc/async_v2.slurm
+sbatch --account=<account> --partition=<partition> Solver_Examples/PODFoam/llm_demo/hpc/async_v2.slurm
 ```
 
+Apptainer는 `PATH`에서, 없으면 `module load apptainer`로 찾습니다.
+
 기본값: 시작 상태에서 5e-6 s 간격 6000걸음, 250걸음마다 저장, describe 요청은 250걸음, sequence 프레임은
-3000·3250·3750걸음, 창 x 0\~0.12 m, y 0\~0.04 m, 그다음 500걸음마다 sweep 요청 열한 개(`SWEEP_STEPS`,
+3000·3250·3750걸음, 창 x 0\~0.12 m, y 0\~0.04 m. `async_v2_sweep.slurm`은 그다음 500걸음마다 sweep 요청 열한 개를 보냅니다(`SWEEP_STEPS`,
 `SWEEP_PARALLEL`). `LLM_KILL_JOIN_S=0.2`: 이 노드에서는 0.5 GB 솔버에서 포크한 워커를 끊고 거두는 데 약
 40 ms가 걸려 당시 기본값 0.02 s보다 깁니다(2026-10-27부터 기본 0.1 s). 발달한 상태는 같은 이미지의 `pimpleFoam`으로, 연결 검증 실행의
 `fixed-pimple` 경우에서 `controlDict`만 바꿔 얻었습니다. 시간 간격을 스스로 맞추며(`maxCo 0.5`,
@@ -228,26 +237,27 @@ sbatch --account=<account> --partition=mb-a6000 Solver_Examples/PODFoam/llm_demo
 ## 2026-10-27 실행
 
 MedicineBow에서 저장소 최상위 폴더에서, conda Python을 `PATH` 앞에 두고(시스템 `python3`에는 numpy가
-없음) 소스에서 빌드한 llama-server가 쓰는 CUDA 모듈을 불러:
+없음) 소스에서 빌드한 llama-server가 쓰는 CUDA 모듈(그곳에서는 arcc/1.0, gcc/14.2.0, cuda-toolkit/12.8.0)을 불러:
 
 ```bash
 export PATH=<numpy가 있는 python 3>/bin:$PATH POD_LLM_RUNTIME=$PWD/llm-runtime-12b
-export POD_HOST_MODULES="arcc/1.0 gcc/14.2.0 cuda-toolkit/12.8.0"
+export POD_HOST_MODULES="<modules>"
 # 변화 읽기 시험(sequence_test.py 묶음), Gemma와 Qwen
 PICTURE_TEST_SET=<developed-sequence-test-20261027> PICTURE_TEST_SCRIPT=sequence_test.py \
-  sbatch --export=ALL,MODELS="12b 26b 31b" --account=<account> --partition=mb-a30 \
+  sbatch --export=ALL,MODELS="12b 26b 31b" --account=<account> --partition=<partition> \
   Solver_Examples/PODFoam/llm_demo/hpc/window_test.slurm
 # 권장 이미지 토큰으로 4비트 Qwen
 PICTURE_TEST_SET=<창 묶음> LLM_IMAGE_TOKENS=1024 LLM_IMAGE_MIN_TOKENS=1024 LLM_CTX=8192 \
   sbatch --export=ALL,MODELS="qwen3vl-32b-q4 qwen35-27b-q4 qwen35-35b-q4" --account=<account> \
-  --partition=mb-l40s Solver_Examples/PODFoam/llm_demo/hpc/window_test.slurm
+  --partition=<partition> Solver_Examples/PODFoam/llm_demo/hpc/window_test.slurm
 # 250걸음마다 describe 요청, 24,000걸음, 그리고 쌍둥이
-POD_SUITE_RUN=<PASS한 async_v2.slurm 실행의 pod-llm-async.XXXXXX> \
-  sbatch --account=<account> --partition=mb-a30 Solver_Examples/PODFoam/llm_demo/hpc/periodic_v2.slurm
+SIF=<of2212.sif> PYTHON=<conda>/bin/python3 POD_SUITE_RUN=<PASS한 async_v2.slurm 실행의 pod-llm-async.XXXXXX> \
+  sbatch --account=<account> --partition=<partition> Solver_Examples/PODFoam/llm_demo/hpc/periodic_v2.slurm
 ```
 
 작업 24903974\~24903978(그림 시험), 24903264(주기 요청), 24903298과 24903263(`async_v2.slurm`으로 10월 22일
-시험 반복. `POD_SUITE_RUN`을 주면 `async_v2.slurm`은 sweep만 돌리며, 작업 24903755가 그렇게 돌았음).
+시험 반복. `POD_SUITE_RUN`을 주면 지금 `async_v2_sweep.slurm`에 있는 sweep 작업은 sweep만 돌리며, 작업 24903755가 그렇게 돌았음).
+24903975\~24903977은 mb-l40s 파티션, 나머지는 mb-a30 파티션입니다.
 그림 시험의 첫 제출 가운데 시작한 두 개는 `window_test.slurm`이 CUDA 모듈을 더 이상 불러오지 않아 바로
 멈췄고(`libcudart.so.12`를 못 찾음), 그래서 `POD_HOST_MODULES`를 넣었습니다. 결과는
 [보고서](../../../../docs/results-20261027.md), 기록은 [그림 시험 근거](../../../../docs/evidence/2026-10-27-picture-tests/README.md)와
@@ -256,27 +266,27 @@ POD_SUITE_RUN=<PASS한 async_v2.slurm 실행의 pod-llm-async.XXXXXX> \
 ## 시험한 곳
 
 MedicineBow(와이오밍 대학교 ARCC), 2026-10-19, 쌍별 재생만:
-`934da23`(영문 저장소)의 `replay_12b.slurm`, Slurm 작업 24696203, NVIDIA A30(24 GB) 한 장에서 35 s.
-쓴 설정 줄([실제로 돌린 파일](../../../../docs/evidence/2026-10-19-12b/job/replay_12b.slurm)):
+`934da23`(영문 저장소)의 `replay_12b.slurm`, Slurm 작업 24696203, NVIDIA A30(24 GB) 한 장에서 35 s, 파티션 mb-a30, 모듈 arcc/1.0, gcc/14.2.0, cuda-toolkit/12.8.0.
+설정 줄([실제로 돌린 파일](../../../../docs/evidence/2026-10-19-12b/job/replay_12b.slurm)):
 
 ```bash
 #SBATCH --account=<account>
-#SBATCH --partition=mb-l40s,mb-a30
-module load arcc/1.0 gcc/14.2.0 cuda-toolkit/12.8.0
+#SBATCH --partition=<partition>
+module load <modules>
 export PATH=<python 3 with numpy>/bin:$PATH
 ```
 
 미리 빌드된 b11429 CUDA 라이브러리는 GLIBC_2.38이 필요한데 MedicineBow는 2.34라서,
-llama.cpp를 `build_llama_cuda.sh`로 소스에서 빌드했습니다(작업 24696057, 6분 22초;
+llama.cpp를 `build_llama_cuda.sh`로 소스에서 빌드했습니다(작업 24696057, 6분 22초, 파티션 mb-a30, 같은 모듈;
 [작업 스크립트](../../../../docs/evidence/2026-10-19-12b/runtime/build_llama.sbatch)):
 
 ```bash
 #!/bin/bash
-#SBATCH --partition=mb-a30,mb-l40s
+#SBATCH --partition=<partition>
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=32G
-module load arcc/1.0 gcc/14.2.0 cuda-toolkit/12.8.0
+module load <modules>
 export POD_LLM_RUNTIME=$PWD/llm-runtime-12b
 export CMAKE_CUDA_ARCHITECTURES="80;89;90" BUILD_JOBS=16
 export LDFLAGS="-L<cuda-toolkit>/lib64/stubs"
@@ -294,5 +304,12 @@ stub 없이 CPU 노드에서 한 첫 빌드(작업 24695932)는 마지막 링크
 돌았음), 미리 빌드된 CUDA 바이너리,
 `LLAMA_CUDA=13.4`, 12B 스크립트의 tar.gz 폴더 구조(같은 구조로 된 자기 묶음에서
 `picture_test.slurm`이 2026-10-22에 돌았음).
+지금의 `periodic_v2.slurm`(환경에서 읽는 설정, `site.txt`)은 stub 명령으로만 돌렸고 GPU 노드에서는 돌리지 않았습니다. 위에 적은 작업은
+클러스터의 경로와 모듈이 들어 있던 이전 내용을 돌렸습니다. 지금의 `async_v2.slurm`은 고치지 않은 채 GPU에서 12B와 소스에서 빌드한 서버로,
+`LLM_LONG_STEPS=1000`과 250, 500, 750단계의 sequence 프레임으로 발달한 상태에서 돌렸고 확인을 통과했습니다(A30의 작업 24950817,
+[근거](../../../../docs/evidence/2026-10-30-versions/README.md)). 이 형태로 기본값 6000단계는 돌리지 않았고, `async_v2_sweep.slurm`도 돌리지 않았습니다.
+`setup_12b.sh`는 이 형태로 대역 `curl`로만 돌렸고 실제로 내려받지는 않았습니다.
+`window_test.slurm`(마지막 실행: 작업 24947089), `picture_test.slurm`, `replay_12b.slurm`은 지금 내용으로 돌리지 않았습니다. 마지막 실행 뒤의 변경은
+주석과 클러스터 설정 줄, 앞의 둘에서 올리기 분기, `replay_12b.slurm`에서 선택 항목 `HF_TOKEN`입니다.
 `start_server.sh`는 10분 안에 `/health`가 안 뜨면 바로 실패하고, 로그는
 `llm-runtime-12b/server-*.log`에 남습니다.

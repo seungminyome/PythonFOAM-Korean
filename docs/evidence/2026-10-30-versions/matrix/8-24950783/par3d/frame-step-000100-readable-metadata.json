@@ -1,0 +1,90 @@
+{
+  "style": "readable-v2",
+  "view": "window",
+  "step": 100,
+  "time_s": 0.1005000000000005,
+  "cells": 20540,
+  "projection_axes": [
+    "x",
+    "y"
+  ],
+  "plotted_range_m": {
+    "x": [
+      0.0,
+      0.12
+    ],
+    "y": [
+      0.0,
+      0.04
+    ]
+  },
+  "domain_extent_m": {
+    "x": [
+      -1.5533076923100002,
+      0.6012246511046806
+    ],
+    "y": [
+      5.781735398474375e-06,
+      0.11429523559299272
+    ]
+  },
+  "fields_npz": "fields.npz",
+  "fields_sha256": "2ce9afba1b82352532438b6a34a9c3df27b0afddcf685671ff7e426afc5d5270",
+  "images": [
+    {
+      "field": "U",
+      "symbol": "|U|",
+      "unit": "m/s",
+      "path": "U.png",
+      "sha256": "2355291129dddf38a12dfedd5d8f732f0a87f4c986a6bcecf045c0a87720a43c",
+      "bytes": 85610,
+      "width": 1024,
+      "height": 576,
+      "colour_range": [
+        0.0016609675209052447,
+        36.937970661777406
+      ],
+      "colour_range_shared": false,
+      "range_inside_window": [
+        0.0016609675209052447,
+        36.937970661777406
+      ]
+    },
+    {
+      "field": "p",
+      "symbol": "p",
+      "unit": "m^2/s^2",
+      "path": "p.png",
+      "sha256": "83bec100936b22b6b1f852b91e80a3e682a858b9b1274f1d1b3885c3768e0313",
+      "bytes": 82050,
+      "width": 1024,
+      "height": 576,
+      "colour_range": [
+        -272.0534643865188,
+        90.92086156180055
+      ],
+      "colour_range_shared": false,
+      "range_inside_window": [
+        -272.0534643865188,
+        90.92086156180055
+      ]
+    }
+  ],
+  "slice": {
+    "normal": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "z_m": 0.00714375,
+    "requested_z_m": 0.00635,
+    "z_source": "middle of the mesh z range",
+    "moved_off_mesh_points": true,
+    "mesh_z_range_m": [
+      0.0,
+      0.0127
+    ],
+    "cells": 20540,
+    "mesh_cells_total": 164320
+  }
+}

@@ -1,0 +1,317 @@
+t506.cluster
+{
+ "mesh": {
+  "patches": {
+   "inlet": {
+    "faces": 65,
+    "x_m": [
+     -1.651,
+     -1.651
+    ],
+    "y_m": [
+     0.0127,
+     0.1143
+    ]
+   },
+   "outlet": {
+    "faces": 113,
+    "x_m": [
+     0.635,
+     0.635
+    ],
+    "y_m": [
+     0.0,
+     0.1143
+    ]
+   },
+   "lowerWallStartup": {
+    "faces": 2,
+    "x_m": [
+     -1.651,
+     -1.397
+    ],
+    "y_m": [
+     0.0127,
+     0.0127
+    ]
+   },
+   "upperWallStartup": {
+    "faces": 2,
+    "x_m": [
+     -1.651,
+     -1.397
+    ],
+    "y_m": [
+     0.1143,
+     0.1143
+    ]
+   },
+   "upperWall": {
+    "faces": 218,
+    "x_m": [
+     -1.397,
+     0.635
+    ],
+    "y_m": [
+     0.1143,
+     0.1143
+    ]
+   },
+   "lowerWall": {
+    "faces": 266,
+    "x_m": [
+     -1.397,
+     0.635
+    ],
+    "y_m": [
+     0.0,
+     0.0127
+    ]
+   }
+  },
+  "points_x_m": [
+   -1.651,
+   0.635
+  ],
+  "points_y_m": [
+   0.0,
+   0.1143
+  ],
+  "cell_centres_x_m": [
+   -1.5533076923100004,
+   0.6012246511046805
+  ],
+  "cell_centres_y_m": [
+   5.781735398474376e-06,
+   0.11429523559299273
+  ]
+ },
+ "window_m": {
+  "x": [
+   0.0,
+   0.12
+  ],
+  "y": [
+   0.0,
+   0.04
+  ],
+  "cells": 7906,
+  "area_m2": 0.004753105642097046
+ },
+ "white_pixels": {
+  "pictures": 160,
+  "white_pixels_inside_axes": 0
+ },
+ "m4_upper_wall_layer": {
+  "upper_wall_y_m": 0.1143,
+  "by_step": {
+   "4500": {
+    "layer_lowest_cell_y_m_at_x_0p06": 0.11328121542065193,
+    "layer_lowest_cell_y_m_over_x_0p001_to_0p119": 0.11324085766491027,
+    "columns_with_a_layer": 119,
+    "columns": 119
+   },
+   "5000": {
+    "layer_lowest_cell_y_m_at_x_0p06": 0.11328121542065193,
+    "layer_lowest_cell_y_m_over_x_0p001_to_0p119": 0.11320946829874155,
+    "columns_with_a_layer": 119,
+    "columns": 119
+   },
+   "5500": {
+    "layer_lowest_cell_y_m_at_x_0p06": 0.11328121542065193,
+    "layer_lowest_cell_y_m_over_x_0p001_to_0p119": 0.11317359473657591,
+    "columns_with_a_layer": 119,
+    "columns": 119
+   },
+   "6000": {
+    "layer_lowest_cell_y_m_at_x_0p06": 0.11328121542065193,
+    "layer_lowest_cell_y_m_over_x_0p001_to_0p119": 0.11315565795565352,
+    "columns_with_a_layer": 119,
+    "columns": 119
+   },
+   "6500": {
+    "layer_lowest_cell_y_m_at_x_0p06": 0.11328121542065193,
+    "layer_lowest_cell_y_m_over_x_0p001_to_0p119": 0.1131534158579963,
+    "columns_with_a_layer": 119,
+    "columns": 119
+   },
+   "7000": {
+    "layer_lowest_cell_y_m_at_x_0p06": 0.11328121542065193,
+    "layer_lowest_cell_y_m_over_x_0p001_to_0p119": 0.1131534158579963,
+    "columns_with_a_layer": 119,
+    "columns": 119
+   },
+   "7500": {
+    "layer_lowest_cell_y_m_at_x_0p06": 0.11328121542065193,
+    "layer_lowest_cell_y_m_over_x_0p001_to_0p119": 0.1131534158579963,
+    "columns_with_a_layer": 119,
+    "columns": 119
+   },
+   "8000": {
+    "layer_lowest_cell_y_m_at_x_0p06": 0.11328121542065193,
+    "layer_lowest_cell_y_m_over_x_0p001_to_0p119": 0.1131534158579963,
+    "columns_with_a_layer": 119,
+    "columns": 119
+   }
+  }
+ },
+ "m5": {
+  "at_the_step": {
+   "x_m": -0.0093,
+   "y_m": [
+    0.01271,
+    0.01287,
+    0.01321,
+    0.01395,
+    0.01551,
+    0.01887,
+    0.02605,
+    0.04143,
+    0.06668,
+    0.0902,
+    0.10282,
+    0.10887,
+    0.11177,
+    0.11315,
+    0.11382,
+    0.11413,
+    0.11429
+   ],
+   "N5": [
+    0.34,
+    4.09,
+    10.33,
+    20.17,
+    31.06,
+    33.4,
+    33.35,
+    33.21,
+    33.01,
+    32.87,
+    32.83,
+    32.71,
+    27.78,
+    14.5,
+    5.52,
+    1.64,
+    0.12
+   ],
+   "N5_core_Ux_y_0p03_to_0p1_m": [
+    32.8429891904,
+    33.2919792156
+   ],
+   "M5": [
+    0.15,
+    1.85,
+    4.74,
+    9.25,
+    14.95,
+    16.97,
+    16.96,
+    16.87,
+    16.77,
+    16.78,
+    16.82,
+    15.89,
+    6.6,
+    0.21,
+    -0.09,
+    0.0,
+    0.0
+   ],
+   "M5_core_Ux_y_0p03_to_0p1_m": [
+    16.7587184797,
+    16.9225269757
+   ]
+  },
+  "upper_minus_lower_half_mean_Ux_m_per_s_at_step_8000": {
+   "N5": {
+    "-1.5": -0.0,
+    "-1.2": -0.0,
+    "-0.9": -0.0,
+    "-0.6": -0.0,
+    "-0.3": -0.0,
+    "-0.1": -0.06,
+    "-0.0093": -0.53
+   },
+   "M5": {
+    "-1.5": 29.83,
+    "-1.2": 8.96,
+    "-0.9": 3.16,
+    "-0.6": 0.41,
+    "-0.3": 0.0,
+    "-0.1": -0.21,
+    "-0.0093": -0.67
+   }
+  }
+ },
+ "same_flow_time_pairs": {
+  "N4 step 6500 and N5 step 4500": {
+   "largest_velocity_difference_m_per_s": 0.00015695530128645934,
+   "largest_speed_difference_m_per_s": 0.00014416453938981277,
+   "largest_pressure_difference_m2_per_s2": 0.002866371099999654,
+   "U": {
+    "channels_share": 0.0,
+    "channels_mean": 0.0,
+    "positions_share": 0.0,
+    "positions_mean": 0.0,
+    "on_scale": 0.9625919720259343
+   },
+   "p": {
+    "channels_share": 0.0,
+    "channels_mean": 1.4165108504731146e-05,
+    "positions_share": 0.0,
+    "positions_mean": 2.2073384543585475e-05,
+    "on_scale": 0.9625919720259343
+   }
+  },
+  "N5 step 5500 and N4 step 7500": {
+   "largest_velocity_difference_m_per_s": 2.4666625646615354e-05,
+   "largest_speed_difference_m_per_s": 1.6373371328981534e-05,
+   "largest_pressure_difference_m2_per_s2": 0.0007682255199998878,
+   "U": {
+    "channels_share": 0.0,
+    "channels_mean": 0.0,
+    "positions_share": 0.0,
+    "positions_mean": 0.0,
+    "on_scale": 0.9625919720259343
+   },
+   "p": {
+    "channels_share": 0.0,
+    "channels_mean": 0.0,
+    "positions_share": 0.0,
+    "positions_mean": 0.0,
+    "on_scale": 0.9625919720259343
+   }
+  }
+ }
+}
+N1 {"reversed_share_of_window_by_area": [0.12867640979738706, 0.14154412115332698], "reversed_share_of_window_by_cells": [0.2929420693144447, 0.3368327852264103], "reversed_share_below_step_height_by_area": [0.40504775609779115, 0.44555275323786037], "reversed_share_below_step_height_by_cells": [0.4513740011693627, 0.5190021438316118], "lowest_Ux_in_window": [-20.6102082242, -12.9781781392], "near_wall_largest_Ux": [3.45249407132, 14.9947895006], "thin_layer_mean_speed": [3.648741765694399, 5.241618445689623], "wall_reversed_share_of_the_window_length": [0.44166666666666665, 0.675], "wall_reverse_flow_starts_x_m": [0.009500000000000001, 0.0425], "wall_first_stretch_ends_x_m": [0.0155, 0.07250000000000001], "wall_last_reverse_flow_x_m": [0.1305, 0.14150000000000001], "colour_bar_U_lower_end": [0.000580635826694124, 0.004551195030241661], "colour_bar_U_upper_end": [35.07440363065087, 39.21956919011166], "colour_bar_p_lower_end": [-383.578158431, -230.078039708], "colour_bar_p_upper_end": [8.06075846744, 63.9497338571]}
+N2 {"reversed_share_of_window_by_area": [0.11359456599939273, 0.14154412115332698], "reversed_share_of_window_by_cells": [0.22463951429294207, 0.3368327852264103], "reversed_share_below_step_height_by_area": [0.3575731102181465, 0.44555275323786037], "reversed_share_below_step_height_by_cells": [0.34613135840966675, 0.5190021438316118], "lowest_Ux_in_window": [-24.0765367559, -12.978178302], "near_wall_largest_Ux": [3.45249406615, 14.0528774671], "thin_layer_mean_speed": [3.5235448410016743, 6.006707761671792], "wall_reversed_share_of_the_window_length": [0.4083333333333333, 0.6333333333333333], "wall_reverse_flow_starts_x_m": [0.0205, 0.0545], "wall_first_stretch_ends_x_m": [0.0315, 0.1155], "wall_last_reverse_flow_x_m": [0.1215, 0.14150000000000001], "colour_bar_U_lower_end": [7.62329844534263e-06, 0.005852147247387248], "colour_bar_U_upper_end": [34.89995962320842, 39.33997564265993], "colour_bar_p_lower_end": [-465.611814177, -226.119744564], "colour_bar_p_upper_end": [12.9397382002, 101.24589923]}
+N3 {"reversed_share_of_window_by_area": [0.11359456599939273, 0.13900707370438886], "reversed_share_of_window_by_cells": [0.22463951429294207, 0.31608904629395396], "reversed_share_below_step_height_by_area": [0.3575731102181465, 0.4375666322548138], "reversed_share_below_step_height_by_cells": [0.34613135840966675, 0.4870395634379263], "lowest_Ux_in_window": [-24.0765363695, -14.4198906836], "near_wall_largest_Ux": [3.9503025946, 14.0445758376], "thin_layer_mean_speed": [3.5235437721384812, 6.0067073159413695], "wall_reversed_share_of_the_window_length": [0.4083333333333333, 0.6166666666666667], "wall_reverse_flow_starts_x_m": [0.013500000000000002, 0.0545], "wall_first_stretch_ends_x_m": [0.0225, 0.1155], "wall_last_reverse_flow_x_m": [0.10250000000000001, 0.1645], "colour_bar_U_lower_end": [7.623314798557778e-06, 0.005852148899679348], "colour_bar_U_upper_end": [34.89995791701134, 39.439835799472164], "colour_bar_p_lower_end": [-465.61191348, -226.119669536], "colour_bar_p_upper_end": [28.4769648392, 101.24598092]}
+N4 {"reversed_share_of_window_by_area": [0.11806316172664212, 0.13766448022869496], "reversed_share_of_window_by_cells": [0.2610675436377435, 0.308499873513787], "reversed_share_below_step_height_by_area": [0.37163936117339574, 0.4333404149121195], "reversed_share_below_step_height_by_cells": [0.40226076788150456, 0.4753459364646268], "lowest_Ux_in_window": [-21.3899536337, -12.9018936824], "near_wall_largest_Ux": [5.3834944998, 12.6182020223], "thin_layer_mean_speed": [3.778983667088144, 5.649252474232632], "wall_reversed_share_of_the_window_length": [0.48333333333333334, 0.6166666666666667], "wall_reverse_flow_starts_x_m": [0.0105, 0.0415], "wall_first_stretch_ends_x_m": [0.0165, 0.0645], "wall_last_reverse_flow_x_m": [0.10250000000000001, 0.1645], "colour_bar_U_lower_end": [8.269138210954966e-05, 0.004561108072939891], "colour_bar_U_upper_end": [36.34555557804617, 39.43983356834662], "colour_bar_p_lower_end": [-420.621995328, -253.745531018], "colour_bar_p_upper_end": [5.58196832897, 79.4425404868]}
+N5 {"reversed_share_of_window_by_area": [0.12366988052482533, 0.13990249331340576], "reversed_share_of_window_by_cells": [0.28535289653427776, 0.3173539084239818], "reversed_share_below_step_height_by_area": [0.3892881972875778, 0.44038523516710626], "reversed_share_below_step_height_by_cells": [0.43968037419606315, 0.4889885012668096], "lowest_Ux_in_window": [-23.6391809029, -12.9018937215], "near_wall_largest_Ux": [3.48637151104, 13.9080628073], "thin_layer_mean_speed": [3.726735487721294, 5.649252668467254], "wall_reversed_share_of_the_window_length": [0.4583333333333333, 0.5833333333333334], "wall_reverse_flow_starts_x_m": [0.0105, 0.0575], "wall_first_stretch_ends_x_m": [0.0165, 0.1305], "wall_last_reverse_flow_x_m": [0.11850000000000001, 0.1355], "colour_bar_U_lower_end": [0.00045390407446096987, 0.0058901531753517205], "colour_bar_U_upper_end": [34.726665999372976, 39.12493220096815], "colour_bar_p_lower_end": [-459.130527688, -215.575062443], "colour_bar_p_upper_end": [5.58203372542, 68.9004130695]}
+M1-inlet-speed {"reversed_share_of_window_by_area": [0.6213980219379057, 0.6845772321388754], "reversed_share_of_window_by_cells": [0.7778902099671136, 0.8174803946369845], "reversed_share_below_step_height_by_area": [0.7524022919561405, 0.8721810961965991], "reversed_share_below_step_height_by_cells": [0.7341648801403236, 0.8438900799064509], "lowest_Ux_in_window": [-13.6242440631, -11.5762045542], "near_wall_largest_Ux": [6.09920970948, 8.00854533077], "thin_layer_mean_speed": [2.9133898185390112, 3.852978347281715], "wall_reversed_share_of_the_window_length": [0.55, 0.6833333333333333], "wall_reverse_flow_starts_x_m": [0.0155, 0.0545], "wall_first_stretch_ends_x_m": [0.021500000000000002, 0.6345], "wall_last_reverse_flow_x_m": [0.6345, 0.6345], "colour_bar_U_lower_end": [0.00012350617037306793, 0.0018925879288866786], "colour_bar_U_upper_end": [11.576334555345548, 13.62444882631087], "colour_bar_p_lower_end": [-69.5909282726, -43.0054541849], "colour_bar_p_upper_end": [10.581780647, 14.9587025692]}
+M2-viscosity {"reversed_share_of_window_by_area": [0.17212142232391264, 0.19219158432452138], "reversed_share_of_window_by_cells": [0.4298001517834556, 0.45117632178092587], "reversed_share_below_step_height_by_area": [0.5418040183001498, 0.6049808981623264], "reversed_share_below_step_height_by_cells": [0.6622490742545313, 0.6951861235626583], "lowest_Ux_in_window": [-3.85941645018, -3.0859732536], "near_wall_largest_Ux": [0.00137458906394, 0.00157275921763], "thin_layer_mean_speed": [0.3136438124899959, 0.39426737668538275], "wall_reversed_share_of_the_window_length": [0.9833333333333333, 0.9833333333333333], "wall_reverse_flow_starts_x_m": [0.0025, 0.0025], "wall_first_stretch_ends_x_m": [0.1215, 0.1475], "wall_last_reverse_flow_x_m": [0.1215, 0.1475], "colour_bar_U_lower_end": [2.1172095822316763e-05, 3.0725553286606074e-05], "colour_bar_U_upper_end": [36.94577576926655, 38.11974603344633], "colour_bar_p_lower_end": [-112.085599893, -98.0765717433], "colour_bar_p_upper_end": [-32.9246924285, 25.1779402886]}
+M3-slip-walls {"reversed_share_of_window_by_area": [0.10707644661478606, 0.11988353865934855], "reversed_share_of_window_by_cells": [0.2835820895522388, 0.3224133569440931], "reversed_share_below_step_height_by_area": [0.33705536625194776, 0.3773695458514259], "reversed_share_below_step_height_by_cells": [0.43695186123562657, 0.4967842525823426], "lowest_Ux_in_window": [-29.4981163797, -25.6553865767], "near_wall_largest_Ux": [2.87916764558, 10.6043853455], "thin_layer_mean_speed": [14.69880258212342, 16.67533131717363], "wall_reversed_share_of_the_window_length": [0.7333333333333333, 0.925], "wall_reverse_flow_starts_x_m": [0.0005, 0.0005], "wall_first_stretch_ends_x_m": [0.08750000000000001, 0.1105], "wall_last_reverse_flow_x_m": [0.08750000000000001, 0.1105], "colour_bar_U_lower_end": [0.007947395936882018, 0.11304939140541517], "colour_bar_U_upper_end": [36.6949377254158, 37.30144598285217], "colour_bar_p_lower_end": [-330.005693003, -293.167457523], "colour_bar_p_upper_end": [75.3076402065, 100.746752268]}
+M4-moving-wall {"reversed_share_of_window_by_area": [0.12500038080925283, 0.140966114585976], "reversed_share_of_window_by_cells": [0.28623830002529727, 0.31102959777384265], "reversed_share_below_step_height_by_area": [0.3934763476683928, 0.44373330347636986], "reversed_share_below_step_height_by_cells": [0.4410446306762814, 0.4792438121223933], "lowest_Ux_in_window": [-23.5587593284, -13.0939620885], "near_wall_largest_Ux": [5.65192125457, 13.8980900156], "thin_layer_mean_speed": [4.003092694972571, 6.075826146978478], "wall_reversed_share_of_the_window_length": [0.425, 0.6083333333333333], "wall_reverse_flow_starts_x_m": [0.0105, 0.0615], "wall_first_stretch_ends_x_m": [0.013500000000000002, 0.1305], "wall_last_reverse_flow_x_m": [0.11850000000000001, 0.1355], "colour_bar_U_lower_end": [0.00017600628921847088, 0.00795310268443369], "colour_bar_U_upper_end": [35.620427803477554, 39.50843678202833], "colour_bar_p_lower_end": [-464.137289577, -248.781419234], "colour_bar_p_upper_end": [-6.85649393637, 71.8648216831]}
+M5-half-inlet {"reversed_share_of_window_by_area": [0.0731482402271371, 0.10286627650114018], "reversed_share_of_window_by_cells": [0.14090564128509991, 0.2345054389071591], "reversed_share_below_step_height_by_area": [0.2302561177542716, 0.32380258775115317], "reversed_share_below_step_height_by_cells": [0.21711167413759502, 0.36133307347495613], "lowest_Ux_in_window": [-12.4594239992, -7.54281845208], "near_wall_largest_Ux": [4.45140316977, 5.91317715141], "thin_layer_mean_speed": [1.8821795946407833, 3.6277342894634974], "wall_reversed_share_of_the_window_length": [0.24166666666666667, 0.4], "wall_reverse_flow_starts_x_m": [0.0005, 0.0405], "wall_first_stretch_ends_x_m": [0.0005, 0.0685], "wall_last_reverse_flow_x_m": [0.6345, 0.6345], "colour_bar_U_lower_end": [2.771718849710972e-05, 0.009750802871420243], "colour_bar_U_upper_end": [18.10400327417064, 19.69888078994582], "colour_bar_p_lower_end": [-111.47569991, -60.3953865405], "colour_bar_p_upper_end": [25.3384116448, 39.5138653673]}
+N1 against N5 channels_share U 0.350 to 0.824; channels_share p 0.524 to 0.925; positions_share U 0.159 to 0.724; positions_share p 0.316 to 0.918; [0.085, 0.175] [0.059, 0.117]
+N2 against N5 channels_share U 0.568 to 0.815; channels_share p 0.627 to 0.933; positions_share U 0.236 to 0.758; positions_share p 0.503 to 0.925; [0.1, 0.197] [0.064, 0.131]
+N3 against N5 channels_share U 0.477 to 0.817; channels_share p 0.455 to 0.958; positions_share U 0.248 to 0.751; positions_share p 0.369 to 0.938; [0.107, 0.184] [0.072, 0.124]
+N4 against N5 channels_share U 0.333 to 0.788; channels_share p 0.402 to 0.931; positions_share U 0.179 to 0.722; positions_share p 0.356 to 0.918; [0.088, 0.152] [0.056, 0.099]
+M1-inlet-speed against N5 channels_share U 0.959 to 0.974; channels_share p 0.729 to 0.898; positions_share U 0.957 to 0.973; positions_share p 0.618 to 0.881; [0.517, 0.555] [0.804, 0.833]
+M2-viscosity against N5 channels_share U 0.752 to 0.862; channels_share p 0.738 to 0.937; positions_share U 0.544 to 0.753; positions_share p 0.702 to 0.920; [0.183, 0.228] [0.148, 0.197]
+M3-slip-walls against N5 channels_share U 0.656 to 0.808; channels_share p 0.789 to 0.914; positions_share U 0.412 to 0.588; positions_share p 0.652 to 0.868; [0.269, 0.308] [0.133, 0.173]
+M4-moving-wall against N5 channels_share U 0.041 to 0.537; channels_share p 0.145 to 0.698; positions_share U 0.007 to 0.046; positions_share p 0.105 to 0.456; [0.026, 0.051] [0.019, 0.035]
+M5-half-inlet against N5 channels_share U 0.561 to 0.868; channels_share p 0.516 to 0.950; positions_share U 0.268 to 0.825; positions_share p 0.495 to 0.921; [0.261, 0.327] [0.393, 0.432]
+N1 neighbours channels_mean U 11.21 to 21.63; channels_mean p 23.83 to 35.92; positions_mean U 11.00 to 18.53; positions_mean p 28.59 to 49.84;
+N2 neighbours channels_mean U 14.54 to 31.65; channels_mean p 23.83 to 50.27; positions_mean U 13.42 to 24.59; positions_mean p 33.12 to 68.13;
+N3 neighbours channels_mean U 5.23 to 31.65; channels_mean p 8.69 to 50.27; positions_mean U 4.99 to 24.59; positions_mean p 9.48 to 68.13;
+N4 neighbours channels_mean U 5.23 to 17.10; channels_mean p 8.69 to 28.26; positions_mean U 4.99 to 15.14; positions_mean p 9.48 to 34.05;
+N5 neighbours channels_mean U 5.62 to 32.14; channels_mean p 10.84 to 49.17; positions_mean U 5.44 to 25.44; positions_mean p 11.83 to 70.23;
+M1-inlet-speed neighbours channels_mean U 3.65 to 4.26; channels_mean p 4.31 to 7.89; positions_mean U 6.10 to 6.94; positions_mean p 5.72 to 9.22;
+M2-viscosity neighbours channels_mean U 1.55 to 2.48; channels_mean p 0.90 to 1.64; positions_mean U 1.56 to 2.55; positions_mean p 1.22 to 2.06;
+M3-slip-walls neighbours channels_mean U 2.48 to 4.38; channels_mean p 3.01 to 12.52; positions_mean U 2.68 to 4.73; positions_mean p 3.65 to 16.37;
+M4-moving-wall neighbours channels_mean U 6.52 to 31.10; channels_mean p 8.65 to 45.47; positions_mean U 5.83 to 25.50; positions_mean p 9.11 to 69.70;
+M5-half-inlet neighbours channels_mean U 5.21 to 26.04; channels_mean p 7.00 to 32.08; positions_mean U 5.54 to 21.09; positions_mean p 8.83 to 42.52;

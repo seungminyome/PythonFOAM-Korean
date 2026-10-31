@@ -1,0 +1,14 @@
+{
+  "model": "gemma-4-26B-A4B-it-qat-q4_0-vision",
+  "endpoint": "http://127.0.0.1:27089/v1/chat/completions",
+  "server_note": "google/gemma-4-26B-A4B-it-qat-q4_0-gguf@d1c082be9cf3c8a514acf63b8761f4b41935842e gemma-4-26B_q4_0-it.gguf + gemma-4-26B-it-mmproj.gguf; llama.cpp b11429 CUDA (llama-server-version.txt); NVIDIA L40S; all layers on GPU; context 4096, batch 512, ubatch 512, image token limit 256, parallel 1, temperature 0",
+  "sets": [
+    "wrong-setup-v2own"
+  ],
+  "limit": 0,
+  "timeout_s": 300.0,
+  "test_set": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-20261030/wrong-setup-test-20261030",
+  "test_set_manifest_sha256": "40f6ea0a1104835be9b2bcf2d33fcc50d9853de675db31952c59c0011246c514",
+  "truth_sha256": "a252474ac7cffb3a313a58f9087de2fe1637c2185a6822f43eae5d7962a7fad7",
+  "started_unix_s": 1793397849.1983862
+}

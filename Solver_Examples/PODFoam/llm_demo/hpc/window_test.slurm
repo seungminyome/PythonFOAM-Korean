@@ -13,12 +13,10 @@
 #SBATCH --output=pod-window-test-%j.out
 set -euo pipefail
 # --- site settings: edit these lines -------------------------------------
-# MedicineBow (UWyo), as for job 24696203 (hpc/README.md):
-#   module load arcc/1.0 gcc/14.2.0 cuda-toolkit/12.8.0
-#   export PATH=<python 3 with numpy>/bin:$PATH
+# export PATH=<python 3 with numpy>/bin:$PATH
 # Account and partition go on the command line: sbatch --account=... --partition=...
-# POD_HOST_MODULES="arcc/1.0 gcc/14.2.0 cuda-toolkit/12.8.0" loads what the source-built
-# llama-server needs; PATH must hold a python3 with numpy.
+# POD_HOST_MODULES="<modules>" loads what the source-built llama-server needs (hpc/README.md);
+# PATH must hold a python3 with numpy.
 # -------------------------------------------------------------------------
 if [[ -n ${POD_HOST_MODULES:-} ]]; then module load $POD_HOST_MODULES; fi
 root="${SLURM_SUBMIT_DIR:-$PWD}"
@@ -91,11 +89,11 @@ cp "$root/pod-window-test-$job.out" "$out/job-so-far.out" 2>/dev/null || true
 tar -czf "$out.tar.gz" -C "$(dirname "$out")" "$(basename "$out")"
 (cd "$(dirname "$out")" && sha256sum "$(basename "$out").tar.gz" > "$(basename "$out").tar.gz.sha256")
 echo "done: $out.tar.gz"
-# Optional: put the results on the temporary GitHub release named by RESULTS_RELEASE.
-# Needs GH_TOKEN with write access to the repository's contents (README.ko.md).
-if [[ -n ${GH_TOKEN:-} && -n ${RESULTS_RELEASE:-} ]]; then
+# Optional: put the results on the temporary GitHub release RESULTS_RELEASE of the repository
+# RESULTS_REPO (owner/name). Needs GH_TOKEN with write access to the repository's contents (hpc/README.md).
+if [[ -n ${GH_TOKEN:-} && -n ${RESULTS_RELEASE:-} && -n ${RESULTS_REPO:-} ]]; then
     set +e
-    slug="${RESULTS_REPO:-seungminyome/PythonFOAM}"
+    slug="$RESULTS_REPO"
     id=$(curl -s -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/$slug/releases/tags/$RESULTS_RELEASE" \
          | python3 -c 'import json, sys; print(json.load(sys.stdin)["id"])' 2>/dev/null)
     for file in "$out.tar.gz" "$out.tar.gz.sha256"; do
@@ -108,6 +106,8 @@ if [[ -n ${GH_TOKEN:-} && -n ${RESULTS_RELEASE:-} ]]; then
         fi
     done
     set -e
+elif [[ -n ${RESULTS_RELEASE:-} ]]; then
+    echo "no upload to release $RESULTS_RELEASE: it needs GH_TOKEN and RESULTS_REPO"
 fi
 # Optional cleanup. CLEANUP_MODELS=1 deletes the files this job downloaded (fetched.txt);
 # CLEANUP_MODELS=all deletes the models/<key> folders of every key in MODELS, also files

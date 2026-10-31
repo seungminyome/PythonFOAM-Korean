@@ -41,6 +41,7 @@ import time
 import numpy as np
 
 import ablation_runner
+from frame_scoring import load_v2, truth_from_arrays
 from llm_client import (DEFAULT_ENDPOINT, DEFAULT_MODEL, _finish_request, _image_part,
                         encode_json, write_json)
 import readable_request
@@ -74,31 +75,6 @@ def sha256(data):
 
 def file_sha256(path):
     return sha256(Path(path).read_bytes())
-
-
-# ---------------------------------------------------------------- answer keys
-
-def truth_from_arrays(centres, velocity, pressure, plotted, step, time_s):
-    """The answer key snapshot_runner.load_frame computes, from arrays and a plotted range."""
-    (x0, x1), (y0, y1) = plotted
-    x, y = centres[:, 0], centres[:, 1]
-    inside = (x >= x0) & (x <= x1) & (y >= y0) & (y <= y1)
-    speed = np.linalg.norm(velocity, axis=1)
-    index = np.flatnonzero(inside)
-
-    def percent(cell):
-        return {"x_percent": 100.0 * (x[cell] - x0) / (x1 - x0),
-                "y_percent": 100.0 * (y[cell] - y0) / (y1 - y0),
-                "x_m": float(x[cell]), "y_m": float(y[cell]), "cell": int(cell)}
-
-    fastest = index[np.argmax(speed[index])]
-    lowest = index[np.argmin(pressure[index])]
-    return {"step": int(step), "time_s": float(time_s), "cells_in_window": int(inside.sum()),
-            "max_speed_m_per_s": float(speed[index].max()),
-            "min_pressure_m2_per_s2": float(pressure[index].min()),
-            "fastest_flow": percent(fastest), "lowest_pressure": percent(lowest),
-            "plotted_range_m": {"x": [x0, x1], "y": [y0, y1]}, "projection_axes": AXES,
-            "x_span_m": x1 - x0, "y_span_m": y1 - y0}
 
 
 # ---------------------------------------------------------------- frames
@@ -155,14 +131,6 @@ def render_v2(mesh, view, velocity, pressure, step, time_s, directory, colour_ra
                                              plotted, step, time_s, view=view,
                                              domain_extent=mesh.views["full"], colour_ranges=colour_ranges)
     return frame, truth_from_arrays(mesh.centres, velocity, pressure, plotted, step, time_s)
-
-
-def load_v2(directory):
-    """Frame and answer key of a v2 directory, with the hashes checked."""
-    frame, meta, fields = readable_request.load_frame(directory)
-    plotted = [meta["plotted_range_m"]["x"], meta["plotted_range_m"]["y"]]
-    return frame, truth_from_arrays(fields["centres"], fields["U"], fields["p"], plotted,
-                                    meta["step"], meta["time_s"])
 
 
 # ---------------------------------------------------------------- requests
@@ -589,7 +557,7 @@ def build(args):
     linked = link_duplicate_arrays(builder.output / "frames")
     here = Path(__file__).resolve().parent
     code = {name: file_sha256(here / name) for name in
-            ("picture_test.py", "readable_image.py", "readable_request.py", "foam_fields.py",
+            ("picture_test.py", "frame_scoring.py", "readable_image.py", "readable_request.py", "foam_fields.py",
              "pod_image.py", "snapshot_runner.py", "ablation_runner.py", "llm_client.py")}
     counts = {name: sum(e["set"] == name for e in builder.entries) for name in SETS}
     manifest = {"schema_version": 2, "test": "picture-reading test 2026-10-21", "seed": SEED,

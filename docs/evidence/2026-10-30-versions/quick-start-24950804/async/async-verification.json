@@ -1,0 +1,300 @@
+{
+  "async-no-llm": {
+    "steps": 3000,
+    "request_step": 1250,
+    "arrived_at_step": 1260,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "disabled",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.003554756,
+      "arrival_step": 0.038483383,
+      "last_step": 0.030125907,
+      "max_other_steps": 0.017167927,
+      "median_all_steps": 0.00014037849999999998
+    },
+    "solver_stall_s": 0.0032383129000663757,
+    "inference_wall_s": 0.0,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "2d29e083d201aa214beb8f4cab4a4c1770d82cc8271f6873bcce5fa8223b8c18",
+        "png_sha256": "5636a5feee9a4b0430d6d38889eba1516ef9005458eba6c9b6c450f85c162618",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 750,
+        "written_fields_checked": true,
+        "fields_sha256": "4410cf4470b27b2ea0715376c5c4c2a1a8698e1a350d5e4e50fd49686c67787f",
+        "png_sha256": "8771a3dd1eb2edf715fb142a6108d9734672dbae8b0e47200e5f04bac68ecebb",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 1250,
+        "written_fields_checked": true,
+        "fields_sha256": "d93ecb40f7975cc94b16e0983bd1364b7339672040f4a74af93c517f6f59af20",
+        "png_sha256": "edd3b7a65b28bbefebb5be74c42df0f550abb257443527b0f61d27e125e9cbca",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      }
+    ],
+    "image_style": "v1",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 1.04988202912
+  },
+  "async-describe": {
+    "steps": 3000,
+    "request_step": 250,
+    "arrived_at_step": 494,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "ok",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.00359567,
+      "arrival_step": 0.036795214,
+      "last_step": 0.035889823,
+      "max_other_steps": 0.026569549,
+      "median_all_steps": 0.000143604
+    },
+    "solver_stall_s": 0.003304847050458193,
+    "inference_wall_s": 10.572992060799152,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "2d29e083d201aa214beb8f4cab4a4c1770d82cc8271f6873bcce5fa8223b8c18",
+        "png_sha256": "5636a5feee9a4b0430d6d38889eba1516ef9005458eba6c9b6c450f85c162618",
+        "same_fields_as_baseline_frame": true
+      }
+    ],
+    "image_style": "v1",
+    "structured_output": {
+      "flow_description": "The velocity magnitude |U| is relatively uniform across the domain, with a slight increase towards the right side. The kinematic pressure p is generally high in the lower-left and lower-right regions, and lowest in the central-top area.",
+      "fastest_flow_x_percent": 90,
+      "fastest_flow_y_percent": 10,
+      "lowest_pressure_x_percent": 50,
+      "lowest_pressure_y_percent": 10,
+      "uncertainties": "The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the plotted ranges."
+    },
+    "score": null,
+    "max_courant": 1.04988202912
+  },
+  "async-sequence": {
+    "steps": 3000,
+    "request_step": 1250,
+    "arrived_at_step": 1543,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "ok",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.003694023,
+      "arrival_step": 0.026324327,
+      "last_step": 0.028770406,
+      "max_other_steps": 0.015779434,
+      "median_all_steps": 0.00014133
+    },
+    "solver_stall_s": 0.0033632267732173204,
+    "inference_wall_s": 15.60821949900128,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "2d29e083d201aa214beb8f4cab4a4c1770d82cc8271f6873bcce5fa8223b8c18",
+        "png_sha256": "5636a5feee9a4b0430d6d38889eba1516ef9005458eba6c9b6c450f85c162618",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 750,
+        "written_fields_checked": true,
+        "fields_sha256": "4410cf4470b27b2ea0715376c5c4c2a1a8698e1a350d5e4e50fd49686c67787f",
+        "png_sha256": "8771a3dd1eb2edf715fb142a6108d9734672dbae8b0e47200e5f04bac68ecebb",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 1250,
+        "written_fields_checked": true,
+        "fields_sha256": "d93ecb40f7975cc94b16e0983bd1364b7339672040f4a74af93c517f6f59af20",
+        "png_sha256": "edd3b7a65b28bbefebb5be74c42df0f550abb257443527b0f61d27e125e9cbca",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      }
+    ],
+    "image_style": "v1",
+    "structured_output": {
+      "change_description": "The velocity magnitude |U| shows a peak around x=0.0 and y=0.0, and the peak magnitude appears to increase in intensity (brighter color) over time. The kinematic pressure p also shows a peak around x=0.0 and y=0.0, and the peak pressure magnitude also appears to increase in intensity (brighter color) over time.",
+      "max_speed_trend": "increasing",
+      "min_pressure_trend": "less_negative",
+      "fastest_flow_region": "same_place",
+      "uncertainties": "The exact trend is based on visual inspection of the color bar maxima."
+    },
+    "score": null,
+    "max_courant": 1.04988202912
+  },
+  "async-server-error": {
+    "steps": 3000,
+    "request_step": 250,
+    "arrived_at_step": 282,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "error",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.003887955,
+      "arrival_step": 0.029668765,
+      "last_step": 0.037430333,
+      "max_other_steps": 0.023085583,
+      "median_all_steps": 0.000142041
+    },
+    "solver_stall_s": 0.0035884189419448376,
+    "inference_wall_s": 0.0093050308059901,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "2d29e083d201aa214beb8f4cab4a4c1770d82cc8271f6873bcce5fa8223b8c18",
+        "png_sha256": "5636a5feee9a4b0430d6d38889eba1516ef9005458eba6c9b6c450f85c162618",
+        "same_fields_as_baseline_frame": true
+      }
+    ],
+    "image_style": "v1",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 1.04988202912
+  },
+  "async-timeout": {
+    "steps": 3000,
+    "request_step": 250,
+    "arrived_at_step": 335,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "timeout",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.003908767,
+      "arrival_step": 0.042949948,
+      "last_step": 0.037416271,
+      "max_other_steps": 0.01871099,
+      "median_all_steps": 0.000140929
+    },
+    "solver_stall_s": 0.003611092921346426,
+    "inference_wall_s": null,
+    "frames": null,
+    "image_style": "v1",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 1.04988202912
+  },
+  "timings": {
+    "async-no-llm": 159.635930466,
+    "async-describe": 165.83724405616522,
+    "async-sequence": 160.95569516089745,
+    "async-server-error": 160.01434193109162,
+    "async-timeout": 161.67661599908024
+  },
+  "resources": {
+    "async-no-llm": {
+      "wall_seconds": 159.635930466,
+      "exit_status": 0,
+      "solver_pid": 3027294,
+      "llama_server_pid": 3026165,
+      "mode": "sequence",
+      "model_request_enabled": false,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 530088,
+      "cfd_python_peak_pss_sum_kib": 524756,
+      "llama_server_peak_rss_kib": 4672128,
+      "llama_server_peak_pss_kib": 4668917,
+      "concurrent_samples": 301
+    },
+    "async-describe": {
+      "wall_seconds": 165.83724405616522,
+      "exit_status": 0,
+      "solver_pid": 3027344,
+      "llama_server_pid": 3026165,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 671108,
+      "cfd_python_peak_pss_sum_kib": 665542,
+      "llama_server_peak_rss_kib": 4705972,
+      "llama_server_peak_pss_kib": 4703680,
+      "concurrent_samples": 312
+    },
+    "async-sequence": {
+      "wall_seconds": 160.95569516089745,
+      "exit_status": 0,
+      "solver_pid": 3027368,
+      "llama_server_pid": 3026165,
+      "mode": "sequence",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 770996,
+      "cfd_python_peak_pss_sum_kib": 702080,
+      "llama_server_peak_rss_kib": 4821660,
+      "llama_server_peak_pss_kib": 4818116,
+      "concurrent_samples": 303
+    },
+    "async-server-error": {
+      "wall_seconds": 160.01434193109162,
+      "exit_status": 0,
+      "solver_pid": 3027446,
+      "llama_server_pid": 3026165,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 673180,
+      "cfd_python_peak_pss_sum_kib": 666766,
+      "llama_server_peak_rss_kib": 4821660,
+      "llama_server_peak_pss_kib": 4818926,
+      "concurrent_samples": 301
+    },
+    "async-timeout": {
+      "wall_seconds": 161.67661599908024,
+      "exit_status": 0,
+      "solver_pid": 3027467,
+      "llama_server_pid": 3026165,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 671300,
+      "cfd_python_peak_pss_sum_kib": 665662,
+      "llama_server_peak_rss_kib": 4821660,
+      "llama_server_peak_pss_kib": 4818892,
+      "concurrent_samples": 304
+    }
+  },
+  "settings": {
+    "steps": 3000,
+    "delta_t_s": 5e-07,
+    "write_every": 250,
+    "request_step": 250,
+    "sequence_steps": [
+      250,
+      750,
+      1250
+    ],
+    "image_x_window": null,
+    "image_y_window": null,
+    "deadline_s": "120",
+    "image_style": "v1",
+    "model": "gemma-4-E2B-it-Q4_0-vision",
+    "max_tokens_env": "192",
+    "fixture_deadline_s": 4.0,
+    "start_time_s": 0.0
+  },
+  "status": "PASS"
+}

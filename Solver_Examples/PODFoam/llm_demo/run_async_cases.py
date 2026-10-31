@@ -70,6 +70,8 @@ def stage_case(reference, case):
 
 
 def main():
+    if len(sys.argv) != 5:
+        sys.exit(f'usage: {sys.argv[0]} POD_SOURCE_DIRECTORY REFERENCE_RUN OUTPUT_DIRECTORY PODFOAM')
     source, reference, output, executable = map(Path, sys.argv[1:])
     endpoint = os.environ['LLM_ENDPOINT']
     # server.pid is read from POD_LLM_STATE when set (run_cases.resident_server)

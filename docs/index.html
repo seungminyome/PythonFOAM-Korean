@@ -14,7 +14,7 @@
 <p class="eyebrow">PythonFOAM 포크 · PODFoam · llama.cpp</p>
 <h1>비전-언어 모델로<br>OpenFOAM 계산 관찰하기</h1>
 <p>PythonFOAM의 PODFoam 예제에 선택 사항으로 붙인 관찰 기능입니다. OpenFOAM 계산 중에 솔버가 상태를 Python에 넘기면, Python은 |U|와 p 이미지를 생성하고 llama.cpp로 로컬에서 실행하는 비전-언어 모델(VLM)에 이미지 설명을 요청합니다. 그동안 솔버는 응답을 기다리거나, 기다리지 않고 다음 시간 단계로 진행합니다. 응답은 기록만 하며, 모델 출력은 솔버 계산에 반영하지 않습니다. 실행 방법은 <a href="https://github.com/seungminyome/PythonFOAM-Korean#readme">저장소 README</a>에 있습니다.</p>
-<div class="links"><a class="primary" href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">최신 보고서 · 10월 28일</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/progress.ko.md">작업 기록</a></div>
+<div class="links"><a class="primary" href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261030.md">최신 보고서 · 10월 30일</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/progress.ko.md">작업 기록</a></div>
 </header>
 
 <section aria-label="모델에 보낸 v2 이미지">
@@ -36,12 +36,16 @@
 <tr><td>실행 중인 솔버, 24,000단계 동안 250단계마다 <code>describe</code> 요청</td><td>Gemma 4 12B; v2</td><td>96개 중 최대 속도 지점 65개, 최저 압력 지점 89개</td><td>53, 65</td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
 <tr><td>세 시점에 걸친 최대 속도 / 최저 압력 추세, 시퀀스 45개</td><td>Gemma 4 12B; v2own (v1)</td><td>45개 중 32 / 28개 (v1: 14 / 15개). 최대 속도가 2&nbsp;% 이상 바뀐 시퀀스 30개 중 29개에서 최대 속도 추세를 맞힘</td><td>15 / 20</td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
 <tr><td>불안정 여부: 계산 중단 1~10단계 전에 끝나는 프레임 세 장 시퀀스(27개) 또는 정상 종료한 실행의 시퀀스(27개)</td><td>Gemma 4 12B, 26B-A4B, 31B, <span style="white-space:nowrap">Qwen3.5-35B-A3B;</span> v2own</td><td>54개 중 30~33개</td><td>27; 배열에서 계산한 규칙: 33(최대 |U| 증가), 38(인접 셀 간 차이)</td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">10월 28일</a></td></tr>
+<tr><td>잘못된 설정 여부: 의도한 설정을 알려 주고 프레임 하나를 보여 줌. 정상 실행 다섯 개(프레임 40개)와 항목 하나를 바꾼 실행 다섯 개(40개)</td><td>Gemma 4 12B, 26B-A4B, 31B, <span style="white-space:nowrap">Qwen3.5-35B-A3B;</span> v2own</td><td>80개 중 31B 67개, 나머지 41~45개. 31B의 우위를 만든 실행 두 개를 빼면 64개 중 31B 55개</td><td>40; 최대 |U| 규칙: 56, 그 실행들을 빼면 64개 중 56개</td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261030.md">10월 30일</a></td></tr>
+<tr><td>OpenFOAM v2012, v2106, v2212, 8: 빌드, 연결 검증, 모델 없는 관찰 기능(2차원과 3차원, 직렬과 rank 2개), <code>describe</code> 요청 하나</td><td>Gemma 4 12B; v2</td><td>모두 통과하고 응답함. v2012, v2106, v2212의 프레임은 바이트까지 같음. 8은 v2212와 U에서 최대 37.2&nbsp;m/s 중 3.18, p에서 425&nbsp;m²/s² 중 23.5 다름. 직렬과 rank 2개의 차이는 0.0025&nbsp;m/s와 0.035&nbsp;m²/s² 이내. 네 응답 모두 두 위치를 10&nbsp;%보다 크게 틀림</td><td></td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261030.md">10월 30일</a></td></tr>
 <tr><td>비용: 250단계마다 요청, 동시에 하나까지 진행</td><td>Gemma 4 12B</td><td>같은 이미지를 생성한 기준 실행(요청 없음)보다 단계당 벽시계 시간 +0.7&nbsp;%. 저장 파일 2,016개 중 2,016개 동일</td><td></td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
 <tr><td>비용: 50단계마다 요청, 동시에 두 개까지 진행</td><td>Gemma 4 12B, 서버 슬롯 2개</td><td>벽시계 시간 +3.2&nbsp;%, 요청당 약 0.1&nbsp;s로 하나씩 진행할 때와 같음. 저장 파일 2,520개 중 2,520개 동일</td><td></td><td style="white-space:nowrap"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">10월 28일</a></td></tr>
 </tbody></table></div>
 <p>v2 이미지에서는 표의 모든 모델이 모든 위치 시험에서 상수 기준선을 넘었고, Gemma 4 12B는 24,000단계 동안 실행 중인 솔버에서도 상수 기준선을 넘었습니다. 발달한 유동에서 최대 속도 지점을 틀린 응답은 대부분 최대 속도의 90&nbsp;% 이상인 다른 지점을 지목했습니다. 24,000단계 실행에서 최저 압력 지점은 와류 중심 사이를 옮겨 다녔고, 응답한 위치도 이를 따라갔습니다(x 방향 상관계수 0.78). 솔버의 v1 이미지로는 추세 시험에서 상수 기준선보다 뚜렷하게 나은 모델이 없었습니다.</p>
 <p>4비트 파일과 llama.cpp 권장 이미지 토큰 설정으로 실행한 Qwen3.5-35B-A3B와 27B는 발달한 유동의 최대 속도 지점을 이미지 140장 중 각각 133장과 128장에서 맞혔고, 이는 어느 Gemma 모델보다 많습니다. 다만 두 모델 계열은 서로 다른 파일과 설정으로 실행했습니다. 두 번째 형상인 원기둥 주위 층류 유동(<code>offsetCylinder</code>)에서는 Gemma 모델 세 개가 표시 영역 40개 중 32~39개에서 최대 속도 지점을 맞혔고, 상수 기준선은 8입니다. 넓고 어두운 후류 옆의 작은 점인 최저 압력 지점은 31B가 38개, 12B가 18개에서 맞혔습니다. CPU 구성의 모델인 Gemma 4 E2B는 합성 이미지에 넣은 고립된 최대 속도 지점을 v1 이미지 32장 중 4장, v2 이미지 32장 중 11장에서 맞혔고, 상수 기준선은 5입니다.</p>
 <p>불안정 감지 시험에서 계산 중단 1단계 전에 끝나는 시퀀스는 필드가 이미 발산한 상태이며, 모든 모델이 이 시퀀스에 <code>unstable</code>이라고 응답했습니다. 중단보다 5단계 넘게 앞서 경고한 모델은 없었습니다. 최대 |U| 증가를 보는 규칙은 가장 나은 모델만큼 맞혔고, 인접 셀 간 차이를 보는 규칙은 더 많이 맞혔습니다.</p>
+<p>잘못된 설정 시험에서 31B가 규칙보다 앞선 것은 실행 두 개 때문입니다. 점성 실행에서는 8개 중 8개를 맞혔지만, 이유에 점성이 나오지 않고 실제로 있는 재순환을 없다고 합니다. 움직이는 벽의 변경은 이미지에 없습니다. 낮은 입구 속도를 찾은 답은 규칙처럼 색 막대의 최댓값을 주어진 속도와 비교합니다. 점성 실행은 모델이 알아채고 기준 실행이 필요 없는 수치로는 잡히지 않는 유일한 후보이며, 근거는 약합니다. 실행 하나이고 프레임이 서로 거의 같습니다. 실행 전체의 가장 큰 Courant 수가 1을 넘는지 보면 잘못된 실행 다섯 개 중 세 개를 찾고(80개 중 64개), 정상 실행이 있으면 색 막대 끝의 숫자 네 개로 80개 중 75개를 맞힙니다(정상 실행을 하나씩 빼면 68개).</p>
+<p>OpenFOAM 8에서 원본 PODFoam과 비교하면 U, p, phi는 바이트까지 같습니다. POD 모드는 다릅니다. 원본에서는 각 스냅샷 구간의 첫 스냅샷을 다음 스냅샷이 덮어쓰기 때문입니다. Python에서 이 덮어쓰기를 재현하면 모든 모드가 원본과 같습니다(제공된 케이스 30개 중 30개, 안정화한 케이스 150개 중 150개). openfoam.com에서는 원본의 압력 줄을 쓰면 같은 결과가 나옵니다. 이 포크의 줄은 그 버전의 <code>pimpleFoam</code>처럼 p를 풀며, p의 차이는 2×10⁻⁶&nbsp;s 뒤 5,142&nbsp;m²/s² 중 847, 2×10⁻⁵&nbsp;s 뒤 3,456 중 31.8입니다.</p>
 </section>
 
 <section aria-labelledby="limitations">
@@ -51,21 +55,28 @@
 <li>불안정 감지 시험 세트에는 결함이 있습니다. 요청마다 프레임의 시점을 적었는데, 프레임 사이 시간 차이만으로도 두 부류가 구분됩니다.</li>
 <li>같은 노드에서는 같은 요청이 같은 응답을 냅니다. 다른 GPU에서는 응답 문장과 일부 위치가 바뀌지만, 10&nbsp;% 이내에 든 개수는 같습니다.</li>
 <li>2차원 층류 유동과 압출한 3차원 케이스 하나에서 시험했으며, 3차원 케이스의 단면 이미지를 읽은 모델은 없습니다. MPI는 rank 2개에서 모델 요청 없이 시험했고, 동시에 진행한 요청은 최대 두 개입니다.</li>
+<li>OpenFOAM v2012와 8에서는 모델로 돌린 시험 모음이 없습니다. 버전마다 12B 요청이 하나이고, 그곳의 시험 모음은 이미지를 읽지 않는 대역 서버로 돌렸습니다. OpenFOAM 8의 필드가 v2212와 다른 원인은 조사하지 않았습니다.</li>
+<li>잘못된 설정 시험은 케이스 하나, 잘못된 실행 다섯 개이고, 정상 실행은 한 궤적의 조각들이며, 이유는 AI 에이전트 하나가 판정했습니다(37개 중 14개는 변경을 말하고, 17개는 부분적으로, 6개는 말하지 않음).</li>
 <li>요청별 기록은 포크한 쓰기 프로세스가 0.2&nbsp;s 제한 시간 안에 씁니다. 솔버가 그보다 오래 기다리지 않게 하려는 설계입니다. 요청 두 개를 동시에 진행한 실행에서는 응답을 받은 요청 118개 중 1개의 기록이 남지 않았습니다.</li>
 </ul></div>
 </section>
 
 <h2 id="reports">보고서</h2>
-<p class="small">보고서마다 실행 조건, 하드웨어, 코드 리비전을 적었고, 최근 보고서는 이를 '기록' 절에 모았습니다(<a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md#기록">10월 28일</a>, <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md#기록">10월 27일</a>, <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md#기록">10월 22일 이어서</a>). 근거 자료 폴더마다 해시 목록(manifest)이 있으며, <code>make evidence</code>와 CI에서 확인합니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료 목록</a>에는 폴더마다 실행과 코드가 정리되어 있습니다. 근거 자료, 실행 방법, 변경 기록, 10월 22일까지의 보고서, 이 저장소에만 있는 문서는 이전 용어를 씁니다: 걸음 = 시간 단계, 칸 = 셀, 창 = 표시 영역, 답 하나로 고정 = 상수 기준선, 묶음 = 시퀀스 또는 시험 세트, 그림 = 이미지, 흐름 = 유동.</p>
+<p class="small">보고서마다 실행 조건, 하드웨어, 코드 리비전을 적었고, 최근 보고서는 이를 '기록' 절에 모았습니다(<a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261030.md#기록">10월 30일</a>, <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md#기록">10월 28일</a>, <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md#기록">10월 27일</a>, <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md#기록">10월 22일 이어서</a>). 근거 자료 폴더마다 해시 목록(manifest)이 있으며, <code>make evidence</code>와 CI에서 확인합니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료 목록</a>에는 폴더마다 실행과 코드가 정리되어 있습니다. 10월 28일까지의 근거 자료와 변경 기록, 실행 방법, 10월 22일까지의 보고서, 이 저장소에만 있는 문서는 이전 용어를 씁니다: 걸음 = 시간 단계, 칸 = 셀, 창 = 표시 영역, 답 하나로 고정 = 상수 기준선, 묶음 = 시퀀스 또는 시험 세트, 그림 = 이미지, 흐름 = 유동.</p>
 
-<article class="latest" aria-labelledby="oct28">
+<article class="latest" aria-labelledby="oct30">
 <p class="tag">최신 보고서</p>
+<h3 id="oct30"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261030.md">10월 30일</a></h3>
+<p>OpenFOAM v2012, v2106, v2212, 8, 원본 PODFoam과의 비교, 잘못된 설정 시험</p>
+<p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-30-versions/README.md">버전과 원본 비교</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-30-wrong-setup/README.md">잘못된 설정 시험</a></p>
+</article>
+
+<div class="cards">
+<article aria-labelledby="oct28">
 <h3 id="oct28"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">10월 28일</a></h3>
 <p>요청 두 개 동시 진행, 3차원 단면, 불안정 감지 시험, 실행 중에 쓰는 텔레메트리, 콜백에서 계산한 추세 레이블 (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/tests-2026-10-28">내려받기</a>)</p>
 <p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-inflight/README.md">요청 두 개 동시 진행</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-callback/README.md">콜백</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-3d/README.md">3차원 단면</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-instability/README.md">불안정 감지 시험</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-29-merged-check/README.md">합친 코드 실행</a></p>
 </article>
-
-<div class="cards">
 <article aria-labelledby="oct27">
 <h3 id="oct27"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></h3>
 <p>추세 판독, 두 번째 형상(원기둥), 4비트 Qwen, 250단계마다 요청, 재현성, MPI (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/tests-2026-10-27">내려받기</a>)</p>

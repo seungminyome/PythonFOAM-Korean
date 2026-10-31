@@ -1,0 +1,71 @@
+41ca1bf8da644155b56ac15df6949ddf06a685f9
+t473.cluster
+tests.yml: test_llm_client test_callback test_callback_main test_ablation_runner test_async test_picture_test test_instability_test test_wrong_setup_test
+Makefile:  test_llm_client test_callback test_callback_main test_ablation_runner test_async test_picture_test test_instability_test test_wrong_setup_test
+files:     test_ablation_runner test_async test_callback test_callback_main test_instability_test test_llm_client test_picture_test test_wrong_setup_test 
+tests.yml lists every test file
+Makefile equals tests.yml
+== ci-py310 Python 3.10.22 (module list of tests.yml)
+exit 0
+test_second_request_is_skipped_while_one_is_pending (test_async.AsyncTests) ... PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1
+PYTHON LLM step=6 request skipped: 1 request(s) still pending
+test_a_step_is_skipped_while_the_only_allowed_request_is_pending (test_async.PeriodicRequestTests) ... PYTHON LLM mesh geometry received: cells=20 cell_polygons
+PYTHON LLM step=2 request skipped: 1 request(s) still pending
+PYTHON LLM step=3 request skipped: 1 request(s) still pending
+PYTHON LLM step=4 request skipped: 1 request(s) still pending
+PYTHON LLM step=5 request skipped: 1 request(s) still pending
+PYTHON LLM step=6 request skipped: 1 request(s) still pending
+PYTHON LLM step=7 request skipped: 1 request(s) still pending
+PYTHON LLM step=8 request skipped: 1 request(s) still pending
+PYTHON LLM step=9 request skipped: 1 request(s) still pending
+PYTHON LLM step=10 request skipped: 1 request(s) still pending
+Ran 156 tests in 109.883s
+OK
+== ci-py310 make test
+exit 0
+test_second_request_is_skipped_while_one_is_pending (test_async.AsyncTests) ... PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1
+PYTHON LLM step=6 request skipped: 1 request(s) still pending
+test_a_step_is_skipped_while_the_only_allowed_request_is_pending (test_async.PeriodicRequestTests) ... PYTHON LLM mesh geometry received: cells=20 cell_polygons
+PYTHON LLM step=2 request skipped: 1 request(s) still pending
+PYTHON LLM step=3 request skipped: 1 request(s) still pending
+PYTHON LLM step=4 request skipped: 1 request(s) still pending
+PYTHON LLM step=5 request skipped: 1 request(s) still pending
+PYTHON LLM step=6 request skipped: 1 request(s) still pending
+PYTHON LLM step=7 request skipped: 1 request(s) still pending
+PYTHON LLM step=8 request skipped: 1 request(s) still pending
+PYTHON LLM step=9 request skipped: 1 request(s) still pending
+PYTHON LLM step=10 request skipped: 1 request(s) still pending
+Ran 156 tests in 108.056s
+OK
+== ci-py312 Python 3.12.15 (module list of tests.yml)
+exit 0
+test_second_request_is_skipped_while_one_is_pending (test_async.AsyncTests.test_second_request_is_skipped_while_one_is_pending) ... PYTHON LLM mesh geometry rec
+PYTHON LLM step=6 request skipped: 1 request(s) still pending
+test_a_step_is_skipped_while_the_only_allowed_request_is_pending (test_async.PeriodicRequestTests.test_a_step_is_skipped_while_the_only_allowed_request_is_pendi
+PYTHON LLM step=2 request skipped: 1 request(s) still pending
+PYTHON LLM step=3 request skipped: 1 request(s) still pending
+PYTHON LLM step=4 request skipped: 1 request(s) still pending
+PYTHON LLM step=5 request skipped: 1 request(s) still pending
+PYTHON LLM step=6 request skipped: 1 request(s) still pending
+PYTHON LLM step=7 request skipped: 1 request(s) still pending
+PYTHON LLM step=8 request skipped: 1 request(s) still pending
+PYTHON LLM step=9 request skipped: 1 request(s) still pending
+PYTHON LLM step=10 request skipped: 1 request(s) still pending
+Ran 156 tests in 110.210s
+OK
+== ci-py312 make test
+exit 0
+test_second_request_is_skipped_while_one_is_pending (test_async.AsyncTests.test_second_request_is_skipped_while_one_is_pending) ... PYTHON LLM mesh geometry rec
+PYTHON LLM step=6 request skipped: 1 request(s) still pending
+test_a_step_is_skipped_while_the_only_allowed_request_is_pending (test_async.PeriodicRequestTests.test_a_step_is_skipped_while_the_only_allowed_request_is_pendi
+PYTHON LLM step=2 request skipped: 1 request(s) still pending
+PYTHON LLM step=3 request skipped: 1 request(s) still pending
+PYTHON LLM step=4 request skipped: 1 request(s) still pending
+PYTHON LLM step=5 request skipped: 1 request(s) still pending
+PYTHON LLM step=6 request skipped: 1 request(s) still pending
+PYTHON LLM step=7 request skipped: 1 request(s) still pending
+PYTHON LLM step=8 request skipped: 1 request(s) still pending
+PYTHON LLM step=9 request skipped: 1 request(s) still pending
+PYTHON LLM step=10 request skipped: 1 request(s) still pending
+Ran 156 tests in 107.967s
+OK

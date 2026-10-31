@@ -2,9 +2,9 @@
 # Fallback when the prebuilt CUDA binary does not run on the cluster (older
 # glibc, different CUDA): build llama.cpp b11429 from source with CUDA.
 # Needs cmake >= 3.14, a C++17 compiler and the CUDA toolkit (module load cuda).
-# The final link needs libcuda.so.1. On MedicineBow a build on a GPU node with
-# the toolkit's lib64/stubs in LDFLAGS worked; one on a CPU node without the
-# stubs did not. libggml-cuda.so loads the toolkit's libcudart and libcublas,
+# The final link needs libcuda.so.1. A build on a GPU node with the toolkit's
+# lib64/stubs in LDFLAGS worked; one on a CPU node without the stubs did not
+# (hpc/README.md). libggml-cuda.so loads the toolkit's libcudart and libcublas,
 # so the job that runs llama-server needs the same module.
 set -euo pipefail
 runtime_dir="${POD_LLM_RUNTIME:?set POD_LLM_RUNTIME}"

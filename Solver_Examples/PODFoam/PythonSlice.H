@@ -1,7 +1,7 @@
-// Plane slice of a 3D mesh for the Python observer (mesh_func). v2 pictures
-// draw each cell as its own polygon; a 2D case takes the polygons from its
-// empty patch (PythonCreate.H). A 3D case has no empty patch: there the cells
-// cut by the plane z = LLM_SLICE_Z (default: the middle of the mesh's global z
+// Plane slice of a 3D mesh for mesh_func, which gets each cell as its own
+// polygon; a 2D case takes the polygons from its empty patch (PythonCreate.H).
+// A 3D case has no empty patch: there the cells
+// cut by the plane z = POD_SLICE_Z (default: the middle of the mesh's global z
 // range), normal (0 0 1), give the polygons, cut by OpenFOAM's cuttingPlane
 // without triangulation, so each cut cell gives one polygon (its section).
 // A plane through mesh points lies on the faces between two cells (the middle
@@ -9,7 +9,7 @@
 // next point plane above (below if there is none above), so that every
 // polygon is the section of one cell.
 // Collective: every rank calls pythonPlaneSlice with its own cells; the
-// master's LLM_SLICE_Z is used on every rank.
+// master's POD_SLICE_Z is used on every rank.
 #ifndef PythonSlice_H
 #define PythonSlice_H
 
@@ -23,9 +23,9 @@ struct PythonPlaneSlice
 {
     bool ok = false;                    // false: no cut made, see error
     Foam::scalar z = 0;                 // the plane cut
-    Foam::scalar requestedZ = 0;        // LLM_SLICE_Z, or the middle of the z range
+    Foam::scalar requestedZ = 0;        // POD_SLICE_Z, or the middle of the z range
     Foam::scalar zMin = 0, zMax = 0;    // global z range of the mesh points
-    bool fromEnvironment = false;       // LLM_SLICE_Z was set
+    bool fromEnvironment = false;       // POD_SLICE_Z was set
     bool moved = false;                 // the requested plane went through mesh points
     Foam::label localCells = 0;         // cut cells of this rank
     std::string error;                  // set on the master only
@@ -47,14 +47,14 @@ inline PythonPlaneSlice pythonPlaneSlice
     slice.zMin = bounds.min().z();
     slice.zMax = bounds.max().z();
     slice.requestedZ = 0.5*(slice.zMin + slice.zMax);
-    label source = 0;   // 0: middle of the z range, 1: LLM_SLICE_Z, -1: unreadable LLM_SLICE_Z
+    label source = 0;   // 0: middle of the z range, 1: POD_SLICE_Z, -1: unreadable POD_SLICE_Z
     if (Pstream::master())
     {
-        const std::string text(Foam::getEnv("LLM_SLICE_Z"));
+        const std::string text(Foam::getEnv("POD_SLICE_Z"));
         if (!text.empty())
         {
             scalar value = 0;
-            if (readScalar(text, value) && std::isfinite(value))
+            if (readScalar(text.c_str(), value) && std::isfinite(value))
             {
                 source = 1;
                 slice.requestedZ = value;
@@ -62,7 +62,7 @@ inline PythonPlaneSlice pythonPlaneSlice
             else
             {
                 source = -1;
-                slice.error = "LLM_SLICE_Z is not a finite number: '" + text + "'";
+                slice.error = "POD_SLICE_Z is not a finite number: '" + text + "'";
             }
         }
     }
@@ -101,8 +101,13 @@ inline PythonPlaneSlice pythonPlaneSlice
 
     const cuttingPlane cut(plane(point(0, 0, slice.z), vector(0, 0, 1)), mesh, false);
     const pointField& cutPoints = cut.points();
+    #ifdef OPENFOAM
     const faceList& cutFaces = cut.surfFaces();
     const labelList& cutCells = cut.meshCells();
+    #else
+    const faceList& cutFaces = cut.faces();
+    const labelList& cutCells = cut.cutCells();
+    #endif
     label nPts = 0;
     forAll(cutFaces, facei) nPts += cutFaces[facei].size();
     polyPoints.setSize(nPts);

@@ -1,0 +1,76 @@
+Validation directory: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/8-24950783/pod-8.pa8BKf
+{
+  "fixed-pimple": {
+    "steps": 10,
+    "residual_values": 160,
+    "checked_field_files": 30,
+    "max_Co": 0.21212590429,
+    "max_abs_U": 75.5965172185,
+    "max_abs_p": 27003559.1727,
+    "finite": true,
+    "normal_exit": true
+  },
+  "fixed-pod": {
+    "steps": 10,
+    "residual_values": 160,
+    "checked_field_files": 45,
+    "max_Co": 0.21212590429,
+    "max_abs_U": 75.5965172185,
+    "max_abs_p": 27003559.1727,
+    "finite": true,
+    "normal_exit": true
+  },
+  "bridge": {
+    "snapshots": 10,
+    "svd_shape": [
+      61620,
+      5
+    ],
+    "returned_field_files": 15,
+    "max_snapshot_error": 5.000089231543825e-11,
+    "max_mode_error": 4.985456492079265e-13,
+    "singular_values": [
+      [
+        13242.412666550576,
+        103.2003759911704,
+        48.582622926868034,
+        9.492855641455527,
+        1.6253595140667048,
+        0.7547647812265372,
+        0.1500466186759924,
+        0.017800896864982183,
+        0.003188123146346699,
+        0.0004401193581906882
+      ],
+      [
+        1514.3864419319787,
+        19.67437904437154,
+        6.944398224852401,
+        1.6200473143607663,
+        0.5613100155659202,
+        0.16701079367081087,
+        0.03744584318272544,
+        0.008623330867047453,
+        0.0027896732261583233,
+        0.0007944213199776178
+      ],
+      [
+        1.1371204453357147e-13,
+        2.777944861120006e-16,
+        7.144192730046757e-17,
+        1.559722887679166e-17,
+        3.698146821310832e-18,
+        1.2632361662839512e-18,
+        1.6085718008143185e-19,
+        4.257450467809825e-20,
+        9.730810101175709e-21,
+        7.165240180171685e-21
+      ]
+    ],
+    "python_finalized": true
+  },
+  "pimple_POD_velocity_agreement": true,
+  "pimple_POD_pressure_agreement": true,
+  "status": "PASS"
+}
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/8-24950783/pod-8.pa8BKf

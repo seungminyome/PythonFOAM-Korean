@@ -1,0 +1,703 @@
+{
+ "versions": {
+  "8": {
+   "dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/8-24950783",
+   "HEAD": "b17763dc78599612401bee335ce7146dfc1b340f",
+   "git_status": "",
+   "image_sha256": "47f2071d7562fa2fcee1773df0880337b5d41a273f6d2cd28d094c2981b28e61",
+   "node": "t527.cluster",
+   "validation_pass": true,
+   "cases": {
+    "serial2d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "p"
+     ],
+     "mesh_cells": 20540,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 75.06227272727273,
+     "p_iterations_per_solve": 2.371212121212121,
+     "courant_max_last": 0.3216012674811335
+    },
+    "serial3d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "Uz",
+      "p"
+     ],
+     "mesh_cells": 164320,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 13404.455727272729,
+     "p_iterations_per_solve": 64.0,
+     "courant_max_last": 0.322609854591414
+    },
+    "par2d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "p"
+     ],
+     "mesh_cells": 20540,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 50.05354545454545,
+     "p_iterations_per_solve": 2.9545454545454546,
+     "courant_max_last": 0.32160257703497686
+    },
+    "par3d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "Uz",
+      "p"
+     ],
+     "mesh_cells": 164320,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 6748.985318181818,
+     "p_iterations_per_solve": 64.42575757575757,
+     "courant_max_last": 0.32259435679225523
+    }
+   },
+   "serial_vs_parallel": {
+    "2d": {
+     "cells": 20540,
+     "centres_max_m": 2.7755575615628914e-17,
+     "U_max": 0.0011863531697397995,
+     "U_rms": 5.675999721783232e-05,
+     "U_peak": 36.89686286493246,
+     "p_max": 0.017793473769884827,
+     "p_rms": 0.006550277186050184,
+     "p_range": 369.171374819416
+    },
+    "3d": {
+     "cells": 20540,
+     "centres_max_m": 4.163336342344337e-17,
+     "U_max": 0.0017558434125394848,
+     "U_rms": 9.071276777006594e-05,
+     "U_peak": 36.93804953667779,
+     "p_max": 0.009975301335391151,
+     "p_rms": 0.0026130024404585127,
+     "p_range": 416.1638377243524
+    }
+   },
+   "against_v2212": {
+    "serial2d": {
+     "cells": 20540,
+     "centres_max_m": 6.661338147750939e-16,
+     "U_max": 3.110357033279353,
+     "U_rms": 0.30131725922518604,
+     "U_peak": 37.210299087808764,
+     "p_max": 23.2350340853243,
+     "p_rms": 4.866124859592179,
+     "p_range": 378.9168452012097
+    },
+    "serial3d": {
+     "cells": 20540,
+     "centres_max_m": 9.992007221626409e-16,
+     "U_max": 3.182811617214611,
+     "U_rms": 0.30482896792302794,
+     "U_peak": 37.2412189953922,
+     "p_max": 23.49368508544525,
+     "p_rms": 4.911241035419603,
+     "p_range": 424.5223064759929
+    },
+    "par2d": {
+     "cells": 20540,
+     "centres_max_m": 6.661338147750939e-16,
+     "U_max": 3.110024350869853,
+     "U_rms": 0.3013207794931477,
+     "U_peak": 37.2102674133959,
+     "p_max": 23.227776508784316,
+     "p_rms": 4.866287817185701,
+     "p_range": 378.9316310084989
+    },
+    "par3d": {
+     "cells": 20540,
+     "centres_max_m": 9.992007221626409e-16,
+     "U_max": 3.182763865757184,
+     "U_rms": 0.3048064588713928,
+     "U_peak": 37.241139347240875,
+     "p_max": 23.488838437847406,
+     "p_rms": 4.9106853648404085,
+     "p_range": 424.52033196718327
+    }
+   }
+  },
+  "v2012": {
+   "dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/v2012-24950780",
+   "HEAD": "b17763dc78599612401bee335ce7146dfc1b340f",
+   "git_status": "",
+   "image_sha256": "6ab53c2f517c1aa51664d41b724ed9ed3876783f2cd7ce63be0b30f3d6607964",
+   "node": "t441.cluster",
+   "validation_pass": true,
+   "cases": {
+    "serial2d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "p"
+     ],
+     "mesh_cells": 20540,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 77.87745454545457,
+     "p_iterations_per_solve": 2.253030303030303,
+     "courant_max_last": 0.32507904485883293
+    },
+    "serial3d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "Uz",
+      "p"
+     ],
+     "mesh_cells": 164320,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 5133.752,
+     "p_iterations_per_solve": 23.548484848484847,
+     "courant_max_last": 0.32637391639172814
+    },
+    "par2d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "p"
+     ],
+     "mesh_cells": 20540,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 53.79440909090909,
+     "p_iterations_per_solve": 2.9015151515151514,
+     "courant_max_last": 0.32508002212013315
+    },
+    "par3d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "Uz",
+      "p"
+     ],
+     "mesh_cells": 164320,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 2708.837,
+     "p_iterations_per_solve": 23.843939393939394,
+     "courant_max_last": 0.32634957779773693
+    }
+   },
+   "serial_vs_parallel": {
+    "2d": {
+     "cells": 20540,
+     "centres_max_m": 4.163336342344337e-17,
+     "U_max": 0.0007778771913380427,
+     "U_rms": 7.117500248592082e-05,
+     "U_peak": 37.210299087808764,
+     "p_max": 0.018724521361747293,
+     "p_rms": 0.003883848651228032,
+     "p_range": 378.9168452012097
+    },
+    "3d": {
+     "cells": 20540,
+     "centres_max_m": 4.163336342344337e-17,
+     "U_max": 0.00248954290906691,
+     "U_rms": 0.00014391176062920842,
+     "U_peak": 37.2412189953922,
+     "p_max": 0.034431212068582795,
+     "p_rms": 0.002859769833884758,
+     "p_range": 424.5223064759929
+    }
+   },
+   "against_v2212": {
+    "serial2d": {
+     "cells": 20540,
+     "centres_max_m": 0.0,
+     "U_max": 0.0,
+     "U_rms": 0.0,
+     "U_peak": 37.210299087808764,
+     "p_max": 0.0,
+     "p_rms": 0.0,
+     "p_range": 378.9168452012097
+    },
+    "serial3d": {
+     "cells": 20540,
+     "centres_max_m": 0.0,
+     "U_max": 0.0,
+     "U_rms": 0.0,
+     "U_peak": 37.2412189953922,
+     "p_max": 0.0,
+     "p_rms": 0.0,
+     "p_range": 424.5223064759929
+    },
+    "par2d": {
+     "cells": 20540,
+     "centres_max_m": 0.0,
+     "U_max": 0.0,
+     "U_rms": 0.0,
+     "U_peak": 37.2102674133959,
+     "p_max": 0.0,
+     "p_rms": 0.0,
+     "p_range": 378.9316310084989
+    },
+    "par3d": {
+     "cells": 20540,
+     "centres_max_m": 0.0,
+     "U_max": 0.0,
+     "U_rms": 0.0,
+     "U_peak": 37.241139347240875,
+     "p_max": 0.0,
+     "p_rms": 0.0,
+     "p_range": 424.52033196718327
+    }
+   }
+  },
+  "v2106": {
+   "dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/v2106-24950781",
+   "HEAD": "b17763dc78599612401bee335ce7146dfc1b340f",
+   "git_status": "",
+   "image_sha256": "eb1f954031a5d8d2ebafe297ddb60828fa97d554d641e18d6629730060b46512",
+   "node": "wi004.cluster",
+   "validation_pass": true,
+   "cases": {
+    "serial2d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "p"
+     ],
+     "mesh_cells": 20540,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 71.47563636363638,
+     "p_iterations_per_solve": 2.253030303030303,
+     "courant_max_last": 0.32507904485883293
+    },
+    "serial3d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "Uz",
+      "p"
+     ],
+     "mesh_cells": 164320,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 5378.067909090909,
+     "p_iterations_per_solve": 23.548484848484847,
+     "courant_max_last": 0.32637391639172814
+    },
+    "par2d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "p"
+     ],
+     "mesh_cells": 20540,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 43.72722727272728,
+     "p_iterations_per_solve": 2.9015151515151514,
+     "courant_max_last": 0.32508002212013315
+    },
+    "par3d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "Uz",
+      "p"
+     ],
+     "mesh_cells": 164320,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 2650.551045454545,
+     "p_iterations_per_solve": 23.843939393939394,
+     "courant_max_last": 0.32634957779773693
+    }
+   },
+   "serial_vs_parallel": {
+    "2d": {
+     "cells": 20540,
+     "centres_max_m": 4.163336342344337e-17,
+     "U_max": 0.0007778771913380427,
+     "U_rms": 7.117500248592082e-05,
+     "U_peak": 37.210299087808764,
+     "p_max": 0.018724521361747293,
+     "p_rms": 0.003883848651228032,
+     "p_range": 378.9168452012097
+    },
+    "3d": {
+     "cells": 20540,
+     "centres_max_m": 4.163336342344337e-17,
+     "U_max": 0.00248954290906691,
+     "U_rms": 0.00014391176062920842,
+     "U_peak": 37.2412189953922,
+     "p_max": 0.034431212068582795,
+     "p_rms": 0.002859769833884758,
+     "p_range": 424.5223064759929
+    }
+   },
+   "against_v2212": {
+    "serial2d": {
+     "cells": 20540,
+     "centres_max_m": 0.0,
+     "U_max": 0.0,
+     "U_rms": 0.0,
+     "U_peak": 37.210299087808764,
+     "p_max": 0.0,
+     "p_rms": 0.0,
+     "p_range": 378.9168452012097
+    },
+    "serial3d": {
+     "cells": 20540,
+     "centres_max_m": 0.0,
+     "U_max": 0.0,
+     "U_rms": 0.0,
+     "U_peak": 37.2412189953922,
+     "p_max": 0.0,
+     "p_rms": 0.0,
+     "p_range": 424.5223064759929
+    },
+    "par2d": {
+     "cells": 20540,
+     "centres_max_m": 0.0,
+     "U_max": 0.0,
+     "U_rms": 0.0,
+     "U_peak": 37.2102674133959,
+     "p_max": 0.0,
+     "p_rms": 0.0,
+     "p_range": 378.9316310084989
+    },
+    "par3d": {
+     "cells": 20540,
+     "centres_max_m": 0.0,
+     "U_max": 0.0,
+     "U_rms": 0.0,
+     "U_peak": 37.241139347240875,
+     "p_max": 0.0,
+     "p_rms": 0.0,
+     "p_range": 424.52033196718327
+    }
+   }
+  },
+  "v2212": {
+   "dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/matrix/v2212-24950782",
+   "HEAD": "b17763dc78599612401bee335ce7146dfc1b340f",
+   "git_status": "",
+   "image_sha256": "58753741615152fbd832f8a7f3266416618a86174a27f0e9cad0e69b56616b64",
+   "node": "t527.cluster",
+   "validation_pass": true,
+   "cases": {
+    "serial2d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "p"
+     ],
+     "mesh_cells": 20540,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 75.31363636363636,
+     "p_iterations_per_solve": 2.253030303030303,
+     "courant_max_last": 0.32507904485883293
+    },
+    "serial3d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "Uz",
+      "p"
+     ],
+     "mesh_cells": 164320,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 5293.5787272727275,
+     "p_iterations_per_solve": 23.548484848484847,
+     "courant_max_last": 0.32637391639172814
+    },
+    "par2d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "p"
+     ],
+     "mesh_cells": 20540,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 47.39895454545455,
+     "p_iterations_per_solve": 2.9015151515151514,
+     "courant_max_last": 0.32508002212013315
+    },
+    "par3d": {
+     "exit": "0",
+     "end": true,
+     "python_finalized": true,
+     "fatal": false,
+     "frame": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+     ],
+     "telemetry_lines": 110,
+     "telemetry_tmp_left": false,
+     "residual_keys": [
+      "Ux",
+      "Uy",
+      "Uz",
+      "p"
+     ],
+     "mesh_cells": 164320,
+     "callback_errors": 0,
+     "result_status": "disabled",
+     "request_step": 100,
+     "pde_ms_per_step": 2706.0058636363638,
+     "p_iterations_per_solve": 23.843939393939394,
+     "courant_max_last": 0.32634957779773693
+    }
+   },
+   "serial_vs_parallel": {
+    "2d": {
+     "cells": 20540,
+     "centres_max_m": 4.163336342344337e-17,
+     "U_max": 0.0007778771913380427,
+     "U_rms": 7.117500248592082e-05,
+     "U_peak": 37.210299087808764,
+     "p_max": 0.018724521361747293,
+     "p_rms": 0.003883848651228032,
+     "p_range": 378.9168452012097
+    },
+    "3d": {
+     "cells": 20540,
+     "centres_max_m": 4.163336342344337e-17,
+     "U_max": 0.00248954290906691,
+     "U_rms": 0.00014391176062920842,
+     "U_peak": 37.2412189953922,
+     "p_max": 0.034431212068582795,
+     "p_rms": 0.002859769833884758,
+     "p_range": 424.5223064759929
+    }
+   },
+   "against_v2212": null
+  }
+ },
+ "v2212_against_earlier_frames": {
+  "serial2d": {
+   "bytes_identical": {
+    "U.png": true,
+    "p.png": true,
+    "fields.npz": true
+   },
+   "arrays_identical": true,
+   "telemetry_lines_differ_only_in_run_id": false
+  },
+  "serial3d": {
+   "bytes_identical": {
+    "U.png": true,
+    "p.png": true,
+    "fields.npz": true
+   },
+   "arrays_identical": true,
+   "telemetry_lines_differ_only_in_run_id": false
+  }
+ }
+}

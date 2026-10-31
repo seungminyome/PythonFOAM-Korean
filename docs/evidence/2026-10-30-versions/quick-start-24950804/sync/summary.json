@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "model": "gemma-4-E2B-it-Q4_0-vision",
+  "server_pid": 3026165,
+  "mmproj_loaded": true,
+  "steps": 10,
+  "analysis_step": 5,
+  "analysis_time_s": 5e-07,
+  "timings": {
+    "without_request_seconds": 5.189839073922485,
+    "with_image_request_seconds": 21.25897632399574,
+    "with_text_request_seconds": 16.227149144979194,
+    "added_wall_seconds_image": 16.069137250073254,
+    "added_wall_seconds_text": 11.037310071056709,
+    "inference_wall_seconds_image": 16.69741623196751,
+    "inference_wall_seconds_text": 12.175758071942255,
+    "cpp_full_callback_seconds_image": 17.310160671,
+    "cpp_full_callback_seconds_text": 12.253803157
+  },
+  "structured_output": {
+    "image": {
+      "observations": "The velocity magnitude |U| shows a high value near x=0.0, with a maximum of 82.5 m/s.",
+      "possible_interpretation": "The flow exhibits a localized high-speed region near the center of the domain.",
+      "checks": "The pressure field shows a significant pressure gradient near the high-velocity region."
+    },
+    "text_only": {
+      "observations": "Residuals show small values, e.g., p final last is 9.19188e-07. Courant mean is 0.000337189.",
+      "possible_interpretation": "The simulation is running with small residuals. Velocity SVD shows high leading energy fractions.",
+      "checks": "Check if linear-solver residuals are physical force balance. Verify velocity SVD componentwise method."
+    }
+  },
+  "source_HEAD": null,
+  "files": {
+    "request": "fixed-pod/llm_request.json",
+    "request_body": "fixed-pod/llm_request_body.json",
+    "image": "fixed-pod/llm_observation/state.png",
+    "response": "fixed-pod/llm_response.json",
+    "raw_http_body": "fixed-pod/llm_http_response.raw",
+    "text_only_request": "fixed-pod-text-only/llm_request.json",
+    "text_only_response": "fixed-pod-text-only/llm_response.json"
+  }
+}

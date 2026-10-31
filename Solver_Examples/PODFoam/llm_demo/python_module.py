@@ -13,26 +13,25 @@ sequence (images captured at LLM_SEQUENCE_STEPS, sent together at the last of
 those steps, asks how the flow changes).
 
 LLM_IMAGE_STYLE chooses the pictures of describe and sequence requests: v1
-(default) is one 640x360 PNG with |U| above p (pod_image.py), as sent on
-2026-10-13 to 2026-10-20; v2 is one 1024x576 PNG per field with percent axes
-(readable_image.py), every frame in llm_observation/step-NNNNNN, and the
-request is built by readable_request.py exactly as in the 2026-10-22
-picture-reading tests (a v2 sequence takes two or three times, each picture on
+(default) is one 640x360 PNG with |U| above p (pod_image.py); v2 is one
+1024x576 PNG per field with percent axes (readable_image.py), every frame in
+llm_observation/step-NNNNNN, and the request is built by readable_request.py
+(a v2 sequence takes two or three times, each picture on
 its own colour scale; a v2 describe request sends no SVD summary, so none is
 computed). v2 requests always send max_tokens 320, seed 20261021 and
-cache_prompt false, as tested; LLM_MAX_TOKENS must then be unset or 320. A v2
+cache_prompt false; LLM_MAX_TOKENS must then be unset or 320. A v2
 frame folder is never overwritten: rerunning in a case folder that already
 holds llm_observation/step-NNNNNN from an earlier run is refused rather than
 sending that earlier picture. observe always sends the v1 picture.
 
-v2 pictures of a 3D case (2026-10-28) show a plane slice: the solver cuts the
-mesh with the plane z = LLM_SLICE_Z (default the middle of the z range, moved
+v2 pictures of a 3D case show a plane slice: the solver cuts the
+mesh with the plane z = POD_SLICE_Z (default the middle of the z range, moved
 off mesh points) and passes one polygon per cut cell. The v2 frame then holds
 the slice cells only (centres, U, p, polygons and their mesh cells) and its
 metadata records the slice ("slice": z, number of cells); the request is built
 as for 2D.
 
-LLM_ANALYSIS_EVERY=N (2026-10-27; describe with v2 pictures only) sends a
+LLM_ANALYSIS_EVERY=N (describe with v2 pictures only) sends a
 describe request at LLM_ANALYSIS_STEP and every N steps after it, as long as
 fewer than LLM_ASYNC_MAX_PENDING requests are pending (otherwise that step is
 skipped and recorded). Each request writes its own files in
@@ -47,24 +46,20 @@ LLM_ASYNC_MAX_PENDING requests are in flight (default 1). At the last step
 for until its own deadline (LLM_ASYNC_END=wait) or left running
 (LLM_ASYNC_END=detach).
 
-telemetry.jsonl (2026-10-28): each step's line is encoded when the step arrives
+telemetry.jsonl: each step's line is encoded when the step arrives
 and appended to telemetry.jsonl.tmp by a forked child with a deadline, 500
 lines (or 60 s) at a time; the last step appends the rest and renames the file
 to telemetry.jsonl. Only the first state and the last three are kept (the SVD
 summary's window start and residual trend), so neither the memory nor the last
-step's write grows with the run. The file's bytes are those of the earlier
-writer, which kept every state until the last step. telemetry.jsonl exists only
-complete; when the telemetry cannot be completed (also when the last append
+step's write grows with the run. telemetry.jsonl exists only complete; when the telemetry cannot be completed (also when the last append
 fails), llm_errors.jsonl says why.
 
-Computed trends (2026-10-28, v2 sequences): the three trend words of the
-picture tests' answer key, computed from the frames' arrays inside the plotted
-range, go to llm_result.json as computed_trends (never into the request), and
+Computed trends (v2 sequences): the three trend words of the answer key,
+computed from the frames' arrays inside the plotted range, go to llm_result.json as computed_trends (never into the request), and
 computed_trends_agreement compares them with the model's words when it
 answered. LLM_SEQUENCE_PROMPT=t states the key's thresholds in the prompt, tn
-also gives each time's largest |U| and lowest p in the note (the -t and -tn
-forms of the 2026-10-27 trend test); the default (own) sends the 2026-10-22
-request byte for byte.
+also gives each time's largest |U| and lowest p in the note; the default (own)
+states neither.
 """
 import collections
 import json
@@ -127,7 +122,7 @@ def _kill_join_allowance():
     """How long a killed child may take to be reaped (LLM_KILL_JOIN_S, default 0.1 s).
 
     Reaping a killed child takes longer the more memory it maps: about 16 ms for 200 MB
-    and 38 ms for 500 MB on the MedicineBow nodes, where the earlier default of 0.02 s was
+    and 38 ms for 500 MB on the test nodes, where the earlier default of 0.02 s was
     too short for a worker forked from the solver. The allowance is spent only when a
     worker is killed, inside the 0.2 s cleanup budget of the deadline.
     """
@@ -190,7 +185,7 @@ def _sequence_steps():
 
 
 def _sequence_prompt():
-    """LLM_SEQUENCE_PROMPT of a v2 sequence: own (default, the 2026-10-22 request), t (the
+    """LLM_SEQUENCE_PROMPT of a v2 sequence: own (default), t (the
     answer key's thresholds stated in the prompt) or tn (also each time's largest |U| and
     lowest p inside the plotted range in the note)."""
     value = os.environ.get("LLM_SEQUENCE_PROMPT", "own")
@@ -552,18 +547,17 @@ def _v2_frame_record(frame, metadata):
     return record
 
 
-# The answer key of the picture tests, for the frames of a v2 sequence. The case folder
-# has only the callback's modules, so the rules are repeated here from snapshot_runner.py
-# (TREND_TOLERANCE, REGION_TOLERANCE_PCT, trend, sequence_truth, score_sequence) and
-# picture_test.py (truth_from_arrays); test_async.ComputedTrendTests checks that both
-# give the same result.
-TREND_TOLERANCE = 0.02        # relative change of the first and last value below this: roughly_constant
+# The answer key for the frames of a v2 sequence. The case folder
+# has only the callback's modules, so the rules are repeated here from frame_scoring.py
+# (TREND_TOLERANCE, REGION_TOLERANCE_PCT, truth_from_arrays, trend, sequence_truth,
+# score_sequence); test_async.ComputedTrendTests checks that both give the same result.
+TREND_TOLERANCE = 0.02        # relative change of the first and last value of at most this: roughly_constant
 REGION_TOLERANCE_PCT = 5.0    # fastest cell moving at most this (percent of the plotted range): same_place
 
 
 def _frame_extrema(centres, velocity, pressure, plotted, step, time_s):
     """Largest |U|, lowest p and the fastest cell's place, among the cells whose centres lie in
-    the plotted range [[x0, x1], [y0, y1]] (picture_test.truth_from_arrays)."""
+    the plotted range [[x0, x1], [y0, y1]] (frame_scoring.truth_from_arrays)."""
     (x0, x1), (y0, y1) = plotted
     x, y = centres[:, 0], centres[:, 1]
     inside = (x >= x0) & (x <= x1) & (y >= y0) & (y <= y1)
@@ -600,7 +594,7 @@ def _trend(first, last, tolerance=TREND_TOLERANCE):
 
 
 def _sequence_trends(extrema):
-    """The three trend words from the first and last time (snapshot_runner.sequence_truth)."""
+    """The three trend words from the first and last time (frame_scoring.sequence_truth)."""
     first, last = extrema[0], extrema[-1]
     speed_trend, speed_change = _trend(first["max_speed_m_per_s"], last["max_speed_m_per_s"])
     pressure_word, pressure_change = _trend(first["min_pressure_m2_per_s2"],
@@ -626,7 +620,7 @@ def _sequence_trends(extrema):
 
 
 def _trend_agreement(structured, computed):
-    """The model's trend words against the computed ones (snapshot_runner.score_sequence)."""
+    """The model's trend words against the computed ones (frame_scoring.score_sequence)."""
     out = {}
     for name in ("max_speed_trend", "min_pressure_trend", "fastest_flow_region"):
         out[name] = {"answer": structured[name], "truth": computed[name],
@@ -752,10 +746,9 @@ def _bounded_child_status(target, args, deadline_at):
 
 
 class _Telemetry:
-    """telemetry.jsonl without keeping the states (2026-10-28).
+    """telemetry.jsonl without keeping the states.
 
-    Each step's line is encoded when the step arrives, byte for byte the line the
-    earlier writer made from its history of all states at the last step, and kept
+    Each step's line is encoded when the step arrives and kept
     until a forked child with a deadline appends the pending lines to
     telemetry.jsonl.tmp: every BATCH_LINES lines or BATCH_S seconds. The last step
     appends the rest and renames the file, so telemetry.jsonl is complete or absent:
@@ -1239,8 +1232,8 @@ def _new_context(state, mode, frames=None, asynchronous=False):
     if style == "v2":
         import readable_request
         if os.environ.get("LLM_MAX_TOKENS", str(readable_request.MAX_TOKENS)) != str(readable_request.MAX_TOKENS):
-            raise ValueError("LLM_IMAGE_STYLE=v2 sends max_tokens 320 and seed 20261021, as in the "
-                             "picture tests; leave LLM_MAX_TOKENS unset or set it to 320")
+            raise ValueError("LLM_IMAGE_STYLE=v2 sends max_tokens 320 and seed 20261021; "
+                             "leave LLM_MAX_TOKENS unset or set it to 320")
     context = {
         "parent_pid": os.getpid(),
         "run_id": os.environ.get("LLM_RUN_ID", _case.name),

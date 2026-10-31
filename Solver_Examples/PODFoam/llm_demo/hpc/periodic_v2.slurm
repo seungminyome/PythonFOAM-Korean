@@ -3,8 +3,8 @@
 # without requests, from the baseline staging of an earlier async_v2.slurm run; Gemma 4 12B on
 # the node's GPU, the solver in the OpenFOAM v2212 Apptainer image (see async_v2.slurm).
 # Submit from the repository root:
-#   POD_SUITE_RUN=<pod-llm-async.XXXXXX of async_v2.slurm> sbatch --account=... --partition=... \
-#       Solver_Examples/PODFoam/llm_demo/hpc/periodic_v2.slurm
+#   SIF=<image> PYTHON=<python> POD_SUITE_RUN=<pod-llm-async.XXXXXX of async_v2.slurm> \
+#       sbatch --account=... --partition=... Solver_Examples/PODFoam/llm_demo/hpc/periodic_v2.slurm
 #SBATCH --job-name=pod-periodic-v2
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
@@ -12,11 +12,12 @@
 #SBATCH --time=04:00:00
 #SBATCH --output=pod-periodic-v2-%j.out
 set -euo pipefail
-# --- site settings: edit these lines (MedicineBow, 2026-10-27) -----------------------------------
-SIF=${SIF:-/cluster/medbow/gscratch/syome/s4f/of2212.sif}          # OpenFOAM v2212 image
-export PYTHON=${PYTHON:-/gscratch/syome/conda/s4f/bin/python3}       # Python 3 with numpy + matplotlib
+# --- site settings: from the environment ----------------------------------------------------------
+SIF=${SIF:?OpenFOAM v2212 image}
+export PYTHON=${PYTHON:?Python 3 with numpy + matplotlib}
 export POD_SUITE_RUN=${POD_SUITE_RUN:?a PASSed v2 run of async_v2.slurm (its async-no-llm staging and sources)}
-host_modules="arcc/1.0 gcc/14.2.0 cuda-toolkit/12.8.0"
+# POD_HOST_MODULES="<modules>" loads what the source-built llama-server needs; empty: nothing is loaded
+# OPENFOAM_BASHRC: the bashrc inside the image (default /usr/lib/openfoam/openfoam2212/etc/bashrc)
 # ------------------------------------------------------------------------------------------------
 root="${SLURM_SUBMIT_DIR:-$PWD}"
 pod="$root/Solver_Examples/PODFoam"
@@ -31,7 +32,7 @@ export LLM_MODEL=${LLM_MODEL:-gemma-4-12b-it-qat-q4_0-vision}
 export LLM_ENDPOINT=http://127.0.0.1:$POD_LLM_PORT/v1/chat/completions
 export LLM_CTX=${LLM_CTX:-4096} LLM_BATCH=512 LLM_UBATCH=512
 export LLM_TIMEOUT_S=120 LLM_KILL_JOIN_S=${LLM_KILL_JOIN_S:-0.2}
-export OPENFOAM_BASHRC=/usr/lib/openfoam/openfoam2212/etc/bashrc PYTHONDONTWRITEBYTECODE=1
+export OPENFOAM_BASHRC=${OPENFOAM_BASHRC:-/usr/lib/openfoam/openfoam2212/etc/bashrc} PYTHONDONTWRITEBYTECODE=1
 export LLM_IMAGE_XRANGE=${LLM_IMAGE_XRANGE:-0,0.12} LLM_IMAGE_YRANGE=${LLM_IMAGE_YRANGE:-0,0.04}
 PERIODIC_STEPS=${PERIODIC_STEPS:-24000} PERIODIC_FIRST=${PERIODIC_FIRST:-250} PERIODIC_EVERY=${PERIODIC_EVERY:-250}
 PERIODIC_MAX_PENDING=${PERIODIC_MAX_PENDING:-1} PERIODIC_WRITE=${PERIODIC_WRITE:-250}
@@ -54,14 +55,17 @@ for f in python_module.py bounded_ipc.py llm_client.py readable_request.py reada
 done
 sha256sum "$frozen"/* > "$out/executed-callback-source.sha256"
 trap 'if [[ -n ${smi:-} ]]; then kill "$smi" 2>/dev/null || true; fi; bash "$hpc/stop_server.sh" || true' EXIT
+# the image, Python and host modules of this job
+printf 'SIF=%s\nPYTHON=%s\nPOD_HOST_MODULES=%s\n' "$SIF" "$PYTHON" "${POD_HOST_MODULES:-}" > "$out/site.txt"
 (
-    module load $host_modules
+    if [[ -n ${POD_HOST_MODULES:-} ]]; then module load $POD_HOST_MODULES; fi
+    (module list) >> "$out/site.txt" 2>&1 || true
     nvidia-smi > "$out/nvidia-smi.txt" 2>&1 || true
     bash "$hpc/start_server.sh"
 )
 nvidia-smi --query-gpu=timestamp,memory.used,utilization.gpu --format=csv -lms 1000 > "$out/gpu-samples.csv" 2>&1 &
 smi=$!
-module load apptainer
+command -v apptainer > /dev/null || module load apptainer
 status=0
 # a staging copy of the suite whose executed-callback-source is this run's
 staged="$out/suite-staging"

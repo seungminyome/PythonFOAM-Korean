@@ -1,0 +1,93 @@
+v2106 fork build exit 0 total 993
+drwxrwsr-x 2 syome syome    4096 Oct 30 20:45 .
+drwxrwsr-x 2 syome syome    4096 Oct 30 20:44 ..
+-rwxrwxr-x 1 syome syome 1016376 Oct 30 20:45 PODFoam
+{"scenario": "returns-fortran", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-reversed-columns", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-strided-rows", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-matrix", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-float32", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-bigendian", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-list", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-none", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-rows-wrong", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-six-modes", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-nan", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-one-d", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "returns-zero-modes", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "refcount-weakrefs", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 10}
+{"scenario": "sticky-fp-flags-from-python", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 10}
+{"scenario": "hooks-analysis-raises-systemexit", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "hooks-mesh-func-wrong-signature", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "hooks-analysis-not-callable", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "hooks-snapshot-missing-with-analysis", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 0}
+{"scenario": "hooks-svd-not-callable", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 0}
+{"scenario": "hooks-negative-interval", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 0}
+{"scenario": "sysexit-snapshot-code0", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 2}
+{"scenario": "sysexit-snapshot-code0", "build": "upstream", "exit": -11, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 4}
+{"scenario": "sysexit-svd-code0", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 4}
+{"scenario": "sysexit-svd-code0", "build": "upstream", "exit": -11, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 4}
+{"scenario": "sysexit-import-code0", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 0}
+{"scenario": "sysexit-import-code0", "build": "upstream", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": false, "courant_lines": 0}
+{"scenario": "cwd-module-beside-not-in-case", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "cwd-module-beside-not-in-case", "build": "upstream", "exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 7}
+{"scenario": "case-relative-path", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "thread-non-daemon", "build": "fork", "exit": 124, "timed_out": true, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "thread-non-daemon", "build": "upstream", "exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 7}
+{"scenario": "restart-latestTime-podSvdInterval-first", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 22}
+{"scenario": "restart-latestTime-podSvdInterval-second", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 0}
+{"scenario": "restart-latestTime-default-first", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 22}
+{"scenario": "restart-latestTime-default-second", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 10}
+{"scenario": "offline-shipped-method-of-snapshots-wi1", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "offline-shipped-method-of-snapshots-wi1", "build": "upstream", "exit": -11, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 2}
+{"scenario": "offline-shipped-method-of-snapshots-wi2", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 9}
+{"scenario": "offline-shipped-method-of-snapshots-wi2", "build": "upstream", "exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 9}
+{"scenario": "offline-shipped-method-of-snapshots-wi3", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 10}
+{"scenario": "offline-shipped-method-of-snapshots-wi3", "build": "upstream", "exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 13}
+{"scenario": "offline-shipped-method-of-snapshots-wi6", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "offline-shipped-method-of-snapshots-wi6", "build": "upstream", "exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 19}
+{"scenario": "offline-shipped-method-of-snapshots-wi25", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 51}
+{"scenario": "offline-shipped-method-of-snapshots-wi25", "build": "upstream", "exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 51}
+{"scenario": "parvalidation-module-refuses-rank1", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 2}
+{"scenario": "upstreampar-baseline", "build": "upstream", "exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 13}
+{"scenario": "rankmodes-rank-dependent-count", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "rankmodes-equal-count-control", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 25}
+{"scenario": "rankmodes-variance-rule", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "smallrank-3-cells-upstream-module", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "smallrank-0-cells-upstream-module", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 13}
+{"scenario": "masteronly-analysis-defined-on-rank0", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 0}
+{"scenario": "traps-diverging-FOAM_SIGFPE-default", "build": "fork", "exit": -8, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 42}
+{"scenario": "traps-diverging-FOAM_SIGFPE-default", "build": "upstream", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true, "courant_lines": 77}
+{"scenario": "traps-diverging-FOAM_SIGFPE-false", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true, "courant_lines": 42}
+{"scenario": "traps-diverging-FOAM_SIGFPE-false", "build": "upstream", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true, "courant_lines": 77}
+done
+scenarios exit 0
+{"module": "upstream", "analysis": false, "writeInterval": 1, "podSvdInterval": 0, "exit": 0, "schedule": "cVcVcVcVcVcV", "modes": [1, 2, 3, 4, 5, 5]} problems: []
+{"module": "upstream", "analysis": false, "writeInterval": 3, "podSvdInterval": 0, "exit": 0, "schedule": "ccVccVccVccVccVccVcc", "modes": [2, 4, 5, 5, 5, 5]} problems: []
+{"module": "upstream", "analysis": false, "writeInterval": 25, "podSvdInterval": 0, "exit": 0, "schedule": "ccccccccccccccccccccccccVccccccccccccccccccccccccVcccccccccc", "modes": [5, 5]} problems: []
+{"module": "upstream", "analysis": true, "writeInterval": 1, "podSvdInterval": 0, "exit": 0, "schedule": "SSSSSSSSSSSS", "modes": [1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5]} problems: []
+{"module": "upstream", "analysis": true, "writeInterval": 3, "podSvdInterval": 0, "exit": 0, "schedule": "ccSccSccSccSccSccScc", "modes": [3, 5, 5, 5, 5, 5]} problems: []
+{"module": "upstream", "analysis": true, "writeInterval": 25, "podSvdInterval": 0, "exit": 0, "schedule": "ccccccccccccccccccccccccSccccccccccccccccccccccccScccccccccc", "modes": [5, 5]} problems: []
+{"module": "validation", "analysis": false, "writeInterval": 1, "podSvdInterval": 0, "exit": 0, "schedule": "cVcVcVcVcVcV", "modes": [1, 1, 1, 1, 1, 1]} problems: []
+{"module": "validation", "analysis": false, "writeInterval": 3, "podSvdInterval": 0, "exit": 0, "schedule": "ccVccVccVccVccVccVcc", "modes": [2, 2, 2, 2, 2, 2]} problems: []
+{"module": "validation", "analysis": false, "writeInterval": 25, "podSvdInterval": 0, "exit": 0, "schedule": "ccccccccccccccccccccccccVccccccccccccccccccccccccVcccccccccc", "modes": [5, 5]} problems: []
+{"module": "validation", "analysis": true, "writeInterval": 1, "podSvdInterval": 0, "exit": 0, "schedule": "SSSSSSSSSSSS", "modes": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]} problems: []
+{"module": "validation", "analysis": true, "writeInterval": 3, "podSvdInterval": 0, "exit": 0, "schedule": "ccSccSccSccSccSccScc", "modes": [3, 3, 3, 3, 3, 3]} problems: []
+{"module": "validation", "analysis": true, "writeInterval": 25, "podSvdInterval": 0, "exit": 0, "schedule": "ccccccccccccccccccccccccSccccccccccccccccccccccccScccccccccc", "modes": [5, 5]} problems: []
+{"module": "validation", "analysis": false, "writeInterval": 25, "podSvdInterval": 7, "exit": 0, "schedule": "ccccccSccccccSccccccSccccccSccccccSccccccSccccccSccccccScccc", "modes": [5, 5, 5, 5, 5, 5, 5, 5]} problems: []
+{"module": "upstream", "analysis": false, "writeInterval": 3, "podSvdInterval": 7, "exit": 0, "schedule": "ccccccSccccccSccccccS", "modes": [5, 5, 5]} problems: []
+{"module": "upstream", "analysis": true, "writeInterval": 3, "podSvdInterval": 2, "exit": 0, "schedule": "cScScScScScScScScScSc", "modes": [2, 4, 5, 5, 5, 5, 5, 5, 5, 5]} problems: []
+{"ranks": 2, "analysis": false, "writeInterval": 1, "podSvdInterval": 0, "exit": 0} problems: []
+{"ranks": 2, "analysis": false, "writeInterval": 3, "podSvdInterval": 0, "exit": 0} problems: []
+{"ranks": 2, "analysis": false, "writeInterval": 25, "podSvdInterval": 0, "exit": 0} problems: []
+{"ranks": 2, "analysis": true, "writeInterval": 3, "podSvdInterval": 0, "exit": 0} problems: []
+{"ranks": 2, "analysis": false, "writeInterval": 3, "podSvdInterval": 7, "exit": 0} problems: []
+{"module": "upstream", "writeInterval": 1, "exit": -11, "python_collect": 0}
+{"module": "upstream", "writeInterval": 3, "exit": 0, "python_collect": 14}
+{"module": "upstream", "writeInterval": 25, "exit": 0, "python_collect": 58}
+{"module": "validation", "writeInterval": 1, "exit": -11, "python_collect": 0}
+{"module": "validation", "writeInterval": 3, "exit": -11, "python_collect": 0}
+{"module": "validation", "writeInterval": 25, "exit": -11, "python_collect": 0}
+fork runs 20 with problems 0
+schedule exit 0
+exit 0

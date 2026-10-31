@@ -5,6 +5,8 @@ import re
 import sys
 import numpy as np
 
+if len(sys.argv) != 2:
+    sys.exit(f'usage: {sys.argv[0]} RUN_DIRECTORY')
 root = Path(sys.argv[1])
 number = r'[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?'
 

@@ -1,0 +1,51 @@
+{
+ "use": "Give this to a judge of reasons-to-judge.jsonl with the question. A reason is judged against what the frames hold: the change itself, or an effect that is visible in the window. Measured from the arrays, the mesh and the pictures (flow/frame_facts.py); no model answer was used.",
+ "all_frames": [
+  "The window is x 0 to 0.12 m, y 0 to 0.04 m. The step's lip is at x = 0, y = 0.0127 m, on the left edge at 32 % of the height, and the window starts there. No picture has a white area: 0 white pixels inside the axes in 160 pictures. A reason that no step or no white area can be seen describes the plot window and holds for all 80 frames.",
+  "The inlet is at x = -1.651 m, the outlet at x = 0.635 m and the upper wall at y = 0.1143 m, all outside the window.",
+  "In the normal frames reverse flow (Ux < 0) covers 11.4 to 14.2 % of the window's area (22.5 to 33.7 % of its cells), and the lowest Ux is -24.1 to -12.9 m/s."
+ ],
+ "runs": {
+  "M1-inlet-speed": {
+   "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+   "what_the_frames_hold": [
+    "The |U| colour bar ends at 11.58 to 13.62 m/s, under the stated 32.2 m/s.",
+    "The fastest flow in the window is reverse flow left from the start state (lowest Ux -13.6 to -11.6 m/s, minus the peak |U| at every frame), not flow at the inlet's 3.22 m/s, which has crossed about one window length by the end of the run."
+   ]
+  },
+  "M2-viscosity": {
+   "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+   "what_the_frames_hold": [
+    "Recirculation is not missing. Reverse flow covers 17.2 to 19.2 % of the window's area (normal frames 11.4 to 14.2 %) and 54.2 to 60.5 % of the part below the step's height (normal 35.8 to 44.6 %).",
+    "Next to the lower wall it covers 98.3 % of the window's length (normal 40.8 to 67.5 %), unbroken from x = 2.5 mm to x = 0.1215 to 0.1475 m, so the bubble is longer than the window.",
+    "It is weak: lowest Ux -3.86 to -3.09 m/s (normal -24.1 to -12.9 m/s).",
+    "So a reason that there is no recirculation or no separation is false as a statement about the flow.",
+    "What is visible is the absence of vortices and a smooth p: lowest p -112.1 to -98.08 m^2/s^2 (normal -465.6 to -215.6); neighbouring frames of the run differ by a mean of 1.56 to 2.55 of the 256 colours in the |U| picture (normal 4.99 to 25.4)."
+   ]
+  },
+  "M3-slip-walls": {
+   "change": "lowerWall and upperWall slip instead of noSlip",
+   "what_the_frames_hold": [
+    "The lower wall has no boundary layer: mean speed in the cells below y = 0.8 mm is 14.7 to 16.7 m/s (normal 3.5 to 6 m/s), a bright layer along the bottom edge.",
+    "The |U| colour bar starts at 0.00795 to 0.113 m/s (normal at most 0.00589 m/s).",
+    "The upper wall is outside the window."
+   ]
+  },
+  "M4-moving-wall": {
+   "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+   "what_the_frames_hold": [
+    "The change is not in the pictures. The reverse flow along the moved wall reaches down to the cell centred at y = 0.1132 m at the lowest, and the picture ends at y = 0.04 m.",
+    "The frames lie close to N5's at the same step: mean velocity difference over the window's cells 2.6 to 5.1 % of 32.2 m/s, against 8.5 to 19.7 % for N1 to N4.",
+    "So a reason on these frames cannot come from a sight of the change itself."
+   ]
+  },
+  "M5-half-inlet": {
+   "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+   "what_the_frames_hold": [
+    "The split of the inlet is not in the pictures. At the last frame the upper half of the channel runs faster than the lower half by 29.8 m/s at x = -1.5 m, 9.0 m/s at x = -1.2 m, 3.2 m/s at x = -0.9 m, 0.4 m/s at x = -0.6 m, 0.0 m/s at x = -0.3 m.",
+    "Just upstream of the step's lip (x = -0.0093 m, last frame) the core profile is flat at 16.8 to 16.9 m/s, against 32.8 to 33.3 m/s in N5: half the flow rate, not a jet.",
+    "The clearest visible effect is the lower speed: the |U| colour bar ends at 18.1 to 19.7 m/s."
+   ]
+  }
+ }
+}

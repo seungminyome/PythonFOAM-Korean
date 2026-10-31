@@ -1,0 +1,836 @@
+{
+  "frames": [
+    {
+      "number": "courant_max",
+      "label": "largest Courant number",
+      "normal_low": 0.231198395925,
+      "normal_high": 0.336680124734,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 0.269193769546,
+          "high": 0.357293514384,
+          "frames": 8,
+          "outside": 3
+        },
+        "M2-viscosity": {
+          "low": 0.21579866479,
+          "high": 0.22566073779,
+          "frames": 8,
+          "outside": 8
+        },
+        "M3-slip-walls": {
+          "low": 0.715834423111,
+          "high": 1.29976335437,
+          "frames": 8,
+          "outside": 8
+        },
+        "M4-moving-wall": {
+          "low": 0.248776655537,
+          "high": 0.343150077851,
+          "frames": 8,
+          "outside": 1
+        },
+        "M5-half-inlet": {
+          "low": 0.125554144418,
+          "high": 0.208017382596,
+          "frames": 8,
+          "outside": 8
+        }
+      }
+    },
+    {
+      "number": "courant_mean",
+      "label": "mean Courant number",
+      "normal_low": 0.0169835975982,
+      "normal_high": 0.0171432801334,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 0.00269193229071,
+          "high": 0.00274862570489,
+          "frames": 8,
+          "outside": 8
+        },
+        "M2-viscosity": {
+          "low": 0.0168683083143,
+          "high": 0.0168707244836,
+          "frames": 8,
+          "outside": 8
+        },
+        "M3-slip-walls": {
+          "low": 0.0171448381341,
+          "high": 0.0171853775732,
+          "frames": 8,
+          "outside": 8
+        },
+        "M4-moving-wall": {
+          "low": 0.0171737431609,
+          "high": 0.0173213631647,
+          "frames": 8,
+          "outside": 8
+        },
+        "M5-half-inlet": {
+          "low": 0.00875243531561,
+          "high": 0.00880216965624,
+          "frames": 8,
+          "outside": 8
+        }
+      }
+    },
+    {
+      "number": "Ux_initial",
+      "label": "Ux initial residual",
+      "normal_low": 6.35748994219e-06,
+      "normal_high": 1.20299761279e-05,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 9.57993382876e-06,
+          "high": 1.37753840557e-05,
+          "frames": 8,
+          "outside": 2
+        },
+        "M2-viscosity": {
+          "low": 5.49329287109e-06,
+          "high": 1.1521467208e-05,
+          "frames": 8,
+          "outside": 2
+        },
+        "M3-slip-walls": {
+          "low": 4.4547486032e-06,
+          "high": 4.86124134367e-06,
+          "frames": 8,
+          "outside": 8
+        },
+        "M4-moving-wall": {
+          "low": 6.95301851136e-06,
+          "high": 1.08448348458e-05,
+          "frames": 8,
+          "outside": 0
+        },
+        "M5-half-inlet": {
+          "low": 2.54448747132e-05,
+          "high": 3.62950793232e-05,
+          "frames": 8,
+          "outside": 8
+        }
+      }
+    },
+    {
+      "number": "Uy_initial",
+      "label": "Uy initial residual",
+      "normal_low": 0.000168728754777,
+      "normal_high": 0.000436016223896,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 7.341902824e-05,
+          "high": 0.000160276997852,
+          "frames": 8,
+          "outside": 8
+        },
+        "M2-viscosity": {
+          "low": 1.42796682278e-05,
+          "high": 2.22660120452e-05,
+          "frames": 8,
+          "outside": 8
+        },
+        "M3-slip-walls": {
+          "low": 2.37671074406e-05,
+          "high": 4.09821954736e-05,
+          "frames": 8,
+          "outside": 8
+        },
+        "M4-moving-wall": {
+          "low": 0.00021106620865,
+          "high": 0.000404922260943,
+          "frames": 8,
+          "outside": 0
+        },
+        "M5-half-inlet": {
+          "low": 0.000145599837167,
+          "high": 0.00020122297715,
+          "frames": 8,
+          "outside": 5
+        }
+      }
+    },
+    {
+      "number": "p_initial",
+      "label": "p initial residual, first solve",
+      "normal_low": 0.00919295206233,
+      "normal_high": 0.0334545643614,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 0.00252918566214,
+          "high": 0.00614682487971,
+          "frames": 8,
+          "outside": 8
+        },
+        "M2-viscosity": {
+          "low": 0.0180864480525,
+          "high": 0.0230447387944,
+          "frames": 8,
+          "outside": 0
+        },
+        "M3-slip-walls": {
+          "low": 0.00364346134265,
+          "high": 0.00637072206718,
+          "frames": 8,
+          "outside": 8
+        },
+        "M4-moving-wall": {
+          "low": 0.010475356064,
+          "high": 0.0304560986476,
+          "frames": 8,
+          "outside": 0
+        },
+        "M5-half-inlet": {
+          "low": 0.00266585589048,
+          "high": 0.00423880994628,
+          "frames": 8,
+          "outside": 8
+        }
+      }
+    },
+    {
+      "number": "Ux_final",
+      "label": "Ux final residual",
+      "normal_low": 1.92337765645e-08,
+      "normal_high": 9.94460492158e-06,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 6.48874922452e-10,
+          "high": 9.9260491261e-06,
+          "frames": 8,
+          "outside": 4
+        },
+        "M2-viscosity": {
+          "low": 1.56763829409e-08,
+          "high": 9.21595326968e-06,
+          "frames": 8,
+          "outside": 2
+        },
+        "M3-slip-walls": {
+          "low": 4.4547486032e-06,
+          "high": 4.86124134367e-06,
+          "frames": 8,
+          "outside": 0
+        },
+        "M4-moving-wall": {
+          "low": 2.08688965024e-08,
+          "high": 9.61346878081e-06,
+          "frames": 8,
+          "outside": 0
+        },
+        "M5-half-inlet": {
+          "low": 1.39044667937e-09,
+          "high": 4.14688079098e-09,
+          "frames": 8,
+          "outside": 8
+        }
+      }
+    },
+    {
+      "number": "Uy_final",
+      "label": "Uy final residual",
+      "normal_low": 2.63241804458e-07,
+      "normal_high": 1.04331391786e-06,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 6.5957067198e-09,
+          "high": 8.81554706945e-09,
+          "frames": 8,
+          "outside": 8
+        },
+        "M2-viscosity": {
+          "low": 7.77153974365e-08,
+          "high": 1.49753242477e-07,
+          "frames": 8,
+          "outside": 8
+        },
+        "M3-slip-walls": {
+          "low": 1.95013415072e-08,
+          "high": 8.08080296615e-08,
+          "frames": 8,
+          "outside": 8
+        },
+        "M4-moving-wall": {
+          "low": 3.19701885495e-07,
+          "high": 9.63076046983e-07,
+          "frames": 8,
+          "outside": 0
+        },
+        "M5-half-inlet": {
+          "low": 1.70838317267e-08,
+          "high": 1.0207904199e-07,
+          "frames": 8,
+          "outside": 8
+        }
+      }
+    },
+    {
+      "number": "p_final",
+      "label": "p final residual, last solve",
+      "normal_low": 3.29711240837e-07,
+      "normal_high": 9.99847247634e-07,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 6.56999746061e-07,
+          "high": 9.73568234831e-07,
+          "frames": 8,
+          "outside": 0
+        },
+        "M2-viscosity": {
+          "low": 6.9534990806e-07,
+          "high": 9.18089078603e-07,
+          "frames": 8,
+          "outside": 0
+        },
+        "M3-slip-walls": {
+          "low": 7.79026495958e-07,
+          "high": 9.84737807393e-07,
+          "frames": 8,
+          "outside": 0
+        },
+        "M4-moving-wall": {
+          "low": 4.06218466112e-07,
+          "high": 9.64801849131e-07,
+          "frames": 8,
+          "outside": 0
+        },
+        "M5-half-inlet": {
+          "low": 5.64767872878e-07,
+          "high": 9.41034891766e-07,
+          "frames": 8,
+          "outside": 0
+        }
+      }
+    },
+    {
+      "number": "continuity_local",
+      "label": "continuity error, sum local",
+      "normal_low": 4.27054264831e-13,
+      "normal_high": 1.16668725829e-12,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 1.19624204388e-13,
+          "high": 1.90579297986e-13,
+          "frames": 8,
+          "outside": 8
+        },
+        "M2-viscosity": {
+          "low": 1.21989034085e-13,
+          "high": 1.6633125906e-13,
+          "frames": 8,
+          "outside": 8
+        },
+        "M3-slip-walls": {
+          "low": 4.9144402249e-13,
+          "high": 6.36903265646e-13,
+          "frames": 8,
+          "outside": 0
+        },
+        "M4-moving-wall": {
+          "low": 6.14992316419e-13,
+          "high": 1.24060818018e-12,
+          "frames": 8,
+          "outside": 2
+        },
+        "M5-half-inlet": {
+          "low": 2.56330056269e-13,
+          "high": 4.32526880475e-13,
+          "frames": 8,
+          "outside": 7
+        }
+      }
+    },
+    {
+      "number": "continuity_global_abs",
+      "label": "continuity error, global (absolute)",
+      "normal_low": 1.36912386142e-14,
+      "normal_high": 1.65325444028e-13,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 7.85986817251e-15,
+          "high": 2.11232675047e-14,
+          "frames": 8,
+          "outside": 5
+        },
+        "M2-viscosity": {
+          "low": 1.57777301172e-16,
+          "high": 2.92420964182e-14,
+          "frames": 8,
+          "outside": 4
+        },
+        "M3-slip-walls": {
+          "low": 3.56037811394e-14,
+          "high": 8.00434852421e-14,
+          "frames": 8,
+          "outside": 0
+        },
+        "M4-moving-wall": {
+          "low": 2.96527796058e-14,
+          "high": 1.15063343313e-13,
+          "frames": 8,
+          "outside": 0
+        },
+        "M5-half-inlet": {
+          "low": 1.4268505898e-14,
+          "high": 5.79337176093e-14,
+          "frames": 8,
+          "outside": 0
+        }
+      }
+    },
+    {
+      "number": "continuity_cumulative_abs",
+      "label": "continuity error, cumulative (absolute)",
+      "normal_low": 2.04073064477e-09,
+      "normal_high": 7.24404983657e-09,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 9.17218492517e-09,
+          "high": 9.89925489627e-09,
+          "frames": 8,
+          "outside": 8
+        },
+        "M2-viscosity": {
+          "low": 1.11994912285e-08,
+          "high": 2.48516562232e-08,
+          "frames": 8,
+          "outside": 8
+        },
+        "M3-slip-walls": {
+          "low": 2.30166284328e-09,
+          "high": 3.62712584575e-09,
+          "frames": 8,
+          "outside": 0
+        },
+        "M4-moving-wall": {
+          "low": 1.51910505303e-10,
+          "high": 2.43373108099e-09,
+          "frames": 8,
+          "outside": 6
+        },
+        "M5-half-inlet": {
+          "low": 8.10568293679e-09,
+          "high": 8.22642117695e-09,
+          "frames": 8,
+          "outside": 8
+        }
+      }
+    },
+    {
+      "number": "max_speed_m_per_s",
+      "label": "peak |U| in the window (m/s)",
+      "normal_low": 34.726665999372976,
+      "normal_high": 39.439835799472164,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": 11.576334555345548,
+          "high": 13.62444882631087,
+          "frames": 8,
+          "outside": 8
+        },
+        "M2-viscosity": {
+          "low": 36.94577576926655,
+          "high": 38.11974603344633,
+          "frames": 8,
+          "outside": 0
+        },
+        "M3-slip-walls": {
+          "low": 36.6949377254158,
+          "high": 37.30144598285217,
+          "frames": 8,
+          "outside": 0
+        },
+        "M4-moving-wall": {
+          "low": 35.620427803477554,
+          "high": 39.50843678202833,
+          "frames": 8,
+          "outside": 1
+        },
+        "M5-half-inlet": {
+          "low": 18.10400327417064,
+          "high": 19.69888078994582,
+          "frames": 8,
+          "outside": 8
+        }
+      }
+    },
+    {
+      "number": "min_pressure_m2_per_s2",
+      "label": "lowest p in the window (m^2/s^2)",
+      "normal_low": -465.61191348,
+      "normal_high": -215.575062443,
+      "wrong": {
+        "M1-inlet-speed": {
+          "low": -69.5909282726,
+          "high": -43.0054541849,
+          "frames": 8,
+          "outside": 8
+        },
+        "M2-viscosity": {
+          "low": -112.085599893,
+          "high": -98.0765717433,
+          "frames": 8,
+          "outside": 8
+        },
+        "M3-slip-walls": {
+          "low": -330.005693003,
+          "high": -293.167457523,
+          "frames": 8,
+          "outside": 0
+        },
+        "M4-moving-wall": {
+          "low": -464.137289577,
+          "high": -248.781419234,
+          "frames": 8,
+          "outside": 0
+        },
+        "M5-half-inlet": {
+          "low": -111.47569991,
+          "high": -60.3953865405,
+          "frames": 8,
+          "outside": 8
+        }
+      }
+    }
+  ],
+  "logs": [
+    {
+      "number": "courant_max_whole_run",
+      "label": "largest Courant number, whole run",
+      "normal_low": 0.341394796362,
+      "normal_high": 0.346668241387,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 10.6873661912,
+          "outside": true
+        },
+        "M2-viscosity": {
+          "value": 0.283615934459,
+          "outside": true
+        },
+        "M3-slip-walls": {
+          "value": 1.30934430692,
+          "outside": true
+        },
+        "M4-moving-wall": {
+          "value": 0.347900990039,
+          "outside": true
+        },
+        "M5-half-inlet": {
+          "value": 5.48849620105,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "courant_max_from_first_frame",
+      "label": "largest Courant number, from the first frame on",
+      "normal_low": 0.341394796362,
+      "normal_high": 0.346668241387,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 0.358577344056,
+          "outside": true
+        },
+        "M2-viscosity": {
+          "value": 0.22566073779,
+          "outside": true
+        },
+        "M3-slip-walls": {
+          "value": 1.30934430692,
+          "outside": true
+        },
+        "M4-moving-wall": {
+          "value": 0.346809895121,
+          "outside": true
+        },
+        "M5-half-inlet": {
+          "value": 0.208621406922,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "courant_mean_from_first_frame",
+      "label": "mean Courant number, from the first frame on",
+      "normal_low": 0.017065592774231836,
+      "normal_high": 0.017087898411241326,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 0.002715309735966818,
+          "outside": true
+        },
+        "M2-viscosity": {
+          "value": 0.01686975429252367,
+          "outside": true
+        },
+        "M3-slip-walls": {
+          "value": 0.017175223498902024,
+          "outside": true
+        },
+        "M4-moving-wall": {
+          "value": 0.017244224354357796,
+          "outside": true
+        },
+        "M5-half-inlet": {
+          "value": 0.008768859649069745,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "last_Ux_initial",
+      "label": "Ux initial residual, last step",
+      "normal_low": 8.67276518116e-06,
+      "normal_high": 1.20299761279e-05,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 9.69350023233e-06,
+          "outside": false
+        },
+        "M2-viscosity": {
+          "value": 5.49329287109e-06,
+          "outside": true
+        },
+        "M3-slip-walls": {
+          "value": 4.65195970253e-06,
+          "outside": true
+        },
+        "M4-moving-wall": {
+          "value": 9.13304807124e-06,
+          "outside": false
+        },
+        "M5-half-inlet": {
+          "value": 2.54448747132e-05,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "last_Uy_initial",
+      "label": "Uy initial residual, last step",
+      "normal_low": 0.000223217819465,
+      "normal_high": 0.000436016223896,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 7.341902824e-05,
+          "outside": true
+        },
+        "M2-viscosity": {
+          "value": 1.42796682278e-05,
+          "outside": true
+        },
+        "M3-slip-walls": {
+          "value": 2.37671074406e-05,
+          "outside": true
+        },
+        "M4-moving-wall": {
+          "value": 0.000337360758805,
+          "outside": false
+        },
+        "M5-half-inlet": {
+          "value": 0.000146564493207,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "last_p_initial",
+      "label": "p initial residual, first solve of the last step",
+      "normal_low": 0.0102485971103,
+      "normal_high": 0.0299773024816,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 0.00614682487971,
+          "outside": true
+        },
+        "M2-viscosity": {
+          "value": 0.0230447387944,
+          "outside": false
+        },
+        "M3-slip-walls": {
+          "value": 0.00364346134265,
+          "outside": true
+        },
+        "M4-moving-wall": {
+          "value": 0.0274338973854,
+          "outside": false
+        },
+        "M5-half-inlet": {
+          "value": 0.00414915355786,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "last_Ux_final",
+      "label": "Ux final residual, last step",
+      "normal_low": 2.15959848834e-08,
+      "normal_high": 9.84268307113e-06,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 9.69350023233e-06,
+          "outside": false
+        },
+        "M2-viscosity": {
+          "value": 5.49329287109e-06,
+          "outside": false
+        },
+        "M3-slip-walls": {
+          "value": 4.65195970253e-06,
+          "outside": false
+        },
+        "M4-moving-wall": {
+          "value": 9.13304807124e-06,
+          "outside": false
+        },
+        "M5-half-inlet": {
+          "value": 2.18285949614e-09,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "last_Uy_final",
+      "label": "Uy final residual, last step",
+      "normal_low": 3.8948767464e-07,
+      "normal_high": 1.04331391786e-06,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 7.63789978081e-09,
+          "outside": true
+        },
+        "M2-viscosity": {
+          "value": 1.49753242477e-07,
+          "outside": true
+        },
+        "M3-slip-walls": {
+          "value": 1.95013415072e-08,
+          "outside": true
+        },
+        "M4-moving-wall": {
+          "value": 5.10267985089e-07,
+          "outside": false
+        },
+        "M5-half-inlet": {
+          "value": 4.25452107361e-08,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "last_p_final",
+      "label": "p final residual, last solve of the last step",
+      "normal_low": 6.90245951234e-07,
+      "normal_high": 9.54265239274e-07,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 8.510365616e-07,
+          "outside": false
+        },
+        "M2-viscosity": {
+          "value": 9.18089078603e-07,
+          "outside": false
+        },
+        "M3-slip-walls": {
+          "value": 9.11771463105e-07,
+          "outside": false
+        },
+        "M4-moving-wall": {
+          "value": 8.80901483092e-07,
+          "outside": false
+        },
+        "M5-half-inlet": {
+          "value": 5.64767872878e-07,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "last_continuity_local",
+      "label": "continuity error, sum local, last step",
+      "normal_low": 6.71774653307e-13,
+      "normal_high": 1.16668725829e-12,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 1.78914806986e-13,
+          "outside": true
+        },
+        "M2-viscosity": {
+          "value": 1.6633125906e-13,
+          "outside": true
+        },
+        "M3-slip-walls": {
+          "value": 5.7273902867e-13,
+          "outside": true
+        },
+        "M4-moving-wall": {
+          "value": 9.3977400071e-13,
+          "outside": false
+        },
+        "M5-half-inlet": {
+          "value": 2.56330056269e-13,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "last_continuity_global_abs",
+      "label": "continuity error, global (absolute), last step",
+      "normal_low": 1.45517662552e-14,
+      "normal_high": 1.65325444028e-13,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 1.86557962553e-14,
+          "outside": false
+        },
+        "M2-viscosity": {
+          "value": 2.15106584522e-14,
+          "outside": false
+        },
+        "M3-slip-walls": {
+          "value": 4.25632377975e-14,
+          "outside": false
+        },
+        "M4-moving-wall": {
+          "value": 9.40241626213e-14,
+          "outside": false
+        },
+        "M5-half-inlet": {
+          "value": 1.4268505898e-14,
+          "outside": true
+        }
+      }
+    },
+    {
+      "number": "last_continuity_cumulative_abs",
+      "label": "continuity error, cumulative (absolute), last step",
+      "normal_low": 4.34763941972e-09,
+      "normal_high": 7.23739651648e-09,
+      "wrong": {
+        "M1-inlet-speed": {
+          "value": 9.89925489627e-09,
+          "outside": true
+        },
+        "M2-viscosity": {
+          "value": 2.48516562232e-08,
+          "outside": true
+        },
+        "M3-slip-walls": {
+          "value": 3.42480786266e-09,
+          "outside": true
+        },
+        "M4-moving-wall": {
+          "value": 2.43373108099e-09,
+          "outside": true
+        },
+        "M5-half-inlet": {
+          "value": 8.22642117695e-09,
+          "outside": true
+        }
+      }
+    }
+  ]
+}

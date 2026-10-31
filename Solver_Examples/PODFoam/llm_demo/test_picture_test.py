@@ -497,5 +497,23 @@ class RunnerTests(unittest.TestCase):
                          "--endpoint", endpoint, "--output", str(self.root / "out")])
 
 
+class ScriptImportTests(unittest.TestCase):
+    """The other tests do not import these scripts. Their callers and the scripts under
+    docs/evidence reach the answer keys through these names."""
+
+    def test_scripts_import_and_share_the_names_of_frame_scoring(self):
+        import frame_scoring
+        import run_live_sweep  # noqa: F401
+        import run_periodic  # noqa: F401
+        import sequence_test
+        import window_test  # noqa: F401
+        for module, names in ((pt, ("load_v2", "truth_from_arrays")),
+                              (snapshot_runner, ("REGION_TOLERANCE_PCT", "TREND_TOLERANCE", "score_describe",
+                                                 "score_sequence", "sequence_truth", "trend")),
+                              (sequence_test, ("numbers_of",))):
+            for name in names:
+                self.assertIs(getattr(module, name), getattr(frame_scoring, name), name)
+
+
 if __name__ == "__main__":
     unittest.main()

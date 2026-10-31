@@ -2,126 +2,162 @@
 // SPDX-License-Identifier: (other)
 // An owning array prevents saved Python views from aliasing the next timestep.
 {
-Foam::sigFpe::ignore pythonCallFpe;
-if (mesh.nCells() != num_cells)
-{
-    FatalErrorInFunction << "POD requires a fixed cell count" << exit(FatalError);
-}
-npy_intp dims[] = {num_cells, 3};
-PyObject* snapshot = PyArray_SimpleNew(2, dims, NPY_DOUBLE);
-if (!snapshot)
-{
-    PyErr_Print();
-    FatalErrorInFunction << "Cannot allocate snapshot" << exit(FatalError);
-}
-double* data = static_cast<double*>
-(
-    PyArray_DATA(reinterpret_cast<PyArrayObject*>(snapshot))
-);
-forAll(U, celli)
-{
-    for (direction cmpt = 0; cmpt < 3; ++cmpt)
+    PythonFpeOff pythonCallFpe;
+    if (mesh.nCells() != num_cells)
     {
-        const double value = U[celli][cmpt];
-        if (!std::isfinite(value) || !std::isfinite(p[celli]))
-        {
-            FatalErrorInFunction << "Non-finite U/p at cell " << celli
-                << " time " << runTime.timeName() << exit(FatalError);
-        }
-        data[3*celli + cmpt] = value;
+        FatalErrorInFunction << "POD requires a fixed cell count" << exit(FatalError);
     }
-}
-PyObject* snapshotResult = PyObject_CallFunction(snapshot_func, "Oi", snapshot, rank);
-Py_DECREF(snapshot);
-if (!snapshotResult)
-{
-    PyErr_Print();
-    FatalErrorInFunction << "Python snapshot_func failed" << exit(FatalError);
-}
-Py_DECREF(snapshotResult);
-++podSnapshotCount;
-Info<< "POD snapshot accepted: " << podSnapshotCount
-    << " time=" << runTime.timeName() << " cells=" << num_cells << endl;
-
-const bool computeSvd = podSvdInterval
-    ? (podSnapshotCount % podSvdInterval == 0)
-    : runTime.outputTime();
-if (computeSvd)
-{
-    PyObject* result = PyObject_CallFunction(svd_func, "i", rank);
-    if (!result)
+    clock_gettime(CLOCK_MONOTONIC, &tw1); // POSIX
+    npy_intp dims[] = {num_cells, 3};
+    PyObject* snapshot = PyArray_SimpleNew(2, dims, NPY_DOUBLE);
+    if (!snapshot)
     {
-        PyErr_Print();
-        FatalErrorInFunction << "Python svd_func failed" << exit(FatalError);
+        printPythonError();
+        FatalErrorInFunction << "Cannot allocate snapshot" << exit(FatalError);
     }
-    // Insist on a float64 ndarray instead of converting lists or lower precision.
-    if (!PyArray_Check(result)
-     || PyArray_TYPE(reinterpret_cast<PyArrayObject*>(result)) != NPY_DOUBLE
-     || !PyArray_ISNOTSWAPPED(reinterpret_cast<PyArrayObject*>(result)))
-    {
-        Py_DECREF(result);
-        FatalErrorInFunction << "SVD result must be a native float64 ndarray"
-            << exit(FatalError);
-    }
-    PyArrayObject* modes = reinterpret_cast<PyArrayObject*>
+    double* data = static_cast<double*>
     (
-        PyArray_FROM_OTF(result, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY)
+        PyArray_DATA(reinterpret_cast<PyArrayObject*>(snapshot))
     );
-    Py_DECREF(result);
-    if (!modes)
-    {
-        PyErr_Print();
-        FatalErrorInFunction << "SVD result must be a real numeric array"
-            << exit(FatalError);
-    }
-    if (PyArray_NDIM(modes) != 2 || PyArray_DIM(modes, 0) != 3*num_cells
-     || PyArray_DIM(modes, 1) != min(truncation, podSnapshotCount))
-    {
-        FatalErrorInFunction << "Expected SVD shape (3*cells, min(truncation,snapshots))"
-            << exit(FatalError);
-    }
-    const label nModes = PyArray_DIM(modes, 1);
-    const double* values = static_cast<const double*>(PyArray_DATA(modes));
-    for (npy_intp i = 0; i < PyArray_SIZE(modes); ++i)
-    {
-        if (!std::isfinite(values[i]))
-        {
-            FatalErrorInFunction << "Non-finite SVD result" << exit(FatalError);
-        }
-    }
-    const char* prefixes[] = {"upod_", "vpod_", "wpod_"};
-    for (label mode = 0; mode < nModes; ++mode)
+    forAll(U, celli)
     {
         for (direction cmpt = 0; cmpt < 3; ++cmpt)
         {
-            volScalarField podField
-            (
-                IOobject
-                (
-                    word(prefixes[cmpt]) + Foam::name(mode),
-                    runTime.timeName(), mesh,
-                    IOobject::NO_READ, IOobject::NO_WRITE, false
-                ),
-                mesh, dimensionedScalar("zero", dimless, 0),
-                "zeroGradient"
-            );
-            forAll(podField, celli)
+            const double value = U[celli][cmpt];
+            if (!std::isfinite(value) || !std::isfinite(p[celli]))
             {
-                podField[celli] = values[(cmpt*num_cells + celli)*nModes + mode];
+                FatalErrorInFunction << "Non-finite U/p at cell " << celli
+                    << " time " << runTime.timeName() << exit(FatalError);
             }
-            podField.correctBoundaryConditions();
-            if (!podField.write())
-            {
-                FatalErrorInFunction << "Cannot write POD field" << exit(FatalError);
-            }
+            data[3*celli + cmpt] = value;
         }
     }
-    Py_DECREF(modes);
-    Info<< "POD SVD returned to OpenFOAM: rows=" << 3*num_cells
-        << " modes=" << nModes << " finite=true time="
-        << runTime.timeName() << endl;
-}
-// The callback's return value is not used.
-#include "PythonAnalysis.H"
-std::feclearexcept(FE_ALL_EXCEPT);
+    clock_gettime(CLOCK_MONOTONIC, &tw2); // POSIX
+    posix_wall = 1000.0*tw2.tv_sec + 1e-6*tw2.tv_nsec - (1000.0*tw1.tv_sec + 1e-6*tw1.tv_nsec);
+    // podSvdInterval 0: a module without analysis_func keeps the original schedule, where a
+    // write step runs the SVD instead of collecting a snapshot (if it has snapshots to use).
+    // A module with analysis_func gets a snapshot at every step.
+    const bool writeStepSvd = !podSvdInterval && runTime.outputTime();
+    const bool collectSnapshot = analysis_func || !writeStepSvd || !podSnapshotsSinceSvd;
+    if (collectSnapshot)
+    {
+        printf("Numpy array cast time: %.2f ms\n", posix_wall);
+        clock_gettime(CLOCK_MONOTONIC, &tw1); // POSIX
+        PyObject* snapshotResult = PyObject_CallFunction(snapshot_func, "Oi", snapshot, rank);
+        if (!snapshotResult)
+        {
+            printPythonError();
+            FatalErrorInFunction << "Python snapshot_func failed" << exit(FatalError);
+        }
+        Py_DECREF(snapshotResult);
+        clock_gettime(CLOCK_MONOTONIC, &tw2); // POSIX
+        posix_wall = 1000.0*tw2.tv_sec + 1e-6*tw2.tv_nsec - (1000.0*tw1.tv_sec + 1e-6*tw1.tv_nsec);
+        printf("Snapshot collection wall time: %.2f ms\n", posix_wall);
+        ++podSnapshotCount;
+        ++podSnapshotsSinceSvd;
+        Info<< "POD snapshot accepted: " << podSnapshotCount
+            << " time=" << runTime.timeName() << " cells=" << num_cells << endl;
+    }
+    Py_DECREF(snapshot);
+
+    const bool computeSvd = podSvdInterval
+        ? (podSnapshotCount % podSvdInterval == 0)
+        : writeStepSvd && (analysis_func || !collectSnapshot);
+    if (computeSvd)
+    {
+        podSnapshotsSinceSvd = 0;
+        clock_gettime(CLOCK_MONOTONIC, &tw1); // POSIX
+        PyObject* result = PyObject_CallFunction(svd_func, "i", rank);
+        if (!result)
+        {
+            printPythonError();
+            FatalErrorInFunction << "Python svd_func failed" << exit(FatalError);
+        }
+        clock_gettime(CLOCK_MONOTONIC, &tw2); // POSIX
+        posix_wall = 1000.0*tw2.tv_sec + 1e-6*tw2.tv_nsec - (1000.0*tw1.tv_sec + 1e-6*tw1.tv_nsec);
+        printf("SVD Computation wall time: %.2f ms\n", posix_wall);
+        clock_gettime(CLOCK_MONOTONIC, &tw1); // POSIX
+        // Insist on a float64 ndarray instead of converting lists or lower precision.
+        if (!PyArray_Check(result)
+         || PyArray_TYPE(reinterpret_cast<PyArrayObject*>(result)) != NPY_DOUBLE
+         || !PyArray_ISNOTSWAPPED(reinterpret_cast<PyArrayObject*>(result)))
+        {
+            Py_DECREF(result);
+            FatalErrorInFunction << "SVD result must be a native float64 ndarray"
+                << exit(FatalError);
+        }
+        PyArrayObject* modes = reinterpret_cast<PyArrayObject*>
+        (
+            PyArray_FROM_OTF(result, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY)
+        );
+        Py_DECREF(result);
+        if (!modes)
+        {
+            printPythonError();
+            FatalErrorInFunction << "SVD result must be a real numeric array"
+                << exit(FatalError);
+        }
+        // A rank without cells has no modes to give and takes the others' count.
+        if (PyArray_NDIM(modes) != 2 || PyArray_DIM(modes, 0) != 3*num_cells
+         || (num_cells && (PyArray_DIM(modes, 1) < 1 || PyArray_DIM(modes, 1) > truncation)))
+        {
+            FatalErrorInFunction << "Expected SVD shape (3*cells, 1 to truncation modes)"
+                << exit(FatalError);
+        }
+        // The boundary update of each mode exchanges data between the ranks, so
+        // they must all write the same number of modes.
+        const label localModes = num_cells ? label(PyArray_DIM(modes, 1)) : 0;
+        const label nModes = returnReduce(localModes, maxOp<label>());
+        const label fewestModes = returnReduce(num_cells ? localModes : nModes, minOp<label>());
+        if (fewestModes != nModes)
+        {
+            FatalErrorInFunction << "The ranks returned different numbers of POD modes: from "
+                << fewestModes << " to " << nModes << exit(FatalError);
+        }
+        const double* values = static_cast<const double*>(PyArray_DATA(modes));
+        for (npy_intp i = 0; i < PyArray_SIZE(modes); ++i)
+        {
+            if (!std::isfinite(values[i]))
+            {
+                FatalErrorInFunction << "Non-finite SVD result" << exit(FatalError);
+            }
+        }
+        const char* prefixes[] = {"upod_", "vpod_", "wpod_"};
+        for (label mode = 0; mode < nModes; ++mode)
+        {
+            for (direction cmpt = 0; cmpt < 3; ++cmpt)
+            {
+                volScalarField podField
+                (
+                    IOobject
+                    (
+                        word(prefixes[cmpt]) + Foam::name(mode),
+                        runTime.timeName(), mesh,
+                        IOobject::NO_READ, IOobject::NO_WRITE, false
+                    ),
+                    mesh, dimensionedScalar("zero", dimless, 0),
+                    "zeroGradient"
+                );
+                forAll(podField, celli)
+                {
+                    podField[celli] = values[(cmpt*num_cells + celli)*nModes + mode];
+                }
+                podField.correctBoundaryConditions();
+                if (!podField.write())
+                {
+                    FatalErrorInFunction << "Cannot write POD field" << exit(FatalError);
+                }
+            }
+        }
+        Py_DECREF(modes);
+        clock_gettime(CLOCK_MONOTONIC, &tw2); // POSIX
+        posix_wall = 1000.0*tw2.tv_sec + 1e-6*tw2.tv_nsec - (1000.0*tw1.tv_sec + 1e-6*tw1.tv_nsec);
+        printf("Data copy back to OF wall time: %.2f ms\n", posix_wall);
+        Info<< "POD SVD returned to OpenFOAM: rows=" << 3*num_cells
+            << " modes=" << nModes << " finite=true time="
+            << runTime.timeName() << endl;
+    }
+    // The callback's return value is not used.
+    #include "PythonAnalysis.H"
+    std::feclearexcept(FE_ALL_EXCEPT);
 } // Restore OpenFOAM floating-point traps before the next PDE step.

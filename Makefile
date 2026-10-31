@@ -1,11 +1,11 @@
-# Convenience targets. OpenFOAM v2106 is needed for validate and demo only.
+# Convenience targets. An OpenFOAM (v2012, v2106, v2212 or 8) is needed for validate and demo only.
 PY ?= python3
 POD = Solver_Examples/PODFoam
 
 .PHONY: test evidence links validate runtime demo stop
 
-test:            ## unit tests, no OpenFOAM or model (about 80 s)
-	cd $(POD)/llm_demo && $(PY) -m unittest test_llm_client test_callback test_ablation_runner test_async test_picture_test test_instability_test -v
+test:            ## unit tests, no OpenFOAM or model (about 110 s)
+	cd $(POD)/llm_demo && $(PY) -m unittest test_llm_client test_callback test_callback_main test_ablation_runner test_async test_picture_test test_instability_test test_wrong_setup_test -v
 
 evidence:        ## evidence files match their manifests
 	$(PY) docs/evidence/check_manifest.py

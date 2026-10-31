@@ -1,0 +1,80 @@
+node t513.cluster job 24952019 code d9d1109 image /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/images/of-v2212-dev.sif
+a13092057965b962be9fe1e6ef60cc5c5f7d58d6eadf8c794406510327d77886  /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/images/of-v2212-dev.sif
+WM_PROJECT_VERSION v2212
+Validation directory: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/dev2212-final/run/pod-v2212.WasBr4
+{
+  "fixed-pimple": {
+    "steps": 10,
+    "residual_values": 160,
+    "checked_field_files": 30,
+    "max_Co": 0.211076243341,
+    "max_abs_U": 74.7948606622,
+    "max_abs_p": 26997779.3771,
+    "finite": true,
+    "normal_exit": true
+  },
+  "fixed-pod": {
+    "steps": 10,
+    "residual_values": 160,
+    "checked_field_files": 45,
+    "max_Co": 0.211076243341,
+    "max_abs_U": 74.7948606622,
+    "max_abs_p": 26997779.3771,
+    "finite": true,
+    "normal_exit": true
+  },
+  "bridge": {
+    "snapshots": 10,
+    "svd_shape": [
+      61620,
+      5
+    ],
+    "returned_field_files": 15,
+    "max_snapshot_error": 5.000089231543825e-11,
+    "max_mode_error": 4.94174146048465e-13,
+    "singular_values": [
+      [
+        13236.330777350344,
+        82.63749410346605,
+        25.825712232626596,
+        4.99110410630979,
+        0.8212480338494296,
+        0.41605148295305994,
+        0.1634522606555531,
+        0.04648773674431768,
+        0.008304353131043541,
+        0.0007142530649640424
+      ],
+      [
+        1515.6402106839882,
+        15.342511277181476,
+        6.513423655629363,
+        1.1805328261655061,
+        0.5674636746704732,
+        0.15469841833506826,
+        0.0628606528800118,
+        0.0195113054194296,
+        0.0048472909197247544,
+        0.0016588495440401805
+      ],
+      [
+        1.2547283073076356e-13,
+        2.663057558881112e-16,
+        4.5100407942146186e-17,
+        5.2968973356868e-18,
+        1.4740577653693155e-18,
+        1.630962018556933e-19,
+        7.412896493551142e-20,
+        1.3097415873113248e-20,
+        3.697648579908584e-21,
+        1.2590549290804546e-21
+      ]
+    ],
+    "python_finalized": true
+  },
+  "pimple_POD_velocity_agreement": true,
+  "pimple_POD_pressure_agreement": true,
+  "status": "PASS"
+}
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/pr/refix/dev2212-final/run/pod-v2212.WasBr4
+exit 0

@@ -1,0 +1,3842 @@
+{
+  "wrong-setup-v2own/M1-inlet-speed-step07500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M1-inlet-speed",
+    "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+    "run_step": 7500,
+    "time_s": 0.1375,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      63.28034425872415,
+      3.1809449737231184
+    ],
+    "lowest_pressure_percent": [
+      58.044949341337805,
+      76.87606317325354
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 11.74209616902233,
+      "min_pressure_m2_per_s2": -44.5174403665,
+      "max_pressure_m2_per_s2": 13.1393519545,
+      "max_speed_domain_m_per_s": 12.026017948328297,
+      "max_jump_speed_m_per_s": 2.9617677134278964,
+      "max_jump_pressure_m2_per_s2": 4.484437040800001,
+      "courant_mean": 0.00270000965855,
+      "courant_max": 0.269193769546,
+      "Ux_initial": 9.57993382876e-06,
+      "Ux_final": 9.57993382876e-06,
+      "Uy_initial": 7.47613945264e-05,
+      "Uy_final": 7.28744469327e-09,
+      "p_initial": 0.00590736621237,
+      "p_final": 9.73568234831e-07,
+      "continuity_local": 1.90579297986e-13,
+      "continuity_global": -1.69331588314e-14,
+      "continuity_cumulative": -9.64482394318e-09,
+      "continuity_global_abs": 1.69331588314e-14,
+      "continuity_cumulative_abs": 9.64482394318e-09
+    }
+  },
+  "wrong-setup-v2own/N4-step05000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N4",
+    "change": "none; start state t = 0.09 s of the developed flow",
+    "run_step": 5000,
+    "time_s": 0.125,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      42.33414973464664,
+      47.95508320723889
+    ],
+    "lowest_pressure_percent": [
+      43.20740799640171,
+      28.421367492293346
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.56079474826399,
+      "min_pressure_m2_per_s2": -365.243959734,
+      "max_pressure_m2_per_s2": 79.4425404868,
+      "max_speed_domain_m_per_s": 38.56079474826399,
+      "max_jump_speed_m_per_s": 4.680357377274283,
+      "max_jump_pressure_m2_per_s2": 41.39717091899999,
+      "courant_mean": 0.017059367166,
+      "courant_max": 0.310567911223,
+      "Ux_initial": 1.10416349688e-05,
+      "Ux_final": 2.04768992912e-08,
+      "Uy_initial": 0.000312631900745,
+      "Uy_final": 6.76671279006e-07,
+      "p_initial": 0.0116015633454,
+      "p_final": 5.54580080901e-07,
+      "continuity_local": 6.18586991914e-13,
+      "continuity_global": 3.94153131307e-14,
+      "continuity_cumulative": -3.43422172226e-09,
+      "continuity_global_abs": 3.94153131307e-14,
+      "continuity_cumulative_abs": 3.43422172226e-09
+    }
+  },
+  "wrong-setup-v2own/N2-step04500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N2",
+    "change": "none; start state t = 0.07 s of the developed flow",
+    "run_step": 4500,
+    "time_s": 0.1225,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      27.495854268219425,
+      43.92353192246253
+    ],
+    "lowest_pressure_percent": [
+      33.60625560318664,
+      28.44540972702686
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 36.59706586274721,
+      "min_pressure_m2_per_s2": -262.709309536,
+      "max_pressure_m2_per_s2": 12.9397382002,
+      "max_speed_domain_m_per_s": 36.59706586274721,
+      "max_jump_speed_m_per_s": 3.876446945112342,
+      "max_jump_pressure_m2_per_s2": 37.80489207000001,
+      "courant_mean": 0.0170198070134,
+      "courant_max": 0.310269731905,
+      "Ux_initial": 8.23234475202e-06,
+      "Ux_final": 8.23234475202e-06,
+      "Uy_initial": 0.000227306223095,
+      "Uy_final": 4.09997472357e-07,
+      "p_initial": 0.0330480482597,
+      "p_final": 7.72398968927e-07,
+      "continuity_local": 5.37641060988e-13,
+      "continuity_global": 3.93503130545e-14,
+      "continuity_cumulative": -4.08565158003e-09,
+      "continuity_global_abs": 3.93503130545e-14,
+      "continuity_cumulative_abs": 4.08565158003e-09
+    }
+  },
+  "wrong-setup-v2own/N4-step04500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N4",
+    "change": "none; start state t = 0.09 s of the developed flow",
+    "run_step": 4500,
+    "time_s": 0.1225,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      44.07989346861276,
+      46.39041744894454
+    ],
+    "lowest_pressure_percent": [
+      44.952999068932144,
+      26.718997576356166
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.05929289961856,
+      "min_pressure_m2_per_s2": -362.251217109,
+      "max_pressure_m2_per_s2": 71.6287602636,
+      "max_speed_domain_m_per_s": 38.05929289961856,
+      "max_jump_speed_m_per_s": 5.202877626096554,
+      "max_jump_pressure_m2_per_s2": 36.811263752,
+      "courant_mean": 0.0170689866418,
+      "courant_max": 0.277125320825,
+      "Ux_initial": 1.13673650357e-05,
+      "Ux_final": 1.92337886406e-08,
+      "Uy_initial": 0.000325204929654,
+      "Uy_final": 6.21191316311e-07,
+      "p_initial": 0.0115257327004,
+      "p_final": 6.72789218377e-07,
+      "continuity_local": 7.3528567026e-13,
+      "continuity_global": 6.21935122644e-14,
+      "continuity_cumulative": -3.37475735371e-09,
+      "continuity_global_abs": 6.21935122644e-14,
+      "continuity_cumulative_abs": 3.37475735371e-09
+    }
+  },
+  "wrong-setup-v2own/M3-slip-walls-step05500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M3-slip-walls",
+    "change": "lowerWall and upperWall slip instead of noSlip",
+    "run_step": 5500,
+    "time_s": 0.1275,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      16.14833467972521,
+      51.02154459287964
+    ],
+    "lowest_pressure_percent": [
+      12.656070504829106,
+      21.336333787542998
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.08586287821536,
+      "min_pressure_m2_per_s2": -310.482910166,
+      "max_pressure_m2_per_s2": 86.8418040881,
+      "max_speed_domain_m_per_s": 37.08586287821536,
+      "max_jump_speed_m_per_s": 4.6067270277036965,
+      "max_jump_pressure_m2_per_s2": 67.4742085532,
+      "courant_mean": 0.0171758930034,
+      "courant_max": 1.29976335437,
+      "Ux_initial": 4.46145246084e-06,
+      "Ux_final": 4.46145246084e-06,
+      "Uy_initial": 3.0587392593e-05,
+      "Uy_final": 4.40524234112e-08,
+      "p_initial": 0.00460771357337,
+      "p_final": 9.24549223638e-07,
+      "continuity_local": 6.08793249774e-13,
+      "continuity_global": 4.84001965356e-14,
+      "continuity_cumulative": -2.95122964511e-09,
+      "continuity_global_abs": 4.84001965356e-14,
+      "continuity_cumulative_abs": 2.95122964511e-09
+    }
+  },
+  "wrong-setup-v2own/N3-step05500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N3",
+    "change": "none; start state t = 0.08 s of the developed flow",
+    "run_step": 5500,
+    "time_s": 0.1275,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      78.1209519502697,
+      43.93286960851195
+    ],
+    "lowest_pressure_percent": [
+      77.24806750511368,
+      19.835672638587067
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 35.52885039456776,
+      "min_pressure_m2_per_s2": -251.378750338,
+      "max_pressure_m2_per_s2": 48.7672830437,
+      "max_speed_domain_m_per_s": 35.52885039456776,
+      "max_jump_speed_m_per_s": 6.04616463501921,
+      "max_jump_pressure_m2_per_s2": 32.061560623999995,
+      "courant_mean": 0.017056803454,
+      "courant_max": 0.253016716495,
+      "Ux_initial": 9.25310963536e-06,
+      "Ux_final": 9.25310963536e-06,
+      "Uy_initial": 0.000305899268836,
+      "Uy_final": 5.03239830762e-07,
+      "p_initial": 0.0243710784179,
+      "p_final": 7.99280484762e-07,
+      "continuity_local": 9.21695704416e-13,
+      "continuity_global": 8.465803082e-14,
+      "continuity_cumulative": -4.87818453131e-09,
+      "continuity_global_abs": 8.465803082e-14,
+      "continuity_cumulative_abs": 4.87818453131e-09
+    }
+  },
+  "wrong-setup-v2own/N2-step07500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N2",
+    "change": "none; start state t = 0.07 s of the developed flow",
+    "run_step": 7500,
+    "time_s": 0.1375,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      78.1209519502697,
+      43.93286960851195
+    ],
+    "lowest_pressure_percent": [
+      77.24806750511368,
+      19.835672638587067
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 35.528850265102164,
+      "min_pressure_m2_per_s2": -251.378748208,
+      "max_pressure_m2_per_s2": 48.767293115,
+      "max_speed_domain_m_per_s": 35.528850265102164,
+      "max_jump_speed_m_per_s": 6.046166988972333,
+      "max_jump_pressure_m2_per_s2": 32.061560152,
+      "courant_mean": 0.0170568034621,
+      "courant_max": 0.253016714581,
+      "Ux_initial": 9.25311053535e-06,
+      "Ux_final": 9.25311053535e-06,
+      "Uy_initial": 0.000305899489926,
+      "Uy_final": 5.03239432662e-07,
+      "p_initial": 0.0243530932724,
+      "p_final": 7.98861420803e-07,
+      "continuity_local": 9.21191846087e-13,
+      "continuity_global": 8.45894644546e-14,
+      "continuity_cumulative": -6.4762462781e-09,
+      "continuity_global_abs": 8.45894644546e-14,
+      "continuity_cumulative_abs": 6.4762462781e-09
+    }
+  },
+  "wrong-setup-v2own/M2-viscosity-step08000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M2-viscosity",
+    "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+    "run_step": 8000,
+    "time_s": 0.14,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      18.76611467314659,
+      99.61422539254053
+    ],
+    "lowest_pressure_percent": [
+      0.4474467363278903,
+      31.630411484576946
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.11974603344633,
+      "min_pressure_m2_per_s2": -112.085599893,
+      "max_pressure_m2_per_s2": -32.9246924285,
+      "max_speed_domain_m_per_s": 38.74214815150832,
+      "max_jump_speed_m_per_s": 3.0956317033236047,
+      "max_jump_pressure_m2_per_s2": 5.048472996000001,
+      "courant_mean": 0.0168683083143,
+      "courant_max": 0.22566073779,
+      "Ux_initial": 5.49329287109e-06,
+      "Ux_final": 5.49329287109e-06,
+      "Uy_initial": 1.42796682278e-05,
+      "Uy_final": 1.49753242477e-07,
+      "p_initial": 0.0230447387944,
+      "p_final": 9.18089078603e-07,
+      "continuity_local": 1.6633125906e-13,
+      "continuity_global": -2.15106584522e-14,
+      "continuity_cumulative": 2.48516562232e-08,
+      "continuity_global_abs": 2.15106584522e-14,
+      "continuity_cumulative_abs": 2.48516562232e-08
+    }
+  },
+  "wrong-setup-v2own/M1-inlet-speed-step05500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M1-inlet-speed",
+    "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+    "run_step": 5500,
+    "time_s": 0.1275,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      54.55217141034857,
+      2.5426817185015205
+    ],
+    "lowest_pressure_percent": [
+      53.680615354906315,
+      79.89693887415036
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 12.840564914844697,
+      "min_pressure_m2_per_s2": -58.4933379989,
+      "max_pressure_m2_per_s2": 12.9902572522,
+      "max_speed_domain_m_per_s": 12.840564914844697,
+      "max_jump_speed_m_per_s": 3.351581234676379,
+      "max_jump_pressure_m2_per_s2": 5.584915833159999,
+      "courant_mean": 0.00272762575815,
+      "courant_max": 0.333987736221,
+      "Ux_initial": 1.10160447797e-05,
+      "Ux_final": 6.48874922452e-10,
+      "Uy_initial": 0.000125838519875,
+      "Uy_final": 7.06523521146e-09,
+      "p_initial": 0.00252918566214,
+      "p_final": 7.49797525485e-07,
+      "continuity_local": 1.41204425944e-13,
+      "continuity_global": 1.11920690754e-14,
+      "continuity_cumulative": -9.1801720585e-09,
+      "continuity_global_abs": 1.11920690754e-14,
+      "continuity_cumulative_abs": 9.1801720585e-09
+    }
+  },
+  "wrong-setup-v2own/N4-step07500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N4",
+    "change": "none; start state t = 0.09 s of the developed flow",
+    "run_step": 7500,
+    "time_s": 0.1375,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      29.24161939138459,
+      42.75233750305961
+    ],
+    "lowest_pressure_percent": [
+      31.860302828165537,
+      26.029998611038234
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.75465787457002,
+      "min_pressure_m2_per_s2": -358.490930999,
+      "max_pressure_m2_per_s2": 68.900425062,
+      "max_speed_domain_m_per_s": 37.75465787457002,
+      "max_jump_speed_m_per_s": 6.192365320607597,
+      "max_jump_pressure_m2_per_s2": 42.84796277799998,
+      "courant_mean": 0.0171432801105,
+      "courant_max": 0.333360676728,
+      "Ux_initial": 1.13504783253e-05,
+      "Ux_final": 2.51188210856e-08,
+      "Uy_initial": 0.000342748755062,
+      "Uy_final": 7.93599716117e-07,
+      "p_initial": 0.0115680119831,
+      "p_final": 3.99551975141e-07,
+      "continuity_local": 5.66345010506e-13,
+      "continuity_global": 5.21255479623e-14,
+      "continuity_cumulative": -4.65175628409e-09,
+      "continuity_global_abs": 5.21255479623e-14,
+      "continuity_cumulative_abs": 4.65175628409e-09
+    }
+  },
+  "wrong-setup-v2own/N1-step05000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N1",
+    "change": "none; start state t = 0.06 s of the developed flow",
+    "run_step": 5000,
+    "time_s": 0.125,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      32.73296891164453,
+      43.60835408612481
+    ],
+    "lowest_pressure_percent": [
+      33.605969198221125,
+      25.79175760902073
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.91365660858257,
+      "min_pressure_m2_per_s2": -376.136116566,
+      "max_pressure_m2_per_s2": 47.9952068598,
+      "max_speed_domain_m_per_s": 37.91365660858257,
+      "max_jump_speed_m_per_s": 6.989901844167296,
+      "max_jump_pressure_m2_per_s2": 47.040190551999984,
+      "courant_mean": 0.0171388847816,
+      "courant_max": 0.336680124734,
+      "Ux_initial": 1.07238437733e-05,
+      "Ux_final": 2.32212016388e-08,
+      "Uy_initial": 0.000371649356897,
+      "Uy_final": 8.58041380166e-07,
+      "p_initial": 0.00992799436532,
+      "p_final": 4.26378521424e-07,
+      "continuity_local": 6.19658345669e-13,
+      "continuity_global": 8.88444749657e-14,
+      "continuity_cumulative": -4.4726802199e-09,
+      "continuity_global_abs": 8.88444749657e-14,
+      "continuity_cumulative_abs": 4.4726802199e-09
+    }
+  },
+  "wrong-setup-v2own/N5-step06000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N5",
+    "change": "none; start state t = 0.1 s of the developed flow",
+    "run_step": 6000,
+    "time_s": 0.13,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      26.623016225427484,
+      43.68638262586018
+    ],
+    "lowest_pressure_percent": [
+      32.73336877722193,
+      27.892429268315627
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 36.345556459393094,
+      "min_pressure_m2_per_s2": -253.74555332,
+      "max_pressure_m2_per_s2": 5.58203372542,
+      "max_speed_domain_m_per_s": 36.345556459393094,
+      "max_jump_speed_m_per_s": 3.924244346226212,
+      "max_jump_pressure_m2_per_s2": 36.72807138800002,
+      "courant_mean": 0.0170102819783,
+      "courant_max": 0.299632377636,
+      "Ux_initial": 8.67276126115e-06,
+      "Ux_final": 8.67276126115e-06,
+      "Uy_initial": 0.000223217871976,
+      "Uy_final": 3.89490148294e-07,
+      "p_initial": 0.0300041030117,
+      "p_final": 8.90025518275e-07,
+      "continuity_local": 6.71556962366e-13,
+      "continuity_global": 4.00638519953e-14,
+      "continuity_cumulative": -3.2354417005e-09,
+      "continuity_global_abs": 4.00638519953e-14,
+      "continuity_cumulative_abs": 3.2354417005e-09
+    }
+  },
+  "wrong-setup-v2own/M4-moving-wall-step05500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M4-moving-wall",
+    "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+    "run_step": 5500,
+    "time_s": 0.1275,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      31.8601309039991,
+      43.39434978647649
+    ],
+    "lowest_pressure_percent": [
+      33.6060511568018,
+      26.484625929288935
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.38615889996121,
+      "min_pressure_m2_per_s2": -393.379590727,
+      "max_pressure_m2_per_s2": 65.2535776838,
+      "max_speed_domain_m_per_s": 38.38615889996121,
+      "max_jump_speed_m_per_s": 7.024911320181625,
+      "max_jump_pressure_m2_per_s2": 48.024484395,
+      "courant_mean": 0.0173167835837,
+      "courant_max": 0.343150077851,
+      "Ux_initial": 1.08448348458e-05,
+      "Ux_final": 2.11583194202e-08,
+      "Uy_initial": 0.000404922260943,
+      "Uy_final": 9.63076046983e-07,
+      "p_initial": 0.0114864228182,
+      "p_final": 4.06218466112e-07,
+      "continuity_local": 6.24614874272e-13,
+      "continuity_global": 6.37573548493e-14,
+      "continuity_cumulative": -1.58002276525e-10,
+      "continuity_global_abs": 6.37573548493e-14,
+      "continuity_cumulative_abs": 1.58002276525e-10
+    }
+  },
+  "wrong-setup-v2own/M5-half-inlet-step05500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M5-half-inlet",
+    "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+    "run_step": 5500,
+    "time_s": 0.1275,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      34.4787196548431,
+      41.175352964869944
+    ],
+    "lowest_pressure_percent": [
+      34.47773335743837,
+      18.8633175156897
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 18.64719137207835,
+      "min_pressure_m2_per_s2": -81.033317028,
+      "max_pressure_m2_per_s2": 38.1106531418,
+      "max_speed_domain_m_per_s": 28.135549963287698,
+      "max_jump_speed_m_per_s": 3.5290292358015303,
+      "max_jump_pressure_m2_per_s2": 7.4062647151000025,
+      "courant_mean": 0.00875584671797,
+      "courant_max": 0.164382000466,
+      "Ux_initial": 3.17266797642e-05,
+      "Ux_final": 1.39044667937e-09,
+      "Uy_initial": 0.000150937705521,
+      "Uy_final": 1.70838317267e-08,
+      "p_initial": 0.00269323774781,
+      "p_final": 9.41034891766e-07,
+      "continuity_local": 4.23082628803e-13,
+      "continuity_global": -5.27906475736e-14,
+      "continuity_cumulative": -8.1893045853e-09,
+      "continuity_global_abs": 5.27906475736e-14,
+      "continuity_cumulative_abs": 8.1893045853e-09
+    }
+  },
+  "wrong-setup-v2own/M3-slip-walls-step06000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M3-slip-walls",
+    "change": "lowerWall and upperWall slip instead of noSlip",
+    "run_step": 6000,
+    "time_s": 0.13,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      24.003967439762768,
+      54.22463030110851
+    ],
+    "lowest_pressure_percent": [
+      36.224615161060164,
+      26.86813649136327
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.30144598285217,
+      "min_pressure_m2_per_s2": -301.443842633,
+      "max_pressure_m2_per_s2": 75.3076402065,
+      "max_speed_domain_m_per_s": 37.30144598285217,
+      "max_jump_speed_m_per_s": 4.349009289475234,
+      "max_jump_pressure_m2_per_s2": 56.624475838600006,
+      "courant_mean": 0.017181447793,
+      "courant_max": 1.05262533442,
+      "Ux_initial": 4.83019317222e-06,
+      "Ux_final": 4.83019317222e-06,
+      "Uy_initial": 3.83929753403e-05,
+      "Uy_final": 8.08080296615e-08,
+      "p_initial": 0.00617547937896,
+      "p_final": 7.79026495958e-07,
+      "continuity_local": 4.9144402249e-13,
+      "continuity_global": -5.50372638209e-14,
+      "continuity_cumulative": -3.29371956249e-09,
+      "continuity_global_abs": 5.50372638209e-14,
+      "continuity_cumulative_abs": 3.29371956249e-09
+    }
+  },
+  "wrong-setup-v2own/M3-slip-walls-step07000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M3-slip-walls",
+    "change": "lowerWall and upperWall slip instead of noSlip",
+    "run_step": 7000,
+    "time_s": 0.135,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      19.63972638878869,
+      52.44513798464985
+    ],
+    "lowest_pressure_percent": [
+      17.892765955124595,
+      14.267780522291664
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 36.9656146933741,
+      "min_pressure_m2_per_s2": -311.75266318,
+      "max_pressure_m2_per_s2": 88.2387952356,
+      "max_speed_domain_m_per_s": 36.9656146933741,
+      "max_jump_speed_m_per_s": 4.635724150539387,
+      "max_jump_pressure_m2_per_s2": 67.29068337983,
+      "courant_mean": 0.0171840543866,
+      "courant_max": 1.20134210834,
+      "Ux_initial": 4.52797681769e-06,
+      "Ux_final": 4.52797681769e-06,
+      "Uy_initial": 2.65947575751e-05,
+      "Uy_final": 3.15336931841e-08,
+      "p_initial": 0.00471667108117,
+      "p_final": 9.35613837156e-07,
+      "continuity_local": 6.22885039595e-13,
+      "continuity_global": 3.56037811394e-14,
+      "continuity_cumulative": -3.17755932118e-09,
+      "continuity_global_abs": 3.56037811394e-14,
+      "continuity_cumulative_abs": 3.17755932118e-09
+    }
+  },
+  "wrong-setup-v2own/N1-step05500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N1",
+    "change": "none; start state t = 0.06 s of the developed flow",
+    "run_step": 5500,
+    "time_s": 0.1275,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      31.86005000428431,
+      45.109279905813786
+    ],
+    "lowest_pressure_percent": [
+      35.35204102943006,
+      30.215141613562984
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.26750156982113,
+      "min_pressure_m2_per_s2": -327.300129996,
+      "max_pressure_m2_per_s2": 8.06075846744,
+      "max_speed_domain_m_per_s": 38.26750156982113,
+      "max_jump_speed_m_per_s": 3.581154666922277,
+      "max_jump_pressure_m2_per_s2": 45.121035492999994,
+      "courant_mean": 0.0170525645911,
+      "courant_max": 0.330954986397,
+      "Ux_initial": 9.77308151595e-06,
+      "Ux_final": 9.77308151595e-06,
+      "Uy_initial": 0.000291461323021,
+      "Uy_final": 6.14530640179e-07,
+      "p_initial": 0.0334545643614,
+      "p_final": 9.99847247634e-07,
+      "continuity_local": 8.48302358803e-13,
+      "continuity_global": -5.77171215089e-14,
+      "continuity_cumulative": -5.22950738281e-09,
+      "continuity_global_abs": 5.77171215089e-14,
+      "continuity_cumulative_abs": 5.22950738281e-09
+    }
+  },
+  "wrong-setup-v2own/M1-inlet-speed-step08000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M1-inlet-speed",
+    "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+    "run_step": 8000,
+    "time_s": 0.14,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      65.0259891336612,
+      3.092073571505734
+    ],
+    "lowest_pressure_percent": [
+      58.044949341337805,
+      76.87606317325354
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 11.576334555345548,
+      "min_pressure_m2_per_s2": -43.0054541849,
+      "max_pressure_m2_per_s2": 10.581780647,
+      "max_speed_domain_m_per_s": 11.86154873458699,
+      "max_jump_speed_m_per_s": 2.897452862078191,
+      "max_jump_pressure_m2_per_s2": 4.3433885516,
+      "courant_mean": 0.00269193229071,
+      "courant_max": 0.304458548268,
+      "Ux_initial": 9.69350023233e-06,
+      "Ux_final": 9.69350023233e-06,
+      "Uy_initial": 7.341902824e-05,
+      "Uy_final": 7.63789978081e-09,
+      "p_initial": 0.00614682487971,
+      "p_final": 8.510365616e-07,
+      "continuity_local": 1.78914806986e-13,
+      "continuity_global": 1.86557962553e-14,
+      "continuity_cumulative": -9.89925489627e-09,
+      "continuity_global_abs": 1.86557962553e-14,
+      "continuity_cumulative_abs": 9.89925489627e-09
+    }
+  },
+  "wrong-setup-v2own/N2-step05500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N2",
+    "change": "none; start state t = 0.07 s of the developed flow",
+    "run_step": 5500,
+    "time_s": 0.1275,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      21.385880907670884,
+      43.89678079180253
+    ],
+    "lowest_pressure_percent": [
+      31.860610890508422,
+      28.58829223911657
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 35.074403633421625,
+      "min_pressure_m2_per_s2": -230.078041281,
+      "max_pressure_m2_per_s2": 18.1975969749,
+      "max_speed_domain_m_per_s": 35.074403633421625,
+      "max_jump_speed_m_per_s": 3.7881463950717578,
+      "max_jump_pressure_m2_per_s2": 31.3395600085,
+      "courant_mean": 0.0170045657388,
+      "courant_max": 0.276478021604,
+      "Ux_initial": 7.63745077704e-06,
+      "Ux_final": 7.63745077704e-06,
+      "Uy_initial": 0.000201262866483,
+      "Uy_final": 3.41547609958e-07,
+      "p_initial": 0.0275700958057,
+      "p_final": 7.73088150247e-07,
+      "continuity_local": 5.42347790163e-13,
+      "continuity_global": -5.0258132693e-14,
+      "continuity_cumulative": -5.04780780456e-09,
+      "continuity_global_abs": 5.0258132693e-14,
+      "continuity_cumulative_abs": 5.04780780456e-09
+    }
+  },
+  "wrong-setup-v2own/N2-step06000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N2",
+    "change": "none; start state t = 0.07 s of the developed flow",
+    "run_step": 6000,
+    "time_s": 0.13,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      55.426859007481276,
+      49.17249085983668
+    ],
+    "lowest_pressure_percent": [
+      55.426945264582294,
+      22.81372509842597
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.01827776885966,
+      "min_pressure_m2_per_s2": -362.383576685,
+      "max_pressure_m2_per_s2": 45.7817099521,
+      "max_speed_domain_m_per_s": 37.01827776885966,
+      "max_jump_speed_m_per_s": 6.630391057582681,
+      "max_jump_pressure_m2_per_s2": 36.69677656799999,
+      "courant_mean": 0.0170898578516,
+      "courant_max": 0.283713946742,
+      "Ux_initial": 9.84268327831e-06,
+      "Ux_final": 9.84268327831e-06,
+      "Uy_initial": 0.000310605772318,
+      "Uy_final": 6.23311922166e-07,
+      "p_initial": 0.0253829298828,
+      "p_final": 9.37202170716e-07,
+      "continuity_local": 1.14580428538e-12,
+      "continuity_global": 1.22599768896e-13,
+      "continuity_cumulative": -5.0413990041e-09,
+      "continuity_global_abs": 1.22599768896e-13,
+      "continuity_cumulative_abs": 5.0413990041e-09
+    }
+  },
+  "wrong-setup-v2own/M4-moving-wall-step04500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M4-moving-wall",
+    "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+    "run_step": 4500,
+    "time_s": 0.1225,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      36.224253710616104,
+      46.295030054804315
+    ],
+    "lowest_pressure_percent": [
+      37.09750535624348,
+      27.473348162928996
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.61305440924561,
+      "min_pressure_m2_per_s2": -386.85549808,
+      "max_pressure_m2_per_s2": 26.5952399991,
+      "max_speed_domain_m_per_s": 38.61305440924561,
+      "max_jump_speed_m_per_s": 4.026776889988941,
+      "max_jump_pressure_m2_per_s2": 46.315287917000006,
+      "courant_mean": 0.0172240695709,
+      "courant_max": 0.323173605757,
+      "Ux_initial": 9.38287407134e-06,
+      "Ux_final": 9.38287407134e-06,
+      "Uy_initial": 0.00033365580147,
+      "Uy_final": 7.55930238341e-07,
+      "p_initial": 0.0259259898849,
+      "p_final": 9.64801849131e-07,
+      "continuity_local": 1.19094344183e-12,
+      "continuity_global": 1.15063343313e-13,
+      "continuity_cumulative": 5.6257649345e-10,
+      "continuity_global_abs": 1.15063343313e-13,
+      "continuity_cumulative_abs": 5.6257649345e-10
+    }
+  },
+  "wrong-setup-v2own/M2-viscosity-step07500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M2-viscosity",
+    "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+    "run_step": 7500,
+    "time_s": 0.1375,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      18.76611467314659,
+      99.61422539254053
+    ],
+    "lowest_pressure_percent": [
+      0.4474467363278903,
+      31.630411484576946
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.984267432926714,
+      "min_pressure_m2_per_s2": -110.536921718,
+      "max_pressure_m2_per_s2": -27.3826665094,
+      "max_speed_domain_m_per_s": 38.51586488078405,
+      "max_jump_speed_m_per_s": 3.06767557914203,
+      "max_jump_pressure_m2_per_s2": 5.173561061000001,
+      "courant_mean": 0.0168688267438,
+      "courant_max": 0.224421585675,
+      "Ux_initial": 6.1039378135e-06,
+      "Ux_final": 6.1039378135e-06,
+      "Uy_initial": 1.50264037726e-05,
+      "Uy_final": 1.03292566149e-07,
+      "p_initial": 0.0218868582512,
+      "p_final": 7.96582668492e-07,
+      "continuity_local": 1.43424144503e-13,
+      "continuity_global": -2.92420964182e-14,
+      "continuity_cumulative": 2.27279544202e-08,
+      "continuity_global_abs": 2.92420964182e-14,
+      "continuity_cumulative_abs": 2.27279544202e-08
+    }
+  },
+  "wrong-setup-v2own/M1-inlet-speed-step06500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M1-inlet-speed",
+    "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+    "run_step": 6500,
+    "time_s": 0.1325,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      58.91627767083144,
+      2.8619367933357314
+    ],
+    "lowest_pressure_percent": [
+      56.29917037065942,
+      81.13803617065625
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 12.189230806246256,
+      "min_pressure_m2_per_s2": -49.5753697108,
+      "max_pressure_m2_per_s2": 14.4847764832,
+      "max_speed_domain_m_per_s": 12.385960437074367,
+      "max_jump_speed_m_per_s": 3.152278477042277,
+      "max_jump_pressure_m2_per_s2": 4.9197874182,
+      "courant_mean": 0.00270329984994,
+      "courant_max": 0.357293514384,
+      "Ux_initial": 9.9260491261e-06,
+      "Ux_final": 9.9260491261e-06,
+      "Uy_initial": 9.02501022422e-05,
+      "Uy_final": 6.5957067198e-09,
+      "p_initial": 0.0054473211909,
+      "p_final": 9.22405878814e-07,
+      "continuity_local": 1.70601033239e-13,
+      "continuity_global": -1.29736979521e-14,
+      "continuity_cumulative": -9.22197949453e-09,
+      "continuity_global_abs": 1.29736979521e-14,
+      "continuity_cumulative_abs": 9.22197949453e-09
+    }
+  },
+  "wrong-setup-v2own/M5-half-inlet-step05000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M5-half-inlet",
+    "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+    "run_step": 5000,
+    "time_s": 0.125,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      30.987285760960187,
+      41.72597656276715
+    ],
+    "lowest_pressure_percent": [
+      30.986124103963583,
+      18.61312101742624
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 18.74191075135863,
+      "min_pressure_m2_per_s2": -81.4031457091,
+      "max_pressure_m2_per_s2": 38.9798179068,
+      "max_speed_domain_m_per_s": 27.78465163095711,
+      "max_jump_speed_m_per_s": 3.299515254617723,
+      "max_jump_pressure_m2_per_s2": 7.9337615518,
+      "courant_mean": 0.0087613860807,
+      "courant_max": 0.174685165318,
+      "Ux_initial": 3.37738000596e-05,
+      "Ux_final": 1.51366161718e-09,
+      "Uy_initial": 0.000170306276936,
+      "Uy_final": 2.02208499515e-08,
+      "p_initial": 0.00266585589048,
+      "p_final": 9.35163176392e-07,
+      "continuity_local": 4.32526880475e-13,
+      "continuity_global": -5.79337176093e-14,
+      "continuity_cumulative": -8.15319081565e-09,
+      "continuity_global_abs": 5.79337176093e-14,
+      "continuity_cumulative_abs": 8.15319081565e-09
+    }
+  },
+  "wrong-setup-v2own/N5-step05500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N5",
+    "change": "none; start state t = 0.1 s of the developed flow",
+    "run_step": 5500,
+    "time_s": 0.1275,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      29.24161939138459,
+      42.75233750305961
+    ],
+    "lowest_pressure_percent": [
+      31.860302828165537,
+      26.029998611038234
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.75465734771383,
+      "min_pressure_m2_per_s2": -358.490892613,
+      "max_pressure_m2_per_s2": 68.9004130695,
+      "max_speed_domain_m_per_s": 37.75465734771383,
+      "max_jump_speed_m_per_s": 6.19236806876543,
+      "max_jump_pressure_m2_per_s2": 42.84796021299999,
+      "courant_mean": 0.0171432801334,
+      "courant_max": 0.333360638395,
+      "Ux_initial": 1.135047501e-05,
+      "Ux_final": 2.51188162297e-08,
+      "Uy_initial": 0.000342749092141,
+      "Uy_final": 7.93600617546e-07,
+      "p_initial": 0.0115872901728,
+      "p_final": 3.99021038011e-07,
+      "continuity_local": 5.65600257486e-13,
+      "continuity_global": 5.24207763523e-14,
+      "continuity_cumulative": -2.66905667903e-09,
+      "continuity_global_abs": 5.24207763523e-14,
+      "continuity_cumulative_abs": 2.66905667903e-09
+    }
+  },
+  "wrong-setup-v2own/M4-moving-wall-step07000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M4-moving-wall",
+    "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+    "run_step": 7000,
+    "time_s": 0.135,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      22.25871954786444,
+      44.15763146253616
+    ],
+    "lowest_pressure_percent": [
+      54.5541025747459,
+      22.932846896600253
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 35.620427803477554,
+      "min_pressure_m2_per_s2": -248.781419234,
+      "max_pressure_m2_per_s2": 22.8007167747,
+      "max_speed_domain_m_per_s": 35.620427803477554,
+      "max_jump_speed_m_per_s": 3.836953534293748,
+      "max_jump_pressure_m2_per_s2": 31.757253084,
+      "courant_mean": 0.0171737431609,
+      "courant_max": 0.27229645982,
+      "Ux_initial": 6.95301851136e-06,
+      "Ux_final": 6.95301851136e-06,
+      "Uy_initial": 0.00021106620865,
+      "Uy_final": 3.19701885495e-07,
+      "p_initial": 0.0291276118868,
+      "p_final": 7.8882594542e-07,
+      "continuity_local": 6.14992316419e-13,
+      "continuity_global": 5.91138699114e-14,
+      "continuity_cumulative": -2.182806398e-09,
+      "continuity_global_abs": 5.91138699114e-14,
+      "continuity_cumulative_abs": 2.182806398e-09
+    }
+  },
+  "wrong-setup-v2own/M3-slip-walls-step07500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M3-slip-walls",
+    "change": "lowerWall and upperWall slip instead of noSlip",
+    "run_step": 7500,
+    "time_s": 0.1375,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      20.51257447796251,
+      52.801036398571085
+    ],
+    "lowest_pressure_percent": [
+      17.02069006265078,
+      22.5291489878355
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.22892184983548,
+      "min_pressure_m2_per_s2": -308.320951752,
+      "max_pressure_m2_per_s2": 79.8211674426,
+      "max_speed_domain_m_per_s": 37.22892184983548,
+      "max_jump_speed_m_per_s": 4.290289532396079,
+      "max_jump_pressure_m2_per_s2": 57.966449008699996,
+      "courant_mean": 0.0171853775732,
+      "courant_max": 1.03117996562,
+      "Ux_initial": 4.63588105305e-06,
+      "Ux_final": 4.63588105305e-06,
+      "Uy_initial": 2.83208578559e-05,
+      "Uy_final": 4.05564484678e-08,
+      "p_initial": 0.00514911681009,
+      "p_final": 9.72199003912e-07,
+      "continuity_local": 5.95994852707e-13,
+      "continuity_global": -4.67244141926e-14,
+      "continuity_cumulative": -3.62712584575e-09,
+      "continuity_global_abs": 4.67244141926e-14,
+      "continuity_cumulative_abs": 3.62712584575e-09
+    }
+  },
+  "wrong-setup-v2own/M1-inlet-speed-step05000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M1-inlet-speed",
+    "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+    "run_step": 5000,
+    "time_s": 0.125,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      52.806498843916465,
+      2.597207480588907
+    ],
+    "lowest_pressure_percent": [
+      51.934829456808544,
+      84.62726988688478
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 13.241595169864528,
+      "min_pressure_m2_per_s2": -63.9230023147,
+      "max_pressure_m2_per_s2": 12.5849258674,
+      "max_speed_domain_m_per_s": 13.241595169864528,
+      "max_jump_speed_m_per_s": 3.4357187190554033,
+      "max_jump_pressure_m2_per_s2": 5.4523074152,
+      "courant_mean": 0.00273887418812,
+      "courant_max": 0.331419778354,
+      "Ux_initial": 1.22155779642e-05,
+      "Ux_final": 6.78258243477e-10,
+      "Uy_initial": 0.000142475661826,
+      "Uy_final": 7.77470107808e-09,
+      "p_initial": 0.00305297455332,
+      "p_final": 8.2033995817e-07,
+      "continuity_local": 1.66311267179e-13,
+      "continuity_global": -7.85986817251e-15,
+      "continuity_cumulative": -9.17914488398e-09,
+      "continuity_global_abs": 7.85986817251e-15,
+      "continuity_cumulative_abs": 9.17914488398e-09
+    }
+  },
+  "wrong-setup-v2own/M2-viscosity-step05000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M2-viscosity",
+    "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+    "run_step": 5000,
+    "time_s": 0.125,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      3.9276363751671233,
+      92.86269759222759
+    ],
+    "lowest_pressure_percent": [
+      0.4474467363278903,
+      31.630411484576946
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.14603288725917,
+      "min_pressure_m2_per_s2": -100.517950409,
+      "max_pressure_m2_per_s2": 12.9883898469,
+      "max_speed_domain_m_per_s": 37.318982427345595,
+      "max_jump_speed_m_per_s": 2.969180046559213,
+      "max_jump_pressure_m2_per_s2": 6.042053091499994,
+      "courant_mean": 0.016870535126,
+      "courant_max": 0.217493910389,
+      "Ux_initial": 1.02651556973e-05,
+      "Ux_final": 1.56763829409e-08,
+      "Uy_initial": 2.07656335591e-05,
+      "Uy_final": 9.32268491577e-08,
+      "p_initial": 0.0180864480525,
+      "p_final": 6.9534990806e-07,
+      "continuity_local": 1.21989034085e-13,
+      "continuity_global": 1.43934464917e-14,
+      "continuity_cumulative": 1.15370184727e-08,
+      "continuity_global_abs": 1.43934464917e-14,
+      "continuity_cumulative_abs": 1.15370184727e-08
+    }
+  },
+  "wrong-setup-v2own/N1-step06500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N1",
+    "change": "none; start state t = 0.06 s of the developed flow",
+    "run_step": 6500,
+    "time_s": 0.1325,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      27.495854268219425,
+      43.92353192246253
+    ],
+    "lowest_pressure_percent": [
+      33.60625560318664,
+      28.44540972702686
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 36.59706588047303,
+      "min_pressure_m2_per_s2": -262.709307229,
+      "max_pressure_m2_per_s2": 12.9397387625,
+      "max_speed_domain_m_per_s": 36.59706588047303,
+      "max_jump_speed_m_per_s": 3.8764469418109506,
+      "max_jump_pressure_m2_per_s2": 37.804892107000015,
+      "courant_mean": 0.0170198070138,
+      "courant_max": 0.310269732118,
+      "Ux_initial": 8.23234465542e-06,
+      "Ux_final": 8.23234465542e-06,
+      "Uy_initial": 0.000227306250532,
+      "Uy_final": 4.09999398412e-07,
+      "p_initial": 0.0330497791238,
+      "p_final": 7.71534524684e-07,
+      "continuity_local": 5.37026751094e-13,
+      "continuity_global": 3.93021117628e-14,
+      "continuity_cumulative": -6.28139163995e-09,
+      "continuity_global_abs": 3.93021117628e-14,
+      "continuity_cumulative_abs": 6.28139163995e-09
+    }
+  },
+  "wrong-setup-v2own/M1-inlet-speed-step06000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M1-inlet-speed",
+    "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+    "run_step": 6000,
+    "time_s": 0.13,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      57.17061461461442,
+      2.931717131774163
+    ],
+    "lowest_pressure_percent": [
+      54.55346702369405,
+      80.31063797148133
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 12.470177152972258,
+      "min_pressure_m2_per_s2": -53.6324347205,
+      "max_pressure_m2_per_s2": 13.6964996944,
+      "max_speed_domain_m_per_s": 12.5736753558865,
+      "max_jump_speed_m_per_s": 3.264219987932357,
+      "max_jump_pressure_m2_per_s2": 5.4439694662299996,
+      "courant_mean": 0.00271387392648,
+      "courant_max": 0.339223320232,
+      "Ux_initial": 1.03473488238e-05,
+      "Ux_final": 6.80147771308e-10,
+      "Uy_initial": 0.000107541797157,
+      "Uy_final": 6.85320157761e-09,
+      "p_initial": 0.00269376555463,
+      "p_final": 6.56999746061e-07,
+      "continuity_local": 1.19624204388e-13,
+      "continuity_global": 8.47487108248e-15,
+      "continuity_cumulative": -9.17902295334e-09,
+      "continuity_global_abs": 8.47487108248e-15,
+      "continuity_cumulative_abs": 9.17902295334e-09
+    }
+  },
+  "wrong-setup-v2own/M4-moving-wall-step06500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M4-moving-wall",
+    "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+    "run_step": 6500,
+    "time_s": 0.1325,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      26.623016225427484,
+      43.68638262586018
+    ],
+    "lowest_pressure_percent": [
+      30.114538181544575,
+      25.594156868754947
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.11580993209497,
+      "min_pressure_m2_per_s2": -329.006071237,
+      "max_pressure_m2_per_s2": 21.3509590973,
+      "max_speed_domain_m_per_s": 37.11580993209497,
+      "max_jump_speed_m_per_s": 4.886510087278541,
+      "max_jump_pressure_m2_per_s2": 37.520522406,
+      "courant_mean": 0.0172489777653,
+      "courant_max": 0.310147984899,
+      "Ux_initial": 9.61346878081e-06,
+      "Ux_final": 9.61346878081e-06,
+      "Uy_initial": 0.000339339390084,
+      "Uy_final": 6.56623968505e-07,
+      "p_initial": 0.0285781201069,
+      "p_final": 7.75862347723e-07,
+      "continuity_local": 9.55105589513e-13,
+      "continuity_global": 8.1114581943e-14,
+      "continuity_cumulative": -1.25072970627e-09,
+      "continuity_global_abs": 8.1114581943e-14,
+      "continuity_cumulative_abs": 1.25072970627e-09
+    }
+  },
+  "wrong-setup-v2own/M3-slip-walls-step06500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M3-slip-walls",
+    "change": "lowerWall and upperWall slip instead of noSlip",
+    "run_step": 6500,
+    "time_s": 0.1325,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      30.114002902951423,
+      53.66609090859413
+    ],
+    "lowest_pressure_percent": [
+      35.34964119332441,
+      11.575696406973387
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.21415454682444,
+      "min_pressure_m2_per_s2": -324.128528698,
+      "max_pressure_m2_per_s2": 97.1773094052,
+      "max_speed_domain_m_per_s": 37.21415454682444,
+      "max_jump_speed_m_per_s": 4.334967998165453,
+      "max_jump_pressure_m2_per_s2": 52.2446453269,
+      "courant_mean": 0.0171825976344,
+      "courant_max": 0.940301090705,
+      "Ux_initial": 4.4547486032e-06,
+      "Ux_final": 4.4547486032e-06,
+      "Uy_initial": 2.61133564102e-05,
+      "Uy_final": 3.8669632621e-08,
+      "p_initial": 0.00448630957226,
+      "p_final": 9.45601062679e-07,
+      "continuity_local": 6.2446099585e-13,
+      "continuity_global": 8.00434852421e-14,
+      "continuity_cumulative": -2.81402232988e-09,
+      "continuity_global_abs": 8.00434852421e-14,
+      "continuity_cumulative_abs": 2.81402232988e-09
+    }
+  },
+  "wrong-setup-v2own/N2-step05000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N2",
+    "change": "none; start state t = 0.07 s of the developed flow",
+    "run_step": 5000,
+    "time_s": 0.125,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      59.791080658960624,
+      48.10485245296282
+    ],
+    "lowest_pressure_percent": [
+      59.791230650066524,
+      24.278305473979366
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.356840106678355,
+      "min_pressure_m2_per_s2": -371.349551134,
+      "max_pressure_m2_per_s2": 63.9496949484,
+      "max_speed_domain_m_per_s": 37.356840106678355,
+      "max_jump_speed_m_per_s": 7.511163384159671,
+      "max_jump_pressure_m2_per_s2": 39.668456292,
+      "courant_mean": 0.0171324543432,
+      "courant_max": 0.312332951001,
+      "Ux_initial": 1.09796300215e-05,
+      "Ux_final": 2.34359106712e-08,
+      "Uy_initial": 0.000344169409444,
+      "Uy_final": 7.0437745445e-07,
+      "p_initial": 0.00992061004092,
+      "p_final": 7.79470778007e-07,
+      "continuity_local": 1.0482874336e-12,
+      "continuity_global": 5.97864346405e-14,
+      "continuity_cumulative": -3.95722756404e-09,
+      "continuity_global_abs": 5.97864346405e-14,
+      "continuity_cumulative_abs": 3.95722756404e-09
+    }
+  },
+  "wrong-setup-v2own/N4-step08000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N4",
+    "change": "none; start state t = 0.09 s of the developed flow",
+    "run_step": 8000,
+    "time_s": 0.14,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      26.623016225427484,
+      43.68638262586018
+    ],
+    "lowest_pressure_percent": [
+      32.73336877722193,
+      27.892429268315627
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 36.34555557804617,
+      "min_pressure_m2_per_s2": -253.745531018,
+      "max_pressure_m2_per_s2": 5.58196832897,
+      "max_speed_domain_m_per_s": 36.34555557804617,
+      "max_jump_speed_m_per_s": 3.9242626385498793,
+      "max_jump_pressure_m2_per_s2": 36.72808134600001,
+      "courant_mean": 0.0170102820172,
+      "courant_max": 0.299632417522,
+      "Ux_initial": 8.67276518116e-06,
+      "Ux_final": 8.67276518116e-06,
+      "Uy_initial": 0.000223217819465,
+      "Uy_final": 3.8948767464e-07,
+      "p_initial": 0.0299773024816,
+      "p_final": 8.90219200284e-07,
+      "continuity_local": 6.71774653307e-13,
+      "continuity_global": 4.00682672551e-14,
+      "continuity_cumulative": -5.21810931106e-09,
+      "continuity_global_abs": 4.00682672551e-14,
+      "continuity_cumulative_abs": 5.21810931106e-09
+    }
+  },
+  "wrong-setup-v2own/M1-inlet-speed-step04500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M1-inlet-speed",
+    "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+    "run_step": 4500,
+    "time_s": 0.1225,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      51.060824468443066,
+      2.6517332991876397
+    ],
+    "lowest_pressure_percent": [
+      50.18912539709591,
+      83.77534128493451
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 13.62444882631087,
+      "min_pressure_m2_per_s2": -69.5909282726,
+      "max_pressure_m2_per_s2": 12.5460231443,
+      "max_speed_domain_m_per_s": 13.62444882631087,
+      "max_jump_speed_m_per_s": 3.5636846570128196,
+      "max_jump_pressure_m2_per_s2": 5.18751767629,
+      "courant_mean": 0.00274862570489,
+      "courant_max": 0.337562698391,
+      "Ux_initial": 1.37753840557e-05,
+      "Ux_final": 7.89978938267e-10,
+      "Uy_initial": 0.000160276997852,
+      "Uy_final": 8.81554706945e-09,
+      "p_initial": 0.00276864231468,
+      "p_final": 6.62276323219e-07,
+      "continuity_local": 1.46146489733e-13,
+      "continuity_global": 1.12174818251e-14,
+      "continuity_cumulative": -9.17218492517e-09,
+      "continuity_global_abs": 1.12174818251e-14,
+      "continuity_cumulative_abs": 9.17218492517e-09
+    }
+  },
+  "wrong-setup-v2own/M4-moving-wall-step07500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M4-moving-wall",
+    "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+    "run_step": 7500,
+    "time_s": 0.1375,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      58.04535272474097,
+      52.22380266632034
+    ],
+    "lowest_pressure_percent": [
+      58.918464292882355,
+      27.362355993990743
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 39.50843678202833,
+      "min_pressure_m2_per_s2": -464.137289577,
+      "max_pressure_m2_per_s2": 71.8648216831,
+      "max_speed_domain_m_per_s": 39.50843678202833,
+      "max_jump_speed_m_per_s": 6.988007162458037,
+      "max_jump_pressure_m2_per_s2": 38.578927340999996,
+      "courant_mean": 0.0173213631647,
+      "courant_max": 0.301174953015,
+      "Ux_initial": 1.05761938858e-05,
+      "Ux_final": 2.08688965024e-08,
+      "Uy_initial": 0.000376031457082,
+      "Uy_final": 8.30417626951e-07,
+      "p_initial": 0.010475356064,
+      "p_final": 9.35834744792e-07,
+      "continuity_local": 1.24060818018e-12,
+      "continuity_global": -1.01168925973e-13,
+      "continuity_cumulative": -2.02684264613e-09,
+      "continuity_global_abs": 1.01168925973e-13,
+      "continuity_cumulative_abs": 2.02684264613e-09
+    }
+  },
+  "wrong-setup-v2own/N1-step07000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N1",
+    "change": "none; start state t = 0.06 s of the developed flow",
+    "run_step": 7000,
+    "time_s": 0.135,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      59.791080658960624,
+      48.10485245296282
+    ],
+    "lowest_pressure_percent": [
+      59.791230650066524,
+      24.278305473979366
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.35684004409355,
+      "min_pressure_m2_per_s2": -371.349461505,
+      "max_pressure_m2_per_s2": 63.9497338571,
+      "max_speed_domain_m_per_s": 37.35684004409355,
+      "max_jump_speed_m_per_s": 7.51116307835949,
+      "max_jump_pressure_m2_per_s2": 39.66845712600001,
+      "courant_mean": 0.0171324543427,
+      "courant_max": 0.312332951265,
+      "Ux_initial": 1.09796866665e-05,
+      "Ux_final": 2.34359106888e-08,
+      "Uy_initial": 0.000344169286722,
+      "Uy_final": 7.04374557344e-07,
+      "p_initial": 0.00991364473778,
+      "p_final": 7.77748383337e-07,
+      "continuity_local": 1.04596317955e-12,
+      "continuity_global": 5.97750656829e-14,
+      "continuity_cumulative": -6.1532454675e-09,
+      "continuity_global_abs": 5.97750656829e-14,
+      "continuity_cumulative_abs": 6.1532454675e-09
+    }
+  },
+  "wrong-setup-v2own/N5-step07500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N5",
+    "change": "none; start state t = 0.1 s of the developed flow",
+    "run_step": 7500,
+    "time_s": 0.1375,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      56.29966118251319,
+      51.7494998735595
+    ],
+    "lowest_pressure_percent": [
+      56.299921744514016,
+      26.587913751891318
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 39.12493220096815,
+      "min_pressure_m2_per_s2": -459.130527688,
+      "max_pressure_m2_per_s2": 68.6445874717,
+      "max_speed_domain_m_per_s": 39.12493220096815,
+      "max_jump_speed_m_per_s": 7.192330232334638,
+      "max_jump_pressure_m2_per_s2": 42.219951398000006,
+      "courant_mean": 0.0171328862628,
+      "courant_max": 0.297641055119,
+      "Ux_initial": 1.08592221975e-05,
+      "Ux_final": 2.50524749241e-08,
+      "Uy_initial": 0.000326282866905,
+      "Uy_final": 7.72497772702e-07,
+      "p_initial": 0.0102055165141,
+      "p_final": 6.85230883031e-07,
+      "continuity_local": 9.19312637669e-13,
+      "continuity_global": 7.89887568641e-14,
+      "continuity_cumulative": -3.99950374932e-09,
+      "continuity_global_abs": 7.89887568641e-14,
+      "continuity_cumulative_abs": 3.99950374932e-09
+    }
+  },
+  "wrong-setup-v2own/N3-step08000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N3",
+    "change": "none; start state t = 0.08 s of the developed flow",
+    "run_step": 8000,
+    "time_s": 0.14,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      37.96993710634928,
+      46.769330634107476
+    ],
+    "lowest_pressure_percent": [
+      38.843258972232746,
+      28.715535109532837
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 39.439835799472164,
+      "min_pressure_m2_per_s2": -420.622056242,
+      "max_pressure_m2_per_s2": 28.4769648392,
+      "max_speed_domain_m_per_s": 39.439835799472164,
+      "max_jump_speed_m_per_s": 3.23594010325192,
+      "max_jump_pressure_m2_per_s2": 48.435562085999976,
+      "courant_mean": 0.0170747664515,
+      "courant_max": 0.335126816977,
+      "Ux_initial": 1.07290702164e-05,
+      "Ux_final": 2.15959848834e-08,
+      "Uy_initial": 0.000316822301572,
+      "Uy_final": 7.65642274383e-07,
+      "p_initial": 0.0111574039268,
+      "p_final": 8.51119439961e-07,
+      "continuity_local": 9.58203080523e-13,
+      "continuity_global": -1.45517662552e-14,
+      "continuity_cumulative": -5.23582653426e-09,
+      "continuity_global_abs": 1.45517662552e-14,
+      "continuity_cumulative_abs": 5.23582653426e-09
+    }
+  },
+  "wrong-setup-v2own/N1-step08000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N1",
+    "change": "none; start state t = 0.06 s of the developed flow",
+    "run_step": 8000,
+    "time_s": 0.14,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      55.426859007481276,
+      49.17249085983668
+    ],
+    "lowest_pressure_percent": [
+      55.426945264582294,
+      22.81372509842597
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.01827792040544,
+      "min_pressure_m2_per_s2": -362.383595161,
+      "max_pressure_m2_per_s2": 45.7816664476,
+      "max_speed_domain_m_per_s": 37.01827792040544,
+      "max_jump_speed_m_per_s": 6.630390791047148,
+      "max_jump_pressure_m2_per_s2": 36.69677557200001,
+      "courant_mean": 0.0170898578558,
+      "courant_max": 0.283713948895,
+      "Ux_initial": 9.84268307113e-06,
+      "Ux_final": 9.84268307113e-06,
+      "Uy_initial": 0.000310605880493,
+      "Uy_final": 6.23313922954e-07,
+      "p_initial": 0.0253987714703,
+      "p_final": 9.54265239274e-07,
+      "continuity_local": 1.16668725829e-12,
+      "continuity_global": 1.24095148769e-13,
+      "continuity_cumulative": -7.23739651648e-09,
+      "continuity_global_abs": 1.24095148769e-13,
+      "continuity_cumulative_abs": 7.23739651648e-09
+    }
+  },
+  "wrong-setup-v2own/N5-step04500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N5",
+    "change": "none; start state t = 0.1 s of the developed flow",
+    "run_step": 4500,
+    "time_s": 0.1225,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      34.47857136719716,
+      45.82072976135157
+    ],
+    "lowest_pressure_percent": [
+      35.351784694890576,
+      26.96405537355736
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.26304788178146,
+      "min_pressure_m2_per_s2": -373.59947182,
+      "max_pressure_m2_per_s2": 39.4305492953,
+      "max_speed_domain_m_per_s": 38.26304788178146,
+      "max_jump_speed_m_per_s": 4.75921086651248,
+      "max_jump_pressure_m2_per_s2": 46.38654521500001,
+      "courant_mean": 0.0170865477316,
+      "courant_max": 0.331509168503,
+      "Ux_initial": 9.94459868803e-06,
+      "Ux_final": 9.94459868803e-06,
+      "Uy_initial": 0.000308427834025,
+      "Uy_final": 7.14904278634e-07,
+      "p_initial": 0.0255863200148,
+      "p_final": 8.11666282196e-07,
+      "continuity_local": 1.02826953766e-12,
+      "continuity_global": -1.02474062399e-13,
+      "continuity_cumulative": -2.04073064477e-09,
+      "continuity_global_abs": 1.02474062399e-13,
+      "continuity_cumulative_abs": 2.04073064477e-09
+    }
+  },
+  "wrong-setup-v2own/M3-slip-walls-step04500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M3-slip-walls",
+    "change": "lowerWall and upperWall slip instead of noSlip",
+    "run_step": 4500,
+    "time_s": 0.1225,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      32.73263497195333,
+      51.90781109098149
+    ],
+    "lowest_pressure_percent": [
+      43.20549111770402,
+      12.886540998318832
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 36.76088550904878,
+      "min_pressure_m2_per_s2": -330.005693003,
+      "max_pressure_m2_per_s2": 97.1652213466,
+      "max_speed_domain_m_per_s": 36.76088550904878,
+      "max_jump_speed_m_per_s": 4.662528477567172,
+      "max_jump_pressure_m2_per_s2": 42.377233272,
+      "courant_mean": 0.0171448381341,
+      "courant_max": 0.715834423111,
+      "Ux_initial": 4.86124134367e-06,
+      "Ux_final": 4.86124134367e-06,
+      "Uy_initial": 4.09821954736e-05,
+      "Uy_final": 5.38434203041e-08,
+      "p_initial": 0.00637072206718,
+      "p_final": 8.65717308721e-07,
+      "continuity_local": 5.62747302226e-13,
+      "continuity_global": -5.52083236708e-14,
+      "continuity_cumulative": -2.41102658307e-09,
+      "continuity_global_abs": 5.52083236708e-14,
+      "continuity_cumulative_abs": 2.41102658307e-09
+    }
+  },
+  "wrong-setup-v2own/M3-slip-walls-step05000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M3-slip-walls",
+    "change": "lowerWall and upperWall slip instead of noSlip",
+    "run_step": 5000,
+    "time_s": 0.125,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      27.495461469833185,
+      52.66757268807368
+    ],
+    "lowest_pressure_percent": [
+      27.493967934565347,
+      10.876107279132341
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 36.6949377254158,
+      "min_pressure_m2_per_s2": -293.167457523,
+      "max_pressure_m2_per_s2": 100.746752268,
+      "max_speed_domain_m_per_s": 36.6949377254158,
+      "max_jump_speed_m_per_s": 4.589284725844514,
+      "max_jump_pressure_m2_per_s2": 48.5697643344,
+      "courant_mean": 0.0171550596211,
+      "courant_max": 0.88307677365,
+      "Ux_initial": 4.54902669189e-06,
+      "Ux_final": 4.54902669189e-06,
+      "Uy_initial": 3.59528048096e-05,
+      "Uy_final": 4.93094666316e-08,
+      "p_initial": 0.00549275291436,
+      "p_final": 9.84737807393e-07,
+      "continuity_local": 6.36903265646e-13,
+      "continuity_global": 6.1008941828e-14,
+      "continuity_cumulative": -2.30166284328e-09,
+      "continuity_global_abs": 6.1008941828e-14,
+      "continuity_cumulative_abs": 2.30166284328e-09
+    }
+  },
+  "wrong-setup-v2own/M5-half-inlet-step07000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M5-half-inlet",
+    "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+    "run_step": 7000,
+    "time_s": 0.135,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      49.316950457320026,
+      47.674450342954074
+    ],
+    "lowest_pressure_percent": [
+      49.3169967645755,
+      22.73179735012202
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 19.69888078994582,
+      "min_pressure_m2_per_s2": -111.47569991,
+      "max_pressure_m2_per_s2": 28.2644159549,
+      "max_speed_domain_m_per_s": 29.069089072428653,
+      "max_jump_speed_m_per_s": 3.844402983186999,
+      "max_jump_pressure_m2_per_s2": 13.7030654896,
+      "courant_mean": 0.00880216965624,
+      "courant_max": 0.208017382596,
+      "Ux_initial": 2.90173268519e-05,
+      "Ux_final": 4.14688079098e-09,
+      "Uy_initial": 0.000192427932045,
+      "Uy_final": 1.0207904199e-07,
+      "p_initial": 0.00423880994628,
+      "p_final": 6.62805356637e-07,
+      "continuity_local": 3.93457867786e-13,
+      "continuity_global": 2.94518360889e-14,
+      "continuity_cumulative": -8.20908935046e-09,
+      "continuity_global_abs": 2.94518360889e-14,
+      "continuity_cumulative_abs": 8.20908935046e-09
+    }
+  },
+  "wrong-setup-v2own/M2-viscosity-step07000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M2-viscosity",
+    "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+    "run_step": 7000,
+    "time_s": 0.135,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      18.76611467314659,
+      99.61422539254053
+    ],
+    "lowest_pressure_percent": [
+      0.4474467363278903,
+      31.630411484576946
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.83432619271987,
+      "min_pressure_m2_per_s2": -108.841827156,
+      "max_pressure_m2_per_s2": -21.4127865157,
+      "max_speed_domain_m_per_s": 38.288367565151596,
+      "max_jump_speed_m_per_s": 3.0521193687979853,
+      "max_jump_pressure_m2_per_s2": 5.312793341999992,
+      "courant_mean": 0.016869291092,
+      "courant_max": 0.223085937312,
+      "Ux_initial": 6.7711729858e-06,
+      "Ux_final": 6.7711729858e-06,
+      "Uy_initial": 1.59185397509e-05,
+      "Uy_final": 1.18043103164e-07,
+      "p_initial": 0.0218948303399,
+      "p_final": 8.31306907095e-07,
+      "continuity_local": 1.49010341038e-13,
+      "continuity_global": -1.33774761493e-14,
+      "continuity_cumulative": 2.04841045255e-08,
+      "continuity_global_abs": 1.33774761493e-14,
+      "continuity_cumulative_abs": 2.04841045255e-08
+    }
+  },
+  "wrong-setup-v2own/N4-step07000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N4",
+    "change": "none; start state t = 0.09 s of the developed flow",
+    "run_step": 7000,
+    "time_s": 0.135,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      31.86005000428431,
+      45.109279905813786
+    ],
+    "lowest_pressure_percent": [
+      34.47922147764144,
+      30.248184360059522
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.596312249027214,
+      "min_pressure_m2_per_s2": -356.320629785,
+      "max_pressure_m2_per_s2": 28.7506862481,
+      "max_speed_domain_m_per_s": 38.596312249027214,
+      "max_jump_speed_m_per_s": 4.1513115566014775,
+      "max_jump_pressure_m2_per_s2": 43.24246691900001,
+      "courant_mean": 0.0170594368353,
+      "courant_max": 0.327925855856,
+      "Ux_initial": 9.2774463986e-06,
+      "Ux_final": 9.2774463986e-06,
+      "Uy_initial": 0.000275706934857,
+      "Uy_final": 5.90637789525e-07,
+      "p_initial": 0.0279118994657,
+      "p_final": 7.8556371552e-07,
+      "continuity_local": 8.54973592042e-13,
+      "continuity_global": 1.02082692991e-13,
+      "continuity_cumulative": -4.49060077257e-09,
+      "continuity_global_abs": 1.02082692991e-13,
+      "continuity_cumulative_abs": 4.49060077257e-09
+    }
+  },
+  "wrong-setup-v2own/M2-viscosity-step05500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M2-viscosity",
+    "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+    "run_step": 5500,
+    "time_s": 0.1275,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      8.291894792638923,
+      94.84844110587535
+    ],
+    "lowest_pressure_percent": [
+      0.4474467363278903,
+      31.630411484576946
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.3308894028845,
+      "min_pressure_m2_per_s2": -102.897100107,
+      "max_pressure_m2_per_s2": 2.36129784721,
+      "max_speed_domain_m_per_s": 37.56726228099726,
+      "max_jump_speed_m_per_s": 2.999468295203002,
+      "max_jump_pressure_m2_per_s2": 5.8419053917999975,
+      "courant_mean": 0.0168702953293,
+      "courant_max": 0.218983641952,
+      "Ux_initial": 9.21595326968e-06,
+      "Ux_final": 9.21595326968e-06,
+      "Uy_initial": 1.92930657713e-05,
+      "Uy_final": 7.77153974365e-08,
+      "p_initial": 0.0217585845115,
+      "p_final": 9.04595153736e-07,
+      "continuity_local": 1.59498173907e-13,
+      "continuity_global": -1.36832993415e-14,
+      "continuity_cumulative": 1.33953158672e-08,
+      "continuity_global_abs": 1.36832993415e-14,
+      "continuity_cumulative_abs": 1.33953158672e-08
+    }
+  },
+  "wrong-setup-v2own/M5-half-inlet-step06000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M5-half-inlet",
+    "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+    "run_step": 6000,
+    "time_s": 0.13,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      41.461542486850185,
+      39.97270088108276
+    ],
+    "lowest_pressure_percent": [
+      20.514085064320895,
+      29.51701507846104
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 18.46351538792382,
+      "min_pressure_m2_per_s2": -75.3078365267,
+      "max_pressure_m2_per_s2": 37.9373235879,
+      "max_speed_domain_m_per_s": 28.458766917890724,
+      "max_jump_speed_m_per_s": 3.3827739214480195,
+      "max_jump_pressure_m2_per_s2": 12.460737933700003,
+      "courant_mean": 0.00875243531561,
+      "courant_max": 0.159612322348,
+      "Ux_initial": 3.01789503976e-05,
+      "Ux_final": 1.88095165263e-09,
+      "Uy_initial": 0.000145599837167,
+      "Uy_final": 3.64777716588e-08,
+      "p_initial": 0.00321483085344,
+      "p_final": 6.63758988306e-07,
+      "continuity_local": 3.22519356253e-13,
+      "continuity_global": -2.42530495601e-14,
+      "continuity_cumulative": -8.20191126985e-09,
+      "continuity_global_abs": 2.42530495601e-14,
+      "continuity_cumulative_abs": 8.20191126985e-09
+    }
+  },
+  "wrong-setup-v2own/N3-step07000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N3",
+    "change": "none; start state t = 0.08 s of the developed flow",
+    "run_step": 7000,
+    "time_s": 0.135,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      42.33414973464664,
+      47.95508320723889
+    ],
+    "lowest_pressure_percent": [
+      43.20740799640171,
+      28.421367492293346
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.56079671605283,
+      "min_pressure_m2_per_s2": -365.244151452,
+      "max_pressure_m2_per_s2": 79.4424302226,
+      "max_speed_domain_m_per_s": 38.56079671605283,
+      "max_jump_speed_m_per_s": 4.680358945139023,
+      "max_jump_pressure_m2_per_s2": 41.397176142000006,
+      "courant_mean": 0.0170593672755,
+      "courant_max": 0.31056790826,
+      "Ux_initial": 1.10416301982e-05,
+      "Ux_final": 2.04769000321e-08,
+      "Uy_initial": 0.000312633076471,
+      "Uy_final": 6.7667335575e-07,
+      "p_initial": 0.0115911683759,
+      "p_final": 5.61069914977e-07,
+      "continuity_local": 6.25841357817e-13,
+      "continuity_global": 3.57814795306e-14,
+      "continuity_cumulative": -4.8952869944e-09,
+      "continuity_global_abs": 3.57814795306e-14,
+      "continuity_cumulative_abs": 4.8952869944e-09
+    }
+  },
+  "wrong-setup-v2own/M3-slip-walls-step08000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M3-slip-walls",
+    "change": "lowerWall and upperWall slip instead of noSlip",
+    "run_step": 8000,
+    "time_s": 0.14,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      25.749664265536634,
+      54.9364273930259
+    ],
+    "lowest_pressure_percent": [
+      38.841599014902464,
+      15.948069760651382
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.15349564696394,
+      "min_pressure_m2_per_s2": -305.622385405,
+      "max_pressure_m2_per_s2": 87.2192156733,
+      "max_speed_domain_m_per_s": 37.15349564696394,
+      "max_jump_speed_m_per_s": 4.165653883045522,
+      "max_jump_pressure_m2_per_s2": 52.307598598599995,
+      "courant_mean": 0.0171744473454,
+      "courant_max": 0.86540027847,
+      "Ux_initial": 4.65195970253e-06,
+      "Ux_final": 4.65195970253e-06,
+      "Uy_initial": 2.37671074406e-05,
+      "Uy_final": 1.95013415072e-08,
+      "p_initial": 0.00364346134265,
+      "p_final": 9.11771463105e-07,
+      "continuity_local": 5.7273902867e-13,
+      "continuity_global": -4.25632377975e-14,
+      "continuity_cumulative": -3.42480786266e-09,
+      "continuity_global_abs": 4.25632377975e-14,
+      "continuity_cumulative_abs": 3.42480786266e-09
+    }
+  },
+  "wrong-setup-v2own/N3-step05000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N3",
+    "change": "none; start state t = 0.08 s of the developed flow",
+    "run_step": 5000,
+    "time_s": 0.125,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      53.681124818657906,
+      51.03804594239328
+    ],
+    "lowest_pressure_percent": [
+      53.681429644955024,
+      27.715360897408637
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 39.33997528387123,
+      "min_pressure_m2_per_s2": -465.61191348,
+      "max_pressure_m2_per_s2": 55.0561334573,
+      "max_speed_domain_m_per_s": 39.33997528387123,
+      "max_jump_speed_m_per_s": 5.841305610777917,
+      "max_jump_pressure_m2_per_s2": 43.980139509000026,
+      "courant_mean": 0.0171334955,
+      "courant_max": 0.299532551988,
+      "Ux_initial": 1.07415002246e-05,
+      "Ux_final": 2.51049692646e-08,
+      "Uy_initial": 0.000338786554188,
+      "Uy_final": 8.22844302213e-07,
+      "p_initial": 0.0106153294398,
+      "p_final": 6.426908048e-07,
+      "continuity_local": 8.23734494373e-13,
+      "continuity_global": -4.84214773797e-14,
+      "continuity_cumulative": -4.53226536186e-09,
+      "continuity_global_abs": 4.84214773797e-14,
+      "continuity_cumulative_abs": 4.53226536186e-09
+    }
+  },
+  "wrong-setup-v2own/M2-viscosity-step06000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M2-viscosity",
+    "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+    "run_step": 6000,
+    "time_s": 0.13,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      11.783301471200433,
+      96.43703589168338
+    ],
+    "lowest_pressure_percent": [
+      0.4474467363278903,
+      31.630411484576946
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.50607064876627,
+      "min_pressure_m2_per_s2": -105.012019055,
+      "max_pressure_m2_per_s2": -6.78688274696,
+      "max_speed_domain_m_per_s": 37.8174748669464,
+      "max_jump_speed_m_per_s": 3.0245382931871276,
+      "max_jump_pressure_m2_per_s2": 5.644295619600001,
+      "courant_mean": 0.0168700408736,
+      "courant_max": 0.220426286991,
+      "Ux_initial": 8.31165646097e-06,
+      "Ux_final": 8.31165646097e-06,
+      "Uy_initial": 1.81070579484e-05,
+      "Uy_final": 1.01047842793e-07,
+      "p_initial": 0.0218764597896,
+      "p_final": 7.13741728536e-07,
+      "continuity_local": 1.26408797617e-13,
+      "continuity_global": -1.02656021551e-14,
+      "continuity_cumulative": 1.57680598495e-08,
+      "continuity_global_abs": 1.02656021551e-14,
+      "continuity_cumulative_abs": 1.57680598495e-08
+    }
+  },
+  "wrong-setup-v2own/N2-step08000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N2",
+    "change": "none; start state t = 0.07 s of the developed flow",
+    "run_step": 8000,
+    "time_s": 0.14,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      48.44405590029695,
+      49.61513911501728
+    ],
+    "lowest_pressure_percent": [
+      48.44409218491859,
+      21.936323864388527
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.51797322366082,
+      "min_pressure_m2_per_s2": -446.120188583,
+      "max_pressure_m2_per_s2": 101.24589923,
+      "max_speed_domain_m_per_s": 38.51797322366082,
+      "max_jump_speed_m_per_s": 7.624318058754084,
+      "max_jump_pressure_m2_per_s2": 42.554891009000016,
+      "courant_mean": 0.0171413664375,
+      "courant_max": 0.297236034819,
+      "Ux_initial": 1.20299761279e-05,
+      "Ux_final": 2.43526642483e-08,
+      "Uy_initial": 0.000436016223896,
+      "Uy_final": 1.04331391786e-06,
+      "p_initial": 0.0102485971103,
+      "p_final": 6.90245951234e-07,
+      "continuity_local": 1.02379319926e-12,
+      "continuity_global": -1.65325444028e-13,
+      "continuity_cumulative": -6.33950629047e-09,
+      "continuity_global_abs": 1.65325444028e-13,
+      "continuity_cumulative_abs": 6.33950629047e-09
+    }
+  },
+  "wrong-setup-v2own/N2-step07000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N2",
+    "change": "none; start state t = 0.07 s of the developed flow",
+    "run_step": 7000,
+    "time_s": 0.135,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      53.681124818657906,
+      51.03804594239328
+    ],
+    "lowest_pressure_percent": [
+      53.681429644955024,
+      27.715360897408637
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 39.33997564265993,
+      "min_pressure_m2_per_s2": -465.611814177,
+      "max_pressure_m2_per_s2": 55.0562120857,
+      "max_speed_domain_m_per_s": 39.33997564265993,
+      "max_jump_speed_m_per_s": 5.841304307864513,
+      "max_jump_pressure_m2_per_s2": 43.98013610200002,
+      "courant_mean": 0.0171334955029,
+      "courant_max": 0.299532548654,
+      "Ux_initial": 1.07414987725e-05,
+      "Ux_final": 2.51049698117e-08,
+      "Uy_initial": 0.000338786652115,
+      "Uy_final": 8.22849282825e-07,
+      "p_initial": 0.0105919207245,
+      "p_final": 6.38315884458e-07,
+      "continuity_local": 8.18145237377e-13,
+      "continuity_global": -4.62768933478e-14,
+      "continuity_cumulative": -6.13040162916e-09,
+      "continuity_global_abs": 4.62768933478e-14,
+      "continuity_cumulative_abs": 6.13040162916e-09
+    }
+  },
+  "wrong-setup-v2own/M2-viscosity-step06500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M2-viscosity",
+    "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+    "run_step": 6500,
+    "time_s": 0.1325,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      15.274708098567253,
+      98.02563065410882
+    ],
+    "lowest_pressure_percent": [
+      0.4474467363278903,
+      31.630411484576946
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.673282034439,
+      "min_pressure_m2_per_s2": -106.998800229,
+      "max_pressure_m2_per_s2": -14.733379041,
+      "max_speed_domain_m_per_s": 38.05771175656989,
+      "max_jump_speed_m_per_s": 3.041320086784907,
+      "max_jump_pressure_m2_per_s2": 5.468694165000002,
+      "courant_mean": 0.0168697305076,
+      "courant_max": 0.221789060359,
+      "Ux_initial": 7.50330026567e-06,
+      "Ux_final": 7.50330026567e-06,
+      "Uy_initial": 1.70106739506e-05,
+      "Uy_final": 1.24315264566e-07,
+      "p_initial": 0.0224292216283,
+      "p_final": 8.09189995301e-07,
+      "continuity_local": 1.44092515547e-13,
+      "continuity_global": 1.57777301172e-16,
+      "continuity_cumulative": 1.81400715744e-08,
+      "continuity_global_abs": 1.57777301172e-16,
+      "continuity_cumulative_abs": 1.81400715744e-08
+    }
+  },
+  "wrong-setup-v2own/N1-step07500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N1",
+    "change": "none; start state t = 0.06 s of the developed flow",
+    "run_step": 7500,
+    "time_s": 0.1375,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      21.385880907670884,
+      43.89678079180253
+    ],
+    "lowest_pressure_percent": [
+      31.860610890508422,
+      28.58829223911657
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 35.07440363065087,
+      "min_pressure_m2_per_s2": -230.078039708,
+      "max_pressure_m2_per_s2": 18.1975987236,
+      "max_speed_domain_m_per_s": 35.07440363065087,
+      "max_jump_speed_m_per_s": 3.788146396351914,
+      "max_jump_pressure_m2_per_s2": 31.3395599853,
+      "courant_mean": 0.0170045657362,
+      "courant_max": 0.276478021174,
+      "Ux_initial": 7.63745079884e-06,
+      "Ux_final": 7.63745079884e-06,
+      "Uy_initial": 0.000201262906739,
+      "Uy_final": 3.41548021681e-07,
+      "p_initial": 0.0276219924319,
+      "p_final": 7.73344992216e-07,
+      "continuity_local": 5.42550158626e-13,
+      "continuity_global": -5.02793293361e-14,
+      "continuity_cumulative": -7.24404983657e-09,
+      "continuity_global_abs": 5.02793293361e-14,
+      "continuity_cumulative_abs": 7.24404983657e-09
+    }
+  },
+  "wrong-setup-v2own/N4-step05500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N4",
+    "change": "none; start state t = 0.09 s of the developed flow",
+    "run_step": 5500,
+    "time_s": 0.1275,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      38.84284504833868,
+      45.1063866557514
+    ],
+    "lowest_pressure_percent": [
+      38.84290703614979,
+      24.293087551806575
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.48463596040799,
+      "min_pressure_m2_per_s2": -361.24194101,
+      "max_pressure_m2_per_s2": 73.3010596759,
+      "max_speed_domain_m_per_s": 37.48463596040799,
+      "max_jump_speed_m_per_s": 6.2992031232963015,
+      "max_jump_pressure_m2_per_s2": 45.781567394999996,
+      "courant_mean": 0.0170980701567,
+      "courant_max": 0.327641420909,
+      "Ux_initial": 1.10908371516e-05,
+      "Ux_final": 2.07050033955e-08,
+      "Uy_initial": 0.000342244989301,
+      "Uy_final": 7.41122443123e-07,
+      "p_initial": 0.00921438040355,
+      "p_final": 6.45015996848e-07,
+      "continuity_local": 9.37569535879e-13,
+      "continuity_global": 9.28798435369e-14,
+      "continuity_cumulative": -3.44475332997e-09,
+      "continuity_global_abs": 9.28798435369e-14,
+      "continuity_cumulative_abs": 3.44475332997e-09
+    }
+  },
+  "wrong-setup-v2own/N5-step07000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N5",
+    "change": "none; start state t = 0.1 s of the developed flow",
+    "run_step": 7000,
+    "time_s": 0.135,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      19.640082161994876,
+      45.18952136801646
+    ],
+    "lowest_pressure_percent": [
+      51.06268201959379,
+      22.471581774869524
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 34.726665999372976,
+      "min_pressure_m2_per_s2": -215.575062443,
+      "max_pressure_m2_per_s2": 31.0498444256,
+      "max_speed_domain_m_per_s": 34.726665999372976,
+      "max_jump_speed_m_per_s": 3.548380178497606,
+      "max_jump_pressure_m2_per_s2": 29.518216621799994,
+      "courant_mean": 0.0169835975982,
+      "courant_max": 0.254499433663,
+      "Ux_initial": 6.43999879706e-06,
+      "Ux_final": 6.43999879706e-06,
+      "Uy_initial": 0.000168728754777,
+      "Uy_final": 2.63241804458e-07,
+      "p_initial": 0.0268632029294,
+      "p_final": 6.00037179003e-07,
+      "continuity_local": 4.27054264831e-13,
+      "continuity_global": 4.2277016154e-14,
+      "continuity_cumulative": -4.24230514854e-09,
+      "continuity_global_abs": 4.2277016154e-14,
+      "continuity_cumulative_abs": 4.24230514854e-09
+    }
+  },
+  "wrong-setup-v2own/M4-moving-wall-step05000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M4-moving-wall",
+    "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+    "run_step": 5000,
+    "time_s": 0.125,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      34.47857136719716,
+      45.82072976135157
+    ],
+    "lowest_pressure_percent": [
+      36.224861923850355,
+      30.182098816237794
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 39.401280230145474,
+      "min_pressure_m2_per_s2": -398.727577232,
+      "max_pressure_m2_per_s2": 30.5754326246,
+      "max_speed_domain_m_per_s": 39.401280230145474,
+      "max_jump_speed_m_per_s": 4.26666891878047,
+      "max_jump_pressure_m2_per_s2": 45.880662255000004,
+      "courant_mean": 0.0172244140447,
+      "courant_max": 0.330384779806,
+      "Ux_initial": 9.29940589164e-06,
+      "Ux_final": 9.29940589164e-06,
+      "Uy_initial": 0.000325936188358,
+      "Uy_final": 7.20334039955e-07,
+      "p_initial": 0.0295346403823,
+      "p_final": 7.2134725638e-07,
+      "continuity_local": 8.33136436297e-13,
+      "continuity_global": -2.96527796058e-14,
+      "continuity_cumulative": 1.51910505303e-10,
+      "continuity_global_abs": 2.96527796058e-14,
+      "continuity_cumulative_abs": 1.51910505303e-10
+    }
+  },
+  "wrong-setup-v2own/N5-step05000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N5",
+    "change": "none; start state t = 0.1 s of the developed flow",
+    "run_step": 5000,
+    "time_s": 0.125,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      31.86005000428431,
+      45.109279905813786
+    ],
+    "lowest_pressure_percent": [
+      34.47922147764144,
+      30.248184360059522
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.59631222443023,
+      "min_pressure_m2_per_s2": -356.320668592,
+      "max_pressure_m2_per_s2": 28.7507394402,
+      "max_speed_domain_m_per_s": 38.59631222443023,
+      "max_jump_speed_m_per_s": 4.151387314467198,
+      "max_jump_pressure_m2_per_s2": 43.242468465,
+      "courant_mean": 0.0170594369362,
+      "courant_max": 0.327925826555,
+      "Ux_initial": 9.27744327623e-06,
+      "Ux_final": 9.27744327623e-06,
+      "Uy_initial": 0.000275706943824,
+      "Uy_final": 5.90636372364e-07,
+      "p_initial": 0.0279115492408,
+      "p_final": 7.85139305735e-07,
+      "continuity_local": 8.54515798134e-13,
+      "continuity_global": 1.02079040858e-13,
+      "continuity_cumulative": -2.50782469395e-09,
+      "continuity_global_abs": 1.02079040858e-13,
+      "continuity_cumulative_abs": 2.50782469395e-09
+    }
+  },
+  "wrong-setup-v2own/M2-viscosity-step04500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M2-viscosity",
+    "change": "nu 1.56e-3 m^2/s instead of 1.56e-5 m^2/s",
+    "run_step": 4500,
+    "time_s": 0.1225,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      2.181932987250752,
+      92.06840017718571
+    ],
+    "lowest_pressure_percent": [
+      0.4474467363278903,
+      31.630411484576946
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 36.94577576926655,
+      "min_pressure_m2_per_s2": -98.0765717433,
+      "max_pressure_m2_per_s2": 25.1779402886,
+      "max_speed_domain_m_per_s": 37.06505200542456,
+      "max_jump_speed_m_per_s": 2.9610267280330973,
+      "max_jump_pressure_m2_per_s2": 6.305467521199986,
+      "courant_mean": 0.0168707244836,
+      "courant_max": 0.21579866479,
+      "Ux_initial": 1.1521467208e-05,
+      "Ux_final": 1.83337660174e-08,
+      "Uy_initial": 2.22660120452e-05,
+      "Uy_final": 1.11509198864e-07,
+      "p_initial": 0.0199201514483,
+      "p_final": 8.17323141979e-07,
+      "continuity_local": 1.43215698048e-13,
+      "continuity_global": 2.06124465605e-14,
+      "continuity_cumulative": 1.11994912285e-08,
+      "continuity_global_abs": 2.06124465605e-14,
+      "continuity_cumulative_abs": 1.11994912285e-08
+    }
+  },
+  "wrong-setup-v2own/N3-step06000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N3",
+    "change": "none; start state t = 0.08 s of the developed flow",
+    "run_step": 6000,
+    "time_s": 0.13,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      48.44405590029695,
+      49.61513911501728
+    ],
+    "lowest_pressure_percent": [
+      48.44409218491859,
+      21.936323864388527
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.517973477992,
+      "min_pressure_m2_per_s2": -446.120104186,
+      "max_pressure_m2_per_s2": 101.24598092,
+      "max_speed_domain_m_per_s": 38.517973477992,
+      "max_jump_speed_m_per_s": 7.624318742017092,
+      "max_jump_pressure_m2_per_s2": 42.55489219400002,
+      "courant_mean": 0.0171413664197,
+      "courant_max": 0.297236031934,
+      "Ux_initial": 1.20299746169e-05,
+      "Ux_final": 2.43526620259e-08,
+      "Uy_initial": 0.000436015699829,
+      "Uy_final": 1.04330544024e-06,
+      "p_initial": 0.0102335124783,
+      "p_final": 6.89513289069e-07,
+      "continuity_local": 1.02264685917e-12,
+      "continuity_global": -1.65254306698e-13,
+      "continuity_cumulative": -4.74146271797e-09,
+      "continuity_global_abs": 1.65254306698e-13,
+      "continuity_cumulative_abs": 4.74146271797e-09
+    }
+  },
+  "wrong-setup-v2own/M4-moving-wall-step08000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M4-moving-wall",
+    "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+    "run_step": 8000,
+    "time_s": 0.14,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      82.48518301089497,
+      44.54165986786284
+    ],
+    "lowest_pressure_percent": [
+      81.61230130458587,
+      19.240060870401077
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 35.659266113427506,
+      "min_pressure_m2_per_s2": -254.469460926,
+      "max_pressure_m2_per_s2": 49.4560557658,
+      "max_speed_domain_m_per_s": 35.659266113427506,
+      "max_jump_speed_m_per_s": 5.9291101170833596,
+      "max_jump_pressure_m2_per_s2": 34.317457981500006,
+      "courant_mean": 0.0172199227837,
+      "courant_max": 0.248776655537,
+      "Ux_initial": 9.13304807124e-06,
+      "Ux_final": 9.13304807124e-06,
+      "Uy_initial": 0.000337360758805,
+      "Uy_final": 5.10267985089e-07,
+      "p_initial": 0.0274338973854,
+      "p_final": 8.80901483092e-07,
+      "continuity_local": 9.3977400071e-13,
+      "continuity_global": -9.40241626213e-14,
+      "continuity_cumulative": -2.43373108099e-09,
+      "continuity_global_abs": 9.40241626213e-14,
+      "continuity_cumulative_abs": 2.43373108099e-09
+    }
+  },
+  "wrong-setup-v2own/N3-step04500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N3",
+    "change": "none; start state t = 0.08 s of the developed flow",
+    "run_step": 4500,
+    "time_s": 0.1225,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      51.06268362057056,
+      44.49726064383194
+    ],
+    "lowest_pressure_percent": [
+      49.31710013860734,
+      24.545938668658664
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 34.89995791701134,
+      "min_pressure_m2_per_s2": -226.119669536,
+      "max_pressure_m2_per_s2": 41.4666380412,
+      "max_speed_domain_m_per_s": 34.89995791701134,
+      "max_jump_speed_m_per_s": 3.3243605390723694,
+      "max_jump_pressure_m2_per_s2": 31.4632994607,
+      "courant_mean": 0.0169859023627,
+      "courant_max": 0.231198413933,
+      "Ux_initial": 6.35749007276e-06,
+      "Ux_final": 6.35749007276e-06,
+      "Uy_initial": 0.000183197616885,
+      "Uy_final": 2.94143038298e-07,
+      "p_initial": 0.0270448419429,
+      "p_final": 9.08760580899e-07,
+      "continuity_local": 6.67328224368e-13,
+      "continuity_global": -6.61645146121e-14,
+      "continuity_cumulative": -4.70768714744e-09,
+      "continuity_global_abs": 6.61645146121e-14,
+      "continuity_cumulative_abs": 4.70768714744e-09
+    }
+  },
+  "wrong-setup-v2own/N1-step04500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N1",
+    "change": "none; start state t = 0.06 s of the developed flow",
+    "run_step": 4500,
+    "time_s": 0.1225,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      34.47857136719716,
+      45.82072976135157
+    ],
+    "lowest_pressure_percent": [
+      37.09771658700456,
+      30.79422626060595
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 39.21956919011166,
+      "min_pressure_m2_per_s2": -383.578158431,
+      "max_pressure_m2_per_s2": 18.5854004013,
+      "max_speed_domain_m_per_s": 39.21956919011166,
+      "max_jump_speed_m_per_s": 3.5457801608248998,
+      "max_jump_pressure_m2_per_s2": 46.266652255000025,
+      "courant_mean": 0.017072891209,
+      "courant_max": 0.335527185106,
+      "Ux_initial": 1.0494573409e-05,
+      "Ux_final": 2.04298577896e-08,
+      "Uy_initial": 0.000334470127183,
+      "Uy_final": 7.59540233475e-07,
+      "p_initial": 0.0134078513901,
+      "p_final": 8.37724754953e-07,
+      "continuity_local": 8.22764759905e-13,
+      "continuity_global": 1.74166768002e-14,
+      "continuity_cumulative": -4.41443623125e-09,
+      "continuity_global_abs": 1.74166768002e-14,
+      "continuity_cumulative_abs": 4.41443623125e-09
+    }
+  },
+  "wrong-setup-v2own/N4-step06500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N4",
+    "change": "none; start state t = 0.09 s of the developed flow",
+    "run_step": 6500,
+    "time_s": 0.1325,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      34.47857136719716,
+      45.82072976135157
+    ],
+    "lowest_pressure_percent": [
+      35.351784694890576,
+      26.96405537355736
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.26304622625468,
+      "min_pressure_m2_per_s2": -373.599482718,
+      "max_pressure_m2_per_s2": 39.4308105625,
+      "max_speed_domain_m_per_s": 38.26304622625468,
+      "max_jump_speed_m_per_s": 4.759285451662894,
+      "max_jump_pressure_m2_per_s2": 46.38655410299998,
+      "courant_mean": 0.017086547884,
+      "courant_max": 0.331509198383,
+      "Ux_initial": 9.94460492158e-06,
+      "Ux_final": 9.94460492158e-06,
+      "Uy_initial": 0.000308428172702,
+      "Uy_final": 7.14903244544e-07,
+      "p_initial": 0.0255992092326,
+      "p_final": 8.11013334367e-07,
+      "continuity_local": 1.02753547339e-12,
+      "continuity_global": -1.02378177883e-13,
+      "continuity_cumulative": -4.02350880899e-09,
+      "continuity_global_abs": 1.02378177883e-13,
+      "continuity_cumulative_abs": 4.02350880899e-09
+    }
+  },
+  "wrong-setup-v2own/N3-step07500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N3",
+    "change": "none; start state t = 0.08 s of the developed flow",
+    "run_step": 7500,
+    "time_s": 0.1375,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      38.84284504833868,
+      45.1063866557514
+    ],
+    "lowest_pressure_percent": [
+      38.84290703614979,
+      24.293087551806575
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.48463417747069,
+      "min_pressure_m2_per_s2": -361.24190169,
+      "max_pressure_m2_per_s2": 73.3010741372,
+      "max_speed_domain_m_per_s": 37.48463417747069,
+      "max_jump_speed_m_per_s": 6.299177063747384,
+      "max_jump_pressure_m2_per_s2": 45.78156180399998,
+      "courant_mean": 0.0170980703441,
+      "courant_max": 0.327641409569,
+      "Ux_initial": 1.10908353007e-05,
+      "Ux_final": 2.07050031357e-08,
+      "Uy_initial": 0.000342245397972,
+      "Uy_final": 7.41120914956e-07,
+      "p_initial": 0.00919295206233,
+      "p_final": 6.43765721665e-07,
+      "continuity_local": 9.35692647477e-13,
+      "continuity_global": 9.24589357139e-14,
+      "continuity_cumulative": -4.90572186373e-09,
+      "continuity_global_abs": 9.24589357139e-14,
+      "continuity_cumulative_abs": 4.90572186373e-09
+    }
+  },
+  "wrong-setup-v2own/M5-half-inlet-step04500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M5-half-inlet",
+    "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+    "run_step": 4500,
+    "time_s": 0.1225,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      25.750277297205255,
+      41.896322740779325
+    ],
+    "lowest_pressure_percent": [
+      26.62186409043167,
+      19.527368310631328
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 18.933412427538343,
+      "min_pressure_m2_per_s2": -83.9517619588,
+      "max_pressure_m2_per_s2": 39.5138653673,
+      "max_speed_domain_m_per_s": 27.383959556653487,
+      "max_jump_speed_m_per_s": 3.4234983202657197,
+      "max_jump_pressure_m2_per_s2": 8.195232104799999,
+      "courant_mean": 0.00877933900758,
+      "courant_max": 0.187134788762,
+      "Ux_initial": 3.62950793232e-05,
+      "Ux_final": 1.69909979295e-09,
+      "Uy_initial": 0.00020122297715,
+      "Uy_final": 2.19417139779e-08,
+      "p_initial": 0.00363252130695,
+      "p_final": 7.55930589677e-07,
+      "continuity_local": 3.58051710453e-13,
+      "continuity_global": 3.57647343007e-14,
+      "continuity_cumulative": -8.10568293679e-09,
+      "continuity_global_abs": 3.57647343007e-14,
+      "continuity_cumulative_abs": 8.10568293679e-09
+    }
+  },
+  "wrong-setup-v2own/M5-half-inlet-step07500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M5-half-inlet",
+    "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+    "run_step": 7500,
+    "time_s": 0.1375,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      60.66403369868218,
+      43.030118417905726
+    ],
+    "lowest_pressure_percent": [
+      32.73266282314536,
+      22.00798136110388
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 18.124510616196446,
+      "min_pressure_m2_per_s2": -78.1029868229,
+      "max_pressure_m2_per_s2": 27.1495944476,
+      "max_speed_domain_m_per_s": 29.416219040916463,
+      "max_jump_speed_m_per_s": 3.0082015869198586,
+      "max_jump_pressure_m2_per_s2": 11.317679273199996,
+      "courant_mean": 0.00877763156555,
+      "courant_max": 0.161367474429,
+      "Ux_initial": 2.70554368359e-05,
+      "Ux_final": 3.04465826939e-09,
+      "Uy_initial": 0.000168500715243,
+      "Uy_final": 6.05688935877e-08,
+      "p_initial": 0.00380272347495,
+      "p_final": 6.32547502475e-07,
+      "continuity_local": 3.47925681831e-13,
+      "continuity_global": -1.4921705605e-14,
+      "continuity_cumulative": -8.21363748703e-09,
+      "continuity_global_abs": 1.4921705605e-14,
+      "continuity_cumulative_abs": 8.21363748703e-09
+    }
+  },
+  "wrong-setup-v2own/M1-inlet-speed-step07000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M1-inlet-speed",
+    "change": "inlet velocity 3.22 m/s instead of 32.2 m/s",
+    "run_step": 7000,
+    "time_s": 0.135,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      60.66193778385046,
+      2.7921565725444144
+    ],
+    "lowest_pressure_percent": [
+      57.17209815741825,
+      76.47888192717922
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 11.934844528443291,
+      "min_pressure_m2_per_s2": -46.553095506,
+      "max_pressure_m2_per_s2": 14.9587025692,
+      "max_speed_domain_m_per_s": 12.177654301438363,
+      "max_jump_speed_m_per_s": 3.034077750858958,
+      "max_jump_pressure_m2_per_s2": 4.13648857614,
+      "courant_mean": 0.00270321852103,
+      "courant_max": 0.315436953885,
+      "Ux_initial": 9.69654506552e-06,
+      "Ux_final": 9.69654506552e-06,
+      "Uy_initial": 7.93562020222e-05,
+      "Uy_final": 6.75515997373e-09,
+      "p_initial": 0.00563562323622,
+      "p_final": 8.93104272028e-07,
+      "continuity_local": 1.69962017291e-13,
+      "continuity_global": 2.11232675047e-14,
+      "continuity_cumulative": -9.41858623216e-09,
+      "continuity_global_abs": 2.11232675047e-14,
+      "continuity_cumulative_abs": 9.41858623216e-09
+    }
+  },
+  "wrong-setup-v2own/N5-step08000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N5",
+    "change": "none; start state t = 0.1 s of the developed flow",
+    "run_step": 8000,
+    "time_s": 0.14,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      79.8666440443415,
+      44.17638566618599
+    ],
+    "lowest_pressure_percent": [
+      78.99376073878892,
+      19.597427970358176
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 35.57819488791774,
+      "min_pressure_m2_per_s2": -245.446060581,
+      "max_pressure_m2_per_s2": 58.2730665473,
+      "max_speed_domain_m_per_s": 35.57819488791774,
+      "max_jump_speed_m_per_s": 5.794887645537045,
+      "max_jump_pressure_m2_per_s2": 32.15138436400001,
+      "courant_mean": 0.0170459851015,
+      "courant_max": 0.253050223293,
+      "Ux_initial": 9.27159104231e-06,
+      "Ux_final": 9.27159104231e-06,
+      "Uy_initial": 0.000292366256087,
+      "Uy_final": 4.63284819768e-07,
+      "p_initial": 0.0264701524423,
+      "p_final": 8.83046845486e-07,
+      "continuity_local": 9.61773687028e-13,
+      "continuity_global": 9.64580470584e-14,
+      "continuity_cumulative": -4.34763941972e-09,
+      "continuity_global_abs": 9.64580470584e-14,
+      "continuity_cumulative_abs": 4.34763941972e-09
+    }
+  },
+  "wrong-setup-v2own/N1-step06000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N1",
+    "change": "none; start state t = 0.06 s of the developed flow",
+    "run_step": 6000,
+    "time_s": 0.13,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      29.24161939138459,
+      42.75233750305961
+    ],
+    "lowest_pressure_percent": [
+      31.860302828165537,
+      26.029998611038234
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.859982277037105,
+      "min_pressure_m2_per_s2": -364.874853353,
+      "max_pressure_m2_per_s2": 49.8063411785,
+      "max_speed_domain_m_per_s": 37.859982277037105,
+      "max_jump_speed_m_per_s": 6.697951108542994,
+      "max_jump_pressure_m2_per_s2": 44.158522145000006,
+      "courant_mean": 0.0171329719246,
+      "courant_max": 0.335688618359,
+      "Ux_initial": 1.08459917196e-05,
+      "Ux_final": 2.37853106571e-08,
+      "Uy_initial": 0.000356225016292,
+      "Uy_final": 7.87661484032e-07,
+      "p_initial": 0.010601143689,
+      "p_final": 3.29711240837e-07,
+      "continuity_local": 4.68015096226e-13,
+      "continuity_global": 5.20842421361e-14,
+      "continuity_cumulative": -5.2550618423e-09,
+      "continuity_global_abs": 5.20842421361e-14,
+      "continuity_cumulative_abs": 5.2550618423e-09
+    }
+  },
+  "wrong-setup-v2own/N4-step06000": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N4",
+    "change": "none; start state t = 0.09 s of the developed flow",
+    "run_step": 6000,
+    "time_s": 0.13,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      37.96993710634928,
+      46.769330634107476
+    ],
+    "lowest_pressure_percent": [
+      38.843258972232746,
+      28.715535109532837
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 39.43983356834662,
+      "min_pressure_m2_per_s2": -420.621995328,
+      "max_pressure_m2_per_s2": 28.4771609923,
+      "max_speed_domain_m_per_s": 39.43983356834662,
+      "max_jump_speed_m_per_s": 3.235940154913397,
+      "max_jump_pressure_m2_per_s2": 48.43556918599998,
+      "courant_mean": 0.0170747664713,
+      "courant_max": 0.335126820971,
+      "Ux_initial": 1.07290669423e-05,
+      "Ux_final": 2.15959705435e-08,
+      "Uy_initial": 0.000316822280031,
+      "Uy_final": 7.65641427848e-07,
+      "p_initial": 0.0111428799133,
+      "p_final": 8.50303421577e-07,
+      "continuity_local": 9.57273964842e-13,
+      "continuity_global": -1.36912386142e-14,
+      "continuity_cumulative": -3.77470159956e-09,
+      "continuity_global_abs": 1.36912386142e-14,
+      "continuity_cumulative_abs": 3.77470159956e-09
+    }
+  },
+  "wrong-setup-v2own/M5-half-inlet-step08000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M5-half-inlet",
+    "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+    "run_step": 8000,
+    "time_s": 0.14,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      24.877341372074074,
+      43.212084367400045
+    ],
+    "lowest_pressure_percent": [
+      25.75112397269278,
+      30.578608114561394
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 18.10400327417064,
+      "min_pressure_m2_per_s2": -60.3953865405,
+      "max_pressure_m2_per_s2": 25.3384116448,
+      "max_speed_domain_m_per_s": 29.805942729814912,
+      "max_jump_speed_m_per_s": 1.9191317042402165,
+      "max_jump_pressure_m2_per_s2": 8.692935434400002,
+      "courant_mean": 0.00875805801352,
+      "courant_max": 0.125554144418,
+      "Ux_initial": 2.54448747132e-05,
+      "Ux_final": 2.18285949614e-09,
+      "Uy_initial": 0.000146564493207,
+      "Uy_final": 4.25452107361e-08,
+      "p_initial": 0.00414915355786,
+      "p_final": 5.64767872878e-07,
+      "continuity_local": 2.56330056269e-13,
+      "continuity_global": -1.4268505898e-14,
+      "continuity_cumulative": -8.22642117695e-09,
+      "continuity_global_abs": 1.4268505898e-14,
+      "continuity_cumulative_abs": 8.22642117695e-09
+    }
+  },
+  "wrong-setup-v2own/N5-step06500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N5",
+    "change": "none; start state t = 0.1 s of the developed flow",
+    "run_step": 6500,
+    "time_s": 0.1325,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      58.0453900343857,
+      47.71825256658333
+    ],
+    "lowest_pressure_percent": [
+      58.04547459535915,
+      22.45635953175823
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 36.63003817224627,
+      "min_pressure_m2_per_s2": -324.647731117,
+      "max_pressure_m2_per_s2": 34.0240124715,
+      "max_speed_domain_m_per_s": 36.63003817224627,
+      "max_jump_speed_m_per_s": 5.876590071230359,
+      "max_jump_pressure_m2_per_s2": 36.523073079000014,
+      "courant_mean": 0.0170794834156,
+      "courant_max": 0.292064234464,
+      "Ux_initial": 1.0038840827e-05,
+      "Ux_final": 1.98670585177e-08,
+      "Uy_initial": 0.000292298968817,
+      "Uy_final": 5.60273146024e-07,
+      "p_initial": 0.00971651496465,
+      "p_final": 9.44212649213e-07,
+      "continuity_local": 1.12193446994e-12,
+      "continuity_global": 1.06685495941e-13,
+      "continuity_cumulative": -3.39912969221e-09,
+      "continuity_global_abs": 1.06685495941e-13,
+      "continuity_cumulative_abs": 3.39912969221e-09
+    }
+  },
+  "wrong-setup-v2own/N2-step06500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N2",
+    "change": "none; start state t = 0.07 s of the developed flow",
+    "run_step": 6500,
+    "time_s": 0.1325,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      51.06268362057056,
+      44.49726064383194
+    ],
+    "lowest_pressure_percent": [
+      49.31710013860734,
+      24.545938668658664
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 34.89995962320842,
+      "min_pressure_m2_per_s2": -226.119744564,
+      "max_pressure_m2_per_s2": 41.4666222572,
+      "max_speed_domain_m_per_s": 34.89995962320842,
+      "max_jump_speed_m_per_s": 3.3243605535483667,
+      "max_jump_pressure_m2_per_s2": 31.463299362599997,
+      "courant_mean": 0.016985902386,
+      "courant_max": 0.231198395925,
+      "Ux_initial": 6.35748994219e-06,
+      "Ux_final": 6.35748994219e-06,
+      "Uy_initial": 0.000183197582891,
+      "Uy_final": 2.94143053923e-07,
+      "p_initial": 0.027009249775,
+      "p_final": 9.12803952891e-07,
+      "continuity_local": 6.70321668861e-13,
+      "continuity_global": -6.64618894764e-14,
+      "continuity_cumulative": -6.30573172282e-09,
+      "continuity_global_abs": 6.64618894764e-14,
+      "continuity_cumulative_abs": 6.30573172282e-09
+    }
+  },
+  "wrong-setup-v2own/M5-half-inlet-step06500": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M5-half-inlet",
+    "change": "lower half of the inlet at velocity 0, upper half at 32.2 m/s",
+    "run_step": 6500,
+    "time_s": 0.1325,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      32.73296178155267,
+      42.11257321507084
+    ],
+    "lowest_pressure_percent": [
+      34.47922147764144,
+      30.248184360059522
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 19.457405096287026,
+      "min_pressure_m2_per_s2": -85.214442314,
+      "max_pressure_m2_per_s2": 34.0255217005,
+      "max_speed_domain_m_per_s": 28.766410610469894,
+      "max_jump_speed_m_per_s": 3.2510296971156647,
+      "max_jump_pressure_m2_per_s2": 11.292903629399994,
+      "courant_mean": 0.00876715129673,
+      "courant_max": 0.146237718084,
+      "Ux_initial": 2.93302739077e-05,
+      "Ux_final": 2.50414588961e-09,
+      "Uy_initial": 0.000155345355031,
+      "Uy_final": 5.20814903956e-08,
+      "p_initial": 0.00404457607643,
+      "p_final": 8.89914294871e-07,
+      "continuity_local": 3.85789338311e-13,
+      "continuity_global": 3.07806676863e-14,
+      "continuity_cumulative": -8.21379147531e-09,
+      "continuity_global_abs": 3.07806676863e-14,
+      "continuity_cumulative_abs": 8.21379147531e-09
+    }
+  },
+  "wrong-setup-v2own/M4-moving-wall-step06000": {
+    "assessment": "inconsistent",
+    "class": "wrong",
+    "run": "M4-moving-wall",
+    "change": "upperWall fixedValue (-32.2 0 0) instead of noSlip",
+    "run_step": 6000,
+    "time_s": 0.13,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      29.241531502931714,
+      44.397830827884334
+    ],
+    "lowest_pressure_percent": [
+      33.6063106633453,
+      29.068534193222355
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 37.80460753858223,
+      "min_pressure_m2_per_s2": -307.90507693,
+      "max_pressure_m2_per_s2": -6.85649393637,
+      "max_speed_domain_m_per_s": 37.80460753858223,
+      "max_jump_speed_m_per_s": 3.905877611518239,
+      "max_jump_pressure_m2_per_s2": 41.24401261900002,
+      "courant_mean": 0.017194715426,
+      "courant_max": 0.318702023992,
+      "Ux_initial": 9.1432030591e-06,
+      "Ux_final": 9.1432030591e-06,
+      "Uy_initial": 0.000293587416692,
+      "Uy_final": 5.67432758577e-07,
+      "p_initial": 0.0304560986476,
+      "p_final": 9.4958504025e-07,
+      "continuity_local": 8.16193964791e-13,
+      "continuity_global": -7.3460985158e-14,
+      "continuity_cumulative": -8.48971935955e-10,
+      "continuity_global_abs": 7.3460985158e-14,
+      "continuity_cumulative_abs": 8.48971935955e-10
+    }
+  },
+  "wrong-setup-v2own/N3-step06500": {
+    "assessment": "consistent",
+    "class": "normal",
+    "run": "N3",
+    "change": "none; start state t = 0.08 s of the developed flow",
+    "run_step": 6500,
+    "time_s": 0.1325,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906,
+    "fastest_flow_percent": [
+      44.07989346861276,
+      46.39041744894454
+    ],
+    "lowest_pressure_percent": [
+      44.952999068932144,
+      26.718997576356166
+    ],
+    "numeric": {
+      "max_speed_m_per_s": 38.05929058480149,
+      "min_pressure_m2_per_s2": -362.251084691,
+      "max_pressure_m2_per_s2": 71.6287958063,
+      "max_speed_domain_m_per_s": 38.05929058480149,
+      "max_jump_speed_m_per_s": 5.202910616271715,
+      "max_jump_pressure_m2_per_s2": 36.811256738,
+      "courant_mean": 0.017068986578,
+      "courant_max": 0.277125260606,
+      "Ux_initial": 1.13673534551e-05,
+      "Ux_final": 1.92337765645e-08,
+      "Uy_initial": 0.000325205099311,
+      "Uy_final": 6.21187585693e-07,
+      "p_initial": 0.0114915341154,
+      "p_final": 6.71303979663e-07,
+      "continuity_local": 7.33836228862e-13,
+      "continuity_global": 6.18184557778e-14,
+      "continuity_cumulative": -4.83603349522e-09,
+      "continuity_global_abs": 6.18184557778e-14,
+      "continuity_cumulative_abs": 4.83603349522e-09
+    }
+  }
+}

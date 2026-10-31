@@ -1,0 +1,494 @@
+{
+  "v2012": {
+    "version": "v2012",
+    "validation_last_line": "PASS: /clust",
+    "validation_status_pass": true,
+    "exit_status": 0,
+    "End": true,
+    "python_finalized": true,
+    "foam_fatal_or_nan": false,
+    "time_lines": 110,
+    "status": "ok",
+    "error": null,
+    "request_step": 100,
+    "arrived_at_step": 110,
+    "worker_reaped": true,
+    "solver_stall_s": 0.012448318302631378,
+    "inference_wall_s": 4.396004555746913,
+    "end_wait_s": 5.633268401026726,
+    "http_status": 200,
+    "structured_output": {
+      "flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% on the x-axis. The flow is slowest in the lower half, especially near the bottom edge. The lowest pressure is located in the lower-middle region, specifically around 30% and 60% on the x-axis, while higher pressure is seen in the upper right.",
+      "fastest_flow_x_percent": 60,
+      "fastest_flow_y_percent": 50,
+      "lowest_pressure_x_percent": 60,
+      "lowest_pressure_y_percent": 25,
+      "uncertainties": "The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the domain are not explicitly stated."
+    },
+    "usage": null,
+    "telemetry_lines": 110,
+    "telemetry_tmp_left": false,
+    "llm_errors_file": false,
+    "callback_wall_s_step100": 0.012827466,
+    "callback_wall_s_last": 5.689902685,
+    "max_other_callback_wall_s": 0.000359157,
+    "frame_dir": "v2012/case2d/llm_observation/step-000100",
+    "frame_files": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+    ],
+    "frame_hashes_ok": true,
+    "frame_step_time": [
+      100,
+      0.1005000000000005
+    ],
+    "frame_time_equals_telemetry": true,
+    "frame_cells": 20540,
+    "frame_fields_sha256": "c8bd1cff6c1bd77e995765aba597c70386cfda02fea6629205d67438c39c7f9e",
+    "png_sha256": {
+      "U": "609e36cff8fe8a141ece63376ef3ce9137dc724740a5c78e26cb719217d6c17a",
+      "p": "78ce0af6998873e462f21ac367bbc4d0f18fdbfb9d362b8bf4e416577d9c0cf9"
+    },
+    "body_equals_builder": true,
+    "body_system_prompt_ok": true,
+    "body_images_equal_frame": true,
+    "request_sha256": "c705d4e272ac69116bfda6165f242b7964226e68f362b0f85d04e63c6bbf7b64",
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "max_tokens": 320,
+    "seed": 20261021,
+    "truth": {
+      "max_speed_m_per_s": 37.210299087808764,
+      "min_pressure_m2_per_s2": -335.03879473013546,
+      "fastest_flow": {
+        "x_percent": 27.495947331666244,
+        "y_percent": 42.32432987370333,
+        "x_m": 0.032995136797999494,
+        "y_m": 0.01692973194948133,
+        "cell": 13382
+      },
+      "lowest_pressure": {
+        "x_percent": 30.987372942603958,
+        "y_percent": 25.46405025375945,
+        "x_m": 0.03718484753112475,
+        "y_m": 0.01018562010150378,
+        "cell": 9474
+      },
+      "cells_in_window": 7906
+    },
+    "score": {
+      "fastest_flow": {
+        "answer_percent": [
+          60,
+          50
+        ],
+        "true_percent": [
+          27.495947331666244,
+          42.32432987370333
+        ],
+        "error_percent": [
+          32.504052668333756,
+          7.675670126296673
+        ],
+        "distance_percent": 33.398044130660374,
+        "error_m": [
+          0.03900486320200051,
+          0.0030702680505186692
+        ],
+        "distance_m": 0.039125514684267206,
+        "within_10_percent": false
+      },
+      "lowest_pressure": {
+        "answer_percent": [
+          60,
+          25
+        ],
+        "true_percent": [
+          30.987372942603958,
+          25.46405025375945
+        ],
+        "error_percent": [
+          29.012627057396042,
+          -0.4640502537594493
+        ],
+        "distance_percent": 29.01633800825947,
+        "error_m": [
+          0.034815152468875246,
+          -0.00018562010150377972
+        ],
+        "distance_m": 0.03481564729045135,
+        "within_10_percent": false
+      }
+    }
+  },
+  "v2106": {
+    "version": "v2106",
+    "validation_last_line": "PASS: /clust",
+    "validation_status_pass": true,
+    "exit_status": 0,
+    "End": true,
+    "python_finalized": true,
+    "foam_fatal_or_nan": false,
+    "time_lines": 110,
+    "status": "ok",
+    "error": null,
+    "request_step": 100,
+    "arrived_at_step": 110,
+    "worker_reaped": true,
+    "solver_stall_s": 0.010966205969452858,
+    "inference_wall_s": 4.239149140194058,
+    "end_wait_s": 4.441785199567676,
+    "http_status": 200,
+    "structured_output": {
+      "flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% on the x-axis. The flow is slowest in the lower half, especially near the bottom edge. The lowest pressure is located in the lower-middle region, specifically around 30% and 60% on the x-axis, while higher pressure is seen in the upper right.",
+      "fastest_flow_x_percent": 60,
+      "fastest_flow_y_percent": 50,
+      "lowest_pressure_x_percent": 60,
+      "lowest_pressure_y_percent": 25,
+      "uncertainties": "The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the domain are not explicitly stated."
+    },
+    "usage": null,
+    "telemetry_lines": 110,
+    "telemetry_tmp_left": false,
+    "llm_errors_file": false,
+    "callback_wall_s_step100": 0.011334063,
+    "callback_wall_s_last": 4.495897456,
+    "max_other_callback_wall_s": 0.000295794,
+    "frame_dir": "v2106/case2d/llm_observation/step-000100",
+    "frame_files": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+    ],
+    "frame_hashes_ok": true,
+    "frame_step_time": [
+      100,
+      0.1005000000000005
+    ],
+    "frame_time_equals_telemetry": true,
+    "frame_cells": 20540,
+    "frame_fields_sha256": "c8bd1cff6c1bd77e995765aba597c70386cfda02fea6629205d67438c39c7f9e",
+    "png_sha256": {
+      "U": "609e36cff8fe8a141ece63376ef3ce9137dc724740a5c78e26cb719217d6c17a",
+      "p": "78ce0af6998873e462f21ac367bbc4d0f18fdbfb9d362b8bf4e416577d9c0cf9"
+    },
+    "body_equals_builder": true,
+    "body_system_prompt_ok": true,
+    "body_images_equal_frame": true,
+    "request_sha256": "c705d4e272ac69116bfda6165f242b7964226e68f362b0f85d04e63c6bbf7b64",
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "max_tokens": 320,
+    "seed": 20261021,
+    "truth": {
+      "max_speed_m_per_s": 37.210299087808764,
+      "min_pressure_m2_per_s2": -335.03879473013546,
+      "fastest_flow": {
+        "x_percent": 27.495947331666244,
+        "y_percent": 42.32432987370333,
+        "x_m": 0.032995136797999494,
+        "y_m": 0.01692973194948133,
+        "cell": 13382
+      },
+      "lowest_pressure": {
+        "x_percent": 30.987372942603958,
+        "y_percent": 25.46405025375945,
+        "x_m": 0.03718484753112475,
+        "y_m": 0.01018562010150378,
+        "cell": 9474
+      },
+      "cells_in_window": 7906
+    },
+    "score": {
+      "fastest_flow": {
+        "answer_percent": [
+          60,
+          50
+        ],
+        "true_percent": [
+          27.495947331666244,
+          42.32432987370333
+        ],
+        "error_percent": [
+          32.504052668333756,
+          7.675670126296673
+        ],
+        "distance_percent": 33.398044130660374,
+        "error_m": [
+          0.03900486320200051,
+          0.0030702680505186692
+        ],
+        "distance_m": 0.039125514684267206,
+        "within_10_percent": false
+      },
+      "lowest_pressure": {
+        "answer_percent": [
+          60,
+          25
+        ],
+        "true_percent": [
+          30.987372942603958,
+          25.46405025375945
+        ],
+        "error_percent": [
+          29.012627057396042,
+          -0.4640502537594493
+        ],
+        "distance_percent": 29.01633800825947,
+        "error_m": [
+          0.034815152468875246,
+          -0.00018562010150377972
+        ],
+        "distance_m": 0.03481564729045135,
+        "within_10_percent": false
+      }
+    }
+  },
+  "v2212": {
+    "version": "v2212",
+    "validation_last_line": "PASS: /clust",
+    "validation_status_pass": true,
+    "exit_status": 0,
+    "End": true,
+    "python_finalized": true,
+    "foam_fatal_or_nan": false,
+    "time_lines": 110,
+    "status": "ok",
+    "error": null,
+    "request_step": 100,
+    "arrived_at_step": 110,
+    "worker_reaped": true,
+    "solver_stall_s": 0.011346492916345596,
+    "inference_wall_s": 4.2703345865011215,
+    "end_wait_s": 4.431330261752009,
+    "http_status": 200,
+    "structured_output": {
+      "flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% on the x-axis. The flow is slowest in the lower half, especially near the bottom edge. The lowest pressure is located in the lower-middle region, specifically around 30% and 60% on the x-axis, while higher pressure is seen in the upper right.",
+      "fastest_flow_x_percent": 60,
+      "fastest_flow_y_percent": 50,
+      "lowest_pressure_x_percent": 60,
+      "lowest_pressure_y_percent": 25,
+      "uncertainties": "The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the domain are not explicitly stated."
+    },
+    "usage": null,
+    "telemetry_lines": 110,
+    "telemetry_tmp_left": false,
+    "llm_errors_file": false,
+    "callback_wall_s_step100": 0.011718299,
+    "callback_wall_s_last": 4.485558369,
+    "max_other_callback_wall_s": 0.000310905,
+    "frame_dir": "v2212/case2d/llm_observation/step-000100",
+    "frame_files": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+    ],
+    "frame_hashes_ok": true,
+    "frame_step_time": [
+      100,
+      0.1005000000000005
+    ],
+    "frame_time_equals_telemetry": true,
+    "frame_cells": 20540,
+    "frame_fields_sha256": "c8bd1cff6c1bd77e995765aba597c70386cfda02fea6629205d67438c39c7f9e",
+    "png_sha256": {
+      "U": "609e36cff8fe8a141ece63376ef3ce9137dc724740a5c78e26cb719217d6c17a",
+      "p": "78ce0af6998873e462f21ac367bbc4d0f18fdbfb9d362b8bf4e416577d9c0cf9"
+    },
+    "body_equals_builder": true,
+    "body_system_prompt_ok": true,
+    "body_images_equal_frame": true,
+    "request_sha256": "c705d4e272ac69116bfda6165f242b7964226e68f362b0f85d04e63c6bbf7b64",
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "max_tokens": 320,
+    "seed": 20261021,
+    "truth": {
+      "max_speed_m_per_s": 37.210299087808764,
+      "min_pressure_m2_per_s2": -335.03879473013546,
+      "fastest_flow": {
+        "x_percent": 27.495947331666244,
+        "y_percent": 42.32432987370333,
+        "x_m": 0.032995136797999494,
+        "y_m": 0.01692973194948133,
+        "cell": 13382
+      },
+      "lowest_pressure": {
+        "x_percent": 30.987372942603958,
+        "y_percent": 25.46405025375945,
+        "x_m": 0.03718484753112475,
+        "y_m": 0.01018562010150378,
+        "cell": 9474
+      },
+      "cells_in_window": 7906
+    },
+    "score": {
+      "fastest_flow": {
+        "answer_percent": [
+          60,
+          50
+        ],
+        "true_percent": [
+          27.495947331666244,
+          42.32432987370333
+        ],
+        "error_percent": [
+          32.504052668333756,
+          7.675670126296673
+        ],
+        "distance_percent": 33.398044130660374,
+        "error_m": [
+          0.03900486320200051,
+          0.0030702680505186692
+        ],
+        "distance_m": 0.039125514684267206,
+        "within_10_percent": false
+      },
+      "lowest_pressure": {
+        "answer_percent": [
+          60,
+          25
+        ],
+        "true_percent": [
+          30.987372942603958,
+          25.46405025375945
+        ],
+        "error_percent": [
+          29.012627057396042,
+          -0.4640502537594493
+        ],
+        "distance_percent": 29.01633800825947,
+        "error_m": [
+          0.034815152468875246,
+          -0.00018562010150377972
+        ],
+        "distance_m": 0.03481564729045135,
+        "within_10_percent": false
+      }
+    }
+  },
+  "8": {
+    "version": "8",
+    "validation_last_line": "PASS: /clust",
+    "validation_status_pass": true,
+    "exit_status": 0,
+    "End": true,
+    "python_finalized": true,
+    "foam_fatal_or_nan": false,
+    "time_lines": 110,
+    "status": "ok",
+    "error": null,
+    "request_step": 100,
+    "arrived_at_step": 110,
+    "worker_reaped": true,
+    "solver_stall_s": 0.011656148359179497,
+    "inference_wall_s": 4.563137698918581,
+    "end_wait_s": 4.655133683234453,
+    "http_status": 200,
+    "structured_output": {
+      "flow_description": "The flow shows high velocity in the upper half of the domain, particularly between 40% and 70% x. The lower half exhibits much lower velocities. Pressure is lowest in localized pockets around 30% and 60% x at roughly 20-30% y, while higher pressure regions appear near 40% and 80% x at 20% y.",
+      "fastest_flow_x_percent": 60,
+      "fastest_flow_y_percent": 50,
+      "lowest_pressure_x_percent": 60,
+      "lowest_pressure_y_percent": 25,
+      "uncertainties": "The exact physical boundaries and the nature of the obstacles or geometry causing the pressure fluctuations are not explicitly shown."
+    },
+    "usage": null,
+    "telemetry_lines": 110,
+    "telemetry_tmp_left": false,
+    "llm_errors_file": false,
+    "callback_wall_s_step100": 0.012009143,
+    "callback_wall_s_last": 4.724429511,
+    "max_other_callback_wall_s": 0.000287315,
+    "frame_dir": "8/case2d/llm_observation/step-000100",
+    "frame_files": [
+      "U.png",
+      "fields.npz",
+      "p.png",
+      "readable-metadata.json"
+    ],
+    "frame_hashes_ok": true,
+    "frame_step_time": [
+      100,
+      0.1005000000000005
+    ],
+    "frame_time_equals_telemetry": true,
+    "frame_cells": 20540,
+    "frame_fields_sha256": "7cb697fac44f56f01074c9a92d47a487073f634d2222ed67d843301c00f025c2",
+    "png_sha256": {
+      "U": "e582ed85cf45e1e3f2732e03f1aba77714a37ddbd09efed3d9c083053b4dac1c",
+      "p": "96176c142bf0cb18e612e8c38b8d16aa93fec5353636faa5e82d666fc92c7b0c"
+    },
+    "body_equals_builder": true,
+    "body_system_prompt_ok": true,
+    "body_images_equal_frame": true,
+    "request_sha256": "ebf76d5de97b78dd9151553ce3eb6d3f621951fa1333b2cb215b10dab3974a63",
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "max_tokens": 320,
+    "seed": 20261021,
+    "truth": {
+      "max_speed_m_per_s": 36.89686286493246,
+      "min_pressure_m2_per_s2": -325.63159105645855,
+      "fastest_flow": {
+        "x_percent": 26.623112049583387,
+        "y_percent": 42.110326242366746,
+        "x_m": 0.03194773445950006,
+        "y_m": 0.016844130496946698,
+        "cell": 13381
+      },
+      "lowest_pressure": {
+        "x_percent": 30.11453818154458,
+        "y_percent": 25.59415686875494,
+        "x_m": 0.0361374458178535,
+        "y_m": 0.010237662747501977,
+        "cell": 9473
+      },
+      "cells_in_window": 7906
+    },
+    "score": {
+      "fastest_flow": {
+        "answer_percent": [
+          60,
+          50
+        ],
+        "true_percent": [
+          26.623112049583387,
+          42.110326242366746
+        ],
+        "error_percent": [
+          33.37688795041662,
+          7.889673757633254
+        ],
+        "distance_percent": 34.296699567983985,
+        "error_m": [
+          0.04005226554049994,
+          0.003155869503053302
+        ],
+        "distance_m": 0.04017640460826505,
+        "within_10_percent": false
+      },
+      "lowest_pressure": {
+        "answer_percent": [
+          60,
+          25
+        ],
+        "true_percent": [
+          30.11453818154458,
+          25.59415686875494
+        ],
+        "error_percent": [
+          29.88546181845542,
+          -0.5941568687549399
+        ],
+        "distance_percent": 29.8913674910842,
+        "error_m": [
+          0.0358625541821465,
+          -0.00023766274750197596
+        ],
+        "distance_m": 0.03586334167431896,
+        "within_10_percent": false
+      }
+    }
+  }
+}

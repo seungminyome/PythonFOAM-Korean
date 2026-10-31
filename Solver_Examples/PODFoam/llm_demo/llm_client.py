@@ -11,9 +11,6 @@ Three request modes share the client:
             flow and the lowest pressure as percent of the plotted ranges
   sequence  several snapshot images in time order; how the flow changes, with
             the trends of the colour-bar extrema as fixed vocabulary
-A fourth reply schema, stability (stable, unstable or cannot_tell, with a reason), is
-used by the instability picture test (instability_test.py); the solver callback does
-not send it, so it is not in MODES (the LLM_MODE values).
 """
 import base64
 import hashlib
@@ -41,7 +38,6 @@ MAX_SEQUENCE_IMAGES = 6
 TREND_SPEED = ("increasing", "decreasing", "roughly_constant", "cannot_tell")
 TREND_PRESSURE = ("more_negative", "less_negative", "roughly_constant", "cannot_tell")
 TREND_REGION = ("same_place", "moves", "cannot_tell")
-STABILITY_WORDS = ("stable", "unstable", "cannot_tell")
 RESPONSE_SCHEMAS = {
     "observe": {
         "type": "object",
@@ -75,17 +71,6 @@ RESPONSE_SCHEMAS = {
         },
         "required": ["change_description", "max_speed_trend", "min_pressure_trend",
                      "fastest_flow_region", "uncertainties"],
-        "additionalProperties": False,
-    },
-    # 2026-10-28, picture tests only (not an LLM_MODE); the reason comes first, as the
-    # description does in the sequence schema, and the server keeps this order
-    "stability": {
-        "type": "object",
-        "properties": {
-            "reason": {"type": "string", "minLength": 1, "maxLength": 300},
-            "stability": {"type": "string", "enum": list(STABILITY_WORDS)},
-        },
-        "required": ["reason", "stability"],
         "additionalProperties": False,
     },
 }
@@ -348,7 +333,7 @@ def request_local(payload, endpoint=DEFAULT_ENDPOINT, timeout_s=120.0,
                   "raw_response_path": str(raw_response_path) if raw_response_path else None}
         packet = None
         if isolated:
-            python = os.environ.get("LLM_HTTP_PYTHON", "/usr/bin/python3")
+            python = os.environ.get("LLM_HTTP_PYTHON") or sys.executable or "/usr/bin/python3"
             process = subprocess.Popen(
                 [python, str(Path(__file__).resolve()), "--worker"],
                 stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

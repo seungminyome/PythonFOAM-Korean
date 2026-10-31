@@ -1,0 +1,1135 @@
+{
+ "problems": [],
+ "report_lines_checked": 121,
+ "readme_lines_checked": 30,
+ "counts": {
+  "gemma-4-12b-it-qat-q4_0-vision": {
+   "answered": 80,
+   "right": 41,
+   "normal": {
+    "consistent": 40,
+    "inconsistent": 0,
+    "cannot_tell": 0
+   },
+   "wrong": {
+    "consistent": 39,
+    "inconsistent": 1,
+    "cannot_tell": 0
+   },
+   "by_run": {
+    "N1": 8,
+    "N2": 8,
+    "N3": 8,
+    "N4": 8,
+    "N5": 8,
+    "M1-inlet-speed": 1,
+    "M2-viscosity": 0,
+    "M3-slip-walls": 0,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 0
+   }
+  },
+  "gemma-4-26B-A4B-it-qat-q4_0-vision": {
+   "answered": 80,
+   "right": 42,
+   "normal": {
+    "consistent": 40,
+    "inconsistent": 0,
+    "cannot_tell": 0
+   },
+   "wrong": {
+    "consistent": 38,
+    "inconsistent": 2,
+    "cannot_tell": 0
+   },
+   "by_run": {
+    "N1": 8,
+    "N2": 8,
+    "N3": 8,
+    "N4": 8,
+    "N5": 8,
+    "M1-inlet-speed": 0,
+    "M2-viscosity": 2,
+    "M3-slip-walls": 0,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 0
+   }
+  },
+  "gemma-4-31B-it-qat-q4_0-vision": {
+   "answered": 80,
+   "right": 67,
+   "normal": {
+    "consistent": 38,
+    "inconsistent": 2,
+    "cannot_tell": 0
+   },
+   "wrong": {
+    "consistent": 11,
+    "inconsistent": 29,
+    "cannot_tell": 0
+   },
+   "by_run": {
+    "N1": 8,
+    "N2": 8,
+    "N3": 8,
+    "N4": 7,
+    "N5": 7,
+    "M1-inlet-speed": 8,
+    "M2-viscosity": 8,
+    "M3-slip-walls": 1,
+    "M4-moving-wall": 4,
+    "M5-half-inlet": 8
+   }
+  },
+  "qwen3.5-35b-a3b-q8_0-vision": {
+   "answered": 80,
+   "right": 45,
+   "normal": {
+    "consistent": 40,
+    "inconsistent": 0,
+    "cannot_tell": 0
+   },
+   "wrong": {
+    "consistent": 35,
+    "inconsistent": 5,
+    "cannot_tell": 0
+   },
+   "by_run": {
+    "N1": 8,
+    "N2": 8,
+    "N3": 8,
+    "N4": 8,
+    "N5": 8,
+    "M1-inlet-speed": 0,
+    "M2-viscosity": 5,
+    "M3-slip-walls": 0,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 0
+   }
+  },
+  "Rule: peak \\|U\\| in the window between 1 and 2 times 32.2 m/s": {
+   "answered": 80,
+   "right": 56,
+   "normal": {
+    "consistent": 40,
+    "inconsistent": 0,
+    "cannot_tell": 0
+   },
+   "wrong": {
+    "consistent": 24,
+    "inconsistent": 16,
+    "cannot_tell": 0
+   },
+   "by_run": {
+    "N1": 8,
+    "N2": 8,
+    "N3": 8,
+    "N4": 8,
+    "N5": 8,
+    "M1-inlet-speed": 8,
+    "M2-viscosity": 0,
+    "M3-slip-walls": 0,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 8
+   }
+  }
+ },
+ "logs": {
+  "N1": {
+   "steps": 8000,
+   "ended": true,
+   "crashed": false,
+   "courant_max_whole_run": 0.341394796362,
+   "courant_max_at_step": 4974,
+   "steps_with_courant_above_1": 0,
+   "first_and_last_step_above_1": []
+  },
+  "N2": {
+   "steps": 8000,
+   "ended": true,
+   "crashed": false,
+   "courant_max_whole_run": 0.344109306113,
+   "courant_max_at_step": 7248,
+   "steps_with_courant_above_1": 0,
+   "first_and_last_step_above_1": []
+  },
+  "N3": {
+   "steps": 8000,
+   "ended": true,
+   "crashed": false,
+   "courant_max_whole_run": 0.346668233504,
+   "courant_max_at_step": 7413,
+   "steps_with_courant_above_1": 0,
+   "first_and_last_step_above_1": []
+  },
+  "N4": {
+   "steps": 8000,
+   "ended": true,
+   "crashed": false,
+   "courant_max_whole_run": 0.346668241387,
+   "courant_max_at_step": 5413,
+   "steps_with_courant_above_1": 0,
+   "first_and_last_step_above_1": []
+  },
+  "N5": {
+   "steps": 8000,
+   "ended": true,
+   "crashed": false,
+   "courant_max_whole_run": 0.346668233526,
+   "courant_max_at_step": 3413,
+   "steps_with_courant_above_1": 0,
+   "first_and_last_step_above_1": []
+  },
+  "M1-inlet-speed": {
+   "steps": 8000,
+   "ended": true,
+   "crashed": false,
+   "courant_max_whole_run": 10.6873661912,
+   "courant_max_at_step": 3,
+   "steps_with_courant_above_1": 1036,
+   "first_and_last_step_above_1": [
+    2,
+    1037
+   ]
+  },
+  "M2-viscosity": {
+   "steps": 8000,
+   "ended": true,
+   "crashed": false,
+   "courant_max_whole_run": 0.283615934459,
+   "courant_max_at_step": 1,
+   "steps_with_courant_above_1": 0,
+   "first_and_last_step_above_1": []
+  },
+  "M3-slip-walls": {
+   "steps": 8000,
+   "ended": true,
+   "crashed": false,
+   "courant_max_whole_run": 1.30934430692,
+   "courant_max_at_step": 5432,
+   "steps_with_courant_above_1": 1904,
+   "first_and_last_step_above_1": [
+    5095,
+    7566
+   ]
+  },
+  "M4-moving-wall": {
+   "steps": 8000,
+   "ended": true,
+   "crashed": false,
+   "courant_max_whole_run": 0.347900990039,
+   "courant_max_at_step": 3392,
+   "steps_with_courant_above_1": 0,
+   "first_and_last_step_above_1": []
+  },
+  "M5-half-inlet": {
+   "steps": 8000,
+   "ended": true,
+   "crashed": false,
+   "courant_max_whole_run": 5.48849620105,
+   "courant_max_at_step": 3,
+   "steps_with_courant_above_1": 117,
+   "first_and_last_step_above_1": [
+    2,
+    118
+   ]
+  }
+ },
+ "frames_outside_normal_range": {
+  "courant_max": {
+   "M1-inlet-speed": 3,
+   "M2-viscosity": 8,
+   "M3-slip-walls": 8,
+   "M4-moving-wall": 1,
+   "M5-half-inlet": 8
+  },
+  "courant_mean": {
+   "M1-inlet-speed": 8,
+   "M2-viscosity": 8,
+   "M3-slip-walls": 8,
+   "M4-moving-wall": 8,
+   "M5-half-inlet": 8
+  },
+  "Ux_initial": {
+   "M1-inlet-speed": 2,
+   "M2-viscosity": 2,
+   "M3-slip-walls": 8,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 8
+  },
+  "Uy_initial": {
+   "M1-inlet-speed": 8,
+   "M2-viscosity": 8,
+   "M3-slip-walls": 8,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 5
+  },
+  "p_initial": {
+   "M1-inlet-speed": 8,
+   "M2-viscosity": 0,
+   "M3-slip-walls": 8,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 8
+  },
+  "Ux_final": {
+   "M1-inlet-speed": 4,
+   "M2-viscosity": 2,
+   "M3-slip-walls": 0,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 8
+  },
+  "Uy_final": {
+   "M1-inlet-speed": 8,
+   "M2-viscosity": 8,
+   "M3-slip-walls": 8,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 8
+  },
+  "p_final": {
+   "M1-inlet-speed": 0,
+   "M2-viscosity": 0,
+   "M3-slip-walls": 0,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 0
+  },
+  "continuity_local": {
+   "M1-inlet-speed": 8,
+   "M2-viscosity": 8,
+   "M3-slip-walls": 0,
+   "M4-moving-wall": 2,
+   "M5-half-inlet": 7
+  },
+  "continuity_global_abs": {
+   "M1-inlet-speed": 5,
+   "M2-viscosity": 4,
+   "M3-slip-walls": 0,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 0
+  },
+  "continuity_cumulative_abs": {
+   "M1-inlet-speed": 8,
+   "M2-viscosity": 8,
+   "M3-slip-walls": 0,
+   "M4-moving-wall": 6,
+   "M5-half-inlet": 8
+  },
+  "max_speed_m_per_s": {
+   "M1-inlet-speed": 8,
+   "M2-viscosity": 0,
+   "M3-slip-walls": 0,
+   "M4-moving-wall": 1,
+   "M5-half-inlet": 8
+  },
+  "min_pressure_m2_per_s2": {
+   "M1-inlet-speed": 8,
+   "M2-viscosity": 8,
+   "M3-slip-walls": 0,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 8
+  }
+ },
+ "logs_outside_normal_range": {
+  "courant_max_whole_run": {
+   "M1-inlet-speed": true,
+   "M2-viscosity": true,
+   "M3-slip-walls": true,
+   "M4-moving-wall": true,
+   "M5-half-inlet": true
+  },
+  "courant_max_from_first_frame": {
+   "M1-inlet-speed": true,
+   "M2-viscosity": true,
+   "M3-slip-walls": true,
+   "M4-moving-wall": true,
+   "M5-half-inlet": true
+  },
+  "courant_mean_from_first_frame": {
+   "M1-inlet-speed": true,
+   "M2-viscosity": true,
+   "M3-slip-walls": true,
+   "M4-moving-wall": true,
+   "M5-half-inlet": true
+  },
+  "last_Ux_initial": {
+   "M1-inlet-speed": false,
+   "M2-viscosity": true,
+   "M3-slip-walls": true,
+   "M4-moving-wall": false,
+   "M5-half-inlet": true
+  },
+  "last_Uy_initial": {
+   "M1-inlet-speed": true,
+   "M2-viscosity": true,
+   "M3-slip-walls": true,
+   "M4-moving-wall": false,
+   "M5-half-inlet": true
+  },
+  "last_p_initial": {
+   "M1-inlet-speed": true,
+   "M2-viscosity": false,
+   "M3-slip-walls": true,
+   "M4-moving-wall": false,
+   "M5-half-inlet": true
+  },
+  "last_Ux_final": {
+   "M1-inlet-speed": false,
+   "M2-viscosity": false,
+   "M3-slip-walls": false,
+   "M4-moving-wall": false,
+   "M5-half-inlet": true
+  },
+  "last_Uy_final": {
+   "M1-inlet-speed": true,
+   "M2-viscosity": true,
+   "M3-slip-walls": true,
+   "M4-moving-wall": false,
+   "M5-half-inlet": true
+  },
+  "last_p_final": {
+   "M1-inlet-speed": false,
+   "M2-viscosity": false,
+   "M3-slip-walls": false,
+   "M4-moving-wall": false,
+   "M5-half-inlet": true
+  },
+  "last_continuity_local": {
+   "M1-inlet-speed": true,
+   "M2-viscosity": true,
+   "M3-slip-walls": true,
+   "M4-moving-wall": false,
+   "M5-half-inlet": true
+  },
+  "last_continuity_global_abs": {
+   "M1-inlet-speed": false,
+   "M2-viscosity": false,
+   "M3-slip-walls": false,
+   "M4-moving-wall": false,
+   "M5-half-inlet": true
+  },
+  "last_continuity_cumulative_abs": {
+   "M1-inlet-speed": true,
+   "M2-viscosity": true,
+   "M3-slip-walls": true,
+   "M4-moving-wall": true,
+   "M5-half-inlet": true
+  }
+ },
+ "prompt_tokens": {
+  "gemma-4-12b-it-qat-q4_0-vision": {
+   "same_prompt_tokens_in_both_classes_at_each_step": true,
+   "prompt_tokens": [
+    980,
+    981,
+    982
+   ],
+   "median_wall_s": 1.734486686065793
+  },
+  "gemma-4-26B-A4B-it-qat-q4_0-vision": {
+   "same_prompt_tokens_in_both_classes_at_each_step": true,
+   "prompt_tokens": [
+    980,
+    981,
+    982
+   ],
+   "median_wall_s": 1.2280190316960216
+  },
+  "gemma-4-31B-it-qat-q4_0-vision": {
+   "same_prompt_tokens_in_both_classes_at_each_step": true,
+   "prompt_tokens": [
+    980,
+    981,
+    982
+   ],
+   "median_wall_s": 3.5059331664815545
+  },
+  "qwen3.5-35b-a3b-q8_0-vision": {
+   "same_prompt_tokens_in_both_classes_at_each_step": true,
+   "prompt_tokens": [
+    969,
+    970,
+    971
+   ],
+   "median_wall_s": 0.921643272973597
+  }
+ },
+ "same_flow_state_other_label": {
+  "gemma-4-12b-it-qat-q4_0-vision": {
+   "pairs": 16,
+   "same_answer": 16
+  },
+  "gemma-4-26B-A4B-it-qat-q4_0-vision": {
+   "pairs": 16,
+   "same_answer": 16
+  },
+  "gemma-4-31B-it-qat-q4_0-vision": {
+   "pairs": 16,
+   "same_answer": 14
+  },
+  "qwen3.5-35b-a3b-q8_0-vision": {
+   "pairs": 16,
+   "same_answer": 16
+  }
+ },
+ "right_by_step": {
+  "gemma-4-12b-it-qat-q4_0-vision": {
+   "4500": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "5000": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "5500": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "6000": {
+    "normal": 5,
+    "wrong": 1
+   },
+   "6500": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "7000": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "7500": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "8000": {
+    "normal": 5,
+    "wrong": 0
+   }
+  },
+  "gemma-4-26B-A4B-it-qat-q4_0-vision": {
+   "4500": {
+    "normal": 5,
+    "wrong": 1
+   },
+   "5000": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "5500": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "6000": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "6500": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "7000": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "7500": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "8000": {
+    "normal": 5,
+    "wrong": 1
+   }
+  },
+  "gemma-4-31B-it-qat-q4_0-vision": {
+   "4500": {
+    "normal": 5,
+    "wrong": 4
+   },
+   "5000": {
+    "normal": 5,
+    "wrong": 3
+   },
+   "5500": {
+    "normal": 4,
+    "wrong": 4
+   },
+   "6000": {
+    "normal": 5,
+    "wrong": 4
+   },
+   "6500": {
+    "normal": 4,
+    "wrong": 4
+   },
+   "7000": {
+    "normal": 5,
+    "wrong": 3
+   },
+   "7500": {
+    "normal": 5,
+    "wrong": 3
+   },
+   "8000": {
+    "normal": 5,
+    "wrong": 4
+   }
+  },
+  "qwen3.5-35b-a3b-q8_0-vision": {
+   "4500": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "5000": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "5500": {
+    "normal": 5,
+    "wrong": 0
+   },
+   "6000": {
+    "normal": 5,
+    "wrong": 1
+   },
+   "6500": {
+    "normal": 5,
+    "wrong": 1
+   },
+   "7000": {
+    "normal": 5,
+    "wrong": 1
+   },
+   "7500": {
+    "normal": 5,
+    "wrong": 1
+   },
+   "8000": {
+    "normal": 5,
+    "wrong": 1
+   }
+  }
+ },
+ "answer_changes_along_each_run": {
+  "gemma-4-12b-it-qat-q4_0-vision": {
+   "N1": 0,
+   "N2": 0,
+   "N3": 0,
+   "N4": 0,
+   "N5": 0,
+   "M1-inlet-speed": 2,
+   "M2-viscosity": 0,
+   "M3-slip-walls": 0,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 0
+  },
+  "gemma-4-26B-A4B-it-qat-q4_0-vision": {
+   "N1": 0,
+   "N2": 0,
+   "N3": 0,
+   "N4": 0,
+   "N5": 0,
+   "M1-inlet-speed": 0,
+   "M2-viscosity": 2,
+   "M3-slip-walls": 0,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 0
+  },
+  "gemma-4-31B-it-qat-q4_0-vision": {
+   "N1": 0,
+   "N2": 0,
+   "N3": 0,
+   "N4": 2,
+   "N5": 2,
+   "M1-inlet-speed": 0,
+   "M2-viscosity": 0,
+   "M3-slip-walls": 2,
+   "M4-moving-wall": 6,
+   "M5-half-inlet": 0
+  },
+  "qwen3.5-35b-a3b-q8_0-vision": {
+   "N1": 0,
+   "N2": 0,
+   "N3": 0,
+   "N4": 0,
+   "N5": 0,
+   "M1-inlet-speed": 0,
+   "M2-viscosity": 1,
+   "M3-slip-walls": 0,
+   "M4-moving-wall": 0,
+   "M5-half-inlet": 0
+  }
+ },
+ "text_groups_normal_wrong": [
+  [
+   5,
+   5
+  ],
+  [
+   5,
+   5
+  ],
+  [
+   5,
+   5
+  ],
+  [
+   5,
+   5
+  ],
+  [
+   5,
+   5
+  ],
+  [
+   5,
+   5
+  ],
+  [
+   5,
+   5
+  ],
+  [
+   5,
+   5
+  ]
+ ],
+ "what_the_counts_rest_on": {
+  "written_after_the_answers_were_read": true,
+  "31B_against_the_rule": {
+   "31B_right_rule_wrong": {
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0,
+    "M1-inlet-speed": 0,
+    "M2-viscosity": 8,
+    "M3-slip-walls": 1,
+    "M4-moving-wall": 4,
+    "M5-half-inlet": 0
+   },
+   "rule_right_31B_wrong": [
+    "N4-step06500",
+    "N5-step05500"
+   ],
+   "leave_out": {
+    "All": {
+     "frames": 80,
+     "31B": 67,
+     "rule": 56
+    },
+    "Without M4": {
+     "frames": 72,
+     "31B": 63,
+     "rule": 56
+    },
+    "Without M2": {
+     "frames": 72,
+     "31B": 59,
+     "rule": 56
+    },
+    "Without M2 and M4": {
+     "frames": 64,
+     "31B": 55,
+     "rule": 56
+    }
+   },
+   "only_the_speed_reason_counts": 54,
+   "false_alarms_if_M4_frames_count_as_what_they_look_like": {
+    "flags": 6,
+    "frames": 48
+   },
+   "most_right_from_pictures_without_M4_signal": 72
+  },
+  "reasons": {
+   "speed_reason_by_model_and_run": {
+    "12B": {
+     "N1": 0,
+     "N2": 0,
+     "N3": 0,
+     "N4": 0,
+     "N5": 0,
+     "M1-inlet-speed": 1,
+     "M2-viscosity": 0,
+     "M3-slip-walls": 0,
+     "M4-moving-wall": 0,
+     "M5-half-inlet": 0
+    },
+    "26B-A4B": {
+     "N1": 0,
+     "N2": 0,
+     "N3": 0,
+     "N4": 0,
+     "N5": 0,
+     "M1-inlet-speed": 0,
+     "M2-viscosity": 0,
+     "M3-slip-walls": 0,
+     "M4-moving-wall": 0,
+     "M5-half-inlet": 0
+    },
+    "31B": {
+     "N1": 0,
+     "N2": 0,
+     "N3": 0,
+     "N4": 0,
+     "N5": 0,
+     "M1-inlet-speed": 8,
+     "M2-viscosity": 0,
+     "M3-slip-walls": 0,
+     "M4-moving-wall": 0,
+     "M5-half-inlet": 8
+    },
+    "Qwen": {
+     "N1": 0,
+     "N2": 0,
+     "N3": 0,
+     "N4": 0,
+     "N5": 0,
+     "M1-inlet-speed": 0,
+     "M2-viscosity": 0,
+     "M3-slip-walls": 0,
+     "M4-moving-wall": 0,
+     "M5-half-inlet": 0
+    }
+   },
+   "missing_step_reason_by_model_and_run": {
+    "12B": {
+     "N1": 0,
+     "N2": 0,
+     "N3": 0,
+     "N4": 0,
+     "N5": 0,
+     "M1-inlet-speed": 0,
+     "M2-viscosity": 0,
+     "M3-slip-walls": 0,
+     "M4-moving-wall": 0,
+     "M5-half-inlet": 0
+    },
+    "26B-A4B": {
+     "N1": 0,
+     "N2": 0,
+     "N3": 0,
+     "N4": 0,
+     "N5": 0,
+     "M1-inlet-speed": 0,
+     "M2-viscosity": 0,
+     "M3-slip-walls": 0,
+     "M4-moving-wall": 0,
+     "M5-half-inlet": 0
+    },
+    "31B": {
+     "N1": 0,
+     "N2": 0,
+     "N3": 0,
+     "N4": 1,
+     "N5": 1,
+     "M1-inlet-speed": 0,
+     "M2-viscosity": 8,
+     "M3-slip-walls": 1,
+     "M4-moving-wall": 4,
+     "M5-half-inlet": 0
+    },
+    "Qwen": {
+     "N1": 0,
+     "N2": 0,
+     "N3": 0,
+     "N4": 0,
+     "N5": 0,
+     "M1-inlet-speed": 0,
+     "M2-viscosity": 0,
+     "M3-slip-walls": 0,
+     "M4-moving-wall": 0,
+     "M5-half-inlet": 0
+    }
+   },
+   "missing_step_reason_31B_off_M2": {
+    "flags": 7,
+    "frames": 72
+   },
+   "quoted_maxima": 17,
+   "quoted_maxima_differing_from_the_colour_bar": [],
+   "colour_bar_maximum_below_32p2": {
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0,
+    "M1-inlet-speed": 8,
+    "M2-viscosity": 0,
+    "M3-slip-walls": 0,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 8
+   },
+   "31B_speed_reason_frames_equal_colour_bar_below_32p2": true,
+   "flags_on_M1_and_M5_of_16": {
+    "12B": 1,
+    "26B-A4B": 0,
+    "31B": 16,
+    "Qwen": 0
+   },
+   "words_in_the_flags_on_M2": {
+    "12B": {
+     "recirculation": 0,
+     "separation": 0,
+     "smooth": 0,
+     "flags_on_M2": 0
+    },
+    "26B-A4B": {
+     "recirculation": 1,
+     "separation": 1,
+     "smooth": 0,
+     "flags_on_M2": 2
+    },
+    "31B": {
+     "recirculation": 7,
+     "separation": 6,
+     "smooth": 0,
+     "flags_on_M2": 8
+    },
+    "Qwen": {
+     "recirculation": 5,
+     "separation": 0,
+     "smooth": 5,
+     "flags_on_M2": 5
+    }
+   },
+   "31B_on_M4_and_N5_at_one_step": {
+    "4500": {
+     "M4": "inconsistent",
+     "N5": "consistent"
+    },
+    "5000": {
+     "M4": "consistent",
+     "N5": "consistent"
+    },
+    "5500": {
+     "M4": "inconsistent",
+     "N5": "inconsistent"
+    },
+    "6000": {
+     "M4": "consistent",
+     "N5": "consistent"
+    },
+    "6500": {
+     "M4": "inconsistent",
+     "N5": "consistent"
+    },
+    "7000": {
+     "M4": "consistent",
+     "N5": "consistent"
+    },
+    "7500": {
+     "M4": "consistent",
+     "N5": "consistent"
+    },
+    "8000": {
+     "M4": "inconsistent",
+     "N5": "consistent"
+    }
+   }
+  },
+  "no_reference": {
+   "whole_run_courant_above_1": {
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0,
+    "M1-inlet-speed": 8,
+    "M2-viscosity": 0,
+    "M3-slip-walls": 8,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 8
+   },
+   "at_the_frame": {
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0,
+    "M1-inlet-speed": 0,
+    "M2-viscosity": 0,
+    "M3-slip-walls": 4,
+    "M4-moving-wall": 0,
+    "M5-half-inlet": 0
+   }
+  },
+  "colour_bars": {
+   "single_cut_chosen_with_the_answers": {
+    "|U| upper end": {
+     "cut": 27.2127733946594,
+     "side": "below",
+     "right": 56,
+     "by_run": {
+      "N1": 0,
+      "N2": 0,
+      "N3": 0,
+      "N4": 0,
+      "N5": 0,
+      "M1-inlet-speed": 8,
+      "M2-viscosity": 0,
+      "M3-slip-walls": 0,
+      "M4-moving-wall": 0,
+      "M5-half-inlet": 8
+     }
+    },
+    "|U| lower end": {
+     "cut": 0.00026453798133014845,
+     "side": "below",
+     "right": 53,
+     "by_run": {
+      "N1": 0,
+      "N2": 1,
+      "N3": 2,
+      "N4": 1,
+      "N5": 0,
+      "M1-inlet-speed": 2,
+      "M2-viscosity": 8,
+      "M3-slip-walls": 0,
+      "M4-moving-wall": 1,
+      "M5-half-inlet": 6
+     }
+    },
+    "Lowest p": {
+     "cut": -163.830331168,
+     "side": "above",
+     "right": 64,
+     "by_run": {
+      "N1": 0,
+      "N2": 0,
+      "N3": 0,
+      "N4": 0,
+      "N5": 0,
+      "M1-inlet-speed": 8,
+      "M2-viscosity": 8,
+      "M3-slip-walls": 0,
+      "M4-moving-wall": 0,
+      "M5-half-inlet": 8
+     }
+    },
+    "p upper end": {
+     "cut": 28.370690397049998,
+     "side": "below",
+     "right": 55,
+     "by_run": {
+      "N1": 4,
+      "N2": 2,
+      "N3": 0,
+      "N4": 1,
+      "N5": 1,
+      "M1-inlet-speed": 8,
+      "M2-viscosity": 8,
+      "M3-slip-walls": 0,
+      "M4-moving-wall": 4,
+      "M5-half-inlet": 3
+     }
+    },
+    "p range": {
+     "cut": 193.18251136675002,
+     "side": "below",
+     "right": 64,
+     "by_run": {
+      "N1": 0,
+      "N2": 0,
+      "N3": 0,
+      "N4": 0,
+      "N5": 0,
+      "M1-inlet-speed": 8,
+      "M2-viscosity": 8,
+      "M3-slip-walls": 0,
+      "M4-moving-wall": 0,
+      "M5-half-inlet": 8
+     }
+    }
+   },
+   "any_end_outside": {
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0,
+    "M1-inlet-speed": 8,
+    "M2-viscosity": 8,
+    "M3-slip-walls": 8,
+    "M4-moving-wall": 3,
+    "M5-half-inlet": 8
+   },
+   "two_cuts": {
+    "N1": 0,
+    "N2": 0,
+    "N3": 0,
+    "N4": 0,
+    "N5": 0,
+    "M1-inlet-speed": 8,
+    "M2-viscosity": 8,
+    "M3-slip-walls": 8,
+    "M4-moving-wall": 1,
+    "M5-half-inlet": 8
+   },
+   "two_cuts_limits": [
+    0.0058901531753517205,
+    -215.575062443
+   ],
+   "held_out_normal_frames_outside": {
+    "N1": 0,
+    "N2": 1,
+    "N3": 3,
+    "N4": 1,
+    "N5": 2
+   },
+   "wrong_frames_outside_with_each_four_run_range": [
+    35,
+    35,
+    35,
+    35,
+    35
+   ],
+   "held_out_right": 68
+  },
+  "judgement": {
+   "by_run": {
+    "M1-inlet-speed": {
+     "names_it": 9,
+     "partly": 0,
+     "no": 0,
+     "inconsistent_answers": 9
+    },
+    "M2-viscosity": {
+     "names_it": 5,
+     "partly": 9,
+     "no": 1,
+     "inconsistent_answers": 15
+    },
+    "M3-slip-walls": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 1,
+     "inconsistent_answers": 1
+    },
+    "M4-moving-wall": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 4,
+     "inconsistent_answers": 4
+    },
+    "M5-half-inlet": {
+     "names_it": 0,
+     "partly": 8,
+     "no": 0,
+     "inconsistent_answers": 8
+    },
+    "normal frames": {
+     "names_it": 0,
+     "partly": 0,
+     "no": 2,
+     "inconsistent_answers": 2
+    }
+   },
+   "wrong_frames": {
+    "names_it": 14,
+    "partly": 17,
+    "no": 6,
+    "inconsistent_answers": 37
+   }
+  }
+ }
+}

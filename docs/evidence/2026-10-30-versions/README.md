@@ -32,7 +32,7 @@
 | `gpu-versions-24949167/` | 24949167 | `fae10ba` | 같은 실행을 NVIDIA L40S에서 | `part-a.json`: 넷 모두 `ok` |
 | `docker-24950798/` | 24950798 | `b17763d` | [docker_inner.sh](scripts/refix-jobs/docker_inner.sh): 원본의 이미지 `romitmaulik1/pythonfoam_docker`(Ubuntu 18.04, OpenFOAM 8, Python 3.6.9): OpenFOAM만 source한 검증, `wclean && wmake`, 제공된 `Run_Case`를 120 s | PASS; 종료 코드 0; 1,349단계, 제한 시간에 멈춤 |
 | `upstream-comparison/` | 24951136\~24951140 | `bf7a06e` | [pod_account.sbatch](scripts/matrix/pod_account.sbatch): 원본과 이 포크의 빌드, 원본 모듈, 차이마다 원인 확인 | 폴더마다 `account.json` |
-| | 24951141 | `bf7a06e` | [upstream_regression.sbatch](scripts/matrix/upstream_regression.sbatch): `LESModel`을 넣은 제공된 `Run_Case`, v2106 | `regression.json`: 90단계 뒤 종료 코드 1, 87단계 뒤 종료 코드 136 |
+| | 24951141 | `bf7a06e` | [upstream_regression.sbatch](scripts/matrix/upstream_regression.sbatch): `LESModel`을 넣은 제공된 `Run_Case`, v2106 | `regression.json`: 89단계에서 종료 코드 1, 86단계에서 종료 코드 136 (`steps`는 Courant 줄 수이고 시간 단계보다 하나 많습니다) |
 | | 24950800\~24950803 | `2a93911` | 훅이 없는 PR 트리 커밋 2에서 같은 비교: 8의 제공된 케이스와 안정화한 케이스, v2106과 v2212의 안정화한 케이스 | 같은 수와 크기 |
 | | 24948188\~24948191 | `adcaec7` | 같은 비교를 v2012, v2106, v2212에서, 회귀는 v2106에서. `adcaec7`의 C++는 `bf7a06e`와 다름 | 같은 수와 크기 |
 | `schedule/` | 24950748, 24950749 | `ef78700` | [schedule.py](scripts/schedule/schedule.py): 적어 둔 규칙으로 예측한 표와 POD 일정 비교, 이 포크 20회와 원본 빌드 6회, v2106과 8; [scenarios.py](scripts/schedule/scenarios.py): 실패와 경계 케이스 46개 | `schedule.json`: 문제 0개; `scenarios.json` |

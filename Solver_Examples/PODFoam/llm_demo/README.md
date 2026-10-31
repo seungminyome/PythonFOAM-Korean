@@ -163,7 +163,7 @@ python3 picture_test.py report <실행 폴더> [<실행 폴더> ...] --output re
 
 OpenFOAM v2012, v2106, v2212 또는 8, numpy와 matplotlib이 설치된 Python 3.10\~3.12, [C++·Python 연결 검증](../validation/README.md)을 통과한 실행 자료가 필요합니다. 통과한 실행 자료는 기준 사례로 사용합니다. 모델 파일에는 약 3.4 GB의 디스크 공간이 필요하고, 서버는 실행 중 약 2.4 GiB(10월 20일 기록)를 쓰므로 RAM 8 GB 정도면 됩니다. 스크립트는 이미 source한 OpenFOAM의 버전과 bashrc를 쓰고, 없으면 v2106을 씁니다. 다른 버전은 `OPENFOAM_BASHRC`와 `POD_OPENFOAM_VERSION`으로 고릅니다. 버전마다 `POD_WORKSPACE`를 따로 쓰거나 작업 공간의 `llm-demo-work`를 먼저 지우십시오. `run_demo.sh`는 거기에 빌드하며, 다른 버전이 남긴 빌드가 있으면 멈춥니다. 솔버는 `PYTHON`(기본값은 `PATH`의 `python3`)에 링크됩니다. 시스템 Python이 아니면 그 `lib` 폴더를 `LD_LIBRARY_PATH`에 넣으십시오.
 
-미리 빌드된 `llama-server`에는 Ubuntu 22.04처럼 GLIBCXX_3.4.30이 필요합니다. 더 오래된 시스템에서는 `setup_runtime.sh`가 그 메시지를 내고 멈춥니다. 더 새로운 libstdc++를 `LD_LIBRARY_PATH`에 넣거나 그런 이미지 안에서 다시 실행하면 내려받은 파일을 다시 씁니다.
+미리 빌드된 `llama-server`에는 Ubuntu 22.04처럼 GLIBCXX_3.4.30이 필요합니다. 더 오래된 시스템에서는 `setup_runtime.sh`가 그 메시지를 내고 멈춥니다. 더 새로운 libstdc++를 `LD_LIBRARY_PATH`에 넣거나 그런 이미지 안에서 다시 실행하면 내려받은 파일을 그대로 사용합니다.
 
 ```bash
 cd Solver_Examples/PODFoam

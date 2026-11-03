@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The velocity magnitude |U| shows a sudden and non-physical increase in the maximum value from 43.44 m/s at t=0.002s to 96.52 m/s at t=0.004s, accompanied by the appearance of a localized high-velocity spike (single-cell extreme) around x=12%, y=30%.\", \"stability\": \"unstable\"}",
+  "request_sha256": "fad20ed3ba2775bffbd422239420afdfe1bfcb662700c1b69b8e3456badcff60",
+  "request_bytes": 645992,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 945,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 2048,
+    "total_tokens": 2151,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 1673.969,
+    "prompt_per_token_ms": 0.81736767578125,
+    "prompt_per_second": 1223.4396216417388,
+    "predicted_n": 103,
+    "predicted_ms": 3026.544,
+    "predicted_per_token_ms": 29.671999999999997,
+    "predicted_per_second": 33.70180641682394
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude |U| shows a sudden and non-physical increase in the maximum value from 43.44 m/s at t=0.002s to 96.52 m/s at t=0.004s, accompanied by the appearance of a localized high-velocity spike (single-cell extreme) around x=12%, y=30%.",
+    "stability": "unstable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 6.057843944057822,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

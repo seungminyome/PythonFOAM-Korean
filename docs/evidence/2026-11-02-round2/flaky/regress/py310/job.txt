@@ -1,0 +1,23 @@
+host t285.cluster cpus=4 py=/gscratch/syome/conda/ci-py310/bin/python3 src=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/flaky/wt/Solver_Examples/PODFoam/llm_demo start Mon Nov  2 11:41:34 MST 2026 load=25.86
+3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]
+scipy 1.15.2 mpl 3.10.9 numpy 2.2.6
+test_llm_client rc=0 wall=7.1 Ran 17 tests in 6.304s OK 
+test_callback rc=0 wall=13.4 Ran 32 tests in 12.309s OK 
+test_async rc=0 wall=64.1 Ran 34 tests in 62.999s OK 
+probes done Mon Nov  2 11:44:24 MST 2026 load=37.53 29.48 28.02
+loadgen done Mon Nov  2 11:44:35 MST 2026
+      1 FAILED (failures=1)
+      1 FAILED (failures=1, errors=1)
+      1 FAILED (failures=1, errors=2)
+      1 FAILED (failures=2)
+      2 FAILED (failures=2, errors=1)
+      2 FAILED (failures=3)
+      1 Ran 34 tests in 88.711s
+      1 Ran 34 tests in 89.094s
+      1 Ran 34 tests in 89.142s
+      1 Ran 34 tests in 89.395s
+      1 Ran 34 tests in 89.467s
+      1 Ran 34 tests in 90.045s
+      1 Ran 34 tests in 90.251s
+      1 Ran 34 tests in 91.494s
+end Mon Nov  2 11:44:35 MST 2026

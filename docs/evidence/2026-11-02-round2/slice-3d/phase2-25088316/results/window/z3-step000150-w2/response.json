@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity wake or boundary layer starting around x=40%. The pressure field shows a localized low-pressure zone near the center of this wake, surrounded by higher pressure regions.\",\n  \"fastest_flow_x_percent\": 50,\n  \"fastest_flow_y_percent\": 80,\n  \"lowest_pressure_x_percent\": 50,\n  \"lowest_pressure_y_percent\": 70,\n  \"uncertainties\": \"The exact physical geometry of the obstacle or boundary causing the wake is not shown; the 3D structure of the flow is not visible.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644698,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 170,
+    "prompt_tokens": 1061,
+    "total_tokens": 1231,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-o6d6t9WCI0ZJeaxgd7Xo2iy5wr9YAEEv",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 280.509,
+    "prompt_per_token_ms": 0.26438171536286525,
+    "prompt_per_second": 3782.4098335525773,
+    "predicted_n": 170,
+    "predicted_ms": 2131.735,
+    "predicted_per_token_ms": 12.613816568047339,
+    "predicted_per_second": 79.27814667395337
+  }
+}

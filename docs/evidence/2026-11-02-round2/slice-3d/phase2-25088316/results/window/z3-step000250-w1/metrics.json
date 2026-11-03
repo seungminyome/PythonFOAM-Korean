@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z3-step000250-w1",
+  "design": {
+    "run": "z3",
+    "slice_z_m": 0.00396875,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00396875,
+      "requested_z_m": 0.00396875,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 250,
+    "time_s": 0.10200000000000126,
+    "plotted_range_m": {
+      "x": [
+        0.00905214692077077,
+        0.20332469943552567
+      ],
+      "y": [
+        -0.012010356651299871,
+        0.07272732290539052
+      ]
+    },
+    "cells_in_window": 8812,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "4d1225fe1f61dc239fcb01003d0b23ec6a5a5ce1ac66cdaf9a556e5d788cbc90",
+  "wall_s": 3.799254460260272,
+  "usage": {
+    "completion_tokens": 200,
+    "prompt_tokens": 1062,
+    "total_tokens": 1262,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 286.363,
+    "prompt_per_token_ms": 0.26964500941619585,
+    "prompt_per_second": 3708.5796698595836,
+    "predicted_n": 200,
+    "predicted_ms": 2509.348,
+    "predicted_per_token_ms": 12.609788944723618,
+    "predicted_per_second": 79.30346847069438
+  },
+  "structured_output": {
+    "flow_description": "The flow shows high velocity in the upper region, particularly between 30% and 80% on the y-axis. A low-velocity region exists at the bottom, with a distinct horizontal boundary around y=20%. Pressure is lowest in a localized region between x=20% and x=30% at y=30%, while it is highest in the lower-right quadrant.",
+    "fastest_flow_x_percent": 35,
+    "fastest_flow_y_percent": 38,
+    "lowest_pressure_x_percent": 25,
+    "lowest_pressure_y_percent": 30,
+    "uncertainties": "The exact magnitude of the velocity and pressure values at specific coordinates cannot be determined without the numerical data, only their relative positions based on the color scales."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        35,
+        38
+      ],
+      "true_percent": [
+        23.64643926153828,
+        35.42129041314024
+      ],
+      "error_percent": [
+        11.35356073846172,
+        2.578709586859759
+      ],
+      "distance_percent": 11.642726681293427,
+      "error_m": [
+        0.02205685224792264,
+        0.0021851386664108775
+      ],
+      "distance_m": 0.02216482713846724,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        25,
+        30
+      ],
+      "true_percent": [
+        23.107401804628793,
+        26.01456949747925
+      ],
+      "error_percent": [
+        1.8925981953712068,
+        3.9854305025207495
+      ],
+      "distance_percent": 4.411981892477024,
+      "error_m": [
+        0.0036767988229958314,
+        0.0033771613281806286
+      ],
+      "distance_m": 0.0049924010477266625,
+      "within_10_percent": true
+    }
+  }
+}

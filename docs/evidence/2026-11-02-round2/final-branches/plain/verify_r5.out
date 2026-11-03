@@ -1,0 +1,58 @@
+== per-commit pairs (r4 -> r5): non-.md diff, tree, files changed by the commit
+c1 5b3e5a3 -> 28540d8  non-md diff bytes 0; same files; same tree
+c2 d686a64 -> 5e7fe8b  non-md diff bytes 0; same files; same tree
+c3 aaf80a6 -> 9337a0d  non-md diff bytes 0; same files; same tree
+c4 d01af1a -> 26b2a85  non-md diff bytes 0; same files; same tree
+c5 a7501b1 -> dd63080  non-md diff bytes 0; same files; same tree
+c6 8376b00 -> 8207a2e  non-md diff bytes 0; same files; md differs: Solver_Examples/PODFoam/validation/README.md 
+c7 8954b25 -> d4ebf5c  non-md diff bytes 0; same files; md differs: README.md Solver_Examples/PODFoam/validation/README.md 
+c8 371adba -> e556767  non-md diff bytes 0; same files; md differs: README.md Solver_Examples/PODFoam/HOOKS.md Solver_Examples/PODFoam/validation/README.md 
+c9 e05643e -> d0927ad  non-md diff bytes 0; same files; md differs: README.md Solver_Examples/PODFoam/HOOKS.md Solver_Examples/PODFoam/llm_demo/README.md Solver_Examples/PODFoam/validation/README.md 
+c10 6e41943 -> e55ddad  non-md diff bytes 0; same files; md differs: README.md Solver_Examples/PODFoam/HOOKS.md Solver_Examples/PODFoam/llm_demo/README.md Solver_Examples/PODFoam/llm_demo/hpc/README.md Solver_Examples/PODFoam/validation/README.md 
+c11 24e9df6 -> ca68b32  non-md diff bytes 0; same files; md differs: README.md Solver_Examples/PODFoam/HOOKS.md Solver_Examples/PODFoam/llm_demo/README.md Solver_Examples/PODFoam/llm_demo/hpc/README.md Solver_Examples/PODFoam/validation/README.md 
+== r4/pr-fix vs r5/pr-fix: README.md Solver_Examples/PODFoam/validation/README.md 
+== r4/pr-observer vs r5/pr-observer: README.md Solver_Examples/PODFoam/HOOKS.md Solver_Examples/PODFoam/llm_demo/README.md Solver_Examples/PODFoam/llm_demo/hpc/README.md Solver_Examples/PODFoam/validation/README.md 
+   files outside the five docs: 0
+== r5/pr-fix is r5/pr-observer~4: yes
+== base: 6fde8698071b56f913c5e92c647f22ab38b26466
+== messages
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c1 subject 64 body 12 maxline 80 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c2 subject 62 body 6 maxline 79 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c3 subject 67 body 8 maxline 78 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c4 subject 47 body 6 maxline 77 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c5 subject 63 body 7 maxline 76 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c6 subject 26 body 7 maxline 79 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c7 subject 43 body 7 maxline 77 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c8 subject 51 body 8 maxline 78 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c9 subject 66 body 8 maxline 78 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c10 subject 34 body 8 maxline 79 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/plain/counts/msgs-final/c11 subject 46 body 5 maxline 79 OK
+   author/committer: Seungmin Yome <wab8131028@gmail.com>|Seungmin Yome <wab8131028@gmail.com>
+   '<earlier-model-name>' in messages 0, in tree 0, in diff 0
+   'upstream' in messages 0, in the five docs 0
+   trailer lines 11 of 11
+   diff --check clean
+== links and quoted references at c6..c11
+c6 8207a2e exit 0, ok 4, broken 0
+c7 d4ebf5c exit 0, ok 5, broken 0
+c8 e556767 exit 0, ok 7, broken 0
+c9 d0927ad exit 0, ok 8, broken 0
+c10 e55ddad exit 0, ok 10, broken 0
+c11 ca68b32 exit 0, ok 12, broken 0
+== numbers kept (r4 doc -> r5 doc, as committed)
+validation/README.md: numbers 32 distinct in r4, missing 0 []; identifiers 14 distinct, missing 0 []
+README.md@fix: numbers 13 distinct in r4, missing 0 []; identifiers 14 distinct, missing 0 []
+README.md@observer: numbers 13 distinct in r4, missing 0 []; identifiers 14 distinct, missing 0 []
+HOOKS.md: numbers 7 distinct in r4, missing 0 []; identifiers 4 distinct, missing 0 []
+llm_demo/README.md@llm_demo: numbers 61 distinct in r4, missing 0 []; identifiers 19 distinct, missing 0 []
+llm_demo/README.md@hpc: numbers 61 distinct in r4, missing 0 []; identifiers 20 distinct, missing 0 []
+llm_demo/hpc/README.md: numbers 45 distinct in r4, missing 0 []; identifiers 24 distinct, missing 0 []
+== committed docs equal the r5docs files
+   validation_README.md = r5/pr-observer:Solver_Examples/PODFoam/validation/README.md
+   HOOKS.md = r5/pr-observer:Solver_Examples/PODFoam/HOOKS.md
+   llm_README_e05.md = r5/pr-observer~2:Solver_Examples/PODFoam/llm_demo/README.md
+   llm_README_6e4.md = r5/pr-observer:Solver_Examples/PODFoam/llm_demo/README.md
+   hpc_README.md = r5/pr-observer:Solver_Examples/PODFoam/llm_demo/hpc/README.md
+   README_fix.md = r5/pr-fix:README.md
+   README_obs.md = r5/pr-observer:README.md
+OVERALL PASS

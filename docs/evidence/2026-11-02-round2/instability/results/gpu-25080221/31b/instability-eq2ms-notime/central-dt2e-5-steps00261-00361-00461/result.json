@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between cells, or non-physical growth of extrema.\", \"stability\": \"stable\"}",
+  "request_sha256": "a07e7122f0fb39998330e2fa445252d641fccea0d5629a71ed5a31ae376f3adc",
+  "request_bytes": 660503,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 869,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 47,
+    "prompt_tokens": 1972,
+    "total_tokens": 2019,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1536.32,
+    "prompt_per_token_ms": 0.7790669371196755,
+    "prompt_per_second": 1283.5867527598418,
+    "predicted_n": 47,
+    "predicted_ms": 1365.251,
+    "predicted_per_token_ms": 29.679369565217392,
+    "predicted_per_second": 33.6934380564453
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between cells, or non-physical growth of extrema.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.5847271475940943,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

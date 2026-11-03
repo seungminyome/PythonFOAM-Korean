@@ -1,0 +1,137 @@
+# OpenFOAM 8 (image /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/of8-cause/runs/8-2d-25080020/image-sha256.txt)
+672:void Foam::fvMatrix<Type>::relax()
+673-{
+674-    if
+675-    (
+676-        psi_.mesh().data::template lookupOrDefault<bool>
+677-        ("finalIteration", false)
+678-     && psi_.mesh().relaxEquation(psi_.name() + "Final")
+679-    )
+680-    {
+681-        relax(psi_.mesh().equationRelaxationFactor(psi_.name() + "Final"));
+682-    }
+683-    else if (psi_.mesh().relaxEquation(psi_.name()))
+684-    {
+685-        relax(psi_.mesh().equationRelaxationFactor(psi_.name()));
+686-    }
+687-}
+
+1197:void Foam::GeometricField<Type, PatchField, GeoMesh>::relax()
+1198-{
+1199-    if
+1200-    (
+1201-        this->mesh().data::template lookupOrDefault<bool>
+1202-        (
+1203-            "finalIteration",
+1204-            false
+1205-        )
+1206-     && this->mesh().relaxField(this->name() + "Final")
+1207-    )
+1208-    {
+1209-        relax(this->mesh().fieldRelaxationFactor(this->name() + "Final"));
+1210-    }
+1211-    else if (this->mesh().relaxField(this->name()))
+1212-    {
+1213-        relax(this->mesh().fieldRelaxationFactor(this->name()));
+1214-    }
+1215-}
+
+247:bool Foam::solution::relaxField(const word& name) const
+248-{
+249-    if (debug)
+250-    {
+251-        Info<< "Field relaxation factor for " << name
+252-            << " is " << (fieldRelaxDict_.found(name) ? "set" : "unset")
+253-            << endl;
+254-    }
+255-
+--
+260:bool Foam::solution::relaxEquation(const word& name) const
+261-{
+262-    if (debug)
+263-    {
+264-        Info<< "Find equation relaxation factor for " << name << endl;
+265-    }
+266-
+267-    return eqnRelaxDict_.found(name) || eqnRelaxDict_.found("default");
+268-}
+
+/opt/openfoam8/applications/solvers/incompressible/pimpleFoam/UEqn.H:15:UEqn.relax();
+/opt/openfoam8/applications/solvers/incompressible/pimpleFoam/pEqn.H:57:// Explicitly relax pressure for momentum corrector
+/opt/openfoam8/applications/solvers/incompressible/pimpleFoam/pEqn.H:58:p.relax();
+
+# OpenFOAM v2212 (image /cluster/medbow/gscratch/syome/s4f/of2212.sif)
+1255:void Foam::fvMatrix<Type>::relax()
+1256-{
+1257-    word name = psi_.select
+1258-    (
+1259-        psi_.mesh().data::template getOrDefault<bool>
+1260-        ("finalIteration", false)
+1261-    );
+1262-
+1263-    if (psi_.mesh().relaxEquation(name))
+1264-    {
+1265-        relax(psi_.mesh().equationRelaxationFactor(name));
+1266-    }
+1267-}
+
+1104:void Foam::GeometricField<Type, PatchField, GeoMesh>::relax()
+1105-{
+1106-    word name = this->name();
+1107-
+1108-    if
+1109-    (
+1110-        this->mesh().data::template getOrDefault<bool>
+1111-        (
+1112-            "finalIteration",
+1113-            false
+1114-        )
+1115-    )
+1116-    {
+1117-        name += "Final";
+1118-    }
+1119-
+1120-    if (this->mesh().relaxField(name))
+1121-    {
+1122-        relax(this->mesh().fieldRelaxationFactor(name));
+1123-    }
+1124-}
+1125-
+1126-
+
+1128:Foam::word Foam::GeometricField<Type, PatchField, GeoMesh>::select
+1129-(
+1130-    bool final
+1131-) const
+1132-{
+1133-    if (final)
+1134-    {
+1135-        return this->name() + "Final";
+1136-    }
+1137-
+1138-    return this->name();
+1139-}
+
+286:bool Foam::solution::relaxField(const word& name) const
+287-{
+288-    DebugInfo
+289-        << "Field relaxation factor for " << name
+290-        << " is " << (fieldRelaxDict_.found(name) ? "set" : "unset") << endl;
+291-
+292-    return fieldRelaxDict_.found(name) || fieldRelaxDict_.found("default");
+293-}
+294-
+--
+296:bool Foam::solution::relaxEquation(const word& name) const
+297-{
+298-    DebugInfo<< "Find equation relaxation factor for " << name << endl;
+299-    return eqnRelaxDict_.found(name) || eqnRelaxDict_.found("default");
+300-}
+301-
+302-
+303-Foam::scalar Foam::solution::fieldRelaxationFactor(const word& name) const
+304-{
+
+/usr/lib/openfoam/openfoam2212/applications/solvers/incompressible/pimpleFoam/UEqn.H:15:UEqn.relax();
+/usr/lib/openfoam/openfoam2212/applications/solvers/incompressible/pimpleFoam/pEqn.H:58:// Explicitly relax pressure for momentum corrector
+/usr/lib/openfoam/openfoam2212/applications/solvers/incompressible/pimpleFoam/pEqn.H:59:p.relax();

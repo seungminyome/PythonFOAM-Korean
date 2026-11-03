@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z1-step000150-w2",
+  "design": {
+    "run": "z1",
+    "slice_z_m": 0.00079375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00079375,
+      "requested_z_m": 0.00079375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 150,
+    "time_s": 0.10150000000000076,
+    "plotted_range_m": {
+      "x": [
+        -0.08718918452886845,
+        0.18240969590225545
+      ],
+      "y": [
+        -0.004614309837467297,
+        0.07706255673321623
+      ]
+    },
+    "cells_in_window": 10626,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "69d2fd22b77fbae472e78ef120d4d7de0e0be2364120f59b2dce7dea1359dfcb",
+  "wall_s": 3.5675691440701485,
+  "usage": {
+    "completion_tokens": 185,
+    "prompt_tokens": 1063,
+    "total_tokens": 1248,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 284.284,
+    "prompt_per_token_ms": 0.26743555973659455,
+    "prompt_per_second": 3739.2185279509226,
+    "predicted_n": 185,
+    "predicted_ms": 2320.634,
+    "predicted_per_token_ms": 12.612141304347826,
+    "predicted_per_second": 79.28867714598682
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity zone near the bottom. A complex wake or turbulent structure exists between x=40% and x=70% at low y-coordinates. Pressure is generally higher in the upper region and shows significant fluctuations and low-pressure pockets within the wake structure.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 30,
+    "lowest_pressure_x_percent": 50,
+    "lowest_pressure_y_percent": 20,
+    "uncertainties": "The exact magnitude of the pressure fluctuations and the specific velocity values within the wake are difficult to distinguish due to the color scale."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        50,
+        30
+      ],
+      "true_percent": [
+        50.40652114512286,
+        27.949246168589596
+      ],
+      "error_percent": [
+        -0.4065211451228592,
+        2.050753831410404
+      ],
+      "distance_percent": 2.0906579630528883,
+      "error_m": [
+        -0.0010959764559670129,
+        0.001674991470574256
+      ],
+      "distance_m": 0.002001689491037639,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        50,
+        20
+      ],
+      "true_percent": [
+        50.01807379025703,
+        17.87222643648659
+      ],
+      "error_percent": [
+        -0.018073790257027156,
+        2.1277735635134114
+      ],
+      "distance_percent": 2.1278503235615087,
+      "error_m": [
+        -4.872673618441476e-05,
+        0.0017378987743971272
+      ],
+      "distance_m": 0.0017385817337330512,
+      "within_10_percent": true
+    }
+  }
+}

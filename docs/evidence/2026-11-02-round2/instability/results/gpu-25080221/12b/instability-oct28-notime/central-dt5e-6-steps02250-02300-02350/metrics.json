@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "f40b9290b62a55458496df6ce7270d3aab1ff58e05623f715f799b917d4528c7",
+  "request_bytes": 661847,
+  "replay_wall_s": 2.0232559368014336,
+  "client_inference_wall_s": 1.9992781300097704,
+  "usage": {
+    "completion_tokens": 60,
+    "prompt_tokens": 1972,
+    "total_tokens": 2032,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 506.874,
+    "prompt_per_token_ms": 0.2570354969574037,
+    "prompt_per_second": 3890.5132241937836,
+    "predicted_n": 60,
+    "predicted_ms": 755.725,
+    "predicted_per_token_ms": 12.808898305084746,
+    "predicted_per_second": 78.07072678553706
+  },
+  "structured_output": {
+    "reason": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve consistently over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in extreme values.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "stable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

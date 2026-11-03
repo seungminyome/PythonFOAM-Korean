@@ -1,0 +1,4152 @@
+{
+ "sources": {
+  "v2012": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/scenarios/scen-v2012/scenarios.json",
+  "v2106": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/docs/evidence/2026-10-30-versions/schedule/ef78700-v2106-24950748/scenarios.json",
+  "v2212": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/scenarios/scen-v2212/scenarios.json",
+  "8": "/cluster/medbow/gscratch/syome/github_repos/PythonFOAM/docs/evidence/2026-10-30-versions/schedule/ef78700-8-24950749/scenarios.json"
+ },
+ "missing": [],
+ "scenarios": {
+  "case-relative-path": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "cwd-module-beside-not-in-case": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "End"
+     ],
+     "v2106": [
+      "End"
+     ],
+     "v2212": [
+      "End"
+     ],
+     "8": [
+      "End"
+     ]
+    }
+   }
+  },
+  "hooks-analysis-not-callable": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "hooks-analysis-raises-systemexit": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "SystemExit: 3",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "SystemExit: 3",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "SystemExit: 3",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "SystemExit: 3",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "hooks-mesh-func-wrong-signature": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "POD analysis callback returned: step=6 wall_seconds=2.43e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD analysis callback returned: step=6 wall_seconds=2.64e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD analysis callback returned: step=6 wall_seconds=1.965e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD analysis callback returned: step=6 wall_seconds=2.888e-06",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "hooks-negative-interval": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "No finite volume options present",
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "podSvdInterval must be non-negative"
+     ],
+     "v2106": [
+      "No finite volume options present",
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "podSvdInterval must be non-negative"
+     ],
+     "v2212": [
+      "No finite volume options present",
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "podSvdInterval must be non-negative"
+     ],
+     "8": [
+      "No finite volume options present",
+      "--> FOAM FATAL ERROR: ",
+      "podSvdInterval must be non-negative"
+     ]
+    }
+   }
+  },
+  "hooks-snapshot-missing-with-analysis": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "AttributeError: module 'python_module' has no attribute 'snapshot_func'",
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "snapshot_func and svd_func must be callable"
+     ],
+     "v2106": [
+      "AttributeError: module 'python_module' has no attribute 'snapshot_func'",
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "snapshot_func and svd_func must be callable"
+     ],
+     "v2212": [
+      "AttributeError: module 'python_module' has no attribute 'snapshot_func'",
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "snapshot_func and svd_func must be callable"
+     ],
+     "8": [
+      "AttributeError: module 'python_module' has no attribute 'snapshot_func'",
+      "--> FOAM FATAL ERROR: ",
+      "snapshot_func and svd_func must be callable"
+     ]
+    }
+   }
+  },
+  "hooks-svd-not-callable": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "No finite volume options present",
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "snapshot_func and svd_func must be callable"
+     ],
+     "v2106": [
+      "No finite volume options present",
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "snapshot_func and svd_func must be callable"
+     ],
+     "v2212": [
+      "No finite volume options present",
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "snapshot_func and svd_func must be callable"
+     ],
+     "8": [
+      "No finite volume options present",
+      "--> FOAM FATAL ERROR: ",
+      "snapshot_func and svd_func must be callable"
+     ]
+    }
+   }
+  },
+  "masteronly-analysis-defined-on-rank0": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD"
+     ],
+     "v2106": [
+      "MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD"
+     ],
+     "v2212": [
+      "MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD"
+     ],
+     "8": [
+      "MPI_ABORT was invoked on rank 1 in communicator MPI COMMUNICATOR 3 SPLIT FROM 0"
+     ]
+    }
+   }
+  },
+  "offline-shipped-method-of-snapshots-wi1": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "pod_files_with_nan": 0
+     },
+     "v2106": {
+      "pod_files_with_nan": 0
+     },
+     "v2212": {
+      "pod_files_with_nan": 0
+     },
+     "8": {
+      "pod_files_with_nan": 0
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=6e-07",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "pod_files_with_nan": 0
+     },
+     "v2106": {
+      "pod_files_with_nan": 0
+     },
+     "v2212": {
+      "pod_files_with_nan": 0
+     },
+     "8": {
+      "pod_files_with_nan": 0
+     }
+    },
+    "msgs": {
+     "v2012": [],
+     "v2106": [],
+     "v2212": [],
+     "8": []
+    }
+   }
+  },
+  "offline-shipped-method-of-snapshots-wi2": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "pod_files_with_nan": 0
+     },
+     "v2106": {
+      "pod_files_with_nan": 0
+     },
+     "v2212": {
+      "pod_files_with_nan": 0
+     },
+     "8": {
+      "pod_files_with_nan": 0
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=8e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=8e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=8e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=8e-07",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "pod_files_with_nan": 0
+     },
+     "v2106": {
+      "pod_files_with_nan": 0
+     },
+     "v2212": {
+      "pod_files_with_nan": 0
+     },
+     "8": {
+      "pod_files_with_nan": 0
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "End"
+     ],
+     "v2106": [
+      "End"
+     ],
+     "v2212": [
+      "End"
+     ],
+     "8": [
+      "End"
+     ]
+    }
+   }
+  },
+  "offline-shipped-method-of-snapshots-wi25": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "pod_files_with_nan": 0
+     },
+     "v2106": {
+      "pod_files_with_nan": 0
+     },
+     "v2212": {
+      "pod_files_with_nan": 0
+     },
+     "8": {
+      "pod_files_with_nan": 0
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=5e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=5e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=5e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=5e-06",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "pod_files_with_nan": 0
+     },
+     "v2106": {
+      "pod_files_with_nan": 0
+     },
+     "v2212": {
+      "pod_files_with_nan": 0
+     },
+     "8": {
+      "pod_files_with_nan": 0
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "End"
+     ],
+     "v2106": [
+      "End"
+     ],
+     "v2212": [
+      "End"
+     ],
+     "8": [
+      "End"
+     ]
+    }
+   }
+  },
+  "offline-shipped-method-of-snapshots-wi3": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "pod_files_with_nan": 0
+     },
+     "v2106": {
+      "pod_files_with_nan": 0
+     },
+     "v2212": {
+      "pod_files_with_nan": 0
+     },
+     "8": {
+      "pod_files_with_nan": 0
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Non-finite SVD result"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Non-finite SVD result"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Non-finite SVD result"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "Non-finite SVD result"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "pod_files_with_nan": 0
+     },
+     "v2106": {
+      "pod_files_with_nan": 0
+     },
+     "v2212": {
+      "pod_files_with_nan": 0
+     },
+     "8": {
+      "pod_files_with_nan": 0
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "End"
+     ],
+     "v2106": [
+      "End"
+     ],
+     "v2212": [
+      "End"
+     ],
+     "8": [
+      "End"
+     ]
+    }
+   }
+  },
+  "offline-shipped-method-of-snapshots-wi6": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "pod_files_with_nan": 0
+     },
+     "v2106": {
+      "pod_files_with_nan": 0
+     },
+     "v2212": {
+      "pod_files_with_nan": 0
+     },
+     "8": {
+      "pod_files_with_nan": 0
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Non-finite SVD result"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Non-finite SVD result"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Non-finite SVD result"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "Non-finite SVD result"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "pod_files_with_nan": 9
+     },
+     "v2106": {
+      "pod_files_with_nan": 7
+     },
+     "v2212": {
+      "pod_files_with_nan": 9
+     },
+     "8": {
+      "pod_files_with_nan": 9
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "End"
+     ],
+     "v2106": [
+      "End"
+     ],
+     "v2212": [
+      "End"
+     ],
+     "8": [
+      "End"
+     ]
+    }
+   }
+  },
+  "parvalidation-module-refuses-rank1": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "MPI_ABORT was invoked on rank 1 in communicator MPI_COMM_WORLD"
+     ],
+     "v2106": [
+      "MPI_ABORT was invoked on rank 1 in communicator MPI_COMM_WORLD"
+     ],
+     "v2212": [
+      "MPI_ABORT was invoked on rank 1 in communicator MPI_COMM_WORLD"
+     ],
+     "8": [
+      "MPI_ABORT was invoked on rank 1 in communicator MPI COMMUNICATOR 3 SPLIT FROM 0"
+     ]
+    }
+   }
+  },
+  "rankmodes-equal-count-control": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=2.4e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=2.4e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=2.4e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=2.4e-06",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "rankmodes-rank-dependent-count": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD"
+     ],
+     "v2106": [
+      "MPI_ABORT was invoked on rank 1 in communicator MPI_COMM_WORLD"
+     ],
+     "v2212": [
+      "MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD"
+     ],
+     "8": [
+      "MPI_ABORT was invoked on rank 1 in communicator MPI COMMUNICATOR 3 SPLIT FROM 0"
+     ]
+    }
+   }
+  },
+  "rankmodes-variance-rule": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "variance_lines": []
+     },
+     "v2106": {
+      "variance_lines": [
+       "VARIANCE rank 0 modes 2",
+       "VARIANCE rank 1 modes 3"
+      ]
+     },
+     "v2212": {
+      "variance_lines": [
+       "VARIANCE rank 0 modes 2",
+       "VARIANCE rank 1 modes 3"
+      ]
+     },
+     "8": {
+      "variance_lines": [
+       "VARIANCE rank 1 modes 2",
+       "VARIANCE rank 0 modes 3"
+      ]
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD"
+     ],
+     "v2106": [
+      "MPI_ABORT was invoked on rank 1 in communicator MPI_COMM_WORLD"
+     ],
+     "v2212": [
+      "MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD"
+     ],
+     "8": [
+      "MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 SPLIT FROM 0"
+     ]
+    }
+   }
+  },
+  "refcount-weakrefs": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "ref_lines": [
+       "REF snapshot alive []"
+      ],
+      "refcount_lines": [
+       "REFCOUNT snapshot 4 True"
+      ]
+     },
+     "v2106": {
+      "ref_lines": [
+       "REF snapshot alive []"
+      ],
+      "refcount_lines": [
+       "REFCOUNT snapshot 4 True"
+      ]
+     },
+     "v2212": {
+      "ref_lines": [
+       "REF snapshot alive []"
+      ],
+      "refcount_lines": [
+       "REFCOUNT snapshot 4 True"
+      ]
+     },
+     "8": {
+      "ref_lines": [
+       "REF snapshot alive []"
+      ],
+      "refcount_lines": [
+       "REFCOUNT snapshot 4 True"
+      ]
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "POD analysis callback returned: step=9 wall_seconds=6.763e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD analysis callback returned: step=9 wall_seconds=7.53e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD analysis callback returned: step=9 wall_seconds=5.407e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD analysis callback returned: step=9 wall_seconds=7.279e-06",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "restart-latestTime-default-first": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.1e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.1e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.1e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.1e-06",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "restart-latestTime-default-second": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "PYTHON snapshot=2 shape=(20540, 3) finite=true",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "PYTHON snapshot=2 shape=(20540, 3) finite=true",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "PYTHON snapshot=2 shape=(20540, 3) finite=true",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "PYTHON snapshot=2 shape=(20540, 3) finite=true",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "restart-latestTime-podSvdInterval-first": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "dirs": {
+       "0": [
+        "U",
+        "k",
+        "nuTilda",
+        "nut"
+       ],
+       "1.4e-06": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ],
+       "2.1e-06": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ],
+       "7e-07": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ]
+      }
+     },
+     "v2106": {
+      "dirs": {
+       "0": [
+        "U",
+        "k",
+        "nuTilda",
+        "nut"
+       ],
+       "1.4e-06": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ],
+       "2.1e-06": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ],
+       "7e-07": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ]
+      }
+     },
+     "v2212": {
+      "dirs": {
+       "0": [
+        "U",
+        "k",
+        "nuTilda",
+        "nut"
+       ],
+       "1.4e-06": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ],
+       "2.1e-06": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ],
+       "7e-07": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ]
+      }
+     },
+     "8": {
+      "dirs": {
+       "0": [
+        "U",
+        "k",
+        "nuTilda",
+        "nut"
+       ],
+       "1.4e-06": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ],
+       "2.1e-06": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ],
+       "7e-07": [
+        "upod_0",
+        "upod_1",
+        "upod_2",
+        "upod_3"
+       ]
+      }
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.1e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.1e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.1e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.1e-06",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "restart-latestTime-podSvdInterval-second": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: "
+     ]
+    }
+   }
+  },
+  "returns-bigendian": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "SVD result must be a native float64 ndarray"
+     ]
+    }
+   }
+  },
+  "returns-float32": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "SVD result must be a native float64 ndarray"
+     ]
+    }
+   }
+  },
+  "returns-fortran": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "values_match": true
+     },
+     "v2106": {
+      "values_match": true
+     },
+     "v2212": {
+      "values_match": true
+     },
+     "8": {
+      "values_match": true
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "returns-list": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "SVD result must be a native float64 ndarray"
+     ]
+    }
+   }
+  },
+  "returns-matrix": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "values_match": true
+     },
+     "v2106": {
+      "values_match": true
+     },
+     "v2212": {
+      "values_match": true
+     },
+     "8": {
+      "values_match": true
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "returns-nan": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Non-finite SVD result"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Non-finite SVD result"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Non-finite SVD result"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "Non-finite SVD result"
+     ]
+    }
+   }
+  },
+  "returns-none": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "SVD result must be a native float64 ndarray"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "SVD result must be a native float64 ndarray"
+     ]
+    }
+   }
+  },
+  "returns-one-d": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ]
+    }
+   }
+  },
+  "returns-reversed-columns": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "values_match": true
+     },
+     "v2106": {
+      "values_match": true
+     },
+     "v2212": {
+      "values_match": true
+     },
+     "8": {
+      "values_match": true
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "returns-rows-wrong": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ]
+    }
+   }
+  },
+  "returns-six-modes": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ]
+    }
+   }
+  },
+  "returns-strided-rows": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "values_match": true
+     },
+     "v2106": {
+      "values_match": true
+     },
+     "v2212": {
+      "values_match": true
+     },
+     "8": {
+      "values_match": true
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "returns-zero-modes": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "Expected SVD shape (3*cells, 1 to truncation modes)"
+     ]
+    }
+   }
+  },
+  "smallrank-0-cells-upstream-module": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "decompose_exit": 0
+     },
+     "v2106": {
+      "decompose_exit": 0
+     },
+     "v2212": {
+      "decompose_exit": 0
+     },
+     "8": {
+      "decompose_exit": 0
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=58620 modes=5 finite=true time=1.2e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=58620 modes=5 finite=true time=1.2e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=58620 modes=5 finite=true time=1.2e-06",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=58620 modes=5 finite=true time=1.2e-06",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "smallrank-3-cells-upstream-module": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "decompose_exit": 0
+     },
+     "v2106": {
+      "decompose_exit": 0
+     },
+     "v2212": {
+      "decompose_exit": 0
+     },
+     "8": {
+      "decompose_exit": 0
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "MPI_ABORT was invoked on rank 1 in communicator MPI_COMM_WORLD"
+     ],
+     "v2106": [
+      "MPI_ABORT was invoked on rank 1 in communicator MPI_COMM_WORLD"
+     ],
+     "v2212": [
+      "MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD"
+     ],
+     "8": [
+      "MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 SPLIT FROM 0"
+     ]
+    }
+   }
+  },
+  "sticky-fp-flags-from-python": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=9e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=9e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=9e-07",
+      "Python finalized successfully",
+      "End"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=9e-07",
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "sysexit-import-code0": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Cannot import python_module"
+     ],
+     "v2106": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Cannot import python_module"
+     ],
+     "v2212": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Cannot import python_module"
+     ],
+     "8": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: ",
+      "Cannot import python_module"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Errors loading python_module (missing imports?)"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Errors loading python_module (missing imports?)"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Errors loading python_module (missing imports?)"
+     ],
+     "8": [
+      "--> FOAM FATAL ERROR: ",
+      "Errors loading python_module (missing imports?)"
+     ]
+    }
+   }
+  },
+  "sysexit-snapshot-code0": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Python snapshot_func failed"
+     ],
+     "v2106": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Python snapshot_func failed"
+     ],
+     "v2212": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Python snapshot_func failed"
+     ],
+     "8": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: ",
+      "Python snapshot_func failed"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [],
+     "v2106": [],
+     "v2212": [],
+     "8": []
+    }
+   }
+  },
+  "sysexit-svd-code0": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Python svd_func failed"
+     ],
+     "v2106": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Python svd_func failed"
+     ],
+     "v2212": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Python svd_func failed"
+     ],
+     "8": [
+      "SystemExit: 0",
+      "--> FOAM FATAL ERROR: ",
+      "Python svd_func failed"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": -11,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [],
+     "v2106": [],
+     "v2212": [],
+     "8": []
+    }
+   }
+  },
+  "thread-non-daemon": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 124,
+      "timed_out": true,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 124,
+      "timed_out": true,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 124,
+      "timed_out": true,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 124,
+      "timed_out": true,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07"
+     ],
+     "v2106": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07"
+     ],
+     "v2212": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07"
+     ],
+     "8": [
+      "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "End"
+     ],
+     "v2106": [
+      "End"
+     ],
+     "v2212": [
+      "End"
+     ],
+     "8": [
+      "End"
+     ]
+    }
+   }
+  },
+  "traps-diverging-FOAM_SIGFPE-default": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": -8,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": -8,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": -8,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": true,
+      "fatal": false,
+      "sigfpe": true,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [],
+     "v2106": [],
+     "v2212": [],
+     "8": [
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": true
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": true
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": true
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {},
+     "8": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL IO ERROR: (openfoam-2012 patch=210618)"
+     ],
+     "v2106": [
+      "--> FOAM FATAL IO ERROR: (openfoam-2106 patch=211215)"
+     ],
+     "v2212": [
+      "--> FOAM FATAL IO ERROR: (openfoam-2212 patch=230110)"
+     ],
+     "8": [
+      "End"
+     ]
+    }
+   }
+  },
+  "traps-diverging-FOAM_SIGFPE-false": {
+   "fork": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": true
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": true
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": true
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618)",
+      "Non-finite U/p at cell 0 time 0.041"
+     ],
+     "v2106": [
+      "--> FOAM FATAL ERROR: (openfoam-2106 patch=211215)",
+      "Non-finite U/p at cell 0 time 0.041"
+     ],
+     "v2212": [
+      "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110)",
+      "Non-finite U/p at cell 0 time 0.041"
+     ]
+    }
+   },
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": true
+     },
+     "v2106": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": true
+     },
+     "v2212": {
+      "exit": 1,
+      "timed_out": false,
+      "end": false,
+      "finalized": false,
+      "fatal": true,
+      "sigfpe": false,
+      "nan_residual": true
+     }
+    },
+    "extra": {
+     "v2012": {},
+     "v2106": {},
+     "v2212": {}
+    },
+    "msgs": {
+     "v2012": [
+      "--> FOAM FATAL IO ERROR: (openfoam-2012 patch=210618)"
+     ],
+     "v2106": [
+      "--> FOAM FATAL IO ERROR: (openfoam-2106 patch=211215)"
+     ],
+     "v2212": [
+      "--> FOAM FATAL IO ERROR: (openfoam-2212 patch=230110)"
+     ]
+    }
+   }
+  },
+  "traps-env-unset": {
+   "fork": {
+    "sig": {
+     "8": {
+      "exit": 0,
+      "timed_out": null,
+      "end": null,
+      "finalized": null,
+      "fatal": false,
+      "sigfpe": null,
+      "nan_residual": null
+     }
+    },
+    "extra": {
+     "8": {}
+    },
+    "msgs": {
+     "8": [
+      "Python finalized successfully",
+      "End"
+     ]
+    }
+   }
+  },
+  "upstreampar-baseline": {
+   "upstream": {
+    "sig": {
+     "v2012": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2106": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "v2212": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     },
+     "8": {
+      "exit": 0,
+      "timed_out": false,
+      "end": true,
+      "finalized": false,
+      "fatal": false,
+      "sigfpe": false,
+      "nan_residual": false
+     }
+    },
+    "extra": {
+     "v2012": {
+      "proc_dirs": [
+       "0",
+       "1.2e-06",
+       "6e-07",
+       "constant"
+      ],
+      "case_dirs": [
+       "0",
+       "constant",
+       "log.decomposePar",
+       "log.upstream",
+       "processor0",
+       "processor1",
+       "python_module.py",
+       "system"
+      ]
+     },
+     "v2106": {
+      "proc_dirs": [
+       "0",
+       "1.2e-06",
+       "6e-07",
+       "constant"
+      ],
+      "case_dirs": [
+       "0",
+       "constant",
+       "log.decomposePar",
+       "log.upstream",
+       "processor0",
+       "processor1",
+       "python_module.py",
+       "system"
+      ]
+     },
+     "v2212": {
+      "proc_dirs": [
+       "0",
+       "1.2e-06",
+       "6e-07",
+       "constant"
+      ],
+      "case_dirs": [
+       "0",
+       "constant",
+       "log.decomposePar",
+       "log.upstream",
+       "processor0",
+       "processor1",
+       "python_module.py",
+       "system"
+      ]
+     },
+     "8": {
+      "proc_dirs": [
+       "0",
+       "1.2e-06",
+       "6e-07",
+       "constant"
+      ],
+      "case_dirs": [
+       "0",
+       "constant",
+       "log.decomposePar",
+       "log.upstream",
+       "processor0",
+       "processor1",
+       "python_module.py",
+       "system"
+      ]
+     }
+    },
+    "msgs": {
+     "v2012": [
+      "End"
+     ],
+     "v2106": [
+      "End"
+     ],
+     "v2212": [
+      "End"
+     ],
+     "8": [
+      "End"
+     ]
+    }
+   }
+  }
+ }
+}

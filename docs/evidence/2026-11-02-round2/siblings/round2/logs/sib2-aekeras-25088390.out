@@ -1,0 +1,70 @@
+tensorflow 2.20.0 keras 3.15.1 numpy 2.4.6
+Autoencoder object initialized
+Collecting snapshots iteration:  0
+Collecting snapshots iteration:  1
+Collecting snapshots iteration:  2
+Collecting snapshots iteration:  3
+Collecting snapshots iteration:  4
+Collecting snapshots iteration:  5
+Collecting snapshots iteration:  6
+Collecting snapshots iteration:  7
+Collecting snapshots iteration:  8
+Collecting snapshots iteration:  9
+Collecting snapshots iteration:  10
+Collecting snapshots iteration:  11
+Collecting snapshots iteration:  12
+Collecting snapshots iteration:  13
+Collecting snapshots iteration:  14
+Collecting snapshots iteration:  15
+Collecting snapshots iteration:  16
+Collecting snapshots iteration:  17
+Collecting snapshots iteration:  18
+Collecting snapshots iteration:  19
+Collecting snapshots iteration:  20
+Collecting snapshots iteration:  21
+Collecting snapshots iteration:  22
+Collecting snapshots iteration:  23
+Collecting snapshots iteration:  24
+Collecting snapshots iteration:  25
+Collecting snapshots iteration:  26
+Collecting snapshots iteration:  27
+Collecting snapshots iteration:  28
+Collecting snapshots iteration:  29
+snapshots (30, 200, 1)
+--- autoencoder_func(0)
+Total size of training data: (30, 200, 1)
+Traceback (most recent call last):
+  File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/round2/scripts/test_ae_keras.py", line 17, in <module>
+    print('returned', m.autoencoder_func(0), flush=True)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/upstream/Solver_Examples/AEFoam/Run_Case/python_module.py", line 151, in autoencoder_func
+    autoencoder_class_object.train(snapshots,rank)
+  File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/upstream/Solver_Examples/AEFoam/Run_Case/python_module.py", line 57, in train
+    encoder_inputs = Input(shape=(num_points*num_fields),name='Field')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/pydeps/tf/keras/src/layers/core/input_layer.py", line 210, in Input
+    layer = InputLayer(
+            ^^^^^^^^^^^
+  File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/pydeps/tf/keras/src/layers/core/input_layer.py", line 92, in __init__
+    shape = backend.standardize_shape(shape)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/pydeps/tf/keras/src/backend/common/variables.py", line 596, in standardize_shape
+    raise ValueError(f"Cannot convert '{shape}' to a shape.")
+ValueError: Cannot convert '200' to a shape.
+AUTOENCODER_FUNC RAISED
+--- encode_func(array, 0)
+***********************************here**********************************
+Traceback (most recent call last):
+  File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/round2/scripts/test_ae_keras.py", line 23, in <module>
+    r = m.encode_func(rng.random((N, 1)), 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/upstream/Solver_Examples/AEFoam/Run_Case/python_module.py", line 162, in encode_func
+    decoded = autoencoder_class_object.encode_field(array,rank)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/upstream/Solver_Examples/AEFoam/Run_Case/python_module.py", line 108, in encode_field
+    encoded = np.asarray(K.eval(self.encoder(A.astype('float32'))))
+                                ^^^^^^^^^^^^
+AttributeError: 'autoencoder_model' object has no attribute 'encoder'
+ENCODE_FUNC RAISED
+has encoder attr: False
+exit 0

@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z7-step000300-w1",
+  "design": {
+    "run": "z7",
+    "slice_z_m": 0.0103125,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.0103125,
+      "requested_z_m": 0.0103125,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 300,
+    "time_s": 0.1022500000000015,
+    "plotted_range_m": {
+      "x": [
+        -0.14886441131361355,
+        0.09982600979793435
+      ],
+      "y": [
+        -0.020647443642195853,
+        0.0881571384762935
+      ]
+    },
+    "cells_in_window": 9384,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "7d999a202b9680c4daf355707dbd96dca85004105c4d58ed06a222282d290b15",
+  "wall_s": 3.108290830627084,
+  "usage": {
+    "completion_tokens": 166,
+    "prompt_tokens": 1061,
+    "total_tokens": 1227,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 282.517,
+    "prompt_per_token_ms": 0.26627426955702166,
+    "prompt_per_second": 3755.526216121508,
+    "predicted_n": 166,
+    "predicted_ms": 2081.92,
+    "predicted_per_token_ms": 12.61769696969697,
+    "predicted_per_second": 79.25376575468798
+  },
+  "structured_output": {
+    "flow_description": "The flow is fast in the upper region (y > 30%) and slow in the lower right quadrant (x > 60%, y < 30%). Pressure is high in the upper region and low in the lower right quadrant, where distinct low-pressure vortices or structures are visible.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 70,
+    "lowest_pressure_x_percent": 82,
+    "lowest_pressure_y_percent": 25,
+    "uncertainties": "The exact magnitude of velocity and pressure values at specific coordinates cannot be determined without the numerical data."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        50,
+        70
+      ],
+      "true_percent": [
+        83.23494464677418,
+        35.73767311095571
+      ],
+      "error_percent": [
+        -33.23494464677418,
+        34.26232688904429
+      ],
+      "distance_percent": 47.73330692007281,
+      "error_m": [
+        -0.08265212379825257,
+        0.03727898159569545
+      ],
+      "distance_m": 0.09067025993772086,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        82,
+        25
+      ],
+      "true_percent": [
+        82.39268280040217,
+        28.119280290626502
+      ],
+      "error_percent": [
+        -0.3926828004021701,
+        -3.1192802906265023
+      ],
+      "distance_percent": 3.1439003344925944,
+      "error_m": [
+        -0.0009765645099527758,
+        -0.003393919885320566
+      ],
+      "distance_m": 0.00353162433309004,
+      "within_10_percent": true
+    }
+  }
+}

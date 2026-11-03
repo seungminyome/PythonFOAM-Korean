@@ -1,0 +1,66 @@
+z1: z=0.00079375 frames=['step-000050', 'step-000100', 'step-000150', 'step-000200', 'step-000250', 'step-000300']
+z3: z=0.00396875 frames=['step-000050', 'step-000100', 'step-000150', 'step-000200', 'step-000250', 'step-000300']
+z5: z=0.00714375 frames=['step-000050', 'step-000100', 'step-000150', 'step-000200', 'step-000250', 'step-000300']
+z7: z=0.0103125 frames=['step-000050', 'step-000100', 'step-000150', 'step-000200', 'step-000250', 'step-000300']
+{
+ "sets": {
+  "solver": 24,
+  "window": 48
+ },
+ "baseline": {
+  "solver": {
+   "fastest_flow": {
+    "right": 24,
+    "of": 24,
+    "answer_percent": [
+     42.0,
+     38.0
+    ]
+   },
+   "lowest_pressure": {
+    "right": 24,
+    "of": 24,
+    "answer_percent": [
+     40.0,
+     18.0
+    ]
+   }
+  },
+  "window": {
+   "fastest_flow": {
+    "right": 11,
+    "of": 48,
+    "answer_percent": [
+     56.0,
+     25.0
+    ]
+   },
+   "lowest_pressure": {
+    "right": 8,
+    "of": 48,
+    "answer_percent": [
+     49.0,
+     8.0
+    ]
+   }
+  },
+  "all": {
+   "fastest_flow": {
+    "right": 27,
+    "of": 72,
+    "answer_percent": [
+     42.0,
+     38.0
+    ]
+   },
+   "lowest_pressure": {
+    "right": 29,
+    "of": 72,
+    "answer_percent": [
+     45.0,
+     24.0
+    ]
+   }
+  }
+ }
+}

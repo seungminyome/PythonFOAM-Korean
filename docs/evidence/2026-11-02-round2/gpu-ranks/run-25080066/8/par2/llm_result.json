@@ -1,0 +1,134 @@
+{
+  "parent_pid": 1724179,
+  "run_id": "gpu-ranks/8/par2",
+  "step": 100,
+  "time_s": 0.1005000000000005,
+  "mode": "describe",
+  "image_style": "v2",
+  "image_requested": true,
+  "deadline_s": 120.0,
+  "cleanup_budget_s": 0.2,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 90.0,
+  "kill_join_allowance_s": 0.2,
+  "scheduling_tolerance_s": 0.05,
+  "async": true,
+  "callback_started_at": "2026-11-02T05:57:16.222695+00:00",
+  "request_step": 100,
+  "solver_stall_s": 0.010727550834417343,
+  "end_wait_started_at_step": 110,
+  "summary_wall_s": 0.0,
+  "image_input": true,
+  "text_input_only": false,
+  "image_render_wall_s": 0.5465586613863707,
+  "image": {
+    "style": "readable-v2",
+    "view": "window",
+    "directory": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-ranks/run-25080066/8/par2/llm_observation/step-000100",
+    "step": 100,
+    "time_s": 0.1005000000000005,
+    "cells": 20540,
+    "projection_axes": [
+      "x",
+      "y"
+    ],
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "domain_extent_m": {
+      "x": [
+        -1.5533076923100004,
+        0.6012246511046804
+      ],
+      "y": [
+        5.781735398474375e-06,
+        0.11429523559299272
+      ]
+    },
+    "fields_npz": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-ranks/run-25080066/8/par2/llm_observation/step-000100/fields.npz",
+    "fields_sha256": "3a8c825383d00b1552ae7e17852a2d383e04801c97efab65c98c9f7d3a919e4a",
+    "images": {
+      "U": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-ranks/run-25080066/8/par2/llm_observation/step-000100/U.png",
+        "sha256": "532ddf0bc42ff990f51096023d5d237ee249e21d57d4c6c48e514117d4ed1ba9",
+        "bytes": 85591,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          0.0007638407209577795,
+          36.896857519581516
+        ],
+        "colour_range_shared": false
+      },
+      "p": {
+        "path": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-ranks/run-25080066/8/par2/llm_observation/step-000100/p.png",
+        "sha256": "943ee52a0a109a9ef301884a53f6770d44832d8eb8b2ca3c05b164c0ddf206ec",
+        "bytes": 80269,
+        "width": 1024,
+        "height": 576,
+        "colour_range": [
+          -325.63738904881325,
+          43.549283806042006
+        ],
+        "colour_range_shared": false
+      }
+    },
+    "render_wall_s": 0.5465586613863707
+  },
+  "request_before_at": "2026-11-02T05:57:16.800247+00:00",
+  "arrived_at_step": 110,
+  "worker_reaped": true,
+  "ipc_select_calls": 14,
+  "ipc_bytes_received": 4106,
+  "response_after_at": "2026-11-02T05:57:20.796313+00:00",
+  "callback_elapsed_s": 4.580984886735678,
+  "elapsed_since_request_s": 3.995891660451889,
+  "worker_wait_elapsed_s": 4.566471546888351,
+  "end_wait_s": 4.163133332505822,
+  "cleanup_elapsed_before_result_write_s": 0.027997659519314766,
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is fastest in the upper half of the domain, particularly between 40% and 70% x. The lower half shows slower velocities with distinct horizontal structures. Pressure is lowest in localized dark spots around 30% and 60% x at 20-30% y, while it is highest in the bottom right corner and around 40% x.\",\n  \"fastest_flow_x_percent\": 55,\n  \"fastest_flow_y_percent\": 50,\n  \"lowest_pressure_x_percent\": 60,\n  \"lowest_pressure_y_percent\": 25,\n  \"uncertainties\": \"The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range.\"\n}",
+  "request_sha256": "69541584d2a8b466e99fcd97d5e6a700e06c4f35fe1d48fd2cf9cf31b2891e4e",
+  "request_bytes": 223985,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1300,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 190,
+    "prompt_tokens": 997,
+    "total_tokens": 1187,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 997,
+    "prompt_ms": 780.725,
+    "prompt_per_token_ms": 0.7830742226680041,
+    "prompt_per_second": 1277.018156200967,
+    "predicted_n": 190,
+    "predicted_ms": 3019.033,
+    "predicted_per_token_ms": 15.973719576719576,
+    "predicted_per_second": 62.60282679917709
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% x. The lower half shows slower velocities with distinct horizontal structures. Pressure is lowest in localized dark spots around 30% and 60% x at 20-30% y, while it is highest in the bottom right corner and around 40% x.",
+    "fastest_flow_x_percent": 55,
+    "fastest_flow_y_percent": 50,
+    "lowest_pressure_x_percent": 60,
+    "lowest_pressure_y_percent": 25,
+    "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.9617901872843504
+}

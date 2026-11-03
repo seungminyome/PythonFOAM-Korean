@@ -1,0 +1,7 @@
+host t383.cluster cpus=4 nproc=4 py=/gscratch/syome/conda/ci-py310/bin/python3 src=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/flaky/testonly/PODFoam/llm_demo N=50 PAR=8 start Sun Nov  1 22:57:19 MST 2026
+3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]
+end Sun Nov  1 23:06:08 MST 2026 load=13.89 14.03 11.99
+passed 48 of 50
+      1 ERROR: test_index_says_when_a_record_was_not_written_in_its_budget (test_async.PeriodicRequestTests)
+      1 FAIL: test_sequence_asynchronous (test_async.SequenceModeTests)
+      1 AssertionError: 'timeout' != 'ok'

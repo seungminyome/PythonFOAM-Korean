@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow is fast in the upper region (y > 70%) and shows a complex structure with high-velocity regions between x=60% and 90%. The flow is slow in the lower-right region (x > 50%, y < 70%). Pressure is relatively uniform in the upper region but shows significant fluctuations in the lower-right region, with a distinct low-pressure zone near x=75%, y=65%.\",\n  \"fastest_flow_x_percent\": 80,\n  \"fastest_flow_y_percent\": 80,\n  \"lowest_pressure_x_percent\": 75,\n  \"lowest_pressure_y_percent\": 65,\n  \"uncertainties\": \"The exact physical boundaries and the nature of the obstacles or geometry causing the pressure fluctuations are not explicitly labeled.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644695,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 204,
+    "prompt_tokens": 1064,
+    "total_tokens": 1268,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-1PysqDHk1Sd72j8cyBjCpdD1sKkRux92",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1064,
+    "prompt_ms": 285.6,
+    "prompt_per_token_ms": 0.26842105263157895,
+    "prompt_per_second": 3725.490196078431,
+    "predicted_n": 204,
+    "predicted_ms": 2560.139,
+    "predicted_per_token_ms": 12.611522167487685,
+    "predicted_per_second": 79.29256966125668
+  }
+}

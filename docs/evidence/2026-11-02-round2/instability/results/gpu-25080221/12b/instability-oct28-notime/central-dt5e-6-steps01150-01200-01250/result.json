@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous gradients and coherent structures (vortices) that evolve physically over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth in extreme\",\"stability\": \"stable\"}",
+  "request_sha256": "363fda9de5600b1afb83b59bd9905646d420aed86706da9452f208ee1c268527",
+  "request_bytes": 682943,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 992,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 69,
+    "prompt_tokens": 1972,
+    "total_tokens": 2041,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 630.696,
+    "prompt_per_token_ms": 0.31982555780933064,
+    "prompt_per_second": 3126.7044661770487,
+    "predicted_n": 69,
+    "predicted_ms": 982.058,
+    "predicted_per_token_ms": 14.442029411764706,
+    "predicted_per_second": 69.24234617507317
+  },
+  "structured_output": {
+    "reason": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous gradients and coherent structures (vortices) that evolve physically over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth in extreme",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.38718306645751,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

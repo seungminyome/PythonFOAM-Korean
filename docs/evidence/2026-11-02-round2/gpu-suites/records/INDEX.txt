@@ -1,0 +1,10 @@
+r2/gpu-suites records (2026-11-01/02). Jobs submitted by submit_suite.sh (this folder), all COMPLETED on A30 (sacct.txt in each folder):
+  25080035  v2012  short   (1000 steps; worktree r2/gpu-suites c82c835 = bf7a06e + hpc/async_v2.slurm reads POD_OPENFOAM_VERSION; patch: async_v2-version-override.patch)  PASS  00:06:12
+  25080036  8      short   (same)                                                                                                  PASS  00:06:19
+  25080037  v2212  default (6000 steps, no LLM_LONG_* override, unedited bf7a06e worktree wt-bf7a06e)                               PASS  00:31:15
+Reference runs (validation/run_v2106.sh per image): CPU job 25080015, ref/ (reference.sbatch, validation-<ver>.log, pod-<ver>.*/verification.json).
+Start directories for v2012 and 8: start/<ver>/0.1 = the 0.1 fields of job 24757460 (same sha256 as 24950817's start) beside that version's reference mesh; start/mesh-check-<ver>.txt, start/boundary-diff-<ver>.txt.
+Per-job folders gpu-suite-<job>-<ver>-<mode>/ follow docs/evidence/2026-10-30-versions/gpu-suite-24950817/ (collect.py).
+comparison.json: statuses, settings, timings, per-case results, trend words and frame hashes of the three jobs next to 24950817 (collect-stdout.txt = same content).
+frame-diff-vs-24950817.json: async-no-llm frames 250/500/750 of v2012 and 8 against 24950817 (frame_diff.py; compare_versions.difference).
+Raw runs: pod-async-v2/run-<job>/ (run-archive.tar.gz 490-745 MB each, not copied to records).

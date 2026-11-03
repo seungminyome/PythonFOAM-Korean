@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow is generally fast in the upper region, with a significant velocity drop and complex structure in the lower-right quadrant. Pressure is relatively uniform in the upper half, with a distinct low-pressure zone appearing in the lower-center region near the velocity transition.\",\n  \"fastest_flow_x_percent\": 55,\n  \"fastest_flow_y_percent\": 35,\n  \"lowest_pressure_x_percent\": 52,\n  \"lowest_pressure_y_percent\": 28,\n  \"uncertainties\": \"The exact magnitude of the velocity and pressure values in the white regions is unknown as they contain no cells.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644856,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 1061,
+    "total_tokens": 1221,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-sxTR1qc9tCZRfsfItfmvjkH3mFwGRpkD",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 285.435,
+    "prompt_per_token_ms": 0.2690245051837889,
+    "prompt_per_second": 3717.1334979942894,
+    "predicted_n": 160,
+    "predicted_ms": 2006.08,
+    "predicted_per_token_ms": 12.616855345911949,
+    "predicted_per_second": 79.2590524804594
+  }
+}

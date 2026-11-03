@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow shows smooth evolution of features over time. While the velocity magnitude scale changes significantly between Time 3 and the previous steps, the spatial distribution remains continuous and lacks high-frequency oscillations, checkerboard patterns, or non-physical growth.\", \"stability\": \"stable\"}",
+  "request_sha256": "bf597804f1fe91ebaa14042474bfbfbe2c9461ad0f06a9632e854ec077253ddc",
+  "request_bytes": 648868,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 968,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 64,
+    "prompt_tokens": 2048,
+    "total_tokens": 2112,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 656.117,
+    "prompt_per_token_ms": 0.32036962890625,
+    "prompt_per_second": 3121.394507382068,
+    "predicted_n": 64,
+    "predicted_ms": 807.26,
+    "predicted_per_token_ms": 12.813650793650794,
+    "predicted_per_second": 78.04177092882094
+  },
+  "structured_output": {
+    "reason": "The flow shows smooth evolution of features over time. While the velocity magnitude scale changes significantly between Time 3 and the previous steps, the spatial distribution remains continuous and lacks high-frequency oscillations, checkerboard patterns, or non-physical growth.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.2876587454229593,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

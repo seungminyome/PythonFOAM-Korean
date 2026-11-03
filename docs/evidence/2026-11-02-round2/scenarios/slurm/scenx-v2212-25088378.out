@@ -1,0 +1,24 @@
+VER v2212 SIF /cluster/medbow/gscratch/syome/s4f/of2212.sif node t400.cluster job 25088378
+bf7a06e3544d28a9ed73f7f8454a93aaf070fc56
+6fde8698071b56f913c5e92c647f22ab38b26466
+v2212 fork build kept -rwxrwxr-x 1 syome syome 1011432 Nov  1 22:48 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/scenarios/build/v2212/fork/bin/PODFoam
+v2212 upstream build kept -rwxrwxr-x 1 syome syome 776056 Nov  1 22:48 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/scenarios/build/v2212/upstream/bin/PODFoam
+WM_PROJECT_VERSION=v2212
+{"scenario": "compare-rank-dependent-count", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "compare-rank-dependent-count", "build": "upstream", "exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 25}
+{"scenario": "compare-3-cells", "build": "upstream", "exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 13}
+{"scenario": "compare-0-cells", "build": "upstream", "exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false, "courant_lines": 13}
+{"scenario": "restart2-write-step-then-pod-only-first", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 16}
+{"scenario": "restart2-write-step-then-pod-only-second", "build": "fork", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false, "courant_lines": 0}
+{"scenario": "restart2-purgeWrite", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 31}
+{"scenario": "collated-svd0", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 16}
+{"scenario": "collated-svd7", "build": "fork", "exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 16}
+{"scenario": "traps2-huge-initial-U", "build": "fork", "exit": -8, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 2}
+{"scenario": "traps2-huge-initial-U", "build": "upstream", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true, "courant_lines": 2}
+{"scenario": "traps2-divergence-after-python", "build": "fork", "exit": -8, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 2}
+{"scenario": "traps2-divergence-after-python", "build": "upstream", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true, "courant_lines": 2}
+{"scenario": "late-overflow-after-python", "build": "fork", "exit": -8, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false, "courant_lines": 7}
+{"scenario": "late-overflow-after-python", "build": "upstream", "exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true, "courant_lines": 7}
+done
+extra exit 0
+exit 0

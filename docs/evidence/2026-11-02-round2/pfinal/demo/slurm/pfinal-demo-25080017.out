@@ -1,0 +1,89 @@
+=== v2012  image /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/images/of-v2012-dev.sif  binaries/case from /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/account-runs/stabilised-v2012-24951138
+WM_PROJECT_VERSION=v2012 WM_PROJECT_DIR=/usr/lib/openfoam/openfoam2012 pimpleFoam=/usr/lib/openfoam/openfoam2012/platforms/linux64GccDPInt32Opt/bin/pimpleFoam
+pimpleFoam-n1 exit 0  p-solves: 12       10 DICPCG:  Solving for p;      2 GAMG:  Solving for p;
+fork-n1 exit 0  p-solves: 12       10 DICPCG:  Solving for p;      2 GAMG:  Solving for p;
+upstream-n1 exit 0  p-solves: 12       12 GAMG:  Solving for p;
+fork-plainp-n1 exit 0  p-solves: 12       12 GAMG:  Solving for p;
+pimpleFoam-n2 exit 0  p-solves: 24       20 DICPCG:  Solving for p;      4 GAMG:  Solving for p;
+fork-n2 exit 0  p-solves: 24       20 DICPCG:  Solving for p;      4 GAMG:  Solving for p;
+upstream-n2 exit 0  p-solves: 24       12 DICPCG:  Solving for p;     12 GAMG:  Solving for p;
+fork-plainp-n2 exit 0  p-solves: 24       12 DICPCG:  Solving for p;     12 GAMG:  Solving for p;
+=== v2106  image /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/images/of-v2106-dev.sif  binaries/case from /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/account-runs/stabilised-v2106-24951139
+WM_PROJECT_VERSION=v2106 WM_PROJECT_DIR=/usr/lib/openfoam/openfoam2106 pimpleFoam=/usr/lib/openfoam/openfoam2106/platforms/linux64GccDPInt32Opt/bin/pimpleFoam
+pimpleFoam-n1 exit 0  p-solves: 12       10 DICPCG:  Solving for p;      2 GAMG:  Solving for p;
+fork-n1 exit 0  p-solves: 12       10 DICPCG:  Solving for p;      2 GAMG:  Solving for p;
+upstream-n1 exit 0  p-solves: 12       12 GAMG:  Solving for p;
+fork-plainp-n1 exit 0  p-solves: 12       12 GAMG:  Solving for p;
+pimpleFoam-n2 exit 0  p-solves: 24       20 DICPCG:  Solving for p;      4 GAMG:  Solving for p;
+fork-n2 exit 0  p-solves: 24       20 DICPCG:  Solving for p;      4 GAMG:  Solving for p;
+upstream-n2 exit 0  p-solves: 24       12 DICPCG:  Solving for p;     12 GAMG:  Solving for p;
+fork-plainp-n2 exit 0  p-solves: 24       12 DICPCG:  Solving for p;     12 GAMG:  Solving for p;
+=== v2212  image /cluster/medbow/gscratch/syome/s4f/of2212.sif  binaries/case from /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/account-runs/stabilised-v2212-24951140
+WM_PROJECT_VERSION=v2212 WM_PROJECT_DIR=/usr/lib/openfoam/openfoam2212 pimpleFoam=/usr/lib/openfoam/openfoam2212/platforms/linux64GccDPInt32Opt/bin/pimpleFoam
+pimpleFoam-n1 exit 0  p-solves: 12       10 DICPCG:  Solving for p;      2 GAMG:  Solving for p;
+fork-n1 exit 0  p-solves: 12       10 DICPCG:  Solving for p;      2 GAMG:  Solving for p;
+upstream-n1 exit 0  p-solves: 12       12 GAMG:  Solving for p;
+fork-plainp-n1 exit 0  p-solves: 12       12 GAMG:  Solving for p;
+pimpleFoam-n2 exit 0  p-solves: 24       20 DICPCG:  Solving for p;      4 GAMG:  Solving for p;
+fork-n2 exit 0  p-solves: 24       20 DICPCG:  Solving for p;      4 GAMG:  Solving for p;
+upstream-n2 exit 0  p-solves: 24       12 DICPCG:  Solving for p;     12 GAMG:  Solving for p;
+fork-plainp-n2 exit 0  p-solves: 24       12 DICPCG:  Solving for p;     12 GAMG:  Solving for p;
+=== 8  image /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/images/of-8.sif  binaries/case from /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/account-runs/stabilised-8-24951137
+WM_PROJECT_VERSION=8 WM_PROJECT_DIR=/opt/openfoam8 pimpleFoam=/opt/openfoam8/platforms/linux64GccDPInt32Opt/bin/pimpleFoam
+pimpleFoam-n1 exit 0  p-solves: 12       10 DICPCG:  Solving for p;      2 GAMG:  Solving for p;
+fork-n1 exit 0  p-solves: 12       10 DICPCG:  Solving for p;      2 GAMG:  Solving for p;
+upstream-n1 exit 0  p-solves: 12       10 DICPCG:  Solving for p;      2 GAMG:  Solving for p;
+pimpleFoam-n2 exit 0  p-solves: 24       20 DICPCG:  Solving for p;      4 GAMG:  Solving for p;
+fork-n2 exit 0  p-solves: 24       20 DICPCG:  Solving for p;      4 GAMG:  Solving for p;
+upstream-n2 exit 0  p-solves: 24       20 DICPCG:  Solving for p;      4 GAMG:  Solving for p;
+# Which solver dictionary each solve used
+
+p is `PCG` (DIC), pFinal is `GAMG`; U is `smoothSolver`, UFinal is `PBiCGStab`. The solver name in the log line therefore names the dictionary.
+Case: stabilised PODFoam case, nCorrectors 2, nNonOrthogonalCorrectors 2 (6 p solves per outer iteration), 2 time steps.
+
+| version | build | exit | time | p solves (in order) | Ux solves |
+|---|---|---|---|---|---|
+| v2012 | fork-n1 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2012 | fork-n1 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2012 | fork-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2012 | fork-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2012 | fork-plainp-n1 | 0 | 1e-07 | GAMG GAMG GAMG GAMG GAMG GAMG | DILUPBiCGStab |
+| v2012 | fork-plainp-n1 | 0 | 2e-07 | GAMG GAMG GAMG GAMG GAMG GAMG | DILUPBiCGStab |
+| v2012 | fork-plainp-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG GAMG GAMG GAMG GAMG GAMG | smoothSolver DILUPBiCGStab |
+| v2012 | fork-plainp-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG GAMG GAMG GAMG GAMG GAMG | smoothSolver DILUPBiCGStab |
+| v2012 | pimpleFoam-n1 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2012 | pimpleFoam-n1 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2012 | pimpleFoam-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2012 | pimpleFoam-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2106 | fork-n1 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2106 | fork-n1 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2106 | fork-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2106 | fork-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2106 | fork-plainp-n1 | 0 | 1e-07 | GAMG GAMG GAMG GAMG GAMG GAMG | DILUPBiCGStab |
+| v2106 | fork-plainp-n1 | 0 | 2e-07 | GAMG GAMG GAMG GAMG GAMG GAMG | DILUPBiCGStab |
+| v2106 | fork-plainp-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG GAMG GAMG GAMG GAMG GAMG | smoothSolver DILUPBiCGStab |
+| v2106 | fork-plainp-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG GAMG GAMG GAMG GAMG GAMG | smoothSolver DILUPBiCGStab |
+| v2106 | pimpleFoam-n1 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2106 | pimpleFoam-n1 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2106 | pimpleFoam-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2106 | pimpleFoam-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2212 | fork-n1 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2212 | fork-n1 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2212 | fork-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2212 | fork-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2212 | fork-plainp-n1 | 0 | 1e-07 | GAMG GAMG GAMG GAMG GAMG GAMG | DILUPBiCGStab |
+| v2212 | fork-plainp-n1 | 0 | 2e-07 | GAMG GAMG GAMG GAMG GAMG GAMG | DILUPBiCGStab |
+| v2212 | fork-plainp-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG GAMG GAMG GAMG GAMG GAMG | smoothSolver DILUPBiCGStab |
+| v2212 | fork-plainp-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG GAMG GAMG GAMG GAMG GAMG | smoothSolver DILUPBiCGStab |
+| v2212 | pimpleFoam-n1 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2212 | pimpleFoam-n1 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| v2212 | pimpleFoam-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| v2212 | pimpleFoam-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| 8 | fork-n1 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| 8 | fork-n1 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| 8 | fork-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| 8 | fork-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| 8 | pimpleFoam-n1 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| 8 | pimpleFoam-n1 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | DILUPBiCGStab |
+| 8 | pimpleFoam-n2 | 0 | 1e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |
+| 8 | pimpleFoam-n2 | 0 | 2e-07 | DICPCG DICPCG DICPCG DICPCG DICPCG GAMG DICPCG DICPCG DICPCG DICPCG DICPCG GAMG | smoothSolver DILUPBiCGStab |

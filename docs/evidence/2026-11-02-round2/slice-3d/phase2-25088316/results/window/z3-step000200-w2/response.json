@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow is fast in the upper region (y > 60%) and shows a complex, turbulent-like structure in the lower right quadrant. The flow is slowest in the bottom right area. Pressure is relatively uniform in the upper region but shows significant fluctuations and a distinct low-pressure zone in the lower right quadrant.\",\n  \"fastest_flow_x_percent\": 80,\n  \"fastest_flow_y_percent\": 65,\n  \"lowest_pressure_x_percent\": 80,\n  \"lowest_pressure_y_percent\": 60,\n  \"uncertainties\": \"The exact magnitude of the pressure fluctuations and the specific velocity values within the turbulent region are difficult to determine due to the scale of the color bars.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644708,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 180,
+    "prompt_tokens": 1060,
+    "total_tokens": 1240,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-qfk0iV8DuL5SqeND5u2GydjUXI6xhuRK",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1060,
+    "prompt_ms": 279.2,
+    "prompt_per_token_ms": 0.2633962264150943,
+    "prompt_per_second": 3796.5616045845272,
+    "predicted_n": 180,
+    "predicted_ms": 2257.996,
+    "predicted_per_token_ms": 12.61450279329609,
+    "predicted_per_second": 79.27383396604776
+  }
+}

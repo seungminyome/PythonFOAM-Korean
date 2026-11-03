@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z7-step000250-w1",
+  "design": {
+    "run": "z7",
+    "slice_z_m": 0.0103125,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.0103125,
+      "requested_z_m": 0.0103125,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 250,
+    "time_s": 0.10200000000000126,
+    "plotted_range_m": {
+      "x": [
+        -0.0002048023896790846,
+        0.2140888692141945
+      ],
+      "y": [
+        -0.03403793836599298,
+        0.05853252409691604
+      ]
+    },
+    "cells_in_window": 9290,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "30d32087bfa4b1eaaf323e3f323d7d4db2b9fc64866378a86a00b9f6286852ea",
+  "wall_s": 3.1694554332643747,
+  "usage": {
+    "completion_tokens": 172,
+    "prompt_tokens": 1063,
+    "total_tokens": 1235,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 281.018,
+    "prompt_per_token_ms": 0.26436312323612415,
+    "prompt_per_second": 3782.675842828574,
+    "predicted_n": 172,
+    "predicted_ms": 2157.535,
+    "predicted_per_token_ms": 12.617163742690058,
+    "predicted_per_second": 79.25711518005502
+  },
+  "structured_output": {
+    "flow_description": "The flow shows high velocity in the upper region (y > 60%) and a distinct low-velocity horizontal band between y=40% and y=50%. Pressure is highest in the upper right and shows a localized low-pressure zone around x=25%, y=50%.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 95,
+    "lowest_pressure_x_percent": 25,
+    "lowest_pressure_y_percent": 50,
+    "uncertainties": "The exact physical nature of the horizontal boundary at y=38% and the specific fluid properties are not provided."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        50,
+        95
+      ],
+      "true_percent": [
+        25.75693907784709,
+        56.21961897476422
+      ],
+      "error_percent": [
+        24.24306092215291,
+        38.78038102523578
+      ],
+      "distance_percent": 45.734494151982105,
+      "error_m": [
+        0.05195134535924536,
+        0.03589917805993898
+      ],
+      "distance_m": 0.06314818500966428,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        25,
+        50
+      ],
+      "true_percent": [
+        25.2682630386944,
+        47.60884096390702
+      ],
+      "error_percent": [
+        -0.2682630386943998,
+        2.3911590360929793
+      ],
+      "distance_percent": 2.4061601346998205,
+      "error_m": [
+        -0.0005748707151743494,
+        0.0022135069779349085
+      ],
+      "distance_m": 0.0022869388886744657,
+      "within_10_percent": true
+    }
+  }
+}

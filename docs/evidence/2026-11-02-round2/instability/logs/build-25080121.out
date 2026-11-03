@@ -1,0 +1,19 @@
+wi005.cluster
+2026-11-02T05:55:35Z
+6677bacc634336603f6bea196885d114c2846f4e
+ M Solver_Examples/PODFoam/llm_demo/picture_test.py
+ M Solver_Examples/PODFoam/llm_demo/readable_image.py
+ M Solver_Examples/PODFoam/llm_demo/readable_request.py
+?? Solver_Examples/PODFoam/llm_demo/instability_test2.py
+{"output":"/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/instability/test-set","requests":130,"sets":{"instability-eq2ms-notime":30,"instability-eq2ms-reltime":30,"instability-oct28-notime":70},"gap_by_run":{"central-dt2e-5":{"run_steps":100},"upwind-dt2e-5":{"written_states":10},"upwind-dt4e-5":{"written_states":5},"developed":{"written_states":2},"central-dt5e-6":{"written_states":8}},"text_identity":{"instability-eq2ms-notime":{"items":30,"text_variants":1,"text_sha256":"73e4ceccbbb844465e4998100e93bdb5209e58d3e2e873613cd44981e5fc6a0d","note":"SHA-256 over the system prompt and every text part, joined by U+001F; one variant means every item of the set sends the same text"},"instability-eq2ms-reltime":{"items":30,"text_variants":1,"text_sha256":"6f13b8c5aa667883468b44f4fe7222c8df21e370b4dfd03bd6e95349213bc7e8","note":"SHA-256 over the system prompt and every text part, joined by U+001F; one variant means every item of the set sends the same text"},"instability-oct28-notime":{"items":70,"text_variants":1,"text_sha256":"73e4ceccbbb844465e4998100e93bdb5209e58d3e2e873613cd44981e5fc6a0d","note":"SHA-256 over the system prompt and every text part, joined by U+001F; one variant means every item of the set sends the same text"}},"items_by_set_group_and_run":{"instability-eq2ms-notime stable central-dt5e-6":3,"instability-eq2ms-notime stable developed":3,"instability-eq2ms-notime stable upwind-dt2e-5":2,"instability-eq2ms-notime stable upwind-dt4e-5":2,"instability-eq2ms-notime unstable-early central-dt2e-5":10,"instability-eq2ms-notime unstable-last central-dt2e-5":10,"instability-eq2ms-reltime stable central-dt5e-6":3,"instability-eq2ms-reltime stable developed":3,"instability-eq2ms-reltime stable upwind-dt2e-5":2,"instability-eq2ms-reltime stable upwind-dt4e-5":2,"instability-eq2ms-reltime unstable-early central-dt2e-5":10,"instability-eq2ms-reltime unstable-last central-dt2e-5":10,"instability-oct28-notime stable central-dt5e-6":6,"instability-oct28-notime stable developed":7,"instability-oct28-notime stable upwind-dt2e-5":7,"instability-oct28-notime stable upwind-dt4e-5":7,"instability-oct28-notime unstable-early central-dt2e-5":12,"instability-oct28-notime unstable-early central-dt3e-5":4,"instability-oct28-notime unstable-last central-dt2e-5":10,"instability-oct28-notime unstable-last central-dt3e-5":10,"instability-oct28-notime unstable-last central-dt4e-5":7}}
+130 requests checked, 0 problems
+273M	/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/instability/test-set
+central-dt2e-5
+central-dt3e-5
+central-dt4e-5
+central-dt5e-6
+developed
+upwind-dt2e-5
+upwind-dt4e-5
+211
+2026-11-02T05:59:19Z

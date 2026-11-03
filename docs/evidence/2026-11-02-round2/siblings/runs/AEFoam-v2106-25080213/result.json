@@ -1,0 +1,40 @@
+{
+ "solver": "AEFoam",
+ "version": "v2106",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "build": "ok",
+ "runs": {
+  "recording": {
+   "exit": "1",
+   "steps": 90,
+   "snapshot_files": [],
+   "python_tracebacks": 0,
+   "last_log_lines": [
+    "",
+    "    From Foam::Istream& Foam::operator>>(Foam::Istream&, Foam::doubleScalar&)",
+    "    in file lnInclude/Scalar.C at line 172.",
+    "",
+    "FOAM exiting",
+    ""
+   ],
+   "signals": []
+  },
+  "copy": {
+   "exit": "1",
+   "steps": 90,
+   "snapshot_files": [],
+   "python_tracebacks": 0,
+   "last_log_lines": [
+    "",
+    "    From Foam::Istream& Foam::operator>>(Foam::Istream&, Foam::doubleScalar&)",
+    "    in file lnInclude/Scalar.C at line 172.",
+    "",
+    "FOAM exiting",
+    ""
+   ],
+   "signals": []
+  }
+ },
+ "snapshots": [],
+ "written_fields_recording_vs_copy": []
+}

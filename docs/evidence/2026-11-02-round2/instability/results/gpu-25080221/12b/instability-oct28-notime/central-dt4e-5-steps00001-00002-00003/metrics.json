@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "51f2f39b91fb693e3b10b3b3b1919c27e2781287603e79a234e669aa9aef29d7",
+  "request_bytes": 650299,
+  "replay_wall_s": 2.3045910447835922,
+  "client_inference_wall_s": 2.278369080275297,
+  "usage": {
+    "completion_tokens": 61,
+    "prompt_tokens": 1972,
+    "total_tokens": 2033,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 627.821,
+    "prompt_per_token_ms": 0.31836764705882353,
+    "prompt_per_second": 3141.0226800314103,
+    "predicted_n": 61,
+    "predicted_ms": 768.747,
+    "predicted_per_token_ms": 12.81245,
+    "predicted_per_second": 78.04908506960028
+  },
+  "structured_output": {
+    "reason": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "unstable",
+      "match": false,
+      "cannot_tell": false
+    }
+  }
+}

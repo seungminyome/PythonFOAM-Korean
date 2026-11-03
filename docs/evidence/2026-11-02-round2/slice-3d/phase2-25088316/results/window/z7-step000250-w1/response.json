@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows high velocity in the upper region (y > 60%) and a distinct low-velocity horizontal band between y=40% and y=50%. Pressure is highest in the upper right and shows a localized low-pressure zone around x=25%, y=50%.\",\n  \"fastest_flow_x_percent\": 50,\n  \"fastest_flow_y_percent\": 95,\n  \"lowest_pressure_x_percent\": 25,\n  \"lowest_pressure_y_percent\": 50,\n  \"uncertainties\": \"The exact physical nature of the horizontal boundary at y=38% and the specific fluid properties are not provided.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644842,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 172,
+    "prompt_tokens": 1063,
+    "total_tokens": 1235,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-J87rlRpoxNL970YyzM0KwrkvBLEa7fRT",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 281.018,
+    "prompt_per_token_ms": 0.26436312323612415,
+    "prompt_per_second": 3782.675842828574,
+    "predicted_n": 172,
+    "predicted_ms": 2157.535,
+    "predicted_per_token_ms": 12.617163742690058,
+    "predicted_per_second": 79.25711518005502
+  }
+}

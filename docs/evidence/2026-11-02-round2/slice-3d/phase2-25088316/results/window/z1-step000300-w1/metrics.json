@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z1-step000300-w1",
+  "design": {
+    "run": "z1",
+    "slice_z_m": 0.00079375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00079375,
+      "requested_z_m": 0.00079375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 300,
+    "time_s": 0.1022500000000015,
+    "plotted_range_m": {
+      "x": [
+        -0.05016575834761673,
+        0.1683582165640899
+      ],
+      "y": [
+        -0.04404104468106203,
+        0.04118134508233727
+      ]
+    },
+    "cells_in_window": 9201,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "7b7f7f7955eb113b07d010dccce2abd3c390f21e21b7e143869f1b414c40214d",
+  "wall_s": 3.3188763093203306,
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 1060,
+    "total_tokens": 1220,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1060,
+    "prompt_ms": 280.099,
+    "prompt_per_token_ms": 0.2642443396226415,
+    "prompt_per_second": 3784.3762384014226,
+    "predicted_n": 160,
+    "predicted_ms": 2006.092,
+    "predicted_per_token_ms": 12.616930817610063,
+    "predicted_per_second": 79.25857837028411
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper region and near the center-right, with a distinct low-velocity wake or boundary layer extending from the left. Pressure is lowest in a localized region near the center of the wake and highest in the upper-right and lower-right corners.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 75,
+    "lowest_pressure_x_percent": 48,
+    "lowest_pressure_y_percent": 63,
+    "uncertainties": "The exact physical boundaries and the nature of the obstacle causing the wake are not explicitly labeled."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        50,
+        75
+      ],
+      "true_percent": [
+        49.559176027155466,
+        73.076837083557
+      ],
+      "error_percent": [
+        0.4408239728445338,
+        1.9231629164430046
+      ],
+      "distance_percent": 1.9730386154903308,
+      "error_m": [
+        0.0009633060678235773,
+        0.0016389653964362146
+      ],
+      "distance_m": 0.0019010960393996514,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        48,
+        63
+      ],
+      "true_percent": [
+        48.6006429721665,
+        63.350331531064086
+      ],
+      "error_percent": [
+        -0.6006429721664972,
+        -0.35033153106408577
+      ],
+      "distance_percent": 0.6953446351779167,
+      "error_m": [
+        -0.0013125488978060454,
+        -0.0002985609028675194
+      ],
+      "distance_m": 0.0013460769747131599,
+      "within_10_percent": true
+    }
+  }
+}

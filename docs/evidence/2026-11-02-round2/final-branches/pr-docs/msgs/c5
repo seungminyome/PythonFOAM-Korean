@@ -1,0 +1,11 @@
+pEqn: on openfoam.com select pFinal only on the final corrector
+
+On openfoam.com a plain pEqn.solve() takes the pFinal solver throughout the
+last outer iteration. With nOuterCorrectors 1, as in Run_Case, that is every
+pressure corrector. pimpleFoam there solves with
+mesh.solver(p.select(pimple.finalInnerIter())): the p solver until the final
+corrector, and pFinal there. PODFoam now makes the same call, so its U and p
+agree with pimpleFoam's on v2012, v2106 and v2212. On openfoam.org the call
+stays plain, as in pimpleFoam there, and OpenFOAM 8 results do not change.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

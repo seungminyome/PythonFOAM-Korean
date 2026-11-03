@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes. The maximum values remain stable across the time steps.\", \"stability\": \"stable\"}",
+  "request_sha256": "28c7d2b244b332e0d7ec1c53f73a8cd0267a19311caf0074ea6783677f16ebad",
+  "request_bytes": 633123,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 916,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 57,
+    "prompt_tokens": 1972,
+    "total_tokens": 2029,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1612.008,
+    "prompt_per_token_ms": 0.817448275862069,
+    "prompt_per_second": 1223.3189909727496,
+    "predicted_n": 57,
+    "predicted_ms": 1662.254,
+    "predicted_per_token_ms": 29.683107142857143,
+    "predicted_per_second": 33.689195514042986
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes. The maximum values remain stable across the time steps.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.4122816901654005,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

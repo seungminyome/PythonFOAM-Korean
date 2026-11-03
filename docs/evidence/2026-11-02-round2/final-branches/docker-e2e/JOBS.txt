@@ -1,0 +1,10 @@
+Text review of $W/r4/texts (2026-11-02). Record only; no repository, branch or text file changed.
+Job 25092824 (r4rv-docker-e2e, account me5475): docker_e2e.sbatch copy (only T, --chdir, --output, job name changed;
+docker_e2e.sh byte-identical to $W/r4/texts/docker_e2e.sh) in the Apptainer copy of romitmaulik1/pythonfoam_docker
+(image sha256 0d457351692d), url file:///cluster/medbow/gscratch/syome/github_repos/PythonFOAM.
+  r5/pr-fix      d4ebf5cfa2896a6aec6dee44b8b7ca70ff2f36ae  PASS (exit 0)
+  r5/pr-observer ca68b32be74908c7443f64a47489a500abfc6748  PASS (exit 0)
+  COMPLETED 00:01:35. Log: logs/docker-e2e-25092824.out; per-branch logs e2e-25092824/*/e2e.log.
+Read-only checks on the login node: apptainer exec --containall of the same image (whoami, /opt/openfoam8/etc/bashrc,
+git 2.17.1, /home/PythonFOAM at 539dab9 without validation/, read-only /home, /tmp 64 MB tmpfs, numpy 1.19.5 in
+/usr/local/lib/python3.6/dist-packages).

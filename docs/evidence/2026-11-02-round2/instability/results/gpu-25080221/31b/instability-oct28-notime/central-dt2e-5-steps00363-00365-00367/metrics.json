@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "a1936999572ede85831c6823e9a442bfcb231d44c72b63808eddbb8dcb0c0f91",
+  "request_bytes": 680875,
+  "replay_wall_s": 4.04258544370532,
+  "client_inference_wall_s": 4.0183887630701065,
+  "usage": {
+    "completion_tokens": 58,
+    "prompt_tokens": 1972,
+    "total_tokens": 2030,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1622.36,
+    "prompt_per_token_ms": 0.8226977687626774,
+    "prompt_per_second": 1215.5132029882395,
+    "predicted_n": 58,
+    "predicted_ms": 1691.549,
+    "predicted_per_token_ms": 29.676298245614035,
+    "predicted_per_second": 33.696925126023544
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging extrema. The maximum and minimum values on the colour bars are stable over time.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "unstable",
+      "match": false,
+      "cannot_tell": false
+    }
+  }
+}

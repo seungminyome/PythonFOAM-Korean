@@ -1,0 +1,79 @@
+
+##### scen: versions ['8', 'v2012', 'v2106', 'v2212']; rows 59; version-rows 236; same as phase 3 231; differ 5; r4 versions disagree on 7
+  VSREF ('rankmodes-variance-rule', 'fork') v2106
+      phase3 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false}, {"variance_lines": ["VARIANCE rank 0 modes 2", "VARIANCE rank 1 modes 3"]}]
+      r4     [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false}, {"variance_lines": ["VARIANCE rank 1 modes 3", "VARIANCE rank 0 modes 2"]}]
+  VSREF ('returns-six-modes', 'fork') v2012
+      phase3 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false}, {}]
+      r4     [{"exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false}, {"values_match": true, "truncation_warnings": 1, "pod_files": ["upod_0", "upod_1", "upod_2", "upod_3", "upod_4", "vpod_0", "vpod_1", "vpod_2", "vpod_3", "vpod_4", "wpod_0", "wpod_1", "wpod_2", "wpod_3", "wpod_4"]}]
+  VSREF ('returns-six-modes', 'fork') v2106
+      phase3 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false}, {}]
+      r4     [{"exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false}, {"values_match": true, "truncation_warnings": 1, "pod_files": ["upod_0", "upod_1", "upod_2", "upod_3", "upod_4", "vpod_0", "vpod_1", "vpod_2", "vpod_3", "vpod_4", "wpod_0", "wpod_1", "wpod_2", "wpod_3", "wpod_4"]}]
+  VSREF ('returns-six-modes', 'fork') v2212
+      phase3 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false}, {}]
+      r4     [{"exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false}, {"values_match": true, "truncation_warnings": 1, "pod_files": ["upod_0", "upod_1", "upod_2", "upod_3", "upod_4", "vpod_0", "vpod_1", "vpod_2", "vpod_3", "vpod_4", "wpod_0", "wpod_1", "wpod_2", "wpod_3", "wpod_4"]}]
+  VSREF ('returns-six-modes', 'fork') 8
+      phase3 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false}, {}]
+      r4     [{"exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false}, {"values_match": true, "truncation_warnings": 1, "pod_files": ["upod_0", "upod_1", "upod_2", "upod_3", "upod_4", "vpod_0", "vpod_1", "vpod_2", "vpod_3", "vpod_4", "wpod_0", "wpod_1", "wpod_2", "wpod_3", "wpod_4"]}]
+  CROSS ('offline-shipped-method-of-snapshots-wi6', 'upstream')
+      v2012 [{"exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false}, {"pod_files_with_nan": 9}]
+      v2106 [{"exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false}, {"pod_files_with_nan": 9}]
+      v2212 [{"exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false}, {"pod_files_with_nan": 9}]
+      8 [{"exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false}, {"pod_files_with_nan": 5}]
+  CROSS ('rankmodes-variance-rule', 'fork')
+      v2012 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false}, {"variance_lines": ["VARIANCE rank 0 modes 2", "VARIANCE rank 1 modes 3"]}]
+      v2106 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false}, {"variance_lines": ["VARIANCE rank 1 modes 3", "VARIANCE rank 0 modes 2"]}]
+      v2212 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false}, {"variance_lines": ["VARIANCE rank 0 modes 2", "VARIANCE rank 1 modes 3"]}]
+      8 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": true, "nan_residual": false}, {"variance_lines": ["VARIANCE rank 1 modes 2", "VARIANCE rank 0 modes 3"]}]
+  CROSS ('traps-diverging-FOAM_SIGFPE-default', 'fork')
+      v2012 [{"exit": -8, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false}, {}]
+      v2106 [{"exit": -8, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false}, {}]
+      v2212 [{"exit": -8, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false}, {}]
+      8 [{"exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false}, {}]
+  CROSS ('traps-diverging-FOAM_SIGFPE-default', 'upstream')
+      v2012 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      v2106 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      v2212 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      8 [{"exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false}, {}]
+  CROSS ('traps-diverging-FOAM_SIGFPE-false', 'fork')
+      v2012 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      v2106 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      v2212 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      8 null
+  CROSS ('traps-diverging-FOAM_SIGFPE-false', 'upstream')
+      v2012 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      v2106 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      v2212 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      8 null
+  CROSS ('traps-env-unset', 'fork')
+      v2012 null
+      v2106 null
+      v2212 null
+      8 [{"exit": 0, "timed_out": null, "end": null, "finalized": null, "fatal": false, "sigfpe": null, "nan_residual": null}, {}]
+
+##### extra: versions ['8', 'v2012', 'v2106', 'v2212']; rows 15; version-rows 60; same as phase 3 60; differ 0; r4 versions disagree on 4
+  CROSS ('late-overflow-after-python', 'upstream')
+      v2012 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {"snapshot_calls": 5, "sigfpe_trace": false, "nan_residuals": 3}]
+      v2106 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {"snapshot_calls": 5, "sigfpe_trace": false, "nan_residuals": 3}]
+      v2212 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {"snapshot_calls": 5, "sigfpe_trace": false, "nan_residuals": 3}]
+      8 [{"exit": 124, "timed_out": true, "end": false, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": true}, {"snapshot_calls": 11, "sigfpe_trace": false, "nan_residuals": 103}]
+  CROSS ('traps2-divergence-after-python', 'fork')
+      v2012 [{"exit": -8, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false}, {"snapshot_calls": 0, "sigfpe_trace": true}]
+      v2106 [{"exit": -8, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false}, {"snapshot_calls": 0, "sigfpe_trace": true}]
+      v2212 [{"exit": -8, "timed_out": false, "end": false, "finalized": false, "fatal": false, "sigfpe": true, "nan_residual": false}, {"snapshot_calls": 0, "sigfpe_trace": true}]
+      8 [{"exit": 0, "timed_out": false, "end": true, "finalized": true, "fatal": false, "sigfpe": true, "nan_residual": false}, {"snapshot_calls": 400, "sigfpe_trace": false}]
+  CROSS ('traps2-divergence-after-python', 'upstream')
+      v2012 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {"snapshot_calls": 0, "sigfpe_trace": false}]
+      v2106 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {"snapshot_calls": 0, "sigfpe_trace": false}]
+      v2212 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {"snapshot_calls": 0, "sigfpe_trace": false}]
+      8 [{"exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": false}, {"snapshot_calls": 400, "sigfpe_trace": false}]
+  CROSS ('traps2-huge-initial-U', 'upstream')
+      v2012 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      v2106 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      v2212 [{"exit": 1, "timed_out": false, "end": false, "finalized": false, "fatal": true, "sigfpe": false, "nan_residual": true}, {}]
+      8 [{"exit": 0, "timed_out": false, "end": true, "finalized": false, "fatal": false, "sigfpe": false, "nan_residual": true}, {}]
+
+##### sched: versions ['8', 'v2012', 'v2106', 'v2212']; rows 26; version-rows 104; same as phase 3 103; differ 1; r4 versions disagree on 0
+  VSREF ('fork', 'upstream', False, 3, 0, 2) v2106
+      phase3 {"exit": 0, "finalized": true, "fatal": false, "problems": ["step 4: 0 snapshots in C++ log, expected 1"]}
+      r4     {"exit": 0, "finalized": true, "fatal": false, "problems": []}

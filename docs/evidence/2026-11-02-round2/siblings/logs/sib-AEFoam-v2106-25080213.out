@@ -1,0 +1,49 @@
+OUT=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/AEFoam-v2106-25080213 host=t384.cluster start=2026-11-01T22:58:29-07:00
+WM_PROJECT_VERSION=v2106
+python 3.11.16 numpy 2.4.6
+BUILD ok
+binary 794616 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/AEFoam-v2106-25080213/bin/AEFoam
+recording exit 1 steps 90 snapshots 0
+copy exit 1 steps 90 snapshots 0
+inner exit 0
+{
+ "solver": "AEFoam",
+ "version": "v2106",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "build": "ok",
+ "runs": {
+  "recording": {
+   "exit": "1",
+   "steps": 90,
+   "snapshot_files": [],
+   "python_tracebacks": 0,
+   "last_log_lines": [
+    "",
+    "    From Foam::Istream& Foam::operator>>(Foam::Istream&, Foam::doubleScalar&)",
+    "    in file lnInclude/Scalar.C at line 172.",
+    "",
+    "FOAM exiting",
+    ""
+   ],
+   "signals": []
+  },
+  "copy": {
+   "exit": "1",
+   "steps": 90,
+   "snapshot_files": [],
+   "python_tracebacks": 0,
+   "last_log_lines": [
+    "",
+    "    From Foam::Istream& Foam::operator>>(Foam::Istream&, Foam::doubleScalar&)",
+    "    in file lnInclude/Scalar.C at line 172.",
+    "",
+    "FOAM exiting",
+    ""
+   ],
+   "signals": []
+  }
+ },
+ "snapshots": [],
+ "written_fields_recording_vs_copy": []
+}
+end=2026-11-01T23:04:05-07:00

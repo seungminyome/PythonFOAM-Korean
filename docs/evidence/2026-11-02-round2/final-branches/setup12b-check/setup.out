@@ -1,0 +1,122 @@
+host: mblog1
+start: 2026-11-02T19:27:05Z
+HF_TOKEN set: no
+script sha256: 9ab36bf2816bf9e7efc2a73dd04c32cbe0c7e86ddaea91bcf51330e2a23dcd84  /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/wt/Solver_Examples/PODFoam/llm_demo/hpc/setup_12b.sh
+worktree HEAD: 8570cf7a44cca0fa723deaabc5a7383330a4b89c (setup_12b.sh uncommitted edit)
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_vx=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for this output (/apps/s/lmod/lmod/init/bash)
+Shell debugging restarted
++ unset __lmod_vx
++ set -euo pipefail
++ runtime_dir=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime
++ cuda=12.8
++ tag=b11429
++ repo=google/gemma-4-12B-it-qat-q4_0-gguf
++ pinned_revision=29d097773436b69ff9feafd636ab4cf873786537
++ revision=29d097773436b69ff9feafd636ab4cf873786537
++ model=gemma-4-12b-it-qat-q4_0.gguf
++ projector=mmproj-gemma-4-12b-it-qat-q4_0.gguf
++ archive=llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz
++ cudart=cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz
++ mkdir -p -- /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime
++ cd -- /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime
++ fetch_model https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf/resolve/29d097773436b69ff9feafd636ab4cf873786537/gemma-4-12b-it-qat-q4_0.gguf gemma-4-12b-it-qat-q4_0.gguf
++ [[ -n '' ]]
++ fetch https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf/resolve/29d097773436b69ff9feafd636ab4cf873786537/gemma-4-12b-it-qat-q4_0.gguf gemma-4-12b-it-qat-q4_0.gguf
++ local url=https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf/resolve/29d097773436b69ff9feafd636ab4cf873786537/gemma-4-12b-it-qat-q4_0.gguf target=gemma-4-12b-it-qat-q4_0.gguf
++ shift 2
++ [[ -f gemma-4-12b-it-qat-q4_0.gguf ]]
++ return 0
++ fetch_model https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf/resolve/29d097773436b69ff9feafd636ab4cf873786537/mmproj-gemma-4-12b-it-qat-q4_0.gguf mmproj-gemma-4-12b-it-qat-q4_0.gguf
++ [[ -n '' ]]
++ fetch https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf/resolve/29d097773436b69ff9feafd636ab4cf873786537/mmproj-gemma-4-12b-it-qat-q4_0.gguf mmproj-gemma-4-12b-it-qat-q4_0.gguf
++ local url=https://huggingface.co/google/gemma-4-12B-it-qat-q4_0-gguf/resolve/29d097773436b69ff9feafd636ab4cf873786537/mmproj-gemma-4-12b-it-qat-q4_0.gguf target=mmproj-gemma-4-12b-it-qat-q4_0.gguf
++ shift 2
++ [[ -f mmproj-gemma-4-12b-it-qat-q4_0.gguf ]]
++ return 0
++ fetch https://github.com/ggml-org/llama.cpp/releases/download/b11429/llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz
++ local url=https://github.com/ggml-org/llama.cpp/releases/download/b11429/llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz target=llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz
++ shift 2
++ [[ -f llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz ]]
++ return 0
++ fetch https://github.com/ggml-org/llama.cpp/releases/download/b11429/cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz
++ local url=https://github.com/ggml-org/llama.cpp/releases/download/b11429/cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz target=cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz
++ shift 2
++ [[ -f cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz ]]
++ return 0
++ expected=()
++ [[ 29d097773436b69ff9feafd636ab4cf873786537 == \2\9\d\0\9\7\7\7\3\4\3\6\b\6\9\f\f\9\f\e\a\f\d\6\3\6\a\b\4\c\f\8\7\3\7\8\6\5\3\7 ]]
++ expect_bytes gemma-4-12b-it-qat-q4_0.gguf 6975879296
++ local actual
+++ stat -c %s gemma-4-12b-it-qat-q4_0.gguf
++ actual=6975879296
++ [[ 6975879296 == \6\9\7\5\8\7\9\2\9\6 ]]
++ expect_bytes mmproj-gemma-4-12b-it-qat-q4_0.gguf 175115616
++ local actual
+++ stat -c %s mmproj-gemma-4-12b-it-qat-q4_0.gguf
++ actual=175115616
++ [[ 175115616 == \1\7\5\1\1\5\6\1\6 ]]
++ expected+=("93567e57a8fe10b23569b9d9ec38cd005deedf71e29477c421a4b83f418a538b  $model" "cb018338a7538a9814d994bfe54644c71eb7ed54e31eae2f721e45fd3c260da7  $projector")
++ [[ 12.8 == 12.8 ]]
++ expected+=("b13c64b9224d3c89d9993945d70cc21177ad00178c21b8d34237e3bc139834f1  $archive" "f4ab593e31507320b121f2cb21791f4c72420a2483d3df8bf2ca1a97d04e6845  $cudart")
++ ((  4  ))
++ sha256sum --check
++ printf '%s\n' '93567e57a8fe10b23569b9d9ec38cd005deedf71e29477c421a4b83f418a538b  gemma-4-12b-it-qat-q4_0.gguf' 'cb018338a7538a9814d994bfe54644c71eb7ed54e31eae2f721e45fd3c260da7  mmproj-gemma-4-12b-it-qat-q4_0.gguf' 'b13c64b9224d3c89d9993945d70cc21177ad00178c21b8d34237e3bc139834f1  llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz' 'f4ab593e31507320b121f2cb21791f4c72420a2483d3df8bf2ca1a97d04e6845  cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz'
+gemma-4-12b-it-qat-q4_0.gguf: OK
+mmproj-gemma-4-12b-it-qat-q4_0.gguf: OK
+llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz: OK
+cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz: OK
++ [[ ! -x llama-b11429-cuda/llama-server ]]
++ rm -rf extract.tmp
++ mkdir -p extract.tmp llama-b11429-cuda
++ tar -xzf llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz -C extract.tmp
++ tar -xzf cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz -C extract.tmp
++ find extract.tmp -mindepth 1 '(' -type f -o -type l ')' -exec mv -t llama-b11429-cuda/ '{}' +
++ rm -rf extract.tmp
++ chmod +x llama-b11429-cuda/llama-batched-bench llama-b11429-cuda/llama-bench llama-b11429-cuda/llama-cli llama-b11429-cuda/llama-completion llama-b11429-cuda/llama-fit-params llama-b11429-cuda/llama-gemma3-cli llama-b11429-cuda/llama-gguf-split llama-b11429-cuda/llama-imatrix llama-b11429-cuda/llama-llava-cli llama-b11429-cuda/llama-minicpmv-cli llama-b11429-cuda/llama-mtmd-cli llama-b11429-cuda/llama-mtmd-debug llama-b11429-cuda/llama-perplexity llama-b11429-cuda/llama-quantize llama-b11429-cuda/llama-qwen2vl-cli llama-b11429-cuda/llama-results llama-b11429-cuda/llama-server llama-b11429-cuda/llama-tokenize llama-b11429-cuda/llama-tts
++ [[ -x llama-b11429-cuda/llama-server ]]
++ sha256sum gemma-4-12b-it-qat-q4_0.gguf mmproj-gemma-4-12b-it-qat-q4_0.gguf llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz llama-b11429-cuda/llama-server
++ /gscratch/syome/conda/s4f/bin/python3 - /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime b11429 12.8 google/gemma-4-12B-it-qat-q4_0-gguf 29d097773436b69ff9feafd636ab4cf873786537 gemma-4-12b-it-qat-q4_0.gguf mmproj-gemma-4-12b-it-qat-q4_0.gguf
+warning: llama-server does not run here: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/llama-server: /lib64/libc.so.6: version `GLIBC_2.38' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/libllama-server-impl.so)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/llama-server: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.32' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/libllama-server-impl.so)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/llama-server: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/libllama-server-impl.so)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/llama-server: /lib64/libm.so.6: version `GLIBC_2.38' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/libllama-common.so.0)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/llama-server: /lib64/libc.so.6: version `GLIBC_2.38' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/libllama-common.so.0)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/llama-server: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.32' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/libllama-common.so.0)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/llama-server: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/libllama-common.so.0)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/llama-server: /lib64/libc.so.6: version `GLIBC_2.38' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/libmtmd.so.0)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/llama-server: /lib64/libc.so.6: version `GLIBC_2.38' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/libllama.so.0)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/llama-server: /lib64/libc.so.6: version `GLIBC_2.38' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/llama-b11429-cuda/libggml-base.so.0)
+The prebuilt binaries need GLIBC_2.38 and GLIBCXX_3.4.32; see build_llama_cuda.sh in hpc/README.md.
++ /gscratch/syome/conda/s4f/bin/python3 -c 'import json,sys; sys.exit(0 if json.load(open(sys.argv[1]))["server_runs"] else 1)' /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime/runtime_manifest_12b.json
++ echo 'files in /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime are complete, but llama-server does not run on this system'
+files in /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/setup12b-check/runtime are complete, but llama-server does not run on this system
+	Command being timed: "bash -x /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r3/observer/wt/Solver_Examples/PODFoam/llm_demo/hpc/setup_12b.sh"
+	User time (seconds): 14.23
+	System time (seconds): 3.52
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.98
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 11520
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 6611
+	Voluntary context switches: 64085
+	Involuntary context switches: 110
+	Swaps: 0
+	File system inputs: 544
+	File system outputs: 2132416
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+exit: 0
+end: 2026-11-02T19:27:23Z

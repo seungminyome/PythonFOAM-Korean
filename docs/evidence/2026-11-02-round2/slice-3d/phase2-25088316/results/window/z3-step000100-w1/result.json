@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity zone between y=60% and y=75% extending from x=25% to x=100%. The pressure field shows alternating high and low regions in the center-right area, with a significant low-pressure peak near the center of the flow structure.\",\n  \"fastest_flow_x_percent\": 48,\n  \"fastest_flow_y_percent\": 82,\n  \"lowest_pressure_x_percent\": 48,\n  \"lowest_pressure_y_percent\": 72,\n  \"uncertainties\": \"The exact physical boundaries and the nature of the obstacle or geometry causing the flow separation are not explicitly labeled.\"\n}",
+  "request_sha256": "520e349c209708eb6f673e87a0b9c916b2231996fb794cf7ae5d8340e39fd8c0",
+  "request_bytes": 195282,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1306,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 187,
+    "prompt_tokens": 1062,
+    "total_tokens": 1249,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 284.488,
+    "prompt_per_token_ms": 0.26787947269303203,
+    "prompt_per_second": 3733.0221309861927,
+    "predicted_n": 187,
+    "predicted_ms": 2346.042,
+    "predicted_per_token_ms": 12.613129032258064,
+    "predicted_per_second": 79.2824680888066
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity zone between y=60% and y=75% extending from x=25% to x=100%. The pressure field shows alternating high and low regions in the center-right area, with a significant low-pressure peak near the center of the flow structure.",
+    "fastest_flow_x_percent": 48,
+    "fastest_flow_y_percent": 82,
+    "lowest_pressure_x_percent": 48,
+    "lowest_pressure_y_percent": 72,
+    "uncertainties": "The exact physical boundaries and the nature of the obstacle or geometry causing the flow separation are not explicitly labeled."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.6875343956053257,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

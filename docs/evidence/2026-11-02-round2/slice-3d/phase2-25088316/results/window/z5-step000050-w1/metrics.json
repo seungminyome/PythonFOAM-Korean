@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z5-step000050-w1",
+  "design": {
+    "run": "z5",
+    "slice_z_m": 0.00714375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00714375,
+      "requested_z_m": 0.00714375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 50,
+    "time_s": 0.10100000000000026,
+    "plotted_range_m": {
+      "x": [
+        -0.048027621605709524,
+        0.18112200741120943
+      ],
+      "y": [
+        0.0017432804668695914,
+        0.10234144058622419
+      ]
+    },
+    "cells_in_window": 8792,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "d19e47f9c25a9520249fa6d826a21abdbf41070277008c236dd2d4aa2d605d33",
+  "wall_s": 3.6868721786886454,
+  "usage": {
+    "completion_tokens": 191,
+    "prompt_tokens": 1063,
+    "total_tokens": 1254,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 284.643,
+    "prompt_per_token_ms": 0.26777328316086546,
+    "prompt_per_second": 3734.5025171881975,
+    "predicted_n": 191,
+    "predicted_ms": 2396.391,
+    "predicted_per_token_ms": 12.612584210526316,
+    "predicted_per_second": 79.28589282800678
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region near the bottom center, with a distinct wake or interaction zone between x=30% and x=60%. The velocity is highest in the lower-middle section and lower in the bottom-left corner. Pressure is lowest in the center of the wake structures around x=40% and x=55%, while it is higher in the surrounding regions.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 15,
+    "lowest_pressure_x_percent": 40,
+    "lowest_pressure_y_percent": 10,
+    "uncertainties": "The exact physical geometry of the obstacle or boundary causing the wake is not explicitly shown, only the resulting flow field."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        50,
+        15
+      ],
+      "true_percent": [
+        39.01468105600086,
+        15.776893634616705
+      ],
+      "error_percent": [
+        10.98531894399914,
+        -0.7768936346167052
+      ],
+      "distance_percent": 11.012756059265742,
+      "error_m": [
+        0.025172817606499347,
+        -0.0007815407025087868
+      ],
+      "distance_m": 0.025184946935019766,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        40,
+        10
+      ],
+      "true_percent": [
+        39.47188554020806,
+        8.712292985788734
+      ],
+      "error_percent": [
+        0.5281144597919365,
+        1.287707014211266
+      ],
+      "distance_percent": 1.3917953287355949,
+      "error_m": [
+        0.001210172325397928,
+        0.0012954095640244098
+      ],
+      "distance_m": 0.0017727388402483148,
+      "within_10_percent": true
+    }
+  }
+}

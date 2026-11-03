@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z1-step000250-w1",
+  "design": {
+    "run": "z1",
+    "slice_z_m": 0.00079375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00079375,
+      "requested_z_m": 0.00079375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 250,
+    "time_s": 0.10200000000000126,
+    "plotted_range_m": {
+      "x": [
+        0.035360488999819556,
+        0.14080059614740098
+      ],
+      "y": [
+        0.0016591036254676,
+        0.038102085002106406
+      ]
+    },
+    "cells_in_window": 3945,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "96d378cc9ad27f53fee5910766d230b5f91092a9332931bcd2ee5d70f4cbfa45",
+  "wall_s": 3.309093400835991,
+  "usage": {
+    "completion_tokens": 176,
+    "prompt_tokens": 1061,
+    "total_tokens": 1237,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 283.724,
+    "prompt_per_token_ms": 0.2674118755890669,
+    "prompt_per_second": 3739.549703232719,
+    "predicted_n": 176,
+    "predicted_ms": 2207.607,
+    "predicted_per_token_ms": 12.614897142857142,
+    "predicted_per_second": 79.27135581650177
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly around the center-left. The velocity is slowest in the bottom left and bottom center regions. The lowest pressure is located in a distinct low-pressure zone in the lower-left quadrant, while the highest pressure is found in the bottom right and top right areas.",
+    "fastest_flow_x_percent": 20,
+    "fastest_flow_y_percent": 50,
+    "lowest_pressure_x_percent": 18,
+    "lowest_pressure_y_percent": 25,
+    "uncertainties": "The exact physical boundaries and the nature of the obstacles or geometry causing the pressure drop and velocity gradients are not explicitly shown."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        20,
+        50
+      ],
+      "true_percent": [
+        18.61739849442856,
+        46.83554146899671
+      ],
+      "error_percent": [
+        1.38260150557144,
+        3.164458531003291
+      ],
+      "distance_percent": 3.453315033072992,
+      "error_m": [
+        0.0014578165088986004,
+        0.0011532230331249872
+      ],
+      "distance_m": 0.0018588040073518506,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        18,
+        25
+      ],
+      "true_percent": [
+        16.63079042195819,
+        22.187588315872905
+      ],
+      "error_percent": [
+        1.3692095780418114,
+        2.8124116841270954
+      ],
+      "distance_percent": 3.1280016543499527,
+      "error_m": [
+        0.0014436960461622333,
+        0.001024926666280851
+      ],
+      "distance_m": 0.0017705177053500606,
+      "within_10_percent": true
+    }
+  }
+}

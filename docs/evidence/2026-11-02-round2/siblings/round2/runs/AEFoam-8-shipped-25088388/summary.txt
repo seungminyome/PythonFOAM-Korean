@@ -1,0 +1,25 @@
+{
+ "solver": "AEFoam",
+ "version": "8",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "builds": {
+  "upstream": true,
+  "ported": true
+ },
+ "cross": {
+  "ported_equals_copy_whole_matrix": {
+   "snapshots-1-rank0.npz:s": true
+  }
+ },
+ "written_fields": {
+  "copy_vs_ported": [
+   {
+    "time": "6.75948e-05",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ]
+ }
+}
+copy exit 139 steps 102 matrices 1 col0==col1 in 0 py_prints 99 tracebacks 0
+ported exit 139 steps 102 matrices 1 col0==col1 in 0 py_prints 99 tracebacks 0

@@ -1,0 +1,98 @@
+diff --git a/Solver_Examples/PODFoam/PODFoam.C b/Solver_Examples/PODFoam/PODFoam.C
+index f0d2cdc..a64f6cc 100644
+--- a/Solver_Examples/PODFoam/PODFoam.C
++++ b/Solver_Examples/PODFoam/PODFoam.C
+@@ -49,18 +49,41 @@ Description
+ #include "fvOptions.H"
+ #include "localEulerDdtScheme.H"
+ #include "fvcSmooth.H"
++#include "sigFpe.H"
++#include "emptyPolyPatch.H"
++#include "PythonCompat.H"
++#include "PythonGather.H"
++#include "PythonSlice.H"
+ 
+ // Some time related libraries
+ #include <ctime>
++#include <cmath>
++#include <cfenv>
+ 
+ /*The following stuff is for Python interoperability*/
+ #include <Python.h>
++#include <chrono>
+ #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+ #define PY_ARRAY_UNIQUE_SYMBOL POD_ARRAY_API
+ #include <numpy/arrayobject.h>
+ 
+-void init_numpy() {
+-  import_array1();
++int init_numpy() {
++  import_array1(-1);
++  return 0;
++}
++
++// Prints and clears the pending Python error. Not PyErr_Print: on SystemExit
++// that ends the process with the exit's own status, often 0.
++void printPythonError()
++{
++    PyObject *errorType = nullptr, *errorValue = nullptr, *errorTrace = nullptr;
++    PyErr_Fetch(&errorType, &errorValue, &errorTrace);
++    PyErr_NormalizeException(&errorType, &errorValue, &errorTrace);
++    if (errorType) PyErr_Display(errorType, errorValue, errorTrace);
++    Py_XDECREF(errorType);
++    Py_XDECREF(errorValue);
++    Py_XDECREF(errorTrace);
++    PyErr_Clear();
+ }
+ /*Done importing Python functionality*/
+ 
+@@ -70,19 +93,12 @@ int main(int argc, char *argv[])
+ {
+ 
+ 
+-    // create argument list
+-    Foam::argList args(argc, argv, true,true,/*initialise=*/false);
+-    if (!args.checkRootCase())
+-    {
+-        Foam::FatalError.exit();
+-    }
+-
+     // Some time related variables
+     struct timespec tw1, tw2;
+     double posix_wall;
+ 
+     #include "postProcess.H"
+-    // #include "setRootCaseLists.H"
++    #include "setRootCaseLists.H"
+     #include "createTime.H"
+     #include "createDynamicFvMesh.H"
+     #include "initContinuityErrs.H"
+@@ -124,7 +140,8 @@ int main(int argc, char *argv[])
+ 
+         runTime++;
+ 
+-        // Info<< "Start Time = " << runTime.timeName() << nl << endl;
++        Info<< "Time = " << runTime.timeName()
++            << " deltaT = " << runTime.deltaTValue() << nl << endl;
+         clock_gettime(CLOCK_MONOTONIC, &tw1); // POSIX
+ 
+         // --- Pressure-velocity PIMPLE corrector loop
+@@ -208,6 +225,18 @@ int main(int argc, char *argv[])
+         //     << nl << endl;
+     }
+ 
++    {
++        PythonFpeOff pythonFpe;
++        Py_DECREF(snapshot_func);
++        Py_DECREF(svd_func);
++        Py_XDECREF(analysis_func);
++        if (Py_FinalizeEx() < 0)
++        {
++            FatalErrorInFunction << "Python finalization failed" << exit(FatalError);
++        }
++        std::feclearexcept(FE_ALL_EXCEPT);
++    }
++    Info<< "Python finalized successfully" << nl;
+     Info<< "End\n" << endl;
+ 
+     return 0;

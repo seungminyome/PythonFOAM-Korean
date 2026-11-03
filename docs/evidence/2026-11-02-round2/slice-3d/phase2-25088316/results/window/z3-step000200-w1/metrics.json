@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z3-step000200-w1",
+  "design": {
+    "run": "z3",
+    "slice_z_m": 0.00396875,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00396875,
+      "requested_z_m": 0.00396875,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 200,
+    "time_s": 0.101750000000001,
+    "plotted_range_m": {
+      "x": [
+        0.000257020911794921,
+        0.06561367267783277
+      ],
+      "y": [
+        0.005088006062980731,
+        0.048392548741368134
+      ]
+    },
+    "cells_in_window": 3278,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "27eb3c8f95fddbe6ffe289566edae17c4d7fcd49441a61467211f21a524d55e8",
+  "wall_s": 3.0322381407022476,
+  "usage": {
+    "completion_tokens": 161,
+    "prompt_tokens": 1061,
+    "total_tokens": 1222,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 277.906,
+    "prompt_per_token_ms": 0.261928369462771,
+    "prompt_per_second": 3817.8376861240854,
+    "predicted_n": 161,
+    "predicted_ms": 2019.16,
+    "predicted_per_token_ms": 12.61975,
+    "predicted_per_second": 79.24087244200558
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper region (y > 40%) and slowest in the bottom region (y < 20%). The pressure is highest in a localized spot near the center-bottom and lowest in a distinct dark region in the bottom-right quadrant.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 80,
+    "lowest_pressure_x_percent": 78,
+    "lowest_pressure_y_percent": 18,
+    "uncertainties": "The exact magnitude of the velocity and pressure values at specific coordinates cannot be determined without the numerical data."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        50,
+        80
+      ],
+      "true_percent": [
+        78.93831675719908,
+        30.90336018533064
+      ],
+      "error_percent": [
+        -28.938316757199075,
+        49.09663981466936
+      ],
+      "distance_percent": 56.99040461192889,
+      "error_m": [
+        -0.018913114909955578,
+        0.021261075342197632
+      ],
+      "distance_m": 0.028455917491864293,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        78,
+        18
+      ],
+      "true_percent": [
+        77.3360463561799,
+        11.719384466822335
+      ],
+      "error_percent": [
+        0.6639536438200935,
+        6.280615533177665
+      ],
+      "distance_percent": 6.315612869447789,
+      "error_m": [
+        0.0004339378708794178,
+        0.0027197918340303505
+      ],
+      "distance_m": 0.0027541912962322605,
+      "within_10_percent": true
+    }
+  }
+}

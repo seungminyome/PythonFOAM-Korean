@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"At Time 3, the velocity magnitude |U| shows a localized, high-frequency oscillation (checkerboard-like pattern) around x=15%, y=30%, and the maximum velocity value has more than doubled from 39.12 m/s to 84.63 m/s without a physical cause.\", \"stability\": \"unstable\"}",
+  "request_sha256": "f3680c42f2fbac9ca10cf9408ff614d404ce1f086da8bc5c5f1cbef5b9d162f6",
+  "request_bytes": 646955,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 935,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 88,
+    "prompt_tokens": 1972,
+    "total_tokens": 2060,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1648.192,
+    "prompt_per_token_ms": 0.8357971602434077,
+    "prompt_per_second": 1196.462548052654,
+    "predicted_n": 88,
+    "predicted_ms": 2583.503,
+    "predicted_per_token_ms": 29.695436781609196,
+    "predicted_per_second": 33.675207654103744
+  },
+  "structured_output": {
+    "reason": "At Time 3, the velocity magnitude |U| shows a localized, high-frequency oscillation (checkerboard-like pattern) around x=15%, y=30%, and the maximum velocity value has more than doubled from 39.12 m/s to 84.63 m/s without a physical cause.",
+    "stability": "unstable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 5.277758304029703,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

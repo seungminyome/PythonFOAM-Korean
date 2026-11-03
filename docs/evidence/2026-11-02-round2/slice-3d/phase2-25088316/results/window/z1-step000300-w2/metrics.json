@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z1-step000300-w2",
+  "design": {
+    "run": "z1",
+    "slice_z_m": 0.00079375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00079375,
+      "requested_z_m": 0.00079375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 300,
+    "time_s": 0.1022500000000015,
+    "plotted_range_m": {
+      "x": [
+        -0.08918124976565048,
+        0.17729079316220833
+      ],
+      "y": [
+        -0.014061931869767386,
+        0.07992054590785776
+      ]
+    },
+    "cells_in_window": 10609,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "0840526ca2033d1c8520b128be162ec84e0a6e804eee2e0d5051873257d211c1",
+  "wall_s": 3.1128104962408543,
+  "usage": {
+    "completion_tokens": 168,
+    "prompt_tokens": 1062,
+    "total_tokens": 1230,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 282.78,
+    "prompt_per_token_ms": 0.26627118644067793,
+    "prompt_per_second": 3755.5697008274988,
+    "predicted_n": 168,
+    "predicted_ms": 2106.62,
+    "predicted_per_token_ms": 12.61449101796407,
+    "predicted_per_second": 79.27390796631572
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper region and near the center-right, with a significant low-velocity zone in the bottom-right quadrant. Pressure is lowest in a series of localized spots in the lower-middle region and highest in the bottom-right corner.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 35,
+    "lowest_pressure_x_percent": 53,
+    "lowest_pressure_y_percent": 28,
+    "uncertainties": "The exact velocity and pressure values at specific coordinates are not provided, only the relative color mapping. The physical orientation of the geometry is not specified."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        50,
+        35
+      ],
+      "true_percent": [
+        55.28316261152597,
+        34.366740352644904
+      ],
+      "error_percent": [
+        -5.283162611525967,
+        0.6332596473550964
+      ],
+      "distance_percent": 5.320979699340543,
+      "error_m": [
+        -0.014078151342134061,
+        0.0005951531073501708
+      ],
+      "distance_m": 0.014090725759634229,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        53,
+        28
+      ],
+      "true_percent": [
+        54.49710471607478,
+        25.546840443304962
+      ],
+      "error_percent": [
+        -1.4971047160747801,
+        2.453159556695038
+      ],
+      "distance_percent": 2.873902284611908,
+      "error_m": [
+        -0.003989365521693787,
+        0.0023055401352206012
+      ],
+      "distance_m": 0.004607662377040246,
+      "within_10_percent": true
+    }
+  }
+}

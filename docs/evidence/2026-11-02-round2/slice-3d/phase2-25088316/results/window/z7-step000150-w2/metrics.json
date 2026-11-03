@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z7-step000150-w2",
+  "design": {
+    "run": "z7",
+    "slice_z_m": 0.0103125,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.0103125,
+      "requested_z_m": 0.0103125,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 150,
+    "time_s": 0.10150000000000076,
+    "plotted_range_m": {
+      "x": [
+        -0.0181333761969497,
+        0.3540287646241893
+      ],
+      "y": [
+        0.0032463415937628737,
+        0.09659859770440293
+      ]
+    },
+    "cells_in_window": 8081,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "bf6da0dc8f2c368ed199527d42596e22d8dea4bcd7013e525722390bd49fad34",
+  "wall_s": 3.29687824472785,
+  "usage": {
+    "completion_tokens": 157,
+    "prompt_tokens": 1061,
+    "total_tokens": 1218,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 282.431,
+    "prompt_per_token_ms": 0.2661932139491046,
+    "prompt_per_second": 3756.6697706696505,
+    "predicted_n": 157,
+    "predicted_ms": 1968.667,
+    "predicted_per_token_ms": 12.619660256410256,
+    "predicted_per_second": 79.24143595641112
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper region and near the center-left, with a distinct low-velocity zone along the bottom boundary. The pressure is lowest in a series of vertical structures near the bottom-left and highest in the upper-right region.",
+    "fastest_flow_x_percent": 18,
+    "fastest_flow_y_percent": 20,
+    "lowest_pressure_x_percent": 18,
+    "lowest_pressure_y_percent": 10,
+    "uncertainties": "The exact magnitude of the velocity and pressure values at specific coordinates cannot be determined without the numerical data."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        18,
+        20
+      ],
+      "true_percent": [
+        17.95980864473082,
+        16.033267639146732
+      ],
+      "error_percent": [
+        0.040191355269179496,
+        3.9667323608532676
+      ],
+      "distance_percent": 3.966935967176545,
+      "error_m": [
+        0.00014957700819480808,
+        0.003703034152727381
+      ],
+      "distance_m": 0.003706053860596997,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        18,
+        10
+      ],
+      "true_percent": [
+        17.67841255283605,
+        7.216561644235999
+      ],
+      "error_percent": [
+        0.3215874471639495,
+        2.783438355764001
+      ],
+      "distance_percent": 2.8019542406170075,
+      "error_m": [
+        0.0011968267279774038,
+        0.0025984025025545987
+      ],
+      "distance_m": 0.0028607848192555656,
+      "within_10_percent": true
+    }
+  }
+}

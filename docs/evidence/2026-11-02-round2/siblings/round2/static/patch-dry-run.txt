@@ -1,0 +1,51 @@
+=== PODFoam_Debug
+  PythonComm.H: applies cleanly
+  PythonCreate.H: applies cleanly
+  pEqn.H: applies cleanly
+  Make/options: applies cleanly
+  PODFoam_Debug.C as PODFoam.C: applies cleanly
+  file identity vs PODFoam:
+    PythonComm.H identical
+    PythonCreate.H identical
+    pEqn.H identical
+    Make/options identical
+    Make/files differs (4 changed lines)
+    createFields.H identical
+    UEqn.H identical
+    correctPhi.H identical
+    setRDeltaT.H identical
+    PODFoam_Debug.C vs PODFoam.C: 2 changed lines
+=== APMOSFoam
+  PythonComm.H: 1 out of 1 hunk FAILED 
+  PythonCreate.H: 1 out of 1 hunk FAILED 
+  pEqn.H: applies cleanly
+  Make/options: applies cleanly
+  APMOSFoam.C as PODFoam.C: 1 out of 4 hunks FAILED 
+  file identity vs PODFoam:
+    PythonComm.H differs (26 changed lines)
+    PythonCreate.H differs (30 changed lines)
+    pEqn.H identical
+    Make/options identical
+    Make/files differs (4 changed lines)
+    createFields.H identical
+    UEqn.H identical
+    correctPhi.H identical
+    setRDeltaT.H identical
+    APMOSFoam.C vs PODFoam.C: 6 changed lines
+=== AEFoam
+  PythonComm.H: 1 out of 1 hunk FAILED 
+  PythonCreate.H: 1 out of 1 hunk FAILED 
+  pEqn.H: applies cleanly
+  Make/options: applies cleanly
+  AEFoam.C as PODFoam.C: 2 out of 4 hunks FAILED 
+  file identity vs PODFoam:
+    PythonComm.H differs (124 changed lines)
+    PythonCreate.H differs (47 changed lines)
+    pEqn.H identical
+    Make/options identical
+    Make/files differs (4 changed lines)
+    createFields.H identical
+    UEqn.H identical
+    correctPhi.H identical
+    setRDeltaT.H identical
+    AEFoam.C vs PODFoam.C: 9 changed lines

@@ -1,0 +1,12 @@
+PODFoam llm_demo/hpc: the GPU path
+
+These scripts run the asynchronous suite with Gemma 4 12B on a Slurm GPU node.
+setup_12b.sh fetches the pinned weights and llama.cpp and checks their SHA-256.
+build_llama_cuda.sh builds llama.cpp where the prebuilt binaries need a newer
+glibc. start_server.sh and stop_server.sh run the server and check that the
+pid they handle is a llama-server. async_v2.slurm runs the suite with OpenFOAM
+in an Apptainer image. Site settings come from the environment. The runtime
+lives beside the repository and the job output under llm_demo/, which its
+.gitignore covers.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

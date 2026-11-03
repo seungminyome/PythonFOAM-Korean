@@ -1,0 +1,11 @@
+host t399.cluster cpus=4 nproc=4 py=/gscratch/syome/conda/ci-py310/bin/python3 N=50 PAR=8 HEAD=24e9df6f5640594e2dbbd9a817231717fe8310ef start Mon Nov  2 15:24:53 MST 2026 load=7.39 7.40 7.28
+3.10.22 2.2.6 3.10.9 1.15.2
+unloaded unit tests rc=0 Ran 85 tests in 85.487s OK
+test_llm_client: Ran 17 tests in 6.713s
+test_callback: Ran 34 tests in 12.933s
+test_async: Ran 34 tests in 68.153s
+end Mon Nov  2 15:36:19 MST 2026 load=8.93 10.48 9.15
+passed 50 of 50
+walls: 68.2 77.4 
+loads: 8.93 14.27 
+files newer than HEAD in the export: 0

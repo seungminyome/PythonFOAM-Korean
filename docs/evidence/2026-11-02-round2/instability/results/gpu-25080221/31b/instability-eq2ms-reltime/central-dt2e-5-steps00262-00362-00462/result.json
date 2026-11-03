@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth of extremes.\", \"stability\": \"stable\"}",
+  "request_sha256": "8fe8759b577bc27e313ca29e7f50c1462dc58701538630f33d2e80160458f1a7",
+  "request_bytes": 654040,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 861,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 45,
+    "prompt_tokens": 2048,
+    "total_tokens": 2093,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 1590.849,
+    "prompt_per_token_ms": 0.77678173828125,
+    "prompt_per_second": 1287.3629112505337,
+    "predicted_n": 45,
+    "predicted_ms": 1308.567,
+    "predicted_per_token_ms": 29.740159090909092,
+    "predicted_per_second": 33.624567943406795
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth of extremes.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.244072820991278,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "86ac6bcd44b4a2e6ad162b0005fb6b186a86b9d4ffe11803b678ee2d7e0e4353",
+  "request_bytes": 654040,
+  "replay_wall_s": 2.1317540276795626,
+  "client_inference_wall_s": 2.1088726446032524,
+  "usage": {
+    "completion_tokens": 51,
+    "prompt_tokens": 2048,
+    "total_tokens": 2099,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 653.547,
+    "prompt_per_token_ms": 0.31911474609375,
+    "prompt_per_second": 3133.669039870124,
+    "predicted_n": 51,
+    "predicted_ms": 641.705,
+    "predicted_per_token_ms": 12.834100000000001,
+    "predicted_per_second": 77.91742311498272
+  },
+  "structured_output": {
+    "reason": "The flow fields show smooth evolution of features over time. There are no checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "unstable",
+      "match": false,
+      "cannot_tell": false
+    }
+  }
+}

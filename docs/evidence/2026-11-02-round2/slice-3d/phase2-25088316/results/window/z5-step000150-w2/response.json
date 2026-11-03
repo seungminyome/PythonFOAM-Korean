@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity boundary layer or wake structure in the lower half. The pressure field shows a complex distribution in the lower half, with a significant low-pressure zone near the center-left and a high-pressure region towards the bottom-right.\",\n  \"fastest_flow_x_percent\": 45,\n  \"fastest_flow_y_percent\": 35,\n  \"lowest_pressure_x_percent\": 45,\n  \"lowest_pressure_y_percent\": 28,\n  \"uncertainties\": \"The exact physical nature of the geometry and the specific fluid properties are not provided.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644762,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 170,
+    "prompt_tokens": 1063,
+    "total_tokens": 1233,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-BwnwbRWtAwOEEjVfrhyfOdYxMqWPDeLJ",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 286.431,
+    "prompt_per_token_ms": 0.2694553151458137,
+    "prompt_per_second": 3711.190478684221,
+    "predicted_n": 170,
+    "predicted_ms": 2132.199,
+    "predicted_per_token_ms": 12.616562130177515,
+    "predicted_per_second": 79.26089450374941
+  }
+}

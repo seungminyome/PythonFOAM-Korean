@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "805be42fe6b001ea6c8ad524a73e8a28a06715913b1d8aee61f7ad523fe23edd",
+  "request_bytes": 645875,
+  "replay_wall_s": 5.162209939211607,
+  "client_inference_wall_s": 5.136078387498856,
+  "usage": {
+    "completion_tokens": 72,
+    "prompt_tokens": 1972,
+    "total_tokens": 2044,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1560.749,
+    "prompt_per_token_ms": 0.7914548681541582,
+    "prompt_per_second": 1263.4959240723524,
+    "predicted_n": 72,
+    "predicted_ms": 2104.594,
+    "predicted_per_token_ms": 29.64216901408451,
+    "predicted_per_second": 33.73572289952361
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude |U| shows a sudden and significant increase in its maximum value from 43.44 m/s at time 2 to 96.52 m/s at time 3, without a corresponding physical structure, suggesting numerical divergence.",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

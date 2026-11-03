@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z5-step000150-w1",
+  "design": {
+    "run": "z5",
+    "slice_z_m": 0.00714375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00714375,
+      "requested_z_m": 0.00714375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 150,
+    "time_s": 0.10150000000000076,
+    "plotted_range_m": {
+      "x": [
+        -0.021026803783247026,
+        0.07880937487172707
+      ],
+      "y": [
+        -0.03457174300451164,
+        0.02766652383204661
+      ]
+    },
+    "cells_in_window": 5617,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "d0b0142d5ae51d9afe3f58cb7dabb378b807350bd4e02de586cc8af1671f016a",
+  "wall_s": 4.104952052235603,
+  "usage": {
+    "completion_tokens": 208,
+    "prompt_tokens": 1063,
+    "total_tokens": 1271,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 286.038,
+    "prompt_per_token_ms": 0.2690856067732832,
+    "prompt_per_second": 3716.2894440598798,
+    "predicted_n": 208,
+    "predicted_ms": 2717.433,
+    "predicted_per_token_ms": 13.127695652173912,
+    "predicted_per_second": 76.17483117339047
+  },
+  "structured_output": {
+    "flow_description": "The flow shows high velocity in the upper region, particularly between 40% and 90% x. A low-velocity zone exists between 55% and 75% y. Pressure is highest in the upper left and shows a series of alternating high and low pressure cells in the center-right region, with a significant low-pressure peak near 70% x and 70% y.",
+    "fastest_flow_x_percent": 85,
+    "fastest_flow_y_percent": 85,
+    "lowest_pressure_x_percent": 68,
+    "lowest_pressure_y_percent": 70,
+    "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only the relative color scales. The physical nature of the boundaries and the specific geometry of the domain are не"
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        85,
+        85
+      ],
+      "true_percent": [
+        69.84746097594478,
+        84.81197236146262
+      ],
+      "error_percent": [
+        15.152539024055216,
+        0.18802763853737758
+      ],
+      "distance_percent": 15.153705595278343,
+      "error_m": [
+        0.015127715930820433,
+        0.0001170251433993723
+      ],
+      "distance_m": 0.01512816856621402,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        68,
+        70
+      ],
+      "true_percent": [
+        68.7984928224242,
+        71.58764209130054
+      ],
+      "error_percent": [
+        -0.7984928224241941,
+        -1.5876420913005376
+      ],
+      "distance_percent": 1.7771320146607286,
+      "error_m": [
+        -0.0007971847207425634,
+        -0.0009881209211931423
+      ],
+      "distance_m": 0.0012696008955120435,
+      "within_10_percent": true
+    }
+  }
+}

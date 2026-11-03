@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is generally fast in the upper region, with a localized high-velocity zone near the center-right. A slow-moving region exists along a horizontal boundary in the lower half. Pressure is relatively uniform in the upper region, with a significant low-pressure zone located in the lower-right quadrant.\",\n  \"fastest_flow_x_percent\": 80,\n  \"fastest_flow_y_percent\": 40,\n  \"lowest_pressure_x_percent\": 80,\n  \"lowest_pressure_y_percent\": 35,\n  \"uncertainties\": \"The exact physical nature of the boundary at y=35% and the specific geometry of the objects causing the pressure drop are not explicitly stated.\"\n}",
+  "request_sha256": "8cc3e9e2cd7b6320fd7c47b22387a9927d09211ffcbc938e3b6d8421d20dca30",
+  "request_bytes": 178825,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1309,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 177,
+    "prompt_tokens": 1061,
+    "total_tokens": 1238,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 281.042,
+    "prompt_per_token_ms": 0.2648840716305372,
+    "prompt_per_second": 3775.2364415283128,
+    "predicted_n": 177,
+    "predicted_ms": 2219.665,
+    "predicted_per_token_ms": 12.611732954545454,
+    "predicted_per_second": 79.29124439949273
+  },
+  "structured_output": {
+    "flow_description": "The flow is generally fast in the upper region, with a localized high-velocity zone near the center-right. A slow-moving region exists along a horizontal boundary in the lower half. Pressure is relatively uniform in the upper region, with a significant low-pressure zone located in the lower-right quadrant.",
+    "fastest_flow_x_percent": 80,
+    "fastest_flow_y_percent": 40,
+    "lowest_pressure_x_percent": 80,
+    "lowest_pressure_y_percent": 35,
+    "uncertainties": "The exact physical nature of the boundary at y=35% and the specific geometry of the objects causing the pressure drop are not explicitly stated."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.5153022464364767,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

@@ -1,0 +1,16 @@
+job 25090307 node t288.cluster code d686a64dbec54a7cf82dc3852c406775a9144adc
+WM_PROJECT_VERSION=8
+BUILD PODFoam_Debug ok 910728 bytes warnings 0
+BUILD APMOSFoam ok 905808 bytes warnings 0
+BUILD AEFoam ok 905592 bytes warnings 0
+build inner exit 0
+WM_PROJECT_VERSION=8
+python 3.11.16 numpy 2.4.6
+BUILD upstream ok
+binary 910728 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/fix/siblings/8-25090307/record/bin-upstream/PODFoam_Debug
+--- recording controlDict:
+endTime 1.5e-4; deltaT          1.0e-5; writeControl    timeStep; writeInterval  	100; adjustTimeStep  yes; maxCo           1; 
+recording exit 0 steps 222 snapshots 2
+record inner exit 0
+RECORD {"matrices": 6, "col0_equals_col1": 0, "equal_to_r2_python_copy_run": 6, "r2_copy_matrices": 6, "exit": "0"}
+done

@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows high velocity in the upper region (y > 70%) and a distinct low-velocity zone between y=60% and y=75% extending from the left. Pressure is lowest in a localized region around x=20%, y=70%, and is generally higher in the upper right and lower left regions.\",\n  \"fastest_flow_x_percent\": 20,\n  \"fastest_flow_y_percent\": 80,\n  \"lowest_pressure_x_percent\": 20,\n  \"lowest_pressure_y_percent\": 70,\n  \"uncertainties\": \"The exact physical boundaries of the geometry and the specific fluid properties are not provided.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644811,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 173,
+    "prompt_tokens": 1061,
+    "total_tokens": 1234,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-mfqLPYYsJz4DUZBCd2Af3UEpmOWb893e",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 276.292,
+    "prompt_per_token_ms": 0.26040716305372286,
+    "prompt_per_second": 3840.1401415893333,
+    "predicted_n": 173,
+    "predicted_ms": 2169.567,
+    "predicted_per_token_ms": 12.613761627906976,
+    "predicted_per_second": 79.27849197558776
+  }
+}

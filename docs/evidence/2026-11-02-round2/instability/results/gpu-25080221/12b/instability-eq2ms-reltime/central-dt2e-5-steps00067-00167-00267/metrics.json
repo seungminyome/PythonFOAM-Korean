@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "a47f0d7f23c8d0e55f94c449650fe4a37cf5acbaa79d876d20b371f503e7607e",
+  "request_bytes": 650732,
+  "replay_wall_s": 2.298803461715579,
+  "client_inference_wall_s": 2.272009303793311,
+  "usage": {
+    "completion_tokens": 60,
+    "prompt_tokens": 2048,
+    "total_tokens": 2108,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 659.259,
+    "prompt_per_token_ms": 0.32190380859375,
+    "prompt_per_second": 3106.518075596996,
+    "predicted_n": 60,
+    "predicted_ms": 756.309,
+    "predicted_per_token_ms": 12.81879661016949,
+    "predicted_per_second": 78.01044282165094
+  },
+  "structured_output": {
+    "reason": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and the pressure gradients, without any high-frequency oscillations, checkerboard patterns, or non-physical growth in values.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "unstable",
+      "match": false,
+      "cannot_tell": false
+    }
+  }
+}

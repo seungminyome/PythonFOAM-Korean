@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "11cf80168d00e405446ed952dce72191823ee20ae3367d80936f40ea34cc83a9",
+  "request_bytes": 585403,
+  "replay_wall_s": 2.501735692843795,
+  "client_inference_wall_s": 2.4797882214188576,
+  "usage": {
+    "completion_tokens": 83,
+    "prompt_tokens": 1972,
+    "total_tokens": 2055,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 619.56,
+    "prompt_per_token_ms": 0.3141784989858012,
+    "prompt_per_second": 3182.903996384531,
+    "predicted_n": 83,
+    "predicted_ms": 1052.704,
+    "predicted_per_token_ms": 12.837853658536584,
+    "predicted_per_second": 77.89464084870961
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude |U| jumps from ~36 m/s at time 2 to ~3.04e+08 m/s at time 3, indicating a massive numerical explosion. The pressure field also shows extreme values and high-frequency oscillations (checkerboard-like patterns) at time 3.",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

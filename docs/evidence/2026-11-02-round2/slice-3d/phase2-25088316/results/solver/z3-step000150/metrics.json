@@ -1,0 +1,114 @@
+{
+  "set": "solver",
+  "name": "z3-step000150",
+  "design": {
+    "run": "z3",
+    "slice_z_m": 0.00396875,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00396875,
+      "requested_z_m": 0.00396875,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 150,
+    "time_s": 0.10150000000000076,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "39dfc56335cfb181acb79eb9729cfc0ba00aa77c2c7a8b4b4524bdd3af38bc2b",
+  "wall_s": 3.6175053026527166,
+  "usage": {
+    "completion_tokens": 177,
+    "prompt_tokens": 998,
+    "total_tokens": 1175,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 998,
+    "prompt_ms": 268.228,
+    "prompt_per_token_ms": 0.26876553106212425,
+    "prompt_per_second": 3720.715212431215,
+    "predicted_n": 177,
+    "predicted_ms": 2220.704,
+    "predicted_per_token_ms": 12.617636363636365,
+    "predicted_per_second": 79.25414643284292
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly around the center, while it is slowest in the lower half. The lowest pressure is located in a distinct dark region near the center of the domain, while higher pressure is seen in the bottom right and top right corners.",
+    "fastest_flow_x_percent": 40,
+    "fastest_flow_y_percent": 48,
+    "lowest_pressure_x_percent": 40,
+    "lowest_pressure_y_percent": 30,
+    "uncertainties": "The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the domain are not explicitly stated."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        40,
+        48
+      ],
+      "true_percent": [
+        40.58852678555042,
+        45.53439665790875
+      ],
+      "error_percent": [
+        -0.588526785550421,
+        2.4656033420912493
+      ],
+      "distance_percent": 2.5348695465135576,
+      "error_m": [
+        -0.0007062321426605053,
+        0.0009862413368364998
+      ],
+      "distance_m": 0.001213027540417733,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        40,
+        30
+      ],
+      "true_percent": [
+        39.7158186857316,
+        24.957911755680698
+      ],
+      "error_percent": [
+        0.28418131426840176,
+        5.042088244319302
+      ],
+      "distance_percent": 5.050090383634952,
+      "error_m": [
+        0.0003410175771220821,
+        0.002016835297727721
+      ],
+      "distance_m": 0.0020454626875273676,
+      "within_10_percent": true
+    }
+  }
+}

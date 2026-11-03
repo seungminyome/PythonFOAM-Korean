@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "3909d3efce0a7b5ac78f52345da1aa706a5f2c0bd5e307c9d13349a3f9443712",
+  "request_bytes": 583275,
+  "replay_wall_s": 2.267435859888792,
+  "client_inference_wall_s": 2.2430505454540253,
+  "usage": {
+    "completion_tokens": 82,
+    "prompt_tokens": 1972,
+    "total_tokens": 2054,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 800.595,
+    "prompt_per_token_ms": 0.40598123732251523,
+    "prompt_per_second": 2463.1680187860275,
+    "predicted_n": 82,
+    "predicted_ms": 1061.917,
+    "predicted_per_token_ms": 13.110086419753085,
+    "predicted_per_second": 76.27714783735453
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude |U| jumps from values around 43 m/s at time 2 to approximately 1.5e+40 m/s at time 3, indicating a massive numerical explosion. The pressure also jumps to values around 10^39 m^2/s^2.",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is fastest in the upper region and near the center-right, with a distinct low-velocity wake or boundary layer extending from the left. Pressure is lowest in a localized region near the center of the wake and highest in the upper-right and lower-right corners.\",\n  \"fastest_flow_x_percent\": 50,\n  \"fastest_flow_y_percent\": 75,\n  \"lowest_pressure_x_percent\": 48,\n  \"lowest_pressure_y_percent\": 63,\n  \"uncertainties\": \"The exact physical boundaries and the nature of the obstacle causing the wake are not explicitly labeled.\"\n}",
+  "request_sha256": "7b7f7f7955eb113b07d010dccce2abd3c390f21e21b7e143869f1b414c40214d",
+  "request_bytes": 194056,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1231,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 1060,
+    "total_tokens": 1220,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1060,
+    "prompt_ms": 280.099,
+    "prompt_per_token_ms": 0.2642443396226415,
+    "prompt_per_second": 3784.3762384014226,
+    "predicted_n": 160,
+    "predicted_ms": 2006.092,
+    "predicted_per_token_ms": 12.616930817610063,
+    "predicted_per_second": 79.25857837028411
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper region and near the center-right, with a distinct low-velocity wake or boundary layer extending from the left. Pressure is lowest in a localized region near the center of the wake and highest in the upper-right and lower-right corners.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 75,
+    "lowest_pressure_x_percent": 48,
+    "lowest_pressure_y_percent": 63,
+    "uncertainties": "The exact physical boundaries and the nature of the obstacle causing the wake are not explicitly labeled."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.318857269361615,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

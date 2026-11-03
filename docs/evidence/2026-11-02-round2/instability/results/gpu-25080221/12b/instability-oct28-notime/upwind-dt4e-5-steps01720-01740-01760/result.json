@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and continuous evolution of features (such as the moving pressure peaks and velocity structures) over time. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth of local\", \"stability\": \"stable\"}",
+  "request_sha256": "625455d50292b77879b01d8a8f9dba89031fb365a956a43ffb1abb1db07b9c57",
+  "request_bytes": 633123,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 990,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 69,
+    "prompt_tokens": 1972,
+    "total_tokens": 2041,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 578.112,
+    "prompt_per_token_ms": 0.2931602434077079,
+    "prompt_per_second": 3411.103730764973,
+    "predicted_n": 69,
+    "predicted_ms": 992.436,
+    "predicted_per_token_ms": 14.59464705882353,
+    "predicted_per_second": 68.51827221100403
+  },
+  "structured_output": {
+    "reason": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and continuous evolution of features (such as the moving pressure peaks and velocity structures) over time. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth of local",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.352030223235488,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

@@ -1,0 +1,11 @@
+README: PODFoam snapshot fix and validation
+
+The four solvers this series touches build on v2012, v2106, v2212 and 8, and
+the README says so without widening the list for the other examples. Under
+PODFoam in Contents, a pointer names the validation, what a module must provide
+and the versions it passes on. The prep_env.sh sentence says its source line
+must point at the bashrc of the OpenFOAM version in use, and the requirements
+are given per solver: the solvers need Python 3 with numpy and their headers,
+the shipped modules also matplotlib, and mpi4py or tensorflow.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

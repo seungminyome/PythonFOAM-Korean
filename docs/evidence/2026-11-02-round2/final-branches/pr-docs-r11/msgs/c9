@@ -1,0 +1,12 @@
+PODFoam llm_demo: an observer asking a local vision-language model
+
+python_module.py is an example for the two hooks. At chosen steps it
+draws |U| and p and asks a vision-language model on a local llama-server
+about them. It records the answer with the arrays; model output never
+goes back into the solver. Each request runs in a forked worker with a
+deadline, so a slow or dead server cannot hold the solver past it.
+run_demo.sh runs five cases, synchronous or asynchronous. verify_demo.py
+and verify_async.py check that the written fields equal those of the
+same run with no model requests. The unit tests need no solver or model.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

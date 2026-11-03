@@ -1,0 +1,114 @@
+{
+  "set": "solver",
+  "name": "z3-step000100",
+  "design": {
+    "run": "z3",
+    "slice_z_m": 0.00396875,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00396875,
+      "requested_z_m": 0.00396875,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 100,
+    "time_s": 0.1012500000000005,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "f6dfba3d67769b223b7b97fc9dbcf760fa5b704f1f931dd0532a7c07bd01a571",
+  "wall_s": 3.63719199039042,
+  "usage": {
+    "completion_tokens": 187,
+    "prompt_tokens": 997,
+    "total_tokens": 1184,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 997,
+    "prompt_ms": 265.614,
+    "prompt_per_token_ms": 0.2664132397191574,
+    "prompt_per_second": 3753.567206547848,
+    "predicted_n": 187,
+    "predicted_ms": 2381.698,
+    "predicted_per_token_ms": 12.804827956989246,
+    "predicted_per_second": 78.09554359956637
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly around the center. The velocity is slowest in the bottom third, where a dark horizontal band exists. The lowest pressure is located in a concentrated dark region near the center-left, while higher pressure is seen in the bottom-right and top-right corners.",
+    "fastest_flow_x_percent": 40,
+    "fastest_flow_y_percent": 50,
+    "lowest_pressure_x_percent": 38,
+    "lowest_pressure_y_percent": 30,
+    "uncertainties": "The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the objects causing the flow features are not"
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        40,
+        50
+      ],
+      "true_percent": [
+        37.097095281686535,
+        46.532180309974045
+      ],
+      "error_percent": [
+        2.902904718313465,
+        3.467819690025955
+      ],
+      "distance_percent": 4.522458314472151,
+      "error_m": [
+        0.003483485661976158,
+        0.001387127876010382
+      ],
+      "distance_m": 0.0037495061143567356,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        38,
+        30
+      ],
+      "true_percent": [
+        37.97021490767776,
+        25.94610372900481
+      ],
+      "error_percent": [
+        0.02978509232224269,
+        4.053896270995189
+      ],
+      "distance_percent": 4.054005689156509,
+      "error_m": [
+        3.574211078669123e-05,
+        0.0016215585083980755
+      ],
+      "distance_m": 0.0016219523712617703,
+      "within_10_percent": true
+    }
+  }
+}

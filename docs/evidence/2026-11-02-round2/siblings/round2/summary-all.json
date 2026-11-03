@@ -1,0 +1,674 @@
+{
+ "upstream_commit": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "note": "steps = count of \"Courant Number mean\" lines in the solver log = 1 pre-loop line + one per time step",
+ "round1": [
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/AEFoam-8-25080210",
+   "job": "25080210",
+   "solver": "AEFoam",
+   "openfoam": "8",
+   "case": "shipped Run_Case, endTime 1.5e-4, LESModel added on v2106",
+   "build": "ok",
+   "recording": {
+    "exit": "139",
+    "courant_lines": 102,
+    "snapshot_files": [
+     "snapshots-1-rank0.npz"
+    ]
+   },
+   "copy": {
+    "exit": "139",
+    "courant_lines": 102
+   },
+   "matrices": 1,
+   "recording_col0_equals_col1": 1,
+   "copy_col0_equals_col1": 0,
+   "recording_col0_equals_copy_col1": 1,
+   "columns_from_1_identical": 1,
+   "written_U_p_identical_recording_vs_copy": [
+    [
+     "6.75948e-05",
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/AEFoam-v2106-25080213",
+   "job": "25080213",
+   "solver": "AEFoam",
+   "openfoam": "v2106",
+   "case": "shipped Run_Case, endTime 1.5e-4, LESModel added on v2106",
+   "build": "ok",
+   "recording": {
+    "exit": "1",
+    "courant_lines": 90,
+    "snapshot_files": []
+   },
+   "copy": {
+    "exit": "1",
+    "courant_lines": 90
+   },
+   "matrices": 0,
+   "recording_col0_equals_col1": 0,
+   "copy_col0_equals_col1": 0,
+   "recording_col0_equals_copy_col1": 0,
+   "columns_from_1_identical": 0,
+   "written_U_p_identical_recording_vs_copy": []
+  },
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/APMOSFoam-8-25080209",
+   "job": "25080209",
+   "solver": "APMOSFoam",
+   "openfoam": "8",
+   "case": "shipped Run_Case, endTime 1.5e-4, LESModel added on v2106",
+   "build": "ok",
+   "recording": {
+    "exit": "0",
+    "courant_lines": 222,
+    "snapshot_files": [
+     "snapshots-1-rank0.npz",
+     "snapshots-1-rank1.npz",
+     "snapshots-1-rank2.npz",
+     "snapshots-1-rank3.npz",
+     "snapshots-2-rank0.npz",
+     "snapshots-2-rank1.npz",
+     "snapshots-2-rank2.npz",
+     "snapshots-2-rank3.npz"
+    ]
+   },
+   "copy": {
+    "exit": "0",
+    "courant_lines": 222
+   },
+   "matrices": 24,
+   "recording_col0_equals_col1": 24,
+   "copy_col0_equals_col1": 0,
+   "recording_col0_equals_copy_col1": 24,
+   "columns_from_1_identical": 24,
+   "written_U_p_identical_recording_vs_copy": [
+    [
+     "6.7602e-05",
+     true,
+     true
+    ],
+    [
+     "0.000133306",
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/APMOSFoam-v2106-25080212",
+   "job": "25080212",
+   "solver": "APMOSFoam",
+   "openfoam": "v2106",
+   "case": "shipped Run_Case, endTime 1.5e-4, LESModel added on v2106",
+   "build": "ok",
+   "recording": {
+    "exit": "1",
+    "courant_lines": 90,
+    "snapshot_files": []
+   },
+   "copy": {
+    "exit": "1",
+    "courant_lines": 90
+   },
+   "matrices": 0,
+   "recording_col0_equals_col1": 0,
+   "copy_col0_equals_col1": 0,
+   "recording_col0_equals_copy_col1": 0,
+   "columns_from_1_identical": 0,
+   "written_U_p_identical_recording_vs_copy": []
+  },
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/PODFoam_Debug-8-25080208",
+   "job": "25080208",
+   "solver": "PODFoam_Debug",
+   "openfoam": "8",
+   "case": "shipped Run_Case, endTime 1.5e-4, LESModel added on v2106",
+   "build": "ok",
+   "recording": {
+    "exit": "0",
+    "courant_lines": 222,
+    "snapshot_files": [
+     "snapshots-1-rank0.npz",
+     "snapshots-2-rank0.npz"
+    ]
+   },
+   "copy": {
+    "exit": "0",
+    "courant_lines": 222
+   },
+   "matrices": 6,
+   "recording_col0_equals_col1": 6,
+   "copy_col0_equals_col1": 0,
+   "recording_col0_equals_copy_col1": 6,
+   "columns_from_1_identical": 6,
+   "written_U_p_identical_recording_vs_copy": [
+    [
+     "6.75948e-05",
+     true,
+     true
+    ],
+    [
+     "0.000133285",
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/PODFoam_Debug-v2106-25080211",
+   "job": "25080211",
+   "solver": "PODFoam_Debug",
+   "openfoam": "v2106",
+   "case": "shipped Run_Case, endTime 1.5e-4, LESModel added on v2106",
+   "build": "ok",
+   "recording": {
+    "exit": "1",
+    "courant_lines": 90,
+    "snapshot_files": []
+   },
+   "copy": {
+    "exit": "1",
+    "courant_lines": 90
+   },
+   "matrices": 0,
+   "recording_col0_equals_col1": 0,
+   "copy_col0_equals_col1": 0,
+   "recording_col0_equals_copy_col1": 0,
+   "columns_from_1_identical": 0,
+   "written_U_p_identical_recording_vs_copy": []
+  }
+ ],
+ "round2": [
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/round2/runs/AEFoam-8-shipped-25088388",
+   "job": "25088388",
+   "solver": "AEFoam",
+   "openfoam": "8",
+   "case": "shipped Run_Case, endTime 1.5e-4",
+   "builds": {
+    "upstream": true,
+    "ported": true
+   },
+   "runs": {
+    "copy": {
+     "exit": "139",
+     "courant_lines": 102,
+     "matrices": 1,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       20540,
+       99
+      ]
+     ],
+     "python_print_lines": 99
+    },
+    "ported": {
+     "exit": "139",
+     "courant_lines": 102,
+     "matrices": 1,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       20540,
+       99
+      ]
+     ],
+     "python_print_lines": 99
+    }
+   },
+   "cross": {
+    "ported_equals_copy_whole_matrix": "1/1"
+   },
+   "written_U_p_identical": {
+    "copy_vs_ported": [
+     [
+      "6.75948e-05",
+      true,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/round2/runs/AEFoam-v2106-stab-25088389",
+   "job": "25088389",
+   "solver": "AEFoam",
+   "openfoam": "v2106",
+   "case": "stabilised (prepare_case.py fixed-* settings): laminar, Euler, upwind, U 32.2, dt 1e-7 fixed, endTime 6e-6, writeInterval 20",
+   "builds": {
+    "upstream": true,
+    "ported": true
+   },
+   "runs": {
+    "recording": {
+     "exit": "139",
+     "courant_lines": 22,
+     "matrices": 1,
+     "col0_equals_col1": 1,
+     "shapes": [
+      [
+       20540,
+       19
+      ]
+     ],
+     "python_print_lines": 19
+    },
+    "copy": {
+     "exit": "139",
+     "courant_lines": 22,
+     "matrices": 1,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       20540,
+       19
+      ]
+     ],
+     "python_print_lines": 19
+    },
+    "ported": {
+     "exit": "139",
+     "courant_lines": 22,
+     "matrices": 1,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       20540,
+       19
+      ]
+     ],
+     "python_print_lines": 19
+    }
+   },
+   "cross": {
+    "recording_col0_equals_copy_col1": "1/1",
+    "recording_vs_copy_columns_from_1_identical": "1/1",
+    "ported_equals_copy_whole_matrix": "1/1",
+    "ported_vs_recording_columns_from_1_identical": "1/1"
+   },
+   "written_U_p_identical": {
+    "recording_vs_copy": [
+     [
+      "2e-06",
+      true,
+      true
+     ]
+    ],
+    "recording_vs_ported": [
+     [
+      "2e-06",
+      true,
+      true
+     ]
+    ],
+    "copy_vs_ported": [
+     [
+      "2e-06",
+      true,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/round2/runs/APMOSFoam-8-shipped-25088463",
+   "job": "25088463",
+   "solver": "APMOSFoam",
+   "openfoam": "8",
+   "case": "shipped Run_Case, endTime 1.5e-4",
+   "builds": {
+    "upstream": true,
+    "ported": true
+   },
+   "runs": {
+    "copy": {
+     "exit": "0",
+     "courant_lines": 222,
+     "matrices": 24,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       4768,
+       99
+      ],
+      [
+       5502,
+       99
+      ]
+     ],
+     "python_print_lines": 876
+    },
+    "ported": {
+     "exit": "0",
+     "courant_lines": 222,
+     "matrices": 24,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       4768,
+       99
+      ],
+      [
+       5502,
+       99
+      ]
+     ],
+     "python_print_lines": 876
+    }
+   },
+   "cross": {
+    "ported_equals_copy_whole_matrix": "24/24"
+   },
+   "written_U_p_identical": {
+    "copy_vs_ported": [
+     [
+      "6.7602e-05",
+      true,
+      true
+     ],
+     [
+      "0.000133306",
+      true,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/round2/runs/APMOSFoam-v2106-stab-25088387",
+   "job": "25088387",
+   "solver": "APMOSFoam",
+   "openfoam": "v2106",
+   "case": "stabilised (prepare_case.py fixed-* settings): laminar, Euler, upwind, U 32.2, dt 1e-7 fixed, endTime 6e-6, writeInterval 20",
+   "builds": {
+    "upstream": true,
+    "ported": true
+   },
+   "runs": {
+    "recording": {
+     "exit": "0",
+     "courant_lines": 61,
+     "matrices": 36,
+     "col0_equals_col1": 36,
+     "shapes": [
+      [
+       4759,
+       19
+      ],
+      [
+       5511,
+       19
+      ]
+     ],
+     "python_print_lines": 228
+    },
+    "copy": {
+     "exit": "0",
+     "courant_lines": 61,
+     "matrices": 36,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       4759,
+       19
+      ],
+      [
+       5511,
+       19
+      ]
+     ],
+     "python_print_lines": 228
+    },
+    "ported": {
+     "exit": "0",
+     "courant_lines": 61,
+     "matrices": 36,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       4759,
+       19
+      ],
+      [
+       5511,
+       19
+      ]
+     ],
+     "python_print_lines": 228
+    }
+   },
+   "cross": {
+    "recording_col0_equals_copy_col1": "36/36",
+    "recording_vs_copy_columns_from_1_identical": "36/36",
+    "ported_equals_copy_whole_matrix": "36/36",
+    "ported_vs_recording_columns_from_1_identical": "36/36"
+   },
+   "written_U_p_identical": {
+    "recording_vs_copy": [
+     [
+      "2e-06",
+      true,
+      true
+     ],
+     [
+      "4e-06",
+      true,
+      true
+     ],
+     [
+      "6e-06",
+      true,
+      true
+     ]
+    ],
+    "recording_vs_ported": [
+     [
+      "2e-06",
+      true,
+      true
+     ],
+     [
+      "4e-06",
+      true,
+      true
+     ],
+     [
+      "6e-06",
+      true,
+      true
+     ]
+    ],
+    "copy_vs_ported": [
+     [
+      "2e-06",
+      true,
+      true
+     ],
+     [
+      "4e-06",
+      true,
+      true
+     ],
+     [
+      "6e-06",
+      true,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/round2/runs/PODFoam_Debug-8-shipped-25088384",
+   "job": "25088384",
+   "solver": "PODFoam_Debug",
+   "openfoam": "8",
+   "case": "shipped Run_Case, endTime 1.5e-4",
+   "builds": {
+    "upstream": true,
+    "ported": true
+   },
+   "runs": {
+    "copy": {
+     "exit": "0",
+     "courant_lines": 222,
+     "matrices": 6,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       20540,
+       99
+      ]
+     ],
+     "python_print_lines": 219
+    },
+    "ported": {
+     "exit": "0",
+     "courant_lines": 222,
+     "matrices": 6,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       20540,
+       99
+      ]
+     ],
+     "python_print_lines": 219
+    }
+   },
+   "cross": {
+    "ported_equals_copy_whole_matrix": "6/6"
+   },
+   "written_U_p_identical": {
+    "copy_vs_ported": [
+     [
+      "6.75948e-05",
+      true,
+      true
+     ],
+     [
+      "0.000133285",
+      true,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/round2/runs/PODFoam_Debug-v2106-stab-25088385",
+   "job": "25088385",
+   "solver": "PODFoam_Debug",
+   "openfoam": "v2106",
+   "case": "stabilised (prepare_case.py fixed-* settings): laminar, Euler, upwind, U 32.2, dt 1e-7 fixed, endTime 6e-6, writeInterval 20",
+   "builds": {
+    "upstream": true,
+    "ported": true
+   },
+   "runs": {
+    "recording": {
+     "exit": "0",
+     "courant_lines": 61,
+     "matrices": 9,
+     "col0_equals_col1": 9,
+     "shapes": [
+      [
+       20540,
+       19
+      ]
+     ],
+     "python_print_lines": 57
+    },
+    "copy": {
+     "exit": "0",
+     "courant_lines": 61,
+     "matrices": 9,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       20540,
+       19
+      ]
+     ],
+     "python_print_lines": 57
+    },
+    "ported": {
+     "exit": "0",
+     "courant_lines": 61,
+     "matrices": 9,
+     "col0_equals_col1": 0,
+     "shapes": [
+      [
+       20540,
+       19
+      ]
+     ],
+     "python_print_lines": 57
+    }
+   },
+   "cross": {
+    "recording_col0_equals_copy_col1": "9/9",
+    "recording_vs_copy_columns_from_1_identical": "9/9",
+    "ported_equals_copy_whole_matrix": "9/9",
+    "ported_vs_recording_columns_from_1_identical": "9/9"
+   },
+   "written_U_p_identical": {
+    "recording_vs_copy": [
+     [
+      "2e-06",
+      true,
+      true
+     ],
+     [
+      "4e-06",
+      true,
+      true
+     ],
+     [
+      "6e-06",
+      true,
+      true
+     ]
+    ],
+    "recording_vs_ported": [
+     [
+      "2e-06",
+      true,
+      true
+     ],
+     [
+      "4e-06",
+      true,
+      true
+     ],
+     [
+      "6e-06",
+      true,
+      true
+     ]
+    ],
+    "copy_vs_ported": [
+     [
+      "2e-06",
+      true,
+      true
+     ],
+     [
+      "4e-06",
+      true,
+      true
+     ],
+     [
+      "6e-06",
+      true,
+      true
+     ]
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,173 @@
+{
+ "solver": "PODFoam_Debug",
+ "version": "8",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "builds": {
+  "upstream": true,
+  "ported": true
+ },
+ "runs": {
+  "copy": {
+   "exit": "0",
+   "steps": 222,
+   "snapshot_files": [
+    "snapshots-1-rank0.npz",
+    "snapshots-2-rank0.npz"
+   ],
+   "python_tracebacks": 0,
+   "python_print_lines": 219,
+   "last_log_lines": [
+    "Numpy array cast time: 0.08 ms",
+    "Snapshot collection wall time: 2.21 ms",
+    "IO wall time: 0.00 ms",
+    "End",
+    ""
+   ],
+   "matrices": {
+    "snapshots-1-rank0.npz:u": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 14.533231954707343
+    },
+    "snapshots-1-rank0.npz:v": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 70.73042806346518
+    },
+    "snapshots-1-rank0.npz:w": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 1.0855034007249269e-13
+    },
+    "snapshots-2-rank0.npz:u": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 0.5390425867674296
+    },
+    "snapshots-2-rank0.npz:v": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 11.255010433985898
+    },
+    "snapshots-2-rank0.npz:w": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 9.0207404617854e-19
+    }
+   },
+   "n_matrices": 6,
+   "n_col0_equals_col1": 0
+  },
+  "ported": {
+   "exit": "0",
+   "steps": 222,
+   "snapshot_files": [
+    "snapshots-1-rank0.npz",
+    "snapshots-2-rank0.npz"
+   ],
+   "python_tracebacks": 0,
+   "python_print_lines": 219,
+   "last_log_lines": [
+    "Numpy array cast time: 0.17 ms",
+    "Snapshot collection wall time: 2.45 ms",
+    "IO wall time: 0.00 ms",
+    "End",
+    ""
+   ],
+   "matrices": {
+    "snapshots-1-rank0.npz:u": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 14.533231954707343
+    },
+    "snapshots-1-rank0.npz:v": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 70.73042806346518
+    },
+    "snapshots-1-rank0.npz:w": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 1.0855034007249269e-13
+    },
+    "snapshots-2-rank0.npz:u": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 0.5390425867674296
+    },
+    "snapshots-2-rank0.npz:v": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 11.255010433985898
+    },
+    "snapshots-2-rank0.npz:w": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 9.0207404617854e-19
+    }
+   },
+   "n_matrices": 6,
+   "n_col0_equals_col1": 0
+  }
+ },
+ "cross": {
+  "ported_equals_copy_whole_matrix": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true
+  }
+ },
+ "written_fields": {
+  "copy_vs_ported": [
+   {
+    "time": "6.75948e-05",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "0.000133285",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ]
+ }
+}

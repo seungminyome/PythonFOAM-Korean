@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z5-step000300-w1",
+  "design": {
+    "run": "z5",
+    "slice_z_m": 0.00714375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00714375,
+      "requested_z_m": 0.00714375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 300,
+    "time_s": 0.1022500000000015,
+    "plotted_range_m": {
+      "x": [
+        -0.010172749118072782,
+        0.10249666273073949
+      ],
+      "y": [
+        0.012163548419244583,
+        0.04276861015965505
+      ]
+    },
+    "cells_in_window": 3131,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "066701c1039bb52c7802376fcdcadb387aeda0eac76fdb84bcf4ae0c50d4b294",
+  "wall_s": 3.5082791093736887,
+  "usage": {
+    "completion_tokens": 175,
+    "prompt_tokens": 1062,
+    "total_tokens": 1237,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 285.733,
+    "prompt_per_token_ms": 0.26905178907721283,
+    "prompt_per_second": 3716.7565524458146,
+    "predicted_n": 175,
+    "predicted_ms": 2194.763,
+    "predicted_per_token_ms": 12.613580459770114,
+    "predicted_per_second": 79.2796306480472
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper region of the domain, particularly between 40% and 70% on the x-axis. The velocity is slowest near the bottom boundary. The kinematic pressure is lowest in a series of localized pockets along the bottom, with the lowest point occurring around 60% on the x-axis.",
+    "fastest_flow_x_percent": 60,
+    "fastest_flow_y_percent": 80,
+    "lowest_pressure_x_percent": 60,
+    "lowest_pressure_y_percent": 5,
+    "uncertainties": "The exact magnitude of the velocity and pressure values at specific coordinates cannot be determined without the underlying numerical data."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        60,
+        80
+      ],
+      "true_percent": [
+        60.62485907900462,
+        19.843886861981556
+      ],
+      "error_percent": [
+        -0.6248590790046222,
+        60.15611313801844
+      ],
+      "distance_percent": 60.15935834716565,
+      "error_m": [
+        -0.000704025049198413,
+        0.018410815566521715
+      ],
+      "distance_m": 0.018424271521402878,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        60,
+        5
+      ],
+      "true_percent": [
+        59.69563916567739,
+        0.19132760200818108
+      ],
+      "error_percent": [
+        0.3043608343226083,
+        4.808672397991819
+      ],
+      "distance_percent": 4.8182949005512254,
+      "error_m": [
+        0.00034292156192942074,
+        0.0014716971562994726
+      ],
+      "distance_m": 0.001511121344398281,
+      "within_10_percent": true
+    }
+  }
+}

@@ -1,0 +1,49 @@
+OUT=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/APMOSFoam-v2106-25080212 host=t384.cluster start=2026-11-01T22:58:29-07:00
+WM_PROJECT_VERSION=v2106
+python 3.11.16 numpy 2.4.6
+BUILD ok
+binary 794912 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/APMOSFoam-v2106-25080212/bin/APMOSFoam
+recording exit 1 steps 90 snapshots 0
+copy exit 1 steps 90 snapshots 0
+inner exit 0
+{
+ "solver": "APMOSFoam",
+ "version": "v2106",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "build": "ok",
+ "runs": {
+  "recording": {
+   "exit": "1",
+   "steps": 90,
+   "snapshot_files": [],
+   "python_tracebacks": 0,
+   "last_log_lines": [
+    "NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.",
+    "You may or may not see output from other processes, depending on",
+    "exactly when Open MPI kills them.",
+    "--------------------------------------------------------------------------",
+    "[t384.cluster:991416] 3 more processes have sent help message help-mpi-api.txt / mpi-abort",
+    "[t384.cluster:991416] Set MCA parameter \"orte_base_help_aggregate\" to 0 to see all help / error messages"
+   ],
+   "signals": []
+  },
+  "copy": {
+   "exit": "1",
+   "steps": 90,
+   "snapshot_files": [],
+   "python_tracebacks": 0,
+   "last_log_lines": [
+    "NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.",
+    "You may or may not see output from other processes, depending on",
+    "exactly when Open MPI kills them.",
+    "--------------------------------------------------------------------------",
+    "[t384.cluster:991460] 3 more processes have sent help message help-mpi-api.txt / mpi-abort",
+    "[t384.cluster:991460] Set MCA parameter \"orte_base_help_aggregate\" to 0 to see all help / error messages"
+   ],
+   "signals": []
+  }
+ },
+ "snapshots": [],
+ "written_fields_recording_vs_copy": []
+}
+end=2026-11-01T23:00:53-07:00

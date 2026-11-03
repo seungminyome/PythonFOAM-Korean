@@ -1,0 +1,10 @@
+{
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "endpoint": "http://127.0.0.1:28316/v1/chat/completions",
+  "server_note": "NVIDIA L40S; llama.cpp b11429; ctx 4096 batch 512 ubatch 512 image tokens 256",
+  "test_set": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset",
+  "manifest_sha256": "71a356c37ec5ef1e8fae453bfd9db53ad5c7b5d63b5b39afb136e7838796b70e",
+  "truth_sha256": "afe9b61cbaf0fe6c04f3f6b2669820d136e7babb122c684c30b5a0d92089ccf1",
+  "timeout_s": 120.0,
+  "started_unix_s": 1793644604.125303
+}

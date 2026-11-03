@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow fields show smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any signs of checkerboard patterns, high-frequency oscillations, or unphysical growth of extremes.\", \"stability\": \"stable\"}",
+  "request_sha256": "7b380be435dd69966fe7eee4b9b8b84e853d8cae6683d8ae42e819d0086006a5",
+  "request_bytes": 663972,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 924,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 61,
+    "prompt_tokens": 2048,
+    "total_tokens": 2109,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 654.955,
+    "prompt_per_token_ms": 0.31980224609375,
+    "prompt_per_second": 3126.932384667649,
+    "predicted_n": 61,
+    "predicted_ms": 769.257,
+    "predicted_per_token_ms": 12.82095,
+    "predicted_per_second": 77.9973402906961
+  },
+  "structured_output": {
+    "reason": "The flow fields show smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any signs of checkerboard patterns, high-frequency oscillations, or unphysical growth of extremes.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.251479672268033,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

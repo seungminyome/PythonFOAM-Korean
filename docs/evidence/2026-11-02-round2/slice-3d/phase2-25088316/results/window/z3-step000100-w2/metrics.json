@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z3-step000100-w2",
+  "design": {
+    "run": "z3",
+    "slice_z_m": 0.00396875,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00396875,
+      "requested_z_m": 0.00396875,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 100,
+    "time_s": 0.1012500000000005,
+    "plotted_range_m": {
+      "x": [
+        -0.19354492757579922,
+        0.18414146037217843
+      ],
+      "y": [
+        -0.026617199757091918,
+        0.08587933098686973
+      ]
+    },
+    "cells_in_window": 11312,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "91ba1999f737577ec5d2dc9b6e503e1a6658b559140dc4033414c8f74e50e13d",
+  "wall_s": 3.6613423582166433,
+  "usage": {
+    "completion_tokens": 205,
+    "prompt_tokens": 1062,
+    "total_tokens": 1267,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 284.915,
+    "prompt_per_token_ms": 0.26828154425612055,
+    "prompt_per_second": 3727.427478370742,
+    "predicted_n": 205,
+    "predicted_ms": 2572.951,
+    "predicted_per_token_ms": 12.612504901960785,
+    "predicted_per_second": 79.28639138483399
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper portion of the domain, with a distinct horizontal boundary around y=35%. Below this boundary, there is a complex region of lower velocity and fluctuating pressure. A localized high-velocity jet or wake appears between x=60% and x=70% at y=40%. Pressure is generally uniform but shows significant fluctuations in the lower-right quadrant.",
+    "fastest_flow_x_percent": 63,
+    "fastest_flow_y_percent": 40,
+    "lowest_pressure_x_percent": 63,
+    "lowest_pressure_y_percent": 35,
+    "uncertainties": "The exact magnitude of the pressure fluctuations and the specific nature of the flow features in the lower-right quadrant are difficult to determine due to the scale of the color bars."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        63,
+        40
+      ],
+      "true_percent": [
+        63.03151225736352,
+        40.20574819682544
+      ],
+      "error_percent": [
+        -0.03151225736351648,
+        -0.20574819682543932
+      ],
+      "distance_percent": 0.208147406568192,
+      "error_m": [
+        -0.00011901750659713603,
+        -0.00023145958349687708
+      ],
+      "distance_m": 0.00026026660498255845,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        63,
+        35
+      ],
+      "true_percent": [
+        63.30892324823402,
+        32.886028577089796
+      ],
+      "error_percent": [
+        -0.3089232482340165,
+        2.113971422910204
+      ],
+      "distance_percent": 2.1364242907672737,
+      "error_m": [
+        -0.0011667610577866217,
+        0.002378144511692741
+      ],
+      "distance_m": 0.0026489436922029247,
+      "within_10_percent": true
+    }
+  }
+}

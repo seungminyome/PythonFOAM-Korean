@@ -1,0 +1,300 @@
+{
+  "async-no-llm": {
+    "steps": 3000,
+    "request_step": 1250,
+    "arrived_at_step": 1262,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "disabled",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.01055516,
+      "arrival_step": 0.029335821,
+      "last_step": 0.043010652,
+      "max_other_steps": 0.022495795,
+      "median_all_steps": 0.00030157299999999997
+    },
+    "solver_stall_s": 0.009986136108636856,
+    "inference_wall_s": 0.0,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "2d29e083d201aa214beb8f4cab4a4c1770d82cc8271f6873bcce5fa8223b8c18",
+        "png_sha256": "5636a5feee9a4b0430d6d38889eba1516ef9005458eba6c9b6c450f85c162618",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 750,
+        "written_fields_checked": true,
+        "fields_sha256": "4410cf4470b27b2ea0715376c5c4c2a1a8698e1a350d5e4e50fd49686c67787f",
+        "png_sha256": "8771a3dd1eb2edf715fb142a6108d9734672dbae8b0e47200e5f04bac68ecebb",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 1250,
+        "written_fields_checked": true,
+        "fields_sha256": "d93ecb40f7975cc94b16e0983bd1364b7339672040f4a74af93c517f6f59af20",
+        "png_sha256": "edd3b7a65b28bbefebb5be74c42df0f550abb257443527b0f61d27e125e9cbca",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      }
+    ],
+    "image_style": "v1",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 1.04988202912
+  },
+  "async-describe": {
+    "steps": 3000,
+    "request_step": 250,
+    "arrived_at_step": 605,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "ok",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.00941673,
+      "arrival_step": 0.038753567,
+      "last_step": 0.042930418,
+      "max_other_steps": 0.029580694,
+      "median_all_steps": 0.000303918
+    },
+    "solver_stall_s": 0.008867520838975906,
+    "inference_wall_s": 30.68601206317544,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "2d29e083d201aa214beb8f4cab4a4c1770d82cc8271f6873bcce5fa8223b8c18",
+        "png_sha256": "5636a5feee9a4b0430d6d38889eba1516ef9005458eba6c9b6c450f85c162618",
+        "same_fields_as_baseline_frame": true
+      }
+    ],
+    "image_style": "v1",
+    "structured_output": {
+      "flow_description": "The velocity magnitude |U| is relatively uniform across the domain, with a slight increase towards the right side. The kinematic pressure p is generally high in the lower-left and lower-right regions, and lowest near the center-right.",
+      "fastest_flow_x_percent": 90,
+      "fastest_flow_y_percent": 10,
+      "lowest_pressure_x_percent": 50,
+      "lowest_pressure_y_percent": 10,
+      "uncertainties": "The exact values of the minimum and maximum for the velocity and pressure fields are not explicitly given, only the plotted ranges."
+    },
+    "score": null,
+    "max_courant": 1.04988202912
+  },
+  "async-sequence": {
+    "steps": 3000,
+    "request_step": 1250,
+    "arrived_at_step": 1717,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "ok",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.007689372,
+      "arrival_step": 0.041015059,
+      "last_step": 0.030020014,
+      "max_other_steps": 0.018810959,
+      "median_all_steps": 0.00030511350000000004
+    },
+    "solver_stall_s": 0.006910515949130058,
+    "inference_wall_s": 43.43448871746659,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "2d29e083d201aa214beb8f4cab4a4c1770d82cc8271f6873bcce5fa8223b8c18",
+        "png_sha256": "5636a5feee9a4b0430d6d38889eba1516ef9005458eba6c9b6c450f85c162618",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 750,
+        "written_fields_checked": true,
+        "fields_sha256": "4410cf4470b27b2ea0715376c5c4c2a1a8698e1a350d5e4e50fd49686c67787f",
+        "png_sha256": "8771a3dd1eb2edf715fb142a6108d9734672dbae8b0e47200e5f04bac68ecebb",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      },
+      {
+        "step": 1250,
+        "written_fields_checked": true,
+        "fields_sha256": "d93ecb40f7975cc94b16e0983bd1364b7339672040f4a74af93c517f6f59af20",
+        "png_sha256": "edd3b7a65b28bbefebb5be74c42df0f550abb257443527b0f61d27e125e9cbca",
+        "same_fields_as_baseline": true,
+        "same_png_as_baseline": true
+      }
+    ],
+    "image_style": "v1",
+    "structured_output": {
+      "change_description": "The velocity magnitude |U| shows a peak around x=-0.25m, and the kinematic pressure p shows a corresponding peak in the region around x=-0.25m. The magnitude of the velocity and the magnitude of the pressure appear to increase as the simulation time progresses.",
+      "max_speed_trend": "increasing",
+      "min_pressure_trend": "less_negative",
+      "fastest_flow_region": "same_place",
+      "uncertainties": "The exact trend is based on visual inspection of the color bar ranges."
+    },
+    "score": null,
+    "max_courant": 1.04988202912
+  },
+  "async-server-error": {
+    "steps": 3000,
+    "request_step": 250,
+    "arrived_at_step": 279,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "error",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.007642941,
+      "arrival_step": 0.028386596,
+      "last_step": 0.040280901,
+      "max_other_steps": 0.02875407,
+      "median_all_steps": 0.000305618
+    },
+    "solver_stall_s": 0.007057465612888336,
+    "inference_wall_s": 0.010147161781787872,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "2d29e083d201aa214beb8f4cab4a4c1770d82cc8271f6873bcce5fa8223b8c18",
+        "png_sha256": "5636a5feee9a4b0430d6d38889eba1516ef9005458eba6c9b6c450f85c162618",
+        "same_fields_as_baseline_frame": true
+      }
+    ],
+    "image_style": "v1",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 1.04988202912
+  },
+  "async-timeout": {
+    "steps": 3000,
+    "request_step": 250,
+    "arrived_at_step": 296,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 216,
+    "model_status": "timeout",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.008546903,
+      "arrival_step": 0.043914742,
+      "last_step": 0.041311913,
+      "max_other_steps": 0.028485374,
+      "median_all_steps": 0.000306552
+    },
+    "solver_stall_s": 0.007725697010755539,
+    "inference_wall_s": null,
+    "frames": null,
+    "image_style": "v1",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 1.04988202912
+  },
+  "timings": {
+    "async-no-llm": 295.10519298911095,
+    "async-describe": 297.05467010848224,
+    "async-sequence": 297.1722111366689,
+    "async-server-error": 299.0269066169858,
+    "async-timeout": 296.6773070655763
+  },
+  "resources": {
+    "async-no-llm": {
+      "wall_seconds": 295.10519298911095,
+      "exit_status": 0,
+      "solver_pid": 1906790,
+      "llama_server_pid": 1905714,
+      "mode": "sequence",
+      "model_request_enabled": false,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 567328,
+      "cfd_python_peak_pss_sum_kib": 561972,
+      "llama_server_peak_rss_kib": 4670584,
+      "llama_server_peak_pss_kib": 4667049,
+      "concurrent_samples": 559
+    },
+    "async-describe": {
+      "wall_seconds": 297.05467010848224,
+      "exit_status": 0,
+      "solver_pid": 1906849,
+      "llama_server_pid": 1905714,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 934976,
+      "cfd_python_peak_pss_sum_kib": 738780,
+      "llama_server_peak_rss_kib": 4709332,
+      "llama_server_peak_pss_kib": 4705786,
+      "concurrent_samples": 561
+    },
+    "async-sequence": {
+      "wall_seconds": 297.1722111366689,
+      "exit_status": 0,
+      "solver_pid": 1906880,
+      "llama_server_pid": 1905714,
+      "mode": "sequence",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 812512,
+      "cfd_python_peak_pss_sum_kib": 737442,
+      "llama_server_peak_rss_kib": 4797708,
+      "llama_server_peak_pss_kib": 4795429,
+      "concurrent_samples": 564
+    },
+    "async-server-error": {
+      "wall_seconds": 299.0269066169858,
+      "exit_status": 0,
+      "solver_pid": 1906934,
+      "llama_server_pid": 1905714,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 698320,
+      "cfd_python_peak_pss_sum_kib": 681839,
+      "llama_server_peak_rss_kib": 4797708,
+      "llama_server_peak_pss_kib": 4795001,
+      "concurrent_samples": 569
+    },
+    "async-timeout": {
+      "wall_seconds": 296.6773070655763,
+      "exit_status": 0,
+      "solver_pid": 1906992,
+      "llama_server_pid": 1905714,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 699380,
+      "cfd_python_peak_pss_sum_kib": 682130,
+      "llama_server_peak_rss_kib": 4805224,
+      "llama_server_peak_pss_kib": 4802941,
+      "concurrent_samples": 567
+    }
+  },
+  "settings": {
+    "steps": 3000,
+    "delta_t_s": 5e-07,
+    "write_every": 250,
+    "request_step": 250,
+    "sequence_steps": [
+      250,
+      750,
+      1250
+    ],
+    "image_x_window": null,
+    "image_y_window": null,
+    "deadline_s": "120",
+    "image_style": "v1",
+    "model": "gemma-4-E2B-it-Q4_0-vision",
+    "max_tokens_env": "192",
+    "fixture_deadline_s": 4.0,
+    "start_time_s": 0.0
+  },
+  "status": "PASS"
+}

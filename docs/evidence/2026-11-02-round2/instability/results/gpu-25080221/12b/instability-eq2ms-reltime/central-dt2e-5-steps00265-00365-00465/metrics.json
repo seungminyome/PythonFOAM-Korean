@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "1084a30e41a1cc9a372d6e9ddacf4496fd531695559370a0c60590a33c3ffecf",
+  "request_bytes": 645604,
+  "replay_wall_s": 2.3103225957602262,
+  "client_inference_wall_s": 2.2852829471230507,
+  "usage": {
+    "completion_tokens": 62,
+    "prompt_tokens": 2048,
+    "total_tokens": 2110,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 645.526,
+    "prompt_per_token_ms": 0.3151982421875,
+    "prompt_per_second": 3172.6065255311173,
+    "predicted_n": 62,
+    "predicted_ms": 781.66,
+    "predicted_per_token_ms": 12.814098360655738,
+    "predicted_per_second": 78.03904510912673
+  },
+  "structured_output": {
+    "reason": "The flow shows smooth evolution of features over time. While the velocity magnitude scale changes significantly between Time 3 and Time 1, the spatial distribution of the pressure and velocity fields remains coherent without checkerboard patterns or unphysical oscillations.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "unstable",
+      "match": false,
+      "cannot_tell": false
+    }
+  }
+}

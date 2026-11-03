@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "dda82fbe76abad4131aef4c13be4ba0d1dcc450c431429b4d69648c6452d085c",
+  "request_bytes": 648751,
+  "replay_wall_s": 5.136248888447881,
+  "client_inference_wall_s": 5.111057758331299,
+  "usage": {
+    "completion_tokens": 71,
+    "prompt_tokens": 1972,
+    "total_tokens": 2043,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1576.332,
+    "prompt_per_token_ms": 0.7993569979716025,
+    "prompt_per_second": 1251.0054988416146,
+    "predicted_n": 71,
+    "predicted_ms": 2075.079,
+    "predicted_per_token_ms": 29.643985714285716,
+    "predicted_per_second": 33.73365544155186
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude |U| shows a sudden and significant increase in its maximum value from 43.42 m/s at Time 2 to 86.42 m/s at Time 3, which appears unphysical given the flow evolution.",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

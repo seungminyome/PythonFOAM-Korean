@@ -1,0 +1,15 @@
+25c25
+<     AEFoam
+---
+>     PODFoam
+58a59
+> #define PY_ARRAY_UNIQUE_SYMBOL POD_ARRAY_API
+59a61,64
+> 
+> void init_numpy() {
+>   import_array1();
+> }
+66a72
+> 
+73d78
+< 

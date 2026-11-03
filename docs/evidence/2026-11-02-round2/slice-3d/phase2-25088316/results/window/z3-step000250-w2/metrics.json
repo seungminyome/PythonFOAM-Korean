@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z3-step000250-w2",
+  "design": {
+    "run": "z3",
+    "slice_z_m": 0.00396875,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00396875,
+      "requested_z_m": 0.00396875,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 250,
+    "time_s": 0.10200000000000126,
+    "plotted_range_m": {
+      "x": [
+        0.023964284748814773,
+        0.07659677538667028
+      ],
+      "y": [
+        0.010695516087411736,
+        0.04459005856918928
+      ]
+    },
+    "cells_in_window": 1739,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "17b9f2bda3356e5a5e33fae5dc16f8763ee25522ac6bf2810e10f6a316309b72",
+  "wall_s": 3.7716098967939615,
+  "usage": {
+    "completion_tokens": 191,
+    "prompt_tokens": 1062,
+    "total_tokens": 1253,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 284.633,
+    "prompt_per_token_ms": 0.2680160075329567,
+    "prompt_per_second": 3731.1204252493562,
+    "predicted_n": 191,
+    "predicted_ms": 2396.097,
+    "predicted_per_token_ms": 12.611036842105264,
+    "predicted_per_second": 79.29562117059534
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper and central regions, with a significant high-velocity zone between 40% and 70% x and 20% to 40% y. The flow is slowest near the bottom boundary. The lowest pressure is located in the bottom-left and bottom-center regions, while the highest pressure is found in a localized area near the bottom-left center.",
+    "fastest_flow_x_percent": 55,
+    "fastest_flow_y_percent": 35,
+    "lowest_pressure_x_percent": 55,
+    "lowest_pressure_y_percent": 5,
+    "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only the relative distribution and the range limits."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        55,
+        35
+      ],
+      "true_percent": [
+        58.949145153853074,
+        21.56484876687599
+      ],
+      "error_percent": [
+        -3.949145153853074,
+        13.43515123312401
+      ],
+      "distance_percent": 14.003536556995694,
+      "error_m": [
+        -0.0020785334533770434,
+        0.004553783042202278
+      ],
+      "distance_m": 0.005005720858403565,
+      "within_10_percent": false
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        55,
+        5
+      ],
+      "true_percent": [
+        54.96968072098353,
+        0.0755570874552643
+      ],
+      "error_percent": [
+        0.03031927901646725,
+        4.924442912544736
+      ],
+      "distance_percent": 4.924536247972204,
+      "error_m": [
+        1.5957791689807414e-05,
+        0.001669117394983359
+      ],
+      "distance_m": 0.0016691936764053625,
+      "within_10_percent": true
+    }
+  }
+}

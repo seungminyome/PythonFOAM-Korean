@@ -1,0 +1,21 @@
+diff --git a/Solver_Examples/PODFoam/Make/options b/Solver_Examples/PODFoam/Make/options
+index 90ead39..f45d3aa 100644
+--- a/Solver_Examples/PODFoam/Make/options
++++ b/Solver_Examples/PODFoam/Make/options
+@@ -52,6 +52,8 @@ EXE_INC = \
+     $(TRANSPORT_INCS) \
+     -I$(LIB_SRC)/finiteVolume/lnInclude \
+     -I$(LIB_SRC)/sampling/lnInclude \
++    -I$(LIB_SRC)/surfMesh/lnInclude \
++    -I$(LIB_SRC)/fileFormats/lnInclude \
+     -I$(LIB_SRC)/dynamicFvMesh/lnInclude \
+     -I$(LIB_SRC)/dynamicMesh/lnInclude \
+     -I$(LIB_SRC)/meshTools/lnInclude \
+@@ -62,6 +64,7 @@ EXE_LIBS = \
+     -lfiniteVolume \
+     -lfvOptions \
+     -lsampling \
++    -lsurfMesh \
+     -ldynamicFvMesh \
+     -ltopoChangerFvMesh \
+     -ldynamicMesh \

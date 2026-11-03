@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous gradients and evolving structures without any high-frequency oscillations, checkerboard patterns, or non-physical growth of extreme values between time steps.\", \"stability\": \"stable\"}",
+  "request_sha256": "d44c5d59fffcbbcf776306efccb26d2843668aad0c3efb9993ef03de79e2f3bb",
+  "request_bytes": 636524,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 926,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 57,
+    "prompt_tokens": 2048,
+    "total_tokens": 2105,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 663.874,
+    "prompt_per_token_ms": 0.3241572265625,
+    "prompt_per_second": 3084.9227413635717,
+    "predicted_n": 57,
+    "predicted_ms": 717.976,
+    "predicted_per_token_ms": 12.821,
+    "predicted_per_second": 77.99703611262773
+  },
+  "structured_output": {
+    "reason": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous gradients and evolving structures without any high-frequency oscillations, checkerboard patterns, or non-physical growth of extreme values between time steps.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.208984736353159,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

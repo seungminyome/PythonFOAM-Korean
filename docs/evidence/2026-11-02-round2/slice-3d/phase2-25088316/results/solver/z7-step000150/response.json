@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow is fastest in the upper half of the domain, particularly around the center, while it is slowest in the lower half. The lowest pressure is located in a distinct dark region near the center of the domain, while higher pressure values are found towards the bottom right and top right corners.\",\n  \"fastest_flow_x_percent\": 40,\n  \"fastest_flow_y_percent\": 48,\n  \"lowest_pressure_x_percent\": 40,\n  \"lowest_pressure_y_percent\": 30,\n  \"uncertainties\": \"The exact physical boundaries and the nature of the obstacles or geometry causing the pressure drop and velocity gradients are not explicitly shown.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644818,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 168,
+    "prompt_tokens": 998,
+    "total_tokens": 1166,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-hzYGRFczNBlHnCZ22agp73PJ7J3SHsvl",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 998,
+    "prompt_ms": 268.423,
+    "prompt_per_token_ms": 0.26896092184368736,
+    "prompt_per_second": 3718.0122418719707,
+    "predicted_n": 168,
+    "predicted_ms": 2107.154,
+    "predicted_per_token_ms": 12.61768862275449,
+    "predicted_per_second": 79.25381818319876
+  }
+}

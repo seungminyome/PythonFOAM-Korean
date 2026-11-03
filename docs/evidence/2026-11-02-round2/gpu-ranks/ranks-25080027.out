@@ -1,0 +1,80 @@
+mba30-008.cluster
+bf7a06e3544d28a9ed73f7f8454a93aaf070fc56
+GPU 0: NVIDIA A30 (UUID: GPU-b72472d3-101d-e717-214c-cd78a43e48f0)
+server ok on port 20027, pid 1706669, log server-20261102T055149Z.log
+start_server exit 0
+=== v2212 05:51:55
+build + validation ran
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-ranks/run-25080027/v2212/pod-v2212.hhEqNo
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-ranks/run-25080027/v2212/pod-v2212.hhEqNo/bin/PODFoam
+serial exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+Python finalized successfully
+End
+par2 exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=2
+Python finalized successfully
+End
+
+End
+
+rank=0 pid=1709882 host=mba30-008.cluster start=2026-11-02T05:52:51.830406664Z
+exit=0 end=2026-11-02T05:53:03.190275714Z
+rank=1 pid=1709883 host=mba30-008.cluster start=2026-11-02T05:52:51.830465085Z
+exit=0 end=2026-11-02T05:53:03.086972060Z
+0 0.1 bounded_ipc.py constant ended-at.txt exit-status llm_client.py llm_http_response.raw llm_observation llm_request.json llm_request_body.json llm_response.json llm_result.json log.PODFoam log.decomposePar log.mpirun log.rank1 metrics-after.txt metrics-before.txt mpl pod_image.py pod_svd.py processor0 processor1 python_module.py rank-0.txt rank-1.txt readable_image.py readable_request.py started-at.txt system telemetry.jsonl 
+v2212 inner exit 0 05:53:03
+NVIDIA A30, 7953 MiB, 24576 MiB
+=== 8 05:53:04
+build + validation ran
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-ranks/run-25080027/8/pod-8.1lBIlQ
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-ranks/run-25080027/8/pod-8.1lBIlQ/bin/PODFoam
+serial exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+Python finalized successfully
+End
+par2 exit 0
+POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=2
+Python finalized successfully
+End
+
+End
+
+rank=0 pid=1713318 host=mba30-008.cluster start=2026-11-02T05:53:51.762844425Z
+exit=0 end=2026-11-02T05:54:03.783796804Z
+rank=1 pid=1713319 host=mba30-008.cluster start=2026-11-02T05:53:51.762843185Z
+exit=0 end=2026-11-02T05:54:03.649826164Z
+0 0.1 bounded_ipc.py constant ended-at.txt exit-status llm_client.py llm_http_response.raw llm_observation llm_request.json llm_request_body.json llm_response.json llm_result.json log.PODFoam log.decomposePar log.mpirun log.rank1 metrics-after.txt metrics-before.txt mpl pod_image.py pod_svd.py processor0 processor1 python_module.py rank-0.txt rank-1.txt readable_image.py readable_request.py started-at.txt system telemetry.jsonl 
+8 inner exit 0 05:54:04
+NVIDIA A30, 7953 MiB, 24576 MiB
+node mba30-008.cluster GPU 0: NVIDIA A30 (UUID: GPU-b72472d3-101d-e717-214c-cd78a43e48f0) HEAD bf7a06e server {"launch_slot_lines": 4, "post_chat_completions": 0, "n_slots": "1", "file": "server/server-20261102T055149Z.log"}
+=== v2212: validation PASS: /clust modules_equal True 
+  serial: exit 0 End True nProcs 1 mesh {'cells': 20540, 'ranks': 1} time_lines 110 telemetry 110 status ok http 200 arrived 110 infer 4.30s stall 0.010s cb100 0.010 cb110 4.533 body=builder True images=frame True
+    parent_pid 1709638 ranks None parent_is_rank0 None other_rank_logs null
+    server deltas {"llamacpp:prompt_tokens_total": 997.0, "llamacpp:tokens_predicted_total": 203.0, "llamacpp:n_decode_total": 207.0, "llamacpp:requests_processing": 0.0, "llamacpp:requests_deferred": 0.0}
+    fastest_flow: answer [60, 50] true [np.float64(27.5), np.float64(42.3)] dist 33.4% within10 False
+    lowest_pressure: answer [60, 25] true [np.float64(31.0), np.float64(25.5)] dist 29.0% within10 False
+     {"flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% on the x-axis. The flow is slowest in the lower half, especially near the bottom edge. The lowest pressure is located in the lower-middle region, specifically around 30% and 60% on the x-axis,
+  par2: exit 0 End True nProcs 2 mesh {'cells': 20540, 'ranks': 2} time_lines 110 telemetry 110 status ok http 200 arrived 110 infer 4.15s stall 0.010s cb100 0.010 cb110 4.482 body=builder True images=frame True
+    parent_pid 1709888 ranks {'0': {'rank': '0', 'pid': '1709882', 'host': 'mba30-008.cluster', 'start': '2026-11-02T05:52:51.830406664Z', 'exit': '0', 'end': '2026-11-02T05:53:03.190275714Z'}, '1': {'rank': '1', 'pid': '1709883', 'host': 'mba30-008.cluster', 'start': '2026-11-02T05:52:51.830465085Z', 'exit': '0', 'end': '2026-11-02T05:53:03.086972060Z'}} parent_is_rank0 False other_rank_logs {"log.rank1": {"lines": 550, "python_llm_lines": 0, "llm_mentions": 0, "head": ["PYTHON snapshot=1 shape=(10288, 3) finite=true", "PYTHON snapshot=2 shape=(10288, 3) finite=true", "PYTHON snapshot=3 shape=(10288, 3) finite=true", "PYTHON snapshot=4 shape=(10288, 3) finite=true", "PYTHON snapshot=5 s
+    server deltas {"llamacpp:prompt_tokens_total": 997.0, "llamacpp:tokens_predicted_total": 201.0, "llamacpp:n_decode_total": 205.0, "llamacpp:requests_processing": 0.0, "llamacpp:requests_deferred": 0.0}
+    fastest_flow: answer [60, 50] true [np.float64(27.5), np.float64(42.3)] dist 33.4% within10 False
+    lowest_pressure: answer [60, 30] true [np.float64(31.0), np.float64(25.5)] dist 29.4% within10 False
+     {"flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% x. The lower half shows slower velocities, with a very slow region near the bottom edge. Pressure is lowest in localized pockets around 30% and 60% x at roughly 30% y, while higher pressure is
+  COMPARE ERROR IndexError: too many indices for array: array is 0-dimensional, but 1 were indexed
+=== 8: validation PASS: /clust modules_equal True 
+  serial: exit 0 End True nProcs 1 mesh {'cells': 20540, 'ranks': 1} time_lines 110 telemetry 110 status ok http 200 arrived 110 infer 3.99s stall 0.010s cb100 0.011 cb110 4.140 body=builder True images=frame True
+    parent_pid 1712525 ranks None parent_is_rank0 None other_rank_logs null
+    server deltas {"llamacpp:prompt_tokens_total": 997.0, "llamacpp:tokens_predicted_total": 192.0, "llamacpp:n_decode_total": 196.0, "llamacpp:requests_processing": 0.0, "llamacpp:requests_deferred": 0.0}
+    fastest_flow: answer [60, 50] true [np.float64(26.6), np.float64(42.1)] dist 34.3% within10 False
+    lowest_pressure: answer [60, 25] true [np.float64(30.1), np.float64(25.6)] dist 29.9% within10 False
+     {"flow_description": "The flow shows high velocity in the upper half of the domain, particularly between 40% and 70% x. The lower half exhibits much lower velocities. Pressure is lowest in localized pockets around 30% and 60% x at roughly 20-30% y, while higher pressure regions appear near 40% and 8
+  par2: exit 0 End True nProcs 2 mesh {'cells': 20540, 'ranks': 2} time_lines 110 telemetry 110 status ok http 200 arrived 110 infer 3.99s stall 0.016s cb100 0.016 cb110 4.278 body=builder True images=frame True
+    parent_pid 1713324 ranks {'0': {'rank': '0', 'pid': '1713318', 'host': 'mba30-008.cluster', 'start': '2026-11-02T05:53:51.762844425Z', 'exit': '0', 'end': '2026-11-02T05:54:03.783796804Z'}, '1': {'rank': '1', 'pid': '1713319', 'host': 'mba30-008.cluster', 'start': '2026-11-02T05:53:51.762843185Z', 'exit': '0', 'end': '2026-11-02T05:54:03.649826164Z'}} parent_is_rank0 False other_rank_logs {"log.rank1": {"lines": 550, "python_llm_lines": 0, "llm_mentions": 0, "head": ["PYTHON snapshot=1 shape=(10288, 3) finite=true", "PYTHON snapshot=2 shape=(10288, 3) finite=true", "PYTHON snapshot=3 shape=(10288, 3) finite=true", "PYTHON snapshot=4 shape=(10288, 3) finite=true", "PYTHON snapshot=5 s
+    server deltas {"llamacpp:prompt_tokens_total": 997.0, "llamacpp:tokens_predicted_total": 190.0, "llamacpp:n_decode_total": 194.0, "llamacpp:requests_processing": 0.0, "llamacpp:requests_deferred": 0.0}
+    fastest_flow: answer [55, 50] true [np.float64(26.6), np.float64(42.1)] dist 29.5% within10 False
+    lowest_pressure: answer [60, 25] true [np.float64(30.1), np.float64(25.6)] dist 29.9% within10 False
+     {"flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% x. The lower half shows slower velocities with distinct horizontal structures. Pressure is lowest in localized dark spots around 30% and 60% x at 20-30% y, while it is highest in the bottom ri
+  COMPARE ERROR IndexError: too many indices for array: array is 0-dimensional, but 1 were indexed
+check exit 0
+server stopped (pid 1706669 gone)

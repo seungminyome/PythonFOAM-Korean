@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "ec02ddfbb75483431cfade3d996249976dd2f297adf90250092db8ef262061ac",
+  "request_bytes": 644175,
+  "replay_wall_s": 5.284879731014371,
+  "client_inference_wall_s": 5.2592197470366955,
+  "usage": {
+    "completion_tokens": 74,
+    "prompt_tokens": 1972,
+    "total_tokens": 2046,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1585.045,
+    "prompt_per_token_ms": 0.8037753549695741,
+    "prompt_per_second": 1244.1287155885163,
+    "predicted_n": 74,
+    "predicted_ms": 2164.854,
+    "predicted_per_token_ms": 29.65553424657534,
+    "predicted_per_second": 33.72051879711057
+  },
+  "structured_output": {
+    "reason": "The kinematic pressure p shows a significant increase in its range over time, with the minimum value dropping from -351.7 to -697.4 and the maximum increasing from 48.08 to 117.2, indicating growing numerical oscillations.",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

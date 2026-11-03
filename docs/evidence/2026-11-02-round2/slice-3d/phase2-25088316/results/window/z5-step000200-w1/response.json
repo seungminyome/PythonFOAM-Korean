@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows high velocity in the upper half of the domain, particularly between 20% and 50% x. Velocity is lowest in the bottom third. The pressure is lowest in a localized region around 25% x and 30% y, with higher pressure values appearing in the bottom right and top right corners.\",\n  \"fastest_flow_x_percent\": 30,\n  \"fastest_flow_y_percent\": 45,\n  \"lowest_pressure_x_percent\": 25,\n  \"lowest_pressure_y_percent\": 30,\n  \"uncertainties\": \"The exact physical boundaries and the nature of the obstacles or geometry causing the pressure drop and velocity gradients are not explicitly labeled.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644769,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 179,
+    "prompt_tokens": 1061,
+    "total_tokens": 1240,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-qG2Cu8AFCsEtHlBeCgeUSVMOq2LgaG2n",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 281.847,
+    "prompt_per_token_ms": 0.26564278982092365,
+    "prompt_per_second": 3764.4537639215605,
+    "predicted_n": 179,
+    "predicted_ms": 2245.561,
+    "predicted_per_token_ms": 12.615511235955058,
+    "predicted_per_second": 79.26749707534108
+  }
+}

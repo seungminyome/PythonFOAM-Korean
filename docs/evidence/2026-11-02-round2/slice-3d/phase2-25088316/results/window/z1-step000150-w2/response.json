@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity zone near the bottom. A complex wake or turbulent structure exists between x=40% and x=70% at low y-coordinates. Pressure is generally higher in the upper region and shows significant fluctuations and low-pressure pockets within the wake structure.\",\n  \"fastest_flow_x_percent\": 50,\n  \"fastest_flow_y_percent\": 30,\n  \"lowest_pressure_x_percent\": 50,\n  \"lowest_pressure_y_percent\": 20,\n  \"uncertainties\": \"The exact magnitude of the pressure fluctuations and the specific velocity values within the wake are difficult to distinguish due to the color scale.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644635,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 185,
+    "prompt_tokens": 1063,
+    "total_tokens": 1248,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-8pQA20lFMKbszFEgIYioZ92FCJbRRm54",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 284.284,
+    "prompt_per_token_ms": 0.26743555973659455,
+    "prompt_per_second": 3739.2185279509226,
+    "predicted_n": 185,
+    "predicted_ms": 2320.634,
+    "predicted_per_token_ms": 12.612141304347826,
+    "predicted_per_second": 79.28867714598682
+  }
+}

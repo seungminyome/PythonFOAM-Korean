@@ -1,8 +1,10 @@
 # Blob hashes of every file under Solver_Examples/PODFoam except the three READMEs (llm_demo/README.md,
 # llm_demo/hpc/README.md, validation/README.md), read from git objects: git ls-tree -r <commit> Solver_Examples/PODFoam
 # b17763d: the commit most jobs ran (a local commit, not on GitHub)
-# bf7a06e: branch pr/podfoam-observer
+# bf7a06e: branch pr/podfoam-observer on 2026-10-30
 # 41ca1bf: main after merging cabcfc6 (41ca1bf8da644155b56ac15df6949ddf06a685f9); cabcfc6 has the same blobs
+# 6677bac: main of 2026-10-30 (6677bacc634336603f6bea196885d114c2846f4e), a descendant of 41ca1bf; under
+# Solver_Examples/PODFoam, git diff --name-status 41ca1bf 6677bac lists only the three READMEs, so its blobs are those of 41ca1bf
 # Files compared: 64. Equal at all commits: 64. Different or missing: 0.
 #
 # blob at b17763d  blob at bf7a06e  blob at 41ca1bf  path

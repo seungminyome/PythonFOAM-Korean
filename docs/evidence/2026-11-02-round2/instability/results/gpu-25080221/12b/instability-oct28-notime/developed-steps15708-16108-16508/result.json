@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow fields show smooth transitions in velocity and pressure. The features, such as the moving high-velocity region and the pressure fluctuations, evolve consistently over time without signs of checkerboard patterns, high-frequency oscillations, or unphysical growth.\", \"stability\": \"stable\"}",
+  "request_sha256": "0049c45e3c2ca496b4e1c71873caa14a76c07e4bf9d56153be9c5f35e5cb9e76",
+  "request_bytes": 636771,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 964,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 64,
+    "prompt_tokens": 1972,
+    "total_tokens": 2036,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 611.791,
+    "prompt_per_token_ms": 0.31023884381338745,
+    "prompt_per_second": 3223.3229975596237,
+    "predicted_n": 64,
+    "predicted_ms": 806.559,
+    "predicted_per_token_ms": 12.802523809523809,
+    "predicted_per_second": 78.10959892580705
+  },
+  "structured_output": {
+    "reason": "The flow fields show smooth transitions in velocity and pressure. The features, such as the moving high-velocity region and the pressure fluctuations, evolve consistently over time without signs of checkerboard patterns, high-frequency oscillations, or unphysical growth.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 1.9559374563395977,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

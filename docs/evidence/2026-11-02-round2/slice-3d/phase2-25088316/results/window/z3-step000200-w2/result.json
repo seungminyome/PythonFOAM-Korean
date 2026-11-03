@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is fast in the upper region (y > 60%) and shows a complex, turbulent-like structure in the lower right quadrant. The flow is slowest in the bottom right area. Pressure is relatively uniform in the upper region but shows significant fluctuations and a distinct low-pressure zone in the lower right quadrant.\",\n  \"fastest_flow_x_percent\": 80,\n  \"fastest_flow_y_percent\": 65,\n  \"lowest_pressure_x_percent\": 80,\n  \"lowest_pressure_y_percent\": 60,\n  \"uncertainties\": \"The exact magnitude of the pressure fluctuations and the specific velocity values within the turbulent region are difficult to determine due to the scale of the color bars.\"\n}",
+  "request_sha256": "5e43101f7a419b0414098d6f0ad0f1dbdb4850c7fa3750ba11e74ef34a201013",
+  "request_bytes": 191192,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1342,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 180,
+    "prompt_tokens": 1060,
+    "total_tokens": 1240,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1060,
+    "prompt_ms": 279.2,
+    "prompt_per_token_ms": 0.2633962264150943,
+    "prompt_per_second": 3796.5616045845272,
+    "predicted_n": 180,
+    "predicted_ms": 2257.996,
+    "predicted_per_token_ms": 12.61450279329609,
+    "predicted_per_second": 79.27383396604776
+  },
+  "structured_output": {
+    "flow_description": "The flow is fast in the upper region (y > 60%) and shows a complex, turbulent-like structure in the lower right quadrant. The flow is slowest in the bottom right area. Pressure is relatively uniform in the upper region but shows significant fluctuations and a distinct low-pressure zone in the lower right quadrant.",
+    "fastest_flow_x_percent": 80,
+    "fastest_flow_y_percent": 65,
+    "lowest_pressure_x_percent": 80,
+    "lowest_pressure_y_percent": 60,
+    "uncertainties": "The exact magnitude of the pressure fluctuations and the specific velocity values within the turbulent region are difficult to determine due to the scale of the color bars."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.5686575267463923,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

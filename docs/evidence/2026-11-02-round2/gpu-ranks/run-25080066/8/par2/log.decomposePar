@@ -1,0 +1,70 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  8
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 8-1c9b5879390b
+Exec   : decomposePar -case /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-ranks/run-25080066/8/par2
+Date   : Nov 01 2026
+Time   : 22:57:08
+Host   : "mba30-008.cluster"
+PID    : 1724168
+I/O    : uncollated
+Case   : /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-ranks/run-25080066/8/par2
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Decomposing mesh region0
+
+Create mesh
+
+Calculating distribution of cells
+Selecting decompositionMethod scotch
+
+Finished decomposition in 0.01 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 10252
+    Number of faces shared with processor 1 = 120
+    Number of processor patches = 1
+    Number of processor faces = 120
+    Number of boundary faces = 20802
+
+Processor 1
+    Number of cells = 10288
+    Number of faces shared with processor 0 = 120
+    Number of processor patches = 1
+    Number of processor faces = 120
+    Number of boundary faces = 20944
+
+Number of processor faces = 120
+Max number of cells = 10288 (0.175267770204% above average 10270)
+Max number of processor patches = 1 (0% above average 1)
+Max number of faces between processors = 120 (0% above average 120)
+
+Time = 0.1
+
+Processor 0: field transfer
+Processor 1: field transfer
+
+End
+

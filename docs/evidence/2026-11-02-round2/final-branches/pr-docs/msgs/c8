@@ -1,0 +1,12 @@
+PODFoam: optional analysis_func and mesh_func hooks
+
+A python_module.py may define two more functions. mesh_func runs once before
+the first step with copies of the cell centres, volumes, solution directions
+and one polygon per cell. The polygon is a face of the first empty patch, or a
+plane slice of a 3D mesh. analysis_func runs after every step with the time
+index, snapshot count, residuals, Courant and continuity numbers and copies of
+U and p. They change neither U nor p; with analysis_func the POD step collects
+a snapshot at every step. In parallel only the master calls them. HOOKS.md has
+the contract.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

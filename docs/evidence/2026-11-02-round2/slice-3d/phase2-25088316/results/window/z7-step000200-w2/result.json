@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is fastest in the upper region (y > 50%) and slowest in the lower region (y < 50%) where a boundary layer or wake structure is visible. Pressure is lowest in the center-right region (x=65%, y=50%) and highest in the upper-right corner.\",\n  \"fastest_flow_x_percent\": 65,\n  \"fastest_flow_y_percent\": 70,\n  \"lowest_pressure_x_percent\": 65,\n  \"lowest_pressure_y_percent\": 50,\n  \"uncertainties\": \"The exact physical geometry of the obstacles or boundaries is not explicitly labeled, and the specific fluid properties are not provided.\"\n}",
+  "request_sha256": "c99aacffdb35ac5a0d96fa2df1ad9ebc929e1b9de127bddebb02375208702eed",
+  "request_bytes": 211101,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1240,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 176,
+    "prompt_tokens": 1061,
+    "total_tokens": 1237,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 284.636,
+    "prompt_per_token_ms": 0.26827144203581527,
+    "prompt_per_second": 3727.5678410320547,
+    "predicted_n": 176,
+    "predicted_ms": 2207.512,
+    "predicted_per_token_ms": 12.614354285714287,
+    "predicted_per_second": 79.27476724928336
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper region (y > 50%) and slowest in the lower region (y < 50%) where a boundary layer or wake structure is visible. Pressure is lowest in the center-right region (x=65%, y=50%) and highest in the upper-right corner.",
+    "fastest_flow_x_percent": 65,
+    "fastest_flow_y_percent": 70,
+    "lowest_pressure_x_percent": 65,
+    "lowest_pressure_y_percent": 50,
+    "uncertainties": "The exact physical geometry of the obstacles or boundaries is not explicitly labeled, and the specific fluid properties are not provided."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.3156404606997967,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

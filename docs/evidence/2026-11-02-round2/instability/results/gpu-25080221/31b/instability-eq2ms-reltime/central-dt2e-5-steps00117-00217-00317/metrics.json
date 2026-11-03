@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "b7936e2a827480dc2e80bdd30d562a245a63ed4531e1c43d70d009fd4170a5ec",
+  "request_bytes": 647956,
+  "replay_wall_s": 5.449827557429671,
+  "client_inference_wall_s": 5.426534427329898,
+  "usage": {
+    "completion_tokens": 95,
+    "prompt_tokens": 2048,
+    "total_tokens": 2143,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 1598.514,
+    "prompt_per_token_ms": 0.7805244140625,
+    "prompt_per_second": 1281.1899051243843,
+    "predicted_n": 95,
+    "predicted_ms": 2789.497,
+    "predicted_per_token_ms": 29.6755,
+    "predicted_per_second": 33.69783154454011
+  },
+  "structured_output": {
+    "reason": "The kinematic pressure p shows extreme values that grow rapidly in magnitude from Time 1 (min -330.8) to Time 3 (min -714.2), and the velocity magnitude |U| shows non-physical, high-frequency oscillations (checkerboard-like patterns) appearing around x=25%, y=30% in Image 3.",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

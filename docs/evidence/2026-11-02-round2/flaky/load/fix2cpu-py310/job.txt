@@ -1,0 +1,24 @@
+host t289.cluster cpus=2 nproc=2 py=/gscratch/syome/conda/ci-py310/bin/python3 src=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/flaky/wt/Solver_Examples/PODFoam/llm_demo N=50 PAR=8 start Sun Nov  1 22:57:45 MST 2026
+3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]
+end Sun Nov  1 23:10:07 MST 2026 load=32.08 34.54 31.87
+passed 2 of 50
+      4 ERROR: test_describe_synchronous (test_async.DescribeModeTests)
+      3 ERROR: test_describe_v2_asynchronous_with_a_window (test_async.V2PictureTests)
+      8 ERROR: test_index_says_when_a_record_was_not_written_in_its_budget (test_async.PeriodicRequestTests)
+      2 ERROR: test_t_and_tn_send_the_trend_test_forms (test_async.ComputedTrendTests) (form='tn')
+     25 ERROR: test_trends_are_recorded_without_an_answer (test_async.ComputedTrendTests)
+     30 FAIL: test_index_says_when_a_record_was_not_written_in_its_budget (test_async.PeriodicRequestTests)
+     34 FAIL: test_requests_every_n_steps_write_their_own_records_and_an_index (test_async.PeriodicRequestTests)
+      2 FAIL: test_second_request_is_skipped_while_one_is_pending (test_async.AsyncTests)
+     39 FAIL: test_sequence_asynchronous (test_async.SequenceModeTests)
+      6 FAIL: test_sequence_synchronous (test_async.SequenceModeTests)
+      1 FAIL: test_sequence_v2_of_a_3d_case_uses_slice_frames (test_async.PlaneSliceTests)
+      2 FAIL: test_t_and_tn_send_the_trend_test_forms (test_async.ComputedTrendTests) (form='t')
+      2 FAIL: test_t_and_tn_send_the_trend_test_forms (test_async.ComputedTrendTests) (form='tn')
+      4 FAIL: test_trends_are_recorded_and_the_default_body_is_unchanged (test_async.ComputedTrendTests)
+     30 AssertionError: 'skipped_pending' != 'ok'
+      1 AssertionError: 'timeout' != 'disabled'
+     55 AssertionError: 'timeout' != 'ok'
+      7 AssertionError: Lists differ: ['step-000002', 'step-000005'] != ['step-000002', 'step-000005', 'step-000008']
+     23 AssertionError: Lists differ: ['step-000002', 'step-000008'] != ['step-000002', 'step-000005', 'step-000008']
+      4 AssertionError: Lists differ: ['step-000002'] != ['step-000002', 'step-000005', 'step-000008']

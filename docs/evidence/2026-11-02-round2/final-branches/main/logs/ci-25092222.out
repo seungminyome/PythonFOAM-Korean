@@ -1,0 +1,27 @@
+host ttest01.cluster nproc=4 export=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/integrate/src/ci-a1aea2e HEAD=a1aea2e4495a9796df236aee7fd6d80aee17d32e start Mon Nov  2 17:01:37 MST 2026 load=1.30 0.98 0.74
+FOAM vars: 0 llama-server on PATH: none
+modules: test_llm_client test_callback test_callback_main test_ablation_runner test_async test_picture_test test_instability_test test_instability_test2 test_wrong_setup_test 
+ci-py310: 3.10.22 numpy 2.2.6 scipy 1.15.2 matplotlib 3.10.9
+ci-py310 rc=0 Ran 165 tests in 103.776s }
+  test_llm_client: 17 tests
+  test_callback: 34 tests
+  test_callback_main: 2 tests
+  test_ablation_runner: 16 tests
+  test_async: 34 tests
+  test_picture_test: 16 tests
+  test_instability_test: 12 tests
+  test_instability_test2: 7 tests
+  test_wrong_setup_test: 27 tests
+ci-py312: 3.12.15 numpy 2.5.4 scipy 1.18.1 matplotlib 3.11.2
+ci-py312 rc=0 Ran 165 tests in 104.037s }
+  test_llm_client: 17 tests
+  test_callback: 34 tests
+  test_callback_main: 2 tests
+  test_ablation_runner: 16 tests
+  test_async: 34 tests
+  test_picture_test: 16 tests
+  test_instability_test: 12 tests
+  test_instability_test2: 7 tests
+  test_wrong_setup_test: 27 tests
+end Mon Nov  2 17:05:14 MST 2026 load=1.87 1.48 1.00
+files newer than HEAD in the export: 0

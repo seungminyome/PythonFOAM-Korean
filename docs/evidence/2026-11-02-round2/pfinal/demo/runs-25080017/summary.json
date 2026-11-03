@@ -1,0 +1,1210 @@
+{
+ "v2012": {
+  "fork-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "fork-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "fork-plainp-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "fork-plainp-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "pimpleFoam-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "pimpleFoam-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "upstream-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "upstream-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  }
+ },
+ "v2106": {
+  "fork-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "fork-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "fork-plainp-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "fork-plainp-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "pimpleFoam-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "pimpleFoam-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "upstream-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "upstream-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  }
+ },
+ "v2212": {
+  "fork-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "fork-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "fork-plainp-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "fork-plainp-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "pimpleFoam-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "pimpleFoam-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "upstream-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2",
+     "p": [
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "upstream-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  }
+ },
+ "8": {
+  "fork-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "fork-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "pimpleFoam-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "pimpleFoam-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1 (t=1e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2 (t=2e-07)",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "upstream-n1": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  },
+  "upstream-n2": {
+   "exit": "0",
+   "steps": [
+    {
+     "time": "step 1",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    },
+    {
+     "time": "step 2",
+     "p": [
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "DICPCG",
+      "GAMG"
+     ],
+     "Ux": [
+      "smoothSolver",
+      "DILUPBiCGStab"
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow is fastest in the upper and central regions, with a significant high-velocity zone between 40% and 70% x and 20% to 40% y. The flow is slowest near the bottom boundary. The lowest pressure is located in the bottom-left and bottom-center regions, while the highest pressure is found in a localized area near the bottom-left center.\",\n  \"fastest_flow_x_percent\": 55,\n  \"fastest_flow_y_percent\": 35,\n  \"lowest_pressure_x_percent\": 55,\n  \"lowest_pressure_y_percent\": 5,\n  \"uncertainties\": \"The exact values of velocity and pressure at specific coordinates are not provided, only the relative distribution and the range limits.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644719,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 191,
+    "prompt_tokens": 1062,
+    "total_tokens": 1253,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-fvaOfveVKF5jHN21bSJlxSVRcnBmGjXB",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 284.633,
+    "prompt_per_token_ms": 0.2680160075329567,
+    "prompt_per_second": 3731.1204252493562,
+    "predicted_n": 191,
+    "predicted_ms": 2396.097,
+    "predicted_per_token_ms": 12.611036842105264,
+    "predicted_per_second": 79.29562117059534
+  }
+}

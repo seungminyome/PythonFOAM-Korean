@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is generally uniform in the upper region with a distinct horizontal boundary layer at the bottom. A complex wake or interaction zone exists between x=45% and x=70% at low y-coordinates, where velocity fluctuates and pressure shows significant local variations.\",\n  \"fastest_flow_x_percent\": 55,\n  \"fastest_flow_y_percent\": 25,\n  \"lowest_pressure_x_percent\": 55,\n  \"lowest_pressure_y_percent\": 15,\n  \"uncertainties\": \"The exact physical nature of the obstacle or geometry causing the wake at x=45% is not visible; the specific values of velocity and pressure are unknown without the color bar scale.\"\n}",
+  "request_sha256": "4324b9bc6e60fabbbe0a0298f26ed754a4faf38bcffe284e43e3157c8a9be81f",
+  "request_bytes": 200855,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1307,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 177,
+    "prompt_tokens": 1063,
+    "total_tokens": 1240,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 285.074,
+    "prompt_per_token_ms": 0.2681787394167451,
+    "prompt_per_second": 3728.856367118713,
+    "predicted_n": 177,
+    "predicted_ms": 2220.141,
+    "predicted_per_token_ms": 12.614437500000001,
+    "predicted_per_second": 79.27424429349307
+  },
+  "structured_output": {
+    "flow_description": "The flow is generally uniform in the upper region with a distinct horizontal boundary layer at the bottom. A complex wake or interaction zone exists between x=45% and x=70% at low y-coordinates, where velocity fluctuates and pressure shows significant local variations.",
+    "fastest_flow_x_percent": 55,
+    "fastest_flow_y_percent": 25,
+    "lowest_pressure_x_percent": 55,
+    "lowest_pressure_y_percent": 15,
+    "uncertainties": "The exact physical nature of the obstacle or geometry causing the wake at x=45% is not visible; the specific values of velocity and pressure are unknown without the color bar scale."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.2355265840888023,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

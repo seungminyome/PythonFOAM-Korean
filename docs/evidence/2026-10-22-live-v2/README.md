@@ -6,7 +6,7 @@ MedicineBow(와이오밍 대학교)의 Slurm 작업 24757460, NVIDIA RTX A6000 �
 코드는 영문 저장소의 `354caf9`에 커밋하지 않은 변경을 얹은 체크아웃입니다([job/code-state/](job/code-state/)).
 
 [보고서](../../results-20261022-live.md) ·
-[돌리는 법](../../../Solver_Examples/PODFoam/llm_demo/hpc/README.md#돌고-있는-솔버가-그린-v2-그림-async_v2slurm-2026-10-22-실행) ·
+[돌리는 법](https://github.com/seungminyome/PythonFOAM-Korean/blob/5c56995/Solver_Examples/PODFoam/llm_demo/hpc/README.md#돌고-있는-솔버가-그린-v2-그림-async_v2slurm-2026-10-22-실행) ·
 [전체 출력이 있는 릴리스](https://github.com/seungminyome/PythonFOAM/releases/tag/pod-insitu-v2-2026-10-22) ·
 [그림 시험과 발달한 흐름](../2026-10-22-window-test/README.md) ·
 [영문 문서](https://github.com/seungminyome/PythonFOAM/blob/main/docs/evidence/2026-10-22-live-v2/README.md)

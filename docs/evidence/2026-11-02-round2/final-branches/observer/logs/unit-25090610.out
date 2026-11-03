@@ -1,0 +1,18 @@
+host t399.cluster nproc=4 HEAD=24e9df6f5640594e2dbbd9a817231717fe8310ef start Mon Nov  2 15:24:51 MST 2026 load=7.39 7.40 7.28
+FOAM vars: 0 llama-server on PATH: none
+3.10.22 2.2.6 3.10.9 1.15.2
+ci-py310 rc=0 Ran 85 tests in 86.242s OK
+  test_llm_client: 0 lines
+  test_callback: 0 lines
+  test_async: 0 lines
+test_restart_window_is_checked_against_snapshot_count (test_callback.CallbackTests) ... PYTHON snapshot=1 shape=(20, 3) finite=true
+test_snapshot_count_mismatch_is_an_error (test_callback.CallbackTests) ... PYTHON snapshot=1 shape=(20, 3) finite=true
+3.12.15 2.5.4 3.11.2 1.18.1
+ci-py312 rc=0 Ran 85 tests in 86.769s OK
+  test_llm_client: 17 lines
+  test_callback: 34 lines
+  test_async: 28 lines
+test_restart_window_is_checked_against_snapshot_count (test_callback.CallbackTests.test_restart_window_is_checked_against_snapshot_count) ... PYTHON snapshot=1 shape=(20, 3) finite=true
+test_snapshot_count_mismatch_is_an_error (test_callback.CallbackTests.test_snapshot_count_mismatch_is_an_error) ... PYTHON snapshot=1 shape=(20, 3) finite=true
+end Mon Nov  2 15:27:50 MST 2026 load=8.21 7.78 7.46
+files newer than HEAD in the export: 0

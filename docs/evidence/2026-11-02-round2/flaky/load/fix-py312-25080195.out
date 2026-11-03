@@ -1,0 +1,9 @@
+host t379.cluster cpus=4 nproc=4 py=/gscratch/syome/conda/ci-py312/bin/python3 src=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/flaky/wt/Solver_Examples/PODFoam/llm_demo N=50 PAR=8 start Sun Nov  1 22:57:19 MST 2026
+3.12.15 (main, Oct 13 2026, 16:52:04) [GCC 15.3.0]
+end Sun Nov  1 23:05:28 MST 2026 load=13.77 14.46 11.61
+passed 47 of 50
+      1 ERROR: test_index_says_when_a_record_was_not_written_in_its_budget (test_async.PeriodicRequestTests.test_index_says_when_a_record_was_not_written_in_its_budget)
+      1 FAIL: test_index_says_when_a_record_was_not_written_in_its_budget (test_async.PeriodicRequestTests.test_index_says_when_a_record_was_not_written_in_its_budget)
+      1 FAIL: test_requests_every_n_steps_write_their_own_records_and_an_index (test_async.PeriodicRequestTests.test_requests_every_n_steps_write_their_own_records_and_an_index)
+      1 AssertionError: 'skipped_pending' != 'ok'
+      1 AssertionError: Lists differ: ['step-000002', 'step-000008'] != ['step-000002', 'step-000005', 'step-000008']

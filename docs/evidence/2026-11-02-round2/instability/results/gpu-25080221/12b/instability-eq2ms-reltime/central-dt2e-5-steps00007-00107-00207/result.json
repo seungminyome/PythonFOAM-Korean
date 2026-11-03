@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow fields show smooth evolution of features over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.\", \"stability\": \"stable\"}",
+  "request_sha256": "74c249081f0ab6dd0d16b5c34a5be465b614acf2ab813d2b2ff8d160e540106d",
+  "request_bytes": 644292,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 881,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 53,
+    "prompt_tokens": 2048,
+    "total_tokens": 2101,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 659.264,
+    "prompt_per_token_ms": 0.32190625,
+    "prompt_per_second": 3106.494515095622,
+    "predicted_n": 53,
+    "predicted_ms": 666.867,
+    "predicted_per_token_ms": 12.824365384615383,
+    "predicted_per_second": 77.9765680413036
+  },
+  "structured_output": {
+    "reason": "The flow fields show smooth evolution of features over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.1384105663746595,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

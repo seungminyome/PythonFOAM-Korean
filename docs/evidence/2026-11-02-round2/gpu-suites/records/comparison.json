@@ -1,0 +1,417 @@
+{
+  "baseline_24950817": {
+    "status": "PASS",
+    "frames_no_llm": {
+      "250": "31609ca633323537889fe1261a1c663910811f19097a1845ff48cb4f127f170a",
+      "500": "7a12434fa8187b437b77f7dd9ab1f16c71ea645c6ab3121a1440aaa991afaf8f",
+      "750": "01e7ce8c309e8c08710c502ae03c08f7eed9286f53dbc0e981ab55ad402c0c2e"
+    }
+  },
+  "25080035": {
+    "job": "25080035",
+    "version": "v2012",
+    "mode": "short",
+    "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080035",
+    "suite_log_lines": [
+      "}",
+      "Archive (no weights): /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080035/pod-llm-async.AVyQxO/run-archive.tar.gz",
+      "PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/wt/../pod-async-v2/run-25080035/pod-llm-async.AVyQxO"
+    ],
+    "job_out_tail": [
+      "Archive (no weights): /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080035/pod-llm-async.AVyQxO/run-archive.tar.gz",
+      "PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/wt/../pod-async-v2/run-25080035/pod-llm-async.AVyQxO",
+      "done: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/wt/../pod-async-v2/run-25080035/pod-llm-async.AVyQxO (suite exit 0)"
+    ],
+    "HEAD": "c82c835e6df18ca4e1c500843d7b388c29241df1",
+    "git_status_clean": true,
+    "gpu": "NVIDIA A30, 7925 MiB, 24576 MiB",
+    "sacct": "25080035|COMPLETED|00:06:12|mba30-008|2026-11-01T22:53:46|2026-11-01T22:59:58|0:0",
+    "demo_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080035/pod-llm-async.AVyQxO",
+    "verification_status": "PASS",
+    "settings": {
+      "steps": 1000,
+      "request_step": 250,
+      "sequence_steps": [
+        250,
+        500,
+        750
+      ],
+      "start_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/start/v2012/0.1",
+      "model": "gemma-4-12b-it-qat-q4_0-vision"
+    },
+    "start_files_sha256_equal_24950817": true,
+    "timings_s": {
+      "async-no-llm": 57.5,
+      "async-describe": 57.5,
+      "async-sequence": 57.0,
+      "async-server-error": 57.0,
+      "async-timeout": 57.0
+    },
+    "cases": {
+      "async-no-llm": {
+        "exit_status": 0,
+        "model_status": "disabled",
+        "request_step": 750,
+        "arrived_at_step": 763,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.00644012913107872,
+        "inference_wall_s": 0.0,
+        "max_courant": 0.333895897955,
+        "files_identical_to_no_request_baseline": 72
+      },
+      "async-describe": {
+        "exit_status": 0,
+        "model_status": "ok",
+        "request_step": 250,
+        "arrived_at_step": 351,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.020800314843654633,
+        "inference_wall_s": 3.8822859469801188,
+        "max_courant": 0.333895897955,
+        "files_identical_to_no_request_baseline": 72,
+        "answer_percent": {
+          "fastest_flow": [
+            40,
+            45
+          ],
+          "lowest_pressure": [
+            35,
+            30
+          ]
+        },
+        "distance_percent": {
+          "fastest_flow": 3.3,
+          "lowest_pressure": 5.0
+        },
+        "within_10_percent": {
+          "fastest_flow": true,
+          "lowest_pressure": true
+        }
+      },
+      "async-sequence": {
+        "exit_status": 0,
+        "model_status": "ok",
+        "request_step": 750,
+        "arrived_at_step": 851,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.003563055768609047,
+        "inference_wall_s": 3.9656331669539213,
+        "max_courant": 0.333895897955,
+        "files_identical_to_no_request_baseline": 72,
+        "trend_words": {
+          "max_speed_trend": "increasing",
+          "min_pressure_trend": "more_negative",
+          "fastest_flow_region": "moves"
+        },
+        "truth": {
+          "max_speed_trend": "increasing",
+          "min_pressure_trend": "more_negative",
+          "fastest_flow_region": "same_place"
+        },
+        "matches": 2
+      },
+      "async-server-error": {
+        "exit_status": 0,
+        "model_status": "error",
+        "request_step": 250,
+        "arrived_at_step": 268,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.013651888817548752,
+        "inference_wall_s": 0.008696280419826508,
+        "max_courant": 0.333895897955,
+        "files_identical_to_no_request_baseline": 72
+      },
+      "async-timeout": {
+        "exit_status": 0,
+        "model_status": "timeout",
+        "request_step": 250,
+        "arrived_at_step": 325,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.025419538840651512,
+        "inference_wall_s": null,
+        "max_courant": 0.333895897955,
+        "files_identical_to_no_request_baseline": 72
+      }
+    },
+    "frames_no_llm_fields_sha256": {
+      "250": "31609ca633323537889fe1261a1c663910811f19097a1845ff48cb4f127f170a",
+      "500": "7a12434fa8187b437b77f7dd9ab1f16c71ea645c6ab3121a1440aaa991afaf8f",
+      "750": "01e7ce8c309e8c08710c502ae03c08f7eed9286f53dbc0e981ab55ad402c0c2e"
+    },
+    "frames_equal_24950817": {
+      "250": true,
+      "500": true,
+      "750": true
+    }
+  },
+  "25080036": {
+    "job": "25080036",
+    "version": "8",
+    "mode": "short",
+    "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080036",
+    "suite_log_lines": [
+      "}",
+      "Archive (no weights): /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080036/pod-llm-async.RDSvxt/run-archive.tar.gz",
+      "PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/wt/../pod-async-v2/run-25080036/pod-llm-async.RDSvxt"
+    ],
+    "job_out_tail": [
+      "Archive (no weights): /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080036/pod-llm-async.RDSvxt/run-archive.tar.gz",
+      "PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/wt/../pod-async-v2/run-25080036/pod-llm-async.RDSvxt",
+      "done: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/wt/../pod-async-v2/run-25080036/pod-llm-async.RDSvxt (suite exit 0)"
+    ],
+    "HEAD": "c82c835e6df18ca4e1c500843d7b388c29241df1",
+    "git_status_clean": true,
+    "gpu": "NVIDIA A30, 7925 MiB, 24576 MiB",
+    "sacct": "25080036|COMPLETED|00:06:19|mba30-005|2026-11-01T22:53:46|2026-11-01T23:00:05|0:0",
+    "demo_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080036/pod-llm-async.RDSvxt",
+    "verification_status": "PASS",
+    "settings": {
+      "steps": 1000,
+      "request_step": 250,
+      "sequence_steps": [
+        250,
+        500,
+        750
+      ],
+      "start_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/start/8/0.1",
+      "model": "gemma-4-12b-it-qat-q4_0-vision"
+    },
+    "start_files_sha256_equal_24950817": true,
+    "timings_s": {
+      "async-no-llm": 59.0,
+      "async-describe": 58.5,
+      "async-sequence": 58.5,
+      "async-server-error": 59.0,
+      "async-timeout": 58.5
+    },
+    "cases": {
+      "async-no-llm": {
+        "exit_status": 0,
+        "model_status": "disabled",
+        "request_step": 750,
+        "arrived_at_step": 763,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.00400586798787117,
+        "inference_wall_s": 0.0,
+        "max_courant": 0.333790780737,
+        "files_identical_to_no_request_baseline": 72
+      },
+      "async-describe": {
+        "exit_status": 0,
+        "model_status": "ok",
+        "request_step": 250,
+        "arrived_at_step": 338,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.016406280919909477,
+        "inference_wall_s": 3.9136962983757257,
+        "max_courant": 0.333790780737,
+        "files_identical_to_no_request_baseline": 72,
+        "answer_percent": {
+          "fastest_flow": [
+            35,
+            45
+          ],
+          "lowest_pressure": [
+            35,
+            30
+          ]
+        },
+        "distance_percent": {
+          "fastest_flow": 1.1,
+          "lowest_pressure": 4.0
+        },
+        "within_10_percent": {
+          "fastest_flow": true,
+          "lowest_pressure": true
+        }
+      },
+      "async-sequence": {
+        "exit_status": 0,
+        "model_status": "ok",
+        "request_step": 750,
+        "arrived_at_step": 840,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.004114216193556786,
+        "inference_wall_s": 3.7362073436379433,
+        "max_courant": 0.333790780737,
+        "files_identical_to_no_request_baseline": 72,
+        "trend_words": {
+          "max_speed_trend": "decreasing",
+          "min_pressure_trend": "more_negative",
+          "fastest_flow_region": "moves"
+        },
+        "truth": {
+          "max_speed_trend": "roughly_constant",
+          "min_pressure_trend": "less_negative",
+          "fastest_flow_region": "moves"
+        },
+        "matches": 1
+      },
+      "async-server-error": {
+        "exit_status": 0,
+        "model_status": "error",
+        "request_step": 250,
+        "arrived_at_step": 262,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.015673797577619553,
+        "inference_wall_s": 0.013065420091152191,
+        "max_courant": 0.333790780737,
+        "files_identical_to_no_request_baseline": 72
+      },
+      "async-timeout": {
+        "exit_status": 0,
+        "model_status": "timeout",
+        "request_step": 250,
+        "arrived_at_step": 328,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.01708655059337616,
+        "inference_wall_s": null,
+        "max_courant": 0.333790780737,
+        "files_identical_to_no_request_baseline": 72
+      }
+    },
+    "frames_no_llm_fields_sha256": {
+      "250": "f955ce165ba9da9bcdabbd7762bb717e89cf50b28b91e2415cc16e6ddeb1b80f",
+      "500": "1a9152efb290e671d3238d4c5e2a115659c50d0406146a04c0fb6dd3f87d3e25",
+      "750": "2adef52f875666d24bbbb17a6149056658c4686f64f3d0b8157866e04daf9f32"
+    },
+    "frames_equal_24950817": {
+      "250": false,
+      "500": false,
+      "750": false
+    }
+  },
+  "25080037": {
+    "job": "25080037",
+    "version": "v2212",
+    "mode": "default",
+    "run_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080037",
+    "suite_log_lines": [
+      "}",
+      "Archive (no weights): /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080037/pod-llm-async.UfgyhY/run-archive.tar.gz",
+      "PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/wt-bf7a06e/../pod-async-v2/run-25080037/pod-llm-async.UfgyhY"
+    ],
+    "job_out_tail": [
+      "Archive (no weights): /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080037/pod-llm-async.UfgyhY/run-archive.tar.gz",
+      "PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/wt-bf7a06e/../pod-async-v2/run-25080037/pod-llm-async.UfgyhY",
+      "done: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/wt-bf7a06e/../pod-async-v2/run-25080037/pod-llm-async.UfgyhY (suite exit 0)"
+    ],
+    "HEAD": "bf7a06e3544d28a9ed73f7f8454a93aaf070fc56",
+    "git_status_clean": true,
+    "gpu": "NVIDIA A30, 7925 MiB, 24576 MiB",
+    "sacct": "25080037|COMPLETED|00:31:15|mba30-005|2026-11-01T22:53:46|2026-11-01T23:25:01|0:0",
+    "demo_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/pod-async-v2/run-25080037/pod-llm-async.UfgyhY",
+    "verification_status": "PASS",
+    "settings": {
+      "steps": 6000,
+      "request_step": 250,
+      "sequence_steps": [
+        3000,
+        3250,
+        3750
+      ],
+      "start_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-async-v2/run-24757460/pod-llm-async.UM1RyJ/async-no-llm/0.1",
+      "model": "gemma-4-12b-it-qat-q4_0-vision"
+    },
+    "start_files_sha256_equal_24950817": true,
+    "timings_s": {
+      "async-no-llm": 334.1,
+      "async-describe": 333.6,
+      "async-sequence": 333.7,
+      "async-server-error": 333.1,
+      "async-timeout": 333.0
+    },
+    "cases": {
+      "async-no-llm": {
+        "exit_status": 0,
+        "model_status": "disabled",
+        "request_step": 3750,
+        "arrived_at_step": 3762,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.006309265270829201,
+        "inference_wall_s": 0.0,
+        "max_courant": 0.346668233526,
+        "files_identical_to_no_request_baseline": 432
+      },
+      "async-describe": {
+        "exit_status": 0,
+        "model_status": "ok",
+        "request_step": 250,
+        "arrived_at_step": 331,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.013751175254583359,
+        "inference_wall_s": 3.8946253955364227,
+        "max_courant": 0.346668233526,
+        "files_identical_to_no_request_baseline": 432,
+        "answer_percent": {
+          "fastest_flow": [
+            40,
+            45
+          ],
+          "lowest_pressure": [
+            35,
+            30
+          ]
+        },
+        "distance_percent": {
+          "fastest_flow": 3.3,
+          "lowest_pressure": 5.0
+        },
+        "within_10_percent": {
+          "fastest_flow": true,
+          "lowest_pressure": true
+        }
+      },
+      "async-sequence": {
+        "exit_status": 0,
+        "model_status": "ok",
+        "request_step": 3750,
+        "arrived_at_step": 3833,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.004034046083688736,
+        "inference_wall_s": 3.8989702071994543,
+        "max_courant": 0.346668233526,
+        "files_identical_to_no_request_baseline": 432,
+        "trend_words": {
+          "max_speed_trend": "decreasing",
+          "min_pressure_trend": "less_negative",
+          "fastest_flow_region": "moves"
+        },
+        "truth": {
+          "max_speed_trend": "decreasing",
+          "min_pressure_trend": "less_negative",
+          "fastest_flow_region": "moves"
+        },
+        "matches": 3
+      },
+      "async-server-error": {
+        "exit_status": 0,
+        "model_status": "error",
+        "request_step": 250,
+        "arrived_at_step": 260,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.01361268199980259,
+        "inference_wall_s": 0.010451368987560272,
+        "max_courant": 0.346668233526,
+        "files_identical_to_no_request_baseline": 432
+      },
+      "async-timeout": {
+        "exit_status": 0,
+        "model_status": "timeout",
+        "request_step": 250,
+        "arrived_at_step": 321,
+        "answer_arrived_before_end": true,
+        "solver_stall_s": 0.013850098475813866,
+        "inference_wall_s": null,
+        "max_courant": 0.346668233526,
+        "files_identical_to_no_request_baseline": 432
+      }
+    },
+    "frames_no_llm_fields_sha256": {
+      "3000": "b0f276756255543a0151f02055d54f39b3cb7fbe2b3e3289d5e47d9e8b9caa88",
+      "3250": "7ca94e9999ff50d41b36021f78b230a9f6ce7f0b6386814b5616a878affe84ea",
+      "3750": "692b060aca27f38a2ee035b50e5d4c012af5eeb44059d27dd02c66c542db7685"
+    },
+    "frames_equal_24950817": "different step set"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "dcfb0a2ab0c9c00af9b7edb0d81df24c9a122f50292d0fecf2e48e59946cb194",
+  "request_bytes": 646991,
+  "replay_wall_s": 1.994088340550661,
+  "client_inference_wall_s": 1.9706820491701365,
+  "usage": {
+    "completion_tokens": 54,
+    "prompt_tokens": 1972,
+    "total_tokens": 2026,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 506.89,
+    "prompt_per_token_ms": 0.25704361054766733,
+    "prompt_per_second": 3890.3904200122315,
+    "predicted_n": 54,
+    "predicted_ms": 679.494,
+    "predicted_per_token_ms": 12.820641509433964,
+    "predicted_per_second": 77.99921706446267
+  },
+  "structured_output": {
+    "reason": "The flow shows smooth evolution of features over time. The velocity and pressure fields exhibit coherent structures and gradients without high-frequency oscillations, checkerboard patterns, or non-physical growth in extremes.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "stable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

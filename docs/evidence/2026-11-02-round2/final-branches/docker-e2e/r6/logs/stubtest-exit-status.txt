@@ -1,0 +1,4 @@
+docker_e2e.sh sha256 7e69cab2c4df; stub repo /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r5/texts/stubtest/repo; image upstream-docker.sif; login node mblog1
+stub-none: exit 1 | verification: none E2E stub-none a495b3fd90357cf001d3e5ee889f41ef644ba1b0 FAIL 0 
+stub-fail: exit 1 | verification: "status": "FAIL" E2E stub-fail 5a4df288bd16e4e07d6308d15f6190748c4422c6 FAIL 0 
+stub-pass: exit 0 | verification: "status": "PASS" E2E stub-pass 94017244109f8a4e232ab7a09f619f85c981283c PASS 0 

@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "9b097464cbae34724bd36d583e96986c4d3ff9aff141bda2588b7fc945d1aa05",
+  "request_bytes": 585403,
+  "replay_wall_s": 4.400461733341217,
+  "client_inference_wall_s": 4.376082729548216,
+  "usage": {
+    "completion_tokens": 69,
+    "prompt_tokens": 1972,
+    "total_tokens": 2041,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1564.234,
+    "prompt_per_token_ms": 0.7932221095334685,
+    "prompt_per_second": 1260.6809467125763,
+    "predicted_n": 69,
+    "predicted_ms": 2016.504,
+    "predicted_per_token_ms": 29.65447058823529,
+    "predicted_per_second": 33.72172829808421
+  },
+  "structured_output": {
+    "reason": "At time 3, the velocity magnitude and pressure show extreme values (up to 10^8) compared to previous times (up to 10^1), accompanied by high-frequency spatial oscillations (checkerboard pattern) in the pressure field.",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

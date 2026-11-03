@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow is fastest in the upper region, particularly around the center-right. A slower, more complex flow structure exists in the lower-right quadrant. Pressure is lowest in a localized region near the center of the flow field, with higher pressure values appearing in the upper-left and far-right regions.\",\n  \"fastest_flow_x_percent\": 48,\n  \"fastest_flow_y_percent\": 82,\n  \"lowest_pressure_x_percent\": 49,\n  \"lowest_pressure_y_percent\": 73,\n  \"uncertainties\": \"The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644610,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 171,
+    "prompt_tokens": 1061,
+    "total_tokens": 1232,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-nWzLqeuF2xvTjVy3aPMqhL3NvkroNfe3",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 287.881,
+    "prompt_per_token_ms": 0.27132987747408105,
+    "prompt_per_second": 3685.5506268214995,
+    "predicted_n": 171,
+    "predicted_ms": 2144.831,
+    "predicted_per_token_ms": 12.616652941176472,
+    "predicted_per_second": 79.2603240068798
+  }
+}

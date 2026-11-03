@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "5c88bf16957120031a2ae1b0c969b548e5ac0dfbc47b3a00346b82a4f14eb786",
+  "request_bytes": 654119,
+  "replay_wall_s": 4.0657188799232244,
+  "client_inference_wall_s": 4.043421272188425,
+  "usage": {
+    "completion_tokens": 50,
+    "prompt_tokens": 1972,
+    "total_tokens": 2022,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1571.871,
+    "prompt_per_token_ms": 0.797094827586207,
+    "prompt_per_second": 1254.555876404616,
+    "predicted_n": 50,
+    "predicted_ms": 1454.65,
+    "predicted_per_token_ms": 29.686734693877554,
+    "predicted_per_second": 33.685078884955146
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude and kinematic pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or diverging extremes.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "unstable",
+      "match": false,
+      "cannot_tell": false
+    }
+  }
+}

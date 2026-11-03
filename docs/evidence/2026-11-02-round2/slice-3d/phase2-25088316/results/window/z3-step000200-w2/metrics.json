@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z3-step000200-w2",
+  "design": {
+    "run": "z3",
+    "slice_z_m": 0.00396875,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00396875,
+      "requested_z_m": 0.00396875,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 200,
+    "time_s": 0.101750000000001,
+    "plotted_range_m": {
+      "x": [
+        -0.20775992317553704,
+        0.11449530484875237
+      ],
+      "y": [
+        -0.03733889247398625,
+        0.04968447784974332
+      ]
+    },
+    "cells_in_window": 9383,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "5e43101f7a419b0414098d6f0ad0f1dbdb4850c7fa3750ba11e74ef34a201013",
+  "wall_s": 3.5686767771840096,
+  "usage": {
+    "completion_tokens": 180,
+    "prompt_tokens": 1060,
+    "total_tokens": 1240,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1060,
+    "prompt_ms": 279.2,
+    "prompt_per_token_ms": 0.2633962264150943,
+    "prompt_per_second": 3796.5616045845272,
+    "predicted_n": 180,
+    "predicted_ms": 2257.996,
+    "predicted_per_token_ms": 12.61450279329609,
+    "predicted_per_second": 79.27383396604776
+  },
+  "structured_output": {
+    "flow_description": "The flow is fast in the upper region (y > 60%) and shows a complex, turbulent-like structure in the lower right quadrant. The flow is slowest in the bottom right area. Pressure is relatively uniform in the upper region but shows significant fluctuations and a distinct low-pressure zone in the lower right quadrant.",
+    "fastest_flow_x_percent": 80,
+    "fastest_flow_y_percent": 65,
+    "lowest_pressure_x_percent": 80,
+    "lowest_pressure_y_percent": 60,
+    "uncertainties": "The exact magnitude of the pressure fluctuations and the specific velocity values within the turbulent region are difficult to determine due to the scale of the color bars."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        80,
+        65
+      ],
+      "true_percent": [
+        80.55986755340986,
+        64.13157423099841
+      ],
+      "error_percent": [
+        -0.5598675534098589,
+        0.8684257690015897
+      ],
+      "distance_percent": 1.0332545638065886,
+      "error_m": [
+        -0.0018042024608749512,
+        0.0007557333729449498
+      ],
+      "distance_m": 0.001956087792204118,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        80,
+        60
+      ],
+      "true_percent": [
+        80.23491075045446,
+        54.58525015560506
+      ],
+      "error_percent": [
+        -0.23491075045446053,
+        5.41474984439494
+      ],
+      "distance_percent": 5.419843073194473,
+      "error_m": [
+        -0.0007570121745305913,
+        0.00471209780919138
+      ],
+      "distance_m": 0.0047725185380230566,
+      "within_10_percent": true
+    }
+  }
+}

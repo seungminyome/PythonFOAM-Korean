@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows high velocity in the upper region, particularly between 30% and 80% on the y-axis. A low-velocity region exists at the bottom, with a distinct horizontal boundary around y=20%. Pressure is lowest in a localized region between x=20% and x=30% at y=30%, while it is highest in the lower-right quadrant.\",\n  \"fastest_flow_x_percent\": 35,\n  \"fastest_flow_y_percent\": 38,\n  \"lowest_pressure_x_percent\": 25,\n  \"lowest_pressure_y_percent\": 30,\n  \"uncertainties\": \"The exact magnitude of the velocity and pressure values at specific coordinates cannot be determined without the numerical data, only their relative positions based on the color scales.\"\n}",
+  "request_sha256": "4d1225fe1f61dc239fcb01003d0b23ec6a5a5ce1ac66cdaf9a556e5d788cbc90",
+  "request_bytes": 204362,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1359,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 200,
+    "prompt_tokens": 1062,
+    "total_tokens": 1262,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 286.363,
+    "prompt_per_token_ms": 0.26964500941619585,
+    "prompt_per_second": 3708.5796698595836,
+    "predicted_n": 200,
+    "predicted_ms": 2509.348,
+    "predicted_per_token_ms": 12.609788944723618,
+    "predicted_per_second": 79.30346847069438
+  },
+  "structured_output": {
+    "flow_description": "The flow shows high velocity in the upper region, particularly between 30% and 80% on the y-axis. A low-velocity region exists at the bottom, with a distinct horizontal boundary around y=20%. Pressure is lowest in a localized region between x=20% and x=30% at y=30%, while it is highest in the lower-right quadrant.",
+    "fastest_flow_x_percent": 35,
+    "fastest_flow_y_percent": 38,
+    "lowest_pressure_x_percent": 25,
+    "lowest_pressure_y_percent": 30,
+    "uncertainties": "The exact magnitude of the velocity and pressure values at specific coordinates cannot be determined without the numerical data, only their relative positions based on the color scales."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.7992349080741405,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

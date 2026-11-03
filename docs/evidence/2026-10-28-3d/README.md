@@ -151,7 +151,7 @@ LLM_ANALYSIS_STEP=100 LLM_IMAGE_XRANGE=0,0.12 LLM_IMAGE_YRANGE=0,0.04`
 | `serial3d/` | 솔버 로그(gzip), 요청과 결과 기록, 프레임의 그림 두 장과 메타데이터(`fields.npz`는 클러스터에 남음) |
 | `par3d/` | 솔버 로그(gzip), 결과 기록, 프레임 메타데이터, 분할 설정과 로그 |
 | `noobs3d/`, `slicez3d/`, `badz3d/`, `outz3d/`, `serial2d/` | 솔버 로그(gzip); 결과 기록(관찰 기능이 없는 `noobs3d`는 없음); `slicez3d`의 프레임 메타데이터 |
-| `run-24929500/` | `07759b0`로 끝까지 돈 실행의 출력과 비교 |
+| `run-24929500/` | `07759b0`으로 끝까지 돈 실행의 출력과 비교 |
 | `slice-test-24929484.out` | 첫 시도의 출력 |
 | [manifest.json](manifest.json) | 이 폴더 파일들의 출처, 크기, 해시 |
 

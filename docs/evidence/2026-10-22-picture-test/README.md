@@ -6,7 +6,7 @@ MedicineBow(와이오밍 대학교)의 Slurm 작업 24756981, NVIDIA RTX A6000 �
 코드는 영문 저장소의 `58e00d9`이고, 이 저장소에서 같은 코드는 `7435513`입니다.
 
 [보고서](../../results-20261022.md) ·
-[묶음을 만들고 돌리는 법](../../../Solver_Examples/PODFoam/llm_demo/hpc/README.md#그림-읽기-시험-2026-10-22-실행) ·
+[묶음을 만들고 돌리는 법](https://github.com/seungminyome/PythonFOAM-Korean/blob/5c56995/Solver_Examples/PODFoam/llm_demo/hpc/README.md#그림-읽기-시험-2026-10-22-실행) ·
 [두 압축 파일이 있는 릴리스](https://github.com/seungminyome/PythonFOAM/releases/tag/picture-test-2026-10-22) ·
 [영문 문서](https://github.com/seungminyome/PythonFOAM/blob/main/docs/evidence/2026-10-22-picture-test/README.md)
 

@@ -1,0 +1,114 @@
+{
+  "set": "solver",
+  "name": "z1-step000250",
+  "design": {
+    "run": "z1",
+    "slice_z_m": 0.00079375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00079375,
+      "requested_z_m": 0.00079375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 250,
+    "time_s": 0.10200000000000126,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "1e76bc2bd6edce3716c205283cc2bb9ae51660220c1c6859aa22ab5b8c5c4504",
+  "wall_s": 3.674557339400053,
+  "usage": {
+    "completion_tokens": 184,
+    "prompt_tokens": 998,
+    "total_tokens": 1182,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 998,
+    "prompt_ms": 267.8,
+    "prompt_per_token_ms": 0.2683366733466934,
+    "prompt_per_second": 3726.6616878267364,
+    "predicted_n": 184,
+    "predicted_ms": 2308.227,
+    "predicted_per_token_ms": 12.613262295081967,
+    "predicted_per_second": 79.28163044622562
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 60% on the x-axis. The flow is slowest in the lower half, especially near the bottom edge. The lowest pressure is located in a central region around 45% x and 30% y, while the highest pressure is at the far right edge.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 50,
+    "lowest_pressure_x_percent": 45,
+    "lowest_pressure_y_percent": 30,
+    "uncertainties": "The exact physical boundaries and the nature of the obstacles or geometry causing the pressure fluctuations are not explicitly labeled."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        50,
+        50
+      ],
+      "true_percent": [
+        45.825578267031034,
+        46.81842820165504
+      ],
+      "error_percent": [
+        4.174421732968966,
+        3.1815717983449616
+      ],
+      "distance_percent": 5.248637529179131,
+      "error_m": [
+        0.00500930607956276,
+        0.0012726287193379846
+      ],
+      "distance_m": 0.0051684360551358536,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        45,
+        30
+      ],
+      "true_percent": [
+        44.08001020018499,
+        24.362305758366126
+      ],
+      "error_percent": [
+        0.9199897998150135,
+        5.637694241633874
+      ],
+      "distance_percent": 5.7122655395136706,
+      "error_m": [
+        0.0011039877597780162,
+        0.0022550776966535494
+      ],
+      "distance_m": 0.0025108095092387954,
+      "within_10_percent": true
+    }
+  }
+}

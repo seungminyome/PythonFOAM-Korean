@@ -1,0 +1,16 @@
+Verification of r2/pfinal records, 2026-11-02 (login node, apptainer exec md5sum against each live image)
+Images: W/images/of-v2012-dev.sif, W/images/of-v2106-dev.sif, /cluster/medbow/gscratch/syome/s4f/of2212.sif, W/images/of-8.sif
+v2012 src/finiteVolume/fvMatrices/fvMatrix/fvMatrixSolve.C copy=a6871119382d59c1b7666d39e825ed1c image=a6871119382d59c1b7666d39e825ed1c MATCH
+v2012 src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.C copy=fcc6efa3fa694d9901e73b01b90e8e04 image=fcc6efa3fa694d9901e73b01b90e8e04 MATCH
+v2012 applications/solvers/incompressible/pimpleFoam/pEqn.H copy=ea8e95d152438a6442f90a442d10cc39 image=ea8e95d152438a6442f90a442d10cc39 MATCH
+v2106 src/finiteVolume/fvMatrices/fvMatrix/fvMatrixSolve.C copy=a6871119382d59c1b7666d39e825ed1c image=a6871119382d59c1b7666d39e825ed1c MATCH
+v2106 src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.C copy=fcc6efa3fa694d9901e73b01b90e8e04 image=fcc6efa3fa694d9901e73b01b90e8e04 MATCH
+v2106 applications/solvers/incompressible/pimpleFoam/pEqn.H copy=ea8e95d152438a6442f90a442d10cc39 image=ea8e95d152438a6442f90a442d10cc39 MATCH
+v2212 src/finiteVolume/fvMatrices/fvMatrix/fvMatrixSolve.C copy=bc5c9da4819949ad446f995520b2f3b2 image=bc5c9da4819949ad446f995520b2f3b2 MATCH
+v2212 src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.C copy=69033899e578d93f1dd6fa11f6781bbf image=69033899e578d93f1dd6fa11f6781bbf MATCH
+v2212 applications/solvers/incompressible/pimpleFoam/pEqn.H copy=3d1307598bfa9bf8dfc1b6b33d7cf346 image=3d1307598bfa9bf8dfc1b6b33d7cf346 MATCH
+8 src/finiteVolume/fvMatrices/fvMatrix/fvMatrixSolve.C copy=144543918600f83829388eb15938ea70 image=144543918600f83829388eb15938ea70 MATCH
+8 src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.C copy=7f75896a9d427a146ef5619a2756d99a image=7f75896a9d427a146ef5619a2756d99a MATCH
+8 applications/solvers/incompressible/pimpleFoam/pEqn.H copy=620d5e35d09e2c53df797ddff0e1063b image=620d5e35d09e2c53df797ddff0e1063b MATCH
+Also checked: sacct 25080017 COMPLETED 00:01:49 ttest02 (2026-11-01 22:50:46-22:52:35); all 30 demo/runs-25080017/*/case-*/exit-status = 0;
+grep 'Solving for' of v2106 case-fork-n1 and case-pimpleFoam-n1 logs identical; README line numbers re-checked against source/ files.

@@ -1,0 +1,3927 @@
+{
+  "test": "r2/slice-3d 3D slice picture test 2026-11-01",
+  "design": {
+    "written": "2026-11-01, before any job ran; not changed after the results",
+    "question": "Does Gemma 4 12B read the fastest-flow and lowest-pressure positions from the observer's slice pictures (|U| and p) of the 3D step case?",
+    "code": "PythonFOAM PR tree bf7a06e (worktree r2/slice-3d), OpenFOAM v2212 (of2212.sif); the observer's own slice frames, LLM_ENABLED=0 during the solver runs",
+    "start_state": "serial3d/0.10075 of job 24929629 (pod-3d-20261028/run-24929629): the extruded 3D step case (164,320 cells, walls front and back) started from the developed 2D flow at t = 0.1 s and run 150 steps with the walls acting. U, p, phi copied; uniform/time removed so the step count starts at 0.",
+    "runs": "4 serial runs of 300 steps (dt 5e-6 s, t 0.10075 to 0.10225 s), one per slice plane POD_SLICE_Z = 0.00079375, 0.00396875, 0.00714375, 0.01031250 m (cell layers 1, 3, 5 and 7 of 8; 0.00714375 is the plane the default lands on). v2 describe frames every 50 steps (LLM_ANALYSIS_STEP=50, LLM_ANALYSIS_EVERY=50): steps 50..300, 6 frames per run, 24 frames. Plotted window x 0..0.12 m, y 0..0.04 m as in all earlier runs. Fields written every 50 steps.",
+    "sets": {
+      "solver": "the 24 frames as the solver drew them (fixed window): one describe request each",
+      "window": "2 random windows per frame drawn offline from the frame's slice arrays and polygons with readable_request.render_frame (the solver's renderer), the window placed by the 2026-10-22 window-test rule (MARGIN 0.15, y span 0.03..0.114 m, aspect 1.5..4, at least 200 cells, around the slice's fastest cell), seed 20261101: 48 requests"
+    },
+    "requests_total": 72,
+    "request": "readable_request.describe_v2_payload: the two pictures and the 2D test's describe prompt; the answers fastest_flow_x/y_percent and lowest_pressure_x/y_percent are scored",
+    "model": "Gemma 4 12B QAT Q4_0 + projector, llama.cpp b11429 (llm-runtime-12b), one GPU (l40s|a6000|a30), LLM_CTX=4096 LLM_BATCH=512 LLM_UBATCH=512, image tokens 256, as the 2026-10-30 GPU jobs; temperature 0, seed 20261021, cache_prompt false",
+    "scoring": "a position is right when its distance to the true cell (argmax |U|, argmin p over the slice cells inside the plotted range, from fields.npz) is at most 10 % of the plotted range (frame_scoring.score_describe). Reported: right/attempted per question, per set and over all 72.",
+    "baseline": "constant answer: the integer (x, y) in 0..100 that is within 10 % of the most answer keys, one answer for a whole set (and one for all 72), computed from the arrays before the model runs; the picture_test grouping by plotted range is not used because every window differs.",
+    "not_claimed": "the 3D flow is not developed in z: the start state has had the walls for 150 steps and the runs add 300; slices differ from each other mainly near the walls."
+  },
+  "seed": 20261101,
+  "windows_per_frame": 2,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "sets": {
+    "solver": 24,
+    "window": 48
+  },
+  "requests": [
+    {
+      "set": "solver",
+      "name": "z1-step000050",
+      "mode": "describe",
+      "file": "requests/solver/z1-step000050.request.json",
+      "request_sha256": "0a81945781c1aa3058dd8cdfecf18e4e593fb242efa6aa0b57a5d7ef33af0cdf",
+      "request_bytes": 224761,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000050",
+        "fields_sha256": "1952f971f3024b8f4e0778d8eb3ded3b2678b682f0e7d9c638a47b490dc76392",
+        "image_sha256": {
+          "U": "3826e94cccfd527b74810f6cbcac6295cea62042b909bd98041674cbd113e69e",
+          "p": "d2db774d29d82195bd90820ed3b211fb52745851ab385eea8e4a2d2159c5bb0a"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000050-w1",
+      "mode": "describe",
+      "file": "requests/window/z1-step000050-w1.request.json",
+      "request_sha256": "5576d4828544991c7a484d5beaffc6108a25b1ca52c20c5160a2979d317bbc99",
+      "request_bytes": 192345,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000050-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000050",
+        "fields_sha256": "1952f971f3024b8f4e0778d8eb3ded3b2678b682f0e7d9c638a47b490dc76392",
+        "image_sha256": {
+          "U": "ed48d938b8d5f3789a538c83b423f9187f734e4f8382627fae848607fc6d6dab",
+          "p": "4dca988a0313d55b561e3805e28bc399792e6969e9c3efc19c18fe310eb518e9"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            -0.05191107919631332,
+            0.13895439156415343
+          ],
+          "y": [
+            -0.0493742811838345,
+            0.030317659020005598
+          ]
+        },
+        "cells_in_window": 8489,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000050-w2",
+      "mode": "describe",
+      "file": "requests/window/z1-step000050-w2.request.json",
+      "request_sha256": "c8cd301168c94a9183a0515352197ebe9cb73960ee1eb2c2229132808c9a7afb",
+      "request_bytes": 192142,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000050-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000050",
+        "fields_sha256": "1952f971f3024b8f4e0778d8eb3ded3b2678b682f0e7d9c638a47b490dc76392",
+        "image_sha256": {
+          "U": "a4004de0f802ca172764c8d770acd0d9706cee08d9224a9169ee75beda3f67d8",
+          "p": "554c12ad6f03bca4206bf2003408646b7de1a7161ea19163e32b159e5bde145b"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            0.009458650675062207,
+            0.07169531042832228
+          ],
+          "y": [
+            0.0037029290626167267,
+            0.04512198495337674
+          ]
+        },
+        "cells_in_window": 3116,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z1-step000100",
+      "mode": "describe",
+      "file": "requests/solver/z1-step000100.request.json",
+      "request_sha256": "f79f09b2c0e78a3771510983acdcafba0ba83068d456b01c695a812af8bbfaf4",
+      "request_bytes": 224397,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000100",
+        "fields_sha256": "26fff62f769bddd005a5c314e09368d81ecb528aaaf2345bec1e888764081887",
+        "image_sha256": {
+          "U": "1c7eaab9ba439b267a4f7b9966d64d5934294728132e972187bfac17514650c1",
+          "p": "05692f35d8a0e3a697620a1d1ece6363c8aaa33f42859758293a2e61a67a2c1b"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000100-w1",
+      "mode": "describe",
+      "file": "requests/window/z1-step000100-w1.request.json",
+      "request_sha256": "eae6ee2e7b4984180e59e8a5f8ff361f98ead6bbf6bdaa2d4f7b7175081f78c4",
+      "request_bytes": 216967,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000100-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000100",
+        "fields_sha256": "26fff62f769bddd005a5c314e09368d81ecb528aaaf2345bec1e888764081887",
+        "image_sha256": {
+          "U": "6e2c775c02f87ca76f8d2759b6e10ff1d09b73f9367a9f7c796239db60fb65d6",
+          "p": "1e1019b4a3a2b9f826dcb793ff76ae5762c4da7f2086566349e2190fec90f0ca"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            -0.011195248431979755,
+            0.16026803000151804
+          ],
+          "y": [
+            -0.005310858664550982,
+            0.06102782259914326
+          ]
+        },
+        "cells_in_window": 9259,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000100-w2",
+      "mode": "describe",
+      "file": "requests/window/z1-step000100-w2.request.json",
+      "request_sha256": "74fdca7e4fff1090e519919be9387a74a5b8161e8ac24cf9a6d008f44869784d",
+      "request_bytes": 194478,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000100-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000100",
+        "fields_sha256": "26fff62f769bddd005a5c314e09368d81ecb528aaaf2345bec1e888764081887",
+        "image_sha256": {
+          "U": "9dde3ac6e567930a9cc12fe923d78361f03483b02ab2ebe5d85e5bf2766b34a3",
+          "p": "38b69d38b1653fb60687821fae74e8d158c06bc7569f2d59f62ff3bd223f8146"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            -0.09106211929409998,
+            0.08306625120933007
+          ],
+          "y": [
+            -0.013913949484159926,
+            0.04264828907969062
+          ]
+        },
+        "cells_in_window": 6883,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z1-step000150",
+      "mode": "describe",
+      "file": "requests/solver/z1-step000150.request.json",
+      "request_sha256": "009372bce95ec3fbf3180ae41f40fef67e276bda0af9e0f88f6e765e02742b4b",
+      "request_bytes": 223674,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000150",
+        "fields_sha256": "c631b553eeb647b60e86867e5b92951144dfbdadefefd927276036ee41b47951",
+        "image_sha256": {
+          "U": "fcb33c1fd7f8592200e16b17fa21ada62b88f454241e7756ee697e4db93b0f78",
+          "p": "c3bec1d3f2bea2612e2b0564a858e2d41f88b997a02e7b5fec99db69ce8020ff"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000150-w1",
+      "mode": "describe",
+      "file": "requests/window/z1-step000150-w1.request.json",
+      "request_sha256": "3e79946ff3d9088e7a84a5b75e34d2c1bf1fa57bfbcc7bad5b1bc306b888efad",
+      "request_bytes": 189930,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000150-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000150",
+        "fields_sha256": "c631b553eeb647b60e86867e5b92951144dfbdadefefd927276036ee41b47951",
+        "image_sha256": {
+          "U": "9937c24fca1282554a8f94c3616b13ad0eb47e2c9f958d9314b0b4387754b8d8",
+          "p": "3702c37fc2160ab8ae4ec5434fa50d590089c12774a64bd6718ff149a687d5ae"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            -0.05843346921180272,
+            0.1154813781589085
+          ],
+          "y": [
+            -0.051131738034389834,
+            0.04691511160220163
+          ]
+        },
+        "cells_in_window": 8788,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000150-w2",
+      "mode": "describe",
+      "file": "requests/window/z1-step000150-w2.request.json",
+      "request_sha256": "69d2fd22b77fbae472e78ef120d4d7de0e0be2364120f59b2dce7dea1359dfcb",
+      "request_bytes": 208559,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000150-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000150",
+        "fields_sha256": "c631b553eeb647b60e86867e5b92951144dfbdadefefd927276036ee41b47951",
+        "image_sha256": {
+          "U": "8191ea776ed5946393f9ff3773da81d8c1111dbe40bfe06faf37b0545bbe381b",
+          "p": "520d593f69ff0782f1bfb855f8b19b46bb4e710bbabd798395dd1ec60d206a12"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            -0.08718918452886845,
+            0.18240969590225545
+          ],
+          "y": [
+            -0.004614309837467297,
+            0.07706255673321623
+          ]
+        },
+        "cells_in_window": 10626,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z1-step000200",
+      "mode": "describe",
+      "file": "requests/solver/z1-step000200.request.json",
+      "request_sha256": "a7d78d696194075b45c080fe6b383d5ded3dbffbd448a9332122ad0948019dc8",
+      "request_bytes": 223940,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000200",
+        "fields_sha256": "755da39e667cfc525b0bd74e7117114648bddfe754cdd9ea12f42943553edebe",
+        "image_sha256": {
+          "U": "1be527dcdc096c20e8c0c5511a62a5943e48360a035a16048a5b7ffc12b8e2b2",
+          "p": "137a91d4d6223f539383b7b8ee7ef10b8dc49807240fde8118990ae7017b35c2"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000200-w1",
+      "mode": "describe",
+      "file": "requests/window/z1-step000200-w1.request.json",
+      "request_sha256": "413a2c342ebce5a6a8d166d65253962d3b0a2a6e10415c8468acb58baff89858",
+      "request_bytes": 197501,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000200-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000200",
+        "fields_sha256": "755da39e667cfc525b0bd74e7117114648bddfe754cdd9ea12f42943553edebe",
+        "image_sha256": {
+          "U": "505e853c2cfd027cf5da99600ac7d5c4df664199f3f195abde79ef64827bdc91",
+          "p": "cc0d4a6d872cc402bad196734db946e30c25c7ca54cbde8d7930abdc10699464"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            -0.12429741451325052,
+            0.11763774531796414
+          ],
+          "y": [
+            -0.020062316637068995,
+            0.07144564379749989
+          ]
+        },
+        "cells_in_window": 9834,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000200-w2",
+      "mode": "describe",
+      "file": "requests/window/z1-step000200-w2.request.json",
+      "request_sha256": "d437034642d0b5d40d1e576e2f001ffc7416c87129585b125a6f1d0d46c552a3",
+      "request_bytes": 202733,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000200-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000200",
+        "fields_sha256": "755da39e667cfc525b0bd74e7117114648bddfe754cdd9ea12f42943553edebe",
+        "image_sha256": {
+          "U": "c1fb8b9cd37bc1582a9f577a024ab6e5406ff8edbfc1c044accab1b26fc5743c",
+          "p": "cb6d5ee58fae4047b2f08559e10a6909abaaa33f66865943b6ad9eb15b74b2c2"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            -0.07198760083805537,
+            0.15933213651193806
+          ],
+          "y": [
+            -0.026334898689323493,
+            0.07547006056018872
+          ]
+        },
+        "cells_in_window": 10278,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z1-step000250",
+      "mode": "describe",
+      "file": "requests/solver/z1-step000250.request.json",
+      "request_sha256": "1e76bc2bd6edce3716c205283cc2bb9ae51660220c1c6859aa22ab5b8c5c4504",
+      "request_bytes": 220654,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000250",
+        "fields_sha256": "188898711b965e6f47a9cb34c90a648a9af28ae5745e16699149be46df11c022",
+        "image_sha256": {
+          "U": "959c157678bc3ea8a6b78d5d50db9f96a928f2e63458fa1b7c2a5733105e2674",
+          "p": "f297a008b21c3605add4429f5a64ebbc80e5aacd209692cf0147f85d7ac555b0"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000250-w1",
+      "mode": "describe",
+      "file": "requests/window/z1-step000250-w1.request.json",
+      "request_sha256": "96d378cc9ad27f53fee5910766d230b5f91092a9332931bcd2ee5d70f4cbfa45",
+      "request_bytes": 203209,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000250-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000250",
+        "fields_sha256": "188898711b965e6f47a9cb34c90a648a9af28ae5745e16699149be46df11c022",
+        "image_sha256": {
+          "U": "b8e4cbab213ce8b3a5491b05138e17597e78b2d74449c05bef81a803eee45dcf",
+          "p": "dae4bce838bcbd0fc552d37707ba814f90a71947379c8297a417a861c20e6921"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            0.035360488999819556,
+            0.14080059614740098
+          ],
+          "y": [
+            0.0016591036254676,
+            0.038102085002106406
+          ]
+        },
+        "cells_in_window": 3945,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000250-w2",
+      "mode": "describe",
+      "file": "requests/window/z1-step000250-w2.request.json",
+      "request_sha256": "d7fd082b23d86d72ea84a9ce04cf9c6b186a18f42811f4a6e1e37b58d9439075",
+      "request_bytes": 201638,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000250-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000250",
+        "fields_sha256": "188898711b965e6f47a9cb34c90a648a9af28ae5745e16699149be46df11c022",
+        "image_sha256": {
+          "U": "9b1708c7e05bf29fb9ee8f4ea46652c9ba4768369e25d89a3ecb222fe8f8b70b",
+          "p": "0a8fb9e19a89c47cfbaf4e28cd6c42119839d22f7d1323011675d8b26be9bc19"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            -0.013700999609541499,
+            0.2222065829142188
+          ],
+          "y": [
+            -0.03013920903529102,
+            0.03038419214541882
+          ]
+        },
+        "cells_in_window": 8532,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z1-step000300",
+      "mode": "describe",
+      "file": "requests/solver/z1-step000300.request.json",
+      "request_sha256": "7d8ef30b492b9c396a6e5fa72d5b477fffb7bc1931adbf75b2a1097e848093ce",
+      "request_bytes": 217453,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000300",
+        "fields_sha256": "6ccdfa521b2f2e41fcc54ed9f6090286a66c9930ca1d41ecfda9e70726a948ea",
+        "image_sha256": {
+          "U": "8f784bcab5ea7592eca8ecb31fde23639a7eb865dcddd7a715677d6ff250b419",
+          "p": "f2b53db43e13917d1138172a9499f7d17beaa4fbc6f330b589c1c75a7c0e54a5"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000300-w1",
+      "mode": "describe",
+      "file": "requests/window/z1-step000300-w1.request.json",
+      "request_sha256": "7b7f7f7955eb113b07d010dccce2abd3c390f21e21b7e143869f1b414c40214d",
+      "request_bytes": 194056,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000300-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000300",
+        "fields_sha256": "6ccdfa521b2f2e41fcc54ed9f6090286a66c9930ca1d41ecfda9e70726a948ea",
+        "image_sha256": {
+          "U": "772bdb03c336fbb65df07bdb8e652c01fafe0fbd063a079ebd13c4b733518afd",
+          "p": "54266a68ec6580b85ef842fb50b42573f75d0b9a7733c1d84355740d544eabbc"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            -0.05016575834761673,
+            0.1683582165640899
+          ],
+          "y": [
+            -0.04404104468106203,
+            0.04118134508233727
+          ]
+        },
+        "cells_in_window": 9201,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z1-step000300-w2",
+      "mode": "describe",
+      "file": "requests/window/z1-step000300-w2.request.json",
+      "request_sha256": "0840526ca2033d1c8520b128be162ec84e0a6e804eee2e0d5051873257d211c1",
+      "request_bytes": 201642,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z1-step000300-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z1/llm_observation/step-000300",
+        "fields_sha256": "6ccdfa521b2f2e41fcc54ed9f6090286a66c9930ca1d41ecfda9e70726a948ea",
+        "image_sha256": {
+          "U": "51cbf7f419045373c767ff1679a3130241c2d7991492b84a43bdda8c6395a522",
+          "p": "0a3798fac41281696c5d50018965f613dbee2453bcf1ecb0b84127a739f0dd1f"
+        }
+      },
+      "design": {
+        "run": "z1",
+        "slice_z_m": 0.00079375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00079375,
+          "requested_z_m": 0.00079375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            -0.08918124976565048,
+            0.17729079316220833
+          ],
+          "y": [
+            -0.014061931869767386,
+            0.07992054590785776
+          ]
+        },
+        "cells_in_window": 10609,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z3-step000050",
+      "mode": "describe",
+      "file": "requests/solver/z3-step000050.request.json",
+      "request_sha256": "83a0deec271ac6fcda8c19b76743eb276f6ba164755756ae8d512cc23dfbdc36",
+      "request_bytes": 225701,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000050",
+        "fields_sha256": "74c1332ea83f9716a843e17db45086d48f0692aee23375a68c197811e6e0c385",
+        "image_sha256": {
+          "U": "078451453e520ba1ffa8d36c2fabd40812c9a6232fbd23e40b6bf59c423fc786",
+          "p": "f1b30e908c3ee3d045a95b85f408ef432f23163a406f7a7cbfd6ea64b19e70c2"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000050-w1",
+      "mode": "describe",
+      "file": "requests/window/z3-step000050-w1.request.json",
+      "request_sha256": "05e822bf626253428717a26a441653b1c4dbe7663ba7a401435150bdad463954",
+      "request_bytes": 185289,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000050-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000050",
+        "fields_sha256": "74c1332ea83f9716a843e17db45086d48f0692aee23375a68c197811e6e0c385",
+        "image_sha256": {
+          "U": "a2820c4d058a305247992e67bf1afd83516a000e90eae02e5bddd7fda7051df1",
+          "p": "9f0666e66c1361e1f46a62bcdf591d57dd12232d9929660927a726bd0448161b"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            -0.09633869023366964,
+            0.10078933915337762
+          ],
+          "y": [
+            -0.04191157405191552,
+            0.06919601136246964
+          ]
+        },
+        "cells_in_window": 8782,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000050-w2",
+      "mode": "describe",
+      "file": "requests/window/z3-step000050-w2.request.json",
+      "request_sha256": "c0bfe4d0c61313f81ee0fe896a85282acc88a34790974b7ae0cb44b1b51c3efc",
+      "request_bytes": 233364,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000050-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000050",
+        "fields_sha256": "74c1332ea83f9716a843e17db45086d48f0692aee23375a68c197811e6e0c385",
+        "image_sha256": {
+          "U": "40cbd512e5c801af7ba5e7eb83f1bd81fa35a022ea5aecf786df71c0d874806e",
+          "p": "91d4ffc0c7220e68e0e37dfcb863c6b31c59fbd9f80d5083ec274e998b66287c"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            -0.01586147605385948,
+            0.12379630864461882
+          ],
+          "y": [
+            -0.0032958622616342664,
+            0.031911853203622206
+          ]
+        },
+        "cells_in_window": 7968,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z3-step000100",
+      "mode": "describe",
+      "file": "requests/solver/z3-step000100.request.json",
+      "request_sha256": "f6dfba3d67769b223b7b97fc9dbcf760fa5b704f1f931dd0532a7c07bd01a571",
+      "request_bytes": 224589,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000100",
+        "fields_sha256": "b162aec2aa18c5579fdafbe408dd84676e59e571ce81592d9e936088883b7d21",
+        "image_sha256": {
+          "U": "cd834d96304e4c0244b250fda72114fba9fd5001288b4ac359bd16372d94cd2c",
+          "p": "e8fb3cb461adab47070bf705849c58a0916f7c87cbd9227f3a57ef847fd52477"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000100-w1",
+      "mode": "describe",
+      "file": "requests/window/z3-step000100-w1.request.json",
+      "request_sha256": "520e349c209708eb6f673e87a0b9c916b2231996fb794cf7ae5d8340e39fd8c0",
+      "request_bytes": 195282,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000100-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000100",
+        "fields_sha256": "b162aec2aa18c5579fdafbe408dd84676e59e571ce81592d9e936088883b7d21",
+        "image_sha256": {
+          "U": "aff7f31350ecd542baf2b6920f65851eaa3b99cf69c4bfd5ac2c3616fd5dac7f",
+          "p": "f7411f51fd572ecbca06ede904d6e47cb5bfbf49d04a2b39c21dd1785cd8e009"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            -0.05680912418754542,
+            0.15593954139503896
+          ],
+          "y": [
+            -0.046725723901216244,
+            0.03291569404124151
+          ]
+        },
+        "cells_in_window": 8798,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000100-w2",
+      "mode": "describe",
+      "file": "requests/window/z3-step000100-w2.request.json",
+      "request_sha256": "91ba1999f737577ec5d2dc9b6e503e1a6658b559140dc4033414c8f74e50e13d",
+      "request_bytes": 197206,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000100-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000100",
+        "fields_sha256": "b162aec2aa18c5579fdafbe408dd84676e59e571ce81592d9e936088883b7d21",
+        "image_sha256": {
+          "U": "a2531c054b39ed62ce8802f3dc7eb2487c07645104e74188023053167cf5ae77",
+          "p": "0fbfaebc1996796c51f0c87887b866fa2f011dfd42e4637c41ea87cf5be4f47a"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            -0.19354492757579922,
+            0.18414146037217843
+          ],
+          "y": [
+            -0.026617199757091918,
+            0.08587933098686973
+          ]
+        },
+        "cells_in_window": 11312,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z3-step000150",
+      "mode": "describe",
+      "file": "requests/solver/z3-step000150.request.json",
+      "request_sha256": "39dfc56335cfb181acb79eb9729cfc0ba00aa77c2c7a8b4b4524bdd3af38bc2b",
+      "request_bytes": 223954,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000150",
+        "fields_sha256": "66151d0f7c26157d0d06848502411b3efa27d6ddadd31b233c43ea726eef4de9",
+        "image_sha256": {
+          "U": "0cc830866c3c7b98105487e36ab8b94c8e2256b27dd5d7b2a74fa7e7f9d9a95c",
+          "p": "fe212302779101dd8e2202f40e2f3bf6255ffa63c8ee56f7d7806ab6194b1be2"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000150-w1",
+      "mode": "describe",
+      "file": "requests/window/z3-step000150-w1.request.json",
+      "request_sha256": "e0deace0a6f6d57b9e0a9973c1b645aa21f5f8ad322425b01d7f6d0d290bd5cb",
+      "request_bytes": 191424,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000150-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000150",
+        "fields_sha256": "66151d0f7c26157d0d06848502411b3efa27d6ddadd31b233c43ea726eef4de9",
+        "image_sha256": {
+          "U": "c7bea951363390f8a4b51204f9f1e8daa24c25738e8adbb0c56e4ee8f9b74417",
+          "p": "c9252b6964db9326051fa847a8d8ed32b15dd14b3c6d3688a778c487cefc00b7"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            -0.10155003960171066,
+            0.09273002807397585
+          ],
+          "y": [
+            -0.029337391707161375,
+            0.030498000509483494
+          ]
+        },
+        "cells_in_window": 7180,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000150-w2",
+      "mode": "describe",
+      "file": "requests/window/z3-step000150-w2.request.json",
+      "request_sha256": "7aeb72a91b8a5f725c37326fe5cc60734806e76c635013e180fb6cc3905e3888",
+      "request_bytes": 188157,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000150-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000150",
+        "fields_sha256": "66151d0f7c26157d0d06848502411b3efa27d6ddadd31b233c43ea726eef4de9",
+        "image_sha256": {
+          "U": "89c9eedf6f5e50b7472e2fe0f44af8d9d481a72eb0f69caf726856841e712992",
+          "p": "59733574f2bd3f9f463e66a1e679ab62acf606463a92c18525908caa0fe6aa89"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            -0.1330421550353384,
+            0.21175691887399867
+          ],
+          "y": [
+            -0.06597539110122236,
+            0.04034012127912713
+          ]
+        },
+        "cells_in_window": 9776,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z3-step000200",
+      "mode": "describe",
+      "file": "requests/solver/z3-step000200.request.json",
+      "request_sha256": "860e52d34aef3d63e5d7a2c784bc3abcdfdaa02737e09bfc4800305ade1e32a3",
+      "request_bytes": 223204,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000200",
+        "fields_sha256": "cd84ae563b8cc2d6ee12907a79fe056e473eb33139115125c0d6c7caaacf4ebb",
+        "image_sha256": {
+          "U": "3f0427f1414472f88392eab0a91943e006abb55a55d1133b878307756e711e7c",
+          "p": "3781315a6e873e578000e4da21768ff8a3b45d2eab1bf8db075c358bf8cc8187"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000200-w1",
+      "mode": "describe",
+      "file": "requests/window/z3-step000200-w1.request.json",
+      "request_sha256": "27eb3c8f95fddbe6ffe289566edae17c4d7fcd49441a61467211f21a524d55e8",
+      "request_bytes": 189429,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000200-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000200",
+        "fields_sha256": "cd84ae563b8cc2d6ee12907a79fe056e473eb33139115125c0d6c7caaacf4ebb",
+        "image_sha256": {
+          "U": "a6cdeae4e0f7c7b29381daa465d3ecc8c2d2f324108f1153437562af26e9d797",
+          "p": "475bd7301358d4d21a2ff7635dffc244cc79105771a75928f08cde1d7a92b84d"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            0.000257020911794921,
+            0.06561367267783277
+          ],
+          "y": [
+            0.005088006062980731,
+            0.048392548741368134
+          ]
+        },
+        "cells_in_window": 3278,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000200-w2",
+      "mode": "describe",
+      "file": "requests/window/z3-step000200-w2.request.json",
+      "request_sha256": "5e43101f7a419b0414098d6f0ad0f1dbdb4850c7fa3750ba11e74ef34a201013",
+      "request_bytes": 191192,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000200-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000200",
+        "fields_sha256": "cd84ae563b8cc2d6ee12907a79fe056e473eb33139115125c0d6c7caaacf4ebb",
+        "image_sha256": {
+          "U": "065648750585db41e61bd682905b6df957d29c88a2f68ccdda462dbb030d0c3d",
+          "p": "7c695d38a54b7743a99d9453827269b2af819e976c239f3778353fa4582db3e9"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            -0.20775992317553704,
+            0.11449530484875237
+          ],
+          "y": [
+            -0.03733889247398625,
+            0.04968447784974332
+          ]
+        },
+        "cells_in_window": 9383,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z3-step000250",
+      "mode": "describe",
+      "file": "requests/solver/z3-step000250.request.json",
+      "request_sha256": "e3cae741d03641e77ad7012032d122786f6c5e601395ceebab91a65bfc2aaa19",
+      "request_bytes": 218242,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000250",
+        "fields_sha256": "000140453fddbadf517dd86083bb95453aeaa00d99e6f06ee15086108f304c8c",
+        "image_sha256": {
+          "U": "96b0e52a820d4a37870b498d90337bffcbdb7963197f6ca75123f05dba6e4b78",
+          "p": "f054bd567918e1d084c8f82ec2dc021401eb0cc29151daa0ada337200bbff73f"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000250-w1",
+      "mode": "describe",
+      "file": "requests/window/z3-step000250-w1.request.json",
+      "request_sha256": "4d1225fe1f61dc239fcb01003d0b23ec6a5a5ce1ac66cdaf9a556e5d788cbc90",
+      "request_bytes": 204362,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000250-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000250",
+        "fields_sha256": "000140453fddbadf517dd86083bb95453aeaa00d99e6f06ee15086108f304c8c",
+        "image_sha256": {
+          "U": "9f2218a79abd8d9939483111fc130c8c454be954b387b21afd153479631982b6",
+          "p": "5579c7ff0c848b9e1864d9b7423767a5f82599ca5a71698e8a60b6ef4ae44c14"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            0.00905214692077077,
+            0.20332469943552567
+          ],
+          "y": [
+            -0.012010356651299871,
+            0.07272732290539052
+          ]
+        },
+        "cells_in_window": 8812,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000250-w2",
+      "mode": "describe",
+      "file": "requests/window/z3-step000250-w2.request.json",
+      "request_sha256": "17b9f2bda3356e5a5e33fae5dc16f8763ee25522ac6bf2810e10f6a316309b72",
+      "request_bytes": 168410,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000250-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000250",
+        "fields_sha256": "000140453fddbadf517dd86083bb95453aeaa00d99e6f06ee15086108f304c8c",
+        "image_sha256": {
+          "U": "65e266e7f75f298f06d8efac4260b62c599f980625dd25051dba5e5337f50bda",
+          "p": "ea94f815fbb520dddc4a36036e721996e56573a1084aa6dfb1b1f5e2153b83da"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            0.023964284748814773,
+            0.07659677538667028
+          ],
+          "y": [
+            0.010695516087411736,
+            0.04459005856918928
+          ]
+        },
+        "cells_in_window": 1739,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z3-step000300",
+      "mode": "describe",
+      "file": "requests/solver/z3-step000300.request.json",
+      "request_sha256": "efd34d9f177c6824f21a5abb59372a25a8a764e6cdcc7ddce0b34f8a57d510d8",
+      "request_bytes": 216757,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000300",
+        "fields_sha256": "7447e60d4fba8a6e80950ae860a30bf3b98019b38c0d4030ccbffdbeab0049f8",
+        "image_sha256": {
+          "U": "a98e27878071894bfe8432dbaa8bb44e567fd630e350b46b61fe0ba4ca9a39e4",
+          "p": "b2d9c7374cf466c059badcaec6eae3631461679480533c30881a41cf5d9f9a7f"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000300-w1",
+      "mode": "describe",
+      "file": "requests/window/z3-step000300-w1.request.json",
+      "request_sha256": "2fe2776688123c1af5597c5ddc26ff05e09435b3a4b1b36c252a1a3928288480",
+      "request_bytes": 203575,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000300-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000300",
+        "fields_sha256": "7447e60d4fba8a6e80950ae860a30bf3b98019b38c0d4030ccbffdbeab0049f8",
+        "image_sha256": {
+          "U": "6130eca6f4f9cb8a086365120caa6167981b6e9ae2bc87886285c1837d9604f2",
+          "p": "e48ced32e3839b9a1b57fc32f12e4f55b639ab0c64d90c2cb28dae66c8f5d28d"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            -0.0021514435927098285,
+            0.1509979747499572
+          ],
+          "y": [
+            -0.016249069206481302,
+            0.07115214791679064
+          ]
+        },
+        "cells_in_window": 9187,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z3-step000300-w2",
+      "mode": "describe",
+      "file": "requests/window/z3-step000300-w2.request.json",
+      "request_sha256": "375c932ede85464d061e5345ba669bcb49f7a907cc71dfe9099de3f5344d2765",
+      "request_bytes": 208785,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z3-step000300-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z3/llm_observation/step-000300",
+        "fields_sha256": "7447e60d4fba8a6e80950ae860a30bf3b98019b38c0d4030ccbffdbeab0049f8",
+        "image_sha256": {
+          "U": "66f23f2e01dfaf82f15fb56d0d52641f614a324da1b91668bc046b00b796eaf1",
+          "p": "438c3060b7e582208093ce2fb70a421ae44f47d571b9554f3896a5277e8b61a5"
+        }
+      },
+      "design": {
+        "run": "z3",
+        "slice_z_m": 0.00396875,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00396875,
+          "requested_z_m": 0.00396875,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            0.025635159296611004,
+            0.23095902621722064
+          ],
+          "y": [
+            -0.004769757103317729,
+            0.0508117139101476
+          ]
+        },
+        "cells_in_window": 7282,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z5-step000050",
+      "mode": "describe",
+      "file": "requests/solver/z5-step000050.request.json",
+      "request_sha256": "5feaf3df10f1371da64364f50c68dbb12c8b2d177b662f36c355d43d8c2df46e",
+      "request_bytes": 225405,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000050",
+        "fields_sha256": "b1880813a3c47c1181e0eac5d792fb73ba652957f0fe2e00b6e656ea8bf302af",
+        "image_sha256": {
+          "U": "c037fc671120046f86b55b44e75bcd9191a0d47fda26dba38e7f2fb6c2c11640",
+          "p": "4b54b1813fea7a9865f6a8dec3ecc45ebe3b4c67d30ed6fb0ecc541979a9ff93"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000050-w1",
+      "mode": "describe",
+      "file": "requests/window/z5-step000050-w1.request.json",
+      "request_sha256": "d19e47f9c25a9520249fa6d826a21abdbf41070277008c236dd2d4aa2d605d33",
+      "request_bytes": 200167,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000050-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000050",
+        "fields_sha256": "b1880813a3c47c1181e0eac5d792fb73ba652957f0fe2e00b6e656ea8bf302af",
+        "image_sha256": {
+          "U": "f836fce9688597d368357f817881e2682fe82bd150f63afbf69437691f81e7d9",
+          "p": "6c9058acf0a996b1e4f0d83da1e85a0f0d38135f88eef9c11f13d54ba9676542"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            -0.048027621605709524,
+            0.18112200741120943
+          ],
+          "y": [
+            0.0017432804668695914,
+            0.10234144058622419
+          ]
+        },
+        "cells_in_window": 8792,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000050-w2",
+      "mode": "describe",
+      "file": "requests/window/z5-step000050-w2.request.json",
+      "request_sha256": "4324b9bc6e60fabbbe0a0298f26ed754a4faf38bcffe284e43e3157c8a9be81f",
+      "request_bytes": 200855,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000050-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000050",
+        "fields_sha256": "b1880813a3c47c1181e0eac5d792fb73ba652957f0fe2e00b6e656ea8bf302af",
+        "image_sha256": {
+          "U": "69866d5417cac77fd9f3fe803230202b6e5a6f062dcc4b70ecf50327374551a8",
+          "p": "ac42749816318b3a3cdd0e76af5aa0aa6a3c40f88b41e5e171959f1ef04aab1f"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            -0.15854342053159637,
+            0.19451148689501518
+          ],
+          "y": [
+            -0.0026880266671564304,
+            0.10100555523529306
+          ]
+        },
+        "cells_in_window": 11888,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z5-step000100",
+      "mode": "describe",
+      "file": "requests/solver/z5-step000100.request.json",
+      "request_sha256": "6c9d5f41b736d8c0ab8803deb5476e877161377ce304ef5747865741b1c25ffd",
+      "request_bytes": 223329,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000100",
+        "fields_sha256": "dedf8c71e3684f7b67155bd89965dacaf39ba87dc38bf75385fa0b9d0615c12b",
+        "image_sha256": {
+          "U": "83ceb1dc3cc69cb7cd3ecb9f9ade4382bc977d6ec62b9575af75539bc2abb4a5",
+          "p": "6257aa8b94b80921e96da476957e2a5ce6935150464e1c974c4d6ae21b4ebf0f"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000100-w1",
+      "mode": "describe",
+      "file": "requests/window/z5-step000100-w1.request.json",
+      "request_sha256": "8cc3e9e2cd7b6320fd7c47b22387a9927d09211ffcbc938e3b6d8421d20dca30",
+      "request_bytes": 178825,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000100-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000100",
+        "fields_sha256": "dedf8c71e3684f7b67155bd89965dacaf39ba87dc38bf75385fa0b9d0615c12b",
+        "image_sha256": {
+          "U": "c344fa837762112f6a150dc66e26444a8f7c03539ad0b237d72d346c99f33682",
+          "p": "9c27774800b9c1be165dbee6f01079dc5b9eabd69c5dd42ddac1cd5577e2c97b"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            -0.10232738192146007,
+            0.07793574865465139
+          ],
+          "y": [
+            -0.02291852104951822,
+            0.08097767811039427
+          ]
+        },
+        "cells_in_window": 7274,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000100-w2",
+      "mode": "describe",
+      "file": "requests/window/z5-step000100-w2.request.json",
+      "request_sha256": "50060f32b25382d5fdecc68586dd52243bc48ba4b83be3044b0d740628880609",
+      "request_bytes": 215962,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000100-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000100",
+        "fields_sha256": "dedf8c71e3684f7b67155bd89965dacaf39ba87dc38bf75385fa0b9d0615c12b",
+        "image_sha256": {
+          "U": "b98ad5058fde32abaea86a9a10dceda4ee8cc7ba22692fed287aa69192df2697",
+          "p": "a8b47262293d168f55d5e71014272647d5ea37f336f48d36021cf2352a15b220"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            -0.06705487942286341,
+            0.11151043727495434
+          ],
+          "y": [
+            -0.00913164175012983,
+            0.038068213540949275
+          ]
+        },
+        "cells_in_window": 8413,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z5-step000150",
+      "mode": "describe",
+      "file": "requests/solver/z5-step000150.request.json",
+      "request_sha256": "fa047d380826317f0c2afff8c622eefc30c972e5fc2a5c8ab768ad43219c31be",
+      "request_bytes": 224182,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000150",
+        "fields_sha256": "ae48e47aae87f289d69c79d1888ffaf13bcb8b8f666c050b1c5525280a09c00b",
+        "image_sha256": {
+          "U": "c62d0b3d78b383f9ca4b47da5ea309c8f905513105412e3c328d28ae8c301b65",
+          "p": "2e407e09d6357030d617226710ef818461e34ae8135dc5936cef2c8570899ec8"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000150-w1",
+      "mode": "describe",
+      "file": "requests/window/z5-step000150-w1.request.json",
+      "request_sha256": "d0b0142d5ae51d9afe3f58cb7dabb378b807350bd4e02de586cc8af1671f016a",
+      "request_bytes": 187019,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000150-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000150",
+        "fields_sha256": "ae48e47aae87f289d69c79d1888ffaf13bcb8b8f666c050b1c5525280a09c00b",
+        "image_sha256": {
+          "U": "260129eada6b66822ed2ee577c7ef1d9f06304f841d36de8b572ecbb23b54405",
+          "p": "7f17a17282cc78fa8d8cc566bf3bfb955ebd095f011f43352fcfbb0053d57e08"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            -0.021026803783247026,
+            0.07880937487172707
+          ],
+          "y": [
+            -0.03457174300451164,
+            0.02766652383204661
+          ]
+        },
+        "cells_in_window": 5617,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000150-w2",
+      "mode": "describe",
+      "file": "requests/window/z5-step000150-w2.request.json",
+      "request_sha256": "35ff6691839219be98362adb82322df80f1d28252f530d73a1435d69a59501f8",
+      "request_bytes": 201167,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000150-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000150",
+        "fields_sha256": "ae48e47aae87f289d69c79d1888ffaf13bcb8b8f666c050b1c5525280a09c00b",
+        "image_sha256": {
+          "U": "1deb9c8a50529ee159641452a24a4c9b98fbd31ff9040696089bff37dc1f9daa",
+          "p": "b8cf4f4aecb159a7ccc6047c0fbaa5a7ee702982040f7595507662be2d0d48d1"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            -0.02941349531888423,
+            0.14275749630561949
+          ],
+          "y": [
+            -0.016758519272349018,
+            0.08968062189526466
+          ]
+        },
+        "cells_in_window": 10054,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z5-step000200",
+      "mode": "describe",
+      "file": "requests/solver/z5-step000200.request.json",
+      "request_sha256": "70f37e4575e528e7ba941dd936fed8ca154b52f0a43c9a9ba1c925b390de52df",
+      "request_bytes": 222140,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000200",
+        "fields_sha256": "fa71b58b2e23a00a514fed886e5fd9eb5e1f5641e4370ab5c6d70295036457e9",
+        "image_sha256": {
+          "U": "119f6e0bb769e509de43a1f1d227333c383443904f8e5985a82d5e900eecfce7",
+          "p": "eafe6c323aa234abf30eb8bcda49558cf91e088388de99dbaa7f070857be7f0d"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000200-w1",
+      "mode": "describe",
+      "file": "requests/window/z5-step000200-w1.request.json",
+      "request_sha256": "bd629b18eed2a0be75863a9819f5402093e31977255d899cc654910cb4ecf720",
+      "request_bytes": 208209,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000200-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000200",
+        "fields_sha256": "fa71b58b2e23a00a514fed886e5fd9eb5e1f5641e4370ab5c6d70295036457e9",
+        "image_sha256": {
+          "U": "46cadf0098da023bd26d58bc8c220f7d14fbc70d199cc52938cd4cd8d024fb54",
+          "p": "20b005efad9d4615e4f04a522adfd05996b20bb3e003cb8b48d174d625f8ce55"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            0.02929986997840336,
+            0.11837123768321327
+          ],
+          "y": [
+            0.00018582457291452942,
+            0.04095973697377739
+          ]
+        },
+        "cells_in_window": 5133,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000200-w2",
+      "mode": "describe",
+      "file": "requests/window/z5-step000200-w2.request.json",
+      "request_sha256": "4341f9a28cb150bc74963f5a4a701fa14ea278f4bc09c48976cf825a773b699f",
+      "request_bytes": 180748,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000200-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000200",
+        "fields_sha256": "fa71b58b2e23a00a514fed886e5fd9eb5e1f5641e4370ab5c6d70295036457e9",
+        "image_sha256": {
+          "U": "75488237867e94c8145b084fad94b96fa1104ef04bac9d839e2706ee7916079d",
+          "p": "ee0c0ca2f97a13f64bea206e5a4ff9fe3223d89ca4dc79c4eb4cc990a53f0ae1"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            -0.08260057938026905,
+            0.08591954586094888
+          ],
+          "y": [
+            -0.05125774889651781,
+            0.04595887228727505
+          ]
+        },
+        "cells_in_window": 7111,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z5-step000250",
+      "mode": "describe",
+      "file": "requests/solver/z5-step000250.request.json",
+      "request_sha256": "2b43502807524f6ad9599afbcb3c8c7fcfa3be90df3fb4276993af3fdcc795b7",
+      "request_bytes": 219566,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000250",
+        "fields_sha256": "ac6ac1c4962c98072f3c836f1f96c0d65c377b4e12993bff35e7110f4bb469d4",
+        "image_sha256": {
+          "U": "e99ef9925ec574ae9fbc1ae5d75824578d476e6509e31960ffd15b7027525fd5",
+          "p": "f59a31bcf472ac52c446e36d387dca59ab365060f46a801c72f333677ad35c4d"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000250-w1",
+      "mode": "describe",
+      "file": "requests/window/z5-step000250-w1.request.json",
+      "request_sha256": "f8aaff53258b11790bf764905c4359cb812ec07a2d2a1c2488565d29e6520214",
+      "request_bytes": 194748,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000250-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000250",
+        "fields_sha256": "ac6ac1c4962c98072f3c836f1f96c0d65c377b4e12993bff35e7110f4bb469d4",
+        "image_sha256": {
+          "U": "08920a224022c05be13f0d20d598a35a0d819f28ec0c88db626d2c40de611040",
+          "p": "0d9eba35a1034eddbb925f76a5fe12f2e267c4772a150db72157efb7e7ac3505"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            -0.0033581986774283146,
+            0.1160052722513362
+          ],
+          "y": [
+            0.010440445416156439,
+            0.040687275206285664
+          ]
+        },
+        "cells_in_window": 3749,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000250-w2",
+      "mode": "describe",
+      "file": "requests/window/z5-step000250-w2.request.json",
+      "request_sha256": "22c6be19ac5bbea633fdb51c42db2bf86386d8fc6b0eacc31f11a8e133a0e9b8",
+      "request_bytes": 190819,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000250-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000250",
+        "fields_sha256": "ac6ac1c4962c98072f3c836f1f96c0d65c377b4e12993bff35e7110f4bb469d4",
+        "image_sha256": {
+          "U": "3ae265c1ddcf4381595f2530fe8db9c037144b490900fb717e21ad06a3a1d42c",
+          "p": "25c06372352f86c8716eb5f88fd0b8d1021442fc12685c7e4066d1f0985f8d41"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            -0.042373857512737846,
+            0.07463595209617407
+          ],
+          "y": [
+            -0.011507536951608607,
+            0.0508749420454991
+          ]
+        },
+        "cells_in_window": 6150,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z5-step000300",
+      "mode": "describe",
+      "file": "requests/solver/z5-step000300.request.json",
+      "request_sha256": "f6fe866d1b06918124cdafcce01ff02d09cdcb261623af4f70dcaef40b0c814f",
+      "request_bytes": 217669,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000300",
+        "fields_sha256": "053231b7f74aa173a119ff50690eb23fe17a6cdb3739f4657167237a3a5deb3f",
+        "image_sha256": {
+          "U": "5a54168f0fd821c8d2874f8b29a4c205af12cdc2d5f2be8c94d88f799cf36211",
+          "p": "acd136029ab28a387bbc1e2cf810ffd364d77bf5da02d617687adfaf0b5e5100"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000300-w1",
+      "mode": "describe",
+      "file": "requests/window/z5-step000300-w1.request.json",
+      "request_sha256": "066701c1039bb52c7802376fcdcadb387aeda0eac76fdb84bcf4ae0c50d4b294",
+      "request_bytes": 187774,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000300-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000300",
+        "fields_sha256": "053231b7f74aa173a119ff50690eb23fe17a6cdb3739f4657167237a3a5deb3f",
+        "image_sha256": {
+          "U": "08bd9cdb9ea9ef098f7a41c621b77c7b1ebb2644aa072e76fe78550a0dc2c0e3",
+          "p": "e4d946df03175a75a37324bfd94b706ec2ccb1c32f43a3570384a5853294e0b2"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            -0.010172749118072782,
+            0.10249666273073949
+          ],
+          "y": [
+            0.012163548419244583,
+            0.04276861015965505
+          ]
+        },
+        "cells_in_window": 3131,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z5-step000300-w2",
+      "mode": "describe",
+      "file": "requests/window/z5-step000300-w2.request.json",
+      "request_sha256": "8491961c8e2ecf36c1fea95276d45daa0790870b6adb8463f20c7ef02f0274dd",
+      "request_bytes": 203790,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z5-step000300-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z5/llm_observation/step-000300",
+        "fields_sha256": "053231b7f74aa173a119ff50690eb23fe17a6cdb3739f4657167237a3a5deb3f",
+        "image_sha256": {
+          "U": "746b21970f1647af503911c4de4d66922ba93801516c7dab04ebeed8f583a515",
+          "p": "d457cc3278d4781bb4e1cef23fc6a4b635d9f52df85fa0137e16b3bb0da68cf3"
+        }
+      },
+      "design": {
+        "run": "z5",
+        "slice_z_m": 0.00714375,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.00714375,
+          "requested_z_m": 0.00714375,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            -0.03801832325223657,
+            0.14817368719849738
+          ],
+          "y": [
+            0.0021656756708732447,
+            0.07923640225162815
+          ]
+        },
+        "cells_in_window": 7480,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z7-step000050",
+      "mode": "describe",
+      "file": "requests/solver/z7-step000050.request.json",
+      "request_sha256": "af09a989107287b92e5ce6e8b30553c4a89769189df80579c3d374b9b40a3ea4",
+      "request_bytes": 224657,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000050",
+        "fields_sha256": "baf37fc6bfe3cb72b0ba097e02161354d90cf14f4aa1ba87ba1ee231576654ec",
+        "image_sha256": {
+          "U": "68357f42ce100aed60f9824f8daf00bf4aa118e2522e371a0ba9af90fb995a2c",
+          "p": "b7d1e1e7322eecaf2b824e072edb4694f221116a82710c8390041fcf61543d57"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000050-w1",
+      "mode": "describe",
+      "file": "requests/window/z7-step000050-w1.request.json",
+      "request_sha256": "a706de6596f7b069f321b1e0ba1dc8388673d9564d270f46b0177c4c08ffebb5",
+      "request_bytes": 200085,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000050-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000050",
+        "fields_sha256": "baf37fc6bfe3cb72b0ba097e02161354d90cf14f4aa1ba87ba1ee231576654ec",
+        "image_sha256": {
+          "U": "d2c10bad49ebab206e8df92dfbbafdd6aea11cce25cbe4fd84a7b844c0e1ce1b",
+          "p": "fc3fcbc1c60ffcc31073259306a6113d36fe6d53456069a60ecff7506cb95a6c"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            -0.04617395547964554,
+            0.0855471564559051
+          ],
+          "y": [
+            -0.009726968940469493,
+            0.04649258426564366
+          ]
+        },
+        "cells_in_window": 6944,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000050-w2",
+      "mode": "describe",
+      "file": "requests/window/z7-step000050-w2.request.json",
+      "request_sha256": "4b869adaa9036f9b8ab8a8cc9c30e07f49571cdc8c3d5a445a0e8be12019bcc1",
+      "request_bytes": 205438,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000050-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000050",
+        "fields_sha256": "baf37fc6bfe3cb72b0ba097e02161354d90cf14f4aa1ba87ba1ee231576654ec",
+        "image_sha256": {
+          "U": "c38bada78b2318ed8e064c06e9fc26d400054b240dbbee4b3da86c2ee64ad507",
+          "p": "dca01bcfa89fbfef01b8529607834cff03e3dd3ca15482f576280e38b09158e4"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 50,
+        "time_s": 0.10100000000000026,
+        "plotted_range_m": {
+          "x": [
+            -0.007915141558212178,
+            0.11648622869707245
+          ],
+          "y": [
+            0.007286802430080388,
+            0.04923164008447789
+          ]
+        },
+        "cells_in_window": 4916,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z7-step000100",
+      "mode": "describe",
+      "file": "requests/solver/z7-step000100.request.json",
+      "request_sha256": "df5f138ff91a36a4c6ac05bb5d85c80dde07f4a04ae3c9f2ad48e4ba7a52d5a6",
+      "request_bytes": 223605,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000100",
+        "fields_sha256": "c4ad6bf8dac5527579fdb593aad6a99a8fc31c11058756fb52fb186cc33fab61",
+        "image_sha256": {
+          "U": "7ad19bd167e9859306020e24c717270c08d2fc68faa271579b74c4c1ad60f45f",
+          "p": "6aade9ca19cfa58e6b92478109dca186d116df816f331273617663c78b90d9fb"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000100-w1",
+      "mode": "describe",
+      "file": "requests/window/z7-step000100-w1.request.json",
+      "request_sha256": "78a1fbf9c1140ea94f64ca98ae8f48bd89f3d361b6785d88063d70c6c8c1ac11",
+      "request_bytes": 194165,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000100-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000100",
+        "fields_sha256": "c4ad6bf8dac5527579fdb593aad6a99a8fc31c11058756fb52fb186cc33fab61",
+        "image_sha256": {
+          "U": "bfc52dfe7350f92b6e4e170f5f4cc0d927c471a95097b18b87b7975f53303a31",
+          "p": "dcfd5f7f54d5e23d3b7f6cf7d333f275ed6a5d152f8c8012242b05c1451f59e2"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            -0.01608227992854948,
+            0.29784867297575207
+          ],
+          "y": [
+            -0.05311996550991224,
+            0.03482815352332007
+          ]
+        },
+        "cells_in_window": 9064,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000100-w2",
+      "mode": "describe",
+      "file": "requests/window/z7-step000100-w2.request.json",
+      "request_sha256": "97019ed2d4a5a85077b3390a6601088122b025b91cdb093556f90348a814affb",
+      "request_bytes": 204361,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000100-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000100",
+        "fields_sha256": "c4ad6bf8dac5527579fdb593aad6a99a8fc31c11058756fb52fb186cc33fab61",
+        "image_sha256": {
+          "U": "3e186bd2650bd8c5a319189f2b54363ada5b19878ba9f76f272d877693f06284",
+          "p": "a5b6aad561bce80cdaa917309a4f2f51340a2376168b40ef09dacd04c0aabf0c"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 100,
+        "time_s": 0.1012500000000005,
+        "plotted_range_m": {
+          "x": [
+            0.02248085111546802,
+            0.12339736727629287
+          ],
+          "y": [
+            -0.012395755224604208,
+            0.04213495041318713
+          ]
+        },
+        "cells_in_window": 6442,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z7-step000150",
+      "mode": "describe",
+      "file": "requests/solver/z7-step000150.request.json",
+      "request_sha256": "d4bab6cff76a8eb8ea37a3f4763adf5d96fa0617c68c03d32b5d02d8fd6c712c",
+      "request_bytes": 223594,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000150",
+        "fields_sha256": "247061e1681b6a1d521ac109fbc5fd3d27339e0e99d811866b0b65a1296fd8c0",
+        "image_sha256": {
+          "U": "d91f56100b12c13f310511193df55f798d963fe3187a308abb2fd0bf88948215",
+          "p": "7f193b3b3acd30642ea572bb16f3db8f0c9e195302dafa4b5963a235422f8338"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000150-w1",
+      "mode": "describe",
+      "file": "requests/window/z7-step000150-w1.request.json",
+      "request_sha256": "e5bc094362832bdf2a954e4d92c1adb231bbe5369d2828dedd131f61a277a835",
+      "request_bytes": 169329,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000150-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000150",
+        "fields_sha256": "247061e1681b6a1d521ac109fbc5fd3d27339e0e99d811866b0b65a1296fd8c0",
+        "image_sha256": {
+          "U": "10012c26f9244e19e8b289770f1a4cfaaa5f69c9f6441ab8cd2900e9afd15a3d",
+          "p": "52645c59e95e8041b485c9e9e3ebd1858c0d073f960dc883bd783a912b5d776f"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            0.010702388300801224,
+            0.07098381073666302
+          ],
+          "y": [
+            0.011419612162306556,
+            0.0491625918316851
+          ]
+        },
+        "cells_in_window": 2013,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000150-w2",
+      "mode": "describe",
+      "file": "requests/window/z7-step000150-w2.request.json",
+      "request_sha256": "bf6da0dc8f2c368ed199527d42596e22d8dea4bcd7013e525722390bd49fad34",
+      "request_bytes": 198925,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000150-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000150",
+        "fields_sha256": "247061e1681b6a1d521ac109fbc5fd3d27339e0e99d811866b0b65a1296fd8c0",
+        "image_sha256": {
+          "U": "f9bcc7b311418417d174b00d2e893a3e9b99a633cf6ddcc5ec5f29bba5ee3336",
+          "p": "0b9a84313f12a874df33fc0f9529d23adf98a0208fa92bb8c0a4129f40016d20"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 150,
+        "time_s": 0.10150000000000076,
+        "plotted_range_m": {
+          "x": [
+            -0.0181333761969497,
+            0.3540287646241893
+          ],
+          "y": [
+            0.0032463415937628737,
+            0.09659859770440293
+          ]
+        },
+        "cells_in_window": 8081,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z7-step000200",
+      "mode": "describe",
+      "file": "requests/solver/z7-step000200.request.json",
+      "request_sha256": "4dbe510e986643be5012d7d87e48f30c4cdef677dc49c79c51109a312f2b7b1a",
+      "request_bytes": 222676,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000200",
+        "fields_sha256": "4c43cdc4d6d63c0230d3760c334f5b0ee65f1546ce429066813f8a7762c83765",
+        "image_sha256": {
+          "U": "4a62ff07ba78acd057d6dd97dc1884e895dad05c0bd8a2daa67ffe35bfb96aa4",
+          "p": "f6e1ed10c341aa0ae377df40971502a90e0d389df5b6f05476f3654eb5d21114"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000200-w1",
+      "mode": "describe",
+      "file": "requests/window/z7-step000200-w1.request.json",
+      "request_sha256": "5ccede5ce974bbf51da79ebe2aec35eda51efa463c263f7ba90336e299c2dfd3",
+      "request_bytes": 191130,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000200-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000200",
+        "fields_sha256": "4c43cdc4d6d63c0230d3760c334f5b0ee65f1546ce429066813f8a7762c83765",
+        "image_sha256": {
+          "U": "3adff87c3609e5d0a87d3f582ea834debd0324ed2a4476d6e37be782a0cf0c59",
+          "p": "82e28b09e1c453b6d208d385bd1682e6e63269899b1652565125e2eccbd0475b"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            -0.12030429479211677,
+            0.08399106672652434
+          ],
+          "y": [
+            -0.018562625861502022,
+            0.046207371291593816
+          ]
+        },
+        "cells_in_window": 7139,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000200-w2",
+      "mode": "describe",
+      "file": "requests/window/z7-step000200-w2.request.json",
+      "request_sha256": "c99aacffdb35ac5a0d96fa2df1ad9ebc929e1b9de127bddebb02375208702eed",
+      "request_bytes": 211101,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000200-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000200",
+        "fields_sha256": "4c43cdc4d6d63c0230d3760c334f5b0ee65f1546ce429066813f8a7762c83765",
+        "image_sha256": {
+          "U": "b466a026aace56c8f6f9771a19108a19babfb070af36572e980e914367ab08e1",
+          "p": "04864a252f1ee7fb58f8c5d8d5a5a05361f8c447a3baffa02fb9f52c9728ffdc"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 200,
+        "time_s": 0.101750000000001,
+        "plotted_range_m": {
+          "x": [
+            -0.05126823382592299,
+            0.10398881997589077
+          ],
+          "y": [
+            -0.010189882015770816,
+            0.03511867104552076
+          ]
+        },
+        "cells_in_window": 7853,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z7-step000250",
+      "mode": "describe",
+      "file": "requests/solver/z7-step000250.request.json",
+      "request_sha256": "c8d741ca44cf69122023a4c58946b2e65b5317d251a55a4c9a89816f50d04413",
+      "request_bytes": 219146,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000250",
+        "fields_sha256": "76b0338520171ca1fdb8588af26af016c78fd868ae87abcc4b5db67017d6de55",
+        "image_sha256": {
+          "U": "8d00ef3d7d851d41b26d96a6799e83f8d4713497a17cb5b4dfe80d898ea7ee63",
+          "p": "909a7ebdcadcd70e163974de0d212d513889099d41f97af0af2a663172bec2f6"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000250-w1",
+      "mode": "describe",
+      "file": "requests/window/z7-step000250-w1.request.json",
+      "request_sha256": "30d32087bfa4b1eaaf323e3f323d7d4db2b9fc64866378a86a00b9f6286852ea",
+      "request_bytes": 201547,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000250-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000250",
+        "fields_sha256": "76b0338520171ca1fdb8588af26af016c78fd868ae87abcc4b5db67017d6de55",
+        "image_sha256": {
+          "U": "6bbe077aa15512aadd5a7daf92a0ec979c735a48fc82eb69149e743a9b0d9b38",
+          "p": "0c9bdfe2e6f8f93b1bed3f16574927362ea00e5bd43e820e97d224d170a56f82"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            -0.0002048023896790846,
+            0.2140888692141945
+          ],
+          "y": [
+            -0.03403793836599298,
+            0.05853252409691604
+          ]
+        },
+        "cells_in_window": 9290,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000250-w2",
+      "mode": "describe",
+      "file": "requests/window/z7-step000250-w2.request.json",
+      "request_sha256": "4ad152f7584284055d9f958350d58e1b3672256a2a7368cfa9ed807b46b1f867",
+      "request_bytes": 200970,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000250-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000250",
+        "fields_sha256": "76b0338520171ca1fdb8588af26af016c78fd868ae87abcc4b5db67017d6de55",
+        "image_sha256": {
+          "U": "eff367829c49e0ee1e2dbf6bf6e2488478f2cb6323a42c8b97166799be2ed172",
+          "p": "f80f75320151a4c4bee9c2105ff6e58471e86ac7b51970e4360e1d40eb974dce"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 250,
+        "time_s": 0.10200000000000126,
+        "plotted_range_m": {
+          "x": [
+            -0.15423405580533073,
+            0.2360716136715998
+          ],
+          "y": [
+            -0.009148789427715371,
+            0.09210076106618978
+          ]
+        },
+        "cells_in_window": 11618,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    },
+    {
+      "set": "solver",
+      "name": "z7-step000300",
+      "mode": "describe",
+      "file": "requests/solver/z7-step000300.request.json",
+      "request_sha256": "79c363a49135000b2b274a8de2bf7c0338dd3be314195ca20fa5f2a059256712",
+      "request_bytes": 216425,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000300",
+        "fields_sha256": "1aff2feacad630d9664731baca708b98f15654270e6de0a2234de5757fc253d3",
+        "image_sha256": {
+          "U": "4d099f56bbb0bd948d7abee7cc0bc180e2a0370f61043688b160be01dd709470",
+          "p": "06b24a9190cb2949c35b18dee57fe4dc488d30e43a4d6027587d18313fc42766"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        },
+        "cells_in_window": 7906
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000300-w1",
+      "mode": "describe",
+      "file": "requests/window/z7-step000300-w1.request.json",
+      "request_sha256": "7d999a202b9680c4daf355707dbd96dca85004105c4d58ed06a222282d290b15",
+      "request_bytes": 189785,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000300-w1",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000300",
+        "fields_sha256": "1aff2feacad630d9664731baca708b98f15654270e6de0a2234de5757fc253d3",
+        "image_sha256": {
+          "U": "e9118f96cd01a9657660818044279696f2d79731c576d96179cdbbe5f17b6e45",
+          "p": "3b77e67bb9dbdf0856b2c7c68a4f2ead21219f49713c516bdf46370bb4d5577d"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            -0.14886441131361355,
+            0.09982600979793435
+          ],
+          "y": [
+            -0.020647443642195853,
+            0.0881571384762935
+          ]
+        },
+        "cells_in_window": 9384,
+        "window_seed": 20261101,
+        "window_index": 1
+      }
+    },
+    {
+      "set": "window",
+      "name": "z7-step000300-w2",
+      "mode": "describe",
+      "file": "requests/window/z7-step000300-w2.request.json",
+      "request_sha256": "81c008c6ca8d3f5297ec4c654dc152d2c83a2a42d4c51f106649a9e1736708f3",
+      "request_bytes": 197449,
+      "seed": 20261021,
+      "cache_prompt": false,
+      "sources": {
+        "frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/testset/frames/window/z7-step000300-w2",
+        "source_frame": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/z7/llm_observation/step-000300",
+        "fields_sha256": "1aff2feacad630d9664731baca708b98f15654270e6de0a2234de5757fc253d3",
+        "image_sha256": {
+          "U": "0fe333699a67902e0bf0f4de3bfac01c3fd7b48e4f88152a9b16995661f21a5d",
+          "p": "2790871ebc662efb5f972f3b52a3fddff4559e164dbadbf9df6f5f60bc13f1bc"
+        }
+      },
+      "design": {
+        "run": "z7",
+        "slice_z_m": 0.0103125,
+        "slice_record": {
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "z_m": 0.0103125,
+          "requested_z_m": 0.0103125,
+          "z_source": "POD_SLICE_Z",
+          "moved_off_mesh_points": false,
+          "mesh_z_range_m": [
+            0.0,
+            0.0127
+          ],
+          "cells": 20540,
+          "mesh_cells_total": 164320
+        },
+        "step": 300,
+        "time_s": 0.1022500000000015,
+        "plotted_range_m": {
+          "x": [
+            -0.15570000901991649,
+            0.2286540776230001
+          ],
+          "y": [
+            -0.018368809070854974,
+            0.09181692335672302
+          ]
+        },
+        "cells_in_window": 11608,
+        "window_seed": 20261101,
+        "window_index": 2
+      }
+    }
+  ],
+  "truth_sha256": "afe9b61cbaf0fe6c04f3f6b2669820d136e7babb122c684c30b5a0d92089ccf1",
+  "code_sha256": {
+    "readable_request.py": "69c41c3edc88917a3c815cee8597ff92c5d5dad0c0d1160a0c77ec7fe2ccae56",
+    "readable_image.py": "05c9cb978161cb57c0b7467c48c8df6e4cb6f8977668ffb92f3f951fab600039",
+    "frame_scoring.py": "2e7ffc6e4be36e279088c82d662417b88aa6e172e0ecd85604201fabb03d30f2",
+    "llm_client.py": "3b2ef1b7863f5aef972157995fb84f971432769eaba488fad337790de89a9afb",
+    "pod_image.py": "f01e212be6f3499bbf46ffc2c459ea60ed62e7efdb0eec80106a7fa6ed1dd0aa",
+    "python_module.py": "d5b79e99427a53c2cbd6ee8760b99b0d32b641de18d5c2857cc4ffa1ab3cb677"
+  },
+  "worktree_head": "bf7a06e3544d28a9ed73f7f8454a93aaf070fc56"
+}

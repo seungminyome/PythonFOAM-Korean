@@ -1,0 +1,97 @@
+job 25090482 node t347.cluster code 24e9df6f5640594e2dbbd9a817231717fe8310ef
+WM_PROJECT_VERSION=8
+BUILD ok
+
+===== A Run_Case + validation module + hooks, podSvdInterval 3 =====
+exit 0
+Time= lines: 152 snapshots: 152 svd: 50 analysis: 152 End: 1 finalized: 1
+      2 --> FOAM Warning : 
+      1 Traceback (most recent call last):
+      1 RuntimeError: fresh-user test: deliberate exception in analysis_func at call 2
+      1 POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+      1   File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/fix/smoke/8-25090482/case-A/python_module.py", line 75, in analysis_func
+      1     raise RuntimeError('fresh-user test: deliberate exception in analysis_func at call 2')
+      1     analysis_func raised; this step's call ignored
+--- analysis_log.txt: 152 analysis calls, 1 mesh calls
+MESH_FUNC call=1 nargs=7 kwargs=[]
+  arg0: ndarray shape=(20540, 3) dtype=float64 owndata=True finite=True
+  arg1: ndarray shape=(20540,) dtype=float64 owndata=True finite=True
+  arg2: tuple (1, 1, -1)
+  arg3: int 0
+  arg4: ndarray shape=(82160, 3) dtype=float64 owndata=True finite=True
+  arg5: ndarray shape=(20541,) dtype=int64 owndata=True finite=True
+  arg6: ndarray shape=(20540,) dtype=int64 owndata=True finite=True
+ANALYSIS_FUNC call=1 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+ANALYSIS_FUNC call=1 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 20540
+  continuity: {local: float 7.925848122556794e-09, global: float -8.399831247071199e-10, cumulative: float -9.476305273540654e-07, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.040469799302546364, max: float 24.993432307733983, phase: str 'post_step_phi'}
+  cells: int 20540
+  snapshot_count: int 1
+  step: int 1
+  cells: int 20540
+  snapshot_count: int 2
+  step: int 2
+  cells: int 20540
+  snapshot_count: int 3
+cellPolygons line: POD mesh geometry passed to Python: cells=20540 solutionD=(1 1 -1) cellPolygons=20540 ranks=1
+
+===== B Run_Case + module with only analysis_func and mesh_func (must stop at start-up) =====
+exit 1
+
+--> FOAM FATAL ERROR: 
+snapshot_func and svd_func must be callable
+
+    From function int main(int, char**)
+
+===== C one empty patch (frontAndBack), 200 cells =====
+    cells:            200
+    boundary patches: 5
+Checking patch topology for multiply connected surfaces...
+    frontAndBack        400      462      ok (non-closed singly connected)  
+    Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
+    Mesh has 2 solution (non-empty) directions (1 1 0)
+    All edges aligned with or perpendicular to non-empty directions.
+exit 0
+Time= lines: 10 snapshots: 10 svd: 1 analysis: 10 End: 1 finalized: 1
+      1 Traceback (most recent call last):
+      1 RuntimeError: fresh-user test: deliberate exception in analysis_func at call 2
+      1 POD mesh geometry passed to Python: cells=200 solutionD=(1 1 -1) cellPolygons=200 ranks=1
+      1 --> FOAM Warning : 
+      1   File "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/fix/smoke/8-25090482/case-C/python_module.py", line 75, in analysis_func
+      1     raise RuntimeError('fresh-user test: deliberate exception in analysis_func at call 2')
+      1     analysis_func raised; this step's call ignored
+--- analysis_log.txt: 10 analysis calls, 1 mesh calls
+MESH_FUNC call=1 nargs=7 kwargs=[]
+  arg0: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+  arg1: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  arg2: tuple (1, 1, -1)
+  arg3: int 0
+  arg4: ndarray shape=(800, 3) dtype=float64 owndata=True finite=True
+  arg5: ndarray shape=(201,) dtype=int64 owndata=True finite=True
+  arg6: ndarray shape=(200,) dtype=int64 owndata=True finite=True
+ANALYSIS_FUNC call=1 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+ANALYSIS_FUNC call=1 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 8.039173763969146e-14, global: float -3.1312114642702445e-15, cumulative: float 2.3931043137695145e-10, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.010000399159340536, max: float 0.010009481181244166, phase: str 'post_step_phi'}
+  cells: int 200
+  snapshot_count: int 1
+  step: int 1
+  cells: int 200
+  snapshot_count: int 2
+  step: int 2
+  cells: int 200
+  snapshot_count: int 3
+cellPolygons line: POD mesh geometry passed to Python: cells=200 solutionD=(1 1 -1) cellPolygons=200 ranks=1
+mesh_func nargs 7
+poly_points shape 800, 3
+poly_offsets shape 201,
+poly_cells shape 200,
+
+===== D Run_Case mesh (two empty patches) with the same module, 10 steps, for the polygon count =====
+Time= lines: 152 snapshots: 152 svd: 50 analysis: 152 End: 1 finalized: 1
+case-A poly_cells shape (20540,) lines: 1
+
+===== done =====
+inner exit 0

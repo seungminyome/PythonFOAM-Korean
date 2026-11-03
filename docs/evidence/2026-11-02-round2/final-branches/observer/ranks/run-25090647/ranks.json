@@ -1,0 +1,480 @@
+{
+  "node": "mba30-005.cluster",
+  "gpu": "GPU 0: NVIDIA A30 (UUID: GPU-376f613c-a206-7305-9ca0-898b93c09477)",
+  "HEAD": "24e9df6f5640594e2dbbd9a817231717fe8310ef",
+  "git_status": "export of r4/pr-observer (git archive)",
+  "server_log": {
+    "launch_slot_lines": 2,
+    "post_chat_completions": 0,
+    "n_slots": "1",
+    "file": "server/server-20261102T223316Z.log"
+  },
+  "v2212": {
+    "version": "v2212",
+    "validation_last_line": "PASS: /clust",
+    "validation_pass": true,
+    "binary_sha256": "5fa0b667906d260f7512ee9736cf4665e8773c2b186647cd7b904e20f626020f",
+    "mpirun_version": "mpirun (Open MPI) 4.1.2",
+    "modules_equal_worktree": true,
+    "serial": {
+      "exit_status": 0,
+      "End": true,
+      "python_finalized": true,
+      "foam_fatal_or_nan": false,
+      "time_lines": 110,
+      "nProcs_in_log": 1,
+      "master_pid_in_log": 2737414,
+      "mesh_line": {
+        "cells": 20540,
+        "ranks": 1
+      },
+      "python_mesh_line": {
+        "cells": 20540,
+        "cell_polygons": 20540
+      },
+      "python_llm_lines_rank0": 7,
+      "callback_lines": 110,
+      "callback_wall_s_step100": 0.010728944,
+      "callback_wall_s_step110": 5.005166755,
+      "max_other_callback_wall_s": 0.000283104,
+      "server_metrics": {
+        "llamacpp:prompt_tokens_total": {
+          "before": 0.0,
+          "after": 997.0,
+          "delta": 997.0
+        },
+        "llamacpp:tokens_predicted_total": {
+          "before": 0.0,
+          "after": 203.0,
+          "delta": 203.0
+        },
+        "llamacpp:n_decode_total": {
+          "before": 0.0,
+          "after": 207.0,
+          "delta": 207.0
+        },
+        "llamacpp:requests_processing": {
+          "before": 0.0,
+          "after": 0.0,
+          "delta": 0.0
+        },
+        "llamacpp:requests_deferred": {
+          "before": 0.0,
+          "after": 0.0,
+          "delta": 0.0
+        }
+      },
+      "started_at": "2026-11-02T22:33:56.451873995Z",
+      "ended_at": "2026-11-02T22:34:10.896943511Z",
+      "status": "ok",
+      "error": null,
+      "request_step": 100,
+      "arrived_at_step": 110,
+      "worker_reaped": true,
+      "solver_stall_s": 0.010418260470032692,
+      "inference_wall_s": 4.166706494987011,
+      "end_wait_s": 4.941715443506837,
+      "http_status": 200,
+      "structured_output": {
+        "flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% on the x-axis. The flow is slowest in the lower half, especially near the bottom edge. The lowest pressure is located in the lower-middle region, specifically around 30% and 60% on the x-axis, while higher pressure is seen in the upper right.",
+        "fastest_flow_x_percent": 60,
+        "fastest_flow_y_percent": 50,
+        "lowest_pressure_x_percent": 60,
+        "lowest_pressure_y_percent": 25,
+        "uncertainties": "The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the domain are not explicitly stated."
+      },
+      "parent_pid": 2737414,
+      "writer_pid": null,
+      "run_id": "gpu-ranks/v2212/serial",
+      "request_parent_pid": 2737414,
+      "parent_pid_is_master_pid_in_log": true,
+      "usage": null,
+      "telemetry_lines": 110,
+      "telemetry_tmp_left": false,
+      "telemetry_cells": 20540,
+      "llm_errors_file": false,
+      "frame_dir": "v2212/serial/llm_observation/step-000100",
+      "frame_files": [
+        "U.png",
+        "fields.npz",
+        "p.png",
+        "readable-metadata.json"
+      ],
+      "frame_hashes_ok": true,
+      "frame_step_time": [
+        100,
+        0.1005000000000005
+      ],
+      "frame_cells": 20540,
+      "frame_fields_sha256": "c8bd1cff6c1bd77e995765aba597c70386cfda02fea6629205d67438c39c7f9e",
+      "png_sha256": {
+        "U": "609e36cff8fe8a141ece63376ef3ce9137dc724740a5c78e26cb719217d6c17a",
+        "p": "78ce0af6998873e462f21ac367bbc4d0f18fdbfb9d362b8bf4e416577d9c0cf9"
+      },
+      "fields_npz_keys": {
+        "centres": [
+          20540,
+          3
+        ],
+        "U": [
+          20540,
+          3
+        ],
+        "p": [
+          20540
+        ],
+        "time_s": [],
+        "step": []
+      },
+      "fields_finite": true,
+      "body_equals_builder": true,
+      "body_images_equal_frame": true,
+      "request_sha256": "c705d4e272ac69116bfda6165f242b7964226e68f362b0f85d04e63c6bbf7b64",
+      "model": "gemma-4-12b-it-qat-q4_0-vision",
+      "max_tokens": 320,
+      "seed": 20261021,
+      "truth": {
+        "max_speed_m_per_s": 37.210299087808764,
+        "min_pressure_m2_per_s2": -335.03879473013546,
+        "fastest_flow": {
+          "x_percent": 27.495947331666244,
+          "y_percent": 42.32432987370333,
+          "x_m": 0.032995136797999494,
+          "y_m": 0.01692973194948133,
+          "cell": 13382
+        },
+        "lowest_pressure": {
+          "x_percent": 30.987372942603958,
+          "y_percent": 25.46405025375945,
+          "x_m": 0.03718484753112475,
+          "y_m": 0.01018562010150378,
+          "cell": 9474
+        },
+        "cells_in_window": 7906
+      },
+      "score": {
+        "fastest_flow": {
+          "answer_percent": [
+            60,
+            50
+          ],
+          "true_percent": [
+            27.495947331666244,
+            42.32432987370333
+          ],
+          "error_percent": [
+            32.504052668333756,
+            7.675670126296673
+          ],
+          "distance_percent": 33.398044130660374,
+          "error_m": [
+            0.03900486320200051,
+            0.0030702680505186692
+          ],
+          "distance_m": 0.039125514684267206,
+          "within_10_percent": false
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            60,
+            25
+          ],
+          "true_percent": [
+            30.987372942603958,
+            25.46405025375945
+          ],
+          "error_percent": [
+            29.012627057396042,
+            -0.4640502537594493
+          ],
+          "distance_percent": 29.01633800825947,
+          "error_m": [
+            0.034815152468875246,
+            -0.00018562010150377972
+          ],
+          "distance_m": 0.03481564729045135,
+          "within_10_percent": false
+        }
+      }
+    },
+    "par2": {
+      "exit_status": 0,
+      "End": true,
+      "python_finalized": true,
+      "foam_fatal_or_nan": false,
+      "time_lines": 110,
+      "nProcs_in_log": 2,
+      "master_pid_in_log": 2737728,
+      "mesh_line": {
+        "cells": 20540,
+        "ranks": 2
+      },
+      "python_mesh_line": {
+        "cells": 20540,
+        "cell_polygons": 20540
+      },
+      "python_llm_lines_rank0": 7,
+      "callback_lines": 110,
+      "callback_wall_s_step100": 0.011600898,
+      "callback_wall_s_step110": 4.482190992,
+      "max_other_callback_wall_s": 0.000376626,
+      "ranks": {
+        "0": {
+          "rank": "0",
+          "pid": "2737726",
+          "solver_pid": "2737728",
+          "host": "mba30-005.cluster",
+          "start": "2026-11-02T22:34:12.669427786Z",
+          "exit": "0",
+          "end": "2026-11-02T22:34:24.829484485Z"
+        },
+        "1": {
+          "rank": "1",
+          "pid": "2737727",
+          "solver_pid": "2737730",
+          "host": "mba30-005.cluster",
+          "start": "2026-11-02T22:34:12.669394026Z",
+          "exit": "0",
+          "end": "2026-11-02T22:34:24.671407536Z"
+        }
+      },
+      "other_rank_logs": {
+        "log.rank1": {
+          "lines": 550,
+          "python_llm_lines": 0,
+          "llm_mentions": 0,
+          "head": [
+            "PYTHON snapshot=1 shape=(10288, 3) finite=true",
+            "PYTHON snapshot=2 shape=(10288, 3) finite=true",
+            "PYTHON snapshot=3 shape=(10288, 3) finite=true",
+            "PYTHON snapshot=4 shape=(10288, 3) finite=true",
+            "PYTHON snapshot=5 shape=(10288, 3) finite=true"
+          ]
+        }
+      },
+      "mpirun_log_lines": [],
+      "decompose_cells_per_processor": [
+        10252,
+        10288
+      ],
+      "processor_dirs": [
+        "processor0",
+        "processor1"
+      ],
+      "server_metrics": {
+        "llamacpp:prompt_tokens_total": {
+          "before": 997.0,
+          "after": 1994.0,
+          "delta": 997.0
+        },
+        "llamacpp:tokens_predicted_total": {
+          "before": 203.0,
+          "after": 404.0,
+          "delta": 201.0
+        },
+        "llamacpp:n_decode_total": {
+          "before": 207.0,
+          "after": 412.0,
+          "delta": 205.0
+        },
+        "llamacpp:requests_processing": {
+          "before": 0.0,
+          "after": 0.0,
+          "delta": 0.0
+        },
+        "llamacpp:requests_deferred": {
+          "before": 0.0,
+          "after": 0.0,
+          "delta": 0.0
+        }
+      },
+      "started_at": "2026-11-02T22:34:11.733139758Z",
+      "ended_at": "2026-11-02T22:34:24.853467762Z",
+      "status": "ok",
+      "error": null,
+      "request_step": 100,
+      "arrived_at_step": 110,
+      "worker_reaped": true,
+      "solver_stall_s": 0.011283092200756073,
+      "inference_wall_s": 4.134733755141497,
+      "end_wait_s": 4.422528570517898,
+      "http_status": 200,
+      "structured_output": {
+        "flow_description": "The flow is fastest in the upper half of the domain, particularly between 40% and 70% x. The lower half shows slower velocities, with a very slow region near the bottom edge. Pressure is lowest in localized pockets around 30% and 60% x at roughly 30% y, while higher pressure is seen in the upper right and lower right regions.",
+        "fastest_flow_x_percent": 60,
+        "fastest_flow_y_percent": 50,
+        "lowest_pressure_x_percent": 60,
+        "lowest_pressure_y_percent": 30,
+        "uncertainties": "The exact magnitude of the pressure and velocity values is unknown without the specific numerical values for the color bar limits. The 3D structure of the flow is not visible."
+      },
+      "parent_pid": 2737728,
+      "writer_pid": null,
+      "run_id": "gpu-ranks/v2212/par2",
+      "request_parent_pid": 2737728,
+      "parent_pid_is_master_pid_in_log": true,
+      "rank_pid_key": "solver_pid",
+      "parent_pid_is_rank0": true,
+      "parent_pid_is_other_rank": false,
+      "usage": null,
+      "telemetry_lines": 110,
+      "telemetry_tmp_left": false,
+      "telemetry_cells": 20540,
+      "llm_errors_file": false,
+      "frame_dir": "v2212/par2/llm_observation/step-000100",
+      "frame_files": [
+        "U.png",
+        "fields.npz",
+        "p.png",
+        "readable-metadata.json"
+      ],
+      "frame_hashes_ok": true,
+      "frame_step_time": [
+        100,
+        0.1005000000000005
+      ],
+      "frame_cells": 20540,
+      "frame_fields_sha256": "186681bd675f96ebd000e64300572c5cc171771ffb4761c62a1b465f6bc78783",
+      "png_sha256": {
+        "U": "4c3310c44a158ae01c42094c3795a049772a3104b7ab706e655b701a4b45fe40",
+        "p": "a62dcfd3ed78cc15ec83602d19c32fbaa612b51033a2cabe39de2f97d957b5dc"
+      },
+      "fields_npz_keys": {
+        "centres": [
+          20540,
+          3
+        ],
+        "U": [
+          20540,
+          3
+        ],
+        "p": [
+          20540
+        ],
+        "time_s": [],
+        "step": []
+      },
+      "fields_finite": true,
+      "body_equals_builder": true,
+      "body_images_equal_frame": true,
+      "request_sha256": "563b74c6fd48f3853ff90b2094b5d8c8958da550f136d618b764d5b8224354f6",
+      "model": "gemma-4-12b-it-qat-q4_0-vision",
+      "max_tokens": 320,
+      "seed": 20261021,
+      "truth": {
+        "max_speed_m_per_s": 37.2102674133959,
+        "min_pressure_m2_per_s2": -335.05318955822537,
+        "fastest_flow": {
+          "x_percent": 27.495947331666244,
+          "y_percent": 42.32432987370333,
+          "x_m": 0.032995136797999494,
+          "y_m": 0.01692973194948133,
+          "cell": 18460
+        },
+        "lowest_pressure": {
+          "x_percent": 30.987372942603958,
+          "y_percent": 25.46405025375945,
+          "x_m": 0.03718484753112475,
+          "y_m": 0.01018562010150378,
+          "cell": 17504
+        },
+        "cells_in_window": 7906
+      },
+      "score": {
+        "fastest_flow": {
+          "answer_percent": [
+            60,
+            50
+          ],
+          "true_percent": [
+            27.495947331666244,
+            42.32432987370333
+          ],
+          "error_percent": [
+            32.504052668333756,
+            7.675670126296673
+          ],
+          "distance_percent": 33.398044130660374,
+          "error_m": [
+            0.03900486320200051,
+            0.0030702680505186692
+          ],
+          "distance_m": 0.039125514684267206,
+          "within_10_percent": false
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            60,
+            30
+          ],
+          "true_percent": [
+            30.987372942603958,
+            25.46405025375945
+          ],
+          "error_percent": [
+            29.012627057396042,
+            4.535949746240551
+          ],
+          "distance_percent": 29.365070557925936,
+          "error_m": [
+            0.034815152468875246,
+            0.0018143798984962204
+          ],
+          "distance_m": 0.03486239830888141,
+          "within_10_percent": false
+        }
+      }
+    },
+    "serial_vs_par2": {
+      "cells": [
+        20540,
+        20540
+      ],
+      "centres_identical_after_ordering": false,
+      "centres_max_m": 4.163336342344337e-17,
+      "same_order_as_stored": false,
+      "U_identical": false,
+      "p_identical": false,
+      "U_max": 0.0007778771913380427,
+      "U_rms": 7.117500248592082e-05,
+      "U_peak": 37.210299087808764,
+      "p_max": 0.018724521361747293,
+      "p_rms": 0.003883848651228032,
+      "p_range": 378.9168452012097,
+      "other_keys_identical": {
+        "time_s": true,
+        "step": true
+      },
+      "request_sha256_equal": false,
+      "png_sha256_equal": false,
+      "truth_equal": false
+    },
+    "serial_vs_24950818": {
+      "fields.npz": true,
+      "U.png": true,
+      "p.png": true,
+      "request_sha256_equal": true,
+      "arrays_identical": true
+    },
+    "par2_vs_24950818_serial": {
+      "cells": [
+        20540,
+        20540
+      ],
+      "centres_identical_after_ordering": false,
+      "centres_max_m": 4.163336342344337e-17,
+      "same_order_as_stored": false,
+      "U_identical": false,
+      "p_identical": false,
+      "U_max": 0.0007778771913380427,
+      "U_rms": 7.117500248592082e-05,
+      "U_peak": 37.2102674133959,
+      "p_max": 0.018724521361747293,
+      "p_rms": 0.003883848651228032,
+      "p_range": 378.9316310084989,
+      "other_keys_identical": {
+        "time_s": true,
+        "step": true
+      }
+    }
+  }
+}

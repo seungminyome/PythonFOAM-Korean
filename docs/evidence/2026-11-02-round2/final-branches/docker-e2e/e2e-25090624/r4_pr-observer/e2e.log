@@ -1,0 +1,81 @@
+remote head: 24e9df6f5640594e2dbbd9a817231717fe8310ef	refs/heads/r4/pr-observer
+Cloning into '/tmp/PythonFOAM'...
+Checking out files:  16% (177/1099)   Checking out files:  17% (187/1099)   Checking out files:  18% (198/1099)   Checking out files:  19% (209/1099)   Checking out files:  20% (220/1099)   Checking out files:  21% (231/1099)   Checking out files:  22% (242/1099)   Checking out files:  23% (253/1099)   Checking out files:  24% (264/1099)   Checking out files:  25% (275/1099)   Checking out files:  26% (286/1099)   Checking out files:  27% (297/1099)   Checking out files:  28% (308/1099)   Checking out files:  29% (319/1099)   Checking out files:  30% (330/1099)   Checking out files:  31% (341/1099)   Checking out files:  32% (352/1099)   Checking out files:  32% (358/1099)   Checking out files:  33% (363/1099)   Checking out files:  34% (374/1099)   Checking out files:  35% (385/1099)   Checking out files:  36% (396/1099)   Checking out files:  37% (407/1099)   Checking out files:  38% (418/1099)   Checking out files:  39% (429/1099)   Checking out files:  40% (440/1099)   Checking out files:  41% (451/1099)   Checking out files:  42% (462/1099)   Checking out files:  43% (473/1099)   Checking out files:  44% (484/1099)   Checking out files:  45% (495/1099)   Checking out files:  46% (506/1099)   Checking out files:  47% (517/1099)   Checking out files:  48% (528/1099)   Checking out files:  49% (539/1099)   Checking out files:  50% (550/1099)   Checking out files:  50% (555/1099)   Checking out files:  51% (561/1099)   Checking out files:  52% (572/1099)   Checking out files:  53% (583/1099)   Checking out files:  54% (594/1099)   Checking out files:  55% (605/1099)   Checking out files:  56% (616/1099)   Checking out files:  57% (627/1099)   Checking out files:  58% (638/1099)   Checking out files:  59% (649/1099)   Checking out files:  60% (660/1099)   Checking out files:  61% (671/1099)   Checking out files:  62% (682/1099)   Checking out files:  63% (693/1099)   Checking out files:  64% (704/1099)   Checking out files:  65% (715/1099)   Checking out files:  66% (726/1099)   Checking out files:  67% (737/1099)   Checking out files:  68% (748/1099)   Checking out files:  68% (753/1099)   Checking out files:  69% (759/1099)   Checking out files:  70% (770/1099)   Checking out files:  71% (781/1099)   Checking out files:  72% (792/1099)   Checking out files:  73% (803/1099)   Checking out files:  74% (814/1099)   Checking out files:  75% (825/1099)   Checking out files:  76% (836/1099)   Checking out files:  77% (847/1099)   Checking out files:  78% (858/1099)   Checking out files:  79% (869/1099)   Checking out files:  80% (880/1099)   Checking out files:  81% (891/1099)   Checking out files:  82% (902/1099)   Checking out files:  83% (913/1099)   Checking out files:  84% (924/1099)   Checking out files:  85% (935/1099)   Checking out files:  86% (946/1099)   Checking out files:  87% (957/1099)   Checking out files:  88% (968/1099)   Checking out files:  89% (979/1099)   Checking out files:  90% (990/1099)   Checking out files:  91% (1001/1099)   Checking out files:  92% (1012/1099)   Checking out files:  93% (1023/1099)   Checking out files:  94% (1034/1099)   Checking out files:  95% (1045/1099)   Checking out files:  96% (1056/1099)   Checking out files:  96% (1066/1099)   Checking out files:  97% (1067/1099)   Checking out files:  98% (1078/1099)   Checking out files:  99% (1089/1099)   Checking out files: 100% (1099/1099)   Checking out files: 100% (1099/1099), done.
+Validation directory: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.SAgQzH
+{
+  "fixed-pimple": {
+    "steps": 10,
+    "residual_values": 160,
+    "checked_field_files": 30,
+    "max_Co": 0.21212590429,
+    "max_abs_U": 75.5965172185,
+    "max_abs_p": 27003559.1727,
+    "finite": true,
+    "normal_exit": true
+  },
+  "fixed-pod": {
+    "steps": 10,
+    "residual_values": 160,
+    "checked_field_files": 45,
+    "max_Co": 0.21212590429,
+    "max_abs_U": 75.5965172185,
+    "max_abs_p": 27003559.1727,
+    "finite": true,
+    "normal_exit": true
+  },
+  "bridge": {
+    "snapshots": 10,
+    "svd_shape": [
+      61620,
+      5
+    ],
+    "returned_field_files": 15,
+    "max_snapshot_error": 5.000089231543825e-11,
+    "max_mode_error": 4.985456492079265e-13,
+    "singular_values": [
+      [
+        13242.412666550576,
+        103.20037599117047,
+        48.582622926868034,
+        9.492855641455527,
+        1.6253595140667048,
+        0.7547647812265366,
+        0.1500466186759914,
+        0.017800896864983005,
+        0.003188123146347079,
+        0.00044011935819042794
+      ],
+      [
+        1514.3864419319787,
+        19.67437904437154,
+        6.944398224852403,
+        1.6200473143607665,
+        0.5613100155659213,
+        0.1670107936708107,
+        0.03744584318272553,
+        0.008623330867047422,
+        0.002789673226158349,
+        0.000794421319977679
+      ],
+      [
+        1.1371204453357147e-13,
+        2.777944861120007e-16,
+        7.144192730046757e-17,
+        1.559722887679167e-17,
+        3.698146821310832e-18,
+        1.2632361662839512e-18,
+        1.608571800814319e-19,
+        4.257450467809814e-20,
+        9.730810101175957e-21,
+        7.165240180171704e-21
+      ]
+    ],
+    "python_finalized": true
+  },
+  "pimple_POD_velocity_agreement": true,
+  "pimple_POD_pressure_agreement": true,
+  "status": "PASS"
+}
+PASS: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.SAgQzH
+verification: "status": "PASS"
+E2E r4/pr-observer 24e9df6f5640594e2dbbd9a817231717fe8310ef PASS 0

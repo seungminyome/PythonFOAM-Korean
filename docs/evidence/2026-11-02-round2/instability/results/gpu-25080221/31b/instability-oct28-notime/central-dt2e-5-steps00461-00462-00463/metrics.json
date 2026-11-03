@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "f421ab9ebebbd51a8ab5d3d17b9db1eaf1219f39517860e46d9d84f07e96edf0",
+  "request_bytes": 621171,
+  "replay_wall_s": 4.640777045860887,
+  "client_inference_wall_s": 4.6083087883889675,
+  "usage": {
+    "completion_tokens": 69,
+    "prompt_tokens": 1972,
+    "total_tokens": 2041,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1618.52,
+    "prompt_per_token_ms": 0.8207505070993915,
+    "prompt_per_second": 1218.3970540988064,
+    "predicted_n": 69,
+    "predicted_ms": 2017.069,
+    "predicted_per_token_ms": 29.662779411764706,
+    "predicted_per_second": 33.712282524792165
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude |U| shows a significant increase in its maximum value over time (from 41.31 to 86.42 m/s) without a corresponding physical change in the flow structure, suggesting a growth in numerical extremes.",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

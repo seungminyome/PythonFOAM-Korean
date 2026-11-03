@@ -1,0 +1,4510 @@
+{
+  "sets": {
+    "instability-eq2ms-notime": {
+      "scored_items": 20,
+      "unstable_items": 10,
+      "stable_items": 10,
+      "fixed_answer_right": 10,
+      "answers": {
+        "gemma-4-12b-it-qat-q4_0-vision": {
+          "items": 20,
+          "answered": 20,
+          "right": 11,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 1,
+            "stable": 9,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "gemma-4-31B-it-qat-q4_0-vision": {
+          "items": 20,
+          "answered": 20,
+          "right": 13,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 3,
+            "stable": 7,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        }
+      },
+      "rules": {
+        "peak |U| grows > 5 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 12,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 5,
+            "stable": 5,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 3,
+            "stable": 7,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 10 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 14,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 5,
+            "stable": 5,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 1,
+            "stable": 9,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 20 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 14,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 4,
+            "stable": 6,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 50 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 14,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 4,
+            "stable": 6,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 100 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 13,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 3,
+            "stable": 7,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 20 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 13,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 6,
+            "stable": 4,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 3,
+            "stable": 7,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 50 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 16,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 6,
+            "stable": 4,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 100 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 15,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 5,
+            "stable": 5,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 200 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 14,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 4,
+            "stable": 6,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        }
+      },
+      "early": {
+        "gemma-4-12b-it-qat-q4_0-vision": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 0
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 0
+          }
+        ],
+        "gemma-4-31B-it-qat-q4_0-vision": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 2
+          }
+        ],
+        "peak |U| grows > 5 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 2
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 3
+          }
+        ],
+        "peak |U| grows > 10 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 2
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 2
+          }
+        ],
+        "peak |U| grows > 20 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 2
+          }
+        ],
+        "peak |U| grows > 50 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 0
+          }
+        ],
+        "peak |U| grows > 100 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 0
+          }
+        ],
+        "largest |U| jump grows > 20 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 1
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 3
+          }
+        ],
+        "largest |U| jump grows > 50 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 1
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 1
+          }
+        ],
+        "largest |U| jump grows > 100 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 2
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 1
+          }
+        ],
+        "largest |U| jump grows > 200 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 1
+          }
+        ]
+      },
+      "by_run": {
+        "unstable": {
+          "gemma-4-12b-it-qat-q4_0-vision": {
+            "central-dt2e-5": [
+              1,
+              10
+            ]
+          },
+          "gemma-4-31B-it-qat-q4_0-vision": {
+            "central-dt2e-5": [
+              3,
+              10
+            ]
+          }
+        },
+        "stable": {
+          "gemma-4-12b-it-qat-q4_0-vision": {
+            "central-dt5e-6": [
+              0,
+              3
+            ],
+            "developed": [
+              0,
+              3
+            ],
+            "upwind-dt2e-5": [
+              0,
+              2
+            ],
+            "upwind-dt4e-5": [
+              0,
+              2
+            ]
+          },
+          "gemma-4-31B-it-qat-q4_0-vision": {
+            "central-dt5e-6": [
+              0,
+              3
+            ],
+            "developed": [
+              0,
+              3
+            ],
+            "upwind-dt2e-5": [
+              0,
+              2
+            ],
+            "upwind-dt4e-5": [
+              0,
+              2
+            ]
+          }
+        }
+      },
+      "best_threshold": {
+        "max_speed_last_over_first": {
+          "any": {
+            "threshold": 1.1150629052117351,
+            "right": 14,
+            "items": 20
+          },
+          "growth_only": {
+            "threshold": 1.1150629052117351,
+            "right": 14,
+            "items": 20
+          }
+        },
+        "max_jump_speed_last_over_first": {
+          "any": {
+            "threshold": 1.6775979887568124,
+            "right": 16,
+            "items": 20
+          },
+          "growth_only": {
+            "threshold": 1.6775979887568124,
+            "right": 16,
+            "items": 20
+          }
+        }
+      },
+      "items": {
+        "central-dt2e-5-steps00266-00366-00466": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 1,
+          "numeric": {
+            "max_speed_last_over_first": 3.510827208831248e+38,
+            "max_jump_speed_last_over_first": 1.2117525409645033e+39
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "unstable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The velocity magnitude |U| jumps from values around 43 m/s at time 2 to approximately 1.5e+40 m/s at time 3, indicating a massive numerical explosion. The pressure also jumps to values around 10^39 m^2/s^2.",
+            "gemma-4-31B-it-qat-q4_0-vision": "At time 3, the velocity magnitude and kinematic pressure values have exploded to unphysical magnitudes (up to 1.516e+40 m/s and 5.86e+39 m^2/s^2), indicating a complete numerical divergence of the simulation."
+          }
+        },
+        "central-dt2e-5-steps00265-00365-00465": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 2,
+          "numeric": {
+            "max_speed_last_over_first": 1.9192011954426738,
+            "max_jump_speed_last_over_first": 4.009250868694347
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without showing checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00264-00364-00464": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 3,
+          "numeric": {
+            "max_speed_last_over_first": 2.1152914187746843,
+            "max_jump_speed_last_over_first": 4.539602712568648
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features and no signs of numerical instability such as checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude |U| shows a sudden and significant increase in its maximum value from 43.44 m/s at time 2 to 96.52 m/s at time 3, without a corresponding physical structure, suggesting numerical divergence."
+          }
+        },
+        "central-dt2e-5-steps00263-00363-00463": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 4,
+          "numeric": {
+            "max_speed_last_over_first": 2.0013232579379694,
+            "max_jump_speed_last_over_first": 5.446213833587145
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features over time. While the velocity magnitude and pressure fields change significantly, the gradients remain continuous and there are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude |U| shows a sudden and significant increase in its maximum value from 43.42 m/s at Time 2 to 86.42 m/s at Time 3, which appears unphysical given the flow evolution."
+          }
+        },
+        "central-dt2e-5-steps00262-00362-00462": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 5,
+          "numeric": {
+            "max_speed_last_over_first": 1.1597356464852615,
+            "max_jump_speed_last_over_first": 1.9220150697683556
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any signs of checkerboard patterns, high-frequency oscillations, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or non-physical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00261-00361-00461": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 6,
+          "numeric": {
+            "max_speed_last_over_first": 0.930935792024369,
+            "max_jump_speed_last_over_first": 2.0120570510415146
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any signs of checkerboard patterns, high-frequency oscillations, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between cells, or non-physical growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00260-00360-00460": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 7,
+          "numeric": {
+            "max_speed_last_over_first": 0.7540542013287778,
+            "max_jump_speed_last_over_first": 0.5738249311557602
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00259-00359-00459": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 8,
+          "numeric": {
+            "max_speed_last_over_first": 0.8934735743856294,
+            "max_jump_speed_last_over_first": 0.6453515692862912
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or unphysical growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00258-00358-00458": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 9,
+          "numeric": {
+            "max_speed_last_over_first": 0.9204075090282392,
+            "max_jump_speed_last_over_first": 0.6286955997124738
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or unphysical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth in magnitudes."
+          }
+        },
+        "central-dt2e-5-steps00257-00357-00457": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 10,
+          "numeric": {
+            "max_speed_last_over_first": 0.8758493298044634,
+            "max_jump_speed_last_over_first": 0.3994113786227445
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or non-physical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00255-00355-00455": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 12,
+          "numeric": {
+            "max_speed_last_over_first": 0.8002415002320484,
+            "max_jump_speed_last_over_first": 0.40790815923968476
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or non-physical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00252-00352-00452": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 15,
+          "numeric": {
+            "max_speed_last_over_first": 0.9203344277236889,
+            "max_jump_speed_last_over_first": 0.5801681290944105
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or non-physical growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00247-00347-00447": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 20,
+          "numeric": {
+            "max_speed_last_over_first": 0.9195441003845732,
+            "max_jump_speed_last_over_first": 0.6555238163763843
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00237-00337-00437": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 30,
+          "numeric": {
+            "max_speed_last_over_first": 0.8607506702582692,
+            "max_jump_speed_last_over_first": 0.47816100592376565
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of vortices and pressure gradients, without any high-frequency oscillations, checkerboard patterns, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00217-00317-00417": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 50,
+          "numeric": {
+            "max_speed_last_over_first": 0.7943801422935768,
+            "max_jump_speed_last_over_first": 0.2690821405410152
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and the shifting of pressure gradients. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth of extremes. The changes are consistent with unsteady flow development."
+          }
+        },
+        "central-dt2e-5-steps00192-00292-00392": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 75,
+          "numeric": {
+            "max_speed_last_over_first": 0.6832594693526581,
+            "max_jump_speed_last_over_first": 0.2843961608336181
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and the pressure gradients. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or non-physical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00167-00267-00367": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 100,
+          "numeric": {
+            "max_speed_last_over_first": 1.0115930182573183,
+            "max_jump_speed_last_over_first": 1.9073470423378862
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any high-frequency oscillations, checkerboard patterns, or unphysical growth in magnitudes. The changes are consistent with unsteady flow development."
+          }
+        },
+        "central-dt2e-5-steps00117-00217-00317": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 150,
+          "numeric": {
+            "max_speed_last_over_first": 1.2020781795950382,
+            "max_jump_speed_last_over_first": 1.345749236652984
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and the shifting of pressure gradients. There are no checkerboard patterns, high-frequency oscillations, or unphysical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The kinematic pressure p shows extreme growth in magnitude over time, with the minimum value dropping from -330.8 at t=1 to -712.6 at t=3, and the maximum increasing from 61.92 to 189.8, indicating numerical instability."
+          }
+        },
+        "central-dt2e-5-steps00067-00167-00267": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 200,
+          "numeric": {
+            "max_speed_last_over_first": 1.0959337299397716,
+            "max_jump_speed_last_over_first": 1.4246278048546397
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and the pressure gradients. There are no checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00007-00107-00207": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 260,
+          "numeric": {
+            "max_speed_last_over_first": 1.3480197845958932,
+            "max_jump_speed_last_over_first": 5.208928547163306
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features over time. The velocity magnitude and pressure fields exhibit continuous changes in structure and magnitude without any high-frequency oscillations, checkerboard patterns, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The kinematic pressure p shows a significant increase in its range over time, with the minimum value dropping from -351.7 to -697.4 and the maximum increasing from 48.08 to 117.2, indicating growing numerical oscillations."
+          }
+        },
+        "central-dt5e-6-steps01000-01400-01800": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.8519828502308945,
+            "max_jump_speed_last_over_first": 1.2407934001388252
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and the shifting of pressure gradients. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth of extremes."
+          }
+        },
+        "central-dt5e-6-steps01200-01600-02000": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9690450408341943,
+            "max_jump_speed_last_over_first": 1.18845725579039
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of features and coherent structures over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values between time steps.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or non-physical growth of extremes."
+          }
+        },
+        "central-dt5e-6-steps02200-02600-03000": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.1840048593789716,
+            "max_jump_speed_last_over_first": 0.9509900639801953
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes."
+          }
+        },
+        "developed-steps09308-09708-10108": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9831121962438061,
+            "max_jump_speed_last_over_first": 0.8079798726846672
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and coherent structures that evolve physically over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any signs of high-frequency spatial oscillations, checkerboarding, or unbounded growth in magnitudes."
+          }
+        },
+        "developed-steps13708-14108-14508": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.947217308791807,
+            "max_jump_speed_last_over_first": 1.0179110985227255
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of features, such as the movement and deformation of the high-velocity region and the shifting of pressure gradients. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between cells, or unphysical growth of extrema."
+          }
+        },
+        "developed-steps16308-16708-17108": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0703901639382087,
+            "max_jump_speed_last_over_first": 1.4331809077452695
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the development of a vortex-like structure in the velocity magnitude and corresponding pressure fluctuations. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboarding, or non-physical growth of extremes."
+          }
+        },
+        "upwind-dt2e-5-steps00470-00570-00670": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.041851859174778,
+            "max_jump_speed_last_over_first": 1.0458286434866721
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and continuous evolution of features over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extremes."
+          }
+        },
+        "upwind-dt2e-5-steps01360-01460-01560": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.051297666822404,
+            "max_jump_speed_last_over_first": 1.2688704549379137
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth transitions in velocity and pressure. The features, such as the moving high-velocity region and the pressure fluctuations, evolve consistently over time without signs of checkerboard patterns, high-frequency oscillations, or unphysical growth.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extremes."
+          }
+        },
+        "upwind-dt4e-5-steps00700-00750-00800": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9958781009012099,
+            "max_jump_speed_last_over_first": 1.072001892439558
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and continuous evolution of features over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between cells, or non-physical growth of extrema."
+          }
+        },
+        "upwind-dt4e-5-steps01230-01280-01330": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0136281578060526,
+            "max_jump_speed_last_over_first": 0.7009489089736141
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and continuous evolution of features over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or uncontrolled growth of extrema."
+          }
+        }
+      }
+    },
+    "instability-eq2ms-reltime": {
+      "scored_items": 20,
+      "unstable_items": 10,
+      "stable_items": 10,
+      "fixed_answer_right": 10,
+      "answers": {
+        "gemma-4-12b-it-qat-q4_0-vision": {
+          "items": 20,
+          "answered": 20,
+          "right": 11,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 1,
+            "stable": 9,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "gemma-4-31B-it-qat-q4_0-vision": {
+          "items": 20,
+          "answered": 20,
+          "right": 14,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 4,
+            "stable": 6,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        }
+      },
+      "rules": {
+        "peak |U| grows > 5 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 12,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 5,
+            "stable": 5,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 3,
+            "stable": 7,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 10 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 14,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 5,
+            "stable": 5,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 1,
+            "stable": 9,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 20 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 14,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 4,
+            "stable": 6,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 50 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 14,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 4,
+            "stable": 6,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 100 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 13,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 3,
+            "stable": 7,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 20 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 13,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 6,
+            "stable": 4,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 3,
+            "stable": 7,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 50 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 16,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 6,
+            "stable": 4,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 100 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 15,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 5,
+            "stable": 5,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 200 %": {
+          "items": 20,
+          "answered": 20,
+          "right": 14,
+          "unstable_items": 10,
+          "unstable_said": {
+            "unstable": 4,
+            "stable": 6,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 10,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 10,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        }
+      },
+      "early": {
+        "gemma-4-12b-it-qat-q4_0-vision": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 0
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 0
+          }
+        ],
+        "gemma-4-31B-it-qat-q4_0-vision": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 2
+          }
+        ],
+        "peak |U| grows > 5 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 2
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 3
+          }
+        ],
+        "peak |U| grows > 10 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 2
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 2
+          }
+        ],
+        "peak |U| grows > 20 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 2
+          }
+        ],
+        "peak |U| grows > 50 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 0
+          }
+        ],
+        "peak |U| grows > 100 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 0
+          }
+        ],
+        "largest |U| jump grows > 20 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 1
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 3
+          }
+        ],
+        "largest |U| jump grows > 50 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 1
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 1
+          }
+        ],
+        "largest |U| jump grows > 100 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 2
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 1
+          }
+        ],
+        "largest |U| jump grows > 200 %": [
+          {
+            "bin": "1",
+            "items": 1,
+            "said_unstable": 1
+          },
+          {
+            "bin": "2 to 3",
+            "items": 2,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 3,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 3,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 3,
+            "said_unstable": 1
+          }
+        ]
+      },
+      "by_run": {
+        "unstable": {
+          "gemma-4-12b-it-qat-q4_0-vision": {
+            "central-dt2e-5": [
+              1,
+              10
+            ]
+          },
+          "gemma-4-31B-it-qat-q4_0-vision": {
+            "central-dt2e-5": [
+              4,
+              10
+            ]
+          }
+        },
+        "stable": {
+          "gemma-4-12b-it-qat-q4_0-vision": {
+            "central-dt5e-6": [
+              0,
+              3
+            ],
+            "developed": [
+              0,
+              3
+            ],
+            "upwind-dt2e-5": [
+              0,
+              2
+            ],
+            "upwind-dt4e-5": [
+              0,
+              2
+            ]
+          },
+          "gemma-4-31B-it-qat-q4_0-vision": {
+            "central-dt5e-6": [
+              0,
+              3
+            ],
+            "developed": [
+              0,
+              3
+            ],
+            "upwind-dt2e-5": [
+              0,
+              2
+            ],
+            "upwind-dt4e-5": [
+              0,
+              2
+            ]
+          }
+        }
+      },
+      "best_threshold": {
+        "max_speed_last_over_first": {
+          "any": {
+            "threshold": 1.1150629052117351,
+            "right": 14,
+            "items": 20
+          },
+          "growth_only": {
+            "threshold": 1.1150629052117351,
+            "right": 14,
+            "items": 20
+          }
+        },
+        "max_jump_speed_last_over_first": {
+          "any": {
+            "threshold": 1.6775979887568124,
+            "right": 16,
+            "items": 20
+          },
+          "growth_only": {
+            "threshold": 1.6775979887568124,
+            "right": 16,
+            "items": 20
+          }
+        }
+      },
+      "items": {
+        "central-dt2e-5-steps00266-00366-00466": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 1,
+          "numeric": {
+            "max_speed_last_over_first": 3.510827208831248e+38,
+            "max_jump_speed_last_over_first": 1.2117525409645033e+39
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "unstable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The velocity magnitude |U| jumps from values around 43.44 m/s at time 2 to approximately 1.516e+40 m/s at time 3, indicating a massive numerical explosion. The pressure field also shows a corresponding extreme jump in magnitude.",
+            "gemma-4-31B-it-qat-q4_0-vision": "At time 3, the velocity magnitude and kinematic pressure values have exploded to unphysical magnitudes (up to 1.516e+40 m/s and 5.86e+39 m^2/s^2), indicating a complete numerical divergence of the simulation."
+          }
+        },
+        "central-dt2e-5-steps00265-00365-00465": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 2,
+          "numeric": {
+            "max_speed_last_over_first": 1.9192011954426738,
+            "max_jump_speed_last_over_first": 4.009250868694347
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features over time. While the velocity magnitude scale changes significantly between Time 3 and Time 1, the spatial distribution of the pressure and velocity fields remains coherent without checkerboard patterns or unphysical oscillations.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude |U| shows a sudden and non-physical increase in the maximum value from 43.44 m/s at t=0.002s to 90.01 m/s at t=0.004s, accompanied by the appearance of localized, high-gradient spikes (e.g., around x=10%, y=30% in Image 5)."
+          }
+        },
+        "central-dt2e-5-steps00264-00364-00464": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 3,
+          "numeric": {
+            "max_speed_last_over_first": 2.1152914187746843,
+            "max_jump_speed_last_over_first": 4.539602712568648
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of features over time. There are no checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude |U| shows a sudden and non-physical increase in the maximum value from 43.44 m/s at t=0.002s to 96.52 m/s at t=0.004s, accompanied by the appearance of a localized high-velocity spike (single-cell extreme) around x=12%, y=30%."
+          }
+        },
+        "central-dt2e-5-steps00263-00363-00463": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 4,
+          "numeric": {
+            "max_speed_last_over_first": 2.0013232579379694,
+            "max_jump_speed_last_over_first": 5.446213833587145
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features over time. While the velocity magnitude scale changes significantly between Time 3 and the previous steps, the spatial distribution remains continuous and lacks high-frequency oscillations, checkerboard patterns, or non-physical growth.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude |U| shows a sudden and significant increase in its maximum value from 43.42 m/s at t=0.002s to 86.42 m/s at t=0.004s, which appears unphysical given the flow evolution."
+          }
+        },
+        "central-dt2e-5-steps00262-00362-00462": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 5,
+          "numeric": {
+            "max_speed_last_over_first": 1.1597356464852615,
+            "max_jump_speed_last_over_first": 1.9220150697683556
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of features over time. There are no checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00261-00361-00461": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 6,
+          "numeric": {
+            "max_speed_last_over_first": 0.930935792024369,
+            "max_jump_speed_last_over_first": 2.0120570510415146
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features over time. The velocity and pressure fields exhibit continuous changes in magnitude and shape without any high-frequency oscillations, checkerboard patterns, or non-physical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth of extremes. The changes are consistent with unsteady flow development."
+          }
+        },
+        "central-dt2e-5-steps00260-00360-00460": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 7,
+          "numeric": {
+            "max_speed_last_over_first": 0.7540542013287778,
+            "max_jump_speed_last_over_first": 0.5738249311557602
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any signs of checkerboard patterns, high-frequency oscillations, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00259-00359-00459": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 8,
+          "numeric": {
+            "max_speed_last_over_first": 0.8934735743856294,
+            "max_jump_speed_last_over_first": 0.6453515692862912
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features over time. The velocity and pressure fields exhibit continuous changes in magnitude and spatial distribution without any high-frequency oscillations, checkerboard patterns, or unphysical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00258-00358-00458": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 9,
+          "numeric": {
+            "max_speed_last_over_first": 0.9204075090282392,
+            "max_jump_speed_last_over_first": 0.6286955997124738
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features over time. The velocity magnitude and pressure fields exhibit continuous changes in structure and magnitude without any high-frequency oscillations, checkerboard patterns, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or unphysical growth in magnitudes."
+          }
+        },
+        "central-dt2e-5-steps00257-00357-00457": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 10,
+          "numeric": {
+            "max_speed_last_over_first": 0.8758493298044634,
+            "max_jump_speed_last_over_first": 0.3994113786227445
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any high-frequency oscillations, checkerboard patterns, or unphysical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or non-physical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00255-00355-00455": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 12,
+          "numeric": {
+            "max_speed_last_over_first": 0.8002415002320484,
+            "max_jump_speed_last_over_first": 0.40790815923968476
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any high-frequency oscillations, checkerboard patterns, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or non-physical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00252-00352-00452": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 15,
+          "numeric": {
+            "max_speed_last_over_first": 0.9203344277236889,
+            "max_jump_speed_last_over_first": 0.5801681290944105
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any signs of checkerboard patterns, high-frequency oscillations, or unphysical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or non-physical growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00247-00347-00447": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 20,
+          "numeric": {
+            "max_speed_last_over_first": 0.9195441003845732,
+            "max_jump_speed_last_over_first": 0.6555238163763843
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00237-00337-00437": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 30,
+          "numeric": {
+            "max_speed_last_over_first": 0.8607506702582692,
+            "max_jump_speed_last_over_first": 0.47816100592376565
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of features over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00217-00317-00417": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 50,
+          "numeric": {
+            "max_speed_last_over_first": 0.7943801422935768,
+            "max_jump_speed_last_over_first": 0.2690821405410152
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of velocity and pressure fields over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00192-00292-00392": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 75,
+          "numeric": {
+            "max_speed_last_over_first": 0.6832594693526581,
+            "max_jump_speed_last_over_first": 0.2843961608336181
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and the pressure gradients. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00167-00267-00367": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 100,
+          "numeric": {
+            "max_speed_last_over_first": 1.0115930182573183,
+            "max_jump_speed_last_over_first": 1.9073470423378862
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any high-frequency oscillations, checkerboard patterns, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth in magnitudes. The changes are consistent with unsteady flow development."
+          }
+        },
+        "central-dt2e-5-steps00117-00217-00317": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 150,
+          "numeric": {
+            "max_speed_last_over_first": 1.2020781795950382,
+            "max_jump_speed_last_over_first": 1.345749236652984
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the vortex-like structures in the velocity and pressure fields. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The kinematic pressure p shows extreme values that grow rapidly in magnitude from Time 1 (min -330.8) to Time 3 (min -714.2), and the velocity magnitude |U| shows non-physical, high-frequency oscillations (checkerboard-like patterns) appearing around x=25%, y=30% in Image 3."
+          }
+        },
+        "central-dt2e-5-steps00067-00167-00267": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 200,
+          "numeric": {
+            "max_speed_last_over_first": 1.0959337299397716,
+            "max_jump_speed_last_over_first": 1.4246278048546397
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and the pressure gradients, without any high-frequency oscillations, checkerboard patterns, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any high-frequency spatial oscillations, checkerboard patterns, or non-physical growth in magnitudes. The changes are consistent with unsteady flow development."
+          }
+        },
+        "central-dt2e-5-steps00007-00107-00207": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 260,
+          "numeric": {
+            "max_speed_last_over_first": 1.3480197845958932,
+            "max_jump_speed_last_over_first": 5.208928547163306
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of features over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The kinematic pressure p shows a rapid increase in its range over time, with the minimum value dropping from -351.7 to -697.4 and the maximum rising from 48.08 to 117.2 in a very short interval (0.004 s), indicating numerical divergence."
+          }
+        },
+        "central-dt5e-6-steps01000-01400-01800": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.8519828502308945,
+            "max_jump_speed_last_over_first": 1.2407934001388252
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes."
+          }
+        },
+        "central-dt5e-6-steps01200-01600-02000": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9690450408341943,
+            "max_jump_speed_last_over_first": 1.18845725579039
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of vortices and pressure gradients, without any high-frequency oscillations, checkerboard patterns, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extremes."
+          }
+        },
+        "central-dt5e-6-steps02200-02600-03000": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.1840048593789716,
+            "max_jump_speed_last_over_first": 0.9509900639801953
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and pressure gradients, without any checkerboard patterns, high-frequency oscillations, or unphysical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extremes."
+          }
+        },
+        "developed-steps09308-09708-10108": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9831121962438061,
+            "max_jump_speed_last_over_first": 0.8079798726846672
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and coherent structures that evolve consistently over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in magnitudes."
+          }
+        },
+        "developed-steps13708-14108-14508": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.947217308791807,
+            "max_jump_speed_last_over_first": 1.0179110985227255
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous gradients and evolving structures without any high-frequency oscillations, checkerboard patterns, or non-physical growth of extreme values between time steps.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth in magnitudes."
+          }
+        },
+        "developed-steps16308-16708-17108": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0703901639382087,
+            "max_jump_speed_last_over_first": 1.4331809077452695
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve physically over time. There are no signs of high-frequency oscillations, checkerboard patterns, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes."
+          }
+        },
+        "upwind-dt2e-5-steps00470-00570-00670": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.041851859174778,
+            "max_jump_speed_last_over_first": 1.0458286434866721
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and continuous evolution of features over time. There are no signs of high-frequency oscillations, checkerboard patterns, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or non-physical growth in extrema."
+          }
+        },
+        "upwind-dt2e-5-steps01360-01460-01560": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.051297666822404,
+            "max_jump_speed_last_over_first": 1.2688704549379137
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of velocity and pressure gradients over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any high-frequency spatial oscillations, checkerboard patterns, or non-physical growth in magnitudes."
+          }
+        },
+        "upwind-dt4e-5-steps00700-00750-00800": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9958781009012099,
+            "max_jump_speed_last_over_first": 1.072001892439558
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and continuous evolution of features over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or uncontrolled growth of extrema."
+          }
+        },
+        "upwind-dt4e-5-steps01230-01280-01330": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0136281578060526,
+            "max_jump_speed_last_over_first": 0.7009489089736141
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and coherent structures that evolve physically over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or unbounded growth of extrema."
+          }
+        }
+      }
+    },
+    "instability-oct28-notime": {
+      "scored_items": 54,
+      "unstable_items": 27,
+      "stable_items": 27,
+      "fixed_answer_right": 27,
+      "answers": {
+        "gemma-4-12b-it-qat-q4_0-vision": {
+          "items": 54,
+          "answered": 54,
+          "right": 31,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 4,
+            "stable": 23,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 27,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "gemma-4-31B-it-qat-q4_0-vision": {
+          "items": 54,
+          "answered": 54,
+          "right": 32,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 5,
+            "stable": 22,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 27,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        }
+      },
+      "rules": {
+        "peak |U| grows > 5 %": {
+          "items": 54,
+          "answered": 54,
+          "right": 30,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 6,
+            "stable": 21,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 3,
+            "stable": 24,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 10 %": {
+          "items": 54,
+          "answered": 54,
+          "right": 33,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 6,
+            "stable": 21,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 27,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 20 %": {
+          "items": 54,
+          "answered": 54,
+          "right": 33,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 6,
+            "stable": 21,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 27,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 50 %": {
+          "items": 54,
+          "answered": 54,
+          "right": 32,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 5,
+            "stable": 22,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 27,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "peak |U| grows > 100 %": {
+          "items": 54,
+          "answered": 54,
+          "right": 32,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 5,
+            "stable": 22,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 27,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 20 %": {
+          "items": 54,
+          "answered": 54,
+          "right": 36,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 14,
+            "stable": 13,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 5,
+            "stable": 22,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 50 %": {
+          "items": 54,
+          "answered": 54,
+          "right": 38,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 11,
+            "stable": 16,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 27,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 100 %": {
+          "items": 54,
+          "answered": 54,
+          "right": 36,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 9,
+            "stable": 18,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 27,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        },
+        "largest |U| jump grows > 200 %": {
+          "items": 54,
+          "answered": 54,
+          "right": 32,
+          "unstable_items": 27,
+          "unstable_said": {
+            "unstable": 5,
+            "stable": 22,
+            "cannot_tell": 0,
+            "no answer": 0
+          },
+          "stable_items": 27,
+          "stable_said": {
+            "unstable": 0,
+            "stable": 27,
+            "cannot_tell": 0,
+            "no answer": 0
+          }
+        }
+      },
+      "early": {
+        "gemma-4-12b-it-qat-q4_0-vision": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 0
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 0
+          }
+        ],
+        "gemma-4-31B-it-qat-q4_0-vision": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 0
+          }
+        ],
+        "peak |U| grows > 5 %": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 2
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 0
+          }
+        ],
+        "peak |U| grows > 10 %": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 2
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 0
+          }
+        ],
+        "peak |U| grows > 20 %": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 2
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 0
+          }
+        ],
+        "peak |U| grows > 50 %": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 0
+          }
+        ],
+        "peak |U| grows > 100 %": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 0
+          }
+        ],
+        "largest |U| jump grows > 20 %": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 5
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 4
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 1
+          }
+        ],
+        "largest |U| jump grows > 50 %": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 4
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 2
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 0
+          }
+        ],
+        "largest |U| jump grows > 100 %": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 2
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 4
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 0
+          }
+        ],
+        "largest |U| jump grows > 200 %": [
+          {
+            "bin": "1",
+            "items": 3,
+            "said_unstable": 3
+          },
+          {
+            "bin": "2 to 3",
+            "items": 6,
+            "said_unstable": 1
+          },
+          {
+            "bin": "4 to 6",
+            "items": 9,
+            "said_unstable": 1
+          },
+          {
+            "bin": "7 to 10",
+            "items": 9,
+            "said_unstable": 0
+          },
+          {
+            "bin": "11 to 25",
+            "items": 7,
+            "said_unstable": 0
+          },
+          {
+            "bin": "26 to 100",
+            "items": 4,
+            "said_unstable": 0
+          },
+          {
+            "bin": "over 100",
+            "items": 5,
+            "said_unstable": 0
+          }
+        ]
+      },
+      "by_run": {
+        "unstable": {
+          "gemma-4-12b-it-qat-q4_0-vision": {
+            "central-dt2e-5": [
+              2,
+              10
+            ],
+            "central-dt3e-5": [
+              1,
+              10
+            ],
+            "central-dt4e-5": [
+              1,
+              7
+            ]
+          },
+          "gemma-4-31B-it-qat-q4_0-vision": {
+            "central-dt2e-5": [
+              3,
+              10
+            ],
+            "central-dt3e-5": [
+              1,
+              10
+            ],
+            "central-dt4e-5": [
+              1,
+              7
+            ]
+          }
+        },
+        "stable": {
+          "gemma-4-12b-it-qat-q4_0-vision": {
+            "central-dt5e-6": [
+              0,
+              6
+            ],
+            "developed": [
+              0,
+              7
+            ],
+            "upwind-dt2e-5": [
+              0,
+              7
+            ],
+            "upwind-dt4e-5": [
+              0,
+              7
+            ]
+          },
+          "gemma-4-31B-it-qat-q4_0-vision": {
+            "central-dt5e-6": [
+              0,
+              6
+            ],
+            "developed": [
+              0,
+              7
+            ],
+            "upwind-dt2e-5": [
+              0,
+              7
+            ],
+            "upwind-dt4e-5": [
+              0,
+              7
+            ]
+          }
+        }
+      },
+      "best_threshold": {
+        "max_speed_last_over_first": {
+          "any": {
+            "threshold": 0.9935504182934018,
+            "right": 45,
+            "items": 54
+          },
+          "growth_only": {
+            "threshold": 1.0011563106968446,
+            "right": 38,
+            "items": 54
+          }
+        },
+        "max_jump_speed_last_over_first": {
+          "any": {
+            "threshold": 1.3552122894210121,
+            "right": 39,
+            "items": 54
+          },
+          "growth_only": {
+            "threshold": 1.3552122894210121,
+            "right": 39,
+            "items": 54
+          }
+        }
+      },
+      "items": {
+        "central-dt2e-5-steps00464-00465-00466": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 1,
+          "numeric": {
+            "max_speed_last_over_first": 1.5704482476540073e+38,
+            "max_jump_speed_last_over_first": 1.6749636712860293e+38
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "unstable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The velocity magnitude |U| jumps from values around 96.52 m/s at time 1 to 90.01 m/s at time 2, and then explodes to 1.516e+40 m/s at time 3. This extreme, non-physical growth in magnitude indicates numerical divergence.",
+            "gemma-4-31B-it-qat-q4_0-vision": "At time 3, the velocity magnitude and kinematic pressure values have exploded to unphysical magnitudes (up to 1.516e+40 m/s and 5.86e+39 m^2/s^2), indicating a complete numerical divergence."
+          }
+        },
+        "central-dt2e-5-steps00463-00464-00465": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 2,
+          "numeric": {
+            "max_speed_last_over_first": 1.0415530947301244,
+            "max_jump_speed_last_over_first": 1.021020389096454
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and consistent features across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or unbounded growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00460-00462-00464": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 3,
+          "numeric": {
+            "max_speed_last_over_first": 2.4282458753103384,
+            "max_jump_speed_last_over_first": 5.674349259150201
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "unstable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The velocity magnitude |U| shows a rapid and non-physical increase in maximum values from 39.75 m/s at time 1 to 51.99 m/s at time 2, and then to 96.52 m/s at time 3. The pressure field remains nearly static despite this massive velocity jump, indicating numerical instability.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The maximum velocity magnitude |U| increases significantly from 39.75 m/s at Time 1 to 96.52 m/s at Time 3, while the flow field becomes increasingly erratic and loses its initial structure, indicating numerical instability."
+          }
+        },
+        "central-dt2e-5-steps00461-00462-00463": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 4,
+          "numeric": {
+            "max_speed_last_over_first": 2.0919056513107432,
+            "max_jump_speed_last_over_first": 2.3889757347335188
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth evolution of features over time. The velocity magnitude and pressure gradients are continuous and do not exhibit high-frequency oscillations, checkerboard patterns, or non-physical growth in extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude |U| shows a significant increase in its maximum value over time (from 41.31 to 86.42 m/s) without a corresponding physical change in the flow structure, suggesting a growth in numerical extremes."
+          }
+        },
+        "central-dt2e-5-steps00460-00461-00462": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 5,
+          "numeric": {
+            "max_speed_last_over_first": 1.3080395700814393,
+            "max_jump_speed_last_over_first": 2.8826565174154433
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude |U| shows a steady increase in its maximum value from 39.75 to 51.99 m/s over the three time steps, while the spatial distribution remains smooth without checkerboarding or high-frequency oscillations."
+          }
+        },
+        "central-dt2e-5-steps00457-00459-00461": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 6,
+          "numeric": {
+            "max_speed_last_over_first": 1.0374207821508163,
+            "max_jump_speed_last_over_first": 3.591319468357991
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and consistent structures across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any signs of checkerboarding, high-frequency oscillations between cells, or unphysical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00454-00457-00460": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 7,
+          "numeric": {
+            "max_speed_last_over_first": 1.001530380516926,
+            "max_jump_speed_last_over_first": 1.7631880180242359
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or unphysical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00457-00458-00459": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 8,
+          "numeric": {
+            "max_speed_last_over_first": 0.9982941736983896,
+            "max_jump_speed_last_over_first": 1.2595633675051816
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or diverging extrema."
+          }
+        },
+        "central-dt2e-5-steps00456-00457-00458": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 9,
+          "numeric": {
+            "max_speed_last_over_first": 0.9980015470854076,
+            "max_jump_speed_last_over_first": 0.9954410083235251
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, oscillations, or diverging extrema."
+          }
+        },
+        "central-dt2e-5-steps00453-00455-00457": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 10,
+          "numeric": {
+            "max_speed_last_over_first": 1.0036659618281878,
+            "max_jump_speed_last_over_first": 0.9995855388348401
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, oscillations, or diverging values."
+          }
+        },
+        "central-dt2e-5-steps00453-00454-00455": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 12,
+          "numeric": {
+            "max_speed_last_over_first": 1.0023716082246104,
+            "max_jump_speed_last_over_first": 0.978622432436057
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across the three time steps, with maximum and minimum values staying nearly constant. No checkerboard patterns or divergent oscillations are visible."
+          }
+        },
+        "central-dt2e-5-steps00450-00451-00452": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 15,
+          "numeric": {
+            "max_speed_last_over_first": 1.000440345383678,
+            "max_jump_speed_last_over_first": 0.8963539120289822
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across the three time steps, with maximum and minimum values staying nearly constant. No checkerboard patterns or divergent oscillations are visible."
+          }
+        },
+        "central-dt2e-5-steps00441-00444-00447": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 20,
+          "numeric": {
+            "max_speed_last_over_first": 1.0020793409024682,
+            "max_jump_speed_last_over_first": 1.1160133449983136
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across the three time steps, with maximum and minimum values staying within a very narrow range. No oscillations or checkerboard patterns are visible."
+          }
+        },
+        "central-dt2e-5-steps00431-00434-00437": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 30,
+          "numeric": {
+            "max_speed_last_over_first": 0.9939837130785405,
+            "max_jump_speed_last_over_first": 0.886701185200673
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values."
+          }
+        },
+        "central-dt2e-5-steps00415-00416-00417": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 50,
+          "numeric": {
+            "max_speed_last_over_first": 0.9944207296860316,
+            "max_jump_speed_last_over_first": 1.0228554843058428
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values. The maximum and minimum values on the colour bars are stable over time."
+          }
+        },
+        "central-dt2e-5-steps00388-00390-00392": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 75,
+          "numeric": {
+            "max_speed_last_over_first": 1.0084365864594724,
+            "max_jump_speed_last_over_first": 0.9793902454969643
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or uncontrolled growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00363-00365-00367": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 100,
+          "numeric": {
+            "max_speed_last_over_first": 1.0012120336693513,
+            "max_jump_speed_last_over_first": 0.9232868262723825
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging extrema. The maximum and minimum values on the colour bars are stable over time."
+          }
+        },
+        "central-dt2e-5-steps00315-00316-00317": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 150,
+          "numeric": {
+            "max_speed_last_over_first": 1.001702086551666,
+            "max_jump_speed_last_over_first": 1.0355897212885832
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values."
+          }
+        },
+        "central-dt2e-5-steps00263-00265-00267": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 200,
+          "numeric": {
+            "max_speed_last_over_first": 0.9997430066205519,
+            "max_jump_speed_last_over_first": 1.2500086428193196
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for velocity and pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any signs of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes."
+          }
+        },
+        "central-dt2e-5-steps00165-00166-00167": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 300,
+          "numeric": {
+            "max_speed_last_over_first": 1.005886764777873,
+            "max_jump_speed_last_over_first": 1.0124085950002675
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of oscillations, checkerboarding, or uncontrolled growth of extrema."
+          }
+        },
+        "central-dt2e-5-steps00065-00066-00067": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 400,
+          "numeric": {
+            "max_speed_last_over_first": 0.9957374733871056,
+            "max_jump_speed_last_over_first": 0.9762300923205349
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values."
+          }
+        },
+        "central-dt2e-5-steps00003-00005-00007": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt2e-5",
+          "steps_to_crash_last": 460,
+          "numeric": {
+            "max_speed_last_over_first": 0.9984716414075278,
+            "max_jump_speed_last_over_first": 0.9440369622781624
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude and kinematic pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, oscillations, or diverging values."
+          }
+        },
+        "central-dt3e-5-steps00020-00023-00026": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 1,
+          "numeric": {
+            "max_speed_last_over_first": 2.196428576471748,
+            "max_jump_speed_last_over_first": 7.798856377597066
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "unstable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The velocity magnitude |U| shows a sudden, non-physical spike at time 3 (Image 5) near x=15%, y=30%, where a single cell reaches a value of 84.63 m/s while the surrounding field remains much lower. This localized extreme growth is a sign of numerical instability.",
+            "gemma-4-31B-it-qat-q4_0-vision": "At Time 3, the velocity magnitude |U| shows a localized, high-frequency oscillation (checkerboard-like pattern) around x=15%, y=30%, and the maximum velocity value has more than doubled from 39.12 m/s to 84.63 m/s without a physical cause."
+          }
+        },
+        "central-dt3e-5-steps00019-00022-00025": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 2,
+          "numeric": {
+            "max_speed_last_over_first": 1.0291113728417935,
+            "max_jump_speed_last_over_first": 2.113068160503262
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any checkerboard patterns, high-frequency oscillations between adjacent cells, or uncontrolled growth of extreme values."
+          }
+        },
+        "central-dt3e-5-steps00022-00023-00024": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 3,
+          "numeric": {
+            "max_speed_last_over_first": 1.009352373688258,
+            "max_jump_speed_last_over_first": 0.8111934487061241
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across the three time steps, with maximum and minimum values staying within a very narrow range. No checkerboard patterns or divergent oscillations are visible."
+          }
+        },
+        "central-dt3e-5-steps00019-00021-00023": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 4,
+          "numeric": {
+            "max_speed_last_over_first": 1.0212749105257615,
+            "max_jump_speed_last_over_first": 0.9812298732060145
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between cells, or non-physical growth of extrema."
+          }
+        },
+        "central-dt3e-5-steps00016-00019-00022": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 5,
+          "numeric": {
+            "max_speed_last_over_first": 1.036013031453129,
+            "max_jump_speed_last_over_first": 2.6498583558289783
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any signs of checkerboarding, high-frequency oscillations between cells, or unphysical growth of extrema."
+          }
+        },
+        "central-dt3e-5-steps00019-00020-00021": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 6,
+          "numeric": {
+            "max_speed_last_over_first": 1.0116600665641111,
+            "max_jump_speed_last_over_first": 1.300490175630264
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across the three time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values."
+          }
+        },
+        "central-dt3e-5-steps00018-00019-00020": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 7,
+          "numeric": {
+            "max_speed_last_over_first": 1.012227317966978,
+            "max_jump_speed_last_over_first": 1.5067271542907805
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any signs of checkerboarding, high-frequency oscillations between cells, or uncontrolled growth of extrema."
+          }
+        },
+        "central-dt3e-5-steps00013-00016-00019": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 8,
+          "numeric": {
+            "max_speed_last_over_first": 1.0372207417401778,
+            "max_jump_speed_last_over_first": 1.3600129810217805
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any signs of cell-to-cell oscillations, checkerboard patterns, or unphysical growth in extreme values."
+          }
+        },
+        "central-dt3e-5-steps00012-00015-00018": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 9,
+          "numeric": {
+            "max_speed_last_over_first": 1.0363003908737731,
+            "max_jump_speed_last_over_first": 1.0127898176605445
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in extreme values."
+          }
+        },
+        "central-dt3e-5-steps00015-00016-00017": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 10,
+          "numeric": {
+            "max_speed_last_over_first": 1.0124465799931122,
+            "max_jump_speed_last_over_first": 0.9954741996278498
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or unphysical growth in extreme values."
+          }
+        },
+        "central-dt3e-5-steps00013-00014-00015": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 12,
+          "numeric": {
+            "max_speed_last_over_first": 1.012139036204798,
+            "max_jump_speed_last_over_first": 0.9849613911069947
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or uncontrolled growth of extrema."
+          }
+        },
+        "central-dt3e-5-steps00005-00008-00011": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 16,
+          "numeric": {
+            "max_speed_last_over_first": 0.9939596382211652,
+            "max_jump_speed_last_over_first": 1.0853605810587015
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values."
+          }
+        },
+        "central-dt3e-5-steps00005-00006-00007": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 20,
+          "numeric": {
+            "max_speed_last_over_first": 0.9986117810505332,
+            "max_jump_speed_last_over_first": 1.0309492039635497
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude and kinematic pressure fields remain smooth and consistent across all three time steps, with no evidence of checkerboarding, oscillations, or diverging values."
+          }
+        },
+        "central-dt3e-5-steps00001-00002-00003": {
+          "truth": "unstable",
+          "scored": false,
+          "run": "central-dt3e-5",
+          "steps_to_crash_last": 24,
+          "numeric": {
+            "max_speed_last_over_first": 0.9982753792110343,
+            "max_jump_speed_last_over_first": 0.9666253906046595
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, oscillations, or diverging values."
+          }
+        },
+        "central-dt4e-5-steps00003-00006-00009": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt4e-5",
+          "steps_to_crash_last": 1,
+          "numeric": {
+            "max_speed_last_over_first": 8269253.046564474,
+            "max_jump_speed_last_over_first": 36827673.69421168
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "unstable",
+            "gemma-4-31B-it-qat-q4_0-vision": "unstable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The velocity magnitude |U| jumps from ~36 m/s at time 2 to ~3.04e+08 m/s at time 3, indicating a massive numerical explosion. The pressure field also shows extreme values and high-frequency oscillations (checkerboard-like patterns) at time 3.",
+            "gemma-4-31B-it-qat-q4_0-vision": "At time 3, the velocity magnitude and pressure show extreme values (up to 10^8) compared to previous times (up to 10^1), accompanied by high-frequency spatial oscillations (checkerboard pattern) in the pressure field."
+          }
+        },
+        "central-dt4e-5-steps00006-00007-00008": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt4e-5",
+          "steps_to_crash_last": 2,
+          "numeric": {
+            "max_speed_last_over_first": 0.9968237348746648,
+            "max_jump_speed_last_over_first": 0.9809275379076764
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values."
+          }
+        },
+        "central-dt4e-5-steps00005-00006-00007": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt4e-5",
+          "steps_to_crash_last": 3,
+          "numeric": {
+            "max_speed_last_over_first": 0.9967836583439693,
+            "max_jump_speed_last_over_first": 1.0624098032653022
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude and kinematic pressure fields remain smooth and consistent across all three time steps, with no evidence of oscillations, checkerboard patterns, or diverging extremes."
+          }
+        },
+        "central-dt4e-5-steps00002-00004-00006": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt4e-5",
+          "steps_to_crash_last": 4,
+          "numeric": {
+            "max_speed_last_over_first": 0.9950088694990221,
+            "max_jump_speed_last_over_first": 1.0562704249640709
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity magnitude and kinematic pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or diverging extremes."
+          }
+        },
+        "central-dt4e-5-steps00001-00003-00005": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt4e-5",
+          "steps_to_crash_last": 5,
+          "numeric": {
+            "max_speed_last_over_first": 0.9951916312735041,
+            "max_jump_speed_last_over_first": 0.9757606758334896
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values. The maximum and minimum values on the colour bars are stable over time."
+          }
+        },
+        "central-dt4e-5-steps00002-00003-00004": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt4e-5",
+          "steps_to_crash_last": 6,
+          "numeric": {
+            "max_speed_last_over_first": 0.9980392242839344,
+            "max_jump_speed_last_over_first": 1.0112304725880041
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of oscillations, checkerboard patterns, or diverging values."
+          }
+        },
+        "central-dt4e-5-steps00001-00002-00003": {
+          "truth": "unstable",
+          "scored": true,
+          "run": "central-dt4e-5",
+          "steps_to_crash_last": 7,
+          "numeric": {
+            "max_speed_last_over_first": 0.9972604099702965,
+            "max_jump_speed_last_over_first": 0.9575002838226164
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or uncontrolled growth of extrema."
+          }
+        },
+        "central-dt5e-6-steps00200-00300-00400": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.8995296883751417,
+            "max_jump_speed_last_over_first": 1.025837511152045
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve over time. There are no signs of high-frequency oscillations, checkerboard patterns, or non-physical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or unbounded growth of extrema."
+          }
+        },
+        "central-dt5e-6-steps01150-01200-01250": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0763055256279415,
+            "max_jump_speed_last_over_first": 0.9551154694014365
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth, continuous gradients and coherent structures (vortices) that evolve physically over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth in extreme",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in magnitudes."
+          }
+        },
+        "central-dt5e-6-steps01350-01400-01450": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0007822408767635,
+            "max_jump_speed_last_over_first": 0.9353186421822717
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and consistent feature evolution across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or uncontrolled growth of extrema."
+          }
+        },
+        "central-dt5e-6-steps02250-02300-02350": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0098460603380848,
+            "max_jump_speed_last_over_first": 0.8137558953032306
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve consistently over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes."
+          }
+        },
+        "central-dt5e-6-steps02600-02650-02700": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0261024488230064,
+            "max_jump_speed_last_over_first": 0.9715975399187126
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and coherent structures (vortices) that evolve consistently over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or non-physical growth of extrema."
+          }
+        },
+        "central-dt5e-6-steps03300-03400-03500": {
+          "truth": "stable",
+          "scored": true,
+          "run": "central-dt5e-6",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9623493437667844,
+            "max_jump_speed_last_over_first": 1.1881986542499632
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features over time. The velocity and pressure fields exhibit coherent structures and gradients without high-frequency oscillations, checkerboard patterns, or non-physical growth in extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or uncontrolled growth of extrema."
+          }
+        },
+        "developed-steps07908-08308-08708": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9440833566476238,
+            "max_jump_speed_last_over_first": 1.2546810842216811
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve physically over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between cells, or non-physical growth of extrema."
+          }
+        },
+        "developed-steps09908-10308-10708": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9795500513300793,
+            "max_jump_speed_last_over_first": 1.137086283663848
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and coherent structures (vortices and gradients) that evolve consistently over time. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or unbounded growth of extrema."
+          }
+        },
+        "developed-steps11508-11708-11908": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0659481949576373,
+            "max_jump_speed_last_over_first": 0.8698846877282156
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve physically over time. There are no signs of high-frequency oscillations, checkerboard patterns, or non-physical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboarding, or non-physical growth of extremes."
+          }
+        },
+        "developed-steps13708-13908-14108": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.977756527609257,
+            "max_jump_speed_last_over_first": 1.3152798821086522
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow shows smooth evolution of features over time. The velocity magnitude and pressure fields exhibit continuous changes in structure and magnitude without any high-frequency oscillations, checkerboard patterns, or non-physical growth of extremes.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboarding, or uncontrolled growth of extrema."
+          }
+        },
+        "developed-steps15708-16108-16508": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9727906445371736,
+            "max_jump_speed_last_over_first": 1.1032423246488707
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth transitions in velocity and pressure. The features, such as the moving high-velocity region and the pressure fluctuations, evolve consistently over time without signs of checkerboard patterns, high-frequency oscillations, or unphysical growth.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or uncontrolled growth of extrema."
+          }
+        },
+        "developed-steps16508-16908-17308": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9292918482480421,
+            "max_jump_speed_last_over_first": 1.1159402162118703
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields show smooth transitions in velocity and pressure. The evolution of the structures, such as the moving high-velocity region and the pressure fluctuations, appears physically consistent with unsteady fluid motion rather than numerical noise or checkerboard patterns.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboarding, or non-physical growth of extrema."
+          }
+        },
+        "developed-steps19908-20108-20308": {
+          "truth": "stable",
+          "scored": true,
+          "run": "developed",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9391786666340115,
+            "max_jump_speed_last_over_first": 1.3490179136955929
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes."
+          }
+        },
+        "upwind-dt2e-5-steps00060-00080-00100": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.953765348057398,
+            "max_jump_speed_last_over_first": 0.9329995511763982
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve consistently over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or diverging values. The maximum and minimum values on the colour bars remain within a consistent range."
+          }
+        },
+        "upwind-dt2e-5-steps00270-00280-00290": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9812867742274672,
+            "max_jump_speed_last_over_first": 1.1144925689298044
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or uncontrolled growth of extreme values."
+          }
+        },
+        "upwind-dt2e-5-steps00650-00660-00670": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0024017611185456,
+            "max_jump_speed_last_over_first": 1.0836316720321937
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboarding, or uncontrolled growth of extrema."
+          }
+        },
+        "upwind-dt2e-5-steps00800-00820-00840": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9604111339683683,
+            "max_jump_speed_last_over_first": 0.7124727866617304
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve consistently over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or divergent growth in magnitudes."
+          }
+        },
+        "upwind-dt2e-5-steps01320-01340-01360": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.0465754457283434,
+            "max_jump_speed_last_over_first": 1.0145709321497827
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve consistently over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboarding, or unphysical growth of extremes."
+          }
+        },
+        "upwind-dt2e-5-steps01550-01560-01570": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9903854371048814,
+            "max_jump_speed_last_over_first": 1.3504115978202438
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across the three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or uncontrolled growth of extrema."
+          }
+        },
+        "upwind-dt2e-5-steps01680-01690-01700": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt2e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9920919670877815,
+            "max_jump_speed_last_over_first": 0.9551484073599014
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or divergent values. The maximum and minimum values on the colour bars remain consistent across the time steps."
+          }
+        },
+        "upwind-dt4e-5-steps00170-00190-00210": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9628945443995902,
+            "max_jump_speed_last_over_first": 0.7725928587393994
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and coherent structures that evolve over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or uncontrolled growth of extrema."
+          }
+        },
+        "upwind-dt4e-5-steps00270-00280-00290": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9857400723020473,
+            "max_jump_speed_last_over_first": 1.132366360903511
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve consistently over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any signs of cell-to-cell oscillations, checkerboard patterns, or unphysical growth in extreme values."
+          }
+        },
+        "upwind-dt4e-5-steps00610-00630-00650": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.018102128378853,
+            "max_jump_speed_last_over_first": 0.7173619791023684
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures that evolve consistently over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboarding, or non-physical growth of extrema."
+          }
+        },
+        "upwind-dt4e-5-steps00970-00980-00990": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 1.075091254206314,
+            "max_jump_speed_last_over_first": 0.8718440648053349
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values between time steps.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any high-frequency oscillations, checkerboard patterns, or non-physical growth in extremes. The changes are consistent with a developing unsteady flow."
+          }
+        },
+        "upwind-dt4e-5-steps01200-01210-01220": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9888594532040439,
+            "max_jump_speed_last_over_first": 1.3370196001450314
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and consistent evolution over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between cells, or non-physical growth of extrema."
+          }
+        },
+        "upwind-dt4e-5-steps01550-01570-01590": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9534440905081449,
+            "max_jump_speed_last_over_first": 0.8081701931351607
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and coherent structures that evolve consistently over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unbounded growth of extrema."
+          }
+        },
+        "upwind-dt4e-5-steps01720-01740-01760": {
+          "truth": "stable",
+          "scored": true,
+          "run": "upwind-dt4e-5",
+          "steps_to_crash_last": null,
+          "numeric": {
+            "max_speed_last_over_first": 0.9714610397036977,
+            "max_jump_speed_last_over_first": 0.7193965596625577
+          },
+          "answers": {
+            "gemma-4-12b-it-qat-q4_0-vision": "stable",
+            "gemma-4-31B-it-qat-q4_0-vision": "stable"
+          },
+          "reasons": {
+            "gemma-4-12b-it-qat-q4_0-vision": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and continuous evolution of features (such as the moving pressure peaks and velocity structures) over time. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth of local",
+            "gemma-4-31B-it-qat-q4_0-vision": "The velocity and pressure fields evolve smoothly over time without any evidence of cell-to-cell oscillations, checkerboard patterns, or unphysical growth of extremes. The maximum values remain stable across the time steps."
+          }
+        }
+      },
+      "against_oct28": {
+        "gemma-4-12b-it-qat-q4_0-vision": {
+          "items": 70,
+          "same": 69,
+          "stable_to_unstable": [],
+          "unstable_to_stable": [
+            "central-dt2e-5-steps00461-00462-00463"
+          ],
+          "other": 0
+        },
+        "gemma-4-31B-it-qat-q4_0-vision": {
+          "items": 70,
+          "same": 69,
+          "stable_to_unstable": [],
+          "unstable_to_stable": [
+            "central-dt2e-5-steps00460-00461-00462"
+          ],
+          "other": 0
+        }
+      }
+    }
+  }
+}

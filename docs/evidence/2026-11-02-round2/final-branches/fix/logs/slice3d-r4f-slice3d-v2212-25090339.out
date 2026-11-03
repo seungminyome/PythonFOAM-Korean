@@ -1,0 +1,18 @@
+job 25090339 node t294.cluster code 7ef95883750a47d3de89ee220da3477e4c949f4f start 2026-11-02T21:41:37Z
+build + validation ran
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/fix/slice3d/v2212-25090339/pod-v2212.UQW4no
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/fix/slice3d/v2212-25090339/pod-v2212.UQW4no/bin/PODFoam
+run start 21:42:33
+z3 exit 0 22:01:02
+POD plane slice: z=0.00396875 requested=0.00396875 (POD_SLICE_Z) mesh z range=(0 0.0127) cut cells=20540
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=20540 ranks=1 slice z=0.00396875
+Python finalized successfully
+End
+Time lines 300 snapshots 300 SVDs 6 analysis 300 Traceback 0
+frame step-000050: U.png fields.npz p.png readable-metadata.json 
+frame step-000100: U.png fields.npz p.png readable-metadata.json 
+frame step-000150: U.png fields.npz p.png readable-metadata.json 
+frame step-000200: U.png fields.npz p.png readable-metadata.json 
+frame step-000250: U.png fields.npz p.png readable-metadata.json 
+frame step-000300: U.png fields.npz p.png readable-metadata.json 
+inner exit 0 end 2026-11-02T22:01:02Z

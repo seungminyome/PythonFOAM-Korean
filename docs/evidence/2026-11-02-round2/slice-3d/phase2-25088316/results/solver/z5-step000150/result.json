@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is fastest in the upper half of the domain, particularly around the center, while it is slowest in the lower half. The pressure is lowest in a concentrated region near the center-left and is relatively higher in the bottom-right and top-left areas.\",\n  \"fastest_flow_x_percent\": 40,\n  \"fastest_flow_y_percent\": 48,\n  \"lowest_pressure_x_percent\": 40,\n  \"lowest_pressure_y_percent\": 30,\n  \"uncertainties\": \"The exact physical boundaries and the specific geometry causing the pressure drop are not explicitly labeled.\"\n}",
+  "request_sha256": "fa047d380826317f0c2afff8c622eefc30c972e5fc2a5c8ab768ad43219c31be",
+  "request_bytes": 224182,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1222,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 157,
+    "prompt_tokens": 998,
+    "total_tokens": 1155,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 998,
+    "prompt_ms": 269.207,
+    "prompt_per_token_ms": 0.2697464929859719,
+    "prompt_per_second": 3707.1844342829127,
+    "predicted_n": 157,
+    "predicted_ms": 1968.865,
+    "predicted_per_token_ms": 12.620929487179486,
+    "predicted_per_second": 79.23346699748332
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly around the center, while it is slowest in the lower half. The pressure is lowest in a concentrated region near the center-left and is relatively higher in the bottom-right and top-left areas.",
+    "fastest_flow_x_percent": 40,
+    "fastest_flow_y_percent": 48,
+    "lowest_pressure_x_percent": 40,
+    "lowest_pressure_y_percent": 30,
+    "uncertainties": "The exact physical boundaries and the specific geometry causing the pressure drop are not explicitly labeled."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.228036604821682,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

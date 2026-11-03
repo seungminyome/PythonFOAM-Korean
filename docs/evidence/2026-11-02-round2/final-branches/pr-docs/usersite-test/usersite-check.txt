@@ -1,0 +1,14 @@
+# E5 check: validation/run.sh ignores a numpy that only the user site holds
+# date: 2026-11-02 18:32:18 -0700; host: mblog1; run.sh from r6/pr-fix 6df2fa2, blob 13a9370
+# python: /usr/bin/python3 3.9.25
+$ /usr/bin/python3 -s -c 'import numpy'   # without the user site
+ModuleNotFoundError: No module named 'numpy'
+exit 1
+# stand-in package: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r5/pr/usersite-test/userbase/lib/python3.9/site-packages/numpy/__init__.py
+$ PYTHONUSERBASE=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r5/pr/usersite-test/userbase /usr/bin/python3 -c 'import numpy; print(numpy.__version__, numpy.__file__)'
+0+stand-in /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r5/pr/usersite-test/userbase/lib/python3.9/site-packages/numpy/__init__.py
+exit 0
+$ PYTHONUSERBASE=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r5/pr/usersite-test/userbase PYTHON=/usr/bin/python3 POD_WORKSPACE=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r5/pr/usersite-test/ws bash run.sh
+Set PYTHON to a Python with numpy (now: '/usr/bin/python3')
+exit 1
+workspace made: no

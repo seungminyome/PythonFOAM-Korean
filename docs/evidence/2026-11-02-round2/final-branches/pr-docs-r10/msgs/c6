@@ -1,0 +1,12 @@
+PODFoam: bridge validation
+
+validation/run.sh builds PODFoam into a fresh directory under
+validation/runs/. It runs ten steps of a stabilised copy of Run_Case
+with pimpleFoam and with PODFoam. A minimal python_module.py keeps the
+ten snapshots and returns five SVD modes per component. verify.py checks
+the snapshots against the written U, the returned modes against the
+written fields, and U and p against pimpleFoam. A failed step names its
+log. The README lists what a module must provide and what changes in
+PODFoam with the commits before this one.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

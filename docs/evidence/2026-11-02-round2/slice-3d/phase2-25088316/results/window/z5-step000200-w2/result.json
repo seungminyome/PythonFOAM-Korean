@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half of the domain, with a distinct boundary layer or wake structure starting around x=50%. The velocity is highest in the upper right quadrant. Pressure is relatively uniform in the upper left but shows significant fluctuations and a deep minimum in the lower right quadrant, corresponding to the wake area.\",\n  \"fastest_flow_x_percent\": 78,\n  \"fastest_flow_y_percent\": 75,\n  \"lowest_pressure_x_percent\": 78,\n  \"lowest_pressure_y_percent\": 62,\n  \"uncertainties\": \"The exact physical nature of the boundary at x=50% and the specific geometry of the object causing the wake are not explicitly labeled.\"\n}",
+  "request_sha256": "4341f9a28cb150bc74963f5a4a701fa14ea278f4bc09c48976cf825a773b699f",
+  "request_bytes": 180748,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1350,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 183,
+    "prompt_tokens": 1060,
+    "total_tokens": 1243,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1060,
+    "prompt_ms": 282.7,
+    "prompt_per_token_ms": 0.26669811320754716,
+    "prompt_per_second": 3749.5578351609483,
+    "predicted_n": 183,
+    "predicted_ms": 2295.95,
+    "predicted_per_token_ms": 12.615109890109888,
+    "predicted_per_second": 79.27001894640564
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct boundary layer or wake structure starting around x=50%. The velocity is highest in the upper right quadrant. Pressure is relatively uniform in the upper left but shows significant fluctuations and a deep minimum in the lower right quadrant, corresponding to the wake area.",
+    "fastest_flow_x_percent": 78,
+    "fastest_flow_y_percent": 75,
+    "lowest_pressure_x_percent": 78,
+    "lowest_pressure_y_percent": 62,
+    "uncertainties": "The exact physical nature of the boundary at x=50% and the specific geometry of the object causing the wake are not explicitly labeled."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.601612314581871,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z7-step000200-w2",
+  "design": {
+    "run": "z7",
+    "slice_z_m": 0.0103125,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.0103125,
+      "requested_z_m": 0.0103125,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 200,
+    "time_s": 0.101750000000001,
+    "plotted_range_m": {
+      "x": [
+        -0.05126823382592299,
+        0.10398881997589077
+      ],
+      "y": [
+        -0.010189882015770816,
+        0.03511867104552076
+      ]
+    },
+    "cells_in_window": 7853,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "c99aacffdb35ac5a0d96fa2df1ad9ebc929e1b9de127bddebb02375208702eed",
+  "wall_s": 3.3156604692339897,
+  "usage": {
+    "completion_tokens": 176,
+    "prompt_tokens": 1061,
+    "total_tokens": 1237,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 284.636,
+    "prompt_per_token_ms": 0.26827144203581527,
+    "prompt_per_second": 3727.5678410320547,
+    "predicted_n": 176,
+    "predicted_ms": 2207.512,
+    "predicted_per_token_ms": 12.614354285714287,
+    "predicted_per_second": 79.27476724928336
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper region (y > 50%) and slowest in the lower region (y < 50%) where a boundary layer or wake structure is visible. Pressure is lowest in the center-right region (x=65%, y=50%) and highest in the upper-right corner.",
+    "fastest_flow_x_percent": 65,
+    "fastest_flow_y_percent": 70,
+    "lowest_pressure_x_percent": 65,
+    "lowest_pressure_y_percent": 50,
+    "uncertainties": "The exact physical geometry of the obstacles or boundaries is not explicitly labeled, and the specific fluid properties are not provided."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        65,
+        70
+      ],
+      "true_percent": [
+        66.4167540254379,
+        63.25615130656047
+      ],
+      "error_percent": [
+        -1.4167540254378963,
+        6.743848693439531
+      ],
+      "distance_percent": 6.8910584940631985,
+      "error_m": [
+        -0.002199610559513477,
+        0.0030555402636402687
+      ],
+      "distance_m": 0.00376491871309993,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        65,
+        50
+      ],
+      "true_percent": [
+        65.74226596792192,
+        44.920688372675095
+      ],
+      "error_percent": [
+        -0.7422659679219237,
+        5.0793116273249055
+      ],
+      "distance_percent": 5.133260696147532,
+      "error_m": [
+        -0.0011524202731690947,
+        0.002301362603814857
+      ],
+      "distance_m": 0.0025737797730669633,
+      "within_10_percent": true
+    }
+  }
+}

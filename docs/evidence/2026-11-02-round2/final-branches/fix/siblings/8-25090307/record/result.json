@@ -1,0 +1,81 @@
+{
+ "solver": "PODFoam_Debug",
+ "version": "8",
+ "upstream": "d686a64dbec54a7cf82dc3852c406775a9144adc",
+ "builds": {
+  "upstream": true
+ },
+ "runs": {
+  "recording": {
+   "exit": "0",
+   "steps": 222,
+   "snapshot_files": [
+    "snapshots-1-rank0.npz",
+    "snapshots-2-rank0.npz"
+   ],
+   "python_tracebacks": 0,
+   "python_print_lines": 219,
+   "last_log_lines": [
+    "Numpy array cast time: 0.11 ms",
+    "Snapshot collection wall time: 2.04 ms",
+    "IO wall time: 0.00 ms",
+    "End",
+    ""
+   ],
+   "matrices": {
+    "snapshots-1-rank0.npz:u": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 14.533231954707343
+    },
+    "snapshots-1-rank0.npz:v": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 70.73042806346518
+    },
+    "snapshots-1-rank0.npz:w": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 1.0855034007249269e-13
+    },
+    "snapshots-2-rank0.npz:u": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 0.5390425867674296
+    },
+    "snapshots-2-rank0.npz:v": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 11.255010433985898
+    },
+    "snapshots-2-rank0.npz:w": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 9.0207404617854e-19
+    }
+   },
+   "n_matrices": 6,
+   "n_col0_equals_col1": 0
+  }
+ },
+ "cross": {},
+ "written_fields": {}
+}

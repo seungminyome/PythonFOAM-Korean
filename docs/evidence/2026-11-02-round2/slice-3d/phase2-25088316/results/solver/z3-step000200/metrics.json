@@ -1,0 +1,114 @@
+{
+  "set": "solver",
+  "name": "z3-step000200",
+  "design": {
+    "run": "z3",
+    "slice_z_m": 0.00396875,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00396875,
+      "requested_z_m": 0.00396875,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 200,
+    "time_s": 0.101750000000001,
+    "plotted_range_m": {
+      "x": [
+        0.0,
+        0.12
+      ],
+      "y": [
+        0.0,
+        0.04
+      ]
+    },
+    "cells_in_window": 7906
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "860e52d34aef3d63e5d7a2c784bc3abcdfdaa02737e09bfc4800305ade1e32a3",
+  "wall_s": 3.087294775992632,
+  "usage": {
+    "completion_tokens": 166,
+    "prompt_tokens": 996,
+    "total_tokens": 1162,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 996,
+    "prompt_ms": 263.625,
+    "prompt_per_token_ms": 0.26468373493975905,
+    "prompt_per_second": 3778.0938833570412,
+    "predicted_n": 166,
+    "predicted_ms": 2081.717,
+    "predicted_per_token_ms": 12.616466666666668,
+    "predicted_per_second": 79.26149423768936
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly around the center, and slowest in the lower half where a dark, low-velocity region exists. The pressure is lowest in a concentrated dark spot near the center-left and highest in the bottom-right corner.",
+    "fastest_flow_x_percent": 45,
+    "fastest_flow_y_percent": 48,
+    "lowest_pressure_x_percent": 43,
+    "lowest_pressure_y_percent": 30,
+    "uncertainties": "The exact physical boundaries and the nature of the obstacles or walls causing the pressure drop and velocity gradients are not explicitly labeled."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        45,
+        48
+      ],
+      "true_percent": [
+        43.20705142064119,
+        46.176412158732546
+      ],
+      "error_percent": [
+        1.7929485793588071,
+        1.8235878412674538
+      ],
+      "distance_percent": 2.55736919959619,
+      "error_m": [
+        0.0021515382952305684,
+        0.0007294351365069816
+      ],
+      "distance_m": 0.0022718258415236454,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        43,
+        30
+      ],
+      "true_percent": [
+        42.33439284868753,
+        25.40757977765028
+      ],
+      "error_percent": [
+        0.6656071513124715,
+        4.59242022234972
+      ],
+      "distance_percent": 4.640404764514078,
+      "error_m": [
+        0.0007987285815749658,
+        0.001836968088939888
+      ],
+      "distance_m": 0.0020031023705263345,
+      "within_10_percent": true
+    }
+  }
+}

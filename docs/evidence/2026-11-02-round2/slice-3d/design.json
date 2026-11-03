@@ -1,0 +1,17 @@
+{
+  "written": "2026-11-01, before any job ran; not changed after the results",
+  "question": "Does Gemma 4 12B read the fastest-flow and lowest-pressure positions from the observer's slice pictures (|U| and p) of the 3D step case?",
+  "code": "PythonFOAM PR tree bf7a06e (worktree r2/slice-3d), OpenFOAM v2212 (of2212.sif); the observer's own slice frames, LLM_ENABLED=0 during the solver runs",
+  "start_state": "serial3d/0.10075 of job 24929629 (pod-3d-20261028/run-24929629): the extruded 3D step case (164,320 cells, walls front and back) started from the developed 2D flow at t = 0.1 s and run 150 steps with the walls acting. U, p, phi copied; uniform/time removed so the step count starts at 0.",
+  "runs": "4 serial runs of 300 steps (dt 5e-6 s, t 0.10075 to 0.10225 s), one per slice plane POD_SLICE_Z = 0.00079375, 0.00396875, 0.00714375, 0.01031250 m (cell layers 1, 3, 5 and 7 of 8; 0.00714375 is the plane the default lands on). v2 describe frames every 50 steps (LLM_ANALYSIS_STEP=50, LLM_ANALYSIS_EVERY=50): steps 50..300, 6 frames per run, 24 frames. Plotted window x 0..0.12 m, y 0..0.04 m as in all earlier runs. Fields written every 50 steps.",
+  "sets": {
+    "solver": "the 24 frames as the solver drew them (fixed window): one describe request each",
+    "window": "2 random windows per frame drawn offline from the frame's slice arrays and polygons with readable_request.render_frame (the solver's renderer), the window placed by the 2026-10-22 window-test rule (MARGIN 0.15, y span 0.03..0.114 m, aspect 1.5..4, at least 200 cells, around the slice's fastest cell), seed 20261101: 48 requests"
+  },
+  "requests_total": 72,
+  "request": "readable_request.describe_v2_payload: the two pictures and the 2D test's describe prompt; the answers fastest_flow_x/y_percent and lowest_pressure_x/y_percent are scored",
+  "model": "Gemma 4 12B QAT Q4_0 + projector, llama.cpp b11429 (llm-runtime-12b), one GPU (l40s|a6000|a30), LLM_CTX=4096 LLM_BATCH=512 LLM_UBATCH=512, image tokens 256, as the 2026-10-30 GPU jobs; temperature 0, seed 20261021, cache_prompt false",
+  "scoring": "a position is right when its distance to the true cell (argmax |U|, argmin p over the slice cells inside the plotted range, from fields.npz) is at most 10 % of the plotted range (frame_scoring.score_describe). Reported: right/attempted per question, per set and over all 72.",
+  "baseline": "constant answer: the integer (x, y) in 0..100 that is within 10 % of the most answer keys, one answer for a whole set (and one for all 72), computed from the arrays before the model runs; the picture_test grouping by plotted range is not used because every window differs.",
+  "not_claimed": "the 3D flow is not developed in z: the start state has had the walls for 150 steps and the runs add 300; slices differ from each other mainly near the walls."
+}

@@ -1,0 +1,21 @@
+/apps/s/apptainer/1.4.1/bin/apptainer
+job 25090624 node t399.cluster url file:///cluster/medbow/gscratch/syome/github_repos/PythonFOAM image 0d457351692d
+=== r4/pr-fix (expected commit: 8954b2544d0f)
+remote head: 8954b2544d0f669d0079f6138eec6983944cf4d5	refs/heads/r4/pr-fix
+Validation directory: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.8OqxXX
+verification: "status": "PASS"
+E2E r4/pr-fix 8954b2544d0f669d0079f6138eec6983944cf4d5 PASS 0
+  log: PASS: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.8OqxXX
+  log: verification: "status": "PASS"
+  log: E2E r4/pr-fix 8954b2544d0f669d0079f6138eec6983944cf4d5 PASS 0
+RESULT r4/pr-fix 8954b2544d0f669d0079f6138eec6983944cf4d5 PASS (exit 0)
+=== r4/pr-observer (expected commit: 24e9df6f5640)
+remote head: 24e9df6f5640594e2dbbd9a817231717fe8310ef	refs/heads/r4/pr-observer
+Validation directory: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.SAgQzH
+verification: "status": "PASS"
+E2E r4/pr-observer 24e9df6f5640594e2dbbd9a817231717fe8310ef PASS 0
+  log: PASS: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.SAgQzH
+  log: verification: "status": "PASS"
+  log: E2E r4/pr-observer 24e9df6f5640594e2dbbd9a817231717fe8310ef PASS 0
+RESULT r4/pr-observer 24e9df6f5640594e2dbbd9a817231717fe8310ef PASS (exit 0)
+done: 0 failed

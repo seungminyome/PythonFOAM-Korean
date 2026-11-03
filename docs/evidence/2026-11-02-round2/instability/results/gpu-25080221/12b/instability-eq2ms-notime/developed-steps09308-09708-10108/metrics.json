@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "4d1bb9dea65747e52c2e2e29ced3fb7c70646718d5f461bcac0a933d1027210c",
+  "request_bytes": 636067,
+  "replay_wall_s": 2.3623858354985714,
+  "client_inference_wall_s": 2.3364915773272514,
+  "usage": {
+    "completion_tokens": 64,
+    "prompt_tokens": 1972,
+    "total_tokens": 2036,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 635.764,
+    "prompt_per_token_ms": 0.322395537525355,
+    "prompt_per_second": 3101.7799057511907,
+    "predicted_n": 64,
+    "predicted_ms": 807.246,
+    "predicted_per_token_ms": 12.81342857142857,
+    "predicted_per_second": 78.0431244007403
+  },
+  "structured_output": {
+    "reason": "The flow fields for both velocity magnitude and kinematic pressure show smooth transitions and coherent structures that evolve physically over time. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth in extreme values.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "stable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

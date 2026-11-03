@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z5-step000050-w2",
+  "design": {
+    "run": "z5",
+    "slice_z_m": 0.00714375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00714375,
+      "requested_z_m": 0.00714375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 50,
+    "time_s": 0.10100000000000026,
+    "plotted_range_m": {
+      "x": [
+        -0.15854342053159637,
+        0.19451148689501518
+      ],
+      "y": [
+        -0.0026880266671564304,
+        0.10100555523529306
+      ]
+    },
+    "cells_in_window": 11888,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "4324b9bc6e60fabbbe0a0298f26ed754a4faf38bcffe284e43e3157c8a9be81f",
+  "wall_s": 3.2355445437133312,
+  "usage": {
+    "completion_tokens": 177,
+    "prompt_tokens": 1063,
+    "total_tokens": 1240,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 285.074,
+    "prompt_per_token_ms": 0.2681787394167451,
+    "prompt_per_second": 3728.856367118713,
+    "predicted_n": 177,
+    "predicted_ms": 2220.141,
+    "predicted_per_token_ms": 12.614437500000001,
+    "predicted_per_second": 79.27424429349307
+  },
+  "structured_output": {
+    "flow_description": "The flow is generally uniform in the upper region with a distinct horizontal boundary layer at the bottom. A complex wake or interaction zone exists between x=45% and x=70% at low y-coordinates, where velocity fluctuates and pressure shows significant local variations.",
+    "fastest_flow_x_percent": 55,
+    "fastest_flow_y_percent": 25,
+    "lowest_pressure_x_percent": 55,
+    "lowest_pressure_y_percent": 15,
+    "uncertainties": "The exact physical nature of the obstacle or geometry causing the wake at x=45% is not visible; the specific values of velocity and pressure are unknown without the color bar scale."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        55,
+        25
+      ],
+      "true_percent": [
+        56.62512873281709,
+        19.579391011429998
+      ],
+      "error_percent": [
+        -1.625128732817089,
+        5.420608988570002
+      ],
+      "distance_percent": 5.658979166350905,
+      "error_m": [
+        -0.005737596743210639,
+        0.005620823621174375
+      ],
+      "distance_m": 0.008032040498407184,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        55,
+        15
+      ],
+      "true_percent": [
+        56.92187645034522,
+        12.725680162491676
+      ],
+      "error_percent": [
+        -1.9218764503452235,
+        2.2743198375083242
+      ],
+      "distance_percent": 2.977606389984319,
+      "error_m": [
+        -0.006785279122620177,
+        0.0023583237034303503
+      ],
+      "distance_m": 0.007183432568210457,
+      "within_10_percent": true
+    }
+  }
+}

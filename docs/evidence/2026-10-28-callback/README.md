@@ -4,7 +4,7 @@ MedicineBow(와이오밍 대학교)의 Slurm 작업 24929555, CPU 파티션 `mb`
 OpenFOAM v2212(Apptainer 이미지 `of2212.sif`)의 PODFoam을 `main`(`2ed6da2`, [callback-main/](callback-main/python_module.py)에
 복사)의 Python 콜백과 브랜치 `callback-telemetry-trends`(`16d665e`)의 Python 콜백으로, 같은 경우에서 같은
 설정으로 돌렸습니다. 바뀐 점은
-[llm_demo/README.md](../../../Solver_Examples/PODFoam/llm_demo/README.md#telemetryjsonl)에 설명되어 있습니다.
+[llm_demo/README.md](https://github.com/seungminyome/PythonFOAM-Korean/blob/5c56995/Solver_Examples/PODFoam/llm_demo/README.md#telemetryjsonl)에 설명되어 있습니다.
 
 [영문 문서](https://github.com/seungminyome/PythonFOAM/blob/main/docs/evidence/2026-10-28-callback/README.md)
 

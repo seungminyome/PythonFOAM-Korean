@@ -1,0 +1,81 @@
+{
+ "solver": "AEFoam",
+ "version": "8",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "builds": {
+  "upstream": true,
+  "ported": true
+ },
+ "runs": {
+  "copy": {
+   "exit": "139",
+   "steps": 102,
+   "snapshot_files": [
+    "snapshots-1-rank0.npz"
+   ],
+   "python_tracebacks": 0,
+   "python_print_lines": 99,
+   "last_log_lines": [
+    "smoothSolver:  Solving for Uy, Initial residual = 0.00181488934315, Final residual = 8.81245661143e-06, No Iterations 18",
+    "GAMG:  Solving for p, Initial residual = 0.898999425772, Final residual = 0.0367429592692, No Iterations 3",
+    "time step continuity errors : sum local = 1.05929258998e-06, global = 1.7651572921e-10, cumulative = -9.82953746598e-07",
+    "GAMG:  Solving for p, Initial residual = 0.576656820699, Final residual = 8.73835485937e-07, No Iterations 6",
+    "time step continuity errors : sum local = 1.74153587513e-11, global = -1.93473459062e-12, cumulative = -9.82955681332e-07"
+   ],
+   "matrices": {
+    "snapshots-1-rank0.npz:s": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 14.533231954707343
+    }
+   },
+   "n_matrices": 1,
+   "n_col0_equals_col1": 0
+  },
+  "ported": {
+   "exit": "139",
+   "steps": 102,
+   "snapshot_files": [
+    "snapshots-1-rank0.npz"
+   ],
+   "python_tracebacks": 0,
+   "python_print_lines": 99,
+   "last_log_lines": [
+    "smoothSolver:  Solving for Uy, Initial residual = 0.00181488934315, Final residual = 8.81245661143e-06, No Iterations 18",
+    "GAMG:  Solving for p, Initial residual = 0.898999425772, Final residual = 0.0367429592692, No Iterations 3",
+    "time step continuity errors : sum local = 1.05929258998e-06, global = 1.7651572921e-10, cumulative = -9.82953746598e-07",
+    "GAMG:  Solving for p, Initial residual = 0.576656820699, Final residual = 8.73835485937e-07, No Iterations 6",
+    "time step continuity errors : sum local = 1.74153587513e-11, global = -1.93473459062e-12, cumulative = -9.82955681332e-07"
+   ],
+   "matrices": {
+    "snapshots-1-rank0.npz:s": {
+     "shape": [
+      20540,
+      99
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 14.533231954707343
+    }
+   },
+   "n_matrices": 1,
+   "n_col0_equals_col1": 0
+  }
+ },
+ "cross": {
+  "ported_equals_copy_whole_matrix": {
+   "snapshots-1-rank0.npz:s": true
+  }
+ },
+ "written_fields": {
+  "copy_vs_ported": [
+   {
+    "time": "6.75948e-05",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ]
+ }
+}

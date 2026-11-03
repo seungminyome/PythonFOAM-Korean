@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or unphysical growth in extreme values.\", \"stability\": \"stable\"}",
+  "request_sha256": "7a128a76a13bf581d01ee08af5b0f8403b960aaaa63037159bdc4ff6b1ea6803",
+  "request_bytes": 662827,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 854,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 50,
+    "prompt_tokens": 1972,
+    "total_tokens": 2022,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1578.032,
+    "prompt_per_token_ms": 0.8002190669371196,
+    "prompt_per_second": 1249.6578016161905,
+    "predicted_n": 50,
+    "predicted_ms": 1454.32,
+    "predicted_per_token_ms": 29.68,
+    "predicted_per_second": 33.692722371967655
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields remain smooth across all time steps, with no evidence of checkerboarding, cell-to-cell oscillations, or unphysical growth in extreme values.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.065939512103796,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow is generally fast in the upper region and slow in the lower region, particularly behind a step. The pressure is high in the upper right and low in the wake region behind the step, with a localized minimum near the center of the wake.\",\n  \"fastest_flow_x_percent\": 50,\n  \"fastest_flow_y_percent\": 45,\n  \"lowest_pressure_x_percent\": 50,\n  \"lowest_pressure_y_percent\": 38,\n  \"uncertainties\": \"The exact magnitude of the velocity and pressure values cannot be determined without the specific numerical values from the color bars, only their relative positions.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644645,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 163,
+    "prompt_tokens": 1061,
+    "total_tokens": 1224,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-w62MnZgj09jP8FiLxtfUJjfvRjT63152",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 281.266,
+    "prompt_per_token_ms": 0.26509519321394914,
+    "prompt_per_second": 3772.2298464798446,
+    "predicted_n": 163,
+    "predicted_ms": 2043.38,
+    "predicted_per_token_ms": 12.613456790123458,
+    "predicted_per_second": 79.28040795153129
+  }
+}

@@ -1,0 +1,11 @@
+host t399.cluster cpus=4 nproc=4 py=/gscratch/syome/conda/ci-py310/bin/python3 src=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/flaky/base/PODFoam/llm_demo N=30 PAR=8 start Sun Nov  1 22:53:31 MST 2026
+3.10.22 | packaged by conda-forge | (main, Oct  6 2026, 23:02:24) [GCC 14.4.0]
+end Sun Nov  1 22:58:49 MST 2026 load=15.14 13.99 11.27
+passed 19 of 30
+      2 FAIL: test_connection_refused_is_reported_without_a_stall (test_async.AsyncTests)
+      1 FAIL: test_requests_every_n_steps_write_their_own_records_and_an_index (test_async.PeriodicRequestTests)
+     10 FAIL: test_sequence_asynchronous (test_async.SequenceModeTests)
+     10 AssertionError: 'timeout' != 'ok'
+      1 AssertionError: 2.0919141080230474 not less than 2.0
+      1 AssertionError: 2.208665883168578 not less than 2.0
+      1 AssertionError: Lists differ: ['step-000002', 'step-000008'] != ['step-000002', 'step-000005', 'step-000008']

@@ -1,0 +1,98 @@
+t377.cluster
+build + validation ran
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/pod-v2212.b9NZvt
+exe=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/slice-3d/phase1-25080032/pod-v2212.b9NZvt/bin/PODFoam
+runs start 05:54:47
+z3 exit 0 06:15:50
+POD plane slice: z=0.00396875 requested=0.00396875 (POD_SLICE_Z) mesh z range=(0 0.0127) cut cells=20540
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=20540 ranks=1 slice z=0.00396875
+Python finalized successfully
+End
+z1 exit 0 06:15:52
+POD plane slice: z=0.00079375 requested=0.00079375 (POD_SLICE_Z) mesh z range=(0 0.0127) cut cells=20540
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=20540 ranks=1 slice z=0.00079375
+Python finalized successfully
+End
+z5 exit 0 06:15:53
+POD plane slice: z=0.00714375 requested=0.00714375 (POD_SLICE_Z) mesh z range=(0 0.0127) cut cells=20540
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=20540 ranks=1 slice z=0.00714375
+Python finalized successfully
+End
+z7 exit 0 06:16:09
+POD plane slice: z=0.0103125 requested=0.0103125 (POD_SLICE_Z) mesh z range=(0 0.0127) cut cells=20540
+POD mesh geometry passed to Python: cells=164320 solutionD=(1 1 1) cellPolygons=20540 ranks=1 slice z=0.0103125
+Python finalized successfully
+End
+z1 frames: 6
+z3 frames: 6
+z5 frames: 6
+z7 frames: 6
+runs done
+inner exit 0
+z1: z=0.00079375 frames=['step-000050', 'step-000100', 'step-000150', 'step-000200', 'step-000250', 'step-000300']
+z3: z=0.00396875 frames=['step-000050', 'step-000100', 'step-000150', 'step-000200', 'step-000250', 'step-000300']
+z5: z=0.00714375 frames=['step-000050', 'step-000100', 'step-000150', 'step-000200', 'step-000250', 'step-000300']
+z7: z=0.0103125 frames=['step-000050', 'step-000100', 'step-000150', 'step-000200', 'step-000250', 'step-000300']
+{
+ "sets": {
+  "solver": 24,
+  "window": 48
+ },
+ "baseline": {
+  "solver": {
+   "fastest_flow": {
+    "right": 24,
+    "of": 24,
+    "answer_percent": [
+     42.0,
+     38.0
+    ]
+   },
+   "lowest_pressure": {
+    "right": 24,
+    "of": 24,
+    "answer_percent": [
+     40.0,
+     18.0
+    ]
+   }
+  },
+  "window": {
+   "fastest_flow": {
+    "right": 11,
+    "of": 48,
+    "answer_percent": [
+     56.0,
+     25.0
+    ]
+   },
+   "lowest_pressure": {
+    "right": 8,
+    "of": 48,
+    "answer_percent": [
+     49.0,
+     8.0
+    ]
+   }
+  },
+  "all": {
+   "fastest_flow": {
+    "right": 27,
+    "of": 72,
+    "answer_percent": [
+     42.0,
+     38.0
+    ]
+   },
+   "lowest_pressure": {
+    "right": 29,
+    "of": 72,
+    "answer_percent": [
+     45.0,
+     24.0
+    ]
+   }
+  }
+ }
+}
+make_windows exit 0

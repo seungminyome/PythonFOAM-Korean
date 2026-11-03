@@ -1,7 +1,7 @@
 # 10월 30일 근거: OpenFOAM 버전과 원본 PODFoam
 
-2026-10-30 MedicineBow(와이오밍 대학교)의 Slurm 작업입니다. 관찰 기능을 넣은 PODFoam을 OpenFOAM v2012, v2106, v2212, 8에서
-각각 Apptainer 이미지로 돌렸고, `6fde869`의 원본 PODFoam과 비교했습니다. 보고서는
+2026-10-30에 와이오밍 대학교 MedicineBow에서 돌린 Slurm 작업입니다. 관찰 기능을 넣은 PODFoam을 OpenFOAM v2012,
+v2106, v2212, 8에서 각각 Apptainer 이미지로 돌렸습니다. `6fde869`의 원본 PODFoam과도 비교했습니다. 보고서는
 [results-20261030.md](../../results-20261030.md)입니다.
 [report_numbers.py](report_numbers.py)는 보고서의 수치를 여기 기록에서 읽어 [report-numbers.json](report-numbers.json)에 씁니다.
 
@@ -9,11 +9,12 @@
 
 ## 코드
 
-커밋 해시는 영문 저장소 기준입니다. 대부분의 작업은 `b17763d`를 돌렸습니다. PR 트리(브랜치 `pr/podfoam-observer`, 이전 README)의
-로컬 커밋이며 GitHub에 없습니다. 코드는 `bf7a06e`, `main`과 같습니다.
-[code-identity.txt](code-identity.txt)는 `Solver_Examples/PODFoam` 아래 파일 64개(README 세 개 제외)의 blob을 git 객체에서 읽어 적습니다.
+커밋 해시는 영문 저장소 기준입니다. 대부분의 작업은 `b17763d`를 돌렸습니다. PR 트리의 로컬 커밋이며
+GitHub에 없습니다. 2026-10-30에 브랜치 `pr/podfoam-observer`였던 `bf7a06e`의 트리에서 README 두
+개만 이전 판인 커밋입니다. 코드는 `6677bac`의 `main`과도 같습니다. [code-identity.txt](code-identity.txt)는
+`Solver_Examples/PODFoam` 아래에서 README 세 개를 뺀 파일 64개의 blob을 git 객체에서 읽어 적습니다.
 그 폴더 아래에서 `b17763d`와 `bf7a06e`가 다른 파일은 `llm_demo/README.md`와 `llm_demo/hpc/README.md`뿐입니다.
-`main`에만 있는 파일 24개(실험 스크립트, 그 테스트)도 거기에 있습니다. 단위 테스트 말고 여기 작업 중 이 파일들을 돌린 것은 없습니다.
+`main`에만 있는 파일 24개, 곧 실험 스크립트와 그 테스트도 거기에 있습니다. 단위 테스트 말고 여기 작업 중 이 파일들을 돌린 것은 없습니다.
 
 작업 폴더마다 `HEAD`가 있고, `git-status.txt`를 기록한 작업에서는 모두 비어 있습니다.
 
@@ -21,7 +22,7 @@
 
 | 폴더 | 작업 | 코드 | 실행한 것 | 결과 |
 |---|---|---|---|---|
-| `matrix/` | 24950780\~24950783 | `b17763d` | [version_check.sbatch](scripts/matrix/version_check.sbatch): 빌드와 연결 검증, 이어서 모델 없는 관찰 기능(`LLM_ENABLED=0`), 100단계의 v2 프레임, t = 0.1 s에서 110단계: `serial2d`, `serial3d`, `par2d`, `par3d` | [compare.out](compare.out), [version-compare.json](version-compare.json); 모두 PASS, 네 버전 모두 네 케이스가 끝까지 감 |
+| `matrix/` | 24950780\~24950783 | `b17763d` | [version_check.sbatch](scripts/matrix/version_check.sbatch): 빌드와 연결 검증, 이어서 모델에 요청을 보내지 않는 관찰 기능(`LLM_ENABLED=0`), 100단계의 v2 프레임, t = 0.1 s에서 110단계: `serial2d`, `serial3d`, `par2d`, `par3d` | [compare.out](compare.out), [version-compare.json](version-compare.json); 모두 PASS, 네 버전 모두 네 케이스가 끝까지 감 |
 | `commits/` | 24950784\~24950791 | `2a93911`, `69cc2c1` | [try_version.sh](scripts/try_version.sh): PR 트리의 커밋 2와 3에서 검증 | 넷 모두 PASS |
 | `stand-in/` | 24950794\~24950797 | `b17763d` | [suites.sbatch](scripts/stand-in/suites.sbatch): 검증, `run_demo.sh`의 시험 모음 둘과 v2 비동기 시험 모음, [stub_server.py](scripts/stand-in/stub_server.py) 상대로 | 모두 종료 코드 0과 `PASS` |
 | `documented-commands/` | 24950840\~24950843 | `b17763d` | [doc_commands.sh](scripts/refix-jobs/doc_commands.sh): PR 트리 `llm_demo/README.md`의 관찰 기능 명령을 새 사본에서 | 파일 45개 중 45개 같음, `DOC COMMANDS PASS` |
@@ -59,7 +60,9 @@ matrix 실행은 PR 트리에 없는 케이스 두 개를 씁니다. [version_ch
 원본의 첫 열 덮어쓰기도 재현합니다. `fork-plainp`는 이 포크의 솔버에서 `pEqn.H`의 `#ifdef`를 원본의 단순한 `pEqn.solve()`로 바꾼
 것입니다. 제공된 `Run_Case`에서 [pod_account_inner.sh](scripts/matrix/pod_account_inner.sh)와
 [upstream_regression_inner.sh](scripts/matrix/upstream_regression_inner.sh)는 `endTime`을 1.5e-4로, `startFrom`을 `startTime`으로,
-`writePrecision`을 12로 정하고 `0/uniform/time`을 지웁니다. Docker 작업은 케이스를 바꾸지 않고 돌립니다.
+`writePrecision`을 12로 정하고 `0/uniform/time`을 지웁니다. Docker 작업은 케이스를 바꾸지 않고 돌립니다. Ubuntu 18.04.5와
+Python 3.6.9는 그 이미지를 Apptainer 파일로 받은 작업 24949654(2026-10-30)에서 `/etc/os-release`와 `python3 --version`이 출력한
+값입니다. 그 출력은 여기 없습니다.
 
 작업 24950817과 24950818은 [submit_suite.sh](scripts/gpu/submit_suite.sh)처럼 `--constraint='l40s|a6000'`으로 제출되었고,
 `l40s|a6000|a30`으로 mba30-005에서 시작했습니다([gpu-constraints.txt](gpu-constraints.txt)). [sacct.txt](sacct.txt)의 다른 작업은
@@ -71,7 +74,9 @@ matrix 실행은 PR 트리에 없는 케이스 두 개를 씁니다. [version_ch
 모델 파일, 시험 모음마다의 `run-archive.tar.gz`입니다. 솔버 로그와 텔레메트리는 gzip 사본입니다. 기록 안의 경로는 기록된 그대로입니다.
 
 [hf-no-token.txt](hf-no-token.txt)는 12B 가중치와 프로젝터를 토큰 없이 요청한 두 건을 기록하며, 둘 다 200으로 응답했습니다.
-`setup_12b.sh` 자체는 대역 `curl`로만 돌렸고(작업 24950752, 여기 없음), 이 형태로 파일을 받은 적은 없습니다.
+`setup_12b.sh` 자체는 여기서는 대역 `curl`로만 돌렸습니다(작업 24950752, 여기 없음). 2026-11-02에는 로그인 노드에서 토큰 없이
+파일 네 개, 7.9 GB를 46.5 s에 내려받았습니다([11월 2일 보고서](../../results-20261102.md#실제로-내려받은-setup_12bsh),
+[2차 확인 근거](../2026-11-02-round2/README.md)).
 
 [sacct.txt](sacct.txt)에는 작업마다 상태, 노드, 파티션, 시간이 있습니다. 잘못된 설정 작업([그 sacct.txt](../2026-10-30-wrong-setup/job/sacct.txt))과
 시작 상태를 만든 실행 24757460([10월 22일](../2026-10-22-live-v2/README.md)), 24929629([10월 28일](../2026-10-28-3d/README.md))는

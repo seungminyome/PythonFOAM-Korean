@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.\", \"stability\": \"stable\"}",
+  "request_sha256": "639574430093386f038059f784d7288b2ef29e8e1988e36790c0cab7e0041ee5",
+  "request_bytes": 652211,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 942,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 61,
+    "prompt_tokens": 1972,
+    "total_tokens": 2033,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 656.318,
+    "prompt_per_token_ms": 0.3328184584178499,
+    "prompt_per_second": 3004.6410429090774,
+    "predicted_n": 61,
+    "predicted_ms": 768.729,
+    "predicted_per_token_ms": 12.81215,
+    "predicted_per_second": 78.0509126102957
+  },
+  "structured_output": {
+    "reason": "The flow fields for both velocity magnitude and kinematic pressure remain smooth and consistent across all three time steps. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or unphysical growth in extreme values.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.2359193228185177,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

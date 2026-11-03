@@ -1,0 +1,30 @@
+job 25090330 node t347.cluster
+=== c7 8954b25
+Python 3.6.9
+g++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+NAME="Ubuntu"
+VERSION="18.04.5 LTS (Bionic Beaver)"
+=== validation: only an OpenFOAM sourced, no variable set
+validation exit 0
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/fix/docker-25090330/c7/ws/pod-8.aExlLd
+verification.json lines: 74
+"status": "PASS"
+=== validation --baseline
+validation --baseline exit 0
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/fix/docker-25090330/c7/ws/pod-8.0igRfG
+inner exit 0
+=== obs 7ef9588
+Python 3.6.9
+g++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+NAME="Ubuntu"
+VERSION="18.04.5 LTS (Bionic Beaver)"
+=== validation: only an OpenFOAM sourced, no variable set
+validation exit 0
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/fix/docker-25090330/obs/ws/pod-8.XyTq9z
+verification.json lines: 74
+"status": "PASS"
+=== validation --baseline
+validation --baseline exit 0
+PASS: /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r4/fix/docker-25090330/obs/ws/pod-8.XlHmAG
+inner exit 0
+done

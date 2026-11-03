@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "6e9f24c199d0424f1dc20e0c672a883b3689fd53d7f8853eef4109bceb4ff69b",
+  "request_bytes": 661323,
+  "replay_wall_s": 4.137088995426893,
+  "client_inference_wall_s": 4.11164790019393,
+  "usage": {
+    "completion_tokens": 45,
+    "prompt_tokens": 1972,
+    "total_tokens": 2017,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1622.438,
+    "prompt_per_token_ms": 0.822737322515213,
+    "prompt_per_second": 1215.4547662221914,
+    "predicted_n": 45,
+    "predicted_ms": 1306.666,
+    "predicted_per_token_ms": 29.696954545454545,
+    "predicted_per_second": 33.673486568105396
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency spatial oscillations, checkerboard patterns, or unbounded growth of extrema.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "stable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

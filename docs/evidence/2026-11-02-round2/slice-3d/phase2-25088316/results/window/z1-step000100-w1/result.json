@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity boundary layer or wake structure along the bottom. The pressure field shows a complex pattern of high and low pressure zones in the lower half, particularly between 20% and 60% of the x-range.\",\n  \"fastest_flow_x_percent\": 35,\n  \"fastest_flow_y_percent\": 38,\n  \"lowest_pressure_x_percent\": 33,\n  \"lowest_pressure_y_percent\": 28,\n  \"uncertainties\": \"The exact physical nature of the geometry and the specific fluid properties are not provided.\"\n}",
+  "request_sha256": "eae6ee2e7b4984180e59e8a5f8ff361f98ead6bbf6bdaa2d4f7b7175081f78c4",
+  "request_bytes": 216967,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1242,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 168,
+    "prompt_tokens": 1063,
+    "total_tokens": 1231,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 283.533,
+    "prompt_per_token_ms": 0.2667290686735654,
+    "prompt_per_second": 3749.1226770781527,
+    "predicted_n": 168,
+    "predicted_ms": 2106.628,
+    "predicted_per_token_ms": 12.61453892215569,
+    "predicted_per_second": 79.27360692063334
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity boundary layer or wake structure along the bottom. The pressure field shows a complex pattern of high and low pressure zones in the lower half, particularly between 20% and 60% of the x-range.",
+    "fastest_flow_x_percent": 35,
+    "fastest_flow_y_percent": 38,
+    "lowest_pressure_x_percent": 33,
+    "lowest_pressure_y_percent": 28,
+    "uncertainties": "The exact physical nature of the geometry and the specific fluid properties are not provided."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.386598514392972,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

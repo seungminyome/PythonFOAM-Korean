@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow is fastest in the upper region and near the center-right, with a distinct low-velocity wake or boundary layer extending from the left. Pressure is lowest in a localized region near the center of the wake and highest in the upper-right and lower-right corners.\",\n  \"fastest_flow_x_percent\": 50,\n  \"fastest_flow_y_percent\": 75,\n  \"lowest_pressure_x_percent\": 48,\n  \"lowest_pressure_y_percent\": 63,\n  \"uncertainties\": \"The exact physical boundaries and the nature of the obstacle causing the wake are not explicitly labeled.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644662,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 1060,
+    "total_tokens": 1220,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-bguH5nU0qmxDRzuwmDDfPezaWsvhf81j",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1060,
+    "prompt_ms": 280.099,
+    "prompt_per_token_ms": 0.2642443396226415,
+    "prompt_per_second": 3784.3762384014226,
+    "predicted_n": 160,
+    "predicted_ms": 2006.092,
+    "predicted_per_token_ms": 12.616930817610063,
+    "predicted_per_second": 79.25857837028411
+  }
+}

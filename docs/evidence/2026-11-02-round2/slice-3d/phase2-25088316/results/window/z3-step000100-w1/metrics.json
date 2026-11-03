@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z3-step000100-w1",
+  "design": {
+    "run": "z3",
+    "slice_z_m": 0.00396875,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00396875,
+      "requested_z_m": 0.00396875,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 100,
+    "time_s": 0.1012500000000005,
+    "plotted_range_m": {
+      "x": [
+        -0.05680912418754542,
+        0.15593954139503896
+      ],
+      "y": [
+        -0.046725723901216244,
+        0.03291569404124151
+      ]
+    },
+    "cells_in_window": 8798,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "520e349c209708eb6f673e87a0b9c916b2231996fb794cf7ae5d8340e39fd8c0",
+  "wall_s": 3.687553083524108,
+  "usage": {
+    "completion_tokens": 187,
+    "prompt_tokens": 1062,
+    "total_tokens": 1249,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 284.488,
+    "prompt_per_token_ms": 0.26787947269303203,
+    "prompt_per_second": 3733.0221309861927,
+    "predicted_n": 187,
+    "predicted_ms": 2346.042,
+    "predicted_per_token_ms": 12.613129032258064,
+    "predicted_per_second": 79.2824680888066
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity zone between y=60% and y=75% extending from x=25% to x=100%. The pressure field shows alternating high and low regions in the center-right area, with a significant low-pressure peak near the center of the flow structure.",
+    "fastest_flow_x_percent": 48,
+    "fastest_flow_y_percent": 82,
+    "lowest_pressure_x_percent": 48,
+    "lowest_pressure_y_percent": 72,
+    "uncertainties": "The exact physical boundaries and the nature of the obstacle or geometry causing the flow separation are not explicitly labeled."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        48,
+        82
+      ],
+      "true_percent": [
+        47.626920830785124,
+        82.04097530309427
+      ],
+      "error_percent": [
+        0.3730791692148756,
+        -0.040975303094271
+      ],
+      "distance_percent": 0.37532258387383133,
+      "error_m": [
+        0.0007937209540712398,
+        -3.263331239049719e-05
+      ],
+      "distance_m": 0.0007943915193463076,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        48,
+        72
+      ],
+      "true_percent": [
+        48.119400324520306,
+        71.70159305058691
+      ],
+      "error_percent": [
+        -0.11940032452030636,
+        0.2984069494130921
+      ],
+      "distance_percent": 0.32140806609912914,
+      "error_m": [
+        -0.00025402259711822706,
+        0.00023765552575141915
+      ],
+      "distance_m": 0.0003478615080270776,
+      "within_10_percent": true
+    }
+  }
+}

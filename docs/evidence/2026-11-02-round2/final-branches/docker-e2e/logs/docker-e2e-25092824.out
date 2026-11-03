@@ -1,0 +1,21 @@
+/apps/s/apptainer/1.4.1/bin/apptainer
+job 25092824 node ttest01.cluster url file:///cluster/medbow/gscratch/syome/github_repos/PythonFOAM image 0d457351692d
+=== r5/pr-fix (expected commit: d4ebf5cfa289)
+remote head: d4ebf5cfa2896a6aec6dee44b8b7ca70ff2f36ae	refs/heads/r5/pr-fix
+Validation directory: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.Dx6fpg
+verification: "status": "PASS"
+E2E r5/pr-fix d4ebf5cfa2896a6aec6dee44b8b7ca70ff2f36ae PASS 0
+  log: PASS: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.Dx6fpg
+  log: verification: "status": "PASS"
+  log: E2E r5/pr-fix d4ebf5cfa2896a6aec6dee44b8b7ca70ff2f36ae PASS 0
+RESULT r5/pr-fix d4ebf5cfa2896a6aec6dee44b8b7ca70ff2f36ae PASS (exit 0)
+=== r5/pr-observer (expected commit: ca68b32be749)
+remote head: ca68b32be74908c7443f64a47489a500abfc6748	refs/heads/r5/pr-observer
+Validation directory: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.Sgq1RE
+verification: "status": "PASS"
+E2E r5/pr-observer ca68b32be74908c7443f64a47489a500abfc6748 PASS 0
+  log: PASS: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.Sgq1RE
+  log: verification: "status": "PASS"
+  log: E2E r5/pr-observer ca68b32be74908c7443f64a47489a500abfc6748 PASS 0
+RESULT r5/pr-observer ca68b32be74908c7443f64a47489a500abfc6748 PASS (exit 0)
+done: 0 failed

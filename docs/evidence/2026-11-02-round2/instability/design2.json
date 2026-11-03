@@ -1,0 +1,21 @@
+{
+  "note": "Instability test of 2026-11-01: the runs of 2026-10-28, frames 2e-3 s apart in both classes (set A), and the 2026-10-28 triples drawn again without times (set B0). central-dt3e-5 and central-dt4e-5 are too short for a 4e-3 s triple and are in set B0 only (in_eq_set false).",
+  "window_m": [[0.0, 0.12], [0.0, 0.04]],
+  "gap_s": 0.002,
+  "runs": [
+    {"name": "central-dt2e-5", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261028/central-dt2e-5-long",
+     "early_steps_to_crash": [12, 15, 20, 30, 50, 75, 100, 150, 200, 260]},
+    {"name": "central-dt3e-5", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261027/unstable/central-dt3e-5",
+     "in_eq_set": false},
+    {"name": "central-dt4e-5", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261027/unstable/central-dt4e-5",
+     "in_eq_set": false},
+    {"name": "upwind-dt2e-5", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261028/upwind-dt2e-5-long",
+     "stable_items": 2},
+    {"name": "upwind-dt4e-5", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261028/upwind-dt4e-5-long",
+     "stable_items": 2},
+    {"name": "developed", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261022/long-100ms",
+     "stable_items": 3, "first_time_s": 0.032},
+    {"name": "central-dt5e-6", "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261028/central-dt5e-6-long",
+     "stable_items": 3}
+  ]
+}

@@ -1,0 +1,545 @@
+OUT=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/APMOSFoam-8-25080209 host=t374.cluster start=2026-11-01T22:58:29-07:00
+WM_PROJECT_VERSION=8
+python 3.11.16 numpy 2.4.6
+BUILD ok
+binary 905808 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/siblings/runs/APMOSFoam-8-25080209/bin/APMOSFoam
+recording exit 0 steps 222 snapshots 8
+copy exit 0 steps 222 snapshots 8
+inner exit 0
+{
+ "solver": "APMOSFoam",
+ "version": "8",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "build": "ok",
+ "runs": {
+  "recording": {
+   "exit": "0",
+   "steps": 222,
+   "snapshot_files": [
+    "snapshots-1-rank0.npz",
+    "snapshots-1-rank1.npz",
+    "snapshots-1-rank2.npz",
+    "snapshots-1-rank3.npz",
+    "snapshots-2-rank0.npz",
+    "snapshots-2-rank1.npz",
+    "snapshots-2-rank2.npz",
+    "snapshots-2-rank3.npz"
+   ],
+   "python_tracebacks": 0,
+   "last_log_lines": [
+    "Snapshot collection wall time: 0.77 ms",
+    "IO wall time: 0.00 ms",
+    "Resource usage line 107:213276",
+    "Snapshot collection wall time: 0.95 ms",
+    "IO wall time: 0.00 ms",
+    "Finalising parallel run"
+   ],
+   "signals": []
+  },
+  "copy": {
+   "exit": "0",
+   "steps": 222,
+   "snapshot_files": [
+    "snapshots-1-rank0.npz",
+    "snapshots-1-rank1.npz",
+    "snapshots-1-rank2.npz",
+    "snapshots-1-rank3.npz",
+    "snapshots-2-rank0.npz",
+    "snapshots-2-rank1.npz",
+    "snapshots-2-rank2.npz",
+    "snapshots-2-rank3.npz"
+   ],
+   "python_tracebacks": 0,
+   "last_log_lines": [
+    "End",
+    "",
+    "Resource usage line 107:205404",
+    "Snapshot collection wall time: 1.22 ms",
+    "IO wall time: 0.00 ms",
+    "Finalising parallel run"
+   ],
+   "signals": []
+  }
+ },
+ "snapshots": [
+  {
+   "file": "snapshots-1-rank0.npz",
+   "u": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 14.457914376267244,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "v": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 1.6061256568276185,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "w": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 4.528231141879143e-14,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   }
+  },
+  {
+   "file": "snapshots-1-rank1.npz",
+   "u": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 3.974386341646021,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "v": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 2.639034106700021,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "w": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 7.295742401290808e-14,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   }
+  },
+  {
+   "file": "snapshots-1-rank2.npz",
+   "u": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 4.660941606854525,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "v": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 0.15371188854328208,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "w": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 1.0813774815709911e-14,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   }
+  },
+  {
+   "file": "snapshots-1-rank3.npz",
+   "u": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 5.231063472722088,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "v": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 68.36596908384914,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "w": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 1.0852199240931831e-13,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   }
+  },
+  {
+   "file": "snapshots-2-rank0.npz",
+   "u": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 0.5388161265952789,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "v": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 0.3300724808575124,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "w": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 4.2932450715659354e-20,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   }
+  },
+  {
+   "file": "snapshots-2-rank1.npz",
+   "u": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 0.04168747505002912,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "v": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 0.0003455877830975361,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "w": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 1.0999860440014983e-19,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   }
+  },
+  {
+   "file": "snapshots-2-rank2.npz",
+   "u": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 0.049704534503902664,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "v": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 0.0014490459000384703,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "w": {
+    "shape_recording": [
+     5502,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     5502,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 1.083863589654853e-20,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   }
+  },
+  {
+   "file": "snapshots-2-rank3.npz",
+   "u": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 0.2541820879022847,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "v": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 9.71682360301298,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   },
+   "w": {
+    "shape_recording": [
+     4768,
+     99
+    ],
+    "recording_col0_equals_col1": true,
+    "recording_col0_minus_col1_max": 0.0,
+    "shape_copy": [
+     4768,
+     99
+    ],
+    "copy_col0_equals_col1": false,
+    "copy_col0_minus_col1_max": 1.0241831427300767e-18,
+    "recording_col0_equals_copy_col1": true,
+    "columns_from_1_identical": true,
+    "col0_differs_between_runs": true
+   }
+  }
+ ],
+ "written_fields_recording_vs_copy": [
+  {
+   "time": "6.7602e-05",
+   "U_identical_bytes": true,
+   "p_identical_bytes": true,
+   "pod_or_rec_files": [
+    "upod_0",
+    "upod_1",
+    "upod_2",
+    "upod_3",
+    "upod_4",
+    "vpod_0",
+    "vpod_1",
+    "vpod_2",
+    "vpod_3",
+    "vpod_4",
+    "wpod_0",
+    "wpod_1",
+    "wpod_2",
+    "wpod_3",
+    "wpod_4"
+   ]
+  },
+  {
+   "time": "0.000133306",
+   "U_identical_bytes": true,
+   "p_identical_bytes": true,
+   "pod_or_rec_files": [
+    "upod_0",
+    "upod_1",
+    "upod_2",
+    "upod_3",
+    "upod_4",
+    "vpod_0",
+    "vpod_1",
+    "vpod_2",
+    "vpod_3",
+    "vpod_4",
+    "wpod_0",
+    "wpod_1",
+    "wpod_2",
+    "wpod_3",
+    "wpod_4"
+   ]
+  }
+ ]
+}
+end=2026-11-01T22:59:59-07:00

@@ -1,0 +1,110 @@
+== per-commit pairs (r6 -> r7): non-.md diff, tree, files changed by the commit
+c1 17dc16a -> cf0d716  non-md diff bytes 0; same files; same tree
+c2 9c577ba -> 6b0e1f5  non-md diff bytes 0; same files; same tree
+c3 a8e4df7 -> a045dd8  non-md diff bytes 0; same files; same tree
+c4 50a22fb -> d43cb0a  non-md diff bytes 0; same files; same tree
+c5 a172215 -> 4f732b5  non-md diff bytes 0; same files; same tree
+c6 7f04a4e -> b0636a2  non-md diff bytes 0; same files; md differs: Solver_Examples/PODFoam/validation/README.md 
+c7 6df2fa2 -> b3e510c  non-md diff bytes 0; same files; md differs: README.md Solver_Examples/PODFoam/validation/README.md 
+c8 c066e65 -> 5dbe2f5  non-md diff bytes 0; same files; md differs: README.md Solver_Examples/PODFoam/validation/README.md 
+c9 9b776db -> 38ee69d  non-md diff bytes 0; same files; md differs: README.md Solver_Examples/PODFoam/llm_demo/README.md Solver_Examples/PODFoam/validation/README.md 
+c10 bb1cb4b -> 255629e  non-md diff bytes 0; same files; md differs: README.md Solver_Examples/PODFoam/llm_demo/README.md Solver_Examples/PODFoam/llm_demo/hpc/README.md Solver_Examples/PODFoam/validation/README.md 
+c11 4414179 -> c1710d0  non-md diff bytes 0; same files; md differs: README.md Solver_Examples/PODFoam/llm_demo/README.md Solver_Examples/PODFoam/llm_demo/hpc/README.md Solver_Examples/PODFoam/validation/README.md 
+== r6/pr-fix vs r7/pr-fix: README.md Solver_Examples/PODFoam/validation/README.md 
+== r6/pr-observer vs r7/pr-observer: README.md Solver_Examples/PODFoam/llm_demo/README.md Solver_Examples/PODFoam/llm_demo/hpc/README.md Solver_Examples/PODFoam/validation/README.md 
+   files outside the five docs: 0
+== r7/pr-fix is r7/pr-observer~4: yes
+== base: 6fde8698071b56f913c5e92c647f22ab38b26466; parents: 0 commits with other than one parent
+== dates along the 11 commits (author | committer)
+   cf0d716 2026-11-02 14:30:55 | 2026-11-02 20:18:31  increasing yes
+   6b0e1f5 2026-11-02 14:31:05 | 2026-11-02 20:18:32  increasing yes
+   a045dd8 2026-11-02 14:32:03 | 2026-11-02 20:18:33  increasing yes
+   d43cb0a 2026-11-02 14:32:17 | 2026-11-02 20:18:34  increasing yes
+   4f732b5 2026-11-02 14:32:23 | 2026-11-02 20:18:35  increasing yes
+   b0636a2 2026-11-02 14:33:52 | 2026-11-02 20:18:36  increasing yes
+   b3e510c 2026-11-02 14:34:33 | 2026-11-02 20:18:37  increasing yes
+   5dbe2f5 2026-11-02 14:35:45 | 2026-11-02 20:18:38  increasing yes
+   38ee69d 2026-11-02 14:51:08 | 2026-11-02 20:18:39  increasing yes
+   255629e 2026-11-02 14:51:17 | 2026-11-02 20:18:40  increasing yes
+   c1710d0 2026-11-02 14:51:18 | 2026-11-02 20:18:41  increasing yes
+== messages
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c1 subject 64 body 12 maxline 71 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c2 subject 62 body 7 maxline 71 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c3 subject 67 body 8 maxline 71 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c4 subject 47 body 7 maxline 69 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c5 subject 63 body 8 maxline 71 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c6 subject 26 body 8 maxline 72 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c7 subject 43 body 8 maxline 72 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c8 subject 51 body 8 maxline 72 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c9 subject 66 body 8 maxline 72 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c10 subject 34 body 8 maxline 72 OK
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/loop/r6/fix/pr/counts/msgs-final/c11 subject 46 body 5 maxline 72 OK
+   subjects equal to r6: yes
+   bodies changed: c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 c11 
+   author/committer: Seungmin Yome <wab8131028@gmail.com>|Seungmin Yome <wab8131028@gmail.com>
+   banned trailer name in messages 0, in tree 0, in diff 0
+   'upstream' in messages 0, in the five docs 0
+   trailer lines 11 of 11
+   blank line before trailer: 11 of 11
+   diff --check clean
+== control-run and term checks in the five docs and the messages (r7/pr-observer)
+   'reference run': docs 4, messages 0
+   'reference case': docs 0, messages 0
+   'model-off': docs 0, messages 0
+   'model off': docs 0, messages 0
+   'no-request': docs 0, messages 0
+   'run without requests': docs 0, messages 0
+   'run with no request\b': docs 0, messages 0
+   'POD fields': docs 0, messages 0
+   'true positions': docs 0, messages 0
+   'about 2 minutes': docs 0, messages 0
+   '15 to 27': docs 0, messages 0
+      r7/pr-observer:Solver_Examples/PODFoam/llm_demo/README.md:172:| `POD_WORKSPACE`, `POD_REFERENCE_RUN` | Where runs go, parent of the checkout; reference run, the newest passed validation run in `validation/runs/` or the workspace |
+      r7/pr-observer:Solver_Examples/PODFoam/llm_demo/hpc/README.md:30:- `POD_REFERENCE_RUN`: the reference run, a passed validation run of that image.
+      r7/pr-observer:Solver_Examples/PODFoam/llm_demo/hpc/README.md:32:  `constant/polyMesh` beside it. The five mesh files must equal the reference run's
+      r7/pr-observer:Solver_Examples/PODFoam/llm_demo/hpc/README.md:69:# the reference run, in the image, on a node with apptainer
+== links and quoted references at c6..c11
+c6 b0636a2 exit 0, ok 4, broken 0
+c7 b3e510c exit 0, ok 5, broken 0
+c8 5dbe2f5 exit 0, ok 7, broken 0
+c9 38ee69d exit 0, ok 8, broken 0
+c10 255629e exit 0, ok 10, broken 0
+c11 c1710d0 exit 0, ok 12, broken 0
+== numbers kept (r6 doc -> r7 doc, as committed)
+validation/README.md: numbers 32 distinct in r6, missing 0 []; identifiers 14 distinct, missing 0 []
+   new in r7: numbers [] identifiers []
+   fewer occurrences (r6, r7): {}
+README.md@fix: numbers 13 distinct in r6, missing 0 []; identifiers 14 distinct, missing 0 []
+   new in r7: numbers ['3.6', '3.6.9'] identifiers []
+   fewer occurrences (r6, r7): {}
+README.md@observer: numbers 13 distinct in r6, missing 0 []; identifiers 14 distinct, missing 0 []
+   new in r7: numbers ['3.6', '3.6.9'] identifiers []
+   fewer occurrences (r6, r7): {}
+HOOKS.md: numbers 7 distinct in r6, missing 0 []; identifiers 4 distinct, missing 0 []
+   new in r7: numbers [] identifiers []
+   fewer occurrences (r6, r7): {}
+llm_demo/README.md@c9: numbers 62 distinct in r6, missing 0 []; identifiers 19 distinct, missing 0 []
+   new in r7: numbers [] identifiers []
+   fewer occurrences (r6, r7): {}
+llm_demo/README.md@c10-11: numbers 62 distinct in r6, missing 0 []; identifiers 20 distinct, missing 0 []
+   new in r7: numbers [] identifiers []
+   fewer occurrences (r6, r7): {}
+llm_demo/hpc/README.md: numbers 45 distinct in r6, missing 0 []; identifiers 24 distinct, missing 0 []
+   new in r7: numbers [] identifiers []
+   fewer occurrences (r6, r7): {}
+== passages the code cites are still there
+   hpc/README.md names build_llama_cuda.sh: 5 lines
+   HOOKS.md explains the left-out empty directions: 1 line
+== committed docs equal the r7docs files
+   validation_README.md = r7/pr-observer:Solver_Examples/PODFoam/validation/README.md
+   validation_README.md = r7/pr-fix:Solver_Examples/PODFoam/validation/README.md
+   HOOKS.md = r7/pr-observer:Solver_Examples/PODFoam/HOOKS.md
+   llm_README_c9.md = r7/pr-observer~2:Solver_Examples/PODFoam/llm_demo/README.md
+   llm_README_c10.md = r7/pr-observer:Solver_Examples/PODFoam/llm_demo/README.md
+   hpc_README.md = r7/pr-observer:Solver_Examples/PODFoam/llm_demo/hpc/README.md
+   README_fix.md = r7/pr-fix:README.md
+   README_obs.md = r7/pr-observer:README.md
+== worktrees
+   wt-fix b3e510c r7/pr-fix, status lines 0
+   wt-obs c1710d0 r7/pr-observer, status lines 0
+OVERALL PASS

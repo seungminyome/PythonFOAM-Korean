@@ -1,0 +1,16 @@
+PODFoam: NumPy owns each snapshot; calls into Python are checked
+
+snapshot_func got a view of a C++ buffer that the next step overwrote,
+so the shipped module's first snapshot of each window held the second
+step's values. Each snapshot is now an array NumPy owns, filled after U
+and p pass a finite check. A failed import, missing function, exception
+or SystemExit stops the run with the traceback. So does a changed cell
+count, or an svd_func result that is not finite float64 with 1 or more
+columns or whose count differs between ranks. Mode files are
+dimensionless zeroGradient fields. podTruncation in controlDict, default
+5, caps the modes written; more columns give one warning. sys.path
+starts with the case folder. Py_FinalizeEx at exit waits for non-daemon
+threads. A write step with no snapshot since the last SVD now collects
+one; the earlier code ran svd_func at every write step.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

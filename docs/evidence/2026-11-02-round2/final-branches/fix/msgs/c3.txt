@@ -1,0 +1,12 @@
+PODFoam: setRootCaseLists.H; floating-point traps off around Python
+
+setRootCaseLists.H replaces the hand-written argList, so PODFoam parses its
+arguments like pimpleFoam and gets the same signal handlers, including the
+floating-point traps that the earlier argList(..., initialise=false) skipped.
+NumPy's import overflows on purpose while probing machine limits, so the traps
+are off around initialization, every call into Python and finalization:
+PythonCompat.H gives sigFpe::ignore on openfoam.com and a small class on
+openfoam.org, which has none; pending flags are cleared before the traps return.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+

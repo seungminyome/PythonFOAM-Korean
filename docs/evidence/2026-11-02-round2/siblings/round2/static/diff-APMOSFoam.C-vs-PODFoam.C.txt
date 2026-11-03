@@ -1,0 +1,9 @@
+58a59
+> #define PY_ARRAY_UNIQUE_SYMBOL POD_ARRAY_API
+60c61,64
+< #include <sys/resource.h>
+---
+> 
+> void init_numpy() {
+>   import_array1();
+> }

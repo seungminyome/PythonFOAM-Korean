@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "885133c1bdedb6a7f8c91eca69b72c6ca9521b05144ecb5819e7120e2b843d04",
+  "request_bytes": 677051,
+  "replay_wall_s": 2.230353808030486,
+  "client_inference_wall_s": 2.2056975588202477,
+  "usage": {
+    "completion_tokens": 54,
+    "prompt_tokens": 1972,
+    "total_tokens": 2026,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 634.35,
+    "prompt_per_token_ms": 0.32167849898580125,
+    "prompt_per_second": 3108.693938677386,
+    "predicted_n": 54,
+    "predicted_ms": 679.381,
+    "predicted_per_token_ms": 12.818509433962264,
+    "predicted_per_second": 78.01219050871308
+  },
+  "structured_output": {
+    "reason": "The flow fields show smooth evolution of features and coherent structures over time. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values between time steps.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "stable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

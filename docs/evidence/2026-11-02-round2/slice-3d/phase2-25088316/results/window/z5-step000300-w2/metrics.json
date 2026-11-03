@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z5-step000300-w2",
+  "design": {
+    "run": "z5",
+    "slice_z_m": 0.00714375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00714375,
+      "requested_z_m": 0.00714375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 300,
+    "time_s": 0.1022500000000015,
+    "plotted_range_m": {
+      "x": [
+        -0.03801832325223657,
+        0.14817368719849738
+      ],
+      "y": [
+        0.0021656756708732447,
+        0.07923640225162815
+      ]
+    },
+    "cells_in_window": 7480,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "8491961c8e2ecf36c1fea95276d45daa0790870b6adb8463f20c7ef02f0274dd",
+  "wall_s": 3.5104662366211414,
+  "usage": {
+    "completion_tokens": 169,
+    "prompt_tokens": 1062,
+    "total_tokens": 1231,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 281.378,
+    "prompt_per_token_ms": 0.2649510357815442,
+    "prompt_per_second": 3774.2822821969025,
+    "predicted_n": 169,
+    "predicted_ms": 2119.292,
+    "predicted_per_token_ms": 12.614833333333333,
+    "predicted_per_second": 79.27175679425017
+  },
+  "structured_output": {
+    "flow_description": "The flow is fast in the upper region and near the center-right, with a slow-moving region at the bottom-left. Pressure is lowest in a localized area near the bottom-center and highest in the bottom-right corner.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 25,
+    "lowest_pressure_x_percent": 50,
+    "lowest_pressure_y_percent": 15,
+    "uncertainties": "The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the flow field are not explicitly stated."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        50,
+        25
+      ],
+      "true_percent": [
+        51.6409087908157,
+        20.852413474185497
+      ],
+      "error_percent": [
+        -1.6409087908157005,
+        4.1475865258145035
+      ],
+      "distance_percent": 4.460387387760649,
+      "error_m": [
+        -0.003055241067282581,
+        0.003196575071010727
+      ],
+      "distance_m": 0.004421831087210053,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        50,
+        15
+      ],
+      "true_percent": [
+        50.51592790278843,
+        10.097149004713044
+      ],
+      "error_percent": [
+        -0.5159279027884267,
+        4.902850995286956
+      ],
+      "distance_percent": 4.929921853626278,
+      "error_m": [
+        -0.0009606165346780801,
+        0.00377866288523943
+      ],
+      "distance_m": 0.003898855899745834,
+      "within_10_percent": true
+    }
+  }
+}

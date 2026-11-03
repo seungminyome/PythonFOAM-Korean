@@ -1,0 +1,571 @@
+mbl40s-002.cluster
+2026-11-02T05:59:32Z
+6677bacc634336603f6bea196885d114c2846f4e
+130 requests checked, 0 problems
+ok /cluster/medbow/gscratch/syome/github_repos/PythonFOAM/llm-runtime-12b/./gemma-4-12b-it-qat-q4_0.gguf
+ok /cluster/medbow/gscratch/syome/github_repos/PythonFOAM/llm-runtime-12b/./mmproj-gemma-4-12b-it-qat-q4_0.gguf
+ok /cluster/medbow/gscratch/syome/github_repos/PythonFOAM/llm-runtime-12b/models/31b/gemma-4-31B_q4_0-it.gguf
+ok /cluster/medbow/gscratch/syome/github_repos/PythonFOAM/llm-runtime-12b/models/31b/gemma-4-31B-it-mmproj.gguf
+=== 12b (gemma-4-12b-it-qat-q4_0-vision) 2026-11-02T06:00:03Z
+server ok on port 20221, pid 597769, log server-20261102T060003Z.log
+instability-eq2ms-notime/central-dt2e-5-steps00266-00366-00466: ok 2.3s
+instability-eq2ms-notime/central-dt2e-5-steps00265-00365-00465: ok 2.2s
+instability-eq2ms-notime/central-dt2e-5-steps00264-00364-00464: ok 2.1s
+instability-eq2ms-notime/central-dt2e-5-steps00263-00363-00463: ok 2.4s
+instability-eq2ms-notime/central-dt2e-5-steps00262-00362-00462: ok 2.2s
+instability-eq2ms-notime/central-dt2e-5-steps00261-00361-00461: ok 2.4s
+instability-eq2ms-notime/central-dt2e-5-steps00260-00360-00460: ok 2.2s
+instability-eq2ms-notime/central-dt2e-5-steps00259-00359-00459: ok 2.2s
+instability-eq2ms-notime/central-dt2e-5-steps00258-00358-00458: ok 2.2s
+instability-eq2ms-notime/central-dt2e-5-steps00257-00357-00457: ok 2.2s
+instability-eq2ms-notime/central-dt2e-5-steps00255-00355-00455: ok 2.3s
+instability-eq2ms-notime/central-dt2e-5-steps00252-00352-00452: ok 2.2s
+instability-eq2ms-notime/central-dt2e-5-steps00247-00347-00447: ok 2.3s
+instability-eq2ms-notime/central-dt2e-5-steps00237-00337-00437: ok 2.3s
+instability-eq2ms-notime/central-dt2e-5-steps00217-00317-00417: ok 2.3s
+instability-eq2ms-notime/central-dt2e-5-steps00192-00292-00392: ok 2.3s
+instability-eq2ms-notime/central-dt2e-5-steps00167-00267-00367: ok 2.2s
+instability-eq2ms-notime/central-dt2e-5-steps00117-00217-00317: ok 2.3s
+instability-eq2ms-notime/central-dt2e-5-steps00067-00167-00267: ok 2.3s
+instability-eq2ms-notime/central-dt2e-5-steps00007-00107-00207: ok 2.2s
+instability-eq2ms-notime/upwind-dt2e-5-steps00470-00570-00670: ok 2.2s
+instability-eq2ms-notime/upwind-dt2e-5-steps01360-01460-01560: ok 2.3s
+instability-eq2ms-notime/upwind-dt4e-5-steps00700-00750-00800: ok 2.3s
+instability-eq2ms-notime/upwind-dt4e-5-steps01230-01280-01330: ok 2.3s
+instability-eq2ms-notime/developed-steps09308-09708-10108: ok 2.4s
+instability-eq2ms-notime/developed-steps13708-14108-14508: ok 2.4s
+instability-eq2ms-notime/developed-steps16308-16708-17108: ok 2.3s
+instability-eq2ms-notime/central-dt5e-6-steps01000-01400-01800: ok 2.4s
+instability-eq2ms-notime/central-dt5e-6-steps01200-01600-02000: ok 2.2s
+instability-eq2ms-notime/central-dt5e-6-steps02200-02600-03000: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00266-00366-00466: ok 2.5s
+instability-eq2ms-reltime/central-dt2e-5-steps00265-00365-00465: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00264-00364-00464: ok 2.1s
+instability-eq2ms-reltime/central-dt2e-5-steps00263-00363-00463: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00262-00362-00462: ok 2.1s
+instability-eq2ms-reltime/central-dt2e-5-steps00261-00361-00461: ok 2.2s
+instability-eq2ms-reltime/central-dt2e-5-steps00260-00360-00460: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00259-00359-00459: ok 2.2s
+instability-eq2ms-reltime/central-dt2e-5-steps00258-00358-00458: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00257-00357-00457: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00255-00355-00455: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00252-00352-00452: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00247-00347-00447: ok 2.2s
+instability-eq2ms-reltime/central-dt2e-5-steps00237-00337-00437: ok 2.2s
+instability-eq2ms-reltime/central-dt2e-5-steps00217-00317-00417: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00192-00292-00392: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00167-00267-00367: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00117-00217-00317: ok 2.4s
+instability-eq2ms-reltime/central-dt2e-5-steps00067-00167-00267: ok 2.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00007-00107-00207: ok 2.2s
+instability-eq2ms-reltime/upwind-dt2e-5-steps00470-00570-00670: ok 2.3s
+instability-eq2ms-reltime/upwind-dt2e-5-steps01360-01460-01560: ok 2.2s
+instability-eq2ms-reltime/upwind-dt4e-5-steps00700-00750-00800: ok 2.3s
+instability-eq2ms-reltime/upwind-dt4e-5-steps01230-01280-01330: ok 2.3s
+instability-eq2ms-reltime/developed-steps09308-09708-10108: ok 2.4s
+instability-eq2ms-reltime/developed-steps13708-14108-14508: ok 2.2s
+instability-eq2ms-reltime/developed-steps16308-16708-17108: ok 2.3s
+instability-eq2ms-reltime/central-dt5e-6-steps01000-01400-01800: ok 2.3s
+instability-eq2ms-reltime/central-dt5e-6-steps01200-01600-02000: ok 2.2s
+instability-eq2ms-reltime/central-dt5e-6-steps02200-02600-03000: ok 2.2s
+instability-oct28-notime/central-dt2e-5-steps00464-00465-00466: ok 2.6s
+instability-oct28-notime/central-dt2e-5-steps00463-00464-00465: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00460-00462-00464: ok 2.7s
+instability-oct28-notime/central-dt2e-5-steps00461-00462-00463: ok 2.2s
+instability-oct28-notime/central-dt2e-5-steps00460-00461-00462: ok 2.4s
+instability-oct28-notime/central-dt2e-5-steps00457-00459-00461: ok 2.2s
+instability-oct28-notime/central-dt2e-5-steps00454-00457-00460: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00457-00458-00459: ok 2.4s
+instability-oct28-notime/central-dt2e-5-steps00456-00457-00458: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00453-00455-00457: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00453-00454-00455: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00450-00451-00452: ok 2.2s
+instability-oct28-notime/central-dt2e-5-steps00441-00444-00447: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00431-00434-00437: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00415-00416-00417: ok 2.2s
+instability-oct28-notime/central-dt2e-5-steps00388-00390-00392: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00363-00365-00367: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00315-00316-00317: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00263-00265-00267: ok 2.2s
+instability-oct28-notime/central-dt2e-5-steps00165-00166-00167: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00065-00066-00067: ok 2.3s
+instability-oct28-notime/central-dt2e-5-steps00003-00005-00007: ok 2.3s
+instability-oct28-notime/central-dt3e-5-steps00020-00023-00026: ok 2.6s
+instability-oct28-notime/central-dt3e-5-steps00019-00022-00025: ok 2.3s
+instability-oct28-notime/central-dt3e-5-steps00022-00023-00024: ok 2.2s
+instability-oct28-notime/central-dt3e-5-steps00019-00021-00023: ok 2.4s
+instability-oct28-notime/central-dt3e-5-steps00016-00019-00022: ok 2.2s
+instability-oct28-notime/central-dt3e-5-steps00019-00020-00021: ok 2.3s
+instability-oct28-notime/central-dt3e-5-steps00018-00019-00020: ok 2.2s
+instability-oct28-notime/central-dt3e-5-steps00013-00016-00019: ok 2.2s
+instability-oct28-notime/central-dt3e-5-steps00012-00015-00018: ok 2.3s
+instability-oct28-notime/central-dt3e-5-steps00015-00016-00017: ok 2.3s
+instability-oct28-notime/central-dt3e-5-steps00013-00014-00015: ok 2.3s
+instability-oct28-notime/central-dt3e-5-steps00005-00008-00011: ok 2.2s
+instability-oct28-notime/central-dt3e-5-steps00005-00006-00007: ok 2.3s
+instability-oct28-notime/central-dt3e-5-steps00001-00002-00003: ok 2.2s
+instability-oct28-notime/central-dt4e-5-steps00003-00006-00009: ok 2.5s
+instability-oct28-notime/central-dt4e-5-steps00006-00007-00008: ok 2.2s
+instability-oct28-notime/central-dt4e-5-steps00005-00006-00007: ok 2.2s
+instability-oct28-notime/central-dt4e-5-steps00002-00004-00006: ok 2.2s
+instability-oct28-notime/central-dt4e-5-steps00001-00003-00005: ok 2.2s
+instability-oct28-notime/central-dt4e-5-steps00002-00003-00004: ok 2.3s
+instability-oct28-notime/central-dt4e-5-steps00001-00002-00003: ok 2.3s
+instability-oct28-notime/upwind-dt2e-5-steps00060-00080-00100: ok 2.2s
+instability-oct28-notime/upwind-dt2e-5-steps00270-00280-00290: ok 2.2s
+instability-oct28-notime/upwind-dt2e-5-steps00650-00660-00670: ok 2.3s
+instability-oct28-notime/upwind-dt2e-5-steps00800-00820-00840: ok 2.2s
+instability-oct28-notime/upwind-dt2e-5-steps01320-01340-01360: ok 2.2s
+instability-oct28-notime/upwind-dt2e-5-steps01550-01560-01570: ok 2.2s
+instability-oct28-notime/upwind-dt2e-5-steps01680-01690-01700: ok 2.3s
+instability-oct28-notime/upwind-dt4e-5-steps00170-00190-00210: ok 2.3s
+instability-oct28-notime/upwind-dt4e-5-steps00270-00280-00290: ok 2.0s
+instability-oct28-notime/upwind-dt4e-5-steps00610-00630-00650: ok 2.1s
+instability-oct28-notime/upwind-dt4e-5-steps00970-00980-00990: ok 2.1s
+instability-oct28-notime/upwind-dt4e-5-steps01200-01210-01220: ok 2.2s
+instability-oct28-notime/upwind-dt4e-5-steps01550-01570-01590: ok 2.2s
+instability-oct28-notime/upwind-dt4e-5-steps01720-01740-01760: ok 2.4s
+instability-oct28-notime/developed-steps07908-08308-08708: ok 2.2s
+instability-oct28-notime/developed-steps09908-10308-10708: ok 2.2s
+instability-oct28-notime/developed-steps11508-11708-11908: ok 2.2s
+instability-oct28-notime/developed-steps13708-13908-14108: ok 2.2s
+instability-oct28-notime/developed-steps15708-16108-16508: ok 2.0s
+instability-oct28-notime/developed-steps16508-16908-17308: ok 2.1s
+instability-oct28-notime/developed-steps19908-20108-20308: ok 2.1s
+instability-oct28-notime/central-dt5e-6-steps00200-00300-00400: ok 2.2s
+instability-oct28-notime/central-dt5e-6-steps01150-01200-01250: ok 2.4s
+instability-oct28-notime/central-dt5e-6-steps01350-01400-01450: ok 2.1s
+instability-oct28-notime/central-dt5e-6-steps02250-02300-02350: ok 2.0s
+instability-oct28-notime/central-dt5e-6-steps02600-02650-02700: ok 2.1s
+instability-oct28-notime/central-dt5e-6-steps03300-03400-03500: ok 2.0s
+{
+  "output": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/instability/results/gpu-25080221/12b",
+  "failures": 0
+}
+=== 31b (gemma-4-31B-it-qat-q4_0-vision) 2026-11-02T06:05:09Z
+server ok on port 20221, pid 598089, log server-20261102T060509Z.log
+instability-eq2ms-notime/central-dt2e-5-steps00266-00366-00466: ok 4.3s
+instability-eq2ms-notime/central-dt2e-5-steps00265-00365-00465: ok 3.7s
+instability-eq2ms-notime/central-dt2e-5-steps00264-00364-00464: ok 5.2s
+instability-eq2ms-notime/central-dt2e-5-steps00263-00363-00463: ok 5.1s
+instability-eq2ms-notime/central-dt2e-5-steps00262-00362-00462: ok 4.3s
+instability-eq2ms-notime/central-dt2e-5-steps00261-00361-00461: ok 3.6s
+instability-eq2ms-notime/central-dt2e-5-steps00260-00360-00460: ok 4.4s
+instability-eq2ms-notime/central-dt2e-5-steps00259-00359-00459: ok 4.6s
+instability-eq2ms-notime/central-dt2e-5-steps00258-00358-00458: ok 4.4s
+instability-eq2ms-notime/central-dt2e-5-steps00257-00357-00457: ok 3.6s
+instability-eq2ms-notime/central-dt2e-5-steps00255-00355-00455: ok 4.5s
+instability-eq2ms-notime/central-dt2e-5-steps00252-00352-00452: ok 4.6s
+instability-eq2ms-notime/central-dt2e-5-steps00247-00347-00447: ok 4.5s
+instability-eq2ms-notime/central-dt2e-5-steps00237-00337-00437: ok 3.6s
+instability-eq2ms-notime/central-dt2e-5-steps00217-00317-00417: ok 4.5s
+instability-eq2ms-notime/central-dt2e-5-steps00192-00292-00392: ok 4.5s
+instability-eq2ms-notime/central-dt2e-5-steps00167-00267-00367: ok 4.6s
+instability-eq2ms-notime/central-dt2e-5-steps00117-00217-00317: ok 4.6s
+instability-eq2ms-notime/central-dt2e-5-steps00067-00167-00267: ok 4.3s
+instability-eq2ms-notime/central-dt2e-5-steps00007-00107-00207: ok 5.3s
+instability-eq2ms-notime/upwind-dt2e-5-steps00470-00570-00670: ok 4.4s
+instability-eq2ms-notime/upwind-dt2e-5-steps01360-01460-01560: ok 3.7s
+instability-eq2ms-notime/upwind-dt4e-5-steps00700-00750-00800: ok 4.3s
+instability-eq2ms-notime/upwind-dt4e-5-steps01230-01280-01330: ok 4.5s
+instability-eq2ms-notime/developed-steps09308-09708-10108: ok 4.3s
+instability-eq2ms-notime/developed-steps13708-14108-14508: ok 3.6s
+instability-eq2ms-notime/developed-steps16308-16708-17108: ok 4.3s
+instability-eq2ms-notime/central-dt5e-6-steps01000-01400-01800: ok 4.4s
+instability-eq2ms-notime/central-dt5e-6-steps01200-01600-02000: ok 4.3s
+instability-eq2ms-notime/central-dt5e-6-steps02200-02600-03000: ok 3.7s
+instability-eq2ms-reltime/central-dt2e-5-steps00266-00366-00466: ok 5.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00265-00365-00465: ok 6.4s
+instability-eq2ms-reltime/central-dt2e-5-steps00264-00364-00464: ok 6.1s
+instability-eq2ms-reltime/central-dt2e-5-steps00263-00363-00463: ok 4.7s
+instability-eq2ms-reltime/central-dt2e-5-steps00262-00362-00462: ok 4.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00261-00361-00461: ok 4.4s
+instability-eq2ms-reltime/central-dt2e-5-steps00260-00360-00460: ok 4.2s
+instability-eq2ms-reltime/central-dt2e-5-steps00259-00359-00459: ok 3.6s
+instability-eq2ms-reltime/central-dt2e-5-steps00258-00358-00458: ok 4.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00257-00357-00457: ok 4.2s
+instability-eq2ms-reltime/central-dt2e-5-steps00255-00355-00455: ok 4.4s
+instability-eq2ms-reltime/central-dt2e-5-steps00252-00352-00452: ok 3.7s
+instability-eq2ms-reltime/central-dt2e-5-steps00247-00347-00447: ok 4.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00237-00337-00437: ok 4.0s
+instability-eq2ms-reltime/central-dt2e-5-steps00217-00317-00417: ok 4.3s
+instability-eq2ms-reltime/central-dt2e-5-steps00192-00292-00392: ok 3.6s
+instability-eq2ms-reltime/central-dt2e-5-steps00167-00267-00367: ok 4.5s
+instability-eq2ms-reltime/central-dt2e-5-steps00117-00217-00317: ok 5.4s
+instability-eq2ms-reltime/central-dt2e-5-steps00067-00167-00267: ok 4.5s
+instability-eq2ms-reltime/central-dt2e-5-steps00007-00107-00207: ok 4.8s
+instability-eq2ms-reltime/upwind-dt2e-5-steps00470-00570-00670: ok 4.3s
+instability-eq2ms-reltime/upwind-dt2e-5-steps01360-01460-01560: ok 3.9s
+instability-eq2ms-reltime/upwind-dt4e-5-steps00700-00750-00800: ok 4.3s
+instability-eq2ms-reltime/upwind-dt4e-5-steps01230-01280-01330: ok 3.6s
+instability-eq2ms-reltime/developed-steps09308-09708-10108: ok 4.2s
+instability-eq2ms-reltime/developed-steps13708-14108-14508: ok 4.0s
+instability-eq2ms-reltime/developed-steps16308-16708-17108: ok 4.3s
+instability-eq2ms-reltime/central-dt5e-6-steps01000-01400-01800: ok 3.7s
+instability-eq2ms-reltime/central-dt5e-6-steps01200-01600-02000: ok 4.3s
+instability-eq2ms-reltime/central-dt5e-6-steps02200-02600-03000: ok 4.1s
+instability-oct28-notime/central-dt2e-5-steps00464-00465-00466: ok 5.1s
+instability-oct28-notime/central-dt2e-5-steps00463-00464-00465: ok 3.6s
+instability-oct28-notime/central-dt2e-5-steps00460-00462-00464: ok 5.0s
+instability-oct28-notime/central-dt2e-5-steps00461-00462-00463: ok 4.6s
+instability-oct28-notime/central-dt2e-5-steps00460-00461-00462: ok 5.0s
+instability-oct28-notime/central-dt2e-5-steps00457-00459-00461: ok 3.9s
+instability-oct28-notime/central-dt2e-5-steps00454-00457-00460: ok 3.8s
+instability-oct28-notime/central-dt2e-5-steps00457-00458-00459: ok 4.3s
+instability-oct28-notime/central-dt2e-5-steps00456-00457-00458: ok 3.5s
+instability-oct28-notime/central-dt2e-5-steps00453-00455-00457: ok 4.2s
+instability-oct28-notime/central-dt2e-5-steps00453-00454-00455: ok 4.1s
+instability-oct28-notime/central-dt2e-5-steps00450-00451-00452: ok 4.3s
+instability-oct28-notime/central-dt2e-5-steps00441-00444-00447: ok 3.8s
+instability-oct28-notime/central-dt2e-5-steps00431-00434-00437: ok 4.3s
+instability-oct28-notime/central-dt2e-5-steps00415-00416-00417: ok 4.4s
+instability-oct28-notime/central-dt2e-5-steps00388-00390-00392: ok 4.2s
+instability-oct28-notime/central-dt2e-5-steps00363-00365-00367: ok 4.0s
+instability-oct28-notime/central-dt2e-5-steps00315-00316-00317: ok 4.2s
+instability-oct28-notime/central-dt2e-5-steps00263-00265-00267: ok 4.1s
+instability-oct28-notime/central-dt2e-5-steps00165-00166-00167: ok 4.2s
+instability-oct28-notime/central-dt2e-5-steps00065-00066-00067: ok 3.7s
+instability-oct28-notime/central-dt2e-5-steps00003-00005-00007: ok 4.2s
+instability-oct28-notime/central-dt3e-5-steps00020-00023-00026: ok 5.3s
+instability-oct28-notime/central-dt3e-5-steps00019-00022-00025: ok 4.2s
+instability-oct28-notime/central-dt3e-5-steps00022-00023-00024: ok 3.9s
+instability-oct28-notime/central-dt3e-5-steps00019-00021-00023: ok 4.2s
+instability-oct28-notime/central-dt3e-5-steps00016-00019-00022: ok 3.7s
+instability-oct28-notime/central-dt3e-5-steps00019-00020-00021: ok 4.0s
+instability-oct28-notime/central-dt3e-5-steps00018-00019-00020: ok 3.7s
+instability-oct28-notime/central-dt3e-5-steps00013-00016-00019: ok 4.2s
+instability-oct28-notime/central-dt3e-5-steps00012-00015-00018: ok 4.1s
+instability-oct28-notime/central-dt3e-5-steps00015-00016-00017: ok 4.1s
+instability-oct28-notime/central-dt3e-5-steps00013-00014-00015: ok 3.9s
+instability-oct28-notime/central-dt3e-5-steps00005-00008-00011: ok 4.1s
+instability-oct28-notime/central-dt3e-5-steps00005-00006-00007: ok 4.1s
+instability-oct28-notime/central-dt3e-5-steps00001-00002-00003: ok 3.8s
+instability-oct28-notime/central-dt4e-5-steps00003-00006-00009: ok 4.4s
+instability-oct28-notime/central-dt4e-5-steps00006-00007-00008: ok 4.2s
+instability-oct28-notime/central-dt4e-5-steps00005-00006-00007: ok 4.2s
+instability-oct28-notime/central-dt4e-5-steps00002-00004-00006: ok 4.1s
+instability-oct28-notime/central-dt4e-5-steps00001-00003-00005: ok 4.1s
+instability-oct28-notime/central-dt4e-5-steps00002-00003-00004: ok 4.1s
+instability-oct28-notime/central-dt4e-5-steps00001-00002-00003: ok 3.8s
+instability-oct28-notime/upwind-dt2e-5-steps00060-00080-00100: ok 4.3s
+instability-oct28-notime/upwind-dt2e-5-steps00270-00280-00290: ok 4.0s
+instability-oct28-notime/upwind-dt2e-5-steps00650-00660-00670: ok 3.9s
+instability-oct28-notime/upwind-dt2e-5-steps00800-00820-00840: ok 3.7s
+instability-oct28-notime/upwind-dt2e-5-steps01320-01340-01360: ok 4.1s
+instability-oct28-notime/upwind-dt2e-5-steps01550-01560-01570: ok 4.1s
+instability-oct28-notime/upwind-dt2e-5-steps01680-01690-01700: ok 4.3s
+instability-oct28-notime/upwind-dt4e-5-steps00170-00190-00210: ok 3.7s
+instability-oct28-notime/upwind-dt4e-5-steps00270-00280-00290: ok 4.2s
+instability-oct28-notime/upwind-dt4e-5-steps00610-00630-00650: ok 4.1s
+instability-oct28-notime/upwind-dt4e-5-steps00970-00980-00990: ok 4.2s
+instability-oct28-notime/upwind-dt4e-5-steps01200-01210-01220: ok 3.8s
+instability-oct28-notime/upwind-dt4e-5-steps01550-01570-01590: ok 4.1s
+instability-oct28-notime/upwind-dt4e-5-steps01720-01740-01760: ok 4.4s
+instability-oct28-notime/developed-steps07908-08308-08708: ok 4.0s
+instability-oct28-notime/developed-steps09908-10308-10708: ok 3.8s
+instability-oct28-notime/developed-steps11508-11708-11908: ok 4.2s
+instability-oct28-notime/developed-steps13708-13908-14108: ok 4.1s
+instability-oct28-notime/developed-steps15708-16108-16508: ok 3.9s
+instability-oct28-notime/developed-steps16508-16908-17308: ok 3.8s
+instability-oct28-notime/developed-steps19908-20108-20308: ok 4.2s
+instability-oct28-notime/central-dt5e-6-steps00200-00300-00400: ok 4.1s
+instability-oct28-notime/central-dt5e-6-steps01150-01200-01250: ok 4.0s
+instability-oct28-notime/central-dt5e-6-steps01350-01400-01450: ok 3.8s
+instability-oct28-notime/central-dt5e-6-steps02250-02300-02350: ok 4.2s
+instability-oct28-notime/central-dt5e-6-steps02600-02650-02700: ok 4.2s
+instability-oct28-notime/central-dt5e-6-steps03300-03400-03500: ok 4.0s
+{
+  "output": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/instability/results/gpu-25080221/31b",
+  "failures": 0
+}
+# instability test 2026-11-01, times removed
+
+## instability-eq2ms-notime
+
+Balanced score: 20 scored items, 10 'unstable' and 10 'stable'; a fixed answer gets 10/20.
+
+| answers from | answered | right | flagged of crash-bound (said unstable) | crash-bound said stable | crash-bound cannot_tell | flagged of normal (said unstable) | normal said stable | normal cannot_tell |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| gemma-4-12b-it-qat-q4_0-vision | 20/20 | 11/20 | 1/10 | 9 | 0 | 0/10 | 10 | 0 |
+| gemma-4-31B-it-qat-q4_0-vision | 20/20 | 13/20 | 3/10 | 7 | 0 | 0/10 | 10 | 0 |
+| peak \|U\| grows > 5 % | 20/20 | 12/20 | 5/10 | 5 | 0 | 3/10 | 7 | 0 |
+| peak \|U\| grows > 10 % | 20/20 | 14/20 | 5/10 | 5 | 0 | 1/10 | 9 | 0 |
+| peak \|U\| grows > 20 % | 20/20 | 14/20 | 4/10 | 6 | 0 | 0/10 | 10 | 0 |
+| peak \|U\| grows > 50 % | 20/20 | 14/20 | 4/10 | 6 | 0 | 0/10 | 10 | 0 |
+| peak \|U\| grows > 100 % | 20/20 | 13/20 | 3/10 | 7 | 0 | 0/10 | 10 | 0 |
+| largest \|U\| jump grows > 20 % | 20/20 | 13/20 | 6/10 | 4 | 0 | 3/10 | 7 | 0 |
+| largest \|U\| jump grows > 50 % | 20/20 | 16/20 | 6/10 | 4 | 0 | 0/10 | 10 | 0 |
+| largest \|U\| jump grows > 100 % | 20/20 | 15/20 | 5/10 | 5 | 0 | 0/10 | 10 | 0 |
+| largest \|U\| jump grows > 200 % | 20/20 | 14/20 | 4/10 | 6 | 0 | 0/10 | 10 | 0 |
+
+Best single threshold on the peak |U| ratio (last / first frame), chosen on these items: 1.115, 14/20 right; above 1 (growth) only: 1.115, 14/20 right.
+
+Best single threshold on the largest |U| jump ratio (last / first frame), chosen on these items: 1.678, 16/20 right; above 1 (growth) only: 1.678, 16/20 right.
+
+How early 'unstable' is said: items from the runs that crashed (scored and early), said unstable / items.
+
+| last frame, steps before the crash | items | gemma-4-12b-it-qat-q4_0-vision | gemma-4-31B-it-qat-q4_0-vision | peak \|U\| grows > 5 % | peak \|U\| grows > 10 % | peak \|U\| grows > 20 % | peak \|U\| grows > 50 % | peak \|U\| grows > 100 % | largest \|U\| jump grows > 20 % | largest \|U\| jump grows > 50 % | largest \|U\| jump grows > 100 % | largest \|U\| jump grows > 200 % |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 2 to 3 | 2 | 0 | 1 | 2 | 2 | 2 | 2 | 1 | 2 | 2 | 2 | 2 |
+| 4 to 6 | 3 | 0 | 1 | 2 | 2 | 1 | 1 | 1 | 3 | 3 | 2 | 1 |
+| 7 to 10 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 11 to 25 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 26 to 100 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
+| over 100 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 0 | 3 | 1 | 1 | 1 |
+
+Said unstable / scored items, by run.
+
+| run | truth | gemma-4-12b-it-qat-q4_0-vision | gemma-4-31B-it-qat-q4_0-vision | peak \|U\| grows > 20 % | largest \|U\| jump grows > 50 % |
+|---|---|---:|---:|---:|---:|
+| central-dt2e-5 | unstable | 1/10 | 3/10 | 4/10 | 6/10 |
+| central-dt5e-6 | stable | 0/3 | 0/3 | 0/3 | 0/3 |
+| developed | stable | 0/3 | 0/3 | 0/3 | 0/3 |
+| upwind-dt2e-5 | stable | 0/2 | 0/2 | 0/2 | 0/2 |
+| upwind-dt4e-5 | stable | 0/2 | 0/2 | 0/2 | 0/2 |
+
+Every item: steps from the last frame to the crash (blank: a run that ended), the two numeric ratios and each answer (u unstable, s stable, ? cannot_tell, - no answer).
+
+| item | truth | scored | steps to crash | peak \|U\| ratio | jump ratio | gemma-4-12b-it-qat-q4_0-vision | gemma-4-31B-it-qat-q4_0-vision |
+|---|---|---|---:|---:|---:|---|---|
+| central-dt2e-5-steps00266-00366-00466 | unstable | yes | 1 | 3.511e+38 | 1.212e+39 | u | u |
+| central-dt2e-5-steps00265-00365-00465 | unstable | yes | 2 | 1.919 | 4.009 | s | s |
+| central-dt2e-5-steps00264-00364-00464 | unstable | yes | 3 | 2.115 | 4.54 | s | u |
+| central-dt2e-5-steps00263-00363-00463 | unstable | yes | 4 | 2.001 | 5.446 | s | u |
+| central-dt2e-5-steps00262-00362-00462 | unstable | yes | 5 | 1.16 | 1.922 | s | s |
+| central-dt2e-5-steps00261-00361-00461 | unstable | yes | 6 | 0.9309 | 2.012 | s | s |
+| central-dt2e-5-steps00260-00360-00460 | unstable | yes | 7 | 0.7541 | 0.5738 | s | s |
+| central-dt2e-5-steps00259-00359-00459 | unstable | yes | 8 | 0.8935 | 0.6454 | s | s |
+| central-dt2e-5-steps00258-00358-00458 | unstable | yes | 9 | 0.9204 | 0.6287 | s | s |
+| central-dt2e-5-steps00257-00357-00457 | unstable | yes | 10 | 0.8758 | 0.3994 | s | s |
+| central-dt2e-5-steps00255-00355-00455 | unstable | no | 12 | 0.8002 | 0.4079 | s | s |
+| central-dt2e-5-steps00252-00352-00452 | unstable | no | 15 | 0.9203 | 0.5802 | s | s |
+| central-dt2e-5-steps00247-00347-00447 | unstable | no | 20 | 0.9195 | 0.6555 | s | s |
+| central-dt2e-5-steps00237-00337-00437 | unstable | no | 30 | 0.8608 | 0.4782 | s | s |
+| central-dt2e-5-steps00217-00317-00417 | unstable | no | 50 | 0.7944 | 0.2691 | s | s |
+| central-dt2e-5-steps00192-00292-00392 | unstable | no | 75 | 0.6833 | 0.2844 | s | s |
+| central-dt2e-5-steps00167-00267-00367 | unstable | no | 100 | 1.012 | 1.907 | s | s |
+| central-dt2e-5-steps00117-00217-00317 | unstable | no | 150 | 1.202 | 1.346 | s | u |
+| central-dt2e-5-steps00067-00167-00267 | unstable | no | 200 | 1.096 | 1.425 | s | s |
+| central-dt2e-5-steps00007-00107-00207 | unstable | no | 260 | 1.348 | 5.209 | s | u |
+| central-dt5e-6-steps01000-01400-01800 | stable | yes |  | 0.852 | 1.241 | s | s |
+| central-dt5e-6-steps01200-01600-02000 | stable | yes |  | 0.969 | 1.188 | s | s |
+| central-dt5e-6-steps02200-02600-03000 | stable | yes |  | 1.184 | 0.951 | s | s |
+| developed-steps09308-09708-10108 | stable | yes |  | 0.9831 | 0.808 | s | s |
+| developed-steps13708-14108-14508 | stable | yes |  | 0.9472 | 1.018 | s | s |
+| developed-steps16308-16708-17108 | stable | yes |  | 1.07 | 1.433 | s | s |
+| upwind-dt2e-5-steps00470-00570-00670 | stable | yes |  | 1.042 | 1.046 | s | s |
+| upwind-dt2e-5-steps01360-01460-01560 | stable | yes |  | 1.051 | 1.269 | s | s |
+| upwind-dt4e-5-steps00700-00750-00800 | stable | yes |  | 0.9959 | 1.072 | s | s |
+| upwind-dt4e-5-steps01230-01280-01330 | stable | yes |  | 1.014 | 0.7009 | s | s |
+
+## instability-eq2ms-reltime
+
+Balanced score: 20 scored items, 10 'unstable' and 10 'stable'; a fixed answer gets 10/20.
+
+| answers from | answered | right | flagged of crash-bound (said unstable) | crash-bound said stable | crash-bound cannot_tell | flagged of normal (said unstable) | normal said stable | normal cannot_tell |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| gemma-4-12b-it-qat-q4_0-vision | 20/20 | 11/20 | 1/10 | 9 | 0 | 0/10 | 10 | 0 |
+| gemma-4-31B-it-qat-q4_0-vision | 20/20 | 14/20 | 4/10 | 6 | 0 | 0/10 | 10 | 0 |
+| peak \|U\| grows > 5 % | 20/20 | 12/20 | 5/10 | 5 | 0 | 3/10 | 7 | 0 |
+| peak \|U\| grows > 10 % | 20/20 | 14/20 | 5/10 | 5 | 0 | 1/10 | 9 | 0 |
+| peak \|U\| grows > 20 % | 20/20 | 14/20 | 4/10 | 6 | 0 | 0/10 | 10 | 0 |
+| peak \|U\| grows > 50 % | 20/20 | 14/20 | 4/10 | 6 | 0 | 0/10 | 10 | 0 |
+| peak \|U\| grows > 100 % | 20/20 | 13/20 | 3/10 | 7 | 0 | 0/10 | 10 | 0 |
+| largest \|U\| jump grows > 20 % | 20/20 | 13/20 | 6/10 | 4 | 0 | 3/10 | 7 | 0 |
+| largest \|U\| jump grows > 50 % | 20/20 | 16/20 | 6/10 | 4 | 0 | 0/10 | 10 | 0 |
+| largest \|U\| jump grows > 100 % | 20/20 | 15/20 | 5/10 | 5 | 0 | 0/10 | 10 | 0 |
+| largest \|U\| jump grows > 200 % | 20/20 | 14/20 | 4/10 | 6 | 0 | 0/10 | 10 | 0 |
+
+Best single threshold on the peak |U| ratio (last / first frame), chosen on these items: 1.115, 14/20 right; above 1 (growth) only: 1.115, 14/20 right.
+
+Best single threshold on the largest |U| jump ratio (last / first frame), chosen on these items: 1.678, 16/20 right; above 1 (growth) only: 1.678, 16/20 right.
+
+How early 'unstable' is said: items from the runs that crashed (scored and early), said unstable / items.
+
+| last frame, steps before the crash | items | gemma-4-12b-it-qat-q4_0-vision | gemma-4-31B-it-qat-q4_0-vision | peak \|U\| grows > 5 % | peak \|U\| grows > 10 % | peak \|U\| grows > 20 % | peak \|U\| grows > 50 % | peak \|U\| grows > 100 % | largest \|U\| jump grows > 20 % | largest \|U\| jump grows > 50 % | largest \|U\| jump grows > 100 % | largest \|U\| jump grows > 200 % |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 2 to 3 | 2 | 0 | 2 | 2 | 2 | 2 | 2 | 1 | 2 | 2 | 2 | 2 |
+| 4 to 6 | 3 | 0 | 1 | 2 | 2 | 1 | 1 | 1 | 3 | 3 | 2 | 1 |
+| 7 to 10 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 11 to 25 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 26 to 100 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
+| over 100 | 3 | 0 | 2 | 3 | 2 | 2 | 0 | 0 | 3 | 1 | 1 | 1 |
+
+Said unstable / scored items, by run.
+
+| run | truth | gemma-4-12b-it-qat-q4_0-vision | gemma-4-31B-it-qat-q4_0-vision | peak \|U\| grows > 20 % | largest \|U\| jump grows > 50 % |
+|---|---|---:|---:|---:|---:|
+| central-dt2e-5 | unstable | 1/10 | 4/10 | 4/10 | 6/10 |
+| central-dt5e-6 | stable | 0/3 | 0/3 | 0/3 | 0/3 |
+| developed | stable | 0/3 | 0/3 | 0/3 | 0/3 |
+| upwind-dt2e-5 | stable | 0/2 | 0/2 | 0/2 | 0/2 |
+| upwind-dt4e-5 | stable | 0/2 | 0/2 | 0/2 | 0/2 |
+
+Every item: steps from the last frame to the crash (blank: a run that ended), the two numeric ratios and each answer (u unstable, s stable, ? cannot_tell, - no answer).
+
+| item | truth | scored | steps to crash | peak \|U\| ratio | jump ratio | gemma-4-12b-it-qat-q4_0-vision | gemma-4-31B-it-qat-q4_0-vision |
+|---|---|---|---:|---:|---:|---|---|
+| central-dt2e-5-steps00266-00366-00466 | unstable | yes | 1 | 3.511e+38 | 1.212e+39 | u | u |
+| central-dt2e-5-steps00265-00365-00465 | unstable | yes | 2 | 1.919 | 4.009 | s | u |
+| central-dt2e-5-steps00264-00364-00464 | unstable | yes | 3 | 2.115 | 4.54 | s | u |
+| central-dt2e-5-steps00263-00363-00463 | unstable | yes | 4 | 2.001 | 5.446 | s | u |
+| central-dt2e-5-steps00262-00362-00462 | unstable | yes | 5 | 1.16 | 1.922 | s | s |
+| central-dt2e-5-steps00261-00361-00461 | unstable | yes | 6 | 0.9309 | 2.012 | s | s |
+| central-dt2e-5-steps00260-00360-00460 | unstable | yes | 7 | 0.7541 | 0.5738 | s | s |
+| central-dt2e-5-steps00259-00359-00459 | unstable | yes | 8 | 0.8935 | 0.6454 | s | s |
+| central-dt2e-5-steps00258-00358-00458 | unstable | yes | 9 | 0.9204 | 0.6287 | s | s |
+| central-dt2e-5-steps00257-00357-00457 | unstable | yes | 10 | 0.8758 | 0.3994 | s | s |
+| central-dt2e-5-steps00255-00355-00455 | unstable | no | 12 | 0.8002 | 0.4079 | s | s |
+| central-dt2e-5-steps00252-00352-00452 | unstable | no | 15 | 0.9203 | 0.5802 | s | s |
+| central-dt2e-5-steps00247-00347-00447 | unstable | no | 20 | 0.9195 | 0.6555 | s | s |
+| central-dt2e-5-steps00237-00337-00437 | unstable | no | 30 | 0.8608 | 0.4782 | s | s |
+| central-dt2e-5-steps00217-00317-00417 | unstable | no | 50 | 0.7944 | 0.2691 | s | s |
+| central-dt2e-5-steps00192-00292-00392 | unstable | no | 75 | 0.6833 | 0.2844 | s | s |
+| central-dt2e-5-steps00167-00267-00367 | unstable | no | 100 | 1.012 | 1.907 | s | s |
+| central-dt2e-5-steps00117-00217-00317 | unstable | no | 150 | 1.202 | 1.346 | s | u |
+| central-dt2e-5-steps00067-00167-00267 | unstable | no | 200 | 1.096 | 1.425 | s | s |
+| central-dt2e-5-steps00007-00107-00207 | unstable | no | 260 | 1.348 | 5.209 | s | u |
+| central-dt5e-6-steps01000-01400-01800 | stable | yes |  | 0.852 | 1.241 | s | s |
+| central-dt5e-6-steps01200-01600-02000 | stable | yes |  | 0.969 | 1.188 | s | s |
+| central-dt5e-6-steps02200-02600-03000 | stable | yes |  | 1.184 | 0.951 | s | s |
+| developed-steps09308-09708-10108 | stable | yes |  | 0.9831 | 0.808 | s | s |
+| developed-steps13708-14108-14508 | stable | yes |  | 0.9472 | 1.018 | s | s |
+| developed-steps16308-16708-17108 | stable | yes |  | 1.07 | 1.433 | s | s |
+| upwind-dt2e-5-steps00470-00570-00670 | stable | yes |  | 1.042 | 1.046 | s | s |
+| upwind-dt2e-5-steps01360-01460-01560 | stable | yes |  | 1.051 | 1.269 | s | s |
+| upwind-dt4e-5-steps00700-00750-00800 | stable | yes |  | 0.9959 | 1.072 | s | s |
+| upwind-dt4e-5-steps01230-01280-01330 | stable | yes |  | 1.014 | 0.7009 | s | s |
+
+## instability-oct28-notime
+
+Balanced score: 54 scored items, 27 'unstable' and 27 'stable'; a fixed answer gets 27/54.
+
+| answers from | answered | right | flagged of crash-bound (said unstable) | crash-bound said stable | crash-bound cannot_tell | flagged of normal (said unstable) | normal said stable | normal cannot_tell |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| gemma-4-12b-it-qat-q4_0-vision | 54/54 | 31/54 | 4/27 | 23 | 0 | 0/27 | 27 | 0 |
+| gemma-4-31B-it-qat-q4_0-vision | 54/54 | 32/54 | 5/27 | 22 | 0 | 0/27 | 27 | 0 |
+| peak \|U\| grows > 5 % | 54/54 | 30/54 | 6/27 | 21 | 0 | 3/27 | 24 | 0 |
+| peak \|U\| grows > 10 % | 54/54 | 33/54 | 6/27 | 21 | 0 | 0/27 | 27 | 0 |
+| peak \|U\| grows > 20 % | 54/54 | 33/54 | 6/27 | 21 | 0 | 0/27 | 27 | 0 |
+| peak \|U\| grows > 50 % | 54/54 | 32/54 | 5/27 | 22 | 0 | 0/27 | 27 | 0 |
+| peak \|U\| grows > 100 % | 54/54 | 32/54 | 5/27 | 22 | 0 | 0/27 | 27 | 0 |
+| largest \|U\| jump grows > 20 % | 54/54 | 36/54 | 14/27 | 13 | 0 | 5/27 | 22 | 0 |
+| largest \|U\| jump grows > 50 % | 54/54 | 38/54 | 11/27 | 16 | 0 | 0/27 | 27 | 0 |
+| largest \|U\| jump grows > 100 % | 54/54 | 36/54 | 9/27 | 18 | 0 | 0/27 | 27 | 0 |
+| largest \|U\| jump grows > 200 % | 54/54 | 32/54 | 5/27 | 22 | 0 | 0/27 | 27 | 0 |
+
+Best single threshold on the peak |U| ratio (last / first frame), chosen on these items: 0.9936, 45/54 right; above 1 (growth) only: 1.001, 38/54 right.
+
+Best single threshold on the largest |U| jump ratio (last / first frame), chosen on these items: 1.355, 39/54 right; above 1 (growth) only: 1.355, 39/54 right.
+
+How early 'unstable' is said: items from the runs that crashed (scored and early), said unstable / items.
+
+| last frame, steps before the crash | items | gemma-4-12b-it-qat-q4_0-vision | gemma-4-31B-it-qat-q4_0-vision | peak \|U\| grows > 5 % | peak \|U\| grows > 10 % | peak \|U\| grows > 20 % | peak \|U\| grows > 50 % | peak \|U\| grows > 100 % | largest \|U\| jump grows > 20 % | largest \|U\| jump grows > 50 % | largest \|U\| jump grows > 100 % | largest \|U\| jump grows > 200 % |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 2 to 3 | 6 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 1 |
+| 4 to 6 | 9 | 0 | 1 | 2 | 2 | 2 | 1 | 1 | 5 | 4 | 4 | 1 |
+| 7 to 10 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 2 | 0 | 0 |
+| 11 to 25 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 26 to 100 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| over 100 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
+
+Said unstable / scored items, by run.
+
+| run | truth | gemma-4-12b-it-qat-q4_0-vision | gemma-4-31B-it-qat-q4_0-vision | peak \|U\| grows > 20 % | largest \|U\| jump grows > 50 % |
+|---|---|---:|---:|---:|---:|
+| central-dt2e-5 | unstable | 2/10 | 3/10 | 4/10 | 6/10 |
+| central-dt3e-5 | unstable | 1/10 | 1/10 | 1/10 | 4/10 |
+| central-dt4e-5 | unstable | 1/7 | 1/7 | 1/7 | 1/7 |
+| central-dt5e-6 | stable | 0/6 | 0/6 | 0/6 | 0/6 |
+| developed | stable | 0/7 | 0/7 | 0/7 | 0/7 |
+| upwind-dt2e-5 | stable | 0/7 | 0/7 | 0/7 | 0/7 |
+| upwind-dt4e-5 | stable | 0/7 | 0/7 | 0/7 | 0/7 |
+
+Against the 2026-10-28 answers of the same model (same triples, times stated then): items whose answer changed.
+
+| model | items compared | same answer | was stable, now unstable | was unstable, now stable | other change |
+|---|---:|---:|---:|---:|---:|
+| gemma-4-12b-it-qat-q4_0-vision | 70 | 69 | 0 | 1 | 0 |
+| gemma-4-31B-it-qat-q4_0-vision | 70 | 69 | 0 | 1 | 0 |
+
+Every item: steps from the last frame to the crash (blank: a run that ended), the two numeric ratios and each answer (u unstable, s stable, ? cannot_tell, - no answer).
+
+| item | truth | scored | steps to crash | peak \|U\| ratio | jump ratio | gemma-4-12b-it-qat-q4_0-vision | gemma-4-31B-it-qat-q4_0-vision |
+|---|---|---|---:|---:|---:|---|---|
+| central-dt2e-5-steps00464-00465-00466 | unstable | yes | 1 | 1.57e+38 | 1.675e+38 | u | u |
+| central-dt2e-5-steps00463-00464-00465 | unstable | yes | 2 | 1.042 | 1.021 | s | s |
+| central-dt2e-5-steps00460-00462-00464 | unstable | yes | 3 | 2.428 | 5.674 | u | u |
+| central-dt2e-5-steps00461-00462-00463 | unstable | yes | 4 | 2.092 | 2.389 | s | u |
+| central-dt2e-5-steps00460-00461-00462 | unstable | yes | 5 | 1.308 | 2.883 | s | s |
+| central-dt2e-5-steps00457-00459-00461 | unstable | yes | 6 | 1.037 | 3.591 | s | s |
+| central-dt2e-5-steps00454-00457-00460 | unstable | yes | 7 | 1.002 | 1.763 | s | s |
+| central-dt2e-5-steps00457-00458-00459 | unstable | yes | 8 | 0.9983 | 1.26 | s | s |
+| central-dt2e-5-steps00456-00457-00458 | unstable | yes | 9 | 0.998 | 0.9954 | s | s |
+| central-dt2e-5-steps00453-00455-00457 | unstable | yes | 10 | 1.004 | 0.9996 | s | s |
+| central-dt2e-5-steps00453-00454-00455 | unstable | no | 12 | 1.002 | 0.9786 | s | s |
+| central-dt2e-5-steps00450-00451-00452 | unstable | no | 15 | 1 | 0.8964 | s | s |
+| central-dt2e-5-steps00441-00444-00447 | unstable | no | 20 | 1.002 | 1.116 | s | s |
+| central-dt2e-5-steps00431-00434-00437 | unstable | no | 30 | 0.994 | 0.8867 | s | s |
+| central-dt2e-5-steps00415-00416-00417 | unstable | no | 50 | 0.9944 | 1.023 | s | s |
+| central-dt2e-5-steps00388-00390-00392 | unstable | no | 75 | 1.008 | 0.9794 | s | s |
+| central-dt2e-5-steps00363-00365-00367 | unstable | no | 100 | 1.001 | 0.9233 | s | s |
+| central-dt2e-5-steps00315-00316-00317 | unstable | no | 150 | 1.002 | 1.036 | s | s |
+| central-dt2e-5-steps00263-00265-00267 | unstable | no | 200 | 0.9997 | 1.25 | s | s |
+| central-dt2e-5-steps00165-00166-00167 | unstable | no | 300 | 1.006 | 1.012 | s | s |
+| central-dt2e-5-steps00065-00066-00067 | unstable | no | 400 | 0.9957 | 0.9762 | s | s |
+| central-dt2e-5-steps00003-00005-00007 | unstable | no | 460 | 0.9985 | 0.944 | s | s |
+| central-dt3e-5-steps00020-00023-00026 | unstable | yes | 1 | 2.196 | 7.799 | u | u |
+| central-dt3e-5-steps00019-00022-00025 | unstable | yes | 2 | 1.029 | 2.113 | s | s |
+| central-dt3e-5-steps00022-00023-00024 | unstable | yes | 3 | 1.009 | 0.8112 | s | s |
+| central-dt3e-5-steps00019-00021-00023 | unstable | yes | 4 | 1.021 | 0.9812 | s | s |
+| central-dt3e-5-steps00016-00019-00022 | unstable | yes | 5 | 1.036 | 2.65 | s | s |
+| central-dt3e-5-steps00019-00020-00021 | unstable | yes | 6 | 1.012 | 1.3 | s | s |
+| central-dt3e-5-steps00018-00019-00020 | unstable | yes | 7 | 1.012 | 1.507 | s | s |
+| central-dt3e-5-steps00013-00016-00019 | unstable | yes | 8 | 1.037 | 1.36 | s | s |
+| central-dt3e-5-steps00012-00015-00018 | unstable | yes | 9 | 1.036 | 1.013 | s | s |
+| central-dt3e-5-steps00015-00016-00017 | unstable | yes | 10 | 1.012 | 0.9955 | s | s |
+| central-dt3e-5-steps00013-00014-00015 | unstable | no | 12 | 1.012 | 0.985 | s | s |
+| central-dt3e-5-steps00005-00008-00011 | unstable | no | 16 | 0.994 | 1.085 | s | s |
+| central-dt3e-5-steps00005-00006-00007 | unstable | no | 20 | 0.9986 | 1.031 | s | s |
+| central-dt3e-5-steps00001-00002-00003 | unstable | no | 24 | 0.9983 | 0.9666 | s | s |
+| central-dt4e-5-steps00003-00006-00009 | unstable | yes | 1 | 8.269e+06 | 3.683e+07 | u | u |
+| central-dt4e-5-steps00006-00007-00008 | unstable | yes | 2 | 0.9968 | 0.9809 | s | s |
+| central-dt4e-5-steps00005-00006-00007 | unstable | yes | 3 | 0.9968 | 1.062 | s | s |
+| central-dt4e-5-steps00002-00004-00006 | unstable | yes | 4 | 0.995 | 1.056 | s | s |
+| central-dt4e-5-steps00001-00003-00005 | unstable | yes | 5 | 0.9952 | 0.9758 | s | s |
+| central-dt4e-5-steps00002-00003-00004 | unstable | yes | 6 | 0.998 | 1.011 | s | s |
+| central-dt4e-5-steps00001-00002-00003 | unstable | yes | 7 | 0.9973 | 0.9575 | s | s |
+| central-dt5e-6-steps00200-00300-00400 | stable | yes |  | 0.8995 | 1.026 | s | s |
+| central-dt5e-6-steps01150-01200-01250 | stable | yes |  | 1.076 | 0.9551 | s | s |
+| central-dt5e-6-steps01350-01400-01450 | stable | yes |  | 1.001 | 0.9353 | s | s |
+| central-dt5e-6-steps02250-02300-02350 | stable | yes |  | 1.01 | 0.8138 | s | s |
+| central-dt5e-6-steps02600-02650-02700 | stable | yes |  | 1.026 | 0.9716 | s | s |
+| central-dt5e-6-steps03300-03400-03500 | stable | yes |  | 0.9623 | 1.188 | s | s |
+| developed-steps07908-08308-08708 | stable | yes |  | 0.9441 | 1.255 | s | s |
+| developed-steps09908-10308-10708 | stable | yes |  | 0.9796 | 1.137 | s | s |
+| developed-steps11508-11708-11908 | stable | yes |  | 1.066 | 0.8699 | s | s |
+| developed-steps13708-13908-14108 | stable | yes |  | 0.9778 | 1.315 | s | s |
+| developed-steps15708-16108-16508 | stable | yes |  | 0.9728 | 1.103 | s | s |
+| developed-steps16508-16908-17308 | stable | yes |  | 0.9293 | 1.116 | s | s |
+| developed-steps19908-20108-20308 | stable | yes |  | 0.9392 | 1.349 | s | s |
+| upwind-dt2e-5-steps00060-00080-00100 | stable | yes |  | 0.9538 | 0.933 | s | s |
+| upwind-dt2e-5-steps00270-00280-00290 | stable | yes |  | 0.9813 | 1.114 | s | s |
+| upwind-dt2e-5-steps00650-00660-00670 | stable | yes |  | 1.002 | 1.084 | s | s |
+| upwind-dt2e-5-steps00800-00820-00840 | stable | yes |  | 0.9604 | 0.7125 | s | s |
+| upwind-dt2e-5-steps01320-01340-01360 | stable | yes |  | 1.047 | 1.015 | s | s |
+| upwind-dt2e-5-steps01550-01560-01570 | stable | yes |  | 0.9904 | 1.35 | s | s |
+| upwind-dt2e-5-steps01680-01690-01700 | stable | yes |  | 0.9921 | 0.9551 | s | s |
+| upwind-dt4e-5-steps00170-00190-00210 | stable | yes |  | 0.9629 | 0.7726 | s | s |
+| upwind-dt4e-5-steps00270-00280-00290 | stable | yes |  | 0.9857 | 1.132 | s | s |
+| upwind-dt4e-5-steps00610-00630-00650 | stable | yes |  | 1.018 | 0.7174 | s | s |
+| upwind-dt4e-5-steps00970-00980-00990 | stable | yes |  | 1.075 | 0.8718 | s | s |
+| upwind-dt4e-5-steps01200-01210-01220 | stable | yes |  | 0.9889 | 1.337 | s | s |
+| upwind-dt4e-5-steps01550-01570-01590 | stable | yes |  | 0.9534 | 0.8082 | s | s |
+| upwind-dt4e-5-steps01720-01740-01760 | stable | yes |  | 0.9715 | 0.7194 | s | s |
+
+
+2026-11-02T06:14:32Z
+done

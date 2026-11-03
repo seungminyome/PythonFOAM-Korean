@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is fastest in the upper half of the domain, particularly around the center-left. The velocity is slowest in the bottom left and bottom center regions. The lowest pressure is located in a distinct low-pressure zone in the lower-left quadrant, while the highest pressure is found in the bottom right and top right areas.\",\n  \"fastest_flow_x_percent\": 20,\n  \"fastest_flow_y_percent\": 50,\n  \"lowest_pressure_x_percent\": 18,\n  \"lowest_pressure_y_percent\": 25,\n  \"uncertainties\": \"The exact physical boundaries and the nature of the obstacles or geometry causing the pressure drop and velocity gradients are not explicitly shown.\"\n}",
+  "request_sha256": "96d378cc9ad27f53fee5910766d230b5f91092a9332931bcd2ee5d70f4cbfa45",
+  "request_bytes": 203209,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1332,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 176,
+    "prompt_tokens": 1061,
+    "total_tokens": 1237,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 283.724,
+    "prompt_per_token_ms": 0.2674118755890669,
+    "prompt_per_second": 3739.549703232719,
+    "predicted_n": 176,
+    "predicted_ms": 2207.607,
+    "predicted_per_token_ms": 12.614897142857142,
+    "predicted_per_second": 79.27135581650177
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly around the center-left. The velocity is slowest in the bottom left and bottom center regions. The lowest pressure is located in a distinct low-pressure zone in the lower-left quadrant, while the highest pressure is found in the bottom right and top right areas.",
+    "fastest_flow_x_percent": 20,
+    "fastest_flow_y_percent": 50,
+    "lowest_pressure_x_percent": 18,
+    "lowest_pressure_y_percent": 25,
+    "uncertainties": "The exact physical boundaries and the nature of the obstacles or geometry causing the pressure drop and velocity gradients are not explicitly shown."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.3090652395039797,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

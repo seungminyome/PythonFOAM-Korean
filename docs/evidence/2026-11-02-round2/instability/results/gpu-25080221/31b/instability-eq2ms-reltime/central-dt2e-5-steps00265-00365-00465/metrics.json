@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "29a5b6eddc7171254e78a2dc962927475675bd42028d17053bd62a19cebc8fd8",
+  "request_bytes": 645604,
+  "replay_wall_s": 6.384923871606588,
+  "client_inference_wall_s": 6.358566094189882,
+  "usage": {
+    "completion_tokens": 107,
+    "prompt_tokens": 2048,
+    "total_tokens": 2155,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 1676.526,
+    "prompt_per_token_ms": 0.8186162109375,
+    "prompt_per_second": 1221.5736588636262,
+    "predicted_n": 107,
+    "predicted_ms": 3144.907,
+    "predicted_per_token_ms": 29.668933962264152,
+    "predicted_per_second": 33.70528921840932
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude |U| shows a sudden and non-physical increase in the maximum value from 43.44 m/s at t=0.002s to 90.01 m/s at t=0.004s, accompanied by the appearance of localized, high-gradient spikes (e.g., around x=10%, y=30% in Image 5).",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

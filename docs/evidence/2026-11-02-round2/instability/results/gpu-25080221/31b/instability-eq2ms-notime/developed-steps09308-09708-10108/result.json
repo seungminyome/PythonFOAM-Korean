@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The velocity and pressure fields evolve smoothly over time without any signs of high-frequency spatial oscillations, checkerboarding, or unbounded growth in magnitudes.\", \"stability\": \"stable\"}",
+  "request_sha256": "a952e4f874acb77b85d5957f501d2a2071fc42ed7936aa4953c16e638bc18e0a",
+  "request_bytes": 636067,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 862,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 44,
+    "prompt_tokens": 1972,
+    "total_tokens": 2016,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1605.486,
+    "prompt_per_token_ms": 0.8141409736308317,
+    "prompt_per_second": 1228.2885057857868,
+    "predicted_n": 44,
+    "predicted_ms": 1276.888,
+    "predicted_per_token_ms": 29.695069767441858,
+    "predicted_per_second": 33.67562386051087
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields evolve smoothly over time without any signs of high-frequency spatial oscillations, checkerboarding, or unbounded growth in magnitudes.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.2345395144075155,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

@@ -1,0 +1,14 @@
+status PASS | steps 1000 write_every 250 request_step 250 sequence [250, 500, 750] start 0.1
+async-no-llm         exit=0 model=disabled files_identical_to_no_request_baseline=72 frames=3 same_fields_flags=[True, True, True] stall=0.004405023530125618 infer=0.0 maxCo=0.333895897955
+async-describe       exit=0 model=ok files_identical_to_no_request_baseline=72 frames=1 same_fields_flags=[True] stall=0.01769929751753807 infer=3.846925340592861 maxCo=0.333895897955
+async-sequence       exit=0 model=ok files_identical_to_no_request_baseline=72 frames=3 same_fields_flags=[True, True, True] stall=0.004433080554008484 infer=3.9672467783093452 maxCo=0.333895897955
+async-server-error   exit=0 model=error files_identical_to_no_request_baseline=72 frames=1 same_fields_flags=[True] stall=0.018092583864927292 infer=0.009553119540214539 maxCo=0.333895897955
+async-timeout        exit=0 model=timeout files_identical_to_no_request_baseline=72 frames=1 same_fields_flags=[True] stall=0.014583176001906395 infer=None maxCo=0.333895897955
+independent hash pass: async-no-llm wrote 84 files in 4 time folders ['0.10125', '0.1025', '0.10375', '0.105']
+  async-describe       files 84 identical 84 missing 0 extra 0
+  async-sequence       files 84 identical 84 missing 0 extra 0
+  async-server-error   files 84 identical 84 missing 0 extra 0
+  async-timeout        files 84 identical 84 missing 0 extra 0
+vs 24950817: start_files_sha256 equal True; async-no-llm frame fields_sha256 equal {250: True, 500: True, 750: True}
+vs 25089703: start_files_sha256 equal True; async-no-llm frame fields_sha256 equal {250: True, 500: True, 750: True}
+timings_s {'async-no-llm': 61.0, 'async-describe': 60.5, 'async-sequence': 60.5, 'async-server-error': 61.0, 'async-timeout': 61.0}

@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow shows smooth evolution of features over time. The velocity magnitude and pressure fields exhibit continuous changes in structure and magnitude without any high-frequency oscillations, checkerboard patterns, or non-physical growth of extremes.\", \"stability\": \"stable\"}",
+  "request_sha256": "18119b1577402db55b57a34173be3ce654e215dc451a5119388d87951f489eba",
+  "request_bytes": 644175,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 943,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 58,
+    "prompt_tokens": 1972,
+    "total_tokens": 2030,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 629.023,
+    "prompt_per_token_ms": 0.3189771805273834,
+    "prompt_per_second": 3135.0205000453084,
+    "predicted_n": 58,
+    "predicted_ms": 730.219,
+    "predicted_per_token_ms": 12.810859649122808,
+    "predicted_per_second": 78.05877414857734
+  },
+  "structured_output": {
+    "reason": "The flow shows smooth evolution of features over time. The velocity magnitude and pressure fields exhibit continuous changes in structure and magnitude without any high-frequency oscillations, checkerboard patterns, or non-physical growth of extremes.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.1932555958628654,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

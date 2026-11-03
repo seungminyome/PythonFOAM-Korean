@@ -1,0 +1,10 @@
+PODFoam: optional podSvdInterval in controlDict
+
+At its default of 0 nothing changes: a write step runs the SVD if snapshots
+have been collected since the last SVD, and collects one otherwise. Above 0,
+every step collects a snapshot and the SVD runs every podSvdInterval
+snapshots, also on steps that write nothing else, which then hold only the
+POD fields. A negative value stops the run with a message. Each step now
+prints a Time = line with its deltaT; the timing lines stay.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

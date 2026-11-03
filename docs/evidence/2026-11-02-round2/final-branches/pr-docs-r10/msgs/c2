@@ -1,0 +1,11 @@
+PODFoam_Debug, APMOSFoam, AEFoam: NumPy owns each snapshot too
+
+The three solvers passed PyArray_SimpleNewFromData over the reused C++
+buffer input_vals, so a view the module kept read the next step's
+values. Their shipped modules kept the first snapshot of each window
+that way, and the first two snapshot columns came out equal; in AEFoam
+they were rows. PyArray_SimpleNew plus a copy of the buffer gives Python
+an owning array. A failed allocation stops the run with a message.
+Nothing else in the three solvers changes.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

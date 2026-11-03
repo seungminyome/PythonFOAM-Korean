@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the lower-middle section, specifically between 40% and 80% on the x-axis and 10% to 40% on the y-axis. The velocity is lowest at the bottom left corner. The kinematic pressure is lowest in the bottom-middle region, particularly around 60% x and 10% y, and higher in the upper regions.\",\n  \"fastest_flow_x_percent\": 63,\n  \"fastest_flow_y_percent\": 25,\n  \"lowest_pressure_x_percent\": 63,\n  \"lowest_pressure_y_percent\": 10,\n  \"uncertainties\": \"The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644822,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 199,
+    "prompt_tokens": 1061,
+    "total_tokens": 1260,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-yEtM8uCdHRUgv6ZooWDAmAZFAnKDSoWN",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 280.783,
+    "prompt_per_token_ms": 0.26463996229971726,
+    "prompt_per_second": 3778.7187970781706,
+    "predicted_n": 199,
+    "predicted_ms": 2496.965,
+    "predicted_per_token_ms": 12.610934343434344,
+    "predicted_per_second": 79.29626566651915
+  }
+}

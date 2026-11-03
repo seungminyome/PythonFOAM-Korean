@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z3-step000150-w1",
+  "design": {
+    "run": "z3",
+    "slice_z_m": 0.00396875,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00396875,
+      "requested_z_m": 0.00396875,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 150,
+    "time_s": 0.10150000000000076,
+    "plotted_range_m": {
+      "x": [
+        -0.10155003960171066,
+        0.09273002807397585
+      ],
+      "y": [
+        -0.029337391707161375,
+        0.030498000509483494
+      ]
+    },
+    "cells_in_window": 7180,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "e0deace0a6f6d57b9e0a9973c1b645aa21f5f8ad322425b01d7f6d0d290bd5cb",
+  "wall_s": 3.8979904614388943,
+  "usage": {
+    "completion_tokens": 204,
+    "prompt_tokens": 1064,
+    "total_tokens": 1268,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1064,
+    "prompt_ms": 285.6,
+    "prompt_per_token_ms": 0.26842105263157895,
+    "prompt_per_second": 3725.490196078431,
+    "predicted_n": 204,
+    "predicted_ms": 2560.139,
+    "predicted_per_token_ms": 12.611522167487685,
+    "predicted_per_second": 79.29256966125668
+  },
+  "structured_output": {
+    "flow_description": "The flow is fast in the upper region (y > 70%) and shows a complex structure with high-velocity regions between x=60% and 90%. The flow is slow in the lower-right region (x > 50%, y < 70%). Pressure is relatively uniform in the upper region but shows significant fluctuations in the lower-right region, with a distinct low-pressure zone near x=75%, y=65%.",
+    "fastest_flow_x_percent": 80,
+    "fastest_flow_y_percent": 80,
+    "lowest_pressure_x_percent": 75,
+    "lowest_pressure_y_percent": 65,
+    "uncertainties": "The exact physical boundaries and the nature of the obstacles or geometry causing the pressure fluctuations are not explicitly labeled."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        80,
+        80
+      ],
+      "true_percent": [
+        77.34003469424117,
+        79.46994012867388
+      ],
+      "error_percent": [
+        2.6599653057588313,
+        0.5300598713261166
+      ],
+      "distance_percent": 2.7122645326425907,
+      "error_m": [
+        0.005167782396178039,
+        0.000317163402991025
+      ],
+      "distance_m": 0.0051775059167947345,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        75,
+        65
+      ],
+      "true_percent": [
+        76.80099343678661,
+        65.71454611188385
+      ],
+      "error_percent": [
+        -1.8009934367866123,
+        -0.7145461118838483
+      ],
+      "distance_percent": 1.9375638067833478,
+      "error_m": [
+        -0.0034989712678237025,
+        -0.0004275514686144867
+      ],
+      "distance_m": 0.0035249964810436635,
+      "within_10_percent": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values between time steps.\", \"stability\": \"stable\"}",
+  "request_sha256": "3705cca296b720b2992f6cc9fa31c4b06d0b5f5ee0b925e06c9edd90e0af1f72",
+  "request_bytes": 628851,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 930,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 57,
+    "prompt_tokens": 1972,
+    "total_tokens": 2029,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 559.591,
+    "prompt_per_token_ms": 0.2837682555780933,
+    "prompt_per_second": 3524.0023517175937,
+    "predicted_n": 57,
+    "predicted_ms": 717.523,
+    "predicted_per_token_ms": 12.812910714285715,
+    "predicted_per_second": 78.04627865587584
+  },
+  "structured_output": {
+    "reason": "The flow fields for both velocity magnitude and kinematic pressure show smooth gradients and coherent structures. There are no signs of high-frequency oscillations, checkerboard patterns, or unphysical growth in values between time steps.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.0584891196340322,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

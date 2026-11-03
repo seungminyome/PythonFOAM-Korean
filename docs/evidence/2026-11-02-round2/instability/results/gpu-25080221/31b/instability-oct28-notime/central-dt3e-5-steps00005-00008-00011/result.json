@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values.\", \"stability\": \"stable\"}",
+  "request_sha256": "426bf112da1f0f65a0f646282196d0c829c707ae382373d3003934af2a45465f",
+  "request_bytes": 654883,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 866,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 46,
+    "prompt_tokens": 1972,
+    "total_tokens": 2018,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1553.297,
+    "prompt_per_token_ms": 0.7876759634888438,
+    "prompt_per_second": 1269.5575926561373,
+    "predicted_n": 46,
+    "predicted_ms": 1336.335,
+    "predicted_per_token_ms": 29.696333333333335,
+    "predicted_per_second": 33.674190977561764
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of checkerboarding, high-frequency oscillations, or diverging values.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.0449475441128016,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

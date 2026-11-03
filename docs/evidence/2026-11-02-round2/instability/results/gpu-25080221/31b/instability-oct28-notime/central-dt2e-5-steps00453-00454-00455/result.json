@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The velocity and pressure fields remain smooth and consistent across the three time steps, with maximum and minimum values staying nearly constant. No checkerboard patterns or divergent oscillations are visible.\", \"stability\": \"stable\"}",
+  "request_sha256": "d9761b20467de2ed3634e7b565d65524c38fda47393d6f9202ae5410a4fcacb3",
+  "request_bytes": 641987,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 905,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 50,
+    "prompt_tokens": 1972,
+    "total_tokens": 2022,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1563.672,
+    "prompt_per_token_ms": 0.7929371196754564,
+    "prompt_per_second": 1261.1340485728465,
+    "predicted_n": 50,
+    "predicted_ms": 1454.466,
+    "predicted_per_token_ms": 29.682979591836734,
+    "predicted_per_second": 33.68934028021281
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields remain smooth and consistent across the three time steps, with maximum and minimum values staying nearly constant. No checkerboard patterns or divergent oscillations are visible.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.074076259508729,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

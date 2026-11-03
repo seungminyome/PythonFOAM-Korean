@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows a high-velocity region near the bottom center, with a distinct wake or interaction zone between x=30% and x=60%. The velocity is highest in the lower-middle section and lower in the bottom-left corner. Pressure is lowest in the center of the wake structures around x=40% and x=55%, while it is higher in the surrounding regions.\",\n  \"fastest_flow_x_percent\": 50,\n  \"fastest_flow_y_percent\": 15,\n  \"lowest_pressure_x_percent\": 40,\n  \"lowest_pressure_y_percent\": 10,\n  \"uncertainties\": \"The exact physical geometry of the obstacle or boundary causing the wake is not explicitly shown, only the resulting flow field.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644738,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 191,
+    "prompt_tokens": 1063,
+    "total_tokens": 1254,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-FOqp0hJiFeCQpRu754rPDxz90Y4ndeAS",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 284.643,
+    "prompt_per_token_ms": 0.26777328316086546,
+    "prompt_per_second": 3734.5025171881975,
+    "predicted_n": 191,
+    "predicted_ms": 2396.391,
+    "predicted_per_token_ms": 12.612584210526316,
+    "predicted_per_second": 79.28589282800678
+  }
+}

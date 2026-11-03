@@ -5,7 +5,7 @@ MedicineBow(와이오밍 대학교)의 Slurm 작업 여섯 개, 작업마다 NVI
 않았습니다. v2 그림으로 한 솔버 실행은 [2026-10-22-live-v2](../2026-10-22-live-v2/README.md)에 있습니다.
 
 [보고서](../../results-20261022-live.md) ·
-[묶음을 만들고 돌리는 법](../../../Solver_Examples/PODFoam/llm_demo/hpc/README.md#무작위-창-시험과-qwen-모델-2026-10-22-실행) ·
+[묶음을 만들고 돌리는 법](https://github.com/seungminyome/PythonFOAM-Korean/blob/5c56995/Solver_Examples/PODFoam/llm_demo/hpc/README.md#무작위-창-시험과-qwen-모델-2026-10-22-실행) ·
 [모든 압축 파일이 있는 릴리스](https://github.com/seungminyome/PythonFOAM/releases/tag/picture-test-2026-10-22) ·
 [영문 문서](https://github.com/seungminyome/PythonFOAM/blob/main/docs/evidence/2026-10-22-window-test/README.md)
 

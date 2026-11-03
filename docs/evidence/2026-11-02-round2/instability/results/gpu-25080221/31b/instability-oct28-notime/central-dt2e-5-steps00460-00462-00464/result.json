@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The maximum velocity magnitude |U| increases significantly from 39.75 m/s at Time 1 to 96.52 m/s at Time 3, while the flow field becomes increasingly erratic and loses its initial structure, indicating numerical instability.\", \"stability\": \"unstable\"}",
+  "request_sha256": "907f686864eb7c7d3fed66f002740ff3c064882cbe932343c1221e76abf4ebfe",
+  "request_bytes": 621179,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 919,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 72,
+    "prompt_tokens": 1972,
+    "total_tokens": 2044,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1612.948,
+    "prompt_per_token_ms": 0.8179249492900609,
+    "prompt_per_second": 1222.6060604557617,
+    "predicted_n": 72,
+    "predicted_ms": 2105.209,
+    "predicted_per_token_ms": 29.65083098591549,
+    "predicted_per_second": 33.72586759794396
+  },
+  "structured_output": {
+    "reason": "The maximum velocity magnitude |U| increases significantly from 39.75 m/s at Time 1 to 96.52 m/s at Time 3, while the flow field becomes increasingly erratic and loses its initial structure, indicating numerical instability.",
+    "stability": "unstable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.992406524717808,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

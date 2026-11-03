@@ -1,0 +1,34 @@
+## validation r4 -> r6
+   intro                                     19.515 ->  18.408  -1.107
+   What the script does                      16.913 ->  18.249  +1.336
+   Pass criteria (`verify.py`)                9.462 ->   0.000  -9.462
+   What a module must provide                 5.736 ->   5.782  +0.046
+   What changes in PODFoam                   48.374 ->  46.684  -1.689
+   What `verify.py` checks                    0.000 ->  10.875  +10.875
+   largest change 10.875 points
+## HOOKS r4 -> r6
+   intro                                     15.558 ->  16.205  +0.647
+   `mesh_func` arguments                     21.781 ->  22.051  +0.270
+   `state`                                   20.494 ->  20.000  -0.494
+   Behaviour                                 42.167 ->  41.744  -0.424
+   largest change 0.647 points
+## llm c9 r4 -> r6
+   intro                                      2.979 ->   3.411  +0.432
+   How it fits into the solver                7.745 ->   7.072  -0.674
+   Pictures and requests                     15.628 ->  14.517  -1.110
+   Quick start                               19.203 ->  19.301  +0.099
+   Settings                                  20.761 ->  19.468  -1.293
+   Outputs                                    6.645 ->   6.489  -0.156
+   Checks                                     6.187 ->   6.323  +0.136
+   Limits                                    20.852 ->  23.419  +2.567
+   largest change 2.567 points
+## llm c10 r4 -> r6
+   intro                                      2.924 ->   3.354  +0.430
+   How it fits into the solver                7.602 ->   6.953  -0.649
+   Pictures and requests                     15.340 ->  14.274  -1.066
+   Quick start                               19.388 ->  19.468  +0.080
+   Settings                                  21.682 ->  20.327  -1.355
+   Outputs                                    6.523 ->   6.380  -0.142
+   Checks                                     6.073 ->   6.217  +0.144
+   Limits                                    20.468 ->  23.027  +2.559
+   largest change 2.559 points

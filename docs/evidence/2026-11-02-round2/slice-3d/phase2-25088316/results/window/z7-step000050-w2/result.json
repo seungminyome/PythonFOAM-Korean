@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the lower-middle section, with a distinct low-velocity zone near the bottom left. Pressure is lowest in a localized region near the center-bottom, corresponding to a high-velocity area, while pressure is higher in the upper regions and towards the right edge.\",\n  \"fastest_flow_x_percent\": 40,\n  \"fastest_flow_y_percent\": 30,\n  \"lowest_pressure_x_percent\": 40,\n  \"lowest_pressure_y_percent\": 15,\n  \"uncertainties\": \"The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range.\"\n}",
+  "request_sha256": "4b869adaa9036f9b8ab8a8cc9c30e07f49571cdc8c3d5a445a0e8be12019bcc1",
+  "request_bytes": 205438,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1296,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 171,
+    "prompt_tokens": 1062,
+    "total_tokens": 1233,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 287.618,
+    "prompt_per_token_ms": 0.2708267419962335,
+    "prompt_per_second": 3692.397555090433,
+    "predicted_n": 171,
+    "predicted_ms": 2144.392,
+    "predicted_per_token_ms": 12.614070588235293,
+    "predicted_per_second": 79.27655018298894
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the lower-middle section, with a distinct low-velocity zone near the bottom left. Pressure is lowest in a localized region near the center-bottom, corresponding to a high-velocity area, while pressure is higher in the upper regions and towards the right edge.",
+    "fastest_flow_x_percent": 40,
+    "fastest_flow_y_percent": 30,
+    "lowest_pressure_x_percent": 40,
+    "lowest_pressure_y_percent": 15,
+    "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.573775155469775,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

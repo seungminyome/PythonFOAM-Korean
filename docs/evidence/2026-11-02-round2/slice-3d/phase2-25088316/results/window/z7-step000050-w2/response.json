@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the lower-middle section, with a distinct low-velocity zone near the bottom left. Pressure is lowest in a localized region near the center-bottom, corresponding to a high-velocity area, while pressure is higher in the upper regions and towards the right edge.\",\n  \"fastest_flow_x_percent\": 40,\n  \"fastest_flow_y_percent\": 30,\n  \"lowest_pressure_x_percent\": 40,\n  \"lowest_pressure_y_percent\": 15,\n  \"uncertainties\": \"The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644804,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 171,
+    "prompt_tokens": 1062,
+    "total_tokens": 1233,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-5UtjT4drriUdx7s6xZxBaqmOoeDBMceB",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 287.618,
+    "prompt_per_token_ms": 0.2708267419962335,
+    "prompt_per_second": 3692.397555090433,
+    "predicted_n": 171,
+    "predicted_ms": 2144.392,
+    "predicted_per_token_ms": 12.614070588235293,
+    "predicted_per_second": 79.27655018298894
+  }
+}

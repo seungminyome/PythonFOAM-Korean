@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "1caa98a0983c50500a988c9bb9204731e78f0ec654e03bf2c042935500d5824c",
+  "request_bytes": 650732,
+  "replay_wall_s": 4.517973132431507,
+  "client_inference_wall_s": 4.483474589884281,
+  "usage": {
+    "completion_tokens": 54,
+    "prompt_tokens": 2048,
+    "total_tokens": 2102,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 1598.668,
+    "prompt_per_token_ms": 0.780599609375,
+    "prompt_per_second": 1281.0664878511361,
+    "predicted_n": 54,
+    "predicted_ms": 1574.841,
+    "predicted_per_token_ms": 29.71398113207547,
+    "predicted_per_second": 33.6541911215164
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields evolve smoothly over time without any high-frequency spatial oscillations, checkerboard patterns, or non-physical growth in magnitudes. The changes are consistent with unsteady flow development.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "unstable",
+      "match": false,
+      "cannot_tell": false
+    }
+  }
+}

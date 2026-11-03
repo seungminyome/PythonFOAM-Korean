@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z7-step000300-w2",
+  "design": {
+    "run": "z7",
+    "slice_z_m": 0.0103125,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.0103125,
+      "requested_z_m": 0.0103125,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 300,
+    "time_s": 0.1022500000000015,
+    "plotted_range_m": {
+      "x": [
+        -0.15570000901991649,
+        0.2286540776230001
+      ],
+      "y": [
+        -0.018368809070854974,
+        0.09181692335672302
+      ]
+    },
+    "cells_in_window": 11608,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "81c008c6ca8d3f5297ec4c654dc152d2c83a2a42d4c51f106649a9e1736708f3",
+  "wall_s": 3.3626385256648064,
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 1061,
+    "total_tokens": 1221,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 285.435,
+    "prompt_per_token_ms": 0.2690245051837889,
+    "prompt_per_second": 3717.1334979942894,
+    "predicted_n": 160,
+    "predicted_ms": 2006.08,
+    "predicted_per_token_ms": 12.616855345911949,
+    "predicted_per_second": 79.2590524804594
+  },
+  "structured_output": {
+    "flow_description": "The flow is generally fast in the upper region, with a significant velocity drop and complex structure in the lower-right quadrant. Pressure is relatively uniform in the upper half, with a distinct low-pressure zone appearing in the lower-center region near the velocity transition.",
+    "fastest_flow_x_percent": 55,
+    "fastest_flow_y_percent": 35,
+    "lowest_pressure_x_percent": 52,
+    "lowest_pressure_y_percent": 28,
+    "uncertainties": "The exact magnitude of the velocity and pressure values in the white regions is unknown as they contain no cells."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        55,
+        35
+      ],
+      "true_percent": [
+        55.634358913162934,
+        33.22171619630159
+      ],
+      "error_percent": [
+        -0.6343589131629344,
+        1.7782838036984074
+      ],
+      "distance_percent": 1.8880425093745468,
+      "error_m": [
+        -0.0024381844067253287,
+        0.0019594150337460836
+      ],
+      "distance_m": 0.003127946686832867,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        52,
+        28
+      ],
+      "true_percent": [
+        55.089386294060674,
+        25.69881800460293
+      ],
+      "error_percent": [
+        -3.0893862940606738,
+        2.3011819953970694
+      ],
+      "distance_percent": 3.852239121584949,
+      "error_m": [
+        -0.011874182473408353,
+        0.002535574236119815
+      ],
+      "distance_m": 0.012141883960846962,
+      "within_10_percent": true
+    }
+  }
+}

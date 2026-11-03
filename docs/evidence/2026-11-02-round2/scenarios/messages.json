@@ -1,0 +1,1110 @@
+{
+ "returns-fortran": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "returns-reversed-columns": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "returns-strided-rows": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "returns-matrix": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "returns-float32": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "returns-bigendian": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "returns-list": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "returns-none": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "returns-rows-wrong": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "returns-six-modes": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "returns-nan": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "Non-finite SVD result",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "Non-finite SVD result",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "returns-one-d": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "returns-zero-modes": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "refcount-weakrefs": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=9e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=9e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "sticky-fp-flags-from-python": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=9e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=9e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "hooks-analysis-raises-systemexit": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "Traceback (most recent call last):",
+     "SystemExit: 3",
+     "analysis_func raised; continuing without it",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "Traceback (most recent call last):",
+     "SystemExit: 3",
+     "analysis_func raised; continuing without it",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "hooks-mesh-func-wrong-signature": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "TypeError: mesh_func() takes 1 positional argument but 7 were given",
+     "mesh_func failed; continuing without it",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "TypeError: mesh_func() takes 1 positional argument but 7 were given",
+     "mesh_func failed; continuing without it",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "hooks-analysis-not-callable": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "hooks-snapshot-missing-with-analysis": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "AttributeError: module 'python_module' has no attribute 'snapshot_func'",
+     "--> FOAM FATAL ERROR:",
+     "snapshot_func and svd_func must be callable",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "AttributeError: module 'python_module' has no attribute 'snapshot_func'",
+     "--> FOAM FATAL ERROR:",
+     "snapshot_func and svd_func must be callable",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "hooks-svd-not-callable": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "snapshot_func and svd_func must be callable",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "snapshot_func and svd_func must be callable",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "hooks-negative-interval": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "podSvdInterval must be non-negative",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "podSvdInterval must be non-negative",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "sysexit-snapshot-code0": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "Traceback (most recent call last):",
+     "SystemExit: 0",
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "Traceback (most recent call last):",
+     "SystemExit: 0",
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": -11,
+    "msg": []
+   },
+   "v2212": {
+    "exit": -11,
+    "msg": []
+   }
+  }
+ },
+ "sysexit-svd-code0": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "Traceback (most recent call last):",
+     "SystemExit: 0",
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "Traceback (most recent call last):",
+     "SystemExit: 0",
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": -11,
+    "msg": []
+   },
+   "v2212": {
+    "exit": -11,
+    "msg": []
+   }
+  }
+ },
+ "sysexit-import-code0": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "Traceback (most recent call last):",
+     "SystemExit: 0",
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "Traceback (most recent call last):",
+     "SystemExit: 0",
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "cwd-module-beside-not-in-case": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   }
+  }
+ },
+ "case-relative-path": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=4 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "thread-non-daemon": {
+  "fork": {
+   "v2012": {
+    "exit": 124,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07"
+    ]
+   },
+   "v2212": {
+    "exit": 124,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   }
+  }
+ },
+ "restart-latestTime-podSvdInterval-first": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "restart-latestTime-podSvdInterval-second": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "restart-latestTime-default-first": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.8e-06",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.8e-06",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "restart-latestTime-default-second": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.8e-06",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.8e-06",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "offline-shipped-method-of-snapshots-wi1": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=2e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=4e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=2e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=4e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=6e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": -11,
+    "msg": []
+   },
+   "v2212": {
+    "exit": -11,
+    "msg": []
+   }
+  }
+ },
+ "offline-shipped-method-of-snapshots-wi2": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=2e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=4e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=6e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=8e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=2e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=4e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=6e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=1 finite=true time=8e-07",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   }
+  }
+ },
+ "offline-shipped-method-of-snapshots-wi3": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "--> FOAM FATAL ERROR:",
+     "Non-finite SVD result",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=3e-07",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=2 finite=true time=6e-07",
+     "--> FOAM FATAL ERROR:",
+     "Non-finite SVD result",
+     "FOAM exiting"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   }
+  }
+ },
+ "offline-shipped-method-of-snapshots-wi6": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "Non-finite SVD result",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "Non-finite SVD result",
+     "FOAM exiting"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   }
+  }
+ },
+ "offline-shipped-method-of-snapshots-wi25": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.5e-06",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=5e-06",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=2.5e-06",
+     "POD SVD returned to OpenFOAM: rows=61620 modes=5 finite=true time=5e-06",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   }
+  }
+ },
+ "parvalidation-module-refuses-rank1": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "Traceback (most recent call last):",
+     "ValueError: This validation module requires serial execution",
+     "--> FOAM FATAL ERROR:",
+     "Python snapshot_func failed"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "Traceback (most recent call last):",
+     "ValueError: This validation module requires serial execution",
+     "--> FOAM FATAL ERROR:",
+     "Python snapshot_func failed"
+    ]
+   }
+  }
+ },
+ "upstreampar-baseline": {
+  "upstream": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "End"
+    ]
+   }
+  }
+ },
+ "rankmodes-rank-dependent-count": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR: (openfoam-",
+     "--> FOAM FATAL ERROR:",
+     "The ranks returned different numbers of POD modes: from 3 to 5"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110[1]",
+     "--> FOAM FATAL ERROR:",
+     "The ranks returned different numbers of POD modes: from 3 to 5"
+    ]
+   }
+  }
+ },
+ "rankmodes-equal-count-control": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=6e-07",
+     "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=1.2e-06",
+     "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=1.8e-06",
+     "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=2.4e-06",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=6e-07",
+     "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=1.2e-06",
+     "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=1.8e-06",
+     "POD SVD returned to OpenFOAM: rows=30756 modes=5 finite=true time=2.4e-06",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "rankmodes-variance-rule": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR: --> FOAM FATAL ERROR:",
+     "The ranks returned different numbers of POD modes: from 2 to 3"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR: (openfoam-2212 patch=230110[1]",
+     "--> FOAM FATAL ERROR:",
+     "The ranks returned different numbers of POD modes: from 2 to 3"
+    ]
+   }
+  }
+ },
+ "smallrank-3-cells-upstream-module": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR: (openfoam-2012",
+     "--> FOAM FATAL ERROR: (openfoam-2012 patch=210618 patch=210618)",
+     "The ranks returned different numbers of POD modes: from 3 to 5"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR: [0]",
+     "--> FOAM FATAL ERROR:",
+     "The ranks returned different numbers of POD modes: from 3 to 5"
+    ]
+   }
+  }
+ },
+ "smallrank-0-cells-upstream-module": {
+  "fork": {
+   "v2012": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=58620 modes=5 finite=true time=6e-07",
+     "POD SVD returned to OpenFOAM: rows=58620 modes=5 finite=true time=1.2e-06",
+     "Python finalized successfully",
+     "End"
+    ]
+   },
+   "v2212": {
+    "exit": 0,
+    "msg": [
+     "POD SVD returned to OpenFOAM: rows=58620 modes=5 finite=true time=6e-07",
+     "POD SVD returned to OpenFOAM: rows=58620 modes=5 finite=true time=1.2e-06",
+     "Python finalized successfully",
+     "End"
+    ]
+   }
+  }
+ },
+ "masteronly-analysis-defined-on-rank0": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "analysis_func must be defined on every rank or on none"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR: (openfoam-2212[0]",
+     "--> FOAM FATAL ERROR:",
+     "analysis_func must be defined on every rank or on none"
+    ]
+   }
+  }
+ },
+ "traps-diverging-FOAM_SIGFPE-default": {
+  "fork": {
+   "v2012": {
+    "exit": -8,
+    "msg": []
+   },
+   "v2212": {
+    "exit": -8,
+    "msg": []
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL IO ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL IO ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ },
+ "traps-diverging-FOAM_SIGFPE-false": {
+  "fork": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "Non-finite U/p at cell 0 time 0.041",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL ERROR:",
+     "Non-finite U/p at cell 0 time 0.041",
+     "FOAM exiting"
+    ]
+   }
+  },
+  "upstream": {
+   "v2012": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL IO ERROR:",
+     "FOAM exiting"
+    ]
+   },
+   "v2212": {
+    "exit": 1,
+    "msg": [
+     "--> FOAM FATAL IO ERROR:",
+     "FOAM exiting"
+    ]
+   }
+  }
+ }
+}

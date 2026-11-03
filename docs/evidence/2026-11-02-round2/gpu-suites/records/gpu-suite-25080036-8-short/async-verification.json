@@ -1,0 +1,486 @@
+{
+  "async-no-llm": {
+    "steps": 1000,
+    "request_step": 750,
+    "arrived_at_step": 763,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 72,
+    "model_status": "disabled",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.004356694,
+      "arrival_step": 0.037342447,
+      "last_step": 0.024483178,
+      "max_other_steps": 0.017634821,
+      "median_all_steps": 0.000147953
+    },
+    "solver_stall_s": 0.00400586798787117,
+    "inference_wall_s": 0.0,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "f955ce165ba9da9bcdabbd7762bb717e89cf50b28b91e2415cc16e6ddeb1b80f",
+        "png_sha256": {
+          "U": "0c935980080b007196e98bbfc8d0d97fa1ff033531b1b53e35f7e41df65617a4",
+          "p": "8be987efd50f3deacfc1bef8dc05ae8ceb49c51da59f038fab41d2b8e5872e97"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 500,
+        "written_fields_checked": true,
+        "fields_sha256": "1a9152efb290e671d3238d4c5e2a115659c50d0406146a04c0fb6dd3f87d3e25",
+        "png_sha256": {
+          "U": "d0cbd37a8e2d823d5950234c942691f0f19549fdbd68512e4a4e368aec9ad6b9",
+          "p": "8e6c80cf759d85948ab067b9811c5991ee52b3cd354506f4a90f095e94f2c9ef"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 750,
+        "written_fields_checked": true,
+        "fields_sha256": "2adef52f875666d24bbbb17a6149056658c4686f64f3d0b8157866e04daf9f32",
+        "png_sha256": {
+          "U": "f51b8fd9b6f9e472b3edd6bb52fee3fcb9db8d2c9aaeca5b1e44bd8956b771d8",
+          "p": "1bbfdee7b6be465823fb78265d0c1633d6b0102801e79f70a4faad8b9125341d"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 0.333790780737
+  },
+  "async-describe": {
+    "steps": 1000,
+    "request_step": 250,
+    "arrived_at_step": 338,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 72,
+    "model_status": "ok",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.016757316,
+      "arrival_step": 0.041618,
+      "last_step": 0.022646264,
+      "max_other_steps": 0.014173992,
+      "median_all_steps": 0.00014292249999999998
+    },
+    "solver_stall_s": 0.016406280919909477,
+    "inference_wall_s": 3.9136962983757257,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "f955ce165ba9da9bcdabbd7762bb717e89cf50b28b91e2415cc16e6ddeb1b80f",
+        "png_sha256": {
+          "U": "0c935980080b007196e98bbfc8d0d97fa1ff033531b1b53e35f7e41df65617a4",
+          "p": "8be987efd50f3deacfc1bef8dc05ae8ceb49c51da59f038fab41d2b8e5872e97"
+        },
+        "same_fields_as_baseline_frame": true
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": {
+      "flow_description": "The flow is fastest in the upper half of the domain, particularly around x=35% and x=60%, where velocity magnitude is highest. The flow is slowest in the bottom third of the domain. The lowest pressure is located in a concentrated region near x=35% and y=30%, while higher pressure is seen at the bottom right and top left.",
+      "fastest_flow_x_percent": 35,
+      "fastest_flow_y_percent": 45,
+      "lowest_pressure_x_percent": 35,
+      "lowest_pressure_y_percent": 30,
+      "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range."
+    },
+    "score": {
+      "truth": {
+        "fastest_flow": {
+          "x_percent": 35.351412402500095,
+          "y_percent": 46.05787987101642,
+          "x_m": 0.04242169488300011,
+          "y_m": 0.018423151948406567,
+          "cell": 13488
+        },
+        "lowest_pressure": {
+          "x_percent": 36.22454751115528,
+          "y_percent": 26.16151284303665,
+          "x_m": 0.04346945701338633,
+          "y_m": 0.01046460513721466,
+          "cell": 9674
+        },
+        "plotted_range_m": {
+          "x": [
+            0.0,
+            0.12
+          ],
+          "y": [
+            0.0,
+            0.04
+          ]
+        }
+      },
+      "scores": {
+        "fastest_flow": {
+          "answer_percent": [
+            35,
+            45
+          ],
+          "true_percent": [
+            35.351412402500095,
+            46.05787987101642
+          ],
+          "error_percent": [
+            -0.3514124025000953,
+            -1.057879871016418
+          ],
+          "distance_percent": 1.1147199191422938,
+          "error_m": [
+            -0.00042169488300011434,
+            -0.0004231519484065672
+          ],
+          "distance_m": 0.0005973978120053288,
+          "within_10_percent": true
+        },
+        "lowest_pressure": {
+          "answer_percent": [
+            35,
+            30
+          ],
+          "true_percent": [
+            36.22454751115528,
+            26.16151284303665
+          ],
+          "error_percent": [
+            -1.2245475111552793,
+            3.8384871569633496
+          ],
+          "distance_percent": 4.029081813670351,
+          "error_m": [
+            -0.0014694570133863352,
+            0.0015353948627853397
+          ],
+          "distance_m": 0.002125262642323979,
+          "within_10_percent": true
+        }
+      }
+    },
+    "max_courant": 0.333790780737
+  },
+  "async-sequence": {
+    "steps": 1000,
+    "request_step": 750,
+    "arrived_at_step": 840,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 72,
+    "model_status": "ok",
+    "mode": "sequence",
+    "callback_wall_s": {
+      "request_step": 0.004473202,
+      "arrival_step": 0.023324088,
+      "last_step": 0.026635609,
+      "max_other_steps": 0.016911295,
+      "median_all_steps": 0.000147733
+    },
+    "solver_stall_s": 0.004114216193556786,
+    "inference_wall_s": 3.7362073436379433,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "f955ce165ba9da9bcdabbd7762bb717e89cf50b28b91e2415cc16e6ddeb1b80f",
+        "png_sha256": {
+          "U": "0c935980080b007196e98bbfc8d0d97fa1ff033531b1b53e35f7e41df65617a4",
+          "p": "8be987efd50f3deacfc1bef8dc05ae8ceb49c51da59f038fab41d2b8e5872e97"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 500,
+        "written_fields_checked": true,
+        "fields_sha256": "1a9152efb290e671d3238d4c5e2a115659c50d0406146a04c0fb6dd3f87d3e25",
+        "png_sha256": {
+          "U": "d0cbd37a8e2d823d5950234c942691f0f19549fdbd68512e4a4e368aec9ad6b9",
+          "p": "8e6c80cf759d85948ab067b9811c5991ee52b3cd354506f4a90f095e94f2c9ef"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      },
+      {
+        "step": 750,
+        "written_fields_checked": true,
+        "fields_sha256": "2adef52f875666d24bbbb17a6149056658c4686f64f3d0b8157866e04daf9f32",
+        "png_sha256": {
+          "U": "f51b8fd9b6f9e472b3edd6bb52fee3fcb9db8d2c9aaeca5b1e44bd8956b771d8",
+          "p": "1bbfdee7b6be465823fb78265d0c1633d6b0102801e79f70a4faad8b9125341d"
+        },
+        "same_fields_as_baseline": true,
+        "same_pngs_as_baseline": true
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": {
+      "change_description": "The velocity magnitude shows a slight decrease in the maximum value over time. The high-velocity region shifts slightly towards the left. The pressure field shows a shift in the location of the minimum pressure values, moving from the center-left towards the center-right of the domain.",
+      "max_speed_trend": "decreasing",
+      "min_pressure_trend": "more_negative",
+      "fastest_flow_region": "moves",
+      "uncertainties": "The exact magnitude of the velocity shift is small relative to the overall field."
+    },
+    "score": {
+      "truth": {
+        "max_speed_trend": "roughly_constant",
+        "max_speed_relative_change": -0.019997542036315305,
+        "max_speed_first_last": [
+          38.04729897711941,
+          37.28644651645621
+        ],
+        "min_pressure_trend": "less_negative",
+        "min_pressure_relative_change": 0.21939236612586985,
+        "min_pressure_first_last": [
+          -374.5823853771222,
+          -292.4018695401629
+        ],
+        "fastest_flow_region": "moves",
+        "fastest_flow_moved_percent": 5.426900495860059,
+        "tolerances": {
+          "relative_change": 0.02,
+          "region_percent": 5.0
+        },
+        "frames": [
+          {
+            "step": 250,
+            "time_s": 0.10125000000000126,
+            "max_speed_m_per_s": 38.04729897711941,
+            "min_pressure_m2_per_s2": -374.5823853771222,
+            "fastest_flow_percent": [
+              35.351412402500095,
+              46.05787987101642
+            ]
+          },
+          {
+            "step": 500,
+            "time_s": 0.1025000000000025,
+            "max_speed_m_per_s": 35.44771513787862,
+            "min_pressure_m2_per_s2": -251.4769030839366,
+            "fastest_flow_percent": [
+              47.57125927650269,
+              45.39865612455785
+            ]
+          },
+          {
+            "step": 750,
+            "time_s": 0.10375000000000376,
+            "max_speed_m_per_s": 37.28644651645621,
+            "min_pressure_m2_per_s2": -292.4018695401629,
+            "fastest_flow_percent": [
+              30.114370664237363,
+              44.63498042844846
+            ]
+          }
+        ]
+      },
+      "scores": {
+        "max_speed_trend": {
+          "answer": "decreasing",
+          "truth": "roughly_constant",
+          "match": false,
+          "cannot_tell": false
+        },
+        "min_pressure_trend": {
+          "answer": "more_negative",
+          "truth": "less_negative",
+          "match": false,
+          "cannot_tell": false
+        },
+        "fastest_flow_region": {
+          "answer": "moves",
+          "truth": "moves",
+          "match": true,
+          "cannot_tell": false
+        },
+        "matches": 1
+      }
+    },
+    "max_courant": 0.333790780737
+  },
+  "async-server-error": {
+    "steps": 1000,
+    "request_step": 250,
+    "arrived_at_step": 262,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 72,
+    "model_status": "error",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.016035485,
+      "arrival_step": 0.02723374,
+      "last_step": 0.026687926,
+      "max_other_steps": 0.013851834,
+      "median_all_steps": 0.0001453525
+    },
+    "solver_stall_s": 0.015673797577619553,
+    "inference_wall_s": 0.013065420091152191,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "f955ce165ba9da9bcdabbd7762bb717e89cf50b28b91e2415cc16e6ddeb1b80f",
+        "png_sha256": {
+          "U": "0c935980080b007196e98bbfc8d0d97fa1ff033531b1b53e35f7e41df65617a4",
+          "p": "8be987efd50f3deacfc1bef8dc05ae8ceb49c51da59f038fab41d2b8e5872e97"
+        },
+        "same_fields_as_baseline_frame": true
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 0.333790780737
+  },
+  "async-timeout": {
+    "steps": 1000,
+    "request_step": 250,
+    "arrived_at_step": 328,
+    "answer_arrived_before_end": true,
+    "end_wait_s": null,
+    "files_identical_to_no_request_baseline": 72,
+    "model_status": "timeout",
+    "mode": "describe",
+    "callback_wall_s": {
+      "request_step": 0.017443375,
+      "arrival_step": 0.044846074,
+      "last_step": 0.026874155,
+      "max_other_steps": 0.012083138,
+      "median_all_steps": 0.00014407249999999998
+    },
+    "solver_stall_s": 0.01708655059337616,
+    "inference_wall_s": null,
+    "frames": [
+      {
+        "step": 250,
+        "written_fields_checked": true,
+        "fields_sha256": "f955ce165ba9da9bcdabbd7762bb717e89cf50b28b91e2415cc16e6ddeb1b80f",
+        "png_sha256": {
+          "U": "0c935980080b007196e98bbfc8d0d97fa1ff033531b1b53e35f7e41df65617a4",
+          "p": "8be987efd50f3deacfc1bef8dc05ae8ceb49c51da59f038fab41d2b8e5872e97"
+        },
+        "same_fields_as_baseline_frame": true
+      }
+    ],
+    "image_style": "v2",
+    "structured_output": null,
+    "score": null,
+    "max_courant": 0.333790780737
+  },
+  "timings": {
+    "async-no-llm": 59.00448985211551,
+    "async-describe": 58.534964211285114,
+    "async-sequence": 58.54418951459229,
+    "async-server-error": 59.019895697012544,
+    "async-timeout": 58.52816941961646
+  },
+  "resources": {
+    "async-no-llm": {
+      "wall_seconds": 59.00448985211551,
+      "exit_status": 0,
+      "solver_pid": 1602036,
+      "llama_server_pid": 1599906,
+      "mode": "sequence",
+      "model_request_enabled": false,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 555440,
+      "cfd_python_peak_pss_sum_kib": 541123,
+      "llama_server_peak_rss_kib": 1383560,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 117
+    },
+    "async-describe": {
+      "wall_seconds": 58.534964211285114,
+      "exit_status": 0,
+      "solver_pid": 1603158,
+      "llama_server_pid": 1599906,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 541304,
+      "cfd_python_peak_pss_sum_kib": 527298,
+      "llama_server_peak_rss_kib": 2060968,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 116
+    },
+    "async-sequence": {
+      "wall_seconds": 58.54418951459229,
+      "exit_status": 0,
+      "solver_pid": 1604256,
+      "llama_server_pid": 1599906,
+      "mode": "sequence",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 554952,
+      "cfd_python_peak_pss_sum_kib": 541012,
+      "llama_server_peak_rss_kib": 2949064,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 116
+    },
+    "async-server-error": {
+      "wall_seconds": 59.019895697012544,
+      "exit_status": 0,
+      "solver_pid": 1605380,
+      "llama_server_pid": 1599906,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 579436,
+      "cfd_python_peak_pss_sum_kib": 565160,
+      "llama_server_peak_rss_kib": 2962444,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 117
+    },
+    "async-timeout": {
+      "wall_seconds": 58.52816941961646,
+      "exit_status": 0,
+      "solver_pid": 1606506,
+      "llama_server_pid": 1599906,
+      "mode": "describe",
+      "model_request_enabled": true,
+      "memory_sample_interval_s": 0.5,
+      "cfd_python_peak_rss_sum_kib": 555368,
+      "cfd_python_peak_pss_sum_kib": 541624,
+      "llama_server_peak_rss_kib": 2966568,
+      "llama_server_peak_pss_kib": null,
+      "concurrent_samples": 116
+    }
+  },
+  "settings": {
+    "steps": 1000,
+    "delta_t_s": 5e-06,
+    "write_every": 250,
+    "request_step": 250,
+    "sequence_steps": [
+      250,
+      500,
+      750
+    ],
+    "image_x_window": "0,0.12",
+    "image_y_window": "0,0.04",
+    "deadline_s": "120",
+    "image_style": "v2",
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "max_tokens_env": "320",
+    "fixture_deadline_s": 4.0,
+    "start_time_s": 0.1,
+    "start_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/start/8/0.1",
+    "start_files_sha256": {
+      "U": "5e89b31d71d8fc8a3a7ae6e44eef1ed478cda488f5aeb98488c17fd5fb50b5af",
+      "p": "7e7291a1a194da52419addf3d2b41de6eea8ac28503e98a593d909d332c9dabd",
+      "phi": "3e5221f6aca5724a9486e235bd6bf94ae1de21ad6dd4637627cfe23198d76774"
+    }
+  },
+  "status": "PASS"
+}

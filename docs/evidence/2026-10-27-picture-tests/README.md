@@ -5,7 +5,7 @@ MedicineBow(와이오밍 대학교)의 Slurm 작업 다섯 개, 작업마다 GPU
 솔버 실행은 [2026-10-27-solver](../2026-10-27-solver/README.md)에 있습니다.
 
 [보고서](../../results-20261027.md) ·
-[묶음을 만들고 돌리는 법](../../../Solver_Examples/PODFoam/llm_demo/README.md#발달한-흐름의-변화-읽기-시험-sequence_testpy) ·
+[묶음을 만들고 돌리는 법](https://github.com/seungminyome/PythonFOAM-Korean/blob/5c56995/Solver_Examples/PODFoam/llm_demo/README.md#발달한-흐름의-변화-읽기-시험-sequence_testpy) ·
 [모든 압축 파일이 있는 릴리스](https://github.com/seungminyome/PythonFOAM/releases/tag/tests-2026-10-27) ·
 [영문 문서](https://github.com/seungminyome/PythonFOAM/blob/main/docs/evidence/2026-10-27-picture-tests/README.md)
 

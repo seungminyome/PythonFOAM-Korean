@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z1-step000250-w2",
+  "design": {
+    "run": "z1",
+    "slice_z_m": 0.00079375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00079375,
+      "requested_z_m": 0.00079375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 250,
+    "time_s": 0.10200000000000126,
+    "plotted_range_m": {
+      "x": [
+        -0.013700999609541499,
+        0.2222065829142188
+      ],
+      "y": [
+        -0.03013920903529102,
+        0.03038419214541882
+      ]
+    },
+    "cells_in_window": 8532,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "d7fd082b23d86d72ea84a9ce04cf9c6b186a18f42811f4a6e1e37b58d9439075",
+  "wall_s": 3.507689258083701,
+  "usage": {
+    "completion_tokens": 171,
+    "prompt_tokens": 1062,
+    "total_tokens": 1233,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 287.698,
+    "prompt_per_token_ms": 0.2709020715630885,
+    "prompt_per_second": 3691.3708124491654,
+    "predicted_n": 171,
+    "predicted_ms": 2145.025,
+    "predicted_per_token_ms": 12.61779411764706,
+    "predicted_per_second": 79.25315555762752
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct low-velocity boundary layer or wake structure extending from the left towards the center. Pressure is lowest in a localized region near the center-left and highest in the upper-right and lower-right sections.",
+    "fastest_flow_x_percent": 25,
+    "fastest_flow_y_percent": 80,
+    "lowest_pressure_x_percent": 30,
+    "lowest_pressure_y_percent": 68,
+    "uncertainties": "The exact physical nature of the geometry causing the flow features is not explicitly labeled, and the specific fluid properties are not provided."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        25,
+        80
+      ],
+      "true_percent": [
+        29.118052414894382,
+        80.73997720327704
+      ],
+      "error_percent": [
+        -4.1180524148943825,
+        -0.7399772032770358
+      ],
+      "distance_percent": 4.1840078815876005,
+      "error_m": [
+        -0.009714797899038669,
+        -0.0004478593713851571
+      ],
+      "distance_m": 0.009725115744077478,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        30,
+        68
+      ],
+      "true_percent": [
+        28.23012772090779,
+        65.89869465457177
+      ],
+      "error_percent": [
+        1.7698722790922083,
+        2.10130534542823
+      ],
+      "distance_percent": 2.747350003007316,
+      "error_m": [
+        0.004175262907364609,
+        0.0012717814642452282
+      ],
+      "distance_m": 0.004364659028883299,
+      "within_10_percent": true
+    }
+  }
+}

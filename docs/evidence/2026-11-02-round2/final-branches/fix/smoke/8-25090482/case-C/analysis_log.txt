@@ -1,0 +1,138 @@
+MESH_FUNC call=1 nargs=7 kwargs=[]
+  arg0: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+  arg1: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  arg2: tuple (1, 1, -1)
+  arg3: int 0
+  arg4: ndarray shape=(800, 3) dtype=float64 owndata=True finite=True
+  arg5: ndarray shape=(201,) dtype=int64 owndata=True finite=True
+  arg6: ndarray shape=(200,) dtype=int64 owndata=True finite=True
+ANALYSIS_FUNC call=1 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 8.039173763969146e-14, global: float -3.1312114642702445e-15, cumulative: float 2.3931043137695145e-10, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.010000399159340536, max: float 0.010009481181244166, phase: str 'post_step_phi'}
+  delta_t_s: float 0.0001
+  end_time_s: float 0.001
+  p_cells: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  residuals: {Ux: {initial_first: float 1.0, initial_last: float 1.0, final_last: float 3.1408863869004963e-10, linear_solves: int 1, iterations_total: int 2}, Uy: {initial_first: float 0.9392926445840806, initial_last: float 0.9392926445840806, final_last: float 3.3992360286555125e-10, linear_solves: int 1, iterations_total: int 2}, p: {initial_first: float 0.9999999999999749, initial_last: float 0.0012014061599508758, final_last: float 9.573972406186333e-09, linear_solves: int 2, iterations_total: int 34}}
+  schema_version: int 1
+  snapshot_count: int 1
+  step: int 1
+  time_s: float 0.0001
+  u_cells: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+ANALYSIS_FUNC call=2 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 4.7605779615739436e-14, global: float -1.2474584913387907e-15, cumulative: float 5.580747597192476e-10, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.010000797481937227, max: float 0.010018549853615843, phase: str 'post_step_phi'}
+  delta_t_s: float 0.0001
+  end_time_s: float 0.001
+  p_cells: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  residuals: {Ux: {initial_first: float 0.33054744612199216, initial_last: float 0.33054744612199216, final_last: float 9.24117694492909e-11, linear_solves: int 1, iterations_total: int 2}, Uy: {initial_first: float 0.3329175244931756, initial_last: float 0.3329175244931756, final_last: float 1.1738492087441137e-10, linear_solves: int 1, iterations_total: int 2}, p: {initial_first: float 0.004107272925202203, initial_last: float 0.00011263360272097368, final_last: float 5.7019816240644545e-09, linear_solves: int 2, iterations_total: int 22}}
+  schema_version: int 1
+  snapshot_count: int 2
+  step: int 2
+  time_s: float 0.0002
+  u_cells: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+ANALYSIS_FUNC call=3 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 4.625037537546147e-14, global: float -4.571557983471351e-16, cumulative: float 8.709409763170829e-10, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.01000119497135033, max: float 0.010027351129780357, phase: str 'post_step_phi'}
+  delta_t_s: float 0.0001
+  end_time_s: float 0.001
+  p_cells: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  residuals: {Ux: {initial_first: float 0.1975556650324473, initial_last: float 0.1975556650324473, final_last: float 5.532394199866094e-11, linear_solves: int 1, iterations_total: int 2}, Uy: {initial_first: float 0.20276817776926848, initial_last: float 0.20276817776926848, final_last: float 7.152912786819421e-11, linear_solves: int 1, iterations_total: int 2}, p: {initial_first: float 0.0029301188612586805, initial_last: float 0.00012394659333767274, final_last: float 5.515594083762523e-09, linear_solves: int 2, iterations_total: int 21}}
+  schema_version: int 1
+  snapshot_count: int 3
+  step: int 3
+  time_s: float 0.00030000000000000003
+  u_cells: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+ANALYSIS_FUNC call=4 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 6.10532787029026e-14, global: float -2.7021599804366938e-15, cumulative: float 1.1829907672289714e-09, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.010001591629949489, max: float 0.01003595471227547, phase: str 'post_step_phi'}
+  delta_t_s: float 0.0001
+  end_time_s: float 0.001
+  p_cells: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  residuals: {Ux: {initial_first: float 0.1407214822691911, initial_last: float 0.1407214822691911, final_last: float 3.9473653118984906e-11, linear_solves: int 1, iterations_total: int 2}, Uy: {initial_first: float 0.1460120997955255, initial_last: float 0.1460120997955255, final_last: float 5.1626615453474006e-11, linear_solves: int 1, iterations_total: int 2}, p: {initial_first: float 0.0022960723788923764, initial_last: float 8.05919766286485e-05, final_last: float 7.258532040155769e-09, linear_solves: int 2, iterations_total: int 20}}
+  schema_version: int 1
+  snapshot_count: int 4
+  step: int 4
+  time_s: float 0.0004
+  u_cells: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+ANALYSIS_FUNC call=5 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 4.268194547690743e-14, global: float -1.869432004467665e-15, cumulative: float 1.494151973450744e-09, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.010001987459975914, max: float 0.010044397806727634, phase: str 'post_step_phi'}
+  delta_t_s: float 0.0001
+  end_time_s: float 0.001
+  p_cells: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  residuals: {Ux: {initial_first: float 0.10920068965347454, initial_last: float 0.10920068965347454, final_last: float 3.0678721371769136e-11, linear_solves: int 1, iterations_total: int 2}, Uy: {initial_first: float 0.11399412973484291, initial_last: float 0.11399412973484291, final_last: float 4.042925903210696e-11, linear_solves: int 1, iterations_total: int 2}, p: {initial_first: float 0.0018950896904752924, initial_last: float 5.815225370454479e-05, final_last: float 5.062694248792699e-09, linear_solves: int 2, iterations_total: int 20}}
+  schema_version: int 1
+  snapshot_count: int 5
+  step: int 5
+  time_s: float 0.0005
+  u_cells: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+ANALYSIS_FUNC call=6 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 4.0164122380668344e-14, global: float -1.2146236044750205e-15, cumulative: float 1.8044298276567227e-09, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.010002382463737443, max: float 0.010052701995469154, phase: str 'post_step_phi'}
+  delta_t_s: float 0.0001
+  end_time_s: float 0.001
+  p_cells: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  residuals: {Ux: {initial_first: float 0.0891639069927577, initial_last: float 0.0891639069927577, final_last: float 2.508657623303828e-11, linear_solves: int 1, iterations_total: int 2}, Uy: {initial_first: float 0.09340289163737456, initial_last: float 0.09340289163737456, final_last: float 3.3240966903753066e-11, linear_solves: int 1, iterations_total: int 2}, p: {initial_first: float 0.0016119054948123893, initial_last: float 4.745033057038862e-05, final_last: float 4.7556661230418166e-09, linear_solves: int 2, iterations_total: int 20}}
+  schema_version: int 1
+  snapshot_count: int 6
+  step: int 6
+  time_s: float 0.0006000000000000001
+  u_cells: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+ANALYSIS_FUNC call=7 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 4.514643257507228e-14, global: float -2.3121650459386697e-16, cumulative: float 2.11382629034897e-09, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.010002776643552272, max: float 0.010060880686809359, phase: str 'post_step_phi'}
+  delta_t_s: float 0.0001
+  end_time_s: float 0.001
+  p_cells: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  residuals: {Ux: {initial_first: float 0.07530238614525518, initial_last: float 0.07530238614525518, final_last: float 2.1220174287346585e-11, linear_solves: int 1, iterations_total: int 2}, Uy: {initial_first: float 0.0790485684134574, initial_last: float 0.0790485684134574, final_last: float 2.8236300057938645e-11, linear_solves: int 1, iterations_total: int 2}, p: {initial_first: float 0.0014085625128656056, initial_last: float 4.306935490196601e-05, final_last: float 5.338389275952313e-09, linear_solves: int 2, iterations_total: int 20}}
+  schema_version: int 1
+  snapshot_count: int 7
+  step: int 7
+  time_s: float 0.0007000000000000001
+  u_cells: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+ANALYSIS_FUNC call=8 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 5.0177367848166674e-14, global: float 1.0188125864734334e-15, cumulative: float 2.422344721579096e-09, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.0100031700017074, max: float 0.01006894295682577, phase: str 'post_step_phi'}
+  delta_t_s: float 0.0001
+  end_time_s: float 0.001
+  p_cells: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  residuals: {Ux: {initial_first: float 0.0651425013738651, initial_last: float 0.0651425013738651, final_last: float 1.8383891866000583e-11, linear_solves: int 1, iterations_total: int 2}, Uy: {initial_first: float 0.06846976056813507, initial_last: float 0.06846976056813507, final_last: float 2.4550750245469054e-11, linear_solves: int 1, iterations_total: int 2}, p: {initial_first: float 0.0012592071466226672, initial_last: float 4.187759878970537e-05, final_last: float 5.9271480800219404e-09, linear_solves: int 2, iterations_total: int 20}}
+  schema_version: int 1
+  snapshot_count: int 8
+  step: int 8
+  time_s: float 0.0008000000000000001
+  u_cells: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+ANALYSIS_FUNC call=9 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 5.1969739221694945e-14, global: float 8.6620666889279165e-16, cumulative: float 2.7299868268158507e-09, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.010003562540516384, max: float 0.010076895423547557, phase: str 'post_step_phi'}
+  delta_t_s: float 0.0001
+  end_time_s: float 0.001
+  p_cells: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  residuals: {Ux: {initial_first: float 0.05737608404827, initial_last: float 0.05737608404827, final_last: float 1.621478612130885e-11, linear_solves: int 1, iterations_total: int 2}, Uy: {initial_first: float 0.060352313069907446, initial_last: float 0.060352313069907446, final_last: float 2.172407185009937e-11, linear_solves: int 1, iterations_total: int 2}, p: {initial_first: float 0.0011396267910957912, initial_last: float 4.208054488112114e-05, final_last: float 6.134074623969913e-09, linear_solves: int 2, iterations_total: int 20}}
+  schema_version: int 1
+  snapshot_count: int 9
+  step: int 9
+  time_s: float 0.0009000000000000002
+  u_cells: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True
+ANALYSIS_FUNC call=10 type=dict keys=['cells', 'continuity', 'courant', 'delta_t_s', 'end_time_s', 'p_cells', 'residuals', 'schema_version', 'snapshot_count', 'step', 'time_s', 'u_cells']
+  cells: int 200
+  continuity: {local: float 5.203613596889695e-14, global: float 4.549265367395761e-16, cumulative: float 3.0367538777782737e-09, phase: str 'last_pressure_correction'}
+  courant: {mean: float 0.010003954262259843, max: float 0.010084743222536977, phase: str 'post_step_phi'}
+  delta_t_s: float 0.0001
+  end_time_s: float 0.001
+  p_cells: ndarray shape=(200,) dtype=float64 owndata=True finite=True
+  residuals: {Ux: {initial_first: float 0.051246432117002215, initial_last: float 0.051246432117002215, final_last: float 1.450445563240605e-11, linear_solves: int 1, iterations_total: int 2}, Uy: {initial_first: float 0.053928557725865765, initial_last: float 0.053928557725865765, final_last: float 1.9487836250422403e-11, linear_solves: int 1, iterations_total: int 2}, p: {initial_first: float 0.0010418113647392047, initial_last: float 4.26772020286919e-05, final_last: float 6.1383903437515765e-09, linear_solves: int 2, iterations_total: int 20}}
+  schema_version: int 1
+  snapshot_count: int 10
+  step: int 10
+  time_s: float 0.0010000000000000002
+  u_cells: ndarray shape=(200, 3) dtype=float64 owndata=True finite=True

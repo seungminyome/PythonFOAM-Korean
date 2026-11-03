@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows high velocity in the upper region, particularly between 40% and 90% x. A low-velocity zone exists between 55% and 75% y. Pressure is highest in the upper left and shows a series of alternating high and low pressure cells in the center-right region, with a significant low-pressure peak near 70% x and 70% y.\",\n  \"fastest_flow_x_percent\": 85,\n  \"fastest_flow_y_percent\": 85,\n  \"lowest_pressure_x_percent\": 68,\n  \"lowest_pressure_y_percent\": 70,\n  \"uncertainties\": \"The exact values of velocity and pressure at specific coordinates are not provided, only the relative color scales. The physical nature of the boundaries and the specific geometry of the domain are не\"\n}"
+      }
+    }
+  ],
+  "created": 1793644759,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 208,
+    "prompt_tokens": 1063,
+    "total_tokens": 1271,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-p2Gh3NM0m00a4RudfnG1LZ2UnvDIXmAe",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1063,
+    "prompt_ms": 286.038,
+    "prompt_per_token_ms": 0.2690856067732832,
+    "prompt_per_second": 3716.2894440598798,
+    "predicted_n": 208,
+    "predicted_ms": 2717.433,
+    "predicted_per_token_ms": 13.127695652173912,
+    "predicted_per_second": 76.17483117339047
+  }
+}

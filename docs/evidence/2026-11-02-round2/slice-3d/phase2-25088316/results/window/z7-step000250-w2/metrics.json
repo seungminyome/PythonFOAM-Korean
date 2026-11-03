@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z7-step000250-w2",
+  "design": {
+    "run": "z7",
+    "slice_z_m": 0.0103125,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.0103125,
+      "requested_z_m": 0.0103125,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 250,
+    "time_s": 0.10200000000000126,
+    "plotted_range_m": {
+      "x": [
+        -0.15423405580533073,
+        0.2360716136715998
+      ],
+      "y": [
+        -0.009148789427715371,
+        0.09210076106618978
+      ]
+    },
+    "cells_in_window": 11618,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "4ad152f7584284055d9f958350d58e1b3672256a2a7368cfa9ed807b46b1f867",
+  "wall_s": 3.342878695577383,
+  "usage": {
+    "completion_tokens": 166,
+    "prompt_tokens": 1062,
+    "total_tokens": 1228,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 286.447,
+    "prompt_per_token_ms": 0.2697241054613936,
+    "prompt_per_second": 3707.4921364161605,
+    "predicted_n": 166,
+    "predicted_ms": 2081.99,
+    "predicted_per_token_ms": 12.618121212121212,
+    "predicted_per_second": 79.25110110999573
+  },
+  "structured_output": {
+    "flow_description": "The flow is generally fast in the upper region, with a significant velocity gradient and a slower region near the bottom boundary. The pressure is highest on the right side and lowest in a localized region near the center-bottom where the flow interacts with a boundary or obstacle.",
+    "fastest_flow_x_percent": 55,
+    "fastest_flow_y_percent": 30,
+    "lowest_pressure_x_percent": 52,
+    "lowest_pressure_y_percent": 25,
+    "uncertainties": "The exact nature of the geometry causing the flow disturbance and the specific physical units of the pressure are not explicitly detailed beyond the kinematic form."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        55,
+        30
+      ],
+      "true_percent": [
+        53.60535606329683,
+        26.818501622070436
+      ],
+      "error_percent": [
+        1.3946439367031687,
+        3.1814983779295645
+      ],
+      "distance_percent": 3.473753537450716,
+      "error_m": [
+        0.0054433743539687215,
+        0.003221252806624568
+      ],
+      "distance_m": 0.006325092410521055,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        52,
+        25
+      ],
+      "true_percent": [
+        53.337053061715515,
+        18.945837509072902
+      ],
+      "error_percent": [
+        -1.3370530617155154,
+        6.054162490927098
+      ],
+      "distance_percent": 6.200047931781772,
+      "error_m": [
+        -0.0052185939037905395,
+        0.006129812308234298
+      ],
+      "distance_m": 0.008050361561250555,
+      "within_10_percent": true
+    }
+  }
+}

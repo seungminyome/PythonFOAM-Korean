@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is fastest in the upper half of the domain, particularly around the center. The velocity is slowest in the lower half, where a dark, low-velocity region extends horizontally. The lowest pressure is concentrated in a series of dark spots in the lower-middle section, while the highest pressure is in the bottom-right corner.\",\n  \"fastest_flow_x_percent\": 50,\n  \"fastest_flow_y_percent\": 50,\n  \"lowest_pressure_x_percent\": 48,\n  \"lowest_pressure_y_percent\": 28,\n  \"uncertainties\": \"The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the objects causing the pressure fluctuations\"\n}",
+  "request_sha256": "efd34d9f177c6824f21a5abb59372a25a8a764e6cdcc7ddce0b34f8a57d510d8",
+  "request_bytes": 216757,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1388,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 187,
+    "prompt_tokens": 997,
+    "total_tokens": 1184,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 997,
+    "prompt_ms": 267.084,
+    "prompt_per_token_ms": 0.2678876629889669,
+    "prompt_per_second": 3732.9079989815937,
+    "predicted_n": 187,
+    "predicted_ms": 2364.098,
+    "predicted_per_token_ms": 12.710204301075269,
+    "predicted_per_second": 78.67694148042932
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly around the center. The velocity is slowest in the lower half, where a dark, low-velocity region extends horizontally. The lowest pressure is concentrated in a series of dark spots in the lower-middle section, while the highest pressure is in the bottom-right corner.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 50,
+    "lowest_pressure_x_percent": 48,
+    "lowest_pressure_y_percent": 28,
+    "uncertainties": "The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the objects causing the pressure fluctuations"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.4413329232484102,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

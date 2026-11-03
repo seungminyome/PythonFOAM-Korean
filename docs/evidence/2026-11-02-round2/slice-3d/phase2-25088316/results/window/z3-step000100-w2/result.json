@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper portion of the domain, with a distinct horizontal boundary around y=35%. Below this boundary, there is a complex region of lower velocity and fluctuating pressure. A localized high-velocity jet or wake appears between x=60% and x=70% at y=40%. Pressure is generally uniform but shows significant fluctuations in the lower-right quadrant.\",\n  \"fastest_flow_x_percent\": 63,\n  \"fastest_flow_y_percent\": 40,\n  \"lowest_pressure_x_percent\": 63,\n  \"lowest_pressure_y_percent\": 35,\n  \"uncertainties\": \"The exact magnitude of the pressure fluctuations and the specific nature of the flow features in the lower-right quadrant are difficult to determine due to the scale of the color bars.\"\n}",
+  "request_sha256": "91ba1999f737577ec5d2dc9b6e503e1a6658b559140dc4033414c8f74e50e13d",
+  "request_bytes": 197206,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1430,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 205,
+    "prompt_tokens": 1062,
+    "total_tokens": 1267,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 284.915,
+    "prompt_per_token_ms": 0.26828154425612055,
+    "prompt_per_second": 3727.427478370742,
+    "predicted_n": 205,
+    "predicted_ms": 2572.951,
+    "predicted_per_token_ms": 12.612504901960785,
+    "predicted_per_second": 79.28639138483399
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper portion of the domain, with a distinct horizontal boundary around y=35%. Below this boundary, there is a complex region of lower velocity and fluctuating pressure. A localized high-velocity jet or wake appears between x=60% and x=70% at y=40%. Pressure is generally uniform but shows significant fluctuations in the lower-right quadrant.",
+    "fastest_flow_x_percent": 63,
+    "fastest_flow_y_percent": 40,
+    "lowest_pressure_x_percent": 63,
+    "lowest_pressure_y_percent": 35,
+    "uncertainties": "The exact magnitude of the pressure fluctuations and the specific nature of the flow features in the lower-right quadrant are difficult to determine due to the scale of the color bars."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.661324581131339,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

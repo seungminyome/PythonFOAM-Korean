@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows a high-velocity region in the upper half of the domain, with a distinct horizontal boundary around y=50%. Below this boundary, there is a complex region of low velocity and fluctuating pressure. The pressure field shows alternating high and low values in the lower-right quadrant, corresponding to the turbulent-like structures in the velocity field.\",\n  \"fastest_flow_x_percent\": 65,\n  \"fastest_flow_y_percent\": 55,\n  \"lowest_pressure_x_percent\": 68,\n  \"lowest_pressure_y_percent\": 48,\n  \"uncertainties\": \"The exact nature of the flow structures and the physical boundaries are not explicitly labeled; the white areas indicate regions without data.\"\n}",
+  "request_sha256": "05e822bf626253428717a26a441653b1c4dbe7663ba7a401435150bdad463954",
+  "request_bytes": 185289,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1366,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 181,
+    "prompt_tokens": 1061,
+    "total_tokens": 1242,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 280.472,
+    "prompt_per_token_ms": 0.26434684260131946,
+    "prompt_per_second": 3782.9088108616907,
+    "predicted_n": 181,
+    "predicted_ms": 2270.638,
+    "predicted_per_token_ms": 12.614655555555554,
+    "predicted_per_second": 79.27287396758092
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the upper half of the domain, with a distinct horizontal boundary around y=50%. Below this boundary, there is a complex region of low velocity and fluctuating pressure. The pressure field shows alternating high and low values in the lower-right quadrant, corresponding to the turbulent-like structures in the velocity field.",
+    "fastest_flow_x_percent": 65,
+    "fastest_flow_y_percent": 55,
+    "lowest_pressure_x_percent": 68,
+    "lowest_pressure_y_percent": 48,
+    "uncertainties": "The exact nature of the flow structures and the physical boundaries are not explicitly labeled; the white areas indicate regions without data."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.5235759746283293,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

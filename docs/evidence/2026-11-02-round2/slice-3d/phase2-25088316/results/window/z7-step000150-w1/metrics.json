@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z7-step000150-w1",
+  "design": {
+    "run": "z7",
+    "slice_z_m": 0.0103125,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.0103125,
+      "requested_z_m": 0.0103125,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 150,
+    "time_s": 0.10150000000000076,
+    "plotted_range_m": {
+      "x": [
+        0.010702388300801224,
+        0.07098381073666302
+      ],
+      "y": [
+        0.011419612162306556,
+        0.0491625918316851
+      ]
+    },
+    "cells_in_window": 2013,
+    "window_seed": 20261101,
+    "window_index": 1
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "e5bc094362832bdf2a954e4d92c1adb231bbe5369d2828dedd131f61a277a835",
+  "wall_s": 3.817514516413212,
+  "usage": {
+    "completion_tokens": 199,
+    "prompt_tokens": 1061,
+    "total_tokens": 1260,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 280.783,
+    "prompt_per_token_ms": 0.26463996229971726,
+    "prompt_per_second": 3778.7187970781706,
+    "predicted_n": 199,
+    "predicted_ms": 2496.965,
+    "predicted_per_token_ms": 12.610934343434344,
+    "predicted_per_second": 79.29626566651915
+  },
+  "structured_output": {
+    "flow_description": "The flow shows a high-velocity region in the lower-middle section, specifically between 40% and 80% on the x-axis and 10% to 40% on the y-axis. The velocity is lowest at the bottom left corner. The kinematic pressure is lowest in the bottom-middle region, particularly around 60% x and 10% y, and higher in the upper regions.",
+    "fastest_flow_x_percent": 63,
+    "fastest_flow_y_percent": 25,
+    "lowest_pressure_x_percent": 63,
+    "lowest_pressure_y_percent": 10,
+    "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        63,
+        25
+      ],
+      "true_percent": [
+        63.04403961650806,
+        18.001086719629456
+      ],
+      "error_percent": [
+        -0.04403961650805854,
+        6.9989132803705445
+      ],
+      "distance_percent": 6.9990518353537965,
+      "error_m": [
+        -2.6547707266356296e-05,
+        0.00264159841648769
+      ],
+      "distance_m": 0.002641731813555527,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        63,
+        10
+      ],
+      "true_percent": [
+        61.30730629546411,
+        0.11411000428923544
+      ],
+      "error_percent": [
+        1.6926937045358912,
+        9.885889995710764
+      ],
+      "distance_percent": 10.029757374167612,
+      "error_m": [
+        0.0010203798425765188,
+        0.0037312294512182416
+      ],
+      "distance_m": 0.0038682358047015257,
+      "within_10_percent": false
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "93271b230a8041fe0eda3a067c73bbcb0e6ab47734dc7a928c12926f0baeae72",
+  "request_bytes": 621179,
+  "replay_wall_s": 2.6805126052349806,
+  "client_inference_wall_s": 2.6565345507115126,
+  "usage": {
+    "completion_tokens": 96,
+    "prompt_tokens": 1972,
+    "total_tokens": 2068,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 647.666,
+    "prompt_per_token_ms": 0.3284310344827586,
+    "prompt_per_second": 3044.779253504121,
+    "predicted_n": 96,
+    "predicted_ms": 1218.817,
+    "predicted_per_token_ms": 12.829652631578947,
+    "predicted_per_second": 77.94443300347795
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude |U| shows a rapid and non-physical increase in maximum values from 39.75 m/s at time 1 to 51.99 m/s at time 2, and then to 96.52 m/s at time 3. The pressure field remains nearly static despite this massive velocity jump, indicating numerical instability.",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is generally fast in the upper region, with a significant velocity drop and complex structure in the lower-right quadrant. Pressure is relatively uniform in the upper half, with a distinct low-pressure zone appearing in the lower-center region near the velocity transition.\",\n  \"fastest_flow_x_percent\": 55,\n  \"fastest_flow_y_percent\": 35,\n  \"lowest_pressure_x_percent\": 52,\n  \"lowest_pressure_y_percent\": 28,\n  \"uncertainties\": \"The exact magnitude of the velocity and pressure values in the white regions is unknown as they contain no cells.\"\n}",
+  "request_sha256": "81c008c6ca8d3f5297ec4c654dc152d2c83a2a42d4c51f106649a9e1736708f3",
+  "request_bytes": 197449,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1251,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 1061,
+    "total_tokens": 1221,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 285.435,
+    "prompt_per_token_ms": 0.2690245051837889,
+    "prompt_per_second": 3717.1334979942894,
+    "predicted_n": 160,
+    "predicted_ms": 2006.08,
+    "predicted_per_token_ms": 12.616855345911949,
+    "predicted_per_second": 79.2590524804594
+  },
+  "structured_output": {
+    "flow_description": "The flow is generally fast in the upper region, with a significant velocity drop and complex structure in the lower-right quadrant. Pressure is relatively uniform in the upper half, with a distinct low-pressure zone appearing in the lower-center region near the velocity transition.",
+    "fastest_flow_x_percent": 55,
+    "fastest_flow_y_percent": 35,
+    "lowest_pressure_x_percent": 52,
+    "lowest_pressure_y_percent": 28,
+    "uncertainties": "The exact magnitude of the velocity and pressure values in the white regions is unknown as they contain no cells."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.3626209441572428,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

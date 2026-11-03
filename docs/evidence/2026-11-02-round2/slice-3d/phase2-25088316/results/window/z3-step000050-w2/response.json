@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"flow_description\": \"The flow shows high velocity magnitudes in the upper half of the domain, particularly between 30% and 60% on the x-axis. The lower half contains a slower flow region with complex structures. Kinematic pressure is lowest in a localized region near the center-left and higher towards the top and right edges.\",\n  \"fastest_flow_x_percent\": 42,\n  \"fastest_flow_y_percent\": 58,\n  \"lowest_pressure_x_percent\": 42,\n  \"lowest_pressure_y_percent\": 42,\n  \"uncertainties\": \"The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range.\"\n}"
+      }
+    }
+  ],
+  "created": 1793644676,
+  "model": "gemma-4-12b-it-qat-q4_0-vision",
+  "system_fingerprint": "b1-d812350",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 175,
+    "prompt_tokens": 1064,
+    "total_tokens": 1239,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-ALZXo3H7EXCyIcmIWzP9FUz6aHkwGvlA",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 1064,
+    "prompt_ms": 286.104,
+    "prompt_per_token_ms": 0.26889473684210524,
+    "prompt_per_second": 3718.9273830495204,
+    "predicted_n": 175,
+    "predicted_ms": 2194.977,
+    "predicted_per_token_ms": 12.614810344827585,
+    "predicted_per_second": 79.27190125454618
+  }
+}

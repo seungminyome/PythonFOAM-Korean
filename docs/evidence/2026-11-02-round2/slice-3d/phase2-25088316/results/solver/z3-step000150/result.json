@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is fastest in the upper half of the domain, particularly around the center, while it is slowest in the lower half. The lowest pressure is located in a distinct dark region near the center of the domain, while higher pressure is seen in the bottom right and top right corners.\",\n  \"fastest_flow_x_percent\": 40,\n  \"fastest_flow_y_percent\": 48,\n  \"lowest_pressure_x_percent\": 40,\n  \"lowest_pressure_y_percent\": 30,\n  \"uncertainties\": \"The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the domain are not explicitly stated.\"\n}",
+  "request_sha256": "39dfc56335cfb181acb79eb9729cfc0ba00aa77c2c7a8b4b4524bdd3af38bc2b",
+  "request_bytes": 223954,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1332,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 177,
+    "prompt_tokens": 998,
+    "total_tokens": 1175,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 998,
+    "prompt_ms": 268.228,
+    "prompt_per_token_ms": 0.26876553106212425,
+    "prompt_per_second": 3720.715212431215,
+    "predicted_n": 177,
+    "predicted_ms": 2220.704,
+    "predicted_per_token_ms": 12.617636363636365,
+    "predicted_per_second": 79.25414643284292
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly around the center, while it is slowest in the lower half. The lowest pressure is located in a distinct dark region near the center of the domain, while higher pressure is seen in the bottom right and top right corners.",
+    "fastest_flow_x_percent": 40,
+    "fastest_flow_y_percent": 48,
+    "lowest_pressure_x_percent": 40,
+    "lowest_pressure_y_percent": 30,
+    "uncertainties": "The exact values of velocity and pressure are not provided, only their relative ranges. The physical nature of the boundaries and the specific geometry of the domain are not explicitly stated."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.6174878422170877,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

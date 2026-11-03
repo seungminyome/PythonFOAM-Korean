@@ -1,0 +1,116 @@
+{
+  "set": "window",
+  "name": "z1-step000200-w2",
+  "design": {
+    "run": "z1",
+    "slice_z_m": 0.00079375,
+    "slice_record": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z_m": 0.00079375,
+      "requested_z_m": 0.00079375,
+      "z_source": "POD_SLICE_Z",
+      "moved_off_mesh_points": false,
+      "mesh_z_range_m": [
+        0.0,
+        0.0127
+      ],
+      "cells": 20540,
+      "mesh_cells_total": 164320
+    },
+    "step": 200,
+    "time_s": 0.101750000000001,
+    "plotted_range_m": {
+      "x": [
+        -0.07198760083805537,
+        0.15933213651193806
+      ],
+      "y": [
+        -0.026334898689323493,
+        0.07547006056018872
+      ]
+    },
+    "cells_in_window": 10278,
+    "window_seed": 20261101,
+    "window_index": 2
+  },
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "d437034642d0b5d40d1e576e2f001ffc7416c87129585b125a6f1d0d46c552a3",
+  "wall_s": 3.266845477744937,
+  "usage": {
+    "completion_tokens": 163,
+    "prompt_tokens": 1061,
+    "total_tokens": 1224,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 281.266,
+    "prompt_per_token_ms": 0.26509519321394914,
+    "prompt_per_second": 3772.2298464798446,
+    "predicted_n": 163,
+    "predicted_ms": 2043.38,
+    "predicted_per_token_ms": 12.613456790123458,
+    "predicted_per_second": 79.28040795153129
+  },
+  "structured_output": {
+    "flow_description": "The flow is generally fast in the upper region and slow in the lower region, particularly behind a step. The pressure is high in the upper right and low in the wake region behind the step, with a localized minimum near the center of the wake.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 45,
+    "lowest_pressure_x_percent": 50,
+    "lowest_pressure_y_percent": 38,
+    "uncertainties": "The exact magnitude of the velocity and pressure values cannot be determined without the specific numerical values from the color bars, only their relative positions."
+  },
+  "scores": {
+    "fastest_flow": {
+      "answer_percent": [
+        50,
+        45
+      ],
+      "true_percent": [
+        53.53458548824879,
+        44.01108146706635
+      ],
+      "error_percent": [
+        -3.534585488248787,
+        0.9889185329336527
+      ],
+      "distance_percent": 3.67032075417375,
+      "error_m": [
+        -0.008176193867828078,
+        0.0010067681094639792
+      ],
+      "distance_m": 0.008237944415358916,
+      "within_10_percent": true
+    },
+    "lowest_pressure": {
+      "answer_percent": [
+        50,
+        38
+      ],
+      "true_percent": [
+        53.0818829656102,
+        35.85083759125269
+      ],
+      "error_percent": [
+        -3.0818829656101983,
+        2.1491624087473085
+      ],
+      "distance_percent": 3.757246554711421,
+      "error_m": [
+        -0.0071290035814837,
+        0.0021879539144310325
+      ],
+      "distance_m": 0.007457200171410279,
+      "within_10_percent": true
+    }
+  }
+}

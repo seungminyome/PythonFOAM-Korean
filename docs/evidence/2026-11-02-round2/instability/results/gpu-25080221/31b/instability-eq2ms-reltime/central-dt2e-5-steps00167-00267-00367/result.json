@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth in magnitudes. The changes are consistent with unsteady flow development.\", \"stability\": \"stable\"}",
+  "request_sha256": "5b812f155d09ca299ee730f6fc30e0b2c822a711743b895d191685140b2b3db8",
+  "request_bytes": 658968,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 921,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 54,
+    "prompt_tokens": 2048,
+    "total_tokens": 2102,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 1591.255,
+    "prompt_per_token_ms": 0.77697998046875,
+    "prompt_per_second": 1287.034447652953,
+    "predicted_n": 54,
+    "predicted_ms": 1574.845,
+    "predicted_per_token_ms": 29.714056603773585,
+    "predicted_per_second": 33.654105642142554
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields evolve smoothly over time without any evidence of high-frequency oscillations, checkerboard patterns, or unphysical growth in magnitudes. The changes are consistent with unsteady flow development.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 4.466352593153715,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

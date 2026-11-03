@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is generally fast in the upper region, with a significant velocity gradient and a slower region near the bottom boundary. The pressure is highest on the right side and lowest in a localized region near the center-bottom where the flow interacts with a boundary or obstacle.\",\n  \"fastest_flow_x_percent\": 55,\n  \"fastest_flow_y_percent\": 30,\n  \"lowest_pressure_x_percent\": 52,\n  \"lowest_pressure_y_percent\": 25,\n  \"uncertainties\": \"The exact nature of the geometry causing the flow disturbance and the specific physical units of the pressure are not explicitly detailed beyond the kinematic form.\"\n}",
+  "request_sha256": "4ad152f7584284055d9f958350d58e1b3672256a2a7368cfa9ed807b46b1f867",
+  "request_bytes": 200970,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1303,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 166,
+    "prompt_tokens": 1062,
+    "total_tokens": 1228,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1062,
+    "prompt_ms": 286.447,
+    "prompt_per_token_ms": 0.2697241054613936,
+    "prompt_per_second": 3707.4921364161605,
+    "predicted_n": 166,
+    "predicted_ms": 2081.99,
+    "predicted_per_token_ms": 12.618121212121212,
+    "predicted_per_second": 79.25110110999573
+  },
+  "structured_output": {
+    "flow_description": "The flow is generally fast in the upper region, with a significant velocity gradient and a slower region near the bottom boundary. The pressure is highest on the right side and lowest in a localized region near the center-bottom where the flow interacts with a boundary or obstacle.",
+    "fastest_flow_x_percent": 55,
+    "fastest_flow_y_percent": 30,
+    "lowest_pressure_x_percent": 52,
+    "lowest_pressure_y_percent": 25,
+    "uncertainties": "The exact nature of the geometry causing the flow disturbance and the specific physical units of the pressure are not explicitly detailed beyond the kinematic form."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.3428608160465956,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

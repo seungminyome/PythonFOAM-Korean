@@ -1,0 +1,35 @@
+{
+ "solver": "PODFoam_Debug",
+ "version": "8",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "builds": {
+  "upstream": true,
+  "ported": true
+ },
+ "cross": {
+  "ported_equals_copy_whole_matrix": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true
+  }
+ },
+ "written_fields": {
+  "copy_vs_ported": [
+   {
+    "time": "6.75948e-05",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "0.000133285",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ]
+ }
+}
+copy exit 0 steps 222 matrices 6 col0==col1 in 0 py_prints 219 tracebacks 0
+ported exit 0 steps 222 matrices 6 col0==col1 in 0 py_prints 219 tracebacks 0

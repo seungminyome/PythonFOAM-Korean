@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "0c10abcc204e22fe4c030976964d94b5e849416ec02a87d6a750b1079115664d",
+  "request_bytes": 652547,
+  "replay_wall_s": 4.129401568323374,
+  "client_inference_wall_s": 4.106757825240493,
+  "usage": {
+    "completion_tokens": 44,
+    "prompt_tokens": 1972,
+    "total_tokens": 2016,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1565.583,
+    "prompt_per_token_ms": 0.7939061866125761,
+    "prompt_per_second": 1259.594668567556,
+    "predicted_n": 44,
+    "predicted_ms": 1276.873,
+    "predicted_per_token_ms": 29.69472093023256,
+    "predicted_per_second": 33.67601946317292
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields remain smooth and consistent across all time steps, with no evidence of oscillations, checkerboard patterns, or diverging values.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "unstable",
+      "match": false,
+      "cannot_tell": false
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "1283ebabdb975682900dcca76d2bf94d8ce73bd6643985e7c5a8f119d590726b",
+  "request_bytes": 646991,
+  "replay_wall_s": 4.0009459760040045,
+  "client_inference_wall_s": 3.976934567093849,
+  "usage": {
+    "completion_tokens": 46,
+    "prompt_tokens": 1972,
+    "total_tokens": 2018,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1624.187,
+    "prompt_per_token_ms": 0.8236242393509128,
+    "prompt_per_second": 1214.145908075856,
+    "predicted_n": 46,
+    "predicted_ms": 1336.296,
+    "predicted_per_token_ms": 29.69546666666667,
+    "predicted_per_second": 33.67517376389662
+  },
+  "structured_output": {
+    "reason": "The velocity and pressure fields evolve smoothly over time without any evidence of checkerboarding, high-frequency oscillations between adjacent cells, or uncontrolled growth of extrema.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "stable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

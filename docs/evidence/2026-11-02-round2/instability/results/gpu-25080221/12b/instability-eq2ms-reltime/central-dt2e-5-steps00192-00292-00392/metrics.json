@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "fea2196ee7bd851561a0ade1a57ce4f9e376669fc5bd6d4b532062a66721e888",
+  "request_bytes": 644408,
+  "replay_wall_s": 2.3260988872498274,
+  "client_inference_wall_s": 2.3003695737570524,
+  "usage": {
+    "completion_tokens": 66,
+    "prompt_tokens": 2048,
+    "total_tokens": 2114,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 2048,
+    "prompt_ms": 654.042,
+    "prompt_per_token_ms": 0.3193564453125,
+    "prompt_per_second": 3131.2973784558176,
+    "predicted_n": 66,
+    "predicted_ms": 832.589,
+    "predicted_per_token_ms": 12.80906153846154,
+    "predicted_per_second": 78.06973188451926
+  },
+  "structured_output": {
+    "reason": "The flow shows smooth evolution of features, such as the movement and deformation of the high-velocity region and the pressure gradients. There are no signs of checkerboard patterns, high-frequency oscillations between adjacent cells, or non-physical growth of extremes.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "unstable",
+      "match": false,
+      "cannot_tell": false
+    }
+  }
+}

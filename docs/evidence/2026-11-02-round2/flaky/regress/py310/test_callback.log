@@ -1,0 +1,193 @@
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:44.748163+00:00","parent_pid":2094965,"writer_pid":2094969,"run_id":"tmp99uzu3gr","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:44.773744+00:00","parent_pid":2094965,"writer_pid":2094970,"run_id":"tmp99uzu3gr","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=False analysis_wait=0.025777s
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:44.814072+00:00","parent_pid":2094965,"writer_pid":2094971,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-11-02T18:41:44.827764+00:00","parent_pid":2094965,"writer_pid":2094971,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:44.833167+00:00","parent_pid":2094965,"writer_pid":2094972,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.019266s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+...PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:44.944884+00:00","parent_pid":2094965,"writer_pid":2094976,"run_id":"tmpykpoi20_","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:44.950456+00:00","parent_pid":2094965,"writer_pid":2094977,"run_id":"tmpykpoi20_","step":5,"time_s":5e-07}
+..PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=3.501
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:48.518732+00:00","parent_pid":2094965,"writer_pid":2094982,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-11-02T18:41:48.526868+00:00","parent_pid":2094965,"writer_pid":2094982,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:48.532571+00:00","parent_pid":2094965,"writer_pid":2094983,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.014026s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=3.501
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:48.587601+00:00","parent_pid":2094965,"writer_pid":2094985,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-11-02T18:41:49.225527+00:00","parent_pid":2094965,"writer_pid":2094985,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:49.235166+00:00","parent_pid":2094965,"writer_pid":2094986,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=True analysis_wait=0.647732s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM callback failed open: ValueError: LLM_KILL_JOIN_S must be in (0, 2]
+PYTHON LLM callback failed open: ValueError: LLM_KILL_JOIN_S must be in (0, 2]
+PYTHON LLM callback failed open: ValueError: LLM_KILL_JOIN_S must be in (0, 2]
+PYTHON LLM callback failed open: ValueError: LLM_KILL_JOIN_S must be a number in (0, 2]
+.PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+PYTHON LLM callback failed open: ValueError: HTTP timeouts must be in (0, 300]
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:49.613137+00:00","parent_pid":2094965,"writer_pid":2094998,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-11-02T18:41:49.620416+00:00","parent_pid":2094965,"writer_pid":2094998,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:49.626273+00:00","parent_pid":2094965,"writer_pid":2094999,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.013286s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:49.675730+00:00","parent_pid":2094965,"writer_pid":2095001,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-11-02T18:41:49.683262+00:00","parent_pid":2094965,"writer_pid":2095001,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:49.688719+00:00","parent_pid":2094965,"writer_pid":2095002,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.013158s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM mesh geometry received: cells=20 cell_polygons=0 solution_d=[1, 1, -1] backend_ready=True backend_import_wall_s=3.501
+PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:49.742665+00:00","parent_pid":2094965,"writer_pid":2095004,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:49.753816+00:00","parent_pid":2094965,"writer_pid":2095005,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=None analysis_wait=0.011325s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+..PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:49.806216+00:00","parent_pid":2094965,"writer_pid":2095008,"run_id":"tmpr3t9nfg4","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=None analysis_wait=0.007146s
+.PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:49.841780+00:00","parent_pid":2094965,"writer_pid":2095009,"run_id":"tmpy3idsa4p","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=callback_error image_input=None analysis_wait=0.000310s
+..PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:50.355278+00:00","parent_pid":2094965,"writer_pid":2095012,"run_id":"tmp3aoeyacq","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-11-02T18:41:50.362869+00:00","parent_pid":2094965,"writer_pid":2095012,"run_id":"tmp3aoeyacq","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:50.368247+00:00","parent_pid":2094965,"writer_pid":2095013,"run_id":"tmp3aoeyacq","step":5,"time_s":5e-07}
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:50.601883+00:00","parent_pid":2094965,"writer_pid":2095014,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:50.806352+00:00","parent_pid":2094965,"writer_pid":2095015,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=timeout image_input=None analysis_wait=0.204644s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:50.847170+00:00","parent_pid":2094965,"writer_pid":2095017,"run_id":"tmpjm9p35b1","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-11-02T18:41:50.854677+00:00","parent_pid":2094965,"writer_pid":2095017,"run_id":"tmpjm9p35b1","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:50.860905+00:00","parent_pid":2094965,"writer_pid":2095018,"run_id":"tmpjm9p35b1","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.013964s
+PYTHON LLM callback failed open: RuntimeError: telemetry.jsonl will not be written: the last append (2 lines, then the rename) did not report back before its deadline
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:51.135425+00:00","parent_pid":2094965,"writer_pid":2095022,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-11-02T18:41:51.143158+00:00","parent_pid":2094965,"writer_pid":2095022,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:51.389817+00:00","parent_pid":2094965,"writer_pid":2095024,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=timeout image_input=False analysis_wait=0.254562s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+.PYTHON snapshot=1 shape=(20, 3) finite=true
+PYTHON snapshot=2 shape=(20, 3) finite=true
+PYTHON snapshot=3 shape=(20, 3) finite=true
+PYTHON snapshot=4 shape=(20, 3) finite=true
+PYTHON snapshot=5 shape=(20, 3) finite=true
+PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:51.675039+00:00","parent_pid":2094965,"writer_pid":2095026,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-11-02T18:41:51.682501+00:00","parent_pid":2094965,"writer_pid":2095026,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:51.688572+00:00","parent_pid":2094965,"writer_pid":2095027,"run_id":"unit-test-run","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=error image_input=False analysis_wait=0.013682s
+PYTHON snapshot=6 shape=(20, 3) finite=true
+PYTHON snapshot=7 shape=(20, 3) finite=true
+PYTHON snapshot=8 shape=(20, 3) finite=true
+PYTHON snapshot=9 shape=(20, 3) finite=true
+PYTHON snapshot=10 shape=(20, 3) finite=true
+PYTHON SVD snapshots=10 shape=(60, 5) finite=true
+PYTHON LLM telemetry lines=10 appends=1 failed_appends=0 file=telemetry.jsonl
+..PYTHON LLM_MARKER {"event":"callback_start","timestamp_utc":"2026-11-02T18:41:51.752012+00:00","parent_pid":2094965,"writer_pid":2095029,"run_id":"tmp2mlvqafy","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"request_before","timestamp_utc":"2026-11-02T18:41:51.759573+00:00","parent_pid":2094965,"writer_pid":2095029,"run_id":"tmp2mlvqafy","step":5,"time_s":5e-07}
+PYTHON LLM_MARKER {"event":"response_after","timestamp_utc":"2026-11-02T18:41:51.764928+00:00","parent_pid":2094965,"writer_pid":2095030,"run_id":"tmp2mlvqafy","step":5,"time_s":5e-07}
+PYTHON LLM step=5 time=5e-07 status=disabled image_input=False analysis_wait=0.013117s
+.PYTHON LLM telemetry lines=400 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM telemetry lines=400 appends=7 failed_appends=2 file=telemetry.jsonl
+..PYTHON LLM telemetry lines=30 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM callback failed open: RuntimeError: telemetry.jsonl will not be written: line 12 could not be encoded (TypeError: Object of type set is not JSON serializable); telemetry.jsonl.tmp keeps the lines before it
+PYTHON LLM telemetry lines=11 appends=1 failed_appends=0 file=telemetry.jsonl.tmp incomplete: line 12 could not be encoded (TypeError: Object of type set is not JSON serializable); telemetry.jsonl.tmp keeps the lines before it
+..PYTHON LLM telemetry lines=2345 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM telemetry lines=2345 appends=5 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM telemetry lines=2345 appends=47 failed_appends=0 file=telemetry.jsonl
+.PYTHON LLM telemetry lines=30 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM telemetry lines=30 appends=31 failed_appends=0 file=telemetry.jsonl
+..PYTHON LLM telemetry lines=120 appends=1 failed_appends=0 file=telemetry.jsonl
+PYTHON LLM telemetry lines=120 appends=3 failed_appends=0 file=telemetry.jsonl
+.
+----------------------------------------------------------------------
+Ran 32 tests in 12.309s
+
+OK

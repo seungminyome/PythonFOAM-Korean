@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "98dac49ecd8c1a3a86c2bd962b9ba55aae31fe8eb69a8aa095d58c0441a26bcf",
+  "request_bytes": 636623,
+  "replay_wall_s": 4.959145387634635,
+  "client_inference_wall_s": 4.937263457104564,
+  "usage": {
+    "completion_tokens": 68,
+    "prompt_tokens": 1972,
+    "total_tokens": 2040,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 1591.264,
+    "prompt_per_token_ms": 0.8069290060851927,
+    "prompt_per_second": 1239.2663945140469,
+    "predicted_n": 68,
+    "predicted_ms": 1987.131,
+    "predicted_per_token_ms": 29.658671641791045,
+    "predicted_per_second": 33.71695172588017
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude |U| shows a steady increase in its maximum value from 39.75 to 51.99 m/s over the three time steps, while the spatial distribution remains smooth without checkerboarding or high-frequency oscillations.",
+    "stability": "stable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "stable",
+      "truth": "unstable",
+      "match": false,
+      "cannot_tell": false
+    }
+  }
+}

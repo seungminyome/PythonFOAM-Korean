@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow shows high velocity in the upper region (y > 70%) and a distinct low-velocity zone between y=60% and y=75% extending from the left. Pressure is lowest in a localized region around x=20%, y=70%, and is generally higher in the upper right and lower left regions.\",\n  \"fastest_flow_x_percent\": 20,\n  \"fastest_flow_y_percent\": 80,\n  \"lowest_pressure_x_percent\": 20,\n  \"lowest_pressure_y_percent\": 70,\n  \"uncertainties\": \"The exact physical boundaries of the geometry and the specific fluid properties are not provided.\"\n}",
+  "request_sha256": "78a1fbf9c1140ea94f64ca98ae8f48bd89f3d361b6785d88063d70c6c8c1ac11",
+  "request_bytes": 194165,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1225,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 173,
+    "prompt_tokens": 1061,
+    "total_tokens": 1234,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1061,
+    "prompt_ms": 276.292,
+    "prompt_per_token_ms": 0.26040716305372286,
+    "prompt_per_second": 3840.1401415893333,
+    "predicted_n": 173,
+    "predicted_ms": 2169.567,
+    "predicted_per_token_ms": 12.613761627906976,
+    "predicted_per_second": 79.27849197558776
+  },
+  "structured_output": {
+    "flow_description": "The flow shows high velocity in the upper region (y > 70%) and a distinct low-velocity zone between y=60% and y=75% extending from the left. Pressure is lowest in a localized region around x=20%, y=70%, and is generally higher in the upper right and lower left regions.",
+    "fastest_flow_x_percent": 20,
+    "fastest_flow_y_percent": 80,
+    "lowest_pressure_x_percent": 20,
+    "lowest_pressure_y_percent": 70,
+    "uncertainties": "The exact physical boundaries of the geometry and the specific fluid properties are not provided."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.180672474205494,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

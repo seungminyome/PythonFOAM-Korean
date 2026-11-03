@@ -1,0 +1,67 @@
+node mba30-008.cluster
+2026-11-02T05:49:56Z
+ldd (GNU libc) 2.34
+GPU 0: NVIDIA A30 (UUID: GPU-2c87a445-7ea5-1ac2-bede-62e68cf76381)
+595.71.05
+=== A: start_server.sh on the runtime as setup_12b.sh left it (prebuilt) 05:49:56
+A start_server exit 1
+server exited; see /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/gpu/run-25080013/server/server-20261102T054956Z.log
+-- /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/gpu/run-25080013/server/server-20261102T054956Z.log
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/runtime/llama-b11429-cuda/llama-server: error while loading shared libraries: libllama-common.so.0: cannot open shared object file: No such file or directory
+=== A2: prebuilt with the 5 soname links restored, --version only 05:49:56
+A2 exit 1
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/gpu/symlink-test/llama-server: /lib64/libc.so.6: version `GLIBC_2.38' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/gpu/symlink-test/libllama-server-impl.so)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/gpu/symlink-test/llama-server: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.32' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/gpu/symlink-test/libllama-server-impl.so)
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/gpu/symlink-test/llama-server: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/gpu/symlink-test/libllama-server-impl.so)
+=== B: README fallback: build_llama_cuda.sh 05:49:56
+
+Currently Loaded Modules:
+  1) slurm/latest      (S)   6) zlib-ng/2.1.4_x86_64
+  2) arcc/1.0          (S)   7) zstd/1.5.5_x86_64__programs_True
+  3) gmp/6.2.1_x86_64        8) gcc/14.2.0
+  4) mpfr/4.2.0_x86_64       9) cuda-toolkit/12.8.0
+  5) mpc/1.3.1_x86_64
+
+  Where:
+   S:  Module is Sticky, requires --force to unload or purge
+
+ 
+
+github HEAD exit 0 HTTP/2 200 
+B build exit 0, 335 s
+version: 0.6.0-dev (build 1, commit d812350)
+built with GNU 14.2.0 for Linux x86_64
+built llama-server into /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/runtime/llama-b11429-cuda
+=== C: setup_12b.sh again (files present, no download) 05:55:32
+C setup exit 0, 7 s
+runtime ready in /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/runtime
+{
+  "created": "2026-11-02T05:55:39.786316+00:00",
+  "llama_cpp_tag": "b11429",
+  "cuda_build": "12.8",
+  "model_repo": "google/gemma-4-12B-it-qat-q4_0-gguf",
+  "revision": "main",
+  "model": "gemma-4-12b-it-qat-q4_0.gguf",
+  "projector": "mmproj-gemma-4-12b-it-qat-q4_0.gguf",
+  "sha256": {
+    "gemma-4-12b-it-qat-q4_0.gguf": "93567e57a8fe10b23569b9d9ec38cd005deedf71e29477c421a4b83f418a538b",
+    "mmproj-gemma-4-12b-it-qat-q4_0.gguf": "cb018338a7538a9814d994bfe54644c71eb7ed54e31eae2f721e45fd3c260da7",
+    "llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz": "b13c64b9224d3c89d9993945d70cc21177ad00178c21b8d34237e3bc139834f1",
+    "cudart-llama-b11429-bin-ubuntu-cuda-12.8-x64.tar.gz": "f4ab593e31507320b121f2cb21791f4c72420a2483d3df8bf2ca1a97d04e6845",
+    "llama-b11429-cuda/llama-server": "adbdb73a8582998ff009c6c2ff5b4da2b021c4b67c078faf03f2fdbd6ae7dd60"
+  },
+  "server_version": "version: 0.6.0-dev (build 1, commit d812350)\nbuilt with GNU 14.2.0 for Linux x86_64"
+}=== D: start_server.sh with the built server, one request 05:55:39
+D start_server exit 0, 5 s
+server ok on port 20013, pid 1720029, log server-20261102T055539Z.log
+request exit 0, 827 ms
+{"choices":[{"finish_reason":"stop","index":0,"message":{"role":"assistant","content":"A Proper Orthogonal Decomposition (POD) of a velocity field extracts the most energetic, spatially coherent spatial structures (modes) and their corresponding temporal dynamics, providing the optimal low-dimensional representation of the flow's variance."}}],"created":1793598945,"model":"gemma-4-12b-it-qat-q4_0-vision","system_fingerprint":"b1-d812350","object":"chat.completion","usage":{"completion_tokens":45,"prompt_tokens":33,"total_tokens":78,"prompt_tokens_details":{"cached_tokens":0}},"id":"chatcmpl-e4WJhtTs7Gc3WgzxI4TMIdO8GgJWYIv5","timings":{"cache_n":0,"prompt_n":33,"prompt_ms":112.506,"prompt_per_token_ms":3.4092727272727275,"prompt_per_second":293.31768972321476,"predicted_n":45,"predicted_ms":699.88,"predicted_per_token_ms":15.906363636363636,"predicted_per_second":62.86792021489398}}
+NVIDIA A30, 7931 MiB, 24576 MiB
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/setup12b/runtime/llama-b11429-cuda/llama-server: error while loading shared libraries: libllama-common.so.0: cannot open shared object file: No such file or directory
+0.05.867.128 I slot print_timing: id  0 | task 0 | prompt eval time =     112.51 ms /    33 tokens (    3.41 ms per token,   293.32 tokens per second)
+0.05.867.132 I slot print_timing: id  0 | task 0 |        eval time =     699.88 ms /    45 tokens (   15.91 ms per token,    62.87 tokens per second)
+0.05.867.133 I slot print_timing: id  0 | task 0 |       total time =     812.39 ms /    78 tokens
+0.05.867.139 I slot print_timing: id  0 | task 0 |    graphs reused =         44
+0.05.867.179 I slot      release: id  0 | task 0 | stop processing: n_tokens = 77, truncated = 0
+stop exit 0
+2026-11-02T05:55:48Z

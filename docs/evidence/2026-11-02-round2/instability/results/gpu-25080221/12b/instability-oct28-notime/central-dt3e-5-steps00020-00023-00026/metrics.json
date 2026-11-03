@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "successful_response": true,
+  "error": null,
+  "request_sha256": "6e46d9455ae28344027a7cdfafacbff555cc47386a4eca71f25b45d880f2b905",
+  "request_bytes": 646955,
+  "replay_wall_s": 2.5761433839797974,
+  "client_inference_wall_s": 2.550766447558999,
+  "usage": {
+    "completion_tokens": 87,
+    "prompt_tokens": 1972,
+    "total_tokens": 2059,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 648.738,
+    "prompt_per_token_ms": 0.328974645030426,
+    "prompt_per_second": 3039.7479413877404,
+    "predicted_n": 87,
+    "predicted_ms": 1103.853,
+    "predicted_per_token_ms": 12.835500000000001,
+    "predicted_per_second": 77.90892446729772
+  },
+  "structured_output": {
+    "reason": "The velocity magnitude |U| shows a sudden, non-physical spike at time 3 (Image 5) near x=15%, y=30%, where a single cell reaches a value of 84.63 m/s while the surrounding field remains much lower. This localized extreme growth is a sign of numerical instability.",
+    "stability": "unstable"
+  },
+  "scores": {
+    "stability": {
+      "answer": "unstable",
+      "truth": "unstable",
+      "match": true,
+      "cannot_tell": false
+    }
+  }
+}

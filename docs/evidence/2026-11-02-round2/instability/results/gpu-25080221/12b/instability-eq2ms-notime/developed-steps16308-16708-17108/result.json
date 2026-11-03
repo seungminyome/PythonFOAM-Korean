@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "output_text": "{\"reason\": \"The flow shows smooth evolution of features, such as the development of a vortex-like structure in the velocity magnitude and corresponding pressure fluctuations. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in values.\", \"stability\": \"stable\"}",
+  "request_sha256": "ca5e71ddf583c261bca227f0016daa8e936eb4698368d6911f07865caa0a7225",
+  "request_bytes": 639827,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 958,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 64,
+    "prompt_tokens": 1972,
+    "total_tokens": 2036,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 1972,
+    "prompt_ms": 635.124,
+    "prompt_per_token_ms": 0.3220709939148073,
+    "prompt_per_second": 3104.905498768744,
+    "predicted_n": 64,
+    "predicted_ms": 807.21,
+    "predicted_per_token_ms": 12.812857142857144,
+    "predicted_per_second": 78.04660497268368
+  },
+  "structured_output": {
+    "reason": "The flow shows smooth evolution of features, such as the development of a vortex-like structure in the velocity magnitude and corresponding pressure fluctuations. There are no signs of checkerboard patterns, high-frequency oscillations, or unphysical growth in values.",
+    "stability": "stable"
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 2.3045760840177536,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 240.0
+}

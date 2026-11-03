@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "suite": "async",
+  "server_pid": 1713156,
+  "mmproj_loaded": true,
+  "settings": {
+    "steps": 1000,
+    "delta_t_s": 5e-06,
+    "write_every": 250,
+    "request_step": 250,
+    "sequence_steps": [
+      250,
+      500,
+      750
+    ],
+    "image_x_window": "0,0.12",
+    "image_y_window": "0,0.04",
+    "deadline_s": "120",
+    "image_style": "v2",
+    "model": "gemma-4-12b-it-qat-q4_0-vision",
+    "max_tokens_env": "320",
+    "fixture_deadline_s": 4.0,
+    "start_time_s": 0.1,
+    "start_dir": "/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/r2/gpu-suites/start/v2012/0.1",
+    "start_files_sha256": {
+      "U": "5e89b31d71d8fc8a3a7ae6e44eef1ed478cda488f5aeb98488c17fd5fb50b5af",
+      "p": "7e7291a1a194da52419addf3d2b41de6eea8ac28503e98a593d909d332c9dabd",
+      "phi": "3e5221f6aca5724a9486e235bd6bf94ae1de21ad6dd4637627cfe23198d76774"
+    }
+  },
+  "timings": {
+    "async-no-llm": 57.49441468715668,
+    "async-describe": 57.46954657137394,
+    "async-sequence": 56.972636787220836,
+    "async-server-error": 56.96271497197449,
+    "async-timeout": 56.98394642211497
+  },
+  "cases": {
+    "async-no-llm": {
+      "request_step": 750,
+      "arrived_at_step": 763,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "disabled",
+      "callback_wall_s": {
+        "request_step": 0.006813139,
+        "arrival_step": 0.026733325,
+        "last_step": 0.031204682,
+        "max_other_steps": 0.020693243,
+        "median_all_steps": 0.00013753650000000001
+      },
+      "solver_stall_s": 0.00644012913107872,
+      "inference_wall_s": 0.0,
+      "structured_output": null
+    },
+    "async-describe": {
+      "request_step": 250,
+      "arrived_at_step": 351,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "ok",
+      "callback_wall_s": {
+        "request_step": 0.021148578,
+        "arrival_step": 0.025527443,
+        "last_step": 0.042335996,
+        "max_other_steps": 0.0116083,
+        "median_all_steps": 0.0001318065
+      },
+      "solver_stall_s": 0.020800314843654633,
+      "inference_wall_s": 3.8822859469801188,
+      "structured_output": {
+        "flow_description": "The flow is fastest in the upper half of the domain, particularly around x=40% and x=60%, where velocity magnitude is highest. The flow is slowest in the bottom third of the domain. The lowest pressure is located in a concentrated region near the center-left at x=35%, while higher pressure is seen on the far right and top edges.",
+        "fastest_flow_x_percent": 40,
+        "fastest_flow_y_percent": 45,
+        "lowest_pressure_x_percent": 35,
+        "lowest_pressure_y_percent": 30,
+        "uncertainties": "The exact values of velocity and pressure at specific coordinates are not provided, only their relative positions within the plotted range."
+      }
+    },
+    "async-sequence": {
+      "request_step": 750,
+      "arrived_at_step": 851,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "ok",
+      "callback_wall_s": {
+        "request_step": 0.00390674,
+        "arrival_step": 0.037940911,
+        "last_step": 0.023987187,
+        "max_other_steps": 0.019985206,
+        "median_all_steps": 0.000137021
+      },
+      "solver_stall_s": 0.003563055768609047,
+      "inference_wall_s": 3.9656331669539213,
+      "structured_output": {
+        "change_description": "The velocity magnitude shows a high-speed region shifting from approximately x=40% to x=35% and becoming more concentrated. The pressure field shows a shift in the location of the minimum pressure peak from x=38% to x=40%, with the overall pressure range becoming more negative.",
+        "max_speed_trend": "increasing",
+        "min_pressure_trend": "more_negative",
+        "fastest_flow_region": "moves",
+        "uncertainties": "The exact nature of the flow (e.g., wake, boundary layer) is not specified."
+      }
+    },
+    "async-server-error": {
+      "request_step": 250,
+      "arrived_at_step": 268,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "error",
+      "callback_wall_s": {
+        "request_step": 0.014010815,
+        "arrival_step": 0.025012568,
+        "last_step": 0.030072169,
+        "max_other_steps": 0.016649582,
+        "median_all_steps": 0.0001323265
+      },
+      "solver_stall_s": 0.013651888817548752,
+      "inference_wall_s": 0.008696280419826508,
+      "structured_output": null
+    },
+    "async-timeout": {
+      "request_step": 250,
+      "arrived_at_step": 325,
+      "answer_arrived_before_end": true,
+      "end_wait_s": null,
+      "model_status": "timeout",
+      "callback_wall_s": {
+        "request_step": 0.025792336,
+        "arrival_step": 0.044864612,
+        "last_step": 0.033099381,
+        "max_other_steps": 0.016530101,
+        "median_all_steps": 0.0001324015
+      },
+      "solver_stall_s": 0.025419538840651512,
+      "inference_wall_s": null,
+      "structured_output": null
+    }
+  },
+  "source_HEAD": "c82c835e6df18ca4e1c500843d7b388c29241df1",
+  "source_HEAD_error": null
+}

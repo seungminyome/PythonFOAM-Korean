@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "output_text": "{\n  \"flow_description\": \"The flow is fastest in the upper half of the domain, particularly around the center. The velocity is slowest in a horizontal band across the lower half. The lowest pressure is located in a localized region near the center-left, while the highest pressure is found at the bottom-right corner.\",\n  \"fastest_flow_x_percent\": 50,\n  \"fastest_flow_y_percent\": 50,\n  \"lowest_pressure_x_percent\": 48,\n  \"lowest_pressure_y_percent\": 28,\n  \"uncertainties\": \"The exact physical boundaries and the nature of the obstacles or geometry causing the pressure fluctuations are not explicitly labeled.\"\n}",
+  "request_sha256": "f6fe866d1b06918124cdafcce01ff02d09cdcb261623af4f70dcaef40b0c814f",
+  "request_bytes": 217669,
+  "http_worker_reaped": true,
+  "http_cleanup_allowance_s": 0.02,
+  "http_status": 200,
+  "transport_phase": "complete",
+  "raw_response_bytes": 1281,
+  "request_sent": true,
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 165,
+    "prompt_tokens": 997,
+    "total_tokens": 1162,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 997,
+    "prompt_ms": 264.673,
+    "prompt_per_token_ms": 0.265469408224674,
+    "prompt_per_second": 3766.9123786710397,
+    "predicted_n": 165,
+    "predicted_ms": 2069.176,
+    "predicted_per_token_ms": 12.616926829268293,
+    "predicted_per_second": 79.25860342474493
+  },
+  "structured_output": {
+    "flow_description": "The flow is fastest in the upper half of the domain, particularly around the center. The velocity is slowest in a horizontal band across the lower half. The lowest pressure is located in a localized region near the center-left, while the highest pressure is found at the bottom-right corner.",
+    "fastest_flow_x_percent": 50,
+    "fastest_flow_y_percent": 50,
+    "lowest_pressure_x_percent": 48,
+    "lowest_pressure_y_percent": 28,
+    "uncertainties": "The exact physical boundaries and the nature of the obstacles or geometry causing the pressure fluctuations are not explicitly labeled."
+  },
+  "output_format_valid": true,
+  "inference_wall_s": 3.328787475824356,
+  "connect_timeout_s": 2.0,
+  "read_timeout_s": 120.0
+}

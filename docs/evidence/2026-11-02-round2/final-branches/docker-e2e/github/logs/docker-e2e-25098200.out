@@ -1,0 +1,21 @@
+/apps/s/apptainer/1.4.1/bin/apptainer
+job 25098200 node ttest01.cluster url https://github.com/seungminyome/PythonFOAM.git image 0d457351692d
+=== pr/podfoam-fix (expected commit: 473c80229d53)
+remote head: 473c80229d5329565f0c0275aaa4ab00f2ff9848	refs/heads/pr/podfoam-fix
+Validation directory: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.0COkmc
+verification: "status": "PASS"
+E2E pr/podfoam-fix 473c80229d5329565f0c0275aaa4ab00f2ff9848 PASS 0
+  log: PASS: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.0COkmc
+  log: verification: "status": "PASS"
+  log: E2E pr/podfoam-fix 473c80229d5329565f0c0275aaa4ab00f2ff9848 PASS 0
+RESULT pr/podfoam-fix 473c80229d5329565f0c0275aaa4ab00f2ff9848 PASS (exit 0)
+=== pr/podfoam-observer (expected commit: cd23736432b3)
+remote head: cd23736432b39393ec891f96a10f86fbd01b97a1	refs/heads/pr/podfoam-observer
+Validation directory: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.ldL2rM
+verification: "status": "PASS"
+E2E pr/podfoam-observer cd23736432b39393ec891f96a10f86fbd01b97a1 PASS 0
+  log: PASS: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.ldL2rM
+  log: verification: "status": "PASS"
+  log: E2E pr/podfoam-observer cd23736432b39393ec891f96a10f86fbd01b97a1 PASS 0
+RESULT pr/podfoam-observer cd23736432b39393ec891f96a10f86fbd01b97a1 PASS (exit 0)
+done: 0 failed

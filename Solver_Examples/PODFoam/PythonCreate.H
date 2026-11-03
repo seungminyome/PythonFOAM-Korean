@@ -1,8 +1,13 @@
 // Copyright (C) 2021 UChicago Argonne, LLC
+// Copyright (C) 2026 Seungmin Yome
 // SPDX-License-Identifier: (other)
-// Initialize the embedded interpreter and validate the bridge API.
-// NumPy's machine-limit probes deliberately overflow during import. Keep
-// OpenFOAM traps enabled for PDE work, but use Python's FP semantics here.
+//
+// Python-OpenFOAM integration
+//
+// Initialize the interpreter, import python_module and check its functions.
+// NumPy's machine-limit probes overflow on purpose during import, so the
+// floating-point traps are off until the end of this file.
+
 PythonFpeOff pythonInitFpe;
 Py_Initialize();
 if (init_numpy() < 0)
@@ -11,23 +16,35 @@ if (init_numpy() < 0)
     FatalErrorInFunction << "NumPy initialization failed" << exit(FatalError);
 }
 
-// Resolve python_module.py from the case even when invoked with -case; in a
-// parallel run the case path is processorN/, so the undecomposed case
-// directory (globalPath) is added as well. The launch folder stays on the path after them.
-for (const fileName& dir : {runTime.path(), runTime.rootPath()/runTime.globalCaseName()})
+// sys.path: the case folder first, so that -case finds the case's module. In a
+// parallel run the case path is processorN/, so the undecomposed case folder
+// goes in front of it; in a serial run the two are the same folder and it is
+// inserted once. The launch folder follows them.
 {
-    PyObject* casePath = PyUnicode_FromString(dir.c_str());
-    if (!casePath || PyList_Insert(PySys_GetObject("path"), 0, casePath) < 0)
+    const fileName casePath = runTime.path();
+    const fileName globalPath = runTime.rootPath()/runTime.globalCaseName();
+    const auto insertPath = [](const fileName& dir)
     {
-        printPythonError();
-        FatalErrorInFunction << "Cannot add case to Python path" << exit(FatalError);
+        PyObject* text = PyUnicode_DecodeFSDefault(dir.c_str());
+        if (!text || PyList_Insert(PySys_GetObject("path"), 0, text) < 0)
+        {
+            printPythonError();
+            FatalErrorInFunction << "Cannot add " << dir << " to Python path"
+                << exit(FatalError);
+        }
+        Py_DECREF(text);
+    };
+    insertPath(casePath);
+    if (globalPath != casePath)
+    {
+        insertPath(globalPath);
     }
-    Py_DECREF(casePath);
 }
 if (PyRun_SimpleString("import sys; sys.path.append('.')") < 0)
 {
     FatalErrorInFunction << "Cannot add the launch folder to Python path" << exit(FatalError);
 }
+
 PyObject* pModule = PyImport_ImportModule("python_module");
 if (!pModule)
 {
@@ -83,7 +100,14 @@ if (analysis_func)
     PyObject* mesh_func = PyObject_GetAttrString(pModule, "mesh_func");
     if (!mesh_func)
     {
-        PyErr_Clear();
+        if (PyErr_ExceptionMatches(PyExc_AttributeError))
+        {
+            PyErr_Clear();
+        }
+        else
+        {
+            printPythonError();
+        }
     }
     else if (!PyCallable_Check(mesh_func))
     {
@@ -93,8 +117,10 @@ if (analysis_func)
     requireOnAllRanks(mesh_func, "mesh_func");
     if (mesh_func)
     {
-        // 2D cases: every face of the first 'empty' patch outlines exactly one
-        // cell, so Python can paint true cell polygons (no interpolation).
+        // 2D cases: each face of the first 'empty' patch outlines one cell, so
+        // Python can paint true cell polygons (no interpolation). One polygon
+        // per cell: a patch that holds both the front and the back faces lists
+        // every cell twice, and only a cell's first face is kept.
         // 3D cases (no empty patch): the polygons of a plane slice, one per
         // cut cell (PythonSlice.H), and an eighth argument that says where the
         // plane is.
@@ -114,18 +140,28 @@ if (analysis_func)
         {
             const polyPatch& pp = mesh.boundaryMesh()[emptyPatch];
             const labelUList& faceCells = pp.faceCells();
+            boolList cellTaken(mesh.nCells(), false);
+            DynamicList<label> keptFaces(pp.size());
             label nPts = 0;
-            forAll(pp, facei) nPts += pp[facei].size();
-            localPolyPoints.setSize(nPts);
-            localPolySizes.setSize(pp.size());
-            localPolyCells.setSize(pp.size());
-            label k = 0;
             forAll(pp, facei)
             {
-                const face& f = pp[facei];
+                if (!cellTaken[faceCells[facei]])
+                {
+                    cellTaken[faceCells[facei]] = true;
+                    keptFaces.append(facei);
+                    nPts += pp[facei].size();
+                }
+            }
+            localPolyPoints.setSize(nPts);
+            localPolySizes.setSize(keptFaces.size());
+            localPolyCells.setSize(keptFaces.size());
+            label k = 0;
+            forAll(keptFaces, i)
+            {
+                const face& f = pp[keptFaces[i]];
                 forAll(f, pointi) localPolyPoints[k++] = mesh.points()[f[pointi]];
-                localPolySizes[facei] = f.size();
-                localPolyCells[facei] = faceCells[facei];
+                localPolySizes[i] = f.size();
+                localPolyCells[i] = faceCells[keptFaces[i]];
             }
         }
         const bool sliced = (emptyPatch < 0);
@@ -304,19 +340,28 @@ if (analysis_func)
     }
 }
 Py_DECREF(pModule);
+
 const int rank = Pstream::myProcNo();
 const label num_cells = mesh.nCells();
-const label truncation = 5;
+// The modes written per component; the shipped module returns 5.
+const label truncation =
+    runTime.controlDict().lookupOrDefault<label>("podTruncation", 5);
+if (truncation < 1)
+{
+    FatalErrorInFunction << "podTruncation must be at least 1, not " << truncation
+        << exit(FatalError);
+}
 // Zero: the SVD runs at write steps. Above zero: every podSvdInterval snapshots.
 const label podSvdInterval =
     runTime.controlDict().lookupOrDefault<label>("podSvdInterval", 0);
 if (podSvdInterval < 0)
 {
-    FatalErrorInFunction << "podSvdInterval must be non-negative"
+    FatalErrorInFunction << "podSvdInterval must be 0 or positive, not " << podSvdInterval
         << exit(FatalError);
 }
 label podSnapshotCount = 0;
 label podSnapshotsSinceSvd = 0;
+bool podTruncationWarned = false;
 std::feclearexcept(FE_ALL_EXCEPT);
 pythonInitFpe.restore();
 Info<< "Python and NumPy initialized successfully" << endl;

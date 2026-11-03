@@ -23,5 +23,5 @@ jobs:
         with:
           repository: seungminyome/PythonFOAM
           path: english
-      - name: Solver code identical to the English repository (READMEs excluded)
-        run: diff -rq Solver_Examples/PODFoam english/Solver_Examples/PODFoam -x README.md -x __pycache__ -x 'linux64*' -x log.build
+      - name: Solver code identical to the English repository (README.md and HOOKS.md excluded)
+        run: diff -rq Solver_Examples/PODFoam english/Solver_Examples/PODFoam -x README.md -x HOOKS.md -x __pycache__ -x 'linux64*' -x log.build

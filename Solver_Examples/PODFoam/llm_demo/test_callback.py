@@ -54,7 +54,10 @@ def keep_earlier_states(callback, states):
 class CallbackTests(unittest.TestCase):
     def run_case(self, enabled, summary_delay=0, nonfinite_feature=False,
                  endpoint="http://192.0.2.1/v1/chat/completions", deadline=1,
-                 with_mesh=False, image_input="1", nonfinite_pressure=False):
+                 with_mesh=False, image_input="1", nonfinite_pressure=False,
+                 step_offset=0, count_shift=0):
+        """step_offset: the time index of a restarted run runs ahead of snapshot_count;
+        count_shift: the solver's snapshot_count disagrees with the module's window."""
         with tempfile.TemporaryDirectory() as directory:
             case = Path(directory)
             for helper in ("python_module.py", "pod_image.py", "bounded_ipc.py", "llm_client.py"):
@@ -84,6 +87,9 @@ class CallbackTests(unittest.TestCase):
                 "LLM_RUN_ID": "unit-test-run", "LLM_IMAGE_INPUT": image_input,
                 "MPLCONFIGDIR": str(case / "mpl-cache"),
             }
+            if step_offset:
+                environment.update(LLM_ANALYSIS_STEP=str(5 + step_offset),
+                                   LLM_FINAL_STEP=str(10 + step_offset))
             with patch.dict(os.environ, environment):
                 for step in range(1, 11):
                     array = np.array(np.arange(60).reshape(20, 3) + step, dtype=float)
@@ -91,8 +97,9 @@ class CallbackTests(unittest.TestCase):
                     if step == 10:
                         modes = callback.svd_func(0)
                         self.assertEqual(modes.shape, (60, 5))
-                    state = {"schema_version": 1, "time_s": step * 1e-7,
-                             "delta_t_s": 1e-7, "step": step, "cells": 20,
+                    state = {"schema_version": 1, "time_s": (step + step_offset) * 1e-7,
+                             "delta_t_s": 1e-7, "step": step + step_offset,
+                             "snapshot_count": step + count_shift, "cells": 20,
                              "residuals": {
                                  name: {"initial_first": 0.123456789 / step,
                                         "initial_last": 0.0000123456789 / step,
@@ -122,6 +129,12 @@ class CallbackTests(unittest.TestCase):
             self.assertEqual(len(telemetry), 10)
             self.assertEqual(json.loads(telemetry[0])["residuals"]["Ux"]["initial_first"],
                              0.123456789)
+            if count_shift:
+                result = json.loads((case / "llm_result.json").read_text())
+                self.assertEqual(result["status"], "callback_error")
+                request = json.loads((case / "llm_request.json").read_text())
+                self.assertEqual(request["request_status"], "summary_pending")
+                return callback._last_callback_outcome, request
             if nonfinite_pressure:
                 # no picture, so no request either
                 result = json.loads((case / "llm_result.json").read_text())
@@ -133,7 +146,7 @@ class CallbackTests(unittest.TestCase):
                 self.assertFalse((case / "llm_request_body.json").exists())
                 return callback._last_callback_outcome, request
             request = json.loads((case / "llm_request.json").read_text())
-            self.assertEqual(request["step"], 5)
+            self.assertEqual(request["step"], 5 + step_offset)
             if summary_delay:
                 self.assertIsNone(request["request"])
                 self.assertEqual(request["request_status"], "summary_pending")
@@ -196,12 +209,12 @@ class CallbackTests(unittest.TestCase):
             callback = load_module("test_case_delayed_io", case / "python_module.py")
             callback._snapshots = [np.ones((20, 3)) for _ in range(5)]
             state = {"schema_version": 1, "time_s": 5e-7, "delta_t_s": 1e-7,
-                     "step": 5, "cells": 20,
+                     "step": 5, "snapshot_count": 5, "cells": 20,
                      "residuals": {name: {"initial_first": 0.1, "initial_last": 0.1,
                                            "final_last": 1e-6, "linear_solves": 1,
                                            "iterations_total": 1}
                                    for name in ("Ux", "Uy", "p")}}
-            keep_earlier_states(callback, [{**state, "time_s": step * 1e-7, "step": step}
+            keep_earlier_states(callback, [{**state, "time_s": step * 1e-7, "step": step, "snapshot_count": step}
                                            for step in range(1, 5)])
             if target == "telemetry":
                 operation = callback._write_telemetry
@@ -254,7 +267,7 @@ class CallbackTests(unittest.TestCase):
                 if target == "telemetry":
                     # the final telemetry write has its own deadline too
                     start = time.monotonic()
-                    callback.analysis_func({**state, "step": 10, "time_s": 1e-6})
+                    callback.analysis_func({**state, "step": 10, "snapshot_count": 10, "time_s": 1e-6})
                     self.assertLess(time.monotonic() - start, 0.27)
             outcome = callback._last_callback_outcome
             self.assertTrue(outcome["worker_reaped"])
@@ -312,6 +325,19 @@ class CallbackTests(unittest.TestCase):
         self.assertFalse(result["image_input"])
         self.assertIn("mesh_func", result["image_skipped"]["reason"])
 
+    def test_restart_window_is_checked_against_snapshot_count(self):
+        # after a restart the time index (step) runs ahead of this run's snapshots
+        result, request = self.run_case(False, step_offset=100)
+        self.assertEqual(result["status"], "disabled")
+        self.assertEqual(request["step"], 105)
+        self.assertEqual(request["input"]["velocity_svd"]["window_snapshots"], 5)
+
+    def test_snapshot_count_mismatch_is_an_error(self):
+        outcome, _ = self.run_case(False, count_shift=1)
+        self.assertEqual(outcome["status"], "callback_error")
+        self.assertIn("snapshot window 5 != snapshot_count 6", outcome["error"])
+        self.assertTrue(outcome["worker_reaped"])
+
     def test_nonfinite_pressure(self):
         outcome, _ = self.run_case(False, with_mesh=True, nonfinite_pressure=True)
         self.assertEqual(outcome["status"], "callback_error")
@@ -328,12 +354,12 @@ class CallbackTests(unittest.TestCase):
             load_module("pod_svd", case / "pod_svd.py")
             callback = load_module("test_case_fault", case / "python_module.py")
             callback._snapshots = [np.ones((20, 3)) for _ in range(5)]
-            state = {"step": 5, "time_s": 5e-7, "delta_t_s": 1e-7, "cells": 20,
+            state = {"step": 5, "snapshot_count": 5, "time_s": 5e-7, "delta_t_s": 1e-7, "cells": 20,
                      "residuals": {name: {"initial_first": 0.1, "initial_last": 0.1,
                                            "final_last": 1e-6, "linear_solves": 1,
                                            "iterations_total": 1}
                                    for name in ("Ux", "Uy", "p")}}
-            keep_earlier_states(callback, [{**state, "step": step, "time_s": step * 1e-7}
+            keep_earlier_states(callback, [{**state, "step": step, "snapshot_count": step, "time_s": step * 1e-7}
                                            for step in range(1, 5)])
             with patch.dict(os.environ, {"LLM_ENABLED": "0", "LLM_ANALYSIS_STEP": "5",
                                          "LLM_IMAGE_INPUT": "0", "LLM_FINAL_STEP": "10",
@@ -343,7 +369,7 @@ class CallbackTests(unittest.TestCase):
                 yield callback, state
 
     def assert_continues(self, callback, state):
-        self.assertIsNone(callback.analysis_func({**state, "step": 6, "time_s": 6e-7}))
+        self.assertIsNone(callback.analysis_func({**state, "step": 6, "snapshot_count": 6, "time_s": 6e-7}))
         self.assertEqual(callback._recent_states[-1]["step"], 6)
 
     def test_second_pipe_failure_closes_first_pipe(self):
@@ -486,7 +512,7 @@ class CallbackTests(unittest.TestCase):
 def telemetry_state(step, steps):
     """A solver-like state; some steps carry NaN, infinity or non-ASCII text."""
     state = {"schema_version": 1, "time_s": 0.1 + step * 5e-6, "delta_t_s": 5e-6,
-             "end_time_s": 0.1 + steps * 5e-6, "step": step, "cells": 20540,
+             "end_time_s": 0.1 + steps * 5e-6, "step": step, "snapshot_count": step, "cells": 20540,
              "residuals": {name: {"initial_first": 1e-3 / (step + k),
                                   "initial_last": 3e-5 * math.sin(step + k) ** 2,
                                   "final_last": 1e-7 * (1 + step % 7), "linear_solves": 1 + step % 6,
@@ -561,7 +587,8 @@ class TelemetryTests(unittest.TestCase):
         # what later code reads of the kept states: the residual trend and the window start
         new._snapshots = [np.full((20, 3), float(k)) for k in range(1, 6)]
         with patch.dict(os.environ, self.environment):
-            summary_new = new._summarize(new._recent_states[-1])[0]
+            # the five snapshots set above; the solver's count for this state is 5 too
+            summary_new = new._summarize(dict(new._recent_states[-1], snapshot_count=5))[0]
         self.assertEqual(summary_new["velocity_svd"]["window_start_time_s"],
                          float(format(states[0]["time_s"], ".6g")))   # the summary keeps 6 digits
         self.assertEqual(summary_new["residuals"]["p"]["recent_initial_first"],

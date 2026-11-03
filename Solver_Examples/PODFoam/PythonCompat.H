@@ -1,16 +1,21 @@
-// What the Python hooks need that differs between openfoam.com (OPENFOAM
-// defined) and openfoam.org.
+// Copyright (C) 2026 Seungmin Yome
+// SPDX-License-Identifier: (other)
+// What the calls into Python and the hooks need that differs between
+// openfoam.com (OPENFOAM defined) and openfoam.org.
 #ifndef PythonCompat_H
 #define PythonCompat_H
 
 #include <cfenv>
-#ifndef OPENFOAM
+#ifdef OPENFOAM
+    #include "sigFpe.H"
+#else
     #include "Residuals.H"
 #endif
 
 // Floating-point traps off inside a scope, as around the calls into Python
 // (NumPy's machine-limit probes overflow on purpose); restore() or the end of
-// the scope turns them back on.
+// the scope turns them back on. Pending exception flags are cleared before the
+// traps come back, since enabling a trap with its flag set raises it at once.
 #ifdef OPENFOAM
 typedef Foam::sigFpe::ignore PythonFpeOff;
 #else

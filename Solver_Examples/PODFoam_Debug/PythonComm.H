@@ -85,7 +85,18 @@ else
     // Numpy array dimensions
     npy_intp dim[] = {num_cells, 3};
     // create a new array using 'buffer'
-    array_2d = PyArray_SimpleNewFromData(2, dim, NPY_DOUBLE, &input_vals[0]);
+    // NumPy owns the snapshot, so a view kept by Python cannot alias the next step
+    array_2d = PyArray_SimpleNew(2, dim, NPY_DOUBLE);
+    if (!array_2d)
+    {
+        PyErr_Print();
+        FatalErrorInFunction << "Cannot allocate the snapshot array" << exit(FatalError);
+    }
+    {
+        double* snap_data = static_cast<double*>(PyArray_DATA(reinterpret_cast<PyArrayObject*>(array_2d)));
+        const double* buf = &input_vals[0][0];
+        for (npy_intp i = 0; i < dim[0]*dim[1]; ++i) snap_data[i] = buf[i];
+    }
 
     clock_gettime(CLOCK_MONOTONIC, &tw2); // POSIX
     posix_wall = 1000.0*tw2.tv_sec + 1e-6*tw2.tv_nsec - (1000.0*tw1.tv_sec + 1e-6*tw1.tv_nsec);

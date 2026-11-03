@@ -1,8 +1,8 @@
 #!/bin/bash
 # Build PODFoam into a scratch directory and run the five observation cases
 # against the resident llama-server. Needs a PASSed validation run
-# (validation/run_v2106.sh) as the reference case; the newest one is used
-# unless POD_REFERENCE_RUN is set. POD_OPENFOAM_VERSION (default: the sourced
+# (validation/run.sh) as the reference case; the newest one in validation/runs/
+# or in the workspace is used unless POD_REFERENCE_RUN is set. POD_OPENFOAM_VERSION (default: the sourced
 # OpenFOAM, else v2106) is the version the bashrc must report, e.g. v2212.
 set -eo pipefail
 source_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
@@ -19,16 +19,17 @@ if ! "${python:-false}" -c 'import numpy' 2> /dev/null; then
 fi
 
 if [[ -z "${POD_REFERENCE_RUN:-}" ]]; then
-    for candidate in $(ls -dt "$workspace"/pod-"$pod_version".* 2>/dev/null); do
+    # newest first; read keeps a path with spaces whole
+    while IFS= read -r candidate; do
         if [[ -f "$candidate/verification.json" ]] \
            && grep -q '"status": "PASS"' "$candidate/verification.json"; then
             POD_REFERENCE_RUN=$candidate
             break
         fi
-    done
+    done < <(ls -dt "$source_dir"/validation/runs/pod-"$pod_version".* "$workspace"/pod-"$pod_version".* 2>/dev/null)
 fi
 if [[ -z "${POD_REFERENCE_RUN:-}" || ! -d "$POD_REFERENCE_RUN/fixed-pod" ]]; then
-    echo "No PASSed validation run found; run validation/run_v2106.sh or set POD_REFERENCE_RUN" >&2
+    echo "No PASSed validation run found; run validation/run.sh or set POD_REFERENCE_RUN" >&2
     exit 2
 fi
 reference=$POD_REFERENCE_RUN

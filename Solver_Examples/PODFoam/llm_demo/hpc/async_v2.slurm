@@ -11,15 +11,16 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=48G
 #SBATCH --time=04:00:00
-#SBATCH --output=pod-async-v2-%j.out
+#SBATCH --output=Solver_Examples/PODFoam/llm_demo/pod-async-v2-%j.out   # under the submit folder; ignored by llm_demo/.gitignore
 set -euo pipefail
 # --- site settings: from the environment ----------------------------------------------------------
-SIF=${SIF:?OpenFOAM v2212 image}
+SIF=${SIF:?OpenFOAM image}
 export PYTHON=${PYTHON:?Python 3 with numpy + matplotlib}
-export POD_REFERENCE_RUN=${POD_REFERENCE_RUN:?a PASSed validation run (validation/run_v2106.sh) on this OpenFOAM}
+export POD_REFERENCE_RUN=${POD_REFERENCE_RUN:?a PASSed validation run (validation/run.sh) on this OpenFOAM}
 export LLM_LONG_START=${LLM_LONG_START:?time directory of a developed run of the same mesh, e.g. <developed case>/<time>}
 # POD_HOST_MODULES="<modules>" loads what the source-built llama-server needs; empty: nothing is loaded
-# OPENFOAM_BASHRC: the bashrc inside the image (default /usr/lib/openfoam/openfoam2212/etc/bashrc)
+# OPENFOAM_BASHRC: the bashrc inside the image (default /usr/lib/openfoam/openfoam2212/etc/bashrc); POD_OPENFOAM_VERSION:
+# the version that bashrc reports (default v2212; v2012, v2106 and 8 ran as well)
 # ------------------------------------------------------------------------------------------------
 root="${SLURM_SUBMIT_DIR:-$PWD}"
 pod="$root/Solver_Examples/PODFoam"
@@ -34,7 +35,7 @@ mkdir -p "$POD_GIT_RECORDS"
 git -C "$root" rev-parse HEAD > "$POD_GIT_RECORDS/HEAD"
 git -C "$root" status --short > "$POD_GIT_RECORDS/git-status.txt"
 git -C "$root" diff --binary > "$POD_GIT_RECORDS/changes.patch"
-export POD_LLM_RUNTIME=${POD_LLM_RUNTIME:-$root/llm-runtime-12b}     # weights and llama-b11429-cuda
+export POD_LLM_RUNTIME=${POD_LLM_RUNTIME:-$root/../llm-runtime-12b}  # weights and llama-b11429-cuda, beside the repository
 export POD_LLM_STATE=$out/server                                      # this job's pid, log and port files
 export POD_LLM_PORT=${POD_LLM_PORT:-$((20000 + ${SLURM_JOB_ID:-0} % 10000))}
 # the server and request settings of this job
@@ -43,7 +44,7 @@ export LLM_ENDPOINT=http://127.0.0.1:$POD_LLM_PORT/v1/chat/completions
 export LLM_CTX=4096 LLM_BATCH=512 LLM_UBATCH=512
 export LLM_TIMEOUT_S=120 LLM_MAX_TOKENS=320 LLM_IMAGE_STYLE=v2
 export LLM_KILL_JOIN_S=${LLM_KILL_JOIN_S:-0.2}                          # a killed worker of a 0.5 GB solver took about 40 ms to reap
-export POD_SUITE=async OPENFOAM_BASHRC=${OPENFOAM_BASHRC:-/usr/lib/openfoam/openfoam2212/etc/bashrc} POD_OPENFOAM_VERSION=v2212
+export POD_SUITE=async OPENFOAM_BASHRC=${OPENFOAM_BASHRC:-/usr/lib/openfoam/openfoam2212/etc/bashrc} POD_OPENFOAM_VERSION=${POD_OPENFOAM_VERSION:-v2212}
 export PYTHONDONTWRITEBYTECODE=1
 # the run: 6000 steps of 5e-6 s from the start state, written every 250 steps
 export LLM_LONG_STEPS=${LLM_LONG_STEPS:-6000} LLM_LONG_DT=${LLM_LONG_DT:-5e-6} LLM_LONG_WRITE=${LLM_LONG_WRITE:-250}

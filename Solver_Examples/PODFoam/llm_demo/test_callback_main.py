@@ -58,7 +58,8 @@ class MainTelemetryTests(unittest.TestCase):
         old._snapshots, new._snapshots = list(snapshots), list(snapshots)
         with patch.dict(os.environ, self.environment):
             summary_old = old._summarize(old._history[-1])[0]
-            summary_new = new._summarize(new._recent_states[-1])[0]
+            # the five snapshots set above; the solver's count for this state is 5 too
+            summary_new = new._summarize(dict(new._recent_states[-1], snapshot_count=5))[0]
         self.assertEqual(summary_new, summary_old)
         self.assertEqual(summary_new["velocity_svd"]["window_start_time_s"],
                          float(format(states[0]["time_s"], ".6g")))   # the summary keeps 6 digits

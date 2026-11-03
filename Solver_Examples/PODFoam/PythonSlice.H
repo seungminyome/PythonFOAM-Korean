@@ -1,3 +1,5 @@
+// Copyright (C) 2026 Seungmin Yome
+// SPDX-License-Identifier: (other)
 // Plane slice of a 3D mesh for mesh_func, which gets each cell as its own
 // polygon; a 2D case takes the polygons from its empty patch (PythonCreate.H).
 // A 3D case has no empty patch: there the cells
@@ -78,7 +80,7 @@ inline PythonPlaneSlice pythonPlaneSlice
     // Points closer than tol to the plane count as on it.
     const scalar tol = 1e-9*(slice.zMax - slice.zMin);
     const scalarField pointZ(mesh.points().component(vector::Z));
-    scalar nearest = GREAT;
+    scalar nearest = great;
     forAll(pointZ, pointi)
     {
         nearest = min(nearest, mag(pointZ[pointi] - slice.z));
@@ -86,8 +88,8 @@ inline PythonPlaneSlice pythonPlaneSlice
     reduce(nearest, minOp<scalar>());
     if (nearest <= tol)
     {
-        scalar above = GREAT;
-        scalar below = -GREAT;
+        scalar above = great;
+        scalar below = -great;
         forAll(pointZ, pointi)
         {
             if (pointZ[pointi] > slice.z + tol) above = min(above, pointZ[pointi]);
@@ -95,7 +97,7 @@ inline PythonPlaneSlice pythonPlaneSlice
         }
         reduce(above, minOp<scalar>());
         reduce(below, maxOp<scalar>());
-        slice.z = 0.5*(slice.z + (above < GREAT ? above : below));
+        slice.z = 0.5*(slice.z + (above < great ? above : below));
         slice.moved = true;
     }
 

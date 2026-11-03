@@ -23,7 +23,7 @@ pod="${POD_SOURCE:-$root/PODFoam}"                       # tarball layout
 demo="$pod/llm_demo"
 hpc="$demo/hpc"
 job="${SLURM_JOB_ID:-local}"
-export POD_LLM_RUNTIME="${POD_LLM_RUNTIME:-$root/llm-runtime-12b}"
+export POD_LLM_RUNTIME="${POD_LLM_RUNTIME:-$root/../llm-runtime-12b}"
 out="$root/results/picture-test-$job"
 # this job's own server files and port, so two jobs on one node or one runtime
 # folder do not use or stop each other's server

@@ -31,10 +31,11 @@ the slice cells only (centres, U, p, polygons and their mesh cells) and its
 metadata records the slice ("slice": z, number of cells); the request is built
 as for 2D.
 
-LLM_ANALYSIS_EVERY=N (describe with v2 pictures only) sends a
-describe request at LLM_ANALYSIS_STEP and every N steps after it, as long as
-fewer than LLM_ASYNC_MAX_PENDING requests are pending (otherwise that step is
-skipped and recorded). Each request writes its own files in
+LLM_ANALYSIS_EVERY=N (describe with v2 pictures only) sends a describe
+request at LLM_ANALYSIS_STEP and every N steps after it, as long as fewer than
+LLM_ASYNC_MAX_PENDING requests are pending (otherwise that step is skipped and
+recorded). LLM_ANALYSIS_STEP, LLM_SEQUENCE_STEPS and LLM_FINAL_STEP are
+compared with state["step"], OpenFOAM's time index, which a restart continues. Each request writes its own files in
 llm_requests/step-NNNNNN/ (the same names as a single request writes in the
 case folder) and the last step writes llm_requests/index.json.
 
@@ -339,27 +340,40 @@ def svd_func(rank):
     return pod_svd.svd_func(rank)
 
 
+def _initial_first(state, name):
+    """A field's initial_first residual of one state, None where the solver gave none."""
+    return (state.get("residuals") or {}).get(name, {}).get("initial_first")
+
+
 def _residual_summary(state):
+    """Ux, Uy and p with their recent trend. The solver leaves U out without the
+    momentum predictor and leaves out empty directions (HOOKS.md); so does this."""
     answer = {}
     recent = list(_recent_states)   # the last is this step's state
     for name in ("Ux", "Uy", "p"):
+        if _initial_first(state, name) is None:
+            continue
         record = dict(state["residuals"][name])
         current = float(record["initial_first"])
-        previous = (float(recent[-2]["residuals"][name]["initial_first"])
-                    if len(recent) > 1 else None)
+        earlier = _initial_first(recent[-2], name) if len(recent) > 1 else None
+        previous = float(earlier) if earlier is not None else None
         record["initial_first_change"] = (
             current - previous if previous is not None else None)
         record["initial_first_relative_change"] = (
             (current - previous) / abs(previous)
             if previous is not None and previous != 0 else None)
         record["recent_initial_first"] = [
-            item["residuals"][name]["initial_first"] for item in recent[-3:]]
+            _initial_first(item, name) for item in recent[-3:]]
         answer[name] = record
     return answer
 
 
 def _summarize(state):
     start = time.perf_counter()
+    # The window holds every snapshot of this run up to the request; the solver's
+    # count must agree (it differs from step after a restart).
+    if len(_snapshots) != int(state["snapshot_count"]):
+        raise ValueError(f"snapshot window {len(_snapshots)} != snapshot_count {state['snapshot_count']}")
     window = np.stack(_snapshots, axis=2)
     components = {}
     for index, name in enumerate(("Ux", "Uy", "Uz")):
@@ -448,8 +462,6 @@ def _render_image(state):
         start = time.perf_counter()
         frame, metadata = _render_v2(state, _frame_directory(state))
         return frame, dict(metadata, render_wall_s=time.perf_counter() - start), None
-    if _keeps_svd_window() and len(_snapshots) != int(state["step"]):
-        raise ValueError(f"snapshot count {len(_snapshots)} != step {state['step']}")
     start = time.perf_counter()
     image, metadata = pod_image.render(state, _geometry["centres"], _geometry["solution_d"],
                                        _latest_velocity, _latest_pressure,

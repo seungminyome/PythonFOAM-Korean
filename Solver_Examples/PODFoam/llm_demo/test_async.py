@@ -113,9 +113,12 @@ class Harness:
         centres = np.column_stack([np.linspace(-1.0, 1.0, 20), np.linspace(0.0, 0.1, 20),
                                    np.full(20, 0.005)])
         self.callback.mesh_func(centres, np.full(20, 1e-9), (1, 1, -1), 0)
+        # A 30 s deadline: the worker's first picture takes about 0.25 s unloaded and
+        # several seconds on a loaded node, and the fixture answers within a second, so a
+        # request ends as "ok" at any load. The tests whose subject is the deadline set it.
         self.environment = {
-            "LLM_ENABLED": "1", "LLM_ANALYSIS_STEP": "5", "LLM_TIMEOUT_S": "4",
-            "LLM_CALLBACK_DEADLINE_S": "4", "LLM_CONNECT_TIMEOUT_S": "1",
+            "LLM_ENABLED": "1", "LLM_ANALYSIS_STEP": "5", "LLM_TIMEOUT_S": "30",
+            "LLM_CALLBACK_DEADLINE_S": "30", "LLM_CONNECT_TIMEOUT_S": "1",
             "LLM_READ_TIMEOUT_S": "3", "LLM_RUN_ID": "unit-test-async", "LLM_IMAGE_INPUT": "1",
             "MPLCONFIGDIR": str(self.case / "mpl-cache"), "LLM_FINAL_STEP": "10",
         }
@@ -127,7 +130,7 @@ class Harness:
 
     def state(self, step, end_time_s=1e-6):
         return {"schema_version": 1, "time_s": step * 1e-7, "delta_t_s": 1e-7,
-                "end_time_s": end_time_s, "step": step, "cells": 20,
+                "end_time_s": end_time_s, "step": step, "snapshot_count": step, "cells": 20,
                 "residuals": {name: {"initial_first": 0.1 / step, "initial_last": 0.01 / step,
                                      "final_last": 0.001 / step, "linear_solves": 1,
                                      "iterations_total": 2}
@@ -323,18 +326,33 @@ class AsyncTests(unittest.TestCase):
         self.assertLess(max(walls.values()), 0.5)
 
     def test_connection_refused_is_reported_without_a_stall(self):
+        # Port 1 refuses the connection at once. The connect timeout and the callback
+        # deadline are set far above anything the worker needs, so a connect attempt that
+        # waited for either would end as status timeout, however loaded the machine is.
+        # The worker's own work before the attempt (summary, picture, record files) takes
+        # about 0.3 s unloaded and up to 4 s on a node whose load is ten times its cores;
+        # the bounds below leave room for that and compare against the 30 s a stall would take.
         harness = Harness({"LLM_MODE": "describe", "LLM_ASYNC": "1",
-                           "LLM_ENDPOINT": "http://127.0.0.1:1/v1/chat/completions"})
+                           "LLM_ENDPOINT": "http://127.0.0.1:1/v1/chat/completions",
+                           "LLM_CONNECT_TIMEOUT_S": "30", "LLM_CALLBACK_DEADLINE_S": "30"})
         try:
             result = harness.run(sleep_after=5, sleep_s=0.1)
             walls = dict(harness.walls)
         finally:
             harness.close()
-        self.assertEqual(result["status"], "error")
+        self.assertEqual(result["status"], "error", result)
         self.assertIn("refused", result["error"].lower())
-        # the last step also writes the telemetry (a forked writer, up to 0.2 s plus reaping)
-        self.assertLess(max(w for step, w in walls.items() if step < 10), 0.5)
-        self.assertLess(walls[10], 2.0)
+        self.assertEqual(result["transport_phase"], "connect")
+        self.assertFalse(result["request_sent"])
+        self.assertTrue(result["worker_reaped"])
+        # the refusal itself is immediate: nothing like the 30 s connect timeout
+        self.assertLess(result["inference_wall_s"], 5.0)
+        # the steps before the last fork the worker and poll it; the step that records the
+        # reply, if it comes before the end, waits at most 0.2 s for the result writer
+        self.assertLess(max(w for step, w in walls.items() if step < 10), 1.0)
+        # the last step waits for the worker's report (and writes the telemetry in a
+        # 0.2 s child), not for the 30 s deadline
+        self.assertLess(walls[10], 15.0)
 
     def test_second_request_is_skipped_while_one_is_pending(self):
         with fixture(delay_s=0.5) as (endpoint, received):
@@ -596,10 +614,11 @@ class V2PictureTests(unittest.TestCase):
                 backlog.append()
         finally:
             harness.close()
-        # appends after 500 and 1000 lines, the rest (200) at the last step, 0.2 s each
+        # appends after 500 and 1000 lines, the rest (200) at the last step, 0.2 s each; the
+        # spy reads the budget a few milliseconds after it was set, more on a loaded node
         self.assertEqual([last for last, _ in budgets[:3]], [False, False, True])
         for _, budget in budgets[:3]:
-            self.assertTrue(0.15 < budget <= 0.2, budget)
+            self.assertTrue(0.1 < budget <= 0.2, budget)
         self.assertEqual(len(lines), 1200)
         self.assertEqual([json.loads(line)["step"] for line in lines], list(range(1, 1201)))
         self.assertGreater(budgets[3][1], 0.7)
@@ -632,18 +651,12 @@ class ComputedTrendTests(unittest.TestCase):
     """v2 sequences: the answer key's trend words, computed from the frames' arrays,
     in llm_result.json next to the answer; the request body changes only when asked."""
 
-    def run_sequence(self, environment, trickle=False):
+    def run_sequence(self, environment, delay_s=0.3):
         """The run's result, request record, body, the answer keys of its three frames and the
         bodies the tested builder gives for those frames in each form."""
         import frame_scoring
         import readable_request
-        if trickle:
-            from test_llm_client import serve
-            server = serve("trickle")
-        else:
-            server = fixture(delay_s=0.3)
-        with server as served:
-            endpoint, received = (served, []) if trickle else served
+        with fixture(delay_s=delay_s) as (endpoint, received):
             harness = V2Harness(dict({"LLM_MODE": "sequence", "LLM_SEQUENCE_STEPS": "2,4,6",
                                       "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1"}, **environment))
             try:
@@ -698,8 +711,9 @@ class ComputedTrendTests(unittest.TestCase):
 
     def test_trends_are_recorded_without_an_answer(self):
         disabled = self.run_sequence({"LLM_ENABLED": "0"})[0]
-        late = self.run_sequence({"LLM_CALLBACK_DEADLINE_S": "2.5", "LLM_READ_TIMEOUT_S": "2"},
-                                 trickle=True)[0]
+        # the fixture answers after 30 s, so the worker is killed at the 10 s deadline with
+        # the request sent; the deadline leaves room for the three pictures on a loaded node
+        late = self.run_sequence({"LLM_CALLBACK_DEADLINE_S": "10"}, delay_s=30.0)[0]
         for result, status in ((disabled, "disabled"), (late, "timeout")):
             self.assertEqual(result["status"], status, result)
             self.assertEqual(result["computed_trends"]["max_speed_trend"], "increasing")
@@ -788,10 +802,13 @@ class PeriodicRequestTests(unittest.TestCase):
     def test_requests_every_n_steps_write_their_own_records_and_an_index(self):
         import readable_request
         with fixture() as (endpoint, received):
+            # unloaded, each request completes within the 1.2 s before the next one; with
+            # three pending allowed, a request that takes longer on a loaded node is not skipped
             harness = V2Harness({"LLM_MODE": "describe", "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1",
-                                 "LLM_ANALYSIS_STEP": "2", "LLM_ANALYSIS_EVERY": "3"})
+                                 "LLM_ANALYSIS_STEP": "2", "LLM_ANALYSIS_EVERY": "3",
+                                 "LLM_ASYNC_MAX_PENDING": "3"})
             try:
-                harness.run(sleep_after=1, sleep_s=0.4)   # each request completes before the next step
+                harness.run(sleep_after=1, sleep_s=0.4)
                 index = json.loads((harness.case / "llm_requests" / "index.json").read_text())
                 records = {}
                 for folder in sorted((harness.case / "llm_requests").glob("step-*")):
@@ -825,7 +842,8 @@ class PeriodicRequestTests(unittest.TestCase):
         # cleanup budget, so the folder had no llm_result.json while the index said ok.
         with fixture() as (endpoint, received):
             harness = V2Harness({"LLM_MODE": "describe", "LLM_ENDPOINT": endpoint, "LLM_ASYNC": "1",
-                                 "LLM_ANALYSIS_STEP": "2", "LLM_ANALYSIS_EVERY": "3"})
+                                 "LLM_ANALYSIS_STEP": "2", "LLM_ANALYSIS_EVERY": "3",
+                                 "LLM_ASYNC_MAX_PENDING": "3"})
             real = harness.callback._write_final_report
 
             def slow(context, result, cleanup_start):

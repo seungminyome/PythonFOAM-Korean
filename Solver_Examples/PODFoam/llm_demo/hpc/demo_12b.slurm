@@ -22,7 +22,7 @@ pod="${POD_SOURCE:-$root/PODFoam}"                       # tarball layout
 hpc="$pod/llm_demo/hpc"
 export PYTHON="${PYTHON:-$(command -v python3)}"
 export POD_WORKSPACE="${POD_WORKSPACE:-$root/work}"; mkdir -p "$POD_WORKSPACE"
-export POD_LLM_RUNTIME="${POD_LLM_RUNTIME:-$root/llm-runtime-12b}"
+export POD_LLM_RUNTIME="${POD_LLM_RUNTIME:-$root/../llm-runtime-12b}"
 export POD_LLM_PORT="${POD_LLM_PORT:-8088}"
 export LLM_MODEL=gemma-4-12b-it-qat-q4_0-vision
 export LLM_ENDPOINT="http://127.0.0.1:$POD_LLM_PORT/v1/chat/completions"
@@ -34,7 +34,7 @@ bash "$hpc/start_server.sh"
 trap 'bash "$hpc/stop_server.sh"' EXIT
 # 1. bridge validation (reference case, PASS required by run_demo.sh)
 if ! ls -d "$POD_WORKSPACE"/pod-v2106.* > /dev/null 2>&1; then
-    (cd "$pod" && ./validation/run_v2106.sh)
+    (cd "$pod" && ./validation/run.sh)
 fi
 # 2. five conditions, verification, archive
 (cd "$pod" && ./llm_demo/run_demo.sh)

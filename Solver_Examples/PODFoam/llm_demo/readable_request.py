@@ -113,7 +113,7 @@ def frame_from_metadata(directory, meta):
 
 
 def render_frame(directory, centres, polygons, velocity, pressure, plotted, step, time_s, *,
-                 view, domain_extent, colour_ranges=None, plane_slice=None):
+                 view, domain_extent, colour_ranges=None, plane_slice=None, show_time=True):
     """Write one v2 frame (arrays, |U| and p pictures, metadata last); return (frame, meta).
 
     centres (cells, 3) with x and y as the plotted axes; plotted and domain_extent are
@@ -123,6 +123,8 @@ def render_frame(directory, centres, polygons, velocity, pressure, plotted, step
     the cells given are the slice cells, fields.npz also keeps their mesh cells and
     polygons (mesh_cells, polygon_points, polygon_offsets) and the metadata gets
     "slice" (the record). Without it the frame is written as before, byte for byte.
+    show_time=False draws the pictures without step and time (readable_image.render_field);
+    the metadata and the arrays keep them.
     """
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=False)
@@ -140,7 +142,8 @@ def render_frame(directory, centres, polygons, velocity, pressure, plotted, step
     ranges = colour_ranges or {}
     images = [readable_image.render_field(values, polygons, centres, [0, 1], plotted,
                                           field, step, time_s, directory / f"{field}.png",
-                                          colour_range=ranges.get(field), fields_sha256=fields_sha)
+                                          colour_range=ranges.get(field), fields_sha256=fields_sha,
+                                          show_time=show_time)
               for field, values in (("U", speed), ("p", pressure))]
     meta = {"style": readable_image.STYLE, "view": view, "step": int(step), "time_s": float(time_s),
             "cells": int(centres.shape[0]), "projection_axes": AXES,

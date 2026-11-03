@@ -17,7 +17,7 @@ set -euo pipefail
 # --- site settings: from the environment ----------------------------------------------------------
 SIF=${SIF:?OpenFOAM v2212 image}
 export PYTHON=${PYTHON:?Python 3 with numpy + matplotlib}
-export POD_REFERENCE_RUN=${POD_REFERENCE_RUN:?a PASSed validation run (validation/run_v2106.sh) on this OpenFOAM}
+export POD_REFERENCE_RUN=${POD_REFERENCE_RUN:?a PASSed validation run (validation/run.sh) on this OpenFOAM}
 export LLM_LONG_START=${LLM_LONG_START:?time directory of a developed run of the same mesh, e.g. .../long-100ms/0.1}
 # POD_HOST_MODULES="<modules>" loads what the source-built llama-server needs; empty: nothing is loaded
 # OPENFOAM_BASHRC: the bashrc inside the image (default /usr/lib/openfoam/openfoam2212/etc/bashrc)
@@ -41,7 +41,7 @@ git -C "$root" rev-parse HEAD > "$POD_GIT_RECORDS/HEAD"
 git -C "$root" status --short > "$POD_GIT_RECORDS/git-status.txt"
 git -C "$root" diff --binary > "$POD_GIT_RECORDS/changes.patch"
 git -C "$root" ls-files -o --exclude-standard -z | tar -C "$root" --null -T - -czf "$POD_GIT_RECORDS/untracked.tar.gz"
-export POD_LLM_RUNTIME=${POD_LLM_RUNTIME:-$root/llm-runtime-12b}     # weights and llama-b11429-cuda
+export POD_LLM_RUNTIME=${POD_LLM_RUNTIME:-$root/../llm-runtime-12b}  # weights and llama-b11429-cuda, beside the repository
 export POD_LLM_STATE=$out/server                                      # this job's pid, log and port files
 export POD_LLM_PORT=${POD_LLM_PORT:-$((20000 + ${SLURM_JOB_ID:-0} % 10000))}
 # the server and request settings of the 2026-10-22 picture tests

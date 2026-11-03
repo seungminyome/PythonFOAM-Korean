@@ -124,12 +124,13 @@ def render_v1(mesh, view, velocity, pressure, step, time_s, directory):
     return snapshot_runner.load_frame(directory)
 
 
-def render_v2(mesh, view, velocity, pressure, step, time_s, directory, colour_ranges=None):
+def render_v2(mesh, view, velocity, pressure, step, time_s, directory, colour_ranges=None, show_time=True):
     """Two single-field pictures (|U|, p) and the arrays they were drawn from."""
     plotted = mesh.views[view]
     frame, _ = readable_request.render_frame(directory, mesh.centres, mesh.polygons, velocity, pressure,
                                              plotted, step, time_s, view=view,
-                                             domain_extent=mesh.views["full"], colour_ranges=colour_ranges)
+                                             domain_extent=mesh.views["full"], colour_ranges=colour_ranges,
+                                             show_time=show_time)
     return frame, truth_from_arrays(mesh.centres, velocity, pressure, plotted, step, time_s)
 
 

@@ -1,40 +1,45 @@
-"""Stage the three cases from Run_Case without touching it. Every edit must find its text."""
+"""Stage the named cases (default: fixed-pimple and fixed-pod) from Run_Case without
+touching it. Every edit must find its text."""
 from pathlib import Path
 import os
 import re
 import shutil
 import sys
 
-if len(sys.argv) != 3:
-    sys.exit(f'usage: {sys.argv[0]} POD_SOURCE_DIRECTORY OUTPUT_DIRECTORY')
-source, output = map(Path, sys.argv[1:])
+CASES = ('baseline-pimple', 'fixed-pimple', 'fixed-pod')
+if len(sys.argv) < 3 or any(name not in CASES for name in sys.argv[3:]):
+    sys.exit(f'usage: {sys.argv[0]} POD_SOURCE_DIRECTORY OUTPUT_DIRECTORY [CASE...]; cases: {" ".join(CASES)}')
+source, output = map(Path, sys.argv[1:3])
+names = sys.argv[3:] or ['fixed-pimple', 'fixed-pod']
 
 
 def replaced(path, *pairs):
     text = path.read_text()
     for old, new in pairs:
-        assert old in text, (path, old)
+        if old not in text:
+            sys.exit(f'{path}: expected text not found: {old!r}')
         text = text.replace(old, new)
     path.write_text(text)
 
 
 def substituted(pattern, new, text):
     text, count = re.subn(pattern, new, text)
-    assert count, pattern
+    if not count:
+        sys.exit(f'expected text not found: {pattern!r}')
     return text
 
 
-for name in ('baseline-pimple', 'fixed-pimple', 'fixed-pod'):
+for name in names:
     case = output / name
     for directory in ('0', 'constant', 'system'):
         shutil.copytree(source / 'Run_Case' / directory, case / directory)
-    # Remove restart metadata only from the newly staged copies.
+    # The shipped 0/uniform/time holds a restart deltaT of 1 s; without it the
+    # first step uses controlDict's deltaT. Removed from the staged copies only.
     if (case / '0/uniform/time').exists():
         (case / '0/uniform/time').unlink()
     # openfoam.org reads momentumTransport, openfoam.com turbulenceProperties.
     transport = case / 'constant/momentumTransport'
     turbulence = transport.read_text()
-    turbulence = substituted(r'(LES\s*\{)', r'\1\n    LESModel Smagorinsky;', turbulence)
     if name != 'baseline-pimple':
         turbulence = substituted(r'simulationType\s+LES;', 'simulationType laminar;', turbulence)
         replaced(case / '0/U', ('uniform (1e-8 0 0)', 'uniform (32.2 0 0)'))

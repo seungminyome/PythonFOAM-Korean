@@ -2,4 +2,4 @@
 # Needs Python 3.10 to 3.12. Unit tests ran on 3.10 and 3.12; solver runs on 3.11 with numpy 2.4.
 numpy>=1.21
 matplotlib>=3.5
-scipy>=1.8        # only for the 3D nearest-cell raster fallback
+scipy>=1.8        # nearest-cell raster of a mesh without cell polygons: the unit tests, v1 pictures of 3D cases

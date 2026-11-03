@@ -1,5 +1,8 @@
-// Optional analysis_func after the completed PDE step. It observes: its return
-// value is ignored and nothing goes back into the solver.
+// Copyright (C) 2026 Seungmin Yome
+// SPDX-License-Identifier: (other)
+// Optional analysis_func after the completed PDE step. Its return value is
+// ignored and nothing goes back into U or p; PythonComm.H collects a snapshot at
+// every step when analysis_func exists.
 // Residuals come from this timestep's OpenFOAM solverPerformance, not log parsing.
 if (analysis_func)
 {
@@ -70,14 +73,17 @@ if (analysis_func)
                 }
             }
         }
+        // step: OpenFOAM's time index, which a restart continues; snapshot_count:
+        // the snapshots this run has collected so far.
         PyObject* state = residuals ? Py_BuildValue
         (
-            "{s:i,s:d,s:d,s:d,s:i,s:i,s:O}",
+            "{s:i,s:d,s:d,s:d,s:i,s:i,s:i,s:O}",
             "schema_version", 1,
             "time_s", double(runTime.value()),
             "delta_t_s", double(runTime.deltaTValue()),
             "end_time_s", double(runTime.endTime().value()),
-            "step", int(podSnapshotCount),
+            "step", int(runTime.timeIndex()),
+            "snapshot_count", int(podSnapshotCount),
             "cells", int(nAllCells),
             "residuals", residuals
         ) : nullptr;
@@ -137,20 +143,29 @@ if (analysis_func)
         }
         Py_XDECREF(courant);
         Py_XDECREF(continuity);
+        // The call is made once the state dictionary exists and no Python error is
+        // pending; p_cells and u_cells are left out if they could not be allocated.
+        const bool called = state && !PyErr_Occurred();
         const auto callbackStart = std::chrono::steady_clock::now();
-        PyObject* response = state && !PyErr_Occurred()
+        PyObject* response = called
             ? PyObject_CallFunctionObjArgs(analysis_func, state, nullptr) : nullptr;
         const double callbackSeconds = std::chrono::duration<double>
         (
             std::chrono::steady_clock::now() - callbackStart
         ).count();
-        Info<< "POD analysis callback returned: step=" << podSnapshotCount
-            << " wall_seconds=" << callbackSeconds << endl;
         Py_XDECREF(state);
+        if (called)
+        {
+            Info<< "POD analysis callback returned: step=" << runTime.timeIndex()
+                << " snapshots=" << podSnapshotCount
+                << " wall_seconds=" << callbackSeconds << endl;
+        }
         if (!response)
         {
             printPythonError();
-            WarningInFunction << "analysis_func raised; continuing without it"
+            WarningInFunction
+                << (called ? "analysis_func raised; this step's call ignored"
+                    : "analysis_func not called: this step's state could not be built")
                 << endl;
         }
         // The return value is ignored.

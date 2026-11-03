@@ -16,7 +16,12 @@ _backend = {"ready": False, "import_wall_s": None, "error": None}
 
 
 def prepare_backend(cache_dir):
-    """Import matplotlib once, at startup; forked workers inherit it."""
+    """Import matplotlib once, at startup; forked workers inherit it.
+
+    scipy.spatial, which render() needs when the mesh carries no polygons, is imported
+    here for the same reason: a forked worker that imported it itself read about 280
+    files from the Python installation at its first picture, about 1 s on a network
+    file system and several seconds on a loaded node."""
     if _backend["ready"]:
         return _backend
     start = time.perf_counter()
@@ -26,6 +31,10 @@ def prepare_backend(cache_dir):
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot  # noqa: F401  (warm the pyplot import too)
+        try:
+            import scipy.spatial  # noqa: F401  (the nearest-cell raster fallback)
+        except ImportError:
+            pass   # render() reports it when that path is taken
         _backend["ready"] = True
         _backend["version"] = matplotlib.__version__
     except Exception as error:  # pragma: no cover - environment dependent

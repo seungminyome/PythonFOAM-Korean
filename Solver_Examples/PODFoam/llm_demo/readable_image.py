@@ -41,8 +41,10 @@ def _label(value):
 
 
 def render_field(values, polygons, centres, axes, plotted, field, step, time_s, output,
-                 colour_range=None, fields_sha256=None):
-    """Draw one field; return metadata. colour_range=None uses the cells inside the window."""
+                 colour_range=None, fields_sha256=None, show_time=True):
+    """Draw one field; return metadata. colour_range=None uses the cells inside the window.
+    show_time=False leaves the step and the time out of the title and of the PNG metadata
+    (the instability test of 2026-11-01); the picture is otherwise the same."""
     import matplotlib.pyplot as plt
     from matplotlib.collections import PolyCollection
 
@@ -81,7 +83,8 @@ def render_field(values, polygons, centres, axes, plotted, field, step, time_s, 
     ax.set_xlabel("x, % of plotted range from the left edge", fontsize=10)
     ax.set_ylabel("y, % from the bottom edge", fontsize=10)
     (x0, x1), (y0, y1) = plotted
-    ax.set_title(f"{name} ({unit}), step {int(step)}, t = {float(time_s):g} s\n"
+    when = f", step {int(step)}, t = {float(time_s):g} s" if show_time else ""
+    ax.set_title(f"{name} ({unit}){when}\n"
                  f"plotted x {x0:g} to {x1:g} m, y {y0:g} to {y1:g} m; white = no cells",
                  fontsize=11)
     bar = fig.colorbar(collection, cax=cax)
@@ -92,7 +95,9 @@ def render_field(values, polygons, centres, axes, plotted, field, step, time_s, 
                                          ", this image's min to max"), fontsize=10)
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
-    text = {"Step": str(int(step)), "Time": str(float(time_s)), "Field": field, "Style": STYLE}
+    text = {"Field": field, "Style": STYLE}
+    if show_time:
+        text = {"Step": str(int(step)), "Time": str(float(time_s))} | text
     if fields_sha256:
         text["FieldsSHA256"] = fields_sha256
     fig.savefig(output, dpi=DPI, metadata=text)

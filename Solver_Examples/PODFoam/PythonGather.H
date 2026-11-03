@@ -1,3 +1,5 @@
+// Copyright (C) 2026 Seungmin Yome
+// SPDX-License-Identifier: (other)
 // Gather per-rank lists to the master rank in rank order, for the Python
 // observer (analysis_func, mesh_func): in a parallel run the master gets the
 // whole mesh and fields, concatenated by rank, and is the only rank that

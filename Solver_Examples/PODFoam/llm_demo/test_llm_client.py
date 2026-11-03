@@ -10,7 +10,6 @@ import unittest
 from unittest.mock import Mock, patch
 
 import base64
-import os
 import tempfile
 from pathlib import Path
 

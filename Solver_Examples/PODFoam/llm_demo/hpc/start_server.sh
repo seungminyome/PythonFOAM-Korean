@@ -22,8 +22,12 @@ projector="${LLM_PROJECTOR_FILE:-$runtime_dir/mmproj-gemma-4-12b-it-qat-q4_0.ggu
 [[ -f $model && -f $projector ]] || { echo "missing $model or $projector" >&2; exit 1; }
 [[ -x $bindir/llama-server ]] || { echo "run setup_12b.sh first" >&2; exit 1; }
 export LD_LIBRARY_PATH="$bindir:${LD_LIBRARY_PATH:-}"
-if [[ -f $state/server.pid ]] && kill -0 "$(cat "$state/server.pid")" 2>/dev/null; then
-    echo "server already running, pid $(cat "$state/server.pid")"; exit 0
+if [[ -f $state/server.pid ]]; then
+    pid=$(cat "$state/server.pid")
+    # the pid counts only while it still names a llama-server, not a process that took it over
+    if [[ -r /proc/$pid/cmdline && $(basename "$(tr '\0' '\n' < "/proc/$pid/cmdline" | head -n 1)") == llama-server ]]; then
+        echo "server already running, pid $pid"; exit 0
+    fi
 fi
 stamp=$(date -u +%Y%m%dT%H%M%SZ)
 command=("$bindir/llama-server"

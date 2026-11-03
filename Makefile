@@ -5,7 +5,7 @@ POD = Solver_Examples/PODFoam
 .PHONY: test evidence links validate runtime demo stop
 
 test:            ## unit tests, no OpenFOAM or model (about 110 s)
-	cd $(POD)/llm_demo && $(PY) -m unittest test_llm_client test_callback test_callback_main test_ablation_runner test_async test_picture_test test_instability_test test_wrong_setup_test -v
+	cd $(POD)/llm_demo && $(PY) -m unittest test_llm_client test_callback test_callback_main test_ablation_runner test_async test_picture_test test_instability_test test_instability_test2 test_wrong_setup_test -v
 
 evidence:        ## evidence files match their manifests
 	$(PY) docs/evidence/check_manifest.py
@@ -14,7 +14,7 @@ links:           ## relative links in docs resolve
 	$(PY) docs/check_links.py
 
 validate:        ## bridge validation run (builds PODFoam, ~minutes)
-	cd $(POD) && ./validation/run_v2106.sh
+	cd $(POD) && ./validation/run.sh
 
 runtime:         ## download model + llama.cpp, start the server
 	cd $(POD) && ./llm_demo/setup_runtime.sh && $(PY) llm_demo/runtime.py start

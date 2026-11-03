@@ -25,7 +25,7 @@ hpc="$pod/llm_demo/hpc"
 job=${SLURM_JOB_ID:-local}
 out=${POD_PERIODIC_OUT:-$root/../pod-periodic-v2/run-$job}
 mkdir -p "$out"
-export POD_LLM_RUNTIME=${POD_LLM_RUNTIME:-$root/llm-runtime-12b}
+export POD_LLM_RUNTIME=${POD_LLM_RUNTIME:-$root/../llm-runtime-12b}
 export POD_LLM_STATE=$out/server
 export POD_LLM_PORT=${POD_LLM_PORT:-$((20000 + ${SLURM_JOB_ID:-0} % 10000))}
 export LLM_MODEL=${LLM_MODEL:-gemma-4-12b-it-qat-q4_0-vision}

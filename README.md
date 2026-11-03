@@ -79,7 +79,7 @@ sequenceDiagram
 
 ## 빠른 시작
 
-단위 테스트와 근거 자료 해시는 OpenFOAM과 모델 없이 확인합니다. 테스트 165개에 약 90\~120 s가 걸립니다.
+단위 테스트와 근거 자료 해시는 OpenFOAM과 모델 없이 확인합니다. 테스트 165개에 약 85\~120 s가 걸립니다.
 
 ```bash
 pip install -r Solver_Examples/PODFoam/llm_demo/requirements.txt

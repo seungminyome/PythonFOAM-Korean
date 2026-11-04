@@ -1,0 +1,877 @@
+{
+ "test": "wrong-setup test 2 2026-11-03 (pilot)",
+ "seed": 20261104,
+ "long_run": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261022/long-100ms",
+ "window_m": [
+  [
+   0.0,
+   0.12
+  ],
+  [
+   0.0,
+   0.04
+  ]
+ ],
+ "speed_range_m_per_s": [
+  20.0,
+  40.0
+ ],
+ "nu_range_m2_per_s": [
+  1e-05,
+  2.5e-05
+ ],
+ "start_time_s": 0.1,
+ "delta_t_s": 5e-06,
+ "run_steps": 8000,
+ "write_every_steps": 500,
+ "frame_steps": [
+  6000,
+  7000,
+  8000
+ ],
+ "primary_step": 8000,
+ "runs": [
+  {
+   "name": "P-N1",
+   "class": "normal",
+   "base": 1,
+   "stated": {
+    "inlet_speed_m_per_s": 20.0,
+    "nu_m2_per_s": 2.5e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-N1",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      20.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.5e-05
+  },
+  {
+   "name": "P-N2",
+   "class": "normal",
+   "base": 2,
+   "stated": {
+    "inlet_speed_m_per_s": 40.0,
+    "nu_m2_per_s": 1e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-N2",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      40.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1e-05
+  },
+  {
+   "name": "P-W1-inlet_speed",
+   "class": "wrong",
+   "base": 101,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "inlet_speed",
+    "parameter": 0.7,
+    "text": "inlet velocity 21 m/s instead of 30 m/s"
+   },
+   "cause": "inlet_speed",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-W1-inlet_speed",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      21.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "P-W2-inlet_speed",
+   "class": "wrong",
+   "base": 102,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "inlet_speed",
+    "parameter": 1.5,
+    "text": "inlet velocity 45 m/s instead of 30 m/s"
+   },
+   "cause": "inlet_speed",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-W2-inlet_speed",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      45.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "P-W3-viscosity",
+   "class": "wrong",
+   "base": 103,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "viscosity",
+    "parameter": 0.1,
+    "text": "nu 1.56e-06 m^2/s instead of 1.56e-05 m^2/s"
+   },
+   "cause": "viscosity",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-W3-viscosity",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      30.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-06
+  },
+  {
+   "name": "P-W4-viscosity",
+   "class": "wrong",
+   "base": 104,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "viscosity",
+    "parameter": 10,
+    "text": "nu 0.000156 m^2/s instead of 1.56e-05 m^2/s"
+   },
+   "cause": "viscosity",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-W4-viscosity",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      30.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 0.000156
+  },
+  {
+   "name": "P-W5-walls",
+   "class": "wrong",
+   "base": 105,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "walls",
+    "parameter": "lower",
+    "text": "lowerWall slip instead of noSlip"
+   },
+   "cause": "walls",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-W5-walls",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      30.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "slip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "P-W6-inlet_profile",
+   "class": "wrong",
+   "base": 106,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "inlet_profile",
+    "parameter": 0.25,
+    "text": "the lowest 0.25 of the inlet faces at velocity 0, the rest at 30 m/s"
+   },
+   "cause": "inlet_profile",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-W6-inlet_profile",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.0,
+       0.0,
+       0.0
+      ]
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "P-W7-inlet_direction",
+   "class": "wrong",
+   "base": 107,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "inlet_direction",
+    "parameter": 15,
+    "text": "inlet velocity 30 m/s at 15 degrees to +x instead of along +x"
+   },
+   "cause": "inlet_direction",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-W7-inlet_direction",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      28.97777478867205,
+      7.764571353075622,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "P-W8-inlet_direction",
+   "class": "wrong",
+   "base": 108,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "inlet_direction",
+    "parameter": 30,
+    "text": "inlet velocity 30 m/s at 30 degrees to +x instead of along +x"
+   },
+   "cause": "inlet_direction",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-W8-inlet_direction",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      25.98076211353316,
+      14.999999999999998,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "P-W9-inlet_direction",
+   "class": "wrong",
+   "base": 109,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "inlet_direction",
+    "parameter": -30,
+    "text": "inlet velocity 30 m/s at -30 degrees to +x instead of along +x"
+   },
+   "cause": "inlet_direction",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-W9-inlet_direction",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      25.98076211353316,
+      -14.999999999999998,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "P-W10-start_state",
+   "class": "wrong",
+   "base": 110,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "start_state",
+    "parameter": "uniform",
+    "text": "started from a uniform field at 30 m/s instead of the developed state"
+   },
+   "cause": "start_state",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-W10-start_state",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      30.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "P-N3",
+   "class": "normal",
+   "base": 3,
+   "stated": {
+    "inlet_speed_m_per_s": 30.0,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/wrong-setup-2-20261103/pilot/cases/P-N3",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      30.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  }
+ ]
+}

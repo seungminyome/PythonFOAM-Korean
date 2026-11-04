@@ -6,7 +6,7 @@
 ![Python 3.10 | 3.12](https://img.shields.io/badge/python-3.10%20%7C%203.12-lightgrey)
 [![license](https://img.shields.io/badge/license-Argonne%20OSS-blue.svg)](LICENSE)
 
-[결과 페이지](https://seungminyome.github.io/PythonFOAM-Korean/) · [최신 보고서](docs/results-20261102.md) · [실행 방법](Solver_Examples/PODFoam/llm_demo/README.md) · [GPU 노드](Solver_Examples/PODFoam/llm_demo/hpc/README.md) · [English](https://github.com/seungminyome/PythonFOAM)
+[결과 페이지](https://seungminyome.github.io/PythonFOAM-Korean/) · [최신 보고서](docs/results-20261103.md) · [실행 방법](Solver_Examples/PODFoam/llm_demo/README.md) · [GPU 노드](Solver_Examples/PODFoam/llm_demo/hpc/README.md) · [English](https://github.com/seungminyome/PythonFOAM)
 
 이 포크는 [PythonFOAM](https://github.com/argonne-lcf/PythonFOAM)의 PODFoam 예제에 선택형 관찰 기능을 더합니다.
 OpenFOAM 계산 중에 솔버가 상태를 Python에 넘기면, Python은 |U|와 p 이미지를 그립니다.
@@ -148,13 +148,15 @@ POD_SUITE_RUN=<PASS한 async_v2.slurm 실행의 pod-llm-async.XXXXXX> \
 - 시험은 2차원 층류 유동과 압출한 3차원 케이스 하나로 했으며, 그 케이스의 단면 네 개에서 두 위치는 0.1 % 안에서 같습니다.
 - 병렬 실행은 rank 2개에서 모델 요청 하나로 시험했고, 동시에 진행한 요청은 최대 두 개입니다.
 - 채점한 항목에서 계산 중단보다 5단계 넘게 앞서 경고한 모델은 없었습니다. 요청에 프레임의 시점을 적었을 때도, 적지 않았을 때도 같습니다.
-- 잘못된 설정: 31B는 프레임 80개 중 67개, 최대 |U| 규칙은 56개를 맞혔습니다. 31B가 앞선 것은 점성 실행과 움직이는 벽 실행, 두 실행 때문입니다.
+- 잘못된 설정, 첫 시험: 31B는 프레임 80개 중 67개, 최대 |U| 규칙은 56개를 맞혔습니다. 31B가 앞선 것은 점성 실행과 움직이는 벽 실행, 두 실행 때문입니다.
+- 잘못된 설정, 두 번째 시험: 실행 29쌍, 요청을 보내기 전에 고정한 설계. 31B는 실행 58개 중 44개, 색 막대 숫자로 만든 로지스틱 회귀는 45개를 맞혔습니다. 모델이 규칙보다 낫다는 것은 보이지 않았습니다.
 
 ## 문서와 보고서
 
 - [실행 방법과 모든 설정](Solver_Examples/PODFoam/llm_demo/README.md), [GPU 노드](Solver_Examples/PODFoam/llm_demo/hpc/README.md), [연결 검증](Solver_Examples/PODFoam/validation/README.md), [두 훅](Solver_Examples/PODFoam/HOOKS.md).
 - [포크 전용 실험 스크립트, 10월 30일판](https://github.com/seungminyome/PythonFOAM-Korean/blob/5c56995/Solver_Examples/PODFoam/llm_demo/README.md).
 - [결과 페이지](https://seungminyome.github.io/PythonFOAM-Korean/): 모든 보고서와 근거 자료, 내려받기.
+- [11월 3일](docs/results-20261103.md): 잘못된 설정 시험 2. 실행 29쌍을 같은 이미지를 보는 기준선과 비교.
 - [11월 2일](docs/results-20261102.md): 네 버전에서 빌드하고 검증한 PR 브랜치, OpenFOAM 8이 다른 까닭, 단면 이미지의 12B,
   시점 없는 불안정 시험.
 - [10월 30일](docs/results-20261030.md): OpenFOAM 버전, 원본 PODFoam, 잘못된 설정 시험.

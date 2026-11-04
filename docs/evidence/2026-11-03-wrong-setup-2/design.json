@@ -1,0 +1,4379 @@
+{
+ "test": "wrong-setup test 2 2026-11-03",
+ "seed": 20261103,
+ "long_run": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261022/long-100ms",
+ "window_m": [
+  [
+   0.0,
+   0.12
+  ],
+  [
+   0.0,
+   0.04
+  ]
+ ],
+ "speed_range_m_per_s": [
+  20.0,
+  40.0
+ ],
+ "nu_range_m2_per_s": [
+  1e-05,
+  2.5e-05
+ ],
+ "start_time_s": 0.1,
+ "delta_t_s": 5e-06,
+ "run_steps": 8000,
+ "write_every_steps": 500,
+ "frame_steps": [
+  6000,
+  7000,
+  8000
+ ],
+ "primary_step": 8000,
+ "runs": [
+  {
+   "name": "B01-N",
+   "class": "normal",
+   "base": 1,
+   "stated": {
+    "inlet_speed_m_per_s": 37.3,
+    "nu_m2_per_s": 2.3e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B01-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      37.3,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.3e-05
+  },
+  {
+   "name": "B01-W",
+   "class": "wrong",
+   "base": 1,
+   "stated": {
+    "inlet_speed_m_per_s": 37.3,
+    "nu_m2_per_s": 2.3e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "walls",
+    "parameter": "both",
+    "text": "lowerWall and upperWall slip instead of noSlip"
+   },
+   "cause": "walls",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B01-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      37.3,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "slip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "slip",
+     "value": null
+    }
+   },
+   "nu": 2.3e-05
+  },
+  {
+   "name": "B02-N",
+   "class": "normal",
+   "base": 2,
+   "stated": {
+    "inlet_speed_m_per_s": 39.4,
+    "nu_m2_per_s": 2.4e-05
+   },
+   "start": "0.07",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B02-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      39.4,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.4e-05
+  },
+  {
+   "name": "B02-W",
+   "class": "wrong",
+   "base": 2,
+   "stated": {
+    "inlet_speed_m_per_s": 39.4,
+    "nu_m2_per_s": 2.4e-05
+   },
+   "start": "0.07",
+   "change": {
+    "kind": "viscosity",
+    "parameter": 5,
+    "text": "nu 0.00012 m^2/s instead of 2.4e-05 m^2/s"
+   },
+   "cause": "viscosity",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B02-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      39.4,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 0.00012
+  },
+  {
+   "name": "B03-N",
+   "class": "normal",
+   "base": 3,
+   "stated": {
+    "inlet_speed_m_per_s": 29.2,
+    "nu_m2_per_s": 2.44e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B03-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      29.2,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.44e-05
+  },
+  {
+   "name": "B03-W",
+   "class": "wrong",
+   "base": 3,
+   "stated": {
+    "inlet_speed_m_per_s": 29.2,
+    "nu_m2_per_s": 2.44e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "walls",
+    "parameter": "both",
+    "text": "lowerWall and upperWall slip instead of noSlip"
+   },
+   "cause": "walls",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B03-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      29.2,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "slip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "slip",
+     "value": null
+    }
+   },
+   "nu": 2.44e-05
+  },
+  {
+   "name": "B04-N",
+   "class": "normal",
+   "base": 4,
+   "stated": {
+    "inlet_speed_m_per_s": 38.0,
+    "nu_m2_per_s": 2.2e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B04-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      38.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.2e-05
+  },
+  {
+   "name": "B04-W",
+   "class": "wrong",
+   "base": 4,
+   "stated": {
+    "inlet_speed_m_per_s": 38.0,
+    "nu_m2_per_s": 2.2e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "viscosity",
+    "parameter": 100,
+    "text": "nu 0.0022 m^2/s instead of 2.2e-05 m^2/s"
+   },
+   "cause": "viscosity",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B04-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      38.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 0.0022
+  },
+  {
+   "name": "B05-N",
+   "class": "normal",
+   "base": 5,
+   "stated": {
+    "inlet_speed_m_per_s": 24.8,
+    "nu_m2_per_s": 1.66e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B05-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      24.8,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.66e-05
+  },
+  {
+   "name": "B05-W",
+   "class": "wrong",
+   "base": 5,
+   "stated": {
+    "inlet_speed_m_per_s": 24.8,
+    "nu_m2_per_s": 1.66e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "inlet_speed",
+    "parameter": 0.8,
+    "text": "inlet velocity 19.84 m/s instead of 24.8 m/s"
+   },
+   "cause": "inlet_speed",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B05-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      19.840000000000003,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.66e-05
+  },
+  {
+   "name": "B07-N",
+   "class": "normal",
+   "base": 7,
+   "stated": {
+    "inlet_speed_m_per_s": 28.9,
+    "nu_m2_per_s": 2.08e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B07-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      28.9,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.08e-05
+  },
+  {
+   "name": "B07-W",
+   "class": "wrong",
+   "base": 7,
+   "stated": {
+    "inlet_speed_m_per_s": 28.9,
+    "nu_m2_per_s": 2.08e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "viscosity",
+    "parameter": 30,
+    "text": "nu 0.000624 m^2/s instead of 2.08e-05 m^2/s"
+   },
+   "cause": "viscosity",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B07-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      28.9,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 0.000624
+  },
+  {
+   "name": "B08-N",
+   "class": "normal",
+   "base": 8,
+   "stated": {
+    "inlet_speed_m_per_s": 33.5,
+    "nu_m2_per_s": 2.1e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B08-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      33.5,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.1e-05
+  },
+  {
+   "name": "B08-W",
+   "class": "wrong",
+   "base": 8,
+   "stated": {
+    "inlet_speed_m_per_s": 33.5,
+    "nu_m2_per_s": 2.1e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "inlet_speed",
+    "parameter": 0.7,
+    "text": "inlet velocity 23.45 m/s instead of 33.5 m/s"
+   },
+   "cause": "inlet_speed",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B08-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      23.45,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.1e-05
+  },
+  {
+   "name": "B09-N",
+   "class": "normal",
+   "base": 9,
+   "stated": {
+    "inlet_speed_m_per_s": 39.1,
+    "nu_m2_per_s": 1.37e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B09-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      39.1,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.37e-05
+  },
+  {
+   "name": "B09-W",
+   "class": "wrong",
+   "base": 9,
+   "stated": {
+    "inlet_speed_m_per_s": 39.1,
+    "nu_m2_per_s": 1.37e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "walls",
+    "parameter": "lower",
+    "text": "lowerWall slip instead of noSlip"
+   },
+   "cause": "walls",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B09-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      39.1,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "slip",
+     "value": null
+    }
+   },
+   "nu": 1.37e-05
+  },
+  {
+   "name": "B10-N",
+   "class": "normal",
+   "base": 10,
+   "stated": {
+    "inlet_speed_m_per_s": 35.2,
+    "nu_m2_per_s": 1.17e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B10-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      35.2,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.17e-05
+  },
+  {
+   "name": "B10-W",
+   "class": "wrong",
+   "base": 10,
+   "stated": {
+    "inlet_speed_m_per_s": 35.2,
+    "nu_m2_per_s": 1.17e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "walls",
+    "parameter": "lower",
+    "text": "lowerWall slip instead of noSlip"
+   },
+   "cause": "walls",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B10-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      35.2,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "slip",
+     "value": null
+    }
+   },
+   "nu": 1.17e-05
+  },
+  {
+   "name": "B11-N",
+   "class": "normal",
+   "base": 11,
+   "stated": {
+    "inlet_speed_m_per_s": 30.5,
+    "nu_m2_per_s": 1.68e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B11-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      30.5,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.68e-05
+  },
+  {
+   "name": "B11-W",
+   "class": "wrong",
+   "base": 11,
+   "stated": {
+    "inlet_speed_m_per_s": 30.5,
+    "nu_m2_per_s": 1.68e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "inlet_profile",
+    "parameter": 0.75,
+    "text": "the lowest 0.75 of the inlet faces at velocity 0, the rest at 30.5 m/s"
+   },
+   "cause": "inlet_profile",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B11-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ],
+      [
+       30.5,
+       0.0,
+       0.0
+      ]
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.68e-05
+  },
+  {
+   "name": "B12-N",
+   "class": "normal",
+   "base": 12,
+   "stated": {
+    "inlet_speed_m_per_s": 27.0,
+    "nu_m2_per_s": 2.32e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B12-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      27.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.32e-05
+  },
+  {
+   "name": "B12-W",
+   "class": "wrong",
+   "base": 12,
+   "stated": {
+    "inlet_speed_m_per_s": 27.0,
+    "nu_m2_per_s": 2.32e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "walls",
+    "parameter": "lower",
+    "text": "lowerWall slip instead of noSlip"
+   },
+   "cause": "walls",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B12-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      27.0,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "slip",
+     "value": null
+    }
+   },
+   "nu": 2.32e-05
+  },
+  {
+   "name": "B13-N",
+   "class": "normal",
+   "base": 13,
+   "stated": {
+    "inlet_speed_m_per_s": 24.9,
+    "nu_m2_per_s": 2.42e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B13-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      24.9,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.42e-05
+  },
+  {
+   "name": "B13-W",
+   "class": "wrong",
+   "base": 13,
+   "stated": {
+    "inlet_speed_m_per_s": 24.9,
+    "nu_m2_per_s": 2.42e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "inlet_speed",
+    "parameter": 0.1,
+    "text": "inlet velocity 2.49 m/s instead of 24.9 m/s"
+   },
+   "cause": "inlet_speed",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B13-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      2.49,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.42e-05
+  },
+  {
+   "name": "B14-N",
+   "class": "normal",
+   "base": 14,
+   "stated": {
+    "inlet_speed_m_per_s": 31.4,
+    "nu_m2_per_s": 1.22e-05
+   },
+   "start": "0.07",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B14-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      31.4,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.22e-05
+  },
+  {
+   "name": "B14-W",
+   "class": "wrong",
+   "base": 14,
+   "stated": {
+    "inlet_speed_m_per_s": 31.4,
+    "nu_m2_per_s": 1.22e-05
+   },
+   "start": "0.07",
+   "change": {
+    "kind": "inlet_profile",
+    "parameter": 0.25,
+    "text": "the lowest 0.25 of the inlet faces at velocity 0, the rest at 31.4 m/s"
+   },
+   "cause": "inlet_profile",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B14-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ],
+      [
+       31.4,
+       0.0,
+       0.0
+      ]
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.22e-05
+  },
+  {
+   "name": "B15-N",
+   "class": "normal",
+   "base": 15,
+   "stated": {
+    "inlet_speed_m_per_s": 20.2,
+    "nu_m2_per_s": 1.38e-05
+   },
+   "start": "0.08",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B15-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      20.2,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.38e-05
+  },
+  {
+   "name": "B15-W",
+   "class": "wrong",
+   "base": 15,
+   "stated": {
+    "inlet_speed_m_per_s": 20.2,
+    "nu_m2_per_s": 1.38e-05
+   },
+   "start": "0.08",
+   "change": {
+    "kind": "inlet_profile",
+    "parameter": 0.5,
+    "text": "the lowest 0.5 of the inlet faces at velocity 0, the rest at 20.2 m/s"
+   },
+   "cause": "inlet_profile",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B15-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ],
+      [
+       20.2,
+       0.0,
+       0.0
+      ]
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.38e-05
+  },
+  {
+   "name": "B16-N",
+   "class": "normal",
+   "base": 16,
+   "stated": {
+    "inlet_speed_m_per_s": 31.2,
+    "nu_m2_per_s": 1.82e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B16-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      31.2,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.82e-05
+  },
+  {
+   "name": "B16-W",
+   "class": "wrong",
+   "base": 16,
+   "stated": {
+    "inlet_speed_m_per_s": 31.2,
+    "nu_m2_per_s": 1.82e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "viscosity",
+    "parameter": 3,
+    "text": "nu 5.46e-05 m^2/s instead of 1.82e-05 m^2/s"
+   },
+   "cause": "viscosity",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B16-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      31.2,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 5.46e-05
+  },
+  {
+   "name": "B17-N",
+   "class": "normal",
+   "base": 17,
+   "stated": {
+    "inlet_speed_m_per_s": 24.3,
+    "nu_m2_per_s": 2.17e-05
+   },
+   "start": "0.07",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B17-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      24.3,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.17e-05
+  },
+  {
+   "name": "B17-W",
+   "class": "wrong",
+   "base": 17,
+   "stated": {
+    "inlet_speed_m_per_s": 24.3,
+    "nu_m2_per_s": 2.17e-05
+   },
+   "start": "0.07",
+   "change": {
+    "kind": "inlet_speed",
+    "parameter": 0.5,
+    "text": "inlet velocity 12.15 m/s instead of 24.3 m/s"
+   },
+   "cause": "inlet_speed",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B17-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      12.15,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.17e-05
+  },
+  {
+   "name": "B18-N",
+   "class": "normal",
+   "base": 18,
+   "stated": {
+    "inlet_speed_m_per_s": 39.2,
+    "nu_m2_per_s": 1.78e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B18-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      39.2,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.78e-05
+  },
+  {
+   "name": "B18-W",
+   "class": "wrong",
+   "base": 18,
+   "stated": {
+    "inlet_speed_m_per_s": 39.2,
+    "nu_m2_per_s": 1.78e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "inlet_speed",
+    "parameter": 0.3,
+    "text": "inlet velocity 11.76 m/s instead of 39.2 m/s"
+   },
+   "cause": "inlet_speed",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B18-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      11.76,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.78e-05
+  },
+  {
+   "name": "B19-N",
+   "class": "normal",
+   "base": 19,
+   "stated": {
+    "inlet_speed_m_per_s": 33.1,
+    "nu_m2_per_s": 1.85e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B19-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      33.1,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.85e-05
+  },
+  {
+   "name": "B19-W",
+   "class": "wrong",
+   "base": 19,
+   "stated": {
+    "inlet_speed_m_per_s": 33.1,
+    "nu_m2_per_s": 1.85e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "inlet_speed",
+    "parameter": 1.5,
+    "text": "inlet velocity 49.65 m/s instead of 33.1 m/s"
+   },
+   "cause": "inlet_speed",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B19-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      49.650000000000006,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.85e-05
+  },
+  {
+   "name": "B20-N",
+   "class": "normal",
+   "base": 20,
+   "stated": {
+    "inlet_speed_m_per_s": 24.1,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.08",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B20-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      24.1,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "B20-W",
+   "class": "wrong",
+   "base": 20,
+   "stated": {
+    "inlet_speed_m_per_s": 24.1,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.08",
+   "change": {
+    "kind": "viscosity",
+    "parameter": 10,
+    "text": "nu 0.000156 m^2/s instead of 1.56e-05 m^2/s"
+   },
+   "cause": "viscosity",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B20-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      24.1,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 0.000156
+  },
+  {
+   "name": "B21-N",
+   "class": "normal",
+   "base": 21,
+   "stated": {
+    "inlet_speed_m_per_s": 24.6,
+    "nu_m2_per_s": 2e-05
+   },
+   "start": "0.08",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B21-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      24.6,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2e-05
+  },
+  {
+   "name": "B21-W",
+   "class": "wrong",
+   "base": 21,
+   "stated": {
+    "inlet_speed_m_per_s": 24.6,
+    "nu_m2_per_s": 2e-05
+   },
+   "start": "0.08",
+   "change": {
+    "kind": "viscosity",
+    "parameter": 0.1,
+    "text": "nu 2e-06 m^2/s instead of 2e-05 m^2/s"
+   },
+   "cause": "viscosity",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B21-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      24.6,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.0000000000000003e-06
+  },
+  {
+   "name": "B22-N",
+   "class": "normal",
+   "base": 22,
+   "stated": {
+    "inlet_speed_m_per_s": 28.4,
+    "nu_m2_per_s": 1.93e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B22-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      28.4,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.93e-05
+  },
+  {
+   "name": "B22-W",
+   "class": "wrong",
+   "base": 22,
+   "stated": {
+    "inlet_speed_m_per_s": 28.4,
+    "nu_m2_per_s": 1.93e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "viscosity",
+    "parameter": 300,
+    "text": "nu 0.00579 m^2/s instead of 1.93e-05 m^2/s"
+   },
+   "cause": "viscosity",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B22-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      28.4,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 0.005790000000000001
+  },
+  {
+   "name": "B23-N",
+   "class": "normal",
+   "base": 23,
+   "stated": {
+    "inlet_speed_m_per_s": 37.8,
+    "nu_m2_per_s": 2.23e-05
+   },
+   "start": "0.08",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B23-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      37.8,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.23e-05
+  },
+  {
+   "name": "B23-W",
+   "class": "wrong",
+   "base": 23,
+   "stated": {
+    "inlet_speed_m_per_s": 37.8,
+    "nu_m2_per_s": 2.23e-05
+   },
+   "start": "0.08",
+   "change": {
+    "kind": "walls",
+    "parameter": "lower",
+    "text": "lowerWall slip instead of noSlip"
+   },
+   "cause": "walls",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B23-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      37.8,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "slip",
+     "value": null
+    }
+   },
+   "nu": 2.23e-05
+  },
+  {
+   "name": "B24-N",
+   "class": "normal",
+   "base": 24,
+   "stated": {
+    "inlet_speed_m_per_s": 38.9,
+    "nu_m2_per_s": 1.86e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B24-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      38.9,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.86e-05
+  },
+  {
+   "name": "B24-W",
+   "class": "wrong",
+   "base": 24,
+   "stated": {
+    "inlet_speed_m_per_s": 38.9,
+    "nu_m2_per_s": 1.86e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "inlet_profile",
+    "parameter": 0.25,
+    "text": "the lowest 0.25 of the inlet faces at velocity 0, the rest at 38.9 m/s"
+   },
+   "cause": "inlet_profile",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B24-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ],
+      [
+       38.9,
+       0.0,
+       0.0
+      ]
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.86e-05
+  },
+  {
+   "name": "B25-N",
+   "class": "normal",
+   "base": 25,
+   "stated": {
+    "inlet_speed_m_per_s": 21.5,
+    "nu_m2_per_s": 1.41e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B25-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      21.5,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.41e-05
+  },
+  {
+   "name": "B25-W",
+   "class": "wrong",
+   "base": 25,
+   "stated": {
+    "inlet_speed_m_per_s": 21.5,
+    "nu_m2_per_s": 1.41e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "inlet_profile",
+    "parameter": 0.5,
+    "text": "the lowest 0.5 of the inlet faces at velocity 0, the rest at 21.5 m/s"
+   },
+   "cause": "inlet_profile",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B25-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ],
+      [
+       21.5,
+       0.0,
+       0.0
+      ]
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.41e-05
+  },
+  {
+   "name": "B26-N",
+   "class": "normal",
+   "base": 26,
+   "stated": {
+    "inlet_speed_m_per_s": 27.3,
+    "nu_m2_per_s": 2.18e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B26-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      27.3,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.18e-05
+  },
+  {
+   "name": "B26-W",
+   "class": "wrong",
+   "base": 26,
+   "stated": {
+    "inlet_speed_m_per_s": 27.3,
+    "nu_m2_per_s": 2.18e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "inlet_profile",
+    "parameter": 0.75,
+    "text": "the lowest 0.75 of the inlet faces at velocity 0, the rest at 27.3 m/s"
+   },
+   "cause": "inlet_profile",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B26-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ],
+      [
+       27.3,
+       0.0,
+       0.0
+      ]
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 2.18e-05
+  },
+  {
+   "name": "B27-N",
+   "class": "normal",
+   "base": 27,
+   "stated": {
+    "inlet_speed_m_per_s": 26.6,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B27-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      26.6,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "B27-W",
+   "class": "wrong",
+   "base": 27,
+   "stated": {
+    "inlet_speed_m_per_s": 26.6,
+    "nu_m2_per_s": 1.56e-05
+   },
+   "start": "0.06",
+   "change": {
+    "kind": "inlet_speed",
+    "parameter": 1.25,
+    "text": "inlet velocity 33.25 m/s instead of 26.6 m/s"
+   },
+   "cause": "inlet_speed",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B27-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      33.25,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.56e-05
+  },
+  {
+   "name": "B28-N",
+   "class": "normal",
+   "base": 28,
+   "stated": {
+    "inlet_speed_m_per_s": 34.9,
+    "nu_m2_per_s": 1.94e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B28-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      34.9,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.94e-05
+  },
+  {
+   "name": "B28-W",
+   "class": "wrong",
+   "base": 28,
+   "stated": {
+    "inlet_speed_m_per_s": 34.9,
+    "nu_m2_per_s": 1.94e-05
+   },
+   "start": "0.09",
+   "change": {
+    "kind": "viscosity",
+    "parameter": 20,
+    "text": "nu 0.000388 m^2/s instead of 1.94e-05 m^2/s"
+   },
+   "cause": "viscosity",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B28-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      34.9,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 0.000388
+  },
+  {
+   "name": "B29-N",
+   "class": "normal",
+   "base": 29,
+   "stated": {
+    "inlet_speed_m_per_s": 20.3,
+    "nu_m2_per_s": 1.34e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B29-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      20.3,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.34e-05
+  },
+  {
+   "name": "B29-W",
+   "class": "wrong",
+   "base": 29,
+   "stated": {
+    "inlet_speed_m_per_s": 20.3,
+    "nu_m2_per_s": 1.34e-05
+   },
+   "start": "0.1",
+   "change": {
+    "kind": "inlet_speed",
+    "parameter": 0.2,
+    "text": "inlet velocity 4.06 m/s instead of 20.3 m/s"
+   },
+   "cause": "inlet_speed",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B29-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      4.0600000000000005,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.34e-05
+  },
+  {
+   "name": "B30-N",
+   "class": "normal",
+   "base": 30,
+   "stated": {
+    "inlet_speed_m_per_s": 23.5,
+    "nu_m2_per_s": 1.44e-05
+   },
+   "start": "0.08",
+   "change": {
+    "kind": "none",
+    "parameter": null,
+    "text": "none"
+   },
+   "cause": "none",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B30-N",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      23.5,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "noSlip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "noSlip",
+     "value": null
+    }
+   },
+   "nu": 1.44e-05
+  },
+  {
+   "name": "B30-W",
+   "class": "wrong",
+   "base": 30,
+   "stated": {
+    "inlet_speed_m_per_s": 23.5,
+    "nu_m2_per_s": 1.44e-05
+   },
+   "start": "0.08",
+   "change": {
+    "kind": "walls",
+    "parameter": "both",
+    "text": "lowerWall and upperWall slip instead of noSlip"
+   },
+   "cause": "walls",
+   "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B30-W",
+   "expected_patches": {
+    "inlet": {
+     "type": "fixedValue",
+     "value": [
+      23.5,
+      0.0,
+      0.0
+     ]
+    },
+    "outlet": {
+     "type": "zeroGradient",
+     "value": null
+    },
+    "upperWall": {
+     "type": "slip",
+     "value": null
+    },
+    "lowerWall": {
+     "type": "slip",
+     "value": null
+    }
+   },
+   "nu": 1.44e-05
+  }
+ ],
+ "dropped_pairs": [
+  {
+   "base": 6,
+   "runs": [
+    "B06-N",
+    "B06-W"
+   ],
+   "why": "B06-W (lowerWall and upperWall slip, nu 1.02e-5, 27.9 m/s) diverged: floating point exception in step 4643, Courant number 7.7e16; the pair is dropped as the plan says",
+   "entries": [
+    {
+     "name": "B06-N",
+     "class": "normal",
+     "base": 6,
+     "stated": {
+      "inlet_speed_m_per_s": 27.9,
+      "nu_m2_per_s": 1.02e-05
+     },
+     "start": "0.08",
+     "change": {
+      "kind": "none",
+      "parameter": null,
+      "text": "none"
+     },
+     "cause": "none",
+     "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B06-N",
+     "expected_patches": {
+      "inlet": {
+       "type": "fixedValue",
+       "value": [
+        27.9,
+        0.0,
+        0.0
+       ]
+      },
+      "outlet": {
+       "type": "zeroGradient",
+       "value": null
+      },
+      "upperWall": {
+       "type": "noSlip",
+       "value": null
+      },
+      "lowerWall": {
+       "type": "noSlip",
+       "value": null
+      }
+     },
+     "nu": 1.02e-05
+    },
+    {
+     "name": "B06-W",
+     "class": "wrong",
+     "base": 6,
+     "stated": {
+      "inlet_speed_m_per_s": 27.9,
+      "nu_m2_per_s": 1.02e-05
+     },
+     "start": "0.08",
+     "change": {
+      "kind": "viscosity",
+      "parameter": 1000,
+      "text": "nu 0.0102 m^2/s instead of 1.02e-05 m^2/s"
+     },
+     "cause": "viscosity",
+     "case": "/cluster/medbow/gscratch/syome/github_repos/flow-states-20261103/B06-W",
+     "expected_patches": {
+      "inlet": {
+       "type": "fixedValue",
+       "value": [
+        27.9,
+        0.0,
+        0.0
+       ]
+      },
+      "outlet": {
+       "type": "zeroGradient",
+       "value": null
+      },
+      "upperWall": {
+       "type": "noSlip",
+       "value": null
+      },
+      "lowerWall": {
+       "type": "noSlip",
+       "value": null
+      }
+     },
+     "nu": 0.0102
+    }
+   ]
+  }
+ ]
+}

@@ -5,7 +5,7 @@ POD = Solver_Examples/PODFoam
 .PHONY: test evidence links validate runtime demo stop
 
 test:            ## unit tests, no OpenFOAM or model (about 110 s)
-	cd $(POD)/llm_demo && $(PY) -m unittest test_llm_client test_callback test_callback_main test_ablation_runner test_async test_picture_test test_instability_test test_instability_test2 test_wrong_setup_test -v
+	cd $(POD)/llm_demo && $(PY) -m unittest test_llm_client test_callback test_callback_main test_ablation_runner test_async test_picture_test test_instability_test test_instability_test2 test_wrong_setup_test test_wrong_setup_test2 -v
 
 evidence:        ## evidence files match their manifests
 	$(PY) docs/evidence/check_manifest.py

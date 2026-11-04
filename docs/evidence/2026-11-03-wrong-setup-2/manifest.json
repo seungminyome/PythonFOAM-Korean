@@ -1,0 +1,279 @@
+{
+ "scope": "Wrong-setup test 2 of 2026-11-03 on MedicineBow: 29 pairs of pimpleFoam runs of the 2D step case, each pair one base setup run as written and with one change; one run is one sample; three states per run; Gemma 4 31B (QAT Q4_0) on 1,044 requests in six sets (stated or blind note, temperature 0 or 0.7 with two seeds); the plan, scoring and baselines fixed before any request; the pilot; the answer key as a hash; leak check; flow check; the report and the reasons.",
+ "source_runs": [
+  "pilot pimpleFoam runs: jobs 25106856 (array 0 to 11) and 25106882 (task 12)",
+  "pimpleFoam runs of the design: job 25106926 (array 0 to 59)",
+  "flow-check, build, check, baselines, contact: job 25107036",
+  "model: window-test-25107731 (job 25107037 failed before any request)",
+  "report and reasons: wrong_setup_test2.py report on a login node, 2026-11-04"
+ ],
+ "notes": [
+  "Sources are paths under /cluster/medbow/gscratch/syome/github_repos/ on MedicineBow, or 'written for this folder'.",
+  "Files of kind gzip copy are gzip -9 -n copies of the named source; source_sha256 is the hash of the uncompressed bytes.",
+  "Every byte-preserved file was compared with its source when this manifest was written.",
+  "test-set/truth.private.sha256 is the hash of the answer key, which stays on the cluster; the requests are not in this folder (1,044 files of 188 KB), their hashes are in test-set/manifest.json."
+ ],
+ "files": [
+  {
+   "path": "PLAN.md",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 5873,
+   "sha256": "81e0e6f5601d8b87e1558d79198f250ad601ace208faad8daba118226b60bf27"
+  },
+  {
+   "path": "README.md",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 25001,
+   "sha256": "0727dd065330fdc3b873dcfc9f12a97866198633db83def0ecd9d3f707cd9367"
+  },
+  {
+   "path": "baselines.json",
+   "source": "wrong-setup-2-20261103/final/baselines.json",
+   "kind": "byte-preserved",
+   "bytes": 33219,
+   "sha256": "a888c9741aca57296a9133946718222c8282f4affd657921f42b1c161997fa80"
+  },
+  {
+   "path": "contact-8000.png",
+   "source": "wrong-setup-2-20261103/final/contact-8000.png",
+   "kind": "byte-preserved",
+   "bytes": 5080994,
+   "sha256": "33de295e43facd8d3938d06adaacbf246256eddcd77a454e74b03b61661f59e9"
+  },
+  {
+   "path": "design.json",
+   "source": "flow-states-20261103/design.json",
+   "kind": "byte-preserved",
+   "bytes": 65741,
+   "sha256": "88b3563a33412d340ab596cd858888f7e431481f267f6ecdbaa5500706ee1a2c"
+  },
+  {
+   "path": "flow-check.json",
+   "source": "wrong-setup-2-20261103/final/flow-check.json",
+   "kind": "byte-preserved",
+   "bytes": 49921,
+   "sha256": "4d03752d56094688798eb88e21a50c69ad157aebdf912f621bdcd4307214041f"
+  },
+  {
+   "path": "job/pod-window-test-25107731.out.gz",
+   "source": "wrong-setup-2-20261103/results/pod-window-test-25107731.out",
+   "kind": "gzip copy",
+   "bytes": 5279,
+   "sha256": "923f872333406addfd20022ccddb44828191fee45b8d00ee841f9ad617f30a1d",
+   "source_sha256": "9d2781f5df7fc89c4ab6683c7cdba2f082bba782aa1de90dd4c7229ac73301c4"
+  },
+  {
+   "path": "job/sacct.txt",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 24100,
+   "sha256": "ec4d00f08081d6ba59ca6bd34ee09bed9667663cd6db7e8810156cc79c88850d"
+  },
+  {
+   "path": "jobs/build-25107036.out",
+   "source": "wrong-setup-2-20261103/final/jobs/build-25107036.out",
+   "kind": "byte-preserved",
+   "bytes": 404,
+   "sha256": "d195c0e8a3dccb7892e322b5240062ed23e1fe56a7a18ab5fa3395f230b32085"
+  },
+  {
+   "path": "jobs/build_set.sbatch",
+   "source": "wrong-setup-2-20261103/jobs/build_set.sbatch",
+   "kind": "byte-preserved",
+   "bytes": 1291,
+   "sha256": "7e52a2d21a5a9cf3e8ae97f43a669878b933e445d44095e97ac76f35bb2e5cd9"
+  },
+  {
+   "path": "jobs/run_flow.sbatch",
+   "source": "wrong-setup-2-20261103/jobs/run_flow.sbatch",
+   "kind": "byte-preserved",
+   "bytes": 1119,
+   "sha256": "c3f56c2f350ad7b18640cb1e3e5c95dd8a2fac17d6f098ae69d5f6eec9dab38a"
+  },
+  {
+   "path": "jobs/submit_gpu.sh",
+   "source": "wrong-setup-2-20261103/jobs/submit_gpu.sh",
+   "kind": "byte-preserved",
+   "bytes": 1048,
+   "sha256": "d00f244087f9ed00a34c705493655c74c93d1531ee60bb8784ecacbf2723b508"
+  },
+  {
+   "path": "make_manifest.py",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 5694,
+   "sha256": "eb7dcb9c7057e56dc32707fc70d6f3d489e20b407886abd781cd3d01c72e7dde"
+  },
+  {
+   "path": "pilot/contact-8000.png",
+   "source": "wrong-setup-2-20261103/pilot/contact-8000.png",
+   "kind": "byte-preserved",
+   "bytes": 1153501,
+   "sha256": "9d9c0c2f1ec77ebe939859cd32fc4973ae1a0f3cec8a6d2f82ef44dd114bf475"
+  },
+  {
+   "path": "pilot/design.json",
+   "source": "wrong-setup-2-20261103/pilot/cases/design.json",
+   "kind": "byte-preserved",
+   "bytes": 14274,
+   "sha256": "b5be85cdb1f06af38e90c32fc7a3ac2c352c6a90cb4becb046f1d08d5971ff5b"
+  },
+  {
+   "path": "pilot/flow-check.json",
+   "source": "wrong-setup-2-20261103/pilot/flow-check.json",
+   "kind": "byte-preserved",
+   "bytes": 11533,
+   "sha256": "d0c5335455075faf2b6aee62fc5a8cec38866137c90476b14738b5346dd38053"
+  },
+  {
+   "path": "pilot/pilot_visibility.py",
+   "source": "wrong-setup-2-20261103/pilot/pilot_visibility.py",
+   "kind": "byte-preserved",
+   "bytes": 3117,
+   "sha256": "8d7b7e97a76709cc2432a0b19907cca7b252b6db21d5abc47ade917bfbd2bee8"
+  },
+  {
+   "path": "pilot/visibility-arrays.txt",
+   "source": "wrong-setup-2-20261103/pilot/visibility-arrays.txt",
+   "kind": "byte-preserved",
+   "bytes": 810,
+   "sha256": "f19f4ae04f07cb437c72078276142dafa5c788ebe1fefbf8478837102bdc6229"
+  },
+  {
+   "path": "results/reasons.jsonl",
+   "source": "wrong-setup-2-20261103/final/reasons.jsonl",
+   "kind": "byte-preserved",
+   "bytes": 65901,
+   "sha256": "ef3c79bb8f7d83878e9155ae007ce804e88f2d34968cac2d8ba2c8a08d9c3071"
+  },
+  {
+   "path": "results/report.md",
+   "source": "wrong-setup-2-20261103/final/report.md",
+   "kind": "byte-preserved",
+   "bytes": 3868,
+   "sha256": "ac7a0e4720ce58a2f3900955d312d0b21523a9cd17372a26de7464112987d73b"
+  },
+  {
+   "path": "results/run.json",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/31b/run.json",
+   "kind": "byte-preserved",
+   "bytes": 988,
+   "sha256": "d6602d7cc65ffa97dc700efd1f97a0a415c9f884f287dde84d596249ea373140"
+  },
+  {
+   "path": "results/runtime/gpu-31b.txt",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/gpu-31b.txt",
+   "kind": "byte-preserved",
+   "bytes": 83,
+   "sha256": "20bb7e1854a1ec768818307d1bd8e25319e1736e7921595624844d341a0fc9f1"
+  },
+  {
+   "path": "results/runtime/llama-server-version.txt",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/llama-server-version.txt",
+   "kind": "byte-preserved",
+   "bytes": 84,
+   "sha256": "f9f53a7907882cc441fa32c90b58e41385d5a550e0a5451f231376bafff686f9"
+  },
+  {
+   "path": "results/runtime/models-31b.json",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/models-31b.json",
+   "kind": "byte-preserved",
+   "bytes": 771,
+   "sha256": "337a669d538e1483fb19dca02c7da09e99e8b6ac05ab2891eafa2d1f1182fbb9"
+  },
+  {
+   "path": "results/runtime/nvidia-smi.txt",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/nvidia-smi.txt",
+   "kind": "byte-preserved",
+   "bytes": 1689,
+   "sha256": "893fe5516ec84e9c53168d52ad599c86870ded1a0cac9e3c469eb942b3f3c8d7"
+  },
+  {
+   "path": "results/runtime/server-31b.log.gz",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/server-31b.log",
+   "kind": "gzip copy",
+   "bytes": 97332,
+   "sha256": "d146c70ad56f88d12fc2a3ff77c97856524be39951d7bbbedeed4904d08f88b8",
+   "source_sha256": "f2cf7fb5f1e50d4f67c0cbf47bd8257f2aa8eb66e2559435bbf5663d6bdbb65f"
+  },
+  {
+   "path": "results/runtime/sha256.txt",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/sha256.txt",
+   "kind": "byte-preserved",
+   "bytes": 13768,
+   "sha256": "9c789713fae21cda69d4f06fbedfb7e992d4c8bb70e8d9121f2db3cdb0797e69"
+  },
+  {
+   "path": "results/server-31b.cmd",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/server-31b.cmd",
+   "kind": "byte-preserved",
+   "bytes": 695,
+   "sha256": "d79ed5a2f1c390ab82633bc6a08228ca32447b6bb427206e28391282e90cbb71"
+  },
+  {
+   "path": "results/wrong-setup2-blind-t0/metrics.jsonl",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/31b/wrong-setup2-blind-t0/metrics.jsonl",
+   "kind": "byte-preserved",
+   "bytes": 226369,
+   "sha256": "1fcd123ad6d95796722046b94cb9c14101f15e69be287bf1c30fdc0bfe6ce0fd"
+  },
+  {
+   "path": "results/wrong-setup2-blind-t07a/metrics.jsonl",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/31b/wrong-setup2-blind-t07a/metrics.jsonl",
+   "kind": "byte-preserved",
+   "bytes": 224362,
+   "sha256": "47f549c9fca531d2725a03013a55569850f6ca1d1027b8502311adcbcc2e1259"
+  },
+  {
+   "path": "results/wrong-setup2-blind-t07b/metrics.jsonl",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/31b/wrong-setup2-blind-t07b/metrics.jsonl",
+   "kind": "byte-preserved",
+   "bytes": 225776,
+   "sha256": "1da8424de58527014a39f89e37343236c163cd29facbe6790c77f62b6c206473"
+  },
+  {
+   "path": "results/wrong-setup2-stated-t0/metrics.jsonl",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/31b/wrong-setup2-stated-t0/metrics.jsonl",
+   "kind": "byte-preserved",
+   "bytes": 221715,
+   "sha256": "36e6a00e7f614a50eee3544ac2b13935dd5ef0012b88e15410d62f0e1dd38682"
+  },
+  {
+   "path": "results/wrong-setup2-stated-t07a/metrics.jsonl",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/31b/wrong-setup2-stated-t07a/metrics.jsonl",
+   "kind": "byte-preserved",
+   "bytes": 221571,
+   "sha256": "06fa8bfefadcce684f140e24583fe50135e9c010f7c26b6e236101298dcf977e"
+  },
+  {
+   "path": "results/wrong-setup2-stated-t07b/metrics.jsonl",
+   "source": "wrong-setup-2-20261103/results/window-test-25107731/31b/wrong-setup2-stated-t07b/metrics.jsonl",
+   "kind": "byte-preserved",
+   "bytes": 221321,
+   "sha256": "0ccc7e3125e4569fcfe3e6ae07543bfa789ac0f94150e85fb1b6cf86eba1eadb"
+  },
+  {
+   "path": "test-set/leak-check.json",
+   "source": "wrong-setup-2-20261103/final/set/leak-check.json",
+   "kind": "byte-preserved",
+   "bytes": 99557,
+   "sha256": "98019cd3319fd26070df9da30e85ed3fb2ce8af7e6d31f2222c63df41c6ff62a"
+  },
+  {
+   "path": "test-set/manifest.json",
+   "source": "wrong-setup-2-20261103/final/set/manifest.json",
+   "kind": "byte-preserved",
+   "bytes": 814671,
+   "sha256": "8f0a8e0edb53a0c544f21f3bc684393663f83fe37f19fcca504c0400cf710058"
+  },
+  {
+   "path": "test-set/truth.private.sha256",
+   "source": "written for this folder",
+   "kind": "derived",
+   "bytes": 17,
+   "sha256": "0853db26c5e27715df59cb4c8be0d807fbb60b47da40d87c89ad1a3b3cdd712c"
+  }
+ ]
+}

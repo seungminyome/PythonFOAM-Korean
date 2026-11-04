@@ -11,7 +11,7 @@
   "Sources are paths under /cluster/medbow/gscratch/syome/github_repos/ on MedicineBow, or 'written for this folder'.",
   "Files of kind gzip copy are gzip -9 -n copies of the named source; source_sha256 is the hash of the uncompressed bytes.",
   "Every byte-preserved file was compared with its source when this manifest was written.",
-  "test-set/truth.private.sha256 is the hash of the answer key, which stays on the cluster; the requests are not in this folder (1,044 files of 188 KB), their hashes are in test-set/manifest.json."
+  "test-set/truth.private.sha256 is the hash of the answer key, which stays on the cluster; the requests are not in this folder (1,044 files of 178 to 233 KB, 225 MB in all), their hashes are in test-set/manifest.json."
  ],
  "files": [
   {
@@ -25,8 +25,8 @@
    "path": "README.md",
    "source": "written for this folder",
    "kind": "derived",
-   "bytes": 25001,
-   "sha256": "0727dd065330fdc3b873dcfc9f12a97866198633db83def0ecd9d3f707cd9367"
+   "bytes": 26074,
+   "sha256": "ed94349b5d7c851d864152175a3734b6ed9900607f91cc403fa9ef43abb4619f"
   },
   {
    "path": "baselines.json",
@@ -103,8 +103,8 @@
    "path": "make_manifest.py",
    "source": "written for this folder",
    "kind": "derived",
-   "bytes": 5694,
-   "sha256": "eb7dcb9c7057e56dc32707fc70d6f3d489e20b407886abd781cd3d01c72e7dde"
+   "bytes": 5716,
+   "sha256": "90aa5a7c88a92fa7c2dce3002ac6720efb2d197e7d247cc01a3df8e4299b5cbd"
   },
   {
    "path": "pilot/contact-8000.png",

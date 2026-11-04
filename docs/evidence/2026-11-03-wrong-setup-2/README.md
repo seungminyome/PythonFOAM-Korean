@@ -3,7 +3,7 @@
 첫 잘못된 설정 시험(10월 30일)은 잘못된 실행이 변경 종류마다 하나씩 다섯 개였고, 실행마다 서로 닮은
 프레임 여덟 개를 썼으며, 경쟁 상대는 숫자 하나로 된 규칙뿐이었습니다. 이 시험은 2차원 계단 케이스의
 pimpleFoam 실행 29쌍입니다. 쌍마다 무작위로 뽑은 기본 설정 하나를 그대로(정상), 그리고 항목 하나를
-바꿔(잘못됨) 돌렸습니다. 실행 하나가 표본 하나입니다. [계획](PLAN.md), 채점, 기준선, 요청 세트는 모델에
+바꿔(잘못됨) 돌렸습니다. 실행 하나가 표본 하나입니다. 영문 [계획](PLAN.md), 채점, 기준선, 요청 세트는 모델에
 요청을 보내기 전에 커밋했습니다(영문 저장소의 `97c3c41`, `91544e6`). Gemma 4 31B(QAT Q4_0)가 요청
 1,044개에 답했습니다. 조건 둘(메모에 의도한 입구 속도와 점성을 적은 쪽과 적지 않은 쪽)과 변형
 셋(온도 0; 온도 0.7에 시드 둘)을 실행마다 상태 셋에 적용한 것입니다.
@@ -17,9 +17,10 @@ pimpleFoam 실행 29쌍입니다. 쌍마다 무작위로 뽑은 기본 설정 �
 - 31B는 잘못된 실행을 잡습니다. 29개 중 26개(입구 속도 8개 중 8, 점성 8개 중 8, 입구 단면 6개 중 6,
   벽 7개 중 4). 색 막대 숫자 기준선은 17개를 잡습니다(벽 7개 중 7, 속도 4, 점성 2, 단면 4).
 - 31B는 오경보를 냅니다. 정상 실행 29개 중 11개에 `inconsistent`라고 답합니다. 이유 11개 중 9개는
-  이미지에 뒤를 향한 계단이 없다고 합니다(흰 영역이 없다, 박리 영역이 없다). 표시 영역은 계단
-  모서리에서 시작하므로 이 시험의 어느 이미지에도 흰 영역이 없으며, 같은 말이 잘못된 실행의 이유
-  4개에도 나옵니다. 색 막대 숫자 기준선의 오경보는 1개입니다.
+  이미지에 후향 계단이 없다고 합니다(흰 영역이 없다, 박리 영역이 없다). 표시 영역은 계단
+  모서리에서 시작하므로 이 시험의 어느 이미지에도 흰 영역이 없습니다. 따옴표 안의 두 문구는 잘못된
+  실행의 이유 4개에도 나오고, 계단이 없다는 말은 잘못된 실행의 이유 7개에 나옵니다. 색 막대 숫자
+  기준선의 오경보는 1개입니다.
 - 맞는 이유로 맞음: 58개 중 27개. `consistent`라고 답한 정상 실행 18개와 잘못된 실행 9개(속도 7,
   벽 2)입니다. 점성 실행 중 원인이 `viscosity`인 답은 없습니다(벽 3, 기타 3, 입구 속도 1, 입구 단면
   1). 입구 단면 실행 6개는 모두 `inlet_speed`이며, 이유는 색 막대의 최댓값이 알려 준 속도보다 낮다는
@@ -34,10 +35,10 @@ pimpleFoam 실행 29쌍입니다. 쌍마다 무작위로 뽑은 기본 설정 �
 
 | 작업 | 내용 | 노드 | 시각(MST, 2026-11-03) |
 |---|---|---|---|
-| 25106856(배열 0\~11), 25106882(작업 12) | 예비 실행 13개 | CPU, `teton`(ttest01, ttest02) | 20:07\~20:19 |
+| 25106856(배열 0\~11), 25106882(작업 12) | 예비 실행 13개 | CPU, `teton`(ttest01, ttest02) | 20:07\~20:18 |
 | 25106926(배열 0\~59) | 설계의 pimpleFoam 실행 60개, 작업 하나에 실행 하나; 작업 11(B06-W)은 발산 | CPU, `teton`(ttest01\~ttest04, t286) | 20:21\~20:49 |
 | 25107036 | `flow-check`, `build`, `check`, `baselines`, `contact` | CPU(ttest01) | 20:49\~20:54 |
-| 25107037 | 첫 GPU 작업. 실행기가 읽는 매니페스트 키 때문에 요청 전 42 s 만에 끝남 | NVIDIA RTX A6000(mba6000-001) | 21:12\~21:13 |
+| 25107037 | 첫 GPU 작업. 실행기가 찾는 매니페스트 키가 없어서 요청 전 42 s 만에 멈춤 | NVIDIA RTX A6000(mba6000-001) | 21:12\~21:13 |
 | 25107731 | 요청 1,044개에 Gemma 4 31B(`window_test.slurm`, `PICTURE_TEST_SCRIPT=wrong_setup_test2.py`) | NVIDIA RTX A6000(mba6000-001) | 21:14\~22:26 |
 
 시작과 끝 시각은 [job/sacct.txt](job/sacct.txt)에 있습니다. 보고서와 이유는 2026-11-04에 로그인 노드에서
@@ -57,12 +58,13 @@ x 0\~0.12 m, y 0\~0.04 m이므로, 계단의 면은 표시 영역 왼쪽 가장�
 
 `flow-check`([flow-check.json](flow-check.json))는 실행 58개를 모두 받아들였습니다. 모두 8,000단계 뒤
 `End`로 끝났고, 마지막으로 저장한 U와 `transportProperties`에 설계의 항목이 있습니다. 실행 전체의 가장
-큰 Courant 수는 정상 실행 21개와 잘못된 실행 24개에서 2\~41단계에 1을 넘습니다. 시작 상태는 32.2 m/s의
-발달한 유동이고 기본 설정의 입구 속도가 그와 다르므로, 첫 단계들이 적응하기 때문입니다. 첫 프레임
+큰 Courant 수는 정상 실행 21개와 잘못된 실행 24개에서 1을 넘습니다. 그중 44개는 최댓값이 2\~41단계에
+있습니다. 시작 상태는 32.2 m/s의 발달한 유동이고 기본 설정의 입구 속도가 그와 다르므로, 첫 단계들이
+적응하기 때문입니다. 아래 벽이 미끄러지는 B10-W는 5371단계에서 1.51에 이릅니다. 첫 프레임
 이후(6000\~8000단계) 정상 실행은 0.43 이하에 머물고, 잘못된 실행 열 개가 0.5를 넘습니다. 미끄럼 벽
 실행 일곱 개(0.81\~2.05), 점성 ×100(23.5)과 ×300(172), 입구 속도 ×1.5(0.505)입니다. 표는 실행마다
-8000단계에서 세트 여섯 개의 답을 적습니다. `C`는 `consistent`, `I`는 `inconsistent`이고, 쌍점 뒤는 모델이
-말한 원인입니다.
+8000단계에서 세트 여섯 개의 답을 적습니다. t0는 온도 0, t07a와 t07b는 온도 0.7에 시드 a와 b입니다. `C`는
+`consistent`, `I`는 `inconsistent`이고, 쌍점 뒤는 모델이 말한 원인입니다.
 
 | 실행 | 알려 준 속도, ν | 변경 | Co, 실행 전체(단계) | Co, 6000단계부터 | 알려 줌 t0 | t07a | t07b | 알려 주지 않음 t0 | t07a | t07b |
 |---|---|---|---:|---:|---|---|---|---|---|---|
@@ -85,15 +87,15 @@ x 0\~0.12 m, y 0\~0.04 m이므로, 계단의 면은 표시 영역 왼쪽 가장�
 | B10-N | 35.2 m/s, 1.17e-05 | 없음 | 0.991 (2) | 0.389 | C | I:start state | C | C | C | I:viscosity |
 | B10-W | 35.2 m/s, 1.17e-05 | lowerWall slip | 1.51 (5371) | 1.26 | C | C | C | I:other | I:other | I:inlet direction |
 | B11-N | 30.5 m/s, 1.68e-05 | 없음 | 0.563 (2) | 0.311 | C | I:start state | I:walls | I:other | I:walls | I:walls |
-| B11-W | 30.5 m/s, 1.68e-05 | 입구 면 아래 0.75는 속도 0 | 8.77 (3) | 0.133 | I:inlet speed | I:inlet speed | I:inlet speed | C | I:other | I:walls |
+| B11-W | 30.5 m/s, 1.68e-05 | 입구 면 아래 0.75는 속도 0, 나머지는 30.5 m/s | 8.77 (3) | 0.133 | I:inlet speed | I:inlet speed | I:inlet speed | C | I:other | I:walls |
 | B12-N | 27.0 m/s, 2.32e-05 | 없음 | 1.69 (2) | 0.261 | I:other | I:other | I:start state | I:walls | I:viscosity | I:walls |
 | B12-W | 27.0 m/s, 2.32e-05 | lowerWall slip | 1.69 (2) | 1.08 | I:other | C | I:walls | I:walls | I:walls | I:other |
 | B13-N | 24.9 m/s, 2.42e-05 | 없음 | 2.37 (2) | 0.232 | C | I:walls | C | I:walls | I:inlet direction | I:other |
 | B13-W | 24.9 m/s, 2.42e-05 | 입구 속도 24.9 대신 2.49 m/s | 11 (3) | 0.223 | I:inlet speed | I:inlet speed | I:inlet speed | I:other | I:other | I:walls |
 | B14-N | 31.4 m/s, 1.22e-05 | 없음 | 0.389 (476) | 0.343 | C | C | C | I:other | I:walls | I:other |
-| B14-W | 31.4 m/s, 1.22e-05 | 입구 면 아래 0.25는 속도 0 | 2.86 (2) | 0.219 | I:inlet speed | I:inlet speed | I:inlet speed | I:walls | I:walls | I:inlet direction |
+| B14-W | 31.4 m/s, 1.22e-05 | 입구 면 아래 0.25는 속도 0, 나머지는 31.4 m/s | 2.86 (2) | 0.219 | I:inlet speed | I:inlet speed | I:inlet speed | I:walls | I:walls | I:inlet direction |
 | B15-N | 20.2 m/s, 1.38e-05 | 없음 | 3.93 (3) | 0.208 | I:other | I:walls | I:other | I:other | I:walls | I:other |
-| B15-W | 20.2 m/s, 1.38e-05 | 입구 면 아래 0.5는 속도 0 | 7.86 (3) | 0.135 | I:inlet speed | I:inlet speed | I:inlet speed | I:walls | C | C |
+| B15-W | 20.2 m/s, 1.38e-05 | 입구 면 아래 0.5는 속도 0, 나머지는 20.2 m/s | 7.86 (3) | 0.135 | I:inlet speed | I:inlet speed | I:inlet speed | I:walls | C | C |
 | B16-N | 31.2 m/s, 1.82e-05 | 없음 | 0.423 (483) | 0.321 | I:other | I:start state | I:walls | I:walls | I:walls | I:walls |
 | B16-W | 31.2 m/s, 1.82e-05 | ν 1.82e-05 대신 5.46e-05 m²/s | 0.413 (505) | 0.249 | I:other | I:other | I:walls | I:other | I:other | I:other |
 | B17-N | 24.3 m/s, 2.17e-05 | 없음 | 2.55 (2) | 0.231 | C | C | C | I:other | I:other | I:inlet direction |
@@ -111,11 +113,11 @@ x 0\~0.12 m, y 0\~0.04 m이므로, 계단의 면은 표시 영역 왼쪽 가장�
 | B23-N | 37.8 m/s, 2.23e-05 | 없음 | 1.83 (2) | 0.38 | I:other | I:walls | I:other | I:walls | I:walls | I:other |
 | B23-W | 37.8 m/s, 2.23e-05 | lowerWall slip | 1.83 (2) | 0.827 | I:walls | I:walls | I:walls | I:walls | I:walls | I:other |
 | B24-N | 38.9 m/s, 1.86e-05 | 없음 | 2.11 (2) | 0.41 | I:other | I:other | I:walls | I:other | I:walls | I:other |
-| B24-W | 38.9 m/s, 1.86e-05 | 입구 면 아래 0.25는 속도 0 | 1.1 (2) | 0.292 | I:inlet speed | I:inlet speed | I:walls | I:walls | I:other | I:other |
+| B24-W | 38.9 m/s, 1.86e-05 | 입구 면 아래 0.25는 속도 0, 나머지는 38.9 m/s | 1.1 (2) | 0.292 | I:inlet speed | I:inlet speed | I:walls | I:walls | I:other | I:other |
 | B25-N | 21.5 m/s, 1.41e-05 | 없음 | 3.46 (3) | 0.208 | C | C | C | I:walls | I:walls | I:walls |
-| B25-W | 21.5 m/s, 1.41e-05 | 입구 면 아래 0.5는 속도 0 | 7.61 (3) | 0.152 | I:inlet speed | I:inlet speed | I:inlet speed | C | C | I:walls |
+| B25-W | 21.5 m/s, 1.41e-05 | 입구 면 아래 0.5는 속도 0, 나머지는 21.5 m/s | 7.61 (3) | 0.152 | I:inlet speed | I:inlet speed | I:inlet speed | C | C | I:walls |
 | B26-N | 27.3 m/s, 2.18e-05 | 없음 | 1.59 (2) | 0.267 | C | C | C | I:other | C | I:other |
-| B26-W | 27.3 m/s, 2.18e-05 | 입구 면 아래 0.75는 속도 0 | 9.1 (3) | 0.139 | I:inlet speed | I:inlet speed | I:inlet speed | I:other | I:other | I:walls |
+| B26-W | 27.3 m/s, 2.18e-05 | 입구 면 아래 0.75는 속도 0, 나머지는 27.3 m/s | 9.1 (3) | 0.139 | I:inlet speed | I:inlet speed | I:inlet speed | I:other | I:other | I:walls |
 | B27-N | 26.6 m/s, 1.56e-05 | 없음 | 1.82 (2) | 0.263 | C | I:walls | C | C | C | I:other |
 | B27-W | 26.6 m/s, 1.56e-05 | 입구 속도 26.6 대신 33.25 m/s | 0.405 (592) | 0.364 | I:other | I:other | I:other | I:walls | I:other | I:inlet direction |
 | B28-N | 34.9 m/s, 1.94e-05 | 없음 | 0.819 (2) | 0.37 | C | I:walls | C | I:walls | I:other | I:walls |
@@ -131,19 +133,22 @@ x 0\~0.12 m, y 0\~0.04 m이므로, 계단의 면은 표시 영역 왼쪽 가장�
 있습니다. 변경: 입구 속도 ×0.1, 0.2, 0.3, 0.5, 0.7, 0.8, 1.25, 1.5; 점성 ×0.1, 3, 5, 10, 20, 30, 100,
 300(×1000 실행은 발산, 계획의 Deviations); `lowerWall` `slip`(4) 또는 두 벽 `slip`(3); 입구 면의 아래
 0.25, 0.5, 0.75를 속도 0으로(각 두 번). 초안에 있던 입구 방향과 시작 상태는 예비 시험([pilot/](pilot/))
-뒤에 뺐습니다. 둘 다 표시 영역에 닿지 않습니다.
+뒤에 뺐습니다. 둘 다 표시 영역에 보이는 흔적을 남기지 않습니다.
 
 - **이미지.** 저장한 상태 하나의 v2 이미지 두 장, |U|와 p를 각자의 색 눈금으로 솔버의 표시 영역에
   그린 것(`picture_test.render_v2`). 실행마다 6000, 7000, 8000단계: 프레임 174개.
 - **프롬프트.** 시스템 프롬프트는 이렇게 말합니다. "The case is a 2D incompressible laminar flow over
   a backward-facing step: a uniform inlet in +x upstream of the plotted part, no-slip stationary walls,
-  a zero-gradient outlet, started from a developed state of this flow. The note gives the intended inlet
-  speed and kinematic viscosity. Judge whether the pictures are consistent with this setup." 답으로
+  a zero-gradient outlet, started from a developed state of this flow." 알려 준 조건에서는 이렇게
+  이어집니다. "The note gives the intended inlet speed and kinematic viscosity. Judge whether the pictures
+  are consistent with this setup." 알려 주지 않은 조건에서는 이렇습니다. "The intended inlet speed and
+  viscosity are not given. Judge whether the pictures are consistent with a run of this case set up as
+  described." 나머지 프롬프트는 두 조건에서 같습니다. 답으로
   `reason`(300자 미만), `assessment`(`consistent`, `inconsistent`, `cannot_tell`), `cause`(`none`,
   `inlet_speed`, `viscosity`, `walls`, `inlet_profile`, `inlet_direction`, `start_state`, `other`)를
   요구합니다. 알려 준 조건에서는 메모에 기본 설정의 입구 속도와 점성을 담은 `intended_setup`이 있고,
-  알려 주지 않은 조건의 메모에는 그 항목이 없으며 시스템 프롬프트는 같습니다. 한 쌍의 두 실행은 같은
-  글을 받습니다.
+  알려 주지 않은 조건의 메모에는 그 항목이 없고, 할 일 줄도 "의도한 설정"이 아니라 "설명한 케이스"와
+  맞는지 묻습니다. 한 쌍의 두 실행은 같은 글을 받습니다.
 - **요청 설정.** `max_tokens` 320, 프롬프트 캐시 없음, `seed` 20261103(t0), 20261107(t07a),
   20261108(t07b); 온도 0 또는 0.7. 서버: llama.cpp b11429, 문맥 4096, batch와 ubatch 512, 이미지당
   이미지 토큰 256, 슬롯 하나([results/server-31b.cmd](results/server-31b.cmd)).
@@ -159,8 +164,8 @@ x 0\~0.12 m, y 0\~0.04 m이므로, 계단의 면은 표시 영역 왼쪽 가장�
 ## 누출 점검
 
 `build`가 [test-set/leak-check.json](test-set/leak-check.json)을 쓰고, `check`는 GPU 시간을 쓰기 전에
-돕니다. 요청 1,044개, 문제 없음. 이미지 데이터를 빼고 단계, 시각, `intended_setup`을 메모에서 빼면 한
-세트의 본문은 모두 한 글입니다. 한 쌍의 두 실행은 알려 준 숫자가 같으므로, 요청 글만 보는 어떤 규칙도
+돕니다. 요청 1,044개, 문제 없음. 이미지 데이터와 단계, 시각, `intended_setup` 항목을 빼면 한 세트의
+요청 본문 174개는 모두 같은 글입니다. 한 쌍의 두 실행은 알려 준 숫자가 같으므로, 요청 글만 보는 어떤 규칙도
 조건마다 정확히 58개 중 29개를 맞힙니다. 어느 요청에도 실행 이름은 없습니다. 정답은 클러스터에 있고 그
 해시는 [test-set/truth.private.sha256](test-set/truth.private.sha256)입니다. 프롬프트 토큰은 세트 여섯
 개 모두에서 1,013\~1,049개였습니다.
@@ -175,7 +180,7 @@ x 0\~0.12 m, y 0\~0.04 m이므로, 계단의 면은 표시 영역 왼쪽 가장�
 - **미끄럼 벽.** 점 대신 매끄러운 층 띠. `lowerWall`이 미끄러지면 아래 가장자리의 흐름이 어둡지
   않습니다. 색 막대 숫자는 정상 실행과 같습니다.
 - **점성 ×3\~×30.** 매끄러운 층, 점 없음, 매끄러운 p. ×100과 ×300은 발달한 유동이 아닙니다. ×300
-  실행의 색 막대는 알려 준 28.4 m/s에 대해 359 m/s에서 끝나고 바닥을 따라 제트가 보입니다. 25단계에서
+  실행의 알려 준 속도는 28.4 m/s인데 색 막대는 359 m/s에서 끝나고 바닥을 따라 제트가 보입니다. 25단계에서
   Courant 수 379였고 정상 종료했습니다.
 - **입구 속도와 입구 단면.** 정상 실행의 무늬이고 색 막대 숫자가 알려 준 속도와 다릅니다. 단면 변경은
   모양으로는 표시 영역에 닿지 않고, 낮은 유량으로 보입니다.
@@ -208,8 +213,9 @@ x 0\~0.12 m, y 0\~0.04 m이므로, 계단의 면은 표시 영역 왼쪽 가장�
 
 알려 줌, 온도 0, 8000단계에서 31B와 기준선: 색 막대 숫자 기준선과는 모델만 맞힌 프레임 13개, 기준선만
 맞힌 프레임 14개(p = 1)이고, 모델이 맞힌 비율의 95 % 부트스트랩 구간은 0.67\~0.84, 기준선은
-0.67\~0.88입니다. 상수 기준선과는 모델만 맞힌 프레임 17개, 상수만 맞힌 프레임 2개로 p = 0.000145입니다
-(보고서의 상수 기준선 행은 역할을 바꾼 같은 검정입니다).
+0.67\~0.88입니다. 상수 기준선과는 모델만 맞힌 프레임이 26개로 모델이 잡은 잘못된 실행이고, 상수만 맞힌 프레임은
+오경보 11개입니다. 답에서 계산하면 p = 0.020입니다. 보고서의 상수 기준선 행은 상수와 색 막대 숫자
+기준선을 견준 것으로, 17개 대 1개, p = 0.000145입니다.
 
 단계별로 맞힌 수(58개 중), 알려 줌과 알려 주지 않음:
 
@@ -229,12 +235,12 @@ x 0\~0.12 m, y 0\~0.04 m이므로, 계단의 면은 표시 영역 왼쪽 가장�
 
 `results/wrong-setup2-stated-t0/metrics.jsonl`의 8000단계에서 읽음:
 
-- 오경보 11개 중 9개의 이유는 이미지에 뒤를 향한 계단이 없다고 합니다. "no step geometry (white
+- 오경보 11개 중 9개의 이유는 이미지에 후향 계단이 없다고 합니다. "no step geometry (white
   area)", "no sudden expansion or separation zone", "not constrained by a backward-facing step". 하나는
-  압력장에 체커보드가 보인다고, 하나는 박리 영역이 없다고 합니다. 말한 원인은 `other`(9)와 `walls`(2)
-  입니다.
-- `consistent`라고 답한 정상 실행 18개는 모두 계단 뒤의 박리나 재순환 영역을 말하며, 그중 8개는 색
-  막대의 최댓값을 알려 준 속도와 견주기도 합니다.
+  압력장에 체커보드가 보인다고, 하나는 계단이 없다고는 하지 않고 박리 영역만 없다고 합니다. 말한
+  원인은 `other`(9)와 `walls`(2)입니다.
+- `consistent`라고 답한 정상 실행 18개는 모두 계단 뒤의 박리나 재순환 영역을 말하며, 그중 12개는
+  최대 속도를 알려 준 속도와 견주기도 하고, 6개는 색 막대에서 읽은 숫자를 적습니다.
 - 입구 속도 실행 8개: 이유 7개는 색 막대의 최댓값을 알려 준 속도와 견줍니다. ×1.25 실행(B27-W)은
   오경보의 문장 "no step geometry (white area)"로 잡히고 원인은 `other`입니다.
 - 입구 단면 실행 6개: 이유 모두 색 막대의 최댓값을 알려 준 속도와 견주고 `inlet_speed`라고 합니다.
@@ -261,7 +267,7 @@ x 0\~0.12 m, y 0\~0.04 m이므로, 계단의 면은 표시 영역 왼쪽 가장�
   기준선의 답. [contact-8000.png](contact-8000.png).
 - [pilot/](pilot/): 예비 실행 13개의 설계, 흐름 점검, 가시성 측정, 모아 보기 이미지.
 - [test-set/](test-set/): 요청마다 해시를 적은 요청 매니페스트, 누출 점검, 정답의 해시. 요청 자체는
-  188 KB짜리 파일 1,044개이며 클러스터에 있습니다.
+  파일 1,044개로 하나가 178\~233 KB, 모두 225 MB이며 클러스터에 있습니다.
 - [results/](results/): `run.json`, 서버 명령, `runtime/`(llama.cpp 버전, GPU, 모델 파일 해시, gzip
   사본의 서버 로그), 원래 답을 모두 담은 `metrics.jsonl` 여섯 개, 보고서, 이유.
 - [jobs/](jobs/): 작업 스크립트 셋과 빌드 작업의 출력. [job/sacct.txt](job/sacct.txt)와 gzip 사본의

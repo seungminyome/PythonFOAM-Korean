@@ -94,7 +94,7 @@ def main(folder):
             'Files of kind gzip copy are gzip -9 -n copies of the named source; source_sha256 is the hash of the uncompressed bytes.',
             'Every byte-preserved file was compared with its source when this manifest was written.',
             'test-set/truth.private.sha256 is the hash of the answer key, which stays on the cluster; the requests are '
-            'not in this folder (1,044 files of 188 KB), their hashes are in test-set/manifest.json.',
+            'not in this folder (1,044 files of 178 to 233 KB, 225 MB in all), their hashes are in test-set/manifest.json.',
         ],
         'files': files,
     }

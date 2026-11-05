@@ -96,3 +96,7 @@ No pilot run is in the final set and no model saw a pilot frame.
   design.json's `dropped_pairs` names the change wrongly as slip walls; its `entries` hold the
   run's real change, and the file is left as the build hashed it. This note was corrected on
   2026-11-04, after the model answers, and changes no count.
+- The pilot sentence "All 13 ended normally with the largest Courant number under 0.4" is wrong
+  about the Courant number: pilot/flow-check.json gives whole-run maxima of 0.66 to 9.5, in the
+  first steps, and 0.20 to 1.50 from step 6000 on (1.50 in the slip-wall run). All 13 did end
+  normally. Corrected 2026-11-04, after the model answers; it changes no count and no decision.

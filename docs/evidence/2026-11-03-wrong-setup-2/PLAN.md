@@ -97,6 +97,11 @@ No pilot run is in the final set and no model saw a pilot frame.
   run's real change, and the file is left as the build hashed it. This note was corrected on
   2026-11-04, after the model answers, and changes no count.
 - The pilot sentence "All 13 ended normally with the largest Courant number under 0.4" is wrong
-  about the Courant number: pilot/flow-check.json gives whole-run maxima of 0.66 to 9.5, in the
-  first steps, and 0.20 to 1.50 from step 6000 on (1.50 in the slip-wall run). All 13 did end
+  about the Courant number: pilot/flow-check.json gives whole-run maxima of 0.66 to 9.5, in steps
+  2 or 3 except the slip-wall run, 1.57 at step 5624, and 0.20 to 1.50 from step 6000 on, the 1.50
+  in the slip-wall run. All 13 did end
   normally. Corrected 2026-11-04, after the model answers; it changes no count and no decision.
+- The Baselines section says the labels are "scaled by the stated speed". The script divides the
+  two |U| ends by the stated speed, the two p ends by its square, and takes the logarithm of the
+  stated viscosity (wrong_setup_test2.py, feature_rows). The baselines were computed with the
+  script before any model answer; this note, added 2026-11-04, corrects the description only.

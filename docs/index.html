@@ -29,7 +29,7 @@
 <h2 id="results">알아낸 것</h2>
 <p>모델은 따로 적지 않으면 Gemma 4 12B입니다. 모델은 위의 이미지 두 장, 또는 그런 이미지의 짧은 시퀀스와 질문 하나를 받습니다.</p>
 <div class="table"><table style="min-width:640px"><caption>질문별 판정</caption><thead><tr><th scope="col">질문</th><th scope="col">어떻게 됐나</th><th scope="col">판정</th></tr></thead><tbody>
-<tr><td>어디가 가장 빠르고, 어디가 압력이 가장 낮은가?</td><td>대부분의 이미지에서 맞는 자리를 짚습니다. 늘 같은 자리를 찍는 것보다 더 자주 맞힙니다.</td><td>됨</td></tr>
+<tr><td>어디가 가장 빠르고, 어디가 압력이 가장 낮은가?</td><td>대부분의 이미지에서 맞는 자리를 짚습니다. 늘 같은 답보다 더 자주 맞힙니다.</td><td>됨</td></tr>
 <tr><td>이미지 방식이 중요한가?</td><td>그렇습니다. 이미지 한 장에 필드 하나를 그리고 축을 백분율로 적으면 모델 넷이 48장 중 45–48장에서 가장 빠른 유동과 가장 낮은 압력을 둘 다 맞혔습니다. 솔버의 원래 두 패널 이미지로는 각각 2–17장이었습니다.</td><td>매우 중요</td></tr>
 <tr><td>솔버가 도는 동안에도 되나?</td><td>됩니다. 250단계마다 요청하면 계산 시간이 모델에 요청을 보내지 않은 같은 실행보다 1&nbsp;% 미만 늘어납니다. 솔버는 두 실행에서 똑같은 파일을 썼습니다.</td><td>됨</td></tr>
 <tr><td>스냅샷 사이에 유동이 빨라지나, 느려지나?</td><td>최대 속도 변화가 2&nbsp;% 이상이면 읽습니다. 더 작은 변화는 대부분 잘못 읽습니다.</td><td>뚜렷한 변화만 됨</td></tr>
@@ -42,7 +42,7 @@
 
 <section aria-labelledby="numbers">
 <h2 id="numbers">주요 수치</h2>
-<p>답한 자리가 정답 자리에서 표시 영역의 10&nbsp;% 안에 있으면 맞힌 것입니다. '늘 같은 답'은 모든 이미지에 같은 답을 낼 때의 최고 점수이고, 필드 값으로 만든 간단한 규칙이 더 나았던 시험은 그 규칙도 적었습니다. 모델 넷은 Gemma 4 12B, 26B-A4B, 31B와 Qwen3.5-35B-A3B입니다. 자세한 내용은 보고서마다 있습니다.</p>
+<p>답한 자리가 정답 자리에서 표시 영역의 10&nbsp;% 안에 있으면 맞힌 것입니다. '늘 같은 답'은 가장 많이 맞히는 답 하나를 모든 이미지에 내는 것이고, 필드 값으로 만든 간단한 규칙이 더 나았던 시험은 그 규칙도 적었습니다. 모델 넷은 Gemma 4 12B, 26B-A4B, 31B와 Qwen3.5-35B-A3B입니다. 자세한 내용은 보고서마다 있습니다.</p>
 <div class="table"><table style="min-width:760px"><caption>시험별 주요 수치</caption><thead><tr><th scope="col">시험</th><th scope="col">모델</th><th scope="col">모델이 맞힌 수</th><th scope="col">늘 같은 답 또는 규칙</th><th scope="col">보고서</th></tr></thead><tbody>
 <tr><td>가장 빠른 유동과 가장 낮은 압력, 발달한 유동의 이미지 140장</td><td>모델 넷</td><td>가장 빠른 유동 106–121장; 가장 낮은 압력 130–139장</td><td>가장 빠른 유동 16; 가장 낮은 압력 17</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">10월 22일</a></td></tr>
 <tr><td>같은 시험을 시작 직후 이미지 48장에서, 새 방식과 솔버의 원래 방식</td><td>모델 넷</td><td>45–48장 대 2–17장</td><td>7–10</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">10월 22일</a></td></tr>
@@ -82,7 +82,7 @@
 <div class="cards">
 <article aria-labelledby="nov02">
 <h3 id="nov02"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261102.md">11월 2일</a></h3>
-<p>네 버전에서 빌드하고 검증한 최종 PR 브랜치, openfoam.com의 압력 솔버, 형제 솔버, 오류 경로, OpenFOAM 8이 v2212와 다른 까닭, 불안정했던 테스트, MPI rank 2개의 요청, v2012와 8의 12B 시험 묶음, <code>setup_12b.sh</code>, 3차원 케이스의 단면 이미지, 시점을 적지 않은 불안정 시험</p>
+<p>네 버전에서 빌드하고 검증한 최종 PR 브랜치, openfoam.com의 압력 솔버, 형제 솔버, 오류 경로, OpenFOAM 8이 v2212와 다른 까닭, 불안정했던 단위 테스트, MPI rank 2개의 요청, v2012와 8의 12B 시험 묶음, <code>setup_12b.sh</code>, 3차원 케이스의 단면 이미지, 시점을 적지 않은 불안정 시험</p>
 <p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-11-02-round2/README.md">2차 확인</a></p>
 </article>
 <article aria-labelledby="oct30">
@@ -92,8 +92,8 @@
 </article>
 <article aria-labelledby="oct28">
 <h3 id="oct28"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">10월 28일</a></h3>
-<p>요청 두 개 동시 진행, 3차원 단면, 불안정 감지 시험, 실행 중에 쓰는 원격 측정, 콜백에서 계산한 추세 레이블 (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/tests-2026-10-28">내려받기</a>)</p>
-<p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-inflight/README.md">요청 두 개 동시 진행</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-callback/README.md">콜백</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-3d/README.md">3차원 단면</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-instability/README.md">불안정 감지 시험</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-29-merged-check/README.md">합친 코드 실행</a></p>
+<p>요청 두 개 동시 진행, 3차원 단면, 불안정 시험, 실행 중에 쓰는 원격 측정, 콜백에서 계산한 추세 단어 (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/tests-2026-10-28">내려받기</a>)</p>
+<p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-inflight/README.md">요청 두 개 동시 진행</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-callback/README.md">콜백</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-3d/README.md">3차원 단면</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-28-instability/README.md">불안정 시험</a> · <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-10-29-merged-check/README.md">합친 코드 실행</a></p>
 </article>
 <article aria-labelledby="oct27">
 <h3 id="oct27"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></h3>

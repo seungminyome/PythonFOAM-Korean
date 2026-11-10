@@ -33,8 +33,8 @@ OpenFOAM이 도는 동안 Python이 유동을 이미지로 그리고, 이미지 
 '늘 같은 답'은 가장 많이 맞히는 답 하나를 모든 이미지에 내는 것입니다. 모델 넷은
 Gemma 4 12B, 26B-A4B, 31B와 Qwen3.5-35B-A3B입니다.
 
-정확한 수와 시험마다의 기준선은 [결과 페이지](https://seungminyome.github.io/PythonFOAM-Korean/)와
-아래 보고서에 있습니다. 모델의 답은 [근거 자료 폴더](docs/evidence/README.md)와 그 폴더가 링크한
+정확한 수와 기준선은 [결과 페이지](https://seungminyome.github.io/PythonFOAM-Korean/)와
+그 페이지에 링크한 보고서에 있습니다. 모델의 답은 [근거 자료 폴더](docs/evidence/README.md)와 그 폴더가 링크한
 릴리스에 있고, 폴더마다 해시 매니페스트가 있습니다.
 
 <img src="docs/evidence/2026-10-22-live-v2/suite/async-describe/llm_observation/step-000250/U.png" width="415" alt="t = 0.10125 s의 |U|, 표시 영역은 x 0에서 0.12 m까지, y 0에서 0.04 m까지: 계단 뒤에 늘어선 와류"> <img src="docs/evidence/2026-10-22-live-v2/suite/async-describe/llm_observation/step-000250/p.png" width="415" alt="같은 시점의 p: y의 약 20에서 30 % 사이에 있는 저압 와류 중심">
@@ -115,14 +115,17 @@ python3 llm_demo/runtime.py stop
   까닭, 3차원 단면 이미지, 시점을 적지 않은 불안정 시험.
 - [10월 30일](docs/results-20261030.md): OpenFOAM 버전, 원본 PODFoam과의 비교, 첫 잘못된 설정 시험.
 - [10월 28일](docs/results-20261028.md): 동시 요청 두 개, 3차원 단면, 불안정 시험.
+- 10월 13일부터 27일까지의 이전 보고서:
+  [결과 페이지](https://seungminyome.github.io/PythonFOAM-Korean/#reports).
 - [근거 자료 목록](docs/evidence/README.md) · [변경 기록](CHANGELOG.md).
 
 ## 코드 위치
 
-관찰 기능은 `Solver_Examples/PODFoam/`의 `Python*.H` 훅과 `llm_demo/`에 있습니다. 다른 예제는
-argonne-lcf/PythonFOAM과 같습니다. 영문 저장소의 브랜치 `pr/podfoam-fix`는 수정만 담고,
-`pr/podfoam-observer`는 훅과 관찰 기능을 더합니다. 두 브랜치 모두 원본 PODFoam의 버그를 고칩니다.
-원본 PODFoam에서는 SVD 구간마다 다음 스냅샷이 첫 스냅샷을 덮어썼습니다. 버그 수정이 무엇을 바꾸는지는
+관찰 기능은 `Solver_Examples/PODFoam/`의 `Python*.H` 훅과 `llm_demo/`에 있습니다. 영문 저장소의
+브랜치 `pr/podfoam-fix`는 수정만 담고, `pr/podfoam-observer`는 훅과 관찰 기능을 더합니다. 두 브랜치
+모두 원본 PODFoam의 버그를 고칩니다. 원본 PODFoam에서는 SVD 구간마다 다음 스냅샷이 첫 스냅샷을
+덮어썼습니다. 이 버그의 수정은 `PODFoam_Debug`, `APMOSFoam`, `AEFoam`에도 들어 있고, 다른 예제의 코드는
+argonne-lcf/PythonFOAM과 같습니다. 버그 수정이 무엇을 바꾸는지는
 [11월 2일 보고서](docs/results-20261102.md)에 있습니다. [HOOKS.md](Solver_Examples/PODFoam/HOOKS.md)는
 선택형 훅 둘인 `analysis_func`와 `mesh_func`를 설명합니다.
 [validation README](Solver_Examples/PODFoam/validation/README.md)는 연결 검증을 설명합니다.

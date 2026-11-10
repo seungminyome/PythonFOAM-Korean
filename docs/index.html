@@ -49,9 +49,9 @@
 <tr><td>실행 중인 솔버, 250단계마다 요청, 요청 96개</td><td>12B</td><td>가장 빠른 유동 65개; 가장 낮은 압력 89개</td><td>가장 빠른 유동 53; 가장 낮은 압력 65</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
 <tr><td>원기둥 주위 유동, 이미지 40장</td><td>12B, 26B-A4B, 31B</td><td>가장 빠른 유동 32장 이상; 가장 낮은 압력 31B 38장, 26B-A4B 26장, 12B 18장</td><td>가장 빠른 유동 8; 가장 낮은 압력 8</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
 <tr><td>3차원 케이스, 단면 이미지 72장</td><td>12B</td><td>가장 빠른 유동 60장; 가장 낮은 압력 71장</td><td>가장 빠른 유동 27; 가장 낮은 압력 29</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261102.md">11월 2일</a></td></tr>
-<tr><td>빨라지나 느려지나, 세 장짜리 시퀀스 45개</td><td>12B</td><td>최대 속도 32개; 가장 낮은 압력 28개</td><td>최대 속도 15; 가장 낮은 압력 20</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
+<tr><td>빨라지나 느려지나, 스냅샷 세 개짜리 시퀀스 45개</td><td>12B</td><td>최대 속도 32개; 가장 낮은 압력 28개</td><td>최대 속도 15; 가장 낮은 압력 20</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
 <tr><td>곧 터지나, 시퀀스 54개</td><td>모델 넷</td><td>30–33개</td><td>27; 최대 |U|의 증가를 보는 규칙 33; 인접 셀 사이 최대 차이의 증가를 보는 규칙 38</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">10월 28일</a></td></tr>
-<tr><td>설정이 잘못됐나, 첫 시험, 이미지 80장</td><td>모델 넷</td><td>31B 67장, 나머지 41–45장</td><td>40; 규칙 56</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261030.md">10월 30일</a></td></tr>
+<tr><td>설정이 잘못됐나, 첫 시험, 요청 80개</td><td>모델 넷</td><td>31B 67개, 나머지 41–45개</td><td>40; 규칙 56</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261030.md">10월 30일</a></td></tr>
 <tr><td>설정이 잘못됐나, 두 번째 시험, 실행 58개</td><td>31B</td><td>44개</td><td>29; 색 막대 숫자와 알려 준 설정으로 만든 회귀 45</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261103.md">11월 3일</a></td></tr>
 <tr><td>250단계마다 요청할 때의 비용</td><td>12B</td><td>요청 안 보낸 실행 대비: 계산 시간 +0.7&nbsp;%; 저장한 파일 2,016개 모두 같음</td><td>기준선 없음</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
 </tbody></table></div>
@@ -62,7 +62,7 @@
 <div class="note"><ul>
 <li>시험은 2차원 층류와 압출한 3차원 케이스 하나로 했습니다.</li>
 <li>채점한 것은 위치와 정해진 목록의 단어뿐이며, 모델의 설명 글은 채점하지 않았습니다.</li>
-<li>병렬 실행은 MPI rank 2개로 시험했습니다. 동시 요청은 최대 두 개까지 시험했습니다.</li>
+<li>PODFoam의 병렬 실행은 MPI rank 2개로 시험했습니다. 동시 요청은 최대 두 개까지 시험했습니다.</li>
 <li>잘못된 설정 시험마다 케이스는 하나였습니다. 두 번째 시험은 모델도 하나였습니다.</li>
 <li>모델이 댄 이유는 AI 에이전트 하나가 읽었고, 두 번째 판정자는 없습니다.</li>
 <li>다른 GPU에서는 답 문장이 바뀌었지만, 10&nbsp;% 안에 든 위치의 수는 같았습니다.</li>
@@ -70,7 +70,7 @@
 </section>
 
 <h2 id="reports">보고서</h2>
-<p class="small">보고서마다 실행 조건, 하드웨어, 코드 리비전, Slurm 작업을 적었습니다. 근거 자료 폴더마다 CI가 확인하는 해시 매니페스트가 있습니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료 목록</a>이 이 폴더들을 보여 줍니다.</p>
+<p class="small">보고서마다 실행 조건, 하드웨어, 코드 리비전, Slurm 작업이나 실행 폴더를 적었습니다. 근거 자료 폴더마다 CI가 확인하는 해시 매니페스트가 있습니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료 목록</a>이 이 폴더들을 보여 줍니다.</p>
 
 <article class="latest" aria-labelledby="nov03">
 <p class="tag">최신 보고서</p>

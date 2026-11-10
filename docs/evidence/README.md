@@ -29,6 +29,9 @@
 
 저장소에 넣지 않은 자료는 릴리스에 있습니다.
 
+- 영문 저장소의 [wrong-setup-2-2026-11-03](https://github.com/seungminyome/PythonFOAM/releases/tag/wrong-setup-2-2026-11-03):
+  잘못된 설정 시험 2입니다. 정답을 포함한 요청 1,044개, 작업 25107731의 원래 답 전부, 실행 케이스 60개가 들어 있습니다.
+
 - 영문 저장소의 [tests-2026-10-27](https://github.com/seungminyome/PythonFOAM/releases/tag/tests-2026-10-27):
   10월 27일의 압축 파일입니다. 이미지 작업 다섯 개, 새 시험 세트 두 개, 원기둥 계산, 시각 폴더를 뺀
   주기 실행, MPI와 POD 파일 실행, 불안정 유동 시도가 들어 있습니다.

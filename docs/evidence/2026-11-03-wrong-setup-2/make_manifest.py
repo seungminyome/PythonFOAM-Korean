@@ -93,8 +93,9 @@ def main(folder):
             "Sources are paths under /cluster/medbow/gscratch/syome/github_repos/ on MedicineBow, or 'written for this folder'.",
             'Files of kind gzip copy are gzip -9 -n copies of the named source; source_sha256 is the hash of the uncompressed bytes.',
             'Every byte-preserved file was compared with its source when this manifest was written.',
-            'test-set/truth.private.sha256 is the hash of the answer key, which stays on the cluster; the requests are '
-            'not in this folder (1,044 files of 178 to 233 KB, 225 MB in all), their hashes are in test-set/manifest.json.',
+            'test-set/truth.private.sha256 is the hash of the answer key; the answer key and the requests (1,044 files of '
+            '178 to 233 KB, 225 MB in all) are in the release wrong-setup-2-2026-11-03, and the request hashes are in '
+            'test-set/manifest.json.',
         ],
         'files': files,
     }

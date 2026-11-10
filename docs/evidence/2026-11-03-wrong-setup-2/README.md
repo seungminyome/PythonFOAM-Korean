@@ -172,8 +172,8 @@ div(phi,U)에 upwind)입니다. Δt는 5×10⁻⁶ s로 고정, t = 0.1 s부터 
 `build`가 [test-set/leak-check.json](test-set/leak-check.json)을 쓰고, `check`는 GPU 시간을 쓰기 전에
 돕니다. 요청 1,044개, 문제 없음. 이미지 데이터와 단계, 시각, `intended_setup` 항목을 빼면 한 세트의
 요청 본문 174개는 모두 같은 글입니다. 한 쌍의 두 실행은 알려 준 숫자가 같으므로, 요청 글만 보는 어떤 규칙도
-조건마다 정확히 58개 중 29개를 맞힙니다. 어느 요청에도 실행 이름은 없습니다. 정답은 클러스터에 있고 그
-해시는 [test-set/truth.private.sha256](test-set/truth.private.sha256)입니다. 프롬프트 토큰은 세트 여섯
+조건마다 정확히 58개 중 29개를 맞힙니다. 어느 요청에도 실행 이름은 없습니다. 정답은 영문 저장소의 [릴리스](https://github.com/seungminyome/PythonFOAM/releases/tag/wrong-setup-2-2026-11-03)에 있고, 그 해시는
+[test-set/truth.private.sha256](test-set/truth.private.sha256)입니다. 프롬프트 토큰은 세트 여섯
 개 모두에서 1,013\~1,049개였습니다.
 
 ## 이미지에 보이는 것
@@ -276,8 +276,8 @@ div(phi,U)에 upwind)입니다. Δt는 5×10⁻⁶ s로 고정, t = 0.1 s부터 
   설계. [flow-check.json](flow-check.json): 실행 58개의 솔버 점검. [baselines.json](baselines.json):
   기준선의 답. [contact-8000.png](contact-8000.png).
 - [pilot/](pilot/): 예비 실행 13개의 설계, 흐름 점검, 가시성 측정, 모아 보기 이미지.
-- [test-set/](test-set/): 요청마다 해시를 적은 요청 매니페스트, 누출 점검, 정답의 해시. 요청 자체는
-  파일 1,044개로 하나가 178\~233 KB, 모두 225 MB이며 클러스터에 있습니다.
+- [test-set/](test-set/): 요청마다 해시를 적은 요청 매니페스트, 누출 점검, 정답의 해시. 요청 자체는 파일 1,044개로 하나가 178\~233 KB, 모두 225 MB이며 영문 저장소의
+  [릴리스](https://github.com/seungminyome/PythonFOAM/releases/tag/wrong-setup-2-2026-11-03)에 있습니다.
 - [results/](results/): `run.json`, 서버 명령, `runtime/`(llama.cpp 버전, GPU, 모델 파일 해시, gzip
   사본의 서버 로그), 원래 답을 모두 담은 `metrics.jsonl` 여섯 개, 보고서, 이유.
 - [jobs/](jobs/): 작업 스크립트 셋과 빌드 작업의 출력. [job/sacct.txt](job/sacct.txt)와 gzip 사본의

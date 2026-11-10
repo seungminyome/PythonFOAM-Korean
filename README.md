@@ -11,9 +11,9 @@
 OpenFOAM이 도는 동안 Python이 유동을 이미지로 그리고, 같은 컴퓨터에서 도는 이미지 읽는
 모델에게 무엇이 보이는지 묻습니다. 이 저장소는 그런 모델이 솔버 이미지에서 무엇을 읽을 수
 있고 무엇을 읽지 못하는지 보여 줍니다.
-[PythonFOAM](https://github.com/argonne-lcf/PythonFOAM)의 PODFoam 예제 위에 만들었고, 모델은
-[llama.cpp](https://github.com/ggml-org/llama.cpp)로 돌리며, 모델이 한 말은 솔버로 돌아가지
-않습니다.
+[PythonFOAM](https://github.com/argonne-lcf/PythonFOAM)의 PODFoam 예제 위에 만들었습니다.
+모델은 [llama.cpp](https://github.com/ggml-org/llama.cpp)로 돌리며, 모델이 한 말은 솔버로
+돌아가지 않습니다.
 
 ## 알아낸 것
 
@@ -82,7 +82,7 @@ make test          # 테스트 177개, 2분쯤
 make evidence      # 매니페스트의 파일마다 해시가 맞는지
 ```
 
-OpenFOAM(v2012, v2106, v2212, 8)을 source하고 Python 3.10\~3.12가 있으면, CPU에서 작은
+OpenFOAM v2012, v2106, v2212, 8 중 하나를 source하고 Python 3.10\~3.12가 있으면, CPU에서 작은
 Gemma 4 E2B 모델로 케이스 다섯 개 묶음을 돌려 연결과 검증을 확인합니다. 내려받는 것은 모델,
 이미지 프로젝터, llama.cpp로 3.4 GB쯤이고 토큰은 필요 없습니다:
 
@@ -91,7 +91,7 @@ export PYTHON=${PYTHON:-$(command -v python3)}   # 또는 다른 Python의 경�
 export PATH=$(dirname "$PYTHON"):$PATH
 export LD_LIBRARY_PATH=$(dirname "$PYTHON")/../lib:$LD_LIBRARY_PATH   # 시스템 Python이 아니면
 cd Solver_Examples/PODFoam
-./validation/run.sh              # C++와 Python 연결을 확인; 그 실행이 묶음의 참조 실행
+./validation/run.sh              # C++와 Python 연결을 확인; 그 실행이 묶음의 기준 실행
 ./llm_demo/setup_runtime.sh      # Gemma 4 E2B Q4_0, 이미지 프로젝터, llama.cpp b11429
 python3 llm_demo/runtime.py start
 ./llm_demo/run_demo.sh           # PODFoam 빌드, 케이스 다섯 개 실행, 검증

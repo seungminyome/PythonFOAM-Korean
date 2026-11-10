@@ -8,10 +8,10 @@
 
 [결과 페이지](https://seungminyome.github.io/PythonFOAM-Korean/) · [최신 보고서](docs/results-20261103.md) · [실행 방법](Solver_Examples/PODFoam/llm_demo/README.md) · [GPU 노드](Solver_Examples/PODFoam/llm_demo/hpc/README.md) · [English](https://github.com/seungminyome/PythonFOAM)
 
-OpenFOAM이 도는 동안 Python이 유동을 이미지로 그리고, 같은 컴퓨터에서 도는 이미지 읽는
-모델에게 무엇이 보이는지 묻습니다. 이 포크는 이 관찰 기능을
+OpenFOAM이 도는 동안 Python이 유동을 이미지로 그리고, 이미지 읽는 모델에게 무엇이
+보이는지 묻습니다. 이 포크는 이 관찰 기능을
 [PythonFOAM](https://github.com/argonne-lcf/PythonFOAM)의 PODFoam 예제에 더하며, 코드는
-`Solver_Examples/PODFoam/`에 있습니다. 모델은 [llama.cpp](https://github.com/ggml-org/llama.cpp)로
+`Solver_Examples/PODFoam/`에 있습니다. 모델은 같은 컴퓨터에서 [llama.cpp](https://github.com/ggml-org/llama.cpp)로
 돌리며, 모델이 한 말은 솔버로 돌아가지 않습니다. 아래 시험은 그런 모델이 솔버 이미지에서
 무엇을 읽을 수 있고 무엇을 읽지 못하는지 보여 줍니다.
 
@@ -39,8 +39,8 @@ Gemma 4 12B, 26B-A4B, 31B와 Qwen3.5-35B-A3B입니다.
 
 <img src="docs/evidence/2026-10-22-live-v2/suite/async-describe/llm_observation/step-000250/U.png" width="415" alt="t = 0.10125 s의 |U|, 표시 영역은 x 0에서 0.12 m까지, y 0에서 0.04 m까지: 계단 뒤에 늘어선 와류"> <img src="docs/evidence/2026-10-22-live-v2/suite/async-describe/llm_observation/step-000250/p.png" width="415" alt="같은 시점의 p: y의 약 20에서 30 % 사이에 있는 저압 와류 중심">
 
-*모델이 보는 것: 발달한 후향 계단 유동의 250단계에서 실행 중인 솔버가 그려 Gemma 4 12B에
-보낸 |U|와 p입니다.*
+*모델이 보는 것: 발달한 후향 계단 유동에서 250단계의 |U|와 p입니다. 실행 중인 솔버가 이 이미지를
+그려 Gemma 4 12B에 보냈습니다.*
 
 모든 시험은 2차원 층류와 압출한 3차원 케이스 하나로 했으므로, 다른 유동에서는 다르게 읽힐 수
 있습니다. 채점한 것은 위치와 정해진 단어뿐이며, 자유로운 설명
@@ -49,7 +49,7 @@ Gemma 4 12B, 26B-A4B, 31B와 Qwen3.5-35B-A3B입니다.
 ## 동작 방식
 
 솔버는 시간 단계마다 Python 훅인 `python_module.py`의 `analysis_func`를 한 번 부릅니다. 아래 그림은
-비동기 모드, 곧 `LLM_ASYNC=1`에서 요청 하나가 처리되는 순서입니다. 위에서 아래로 시간 순서이고, 실선은 보내는 것,
+비동기 모드, 곧 `LLM_ASYNC=1`에서 요청 하나가 처리되는 순서입니다. 시간은 위에서 아래로 흐릅니다. 실선은 보내는 것,
 점선은 돌아오는 것입니다. 솔버는 3번 화살표에서 바로 다음 시간 단계를 계산하고, 모델의 답을 기다리지 않습니다.
 
 ```mermaid
@@ -69,11 +69,11 @@ sequenceDiagram
 ```
 
 작업자는 |U|와 p 이미지를 그려 llama.cpp의 HTTP 서버인 llama-server에 보냅니다. 답은 이미지의 바탕이 된 배열과 함께
-기록합니다. 기본값인 동기 모드에서는 솔버가 답을 기다리며, 기본 마감 시간은 120초입니다.
+기록합니다. 기본값인 동기 모드에서는 솔버가 답을 기다립니다. 마감 시간은 따로 정하지 않으면 120초입니다.
 
 요청은 한 번 또는 N단계마다 보냅니다. 답을 기다리는 요청은 한 번에 최대 8개입니다. MPI 실행은 필드를 주 rank로 모으고,
-3차원 격자는 평면 단면으로 그립니다. 요청 모드 `observe`, `describe`, `sequence`와 이미지 방식 둘,
-모든 설정은 [llm_demo/README.md](Solver_Examples/PODFoam/llm_demo/README.md)에 있습니다.
+3차원 격자는 평면 단면으로 그립니다. [llm_demo/README.md](Solver_Examples/PODFoam/llm_demo/README.md)는
+요청 모드 `observe`, `describe`, `sequence`, 이미지 방식 둘과 모든 설정을 설명합니다.
 
 ## 빠른 시작
 
@@ -121,11 +121,11 @@ python3 llm_demo/runtime.py stop
 
 관찰 기능은 `Solver_Examples/PODFoam/`의 `Python*.H` 훅과 `llm_demo/`에 있습니다. 다른 예제는
 argonne-lcf/PythonFOAM과 같습니다. 영문 저장소의 브랜치 `pr/podfoam-fix`는 수정만 담고,
-`pr/podfoam-observer`는 훅과 관찰 기능을 더합니다. 두 브랜치 모두 원본 PODFoam에서 SVD 구간의
-첫 스냅샷을 다음 스냅샷이 덮어쓰던 버그를 고칩니다. 그 수정이 무엇을 바꾸는지는
-[11월 2일 보고서](docs/results-20261102.md)에 있습니다. 선택형 훅 둘인 `analysis_func`와 `mesh_func`는
-[HOOKS.md](Solver_Examples/PODFoam/HOOKS.md)가, 연결 검증은
-[validation README](Solver_Examples/PODFoam/validation/README.md)가 설명합니다.
+`pr/podfoam-observer`는 훅과 관찰 기능을 더합니다. 두 브랜치 모두 원본 PODFoam의 버그를 고칩니다.
+원본 PODFoam에서는 SVD 구간마다 다음 스냅샷이 첫 스냅샷을 덮어썼습니다. 버그 수정이 무엇을 바꾸는지는
+[11월 2일 보고서](docs/results-20261102.md)에 있습니다. [HOOKS.md](Solver_Examples/PODFoam/HOOKS.md)는
+선택형 훅 둘인 `analysis_func`와 `mesh_func`를 설명합니다.
+[validation README](Solver_Examples/PODFoam/validation/README.md)는 연결 검증을 설명합니다.
 
 ## 인용
 

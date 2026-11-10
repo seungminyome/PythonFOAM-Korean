@@ -13,7 +13,7 @@
 <header>
 <p class="eyebrow">PythonFOAM 포크 · PODFoam · llama.cpp</p>
 <h1>비전-언어 모델로<br>OpenFOAM 계산 관찰하기</h1>
-<p>PythonFOAM의 PODFoam 예제에 선택형으로 붙인 관찰 기능입니다. OpenFOAM이 도는 동안 Python이 |U|와 p를 이미지로 그리고, 같은 노드에서 도는 이미지 읽는 모델에게 무엇이 보이는지 묻습니다. 답은 기록만 하고, 솔버로 돌려보내지 않습니다. 실행 방법은 <a href="https://github.com/seungminyome/PythonFOAM-Korean#readme">README</a>에 있습니다.</p>
+<p>PythonFOAM의 PODFoam 예제에 선택형으로 붙인 관찰 기능입니다. OpenFOAM이 도는 동안 Python이 |U|와 p를 이미지로 그리고, 이미지 읽는 모델에게 무엇이 보이는지 묻습니다. 이 모델은 같은 노드에서 실행됩니다. 답은 기록만 하고, 솔버로 돌려보내지 않습니다. 실행 방법은 <a href="https://github.com/seungminyome/PythonFOAM-Korean#readme">README</a>에 있습니다.</p>
 <div class="links"><a class="primary" href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261103.md">최신 보고서 · 11월 3일</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료</a><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/progress.ko.md">작업 기록</a></div>
 </header>
 
@@ -21,7 +21,7 @@
 <figure>
 <img src="evidence/2026-10-22-live-v2/suite/async-describe/llm_observation/step-000250/U.png" width="1024" height="576" alt="t = 0.10125 s의 |U|, 표시 영역 x 0–0.12 m, y 0–0.04 m: 계단 뒤에 늘어선 와류">
 <img src="evidence/2026-10-22-live-v2/suite/async-describe/llm_observation/step-000250/p.png" width="1024" height="576" alt="같은 시점의 p: y 약 20–30 %에 있는 저압 와류 중심">
-<figcaption>모델이 보는 것: 발달한 후향 계단 유동의 250단계에서 실행 중인 솔버가 그려 Google의 Gemma 4 12B에 보낸 |U|와 p입니다.</figcaption>
+<figcaption>모델이 보는 것: 발달한 후향 계단 유동에서 250단계의 |U|와 p입니다. 실행 중인 솔버가 이 이미지를 그려 Google의 Gemma 4 12B에 보냈습니다.</figcaption>
 </figure>
 </section>
 
@@ -37,12 +37,12 @@
 <tr><td>이 계산은 설정이 잘못됐나?</td><td>첫 시험에서 Gemma 4 31B가 간단한 규칙을 앞선 것은 실행 두 개 때문이었습니다. 실행 29쌍으로 더 엄격하게 한 두 번째 시험에서는 색 막대 숫자와 알려 준 설정으로 만든 회귀보다 나은 점이 보이지 않습니다. 31B는 잘못된 실행을 더 많이 잡지만 정상 실행도 잘못됐다고 합니다.</td><td>우위 보이지 않음</td></tr>
 <tr><td>큰 모델이 더 나은가?</td><td>작은 Gemma 4 E2B는 이 이미지를 제대로 읽지 못합니다. 위치는 12B로 충분합니다. 31B는 작은 압력 점을 더 잘 보지만, 설정 판단에서는 간단한 규칙이나 회귀보다 나은 점이 보이지 않습니다.</td><td>부분적으로</td></tr>
 </tbody></table></div>
-<p>영문 저장소의 브랜치 <code>pr/podfoam-fix</code>와 <code>pr/podfoam-observer</code>는 OpenFOAM v2012, v2106, v2212, 8에서 빌드되고 연결 검증을 통과합니다. 두 브랜치는 PythonFOAM에 보낼 PR용으로 준비한 것입니다. 연결 검증은 PODFoam을 10단계 돌려 스냅샷과 POD 모드가 C++와 Python 사이를 오가는 과정을 확인합니다. 두 브랜치는 원본 PODFoam에서 SVD 구간의 첫 스냅샷을 다음 스냅샷이 덮어쓰던 버그도 고칩니다.</p>
+<p>영문 저장소의 브랜치 <code>pr/podfoam-fix</code>와 <code>pr/podfoam-observer</code>는 OpenFOAM v2012, v2106, v2212, 8에서 빌드되고 연결 검증을 통과합니다. 두 브랜치는 PythonFOAM에 보낼 PR용으로 준비한 것입니다. 연결 검증은 PODFoam을 10단계 돌려 스냅샷과 POD 모드가 C++와 Python 사이를 오가는 과정을 확인합니다. 두 브랜치는 원본 PODFoam의 버그도 고칩니다. 원본 PODFoam에서는 SVD 구간마다 다음 스냅샷이 첫 스냅샷을 덮어썼습니다.</p>
 </section>
 
 <section aria-labelledby="numbers">
 <h2 id="numbers">주요 수치</h2>
-<p>답한 자리가 정답 자리에서 표시 영역의 10&nbsp;% 안에 있으면 맞힌 것입니다. '늘 같은 답'은 가장 많이 맞히는 답 하나를 모든 이미지에 내는 것입니다. 필드 값으로 만든 간단한 규칙이나 회귀가 어느 한 모델보다 나았던 시험에는 그 규칙이나 회귀도 적었습니다. 모델 넷은 Gemma 4 12B, 26B-A4B, 31B와 Qwen3.5-35B-A3B입니다. 자세한 내용은 보고서마다 있습니다.</p>
+<p>답한 자리가 정답 자리에서 표시 영역의 10&nbsp;% 안에 있으면 맞힌 것입니다. '늘 같은 답'은 가장 많이 맞히는 답 하나를 모든 이미지에 내는 것입니다. 필드 값으로 만든 간단한 규칙이나 회귀가 어느 한 모델보다 나았으면, 표에 그 규칙이나 회귀도 적었습니다. 모델 넷은 Gemma 4 12B, 26B-A4B, 31B와 Qwen3.5-35B-A3B입니다. 자세한 내용은 보고서마다 있습니다.</p>
 <div class="table"><table style="min-width:760px"><caption>시험별 주요 수치</caption><thead><tr><th scope="col">시험</th><th scope="col">모델</th><th scope="col">모델이 맞힌 수</th><th scope="col">늘 같은 답, 규칙 또는 회귀</th><th scope="col">보고서</th></tr></thead><tbody>
 <tr><td>가장 빠른 유동과 가장 낮은 압력, 발달한 유동의 이미지 140장</td><td>모델 넷</td><td>가장 빠른 유동 106–121장; 가장 낮은 압력 130–139장</td><td>가장 빠른 유동 16; 가장 낮은 압력 17</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">10월 22일</a></td></tr>
 <tr><td>같은 시험을 시작 직후 이미지 48장에서, 새 방식과 솔버의 원래 방식</td><td>모델 넷</td><td>45–48장 대 2–17장</td><td>7–10</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">10월 22일</a></td></tr>
@@ -70,7 +70,7 @@
 </section>
 
 <h2 id="reports">보고서</h2>
-<p class="small">보고서마다 실행 조건, 하드웨어, 코드 리비전, Slurm 작업을 적었습니다. 근거 자료 폴더마다 CI가 확인하는 해시 매니페스트가 있고, <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료 목록</a>에 모여 있습니다.</p>
+<p class="small">보고서마다 실행 조건, 하드웨어, 코드 리비전, Slurm 작업을 적었습니다. 근거 자료 폴더마다 CI가 확인하는 해시 매니페스트가 있습니다. <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/README.md">근거 자료 목록</a>이 이 폴더들을 보여 줍니다.</p>
 
 <article class="latest" aria-labelledby="nov03">
 <p class="tag">최신 보고서</p>
@@ -82,7 +82,7 @@
 <div class="cards">
 <article aria-labelledby="nov02">
 <h3 id="nov02"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261102.md">11월 2일</a></h3>
-<p>네 버전에서 빌드하고 검증한 최종 PR 브랜치, openfoam.com의 압력 솔버, 형제 솔버, 오류 경로, OpenFOAM 8이 v2212와 다른 까닭, 불안정했던 단위 테스트, MPI rank 2개의 요청, v2012와 8의 12B 시험 묶음, <code>setup_12b.sh</code>, 3차원 케이스의 단면 이미지, 시점을 적지 않은 불안정 시험</p>
+<p>네 버전에서 빌드하고 검증한 최종 PR 브랜치, openfoam.com의 압력 솔버, 형제 솔버, 오류 경로, OpenFOAM 8이 v2212와 다른 까닭, 불안정했던 단위 테스트. 모델 실행: MPI rank 2개의 요청, v2012와 8의 12B 시험 묶음, <code>setup_12b.sh</code>, 3차원 케이스의 단면 이미지, 시점을 적지 않은 불안정 시험</p>
 <p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-11-02-round2/README.md">2차 확인</a></p>
 </article>
 <article aria-labelledby="oct30">

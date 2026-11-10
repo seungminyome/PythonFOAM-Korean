@@ -27,23 +27,23 @@
 
 <section aria-labelledby="results">
 <h2 id="results">알아낸 것</h2>
-<p>모델은 따로 적지 않으면 Gemma 4 12B입니다. 모델은 위의 이미지 두 장, 또는 그런 이미지의 짧은 시퀀스와 질문 하나를 받습니다.</p>
+<p>모델은 따로 적지 않으면 Gemma 4 12B입니다. 모델은 질문과 함께 위의 이미지 두 장을 받거나, 그런 이미지의 짧은 시퀀스를 받습니다.</p>
 <div class="table"><table style="min-width:640px"><caption>질문별 판정</caption><thead><tr><th scope="col">질문</th><th scope="col">어떻게 됐나</th><th scope="col">판정</th></tr></thead><tbody>
 <tr><td>어디가 가장 빠르고, 어디가 압력이 가장 낮은가?</td><td>대부분의 이미지에서 맞는 자리를 짚습니다. 늘 같은 답보다 더 자주 맞힙니다.</td><td>됨</td></tr>
 <tr><td>이미지 방식이 중요한가?</td><td>그렇습니다. 이미지 한 장에 필드 하나를 그리고 축을 백분율로 적으면 모델 넷이 48장 중 45–48장에서 가장 빠른 유동과 가장 낮은 압력을 둘 다 맞혔습니다. 솔버의 원래 두 패널 이미지로는 각각 2–17장이었습니다.</td><td>매우 중요</td></tr>
-<tr><td>솔버가 도는 동안에도 되나?</td><td>됩니다. 250단계마다 요청하면 계산 시간이 모델에 요청을 보내지 않은 같은 실행보다 1&nbsp;% 미만 늘어납니다. 솔버는 두 실행에서 똑같은 파일을 썼습니다.</td><td>됨</td></tr>
+<tr><td>솔버가 도는 동안에도 되나?</td><td>됩니다. 시험에서는 250단계마다 요청을 보냈습니다. 이 요청으로 계산 시간이 모델에 요청을 보내지 않은 같은 실행보다 1&nbsp;% 미만 늘어납니다. 솔버는 두 실행에서 똑같은 파일을 썼습니다.</td><td>됨</td></tr>
 <tr><td>스냅샷 사이에 유동이 빨라지나, 느려지나?</td><td>최대 속도 변화가 2&nbsp;% 이상이면 읽습니다. 더 작은 변화는 대부분 잘못 읽습니다.</td><td>뚜렷한 변화만 됨</td></tr>
 <tr><td>이 계산이 곧 터지나?</td><td>경고는 길어야 터지기 다섯 단계 전에 나옵니다. 필드 값으로 만든 간단한 규칙이 그만큼 또는 그보다 잘 맞힙니다.</td><td>조기 경고 없음</td></tr>
-<tr><td>이 계산은 설정이 잘못됐나?</td><td>첫 시험에서 Gemma 4 31B가 간단한 규칙을 앞선 것은 실행 두 개 때문이었습니다. 실행 29쌍으로 더 엄격하게 한 두 번째 시험에서는 간단한 규칙보다 나은 점이 보이지 않습니다. 31B는 잘못된 실행을 더 많이 잡지만 정상 실행도 잘못됐다고 합니다.</td><td>우위 보이지 않음</td></tr>
-<tr><td>큰 모델이 더 나은가?</td><td>작은 Gemma 4 E2B는 이 이미지를 제대로 읽지 못합니다. 위치는 12B로 충분합니다. 31B는 작은 압력 점을 더 잘 보지만, 설정 판단은 간단한 규칙보다 낫지 않습니다.</td><td>부분적으로</td></tr>
+<tr><td>이 계산은 설정이 잘못됐나?</td><td>첫 시험에서 Gemma 4 31B가 간단한 규칙을 앞선 것은 실행 두 개 때문이었습니다. 실행 29쌍으로 더 엄격하게 한 두 번째 시험에서는 색 막대 숫자와 알려 준 설정으로 만든 회귀보다 나은 점이 보이지 않습니다. 31B는 잘못된 실행을 더 많이 잡지만 정상 실행도 잘못됐다고 합니다.</td><td>우위 보이지 않음</td></tr>
+<tr><td>큰 모델이 더 나은가?</td><td>작은 Gemma 4 E2B는 이 이미지를 제대로 읽지 못합니다. 위치는 12B로 충분합니다. 31B는 작은 압력 점을 더 잘 보지만, 설정 판단에서는 간단한 규칙이나 회귀보다 나은 점이 보이지 않습니다.</td><td>부분적으로</td></tr>
 </tbody></table></div>
-<p>영문 저장소의 브랜치 <code>pr/podfoam-fix</code>와 <code>pr/podfoam-observer</code>는 PythonFOAM에 보낼 PR용으로 준비한 브랜치입니다. 두 브랜치는 OpenFOAM v2012, v2106, v2212, 8에서 빌드되고 연결 검증을 통과합니다. 연결 검증은 PODFoam을 10단계 돌려 스냅샷과 POD 모드가 C++와 Python 사이를 오가는 과정을 확인합니다. 두 브랜치는 원본 PODFoam에서 SVD 구간의 첫 스냅샷을 다음 스냅샷이 덮어쓰던 버그도 고칩니다.</p>
+<p>영문 저장소의 브랜치 <code>pr/podfoam-fix</code>와 <code>pr/podfoam-observer</code>는 OpenFOAM v2012, v2106, v2212, 8에서 빌드되고 연결 검증을 통과합니다. 두 브랜치는 PythonFOAM에 보낼 PR용으로 준비한 것입니다. 연결 검증은 PODFoam을 10단계 돌려 스냅샷과 POD 모드가 C++와 Python 사이를 오가는 과정을 확인합니다. 두 브랜치는 원본 PODFoam에서 SVD 구간의 첫 스냅샷을 다음 스냅샷이 덮어쓰던 버그도 고칩니다.</p>
 </section>
 
 <section aria-labelledby="numbers">
 <h2 id="numbers">주요 수치</h2>
-<p>답한 자리가 정답 자리에서 표시 영역의 10&nbsp;% 안에 있으면 맞힌 것입니다. '늘 같은 답'은 가장 많이 맞히는 답 하나를 모든 이미지에 내는 것이고, 필드 값으로 만든 간단한 규칙이 더 나았던 시험은 그 규칙도 적었습니다. 모델 넷은 Gemma 4 12B, 26B-A4B, 31B와 Qwen3.5-35B-A3B입니다. 자세한 내용은 보고서마다 있습니다.</p>
-<div class="table"><table style="min-width:760px"><caption>시험별 주요 수치</caption><thead><tr><th scope="col">시험</th><th scope="col">모델</th><th scope="col">모델이 맞힌 수</th><th scope="col">늘 같은 답 또는 규칙</th><th scope="col">보고서</th></tr></thead><tbody>
+<p>답한 자리가 정답 자리에서 표시 영역의 10&nbsp;% 안에 있으면 맞힌 것입니다. '늘 같은 답'은 가장 많이 맞히는 답 하나를 모든 이미지에 내는 것입니다. 필드 값으로 만든 간단한 규칙이나 회귀가 어느 한 모델보다 나았던 시험에는 그 규칙이나 회귀도 적었습니다. 모델 넷은 Gemma 4 12B, 26B-A4B, 31B와 Qwen3.5-35B-A3B입니다. 자세한 내용은 보고서마다 있습니다.</p>
+<div class="table"><table style="min-width:760px"><caption>시험별 주요 수치</caption><thead><tr><th scope="col">시험</th><th scope="col">모델</th><th scope="col">모델이 맞힌 수</th><th scope="col">늘 같은 답, 규칙 또는 회귀</th><th scope="col">보고서</th></tr></thead><tbody>
 <tr><td>가장 빠른 유동과 가장 낮은 압력, 발달한 유동의 이미지 140장</td><td>모델 넷</td><td>가장 빠른 유동 106–121장; 가장 낮은 압력 130–139장</td><td>가장 빠른 유동 16; 가장 낮은 압력 17</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">10월 22일</a></td></tr>
 <tr><td>같은 시험을 시작 직후 이미지 48장에서, 새 방식과 솔버의 원래 방식</td><td>모델 넷</td><td>45–48장 대 2–17장</td><td>7–10</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261022-live.md">10월 22일</a></td></tr>
 <tr><td>실행 중인 솔버, 250단계마다 요청, 요청 96개</td><td>12B</td><td>가장 빠른 유동 65개; 가장 낮은 압력 89개</td><td>가장 빠른 유동 53; 가장 낮은 압력 65</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
@@ -52,7 +52,7 @@
 <tr><td>빨라지나 느려지나, 세 장짜리 시퀀스 45개</td><td>12B</td><td>최대 속도 32개; 가장 낮은 압력 28개</td><td>최대 속도 15; 가장 낮은 압력 20</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
 <tr><td>곧 터지나, 시퀀스 54개</td><td>모델 넷</td><td>30–33개</td><td>27; 최대 |U|의 증가를 보는 규칙 33; 인접 셀 사이 최대 차이의 증가를 보는 규칙 38</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261028.md">10월 28일</a></td></tr>
 <tr><td>설정이 잘못됐나, 첫 시험, 이미지 80장</td><td>모델 넷</td><td>31B 67장, 나머지 41–45장</td><td>40; 규칙 56</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261030.md">10월 30일</a></td></tr>
-<tr><td>설정이 잘못됐나, 두 번째 시험, 실행 58개</td><td>31B</td><td>44개</td><td>29; 규칙 45</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261103.md">11월 3일</a></td></tr>
+<tr><td>설정이 잘못됐나, 두 번째 시험, 실행 58개</td><td>31B</td><td>44개</td><td>29; 색 막대 숫자와 알려 준 설정으로 만든 회귀 45</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261103.md">11월 3일</a></td></tr>
 <tr><td>250단계마다 요청할 때의 비용</td><td>12B</td><td>요청 안 보낸 실행 대비: 계산 시간 +0.7&nbsp;%; 저장한 파일 2,016개 모두 같음</td><td>기준선 없음</td><td><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261027.md">10월 27일</a></td></tr>
 </tbody></table></div>
 </section>
@@ -62,8 +62,8 @@
 <div class="note"><ul>
 <li>시험은 2차원 층류와 압출한 3차원 케이스 하나로 했습니다.</li>
 <li>채점한 것은 위치와 정해진 목록의 단어뿐이며, 모델의 설명 글은 채점하지 않았습니다.</li>
-<li>병렬 실행은 MPI rank 2개, 동시 요청은 최대 두 개까지 시험했습니다.</li>
-<li>두 잘못된 설정 시험은 각각 케이스 하나로 했고, 두 번째 시험은 모델 하나로 했습니다.</li>
+<li>병렬 실행은 MPI rank 2개로 시험했습니다. 동시 요청은 최대 두 개까지 시험했습니다.</li>
+<li>잘못된 설정 시험마다 케이스는 하나였습니다. 두 번째 시험은 모델도 하나였습니다.</li>
 <li>모델이 댄 이유는 AI 에이전트 하나가 읽었고, 두 번째 판정자는 없습니다.</li>
 <li>다른 GPU에서는 답 문장이 바뀌었지만, 10&nbsp;% 안에 든 위치의 수는 같았습니다.</li>
 </ul></div>
@@ -75,7 +75,7 @@
 <article class="latest" aria-labelledby="nov03">
 <p class="tag">최신 보고서</p>
 <h3 id="nov03"><a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/results-20261103.md">11월 3일</a></h3>
-<p>잘못된 설정 시험 2: 실행 29쌍, 요청 전에 고정한 계획, 같은 이미지를 보는 기준선. 모델이 규칙보다 낫다는 것은 보이지 않음 (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/wrong-setup-2-2026-11-03">내려받기</a>)</p>
+<p>잘못된 설정 시험 2: 실행 29쌍, 요청 전에 고정한 계획, 같은 이미지를 보는 기준선. 모델이 기준선보다 낫다는 것은 보이지 않음 (<a href="https://github.com/seungminyome/PythonFOAM/releases/tag/wrong-setup-2-2026-11-03">내려받기</a>)</p>
 <p class="small">근거 자료: <a href="https://github.com/seungminyome/PythonFOAM-Korean/blob/main/docs/evidence/2026-11-03-wrong-setup-2/README.md">잘못된 설정 시험 2</a></p>
 </article>
 

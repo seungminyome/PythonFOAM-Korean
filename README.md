@@ -45,27 +45,32 @@ OpenFOAM이 도는 동안 Python이 유동을 이미지로 그리고, 같은 컴
 
 ## 동작 방식
 
-솔버는 시간 단계마다 Python 훅을 한 번 부릅니다. 요청 단계에서 훅은 작업자를 fork하고,
-작업자는 이미지를 그려 llama.cpp의 HTTP 서버인 llama-server에 보냅니다. 솔버는 계속 계산하고,
-답은 나중 단계에서 읽어 바탕이 된 배열과 함께 기록합니다.
+솔버는 시간 단계마다 Python 훅인 `python_module.py`의 `analysis_func`를 한 번 부릅니다. 아래 그림은
+비동기 모드, 곧 `LLM_ASYNC=1`에서 요청 하나가 처리되는 순서입니다. 위에서 아래로 시간 순서이고, 실선은 보내는 것,
+점선은 돌아오는 것입니다. 솔버는 3번에서 바로 다음 시간 단계를 계산하고, 모델의 답을 기다리지 않습니다.
 
 ```mermaid
+%%{init: {"sequence": {"mirrorActors": false}}}%%
 sequenceDiagram
-    participant S as PODFoam (C++)
-    participant P as python_module.py
-    participant W as 작업자
-    participant L as llama-server
-    S->>P: 요청 단계에서 analysis_func(state)
-    P->>W: fork
-    P-->>S: 반환, 솔버는 계속 계산
+    autonumber
+    participant S as 솔버 (PODFoam, C++)
+    participant P as Python 훅
+    participant W as 작업자 (fork로 만든 사본)
+    participant L as 모델 서버 (llama-server)
+    S->>P: 요청 단계의 상태
+    P->>W: 작업자를 fork
+    P-->>S: 바로 반환, 솔버는 계속 계산
     W->>L: 이미지와 요청
     L-->>W: 답
     W-->>P: 답, 나중 단계에서 읽음
 ```
 
-요청은 동기나 비동기로, 한 번 또는 N단계마다 보내며 답을 기다리는 요청은 한 번에 최대 8개입니다. MPI
-실행은 필드를 주 rank로 모으고, 3차원 격자는 평면 단면으로 그립니다. 요청 모드 셋, 이미지 방식
-둘, 모든 설정은 [llm_demo/README.md](Solver_Examples/PODFoam/llm_demo/README.md)에 있습니다.
+작업자는 |U|와 p 이미지를 그려 llama.cpp의 HTTP 서버인 llama-server에 보냅니다. 답은 이미지의 바탕이 된 배열과 함께
+기록합니다. 기본값인 동기 모드에서는 솔버가 답을 기다리며, 기본 마감 시간은 120초입니다.
+
+요청은 한 번 또는 N단계마다 보내며, 답을 기다리는 요청은 한 번에 최대 8개입니다. MPI 실행은 필드를 주 rank로 모으고,
+3차원 격자는 평면 단면으로 그립니다. 요청 모드 셋, 이미지 방식 둘, 모든 설정은
+[llm_demo/README.md](Solver_Examples/PODFoam/llm_demo/README.md)에 있습니다.
 
 ## 빠른 시작
 

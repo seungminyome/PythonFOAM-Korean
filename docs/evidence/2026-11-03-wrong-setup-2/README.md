@@ -6,7 +6,7 @@ pimpleFoam 실행 29쌍입니다. 쌍마다 무작위로 뽑은 기본 설정 �
 바꿔 돌린 잘못된 실행입니다. 실행 하나가 표본 하나입니다. 영문 [계획](PLAN.md), 채점, 기준선, 요청 세트의 매니페스트는 모델에 요청을 보내기 전에 영문 저장소의
 `97c3c41`과 `91544e6`에 커밋했습니다. Gemma 4 31B, QAT Q4_0가
 요청 1,044개에 답했습니다. 조건은 둘입니다. 메모에 의도한 입구 속도와 점성을 적은 쪽과 적지 않은
-쪽입니다. 조건마다 온도 0 한 번, 온도 0.7을 시드 둘로 돌려 실행마다 상태 셋에 적용했습니다. t0는 온도 0,
+쪽입니다. 조건마다 모델의 샘플링 온도 0으로 한 번, 0.7로 시드 둘로 돌려 실행마다 상태 셋에 적용했습니다. t0는 온도 0,
 t07a와 t07b는 온도 0.7에 시드 a와 b입니다. report.md가 labels라고 부르는 색 막대 숫자 기준선은 색 막대 숫자, 곧 두 이미지의 색 막대 양 끝에
 적힌 숫자 넷으로 만든 입력 다섯 개의 로지스틱 회귀입니다. |U|의 숫자 둘은 알려 준 속도로, p의 숫자 둘은 알려 준 속도의 제곱으로 나누고, 알려 준
 점성은 로그값을 쓰며, 한 쌍씩 빼고 맞춥니다.
@@ -151,7 +151,7 @@ div(phi,U)에 upwind)입니다. Δt는 5×10⁻⁶ s로 고정, t = 0.1 s부터 
   viscosity are not given. Judge whether the pictures are consistent with a run of this case set up as
   described." 나머지 프롬프트는 두 조건에서 같습니다. 답으로
   `reason`은 300자 미만, `assessment`는 `consistent`, `inconsistent`, `cannot_tell` 중 하나, `cause`는 `none`,
-  `inlet_speed`, `viscosity`, `walls`, `inlet_profile`, `inlet_direction`, `start_state`, `other`)를
+  `inlet_speed`, `viscosity`, `walls`, `inlet_profile`, `inlet_direction`, `start_state`, `other`를
   요구합니다. 알려 준 조건에서는 메모에 기본 설정의 입구 속도와 점성을 담은 `intended_setup`이 있고,
   알려 주지 않은 조건의 메모에는 그 항목이 없고, 할 일 줄도 "의도한 설정"이 아니라 "설명한 케이스"와
   맞는지 묻습니다. 한 쌍의 두 실행은 같은 글을 받습니다.

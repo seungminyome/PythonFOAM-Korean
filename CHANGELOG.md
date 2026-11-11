@@ -11,6 +11,15 @@
   빌드했습니다. 원본에서는 모든 스냅샷 행렬의 첫 두 열이 같습니다. 브랜치에서는 다르고, 저장된 U와 p는
   원본과 바이트까지 같습니다. 근거 자료
   [2026-11-11-snapshot-copy](docs/evidence/2026-11-11-snapshot-copy/README.md).
+- 영문 저장소의 `pr/podfoam-fix-after-copy`(`c313cc7`)와 `pr/podfoam-observer-after-copy`(`5947689`)는 큰 브랜치
+  둘을 작은 브랜치 위에 다시 만든 것입니다. 두 브랜치의 트리는 `pr/podfoam-fix`(`473c802`),
+  `pr/podfoam-observer`(`9e278aa`)의 트리와 같습니다.
+- `test_callback.py`는 기록 쓰기가 0.2초 예산을 넘겨 기록을 남기지 못했으면 그 테스트를 건너뜁니다. CI 실행
+  41번 중 한 번이 여기서 실패했습니다. 영문 저장소에서는 `pr/podfoam-observer`의 커밋 `9e278aa`이고 `main`이
+  이를 병합했습니다.
+- argonne-lcf/PythonFOAM의 다른 예제 가운데 Python에 C++ 버퍼의 뷰를 넘기는 것(PINNFoam, linalgFoam,
+  PoissonFOAM, PoissonFOAM_Dynamic, Dealii_PINN)은 코드를 읽어서만 확인했고 실행하지 않았습니다. 제공된 Python
+  함수 가운데 그 뷰를 들고 있는 것이 없으므로 PODFoam의 버그는 나타나지 않습니다.
 
 ## 2026-11-10, 잘못된 설정 시험 2의 내려받기, README 그림, 문장과 사실 점검
 

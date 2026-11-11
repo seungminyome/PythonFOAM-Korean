@@ -1,0 +1,132 @@
+{
+ "solver": "AEFoam",
+ "version": "v2212",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "builds": {
+  "upstream": true,
+  "ported": true
+ },
+ "runs": {
+  "recording": {
+   "exit": "139",
+   "steps": 22,
+   "snapshot_files": [
+    "snapshots-1-rank0.npz"
+   ],
+   "python_tracebacks": 0,
+   "python_print_lines": 19,
+   "last_log_lines": [
+    "time step continuity errors : sum local = 1.67462812656e-14, global = 1.79042160966e-15, cumulative = -1.24382904379e-13",
+    "GAMG:  Solving for p, Initial residual = 0.0127404439778, Final residual = 5.5416688934e-07, No Iterations 5",
+    "GAMG:  Solving for p, Initial residual = 0.0126337554258, Final residual = 3.92622232061e-07, No Iterations 5",
+    "GAMG:  Solving for p, Initial residual = 0.012558145214, Final residual = 9.84018423483e-07, No Iterations 4",
+    "time step continuity errors : sum local = 1.68762855035e-14, global = -2.31599205102e-16, cumulative = -1.24614503584e-13"
+   ],
+   "matrices": {
+    "snapshots-1-rank0.npz:s": {
+     "shape": [
+      20540,
+      19
+     ],
+     "col0_equals_col1": true,
+     "col0_minus_col1_max": 0.0
+    }
+   },
+   "n_matrices": 1,
+   "n_col0_equals_col1": 1
+  },
+  "copy": {
+   "exit": "139",
+   "steps": 22,
+   "snapshot_files": [
+    "snapshots-1-rank0.npz"
+   ],
+   "python_tracebacks": 0,
+   "python_print_lines": 19,
+   "last_log_lines": [
+    "time step continuity errors : sum local = 1.67462812656e-14, global = 1.79042160966e-15, cumulative = -1.24382904379e-13",
+    "GAMG:  Solving for p, Initial residual = 0.0127404439778, Final residual = 5.5416688934e-07, No Iterations 5",
+    "GAMG:  Solving for p, Initial residual = 0.0126337554258, Final residual = 3.92622232061e-07, No Iterations 5",
+    "GAMG:  Solving for p, Initial residual = 0.012558145214, Final residual = 9.84018423483e-07, No Iterations 4",
+    "time step continuity errors : sum local = 1.68762855035e-14, global = -2.31599205102e-16, cumulative = -1.24614503584e-13"
+   ],
+   "matrices": {
+    "snapshots-1-rank0.npz:s": {
+     "shape": [
+      20540,
+      19
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 4.291772731410283
+    }
+   },
+   "n_matrices": 1,
+   "n_col0_equals_col1": 0
+  },
+  "ported": {
+   "exit": "139",
+   "steps": 22,
+   "snapshot_files": [
+    "snapshots-1-rank0.npz"
+   ],
+   "python_tracebacks": 0,
+   "python_print_lines": 19,
+   "last_log_lines": [
+    "time step continuity errors : sum local = 1.67462812656e-14, global = 1.79042160966e-15, cumulative = -1.24382904379e-13",
+    "GAMG:  Solving for p, Initial residual = 0.0127404439778, Final residual = 5.5416688934e-07, No Iterations 5",
+    "GAMG:  Solving for p, Initial residual = 0.0126337554258, Final residual = 3.92622232061e-07, No Iterations 5",
+    "GAMG:  Solving for p, Initial residual = 0.012558145214, Final residual = 9.84018423483e-07, No Iterations 4",
+    "time step continuity errors : sum local = 1.68762855035e-14, global = -2.31599205102e-16, cumulative = -1.24614503584e-13"
+   ],
+   "matrices": {
+    "snapshots-1-rank0.npz:s": {
+     "shape": [
+      20540,
+      19
+     ],
+     "col0_equals_col1": false,
+     "col0_minus_col1_max": 4.291772731410283
+    }
+   },
+   "n_matrices": 1,
+   "n_col0_equals_col1": 0
+  }
+ },
+ "cross": {
+  "recording_col0_equals_copy_col1": {
+   "snapshots-1-rank0.npz:s": true
+  },
+  "recording_vs_copy_columns_from_1_identical": {
+   "snapshots-1-rank0.npz:s": true
+  },
+  "ported_equals_copy_whole_matrix": {
+   "snapshots-1-rank0.npz:s": true
+  },
+  "ported_vs_recording_columns_from_1_identical": {
+   "snapshots-1-rank0.npz:s": true
+  }
+ },
+ "written_fields": {
+  "recording_vs_copy": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ],
+  "recording_vs_ported": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ],
+  "copy_vs_ported": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ]
+ }
+}

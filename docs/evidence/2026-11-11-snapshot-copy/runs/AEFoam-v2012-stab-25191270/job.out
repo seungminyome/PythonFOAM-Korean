@@ -1,0 +1,76 @@
+OUT=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/runs/AEFoam-v2012-stab-25191270 host=t373.cluster start=2026-11-11T15:55:01-07:00
+WM_PROJECT_VERSION=v2012
+python 3.11.16 numpy 2.4.6
+BUILD upstream ok
+binary 893024 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/runs/AEFoam-v2012-stab-25191270/bin-upstream/AEFoam
+--- recording controlDict:
+endTime 6e-6; deltaT 1e-7; writeControl    timeStep; writeInterval 20; adjustTimeStep no; maxCo           1; 
+simulationType laminar;
+21:internalField   uniform (32.2 0 0);
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/scripts/inner.sh: line 59: 201175 Segmentation fault      (core dumped) "$bin" > log.$SOLVER 2>&1
+recording exit 139 steps 22 snapshots 1
+--- copy controlDict:
+endTime 6e-6; deltaT 1e-7; writeControl    timeStep; writeInterval 20; adjustTimeStep no; maxCo           1; 
+simulationType laminar;
+21:internalField   uniform (32.2 0 0);
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/scripts/inner.sh: line 59: 201231 Segmentation fault      (core dumped) "$bin" > log.$SOLVER 2>&1
+copy exit 139 steps 22 snapshots 1
+BUILD ported ok
+binary 893024 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/runs/AEFoam-v2012-stab-25191270/bin-ported/AEFoam
+--- ported controlDict:
+endTime 6e-6; deltaT 1e-7; writeControl    timeStep; writeInterval 20; adjustTimeStep no; maxCo           1; 
+simulationType laminar;
+21:internalField   uniform (32.2 0 0);
+/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/scripts/inner.sh: line 59: 201631 Segmentation fault      (core dumped) "$bin" > log.$SOLVER 2>&1
+ported exit 139 steps 22 snapshots 1
+inner exit 0
+{
+ "solver": "AEFoam",
+ "version": "v2012",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "builds": {
+  "upstream": true,
+  "ported": true
+ },
+ "cross": {
+  "recording_col0_equals_copy_col1": {
+   "snapshots-1-rank0.npz:s": true
+  },
+  "recording_vs_copy_columns_from_1_identical": {
+   "snapshots-1-rank0.npz:s": true
+  },
+  "ported_equals_copy_whole_matrix": {
+   "snapshots-1-rank0.npz:s": true
+  },
+  "ported_vs_recording_columns_from_1_identical": {
+   "snapshots-1-rank0.npz:s": true
+  }
+ },
+ "written_fields": {
+  "recording_vs_copy": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ],
+  "recording_vs_ported": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ],
+  "copy_vs_ported": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ]
+ }
+}
+recording exit 139 steps 22 matrices 1 col0==col1 in 1 py_prints 19 tracebacks 0
+copy exit 139 steps 22 matrices 1 col0==col1 in 0 py_prints 19 tracebacks 0
+ported exit 139 steps 22 matrices 1 col0==col1 in 0 py_prints 19 tracebacks 0
+end=2026-11-11T15:57:15-07:00

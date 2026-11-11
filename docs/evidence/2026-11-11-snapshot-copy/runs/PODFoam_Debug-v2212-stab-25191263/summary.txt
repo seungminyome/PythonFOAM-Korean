@@ -1,0 +1,111 @@
+{
+ "solver": "PODFoam_Debug",
+ "version": "v2212",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "builds": {
+  "upstream": true,
+  "ported": true
+ },
+ "cross": {
+  "recording_col0_equals_copy_col1": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-3-rank0.npz:u": true,
+   "snapshots-3-rank0.npz:v": true,
+   "snapshots-3-rank0.npz:w": true
+  },
+  "recording_vs_copy_columns_from_1_identical": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-3-rank0.npz:u": true,
+   "snapshots-3-rank0.npz:v": true,
+   "snapshots-3-rank0.npz:w": true
+  },
+  "ported_equals_copy_whole_matrix": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-3-rank0.npz:u": true,
+   "snapshots-3-rank0.npz:v": true,
+   "snapshots-3-rank0.npz:w": true
+  },
+  "ported_vs_recording_columns_from_1_identical": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-3-rank0.npz:u": true,
+   "snapshots-3-rank0.npz:v": true,
+   "snapshots-3-rank0.npz:w": true
+  }
+ },
+ "written_fields": {
+  "recording_vs_copy": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "4e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "6e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ],
+  "recording_vs_ported": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "4e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "6e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ],
+  "copy_vs_ported": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "4e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "6e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ]
+ }
+}
+recording exit 0 steps 61 matrices 9 col0==col1 in 9 py_prints 57 tracebacks 0
+copy exit 0 steps 61 matrices 9 col0==col1 in 0 py_prints 57 tracebacks 0
+ported exit 0 steps 61 matrices 9 col0==col1 in 0 py_prints 57 tracebacks 0

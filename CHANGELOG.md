@@ -17,6 +17,9 @@
 - `test_callback.py`는 기록 쓰기가 0.2초 예산을 넘겨 기록을 남기지 못했으면 그 테스트를 건너뜁니다. CI 실행
   41번 중 한 번이 여기서 실패했습니다. 영문 저장소에서는 `pr/podfoam-observer`의 커밋 `9e278aa`이고 `main`이
   이를 병합했습니다.
+- 작업 25191260–25191271이 `PODFoam_Debug`, `APMOSFoam`, `AEFoam`에 같은 비교를 네 버전에서 했고 결과는
+  같습니다. `AEFoam` 실행은 원본 코드에서도 브랜치에서도 첫 스냅샷 행렬 뒤에 중단됩니다. 작업 25191272는
+  `romitmaulik1/pythonfoam_docker` 안에서 root로 브랜치의 솔버 넷을 빌드했습니다.
 - 작업 25191239가 rootless Podman으로 Docker Hub에서 받은 `romitmaulik1/pythonfoam_docker` 안에서 pull request
   글의 Docker 명령을 root로 돌렸습니다. 검증은 영문 저장소의 `pr/podfoam-fix`와 `pr/podfoam-observer`에서
   통과합니다. 이 클러스터에서는 Docker 데몬이 뜨지 않습니다.

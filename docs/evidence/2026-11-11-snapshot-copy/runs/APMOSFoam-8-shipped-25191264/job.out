@@ -1,0 +1,174 @@
+OUT=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/runs/APMOSFoam-8-shipped-25191264 host=ttest03.cluster start=2026-11-11T15:55:01-07:00
+WM_PROJECT_VERSION=8
+python 3.11.16 numpy 2.4.6
+BUILD upstream ok
+binary 905808 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/runs/APMOSFoam-8-shipped-25191264/bin-upstream/APMOSFoam
+--- recording controlDict:
+endTime 1.5e-4; deltaT          1.0e-5; writeControl    timeStep; writeInterval 100; adjustTimeStep  yes; maxCo           1; 
+recording exit 0 steps 222 snapshots 8
+--- copy controlDict:
+endTime 1.5e-4; deltaT          1.0e-5; writeControl    timeStep; writeInterval 100; adjustTimeStep  yes; maxCo           1; 
+copy exit 0 steps 222 snapshots 8
+BUILD ported ok
+binary 905808 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/runs/APMOSFoam-8-shipped-25191264/bin-ported/APMOSFoam
+--- ported controlDict:
+endTime 1.5e-4; deltaT          1.0e-5; writeControl    timeStep; writeInterval 100; adjustTimeStep  yes; maxCo           1; 
+ported exit 0 steps 222 snapshots 8
+inner exit 0
+{
+ "solver": "APMOSFoam",
+ "version": "8",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "builds": {
+  "upstream": true,
+  "ported": true
+ },
+ "cross": {
+  "recording_col0_equals_copy_col1": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-1-rank1.npz:u": true,
+   "snapshots-1-rank1.npz:v": true,
+   "snapshots-1-rank1.npz:w": true,
+   "snapshots-1-rank2.npz:u": true,
+   "snapshots-1-rank2.npz:v": true,
+   "snapshots-1-rank2.npz:w": true,
+   "snapshots-1-rank3.npz:u": true,
+   "snapshots-1-rank3.npz:v": true,
+   "snapshots-1-rank3.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-2-rank1.npz:u": true,
+   "snapshots-2-rank1.npz:v": true,
+   "snapshots-2-rank1.npz:w": true,
+   "snapshots-2-rank2.npz:u": true,
+   "snapshots-2-rank2.npz:v": true,
+   "snapshots-2-rank2.npz:w": true,
+   "snapshots-2-rank3.npz:u": true,
+   "snapshots-2-rank3.npz:v": true,
+   "snapshots-2-rank3.npz:w": true
+  },
+  "recording_vs_copy_columns_from_1_identical": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-1-rank1.npz:u": true,
+   "snapshots-1-rank1.npz:v": true,
+   "snapshots-1-rank1.npz:w": true,
+   "snapshots-1-rank2.npz:u": true,
+   "snapshots-1-rank2.npz:v": true,
+   "snapshots-1-rank2.npz:w": true,
+   "snapshots-1-rank3.npz:u": true,
+   "snapshots-1-rank3.npz:v": true,
+   "snapshots-1-rank3.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-2-rank1.npz:u": true,
+   "snapshots-2-rank1.npz:v": true,
+   "snapshots-2-rank1.npz:w": true,
+   "snapshots-2-rank2.npz:u": true,
+   "snapshots-2-rank2.npz:v": true,
+   "snapshots-2-rank2.npz:w": true,
+   "snapshots-2-rank3.npz:u": true,
+   "snapshots-2-rank3.npz:v": true,
+   "snapshots-2-rank3.npz:w": true
+  },
+  "ported_equals_copy_whole_matrix": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-1-rank1.npz:u": true,
+   "snapshots-1-rank1.npz:v": true,
+   "snapshots-1-rank1.npz:w": true,
+   "snapshots-1-rank2.npz:u": true,
+   "snapshots-1-rank2.npz:v": true,
+   "snapshots-1-rank2.npz:w": true,
+   "snapshots-1-rank3.npz:u": true,
+   "snapshots-1-rank3.npz:v": true,
+   "snapshots-1-rank3.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-2-rank1.npz:u": true,
+   "snapshots-2-rank1.npz:v": true,
+   "snapshots-2-rank1.npz:w": true,
+   "snapshots-2-rank2.npz:u": true,
+   "snapshots-2-rank2.npz:v": true,
+   "snapshots-2-rank2.npz:w": true,
+   "snapshots-2-rank3.npz:u": true,
+   "snapshots-2-rank3.npz:v": true,
+   "snapshots-2-rank3.npz:w": true
+  },
+  "ported_vs_recording_columns_from_1_identical": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-1-rank1.npz:u": true,
+   "snapshots-1-rank1.npz:v": true,
+   "snapshots-1-rank1.npz:w": true,
+   "snapshots-1-rank2.npz:u": true,
+   "snapshots-1-rank2.npz:v": true,
+   "snapshots-1-rank2.npz:w": true,
+   "snapshots-1-rank3.npz:u": true,
+   "snapshots-1-rank3.npz:v": true,
+   "snapshots-1-rank3.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-2-rank1.npz:u": true,
+   "snapshots-2-rank1.npz:v": true,
+   "snapshots-2-rank1.npz:w": true,
+   "snapshots-2-rank2.npz:u": true,
+   "snapshots-2-rank2.npz:v": true,
+   "snapshots-2-rank2.npz:w": true,
+   "snapshots-2-rank3.npz:u": true,
+   "snapshots-2-rank3.npz:v": true,
+   "snapshots-2-rank3.npz:w": true
+  }
+ },
+ "written_fields": {
+  "recording_vs_copy": [
+   {
+    "time": "6.7602e-05",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "0.000133306",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ],
+  "recording_vs_ported": [
+   {
+    "time": "6.7602e-05",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "0.000133306",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ],
+  "copy_vs_ported": [
+   {
+    "time": "6.7602e-05",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "0.000133306",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ]
+ }
+}
+recording exit 0 steps 222 matrices 24 col0==col1 in 24 py_prints 876 tracebacks 0
+copy exit 0 steps 222 matrices 24 col0==col1 in 0 py_prints 876 tracebacks 0
+ported exit 0 steps 222 matrices 24 col0==col1 in 0 py_prints 876 tracebacks 0
+end=2026-11-11T15:57:05-07:00

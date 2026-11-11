@@ -95,7 +95,7 @@ export PYTHON=${PYTHON:-$(command -v python3)}   # 또는 다른 Python의 경�
 export PATH=$(dirname "$PYTHON"):$PATH
 export LD_LIBRARY_PATH=$(dirname "$PYTHON")/../lib:$LD_LIBRARY_PATH   # 시스템 Python이 아니면
 cd Solver_Examples/PODFoam
-./validation/run.sh              # C++와 Python 연결을 확인; 그 실행이 묶음의 기준 실행
+./validation/run.sh              # C++와 Python 연결을 확인; run_demo.sh에는 통과한 이 실행이 필요함
 ./llm_demo/setup_runtime.sh      # Gemma 4 E2B Q4_0, 이미지 프로젝터, llama.cpp b11429
 python3 llm_demo/runtime.py start
 ./llm_demo/run_demo.sh           # PODFoam 빌드, 케이스 다섯 개 실행, 검증

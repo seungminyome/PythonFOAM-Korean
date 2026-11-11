@@ -1,17 +1,61 @@
 {
- "scope": "PODFoam built from argonne-lcf/PythonFOAM 6fde869 and from branch pr/podfoam-snapshot-copy 8d29128 on OpenFOAM 8, v2012, v2106 and v2212 (Slurm 25191171 to 25191174, 2026-11-11): snapshot matrices and written U and p compared.",
+ "scope": "PODFoam built from argonne-lcf/PythonFOAM 6fde869 and from branch pr/podfoam-snapshot-copy 8d29128 on OpenFOAM 8, v2012, v2106 and v2212 (Slurm 25191171 to 25191174, 2026-11-11): snapshot matrices and written U and p compared. The pull-request texts' Docker lines run as root with rootless Podman in romitmaulik1/pythonfoam_docker (Slurm 25191239).",
  "source_runs": [
   "25191171",
   "25191172",
   "25191173",
-  "25191174"
+  "25191174",
+  "25191209",
+  "25191239"
  ],
  "files": [
   {
    "path": "README.md",
-   "bytes": 3242,
-   "sha256": "e930f3f58908702a959e1d53b5c10429a008ca2bb54da9799d33aa9267344e2f",
+   "bytes": 3978,
+   "sha256": "4452bb87769682e26af02eb3b6211981686c2551501daa3d6bd447d857a03d63",
    "kind": "derived"
+  },
+  {
+   "path": "container/dockertry-25191209.out",
+   "bytes": 1027,
+   "sha256": "3eb05d4a4de1cd6bbf4aa6ad815d9d1844a52ce3645bd8ea4c712205598b5454",
+   "kind": "byte-preserved"
+  },
+  {
+   "path": "container/podman-e2e-25191239-podfoam-fix.txt",
+   "bytes": 2078,
+   "sha256": "10ae58b3bb36b178fbc1154864e00216dd87dbc27db2baae2c9794c525902543",
+   "kind": "byte-preserved"
+  },
+  {
+   "path": "container/podman-e2e-25191239-podfoam-observer.txt",
+   "bytes": 2078,
+   "sha256": "fc30eff06b16d35f32386a7cc675160d1d1939e0890010c62a7445e82055ef02",
+   "kind": "byte-preserved"
+  },
+  {
+   "path": "container/podman-e2e-25191239.out",
+   "bytes": 1459,
+   "sha256": "382e12a6bd5a6cd5fdf65e021cf02109187a72bcfe3fc98f41e37c3cad415778",
+   "kind": "byte-preserved"
+  },
+  {
+   "path": "container/podman_e2e.sbatch",
+   "bytes": 2366,
+   "sha256": "aed500e7ce34a29c1ecdfaf1d280905ec14884620f255e1ce6a7f34efd1db5ca",
+   "kind": "byte-preserved"
+  },
+  {
+   "path": "container/sacct-25191239.txt",
+   "bytes": 134,
+   "sha256": "845f00b819ee74287fb1c7c9a9fe990c5840e01a54c78acb5d4758837471cfd5",
+   "kind": "byte-preserved"
+  },
+  {
+   "path": "container/try_docker.sbatch",
+   "bytes": 1272,
+   "sha256": "5d3e9dbfa5ffeac55156b8e03042179cbbecc2625de21dcb58121a284677044c",
+   "kind": "byte-preserved"
   },
   {
    "path": "runs/PODFoam-8-shipped-25191171/BRANCH",

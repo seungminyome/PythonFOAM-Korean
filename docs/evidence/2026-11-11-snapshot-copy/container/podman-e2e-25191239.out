@@ -1,0 +1,28 @@
+host ttest01.cluster start 2026-11-11T15:44:28-07:00
+tmpfs          tmpfs   63G   14M   63G   1% /dev/shm
+/dev/sdd2      xfs    216G  3.0G  213G   2% /tmp
+podman version 5.2.5
+Copying config sha256:a32e6193b2f244047ae7e15595ad9cdb1d2162cead144326ce0847fa9b821666
+Writing manifest to image destination
+a32e6193b2f244047ae7e15595ad9cdb1d2162cead144326ce0847fa9b821666
+REPOSITORY                                TAG         DIGEST                                                                   IMAGE ID      CREATED      SIZE
+docker.io/romitmaulik1/pythonfoam_docker  latest      sha256:32a99155291e95cb9711daf251ed4a488b2850e4e1c95a41afa681d9cfc4d84c  a32e6193b2f2  3 years ago  5.93 GB
+===== branch pr/podfoam-fix
+uid=0(root) gid=0(root) groups=0(root),65534(nogroup)
+Cloning into '/tmp/PythonFOAM'...
+473c80229d5329565f0c0275aaa4ab00f2ff9848
+  "pimple_POD_velocity_agreement": true,
+  "pimple_POD_pressure_agreement": true,
+  "status": "PASS"
+PASS: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.9UsRbs
+exit of branch pr/podfoam-fix: 0
+===== branch pr/podfoam-observer
+uid=0(root) gid=0(root) groups=0(root),65534(nogroup)
+Cloning into '/tmp/PythonFOAM'...
+9e278aae09390f238b570a281628d1279389cc83
+  "pimple_POD_velocity_agreement": true,
+  "pimple_POD_pressure_agreement": true,
+  "status": "PASS"
+PASS: /tmp/PythonFOAM/Solver_Examples/PODFoam/validation/runs/pod-8.anJhfE
+exit of branch pr/podfoam-observer: 0
+end 2026-11-11T15:46:35-07:00

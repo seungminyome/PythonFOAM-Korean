@@ -17,6 +17,9 @@
 - `test_callback.py`는 기록 쓰기가 0.2초 예산을 넘겨 기록을 남기지 못했으면 그 테스트를 건너뜁니다. CI 실행
   41번 중 한 번이 여기서 실패했습니다. 영문 저장소에서는 `pr/podfoam-observer`의 커밋 `9e278aa`이고 `main`이
   이를 병합했습니다.
+- 작업 25191239가 rootless Podman으로 Docker Hub에서 받은 `romitmaulik1/pythonfoam_docker` 안에서 pull request
+  글의 Docker 명령을 root로 돌렸습니다. 검증은 영문 저장소의 `pr/podfoam-fix`와 `pr/podfoam-observer`에서
+  통과합니다. 이 클러스터에서는 Docker 데몬이 뜨지 않습니다.
 - argonne-lcf/PythonFOAM의 다른 예제 가운데 Python에 C++ 버퍼의 뷰를 넘기는 것(PINNFoam, linalgFoam,
   PoissonFOAM, PoissonFOAM_Dynamic, Dealii_PINN)은 코드를 읽어서만 확인했고 실행하지 않았습니다. 제공된 Python
   함수 가운데 그 뷰를 들고 있는 것이 없으므로 PODFoam의 버그는 나타나지 않습니다.

@@ -1,0 +1,27 @@
+host ttest01.cluster subuid: none userns: 486567
+DOCKERD DID NOT START
++ : builtin
++ : auto
++ : auto
++ : ''
++ net=
++ mtu=
++ '[' -z '' ']'
++ command -v slirp4netns
++ '[' -z '' ']'
++ command -v vpnkit
++ net=vpnkit
++ '[' -z '' ']'
++ mtu=1500
++ host_loopback=--disable-host-loopback
++ '[' '' = false ']'
++ dockerd=dockerd
++ '[' -z '' ']'
++ _DOCKERD_ROOTLESS_CHILD=1
++ export _DOCKERD_ROOTLESS_CHILD
+++ id -u
++ '[' 10427161 = 0 ']'
++ command -v selinuxenabled
++ selinuxenabled
++ exec rootlesskit --state-dir=/tmp/syome-run-25191209/dockerd-rootless --net=vpnkit --mtu=1500 --slirp4netns-sandbox=auto --slirp4netns-seccomp=auto --disable-host-loopback --port-driver=builtin --copy-up=/etc --copy-up=/run --propagation=rslave /gscratch/syome/tools/docker-rootless/docker-rootless-extras/dockerd-rootless.sh --data-root /tmp/syome-docker-25191209/data --exec-root /tmp/syome-docker-25191209/exec
+[rootlesskit:parent] error: failed to setup UID/GID map: failed to compute uid/gid map: No subuid ranges found for user 10427161 ("syome")

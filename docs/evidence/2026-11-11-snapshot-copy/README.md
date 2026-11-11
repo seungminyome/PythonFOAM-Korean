@@ -36,6 +36,16 @@ v2012, v2106, v2212에서는 제공된 케이스가 발산하므로 연결 검�
 행렬 하나는 SVD 구간 하나의 속도 성분 하나입니다. "같다"는 바이트까지 같다는 뜻입니다.
 빌드 12번과 실행 12번이 모두 종료 상태 0으로 끝났고 Python 오류 추적은 없었습니다.
 
+## PR의 Docker 명령을 Podman으로 root에서 실행
+
+Slurm 작업 25191239가 rootless Podman 5.2.5로 Docker Hub에서 `romitmaulik1/pythonfoam_docker`(다이제스트
+`sha256:32a99155…d84c`)를 받아, pull request 글의 Docker 명령을 그 안에서 root(uid 0)로 돌렸습니다.
+`validation/run.sh`는 영문 저장소의 `pr/podfoam-fix`(`473c802`)와 `pr/podfoam-observer`(`9e278aa`)에서 모두
+`PASS`로 끝났습니다. 기록: [container/](container/).
+
+이 클러스터에서는 Docker 데몬이 뜨지 않습니다. 작업 25191209는 "No subuid ranges found"에서 멈췄습니다.
+Podman은 같은 `run` 명령을 받습니다. 같은 명령의 앞선 실행은 일반 사용자로 Apptainer를 썼습니다.
+
 ## 한계
 
 - 이 확인은 PODFoam만 다룹니다. `PODFoam_Debug`, `APMOSFoam`, `AEFoam`의 같은 변경은

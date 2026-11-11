@@ -30,3 +30,7 @@ differs by at most 2.5 % between z1 and the other three (34.66 vs 35.51 m/s at s
 walls for only 150 steps and the flow is still nearly 2D. The solver set's baseline is 24/24 because the true cells of
 one flow in a fixed window stay within 10 % of one point over 300 steps; only the window set separates the model
 from the baseline.
+
+Correction, 2026-11-10: on the solver frames, truth.json gives the same true positions at five of the six steps, not at
+every step. At step 250 the fastest flow of z1 lies 1.81 % of the plotted range from that of z3, z5 and z7
+(y 46.82 vs 45.01 %), and its lowest pressure 1.13 %. The report, results-20261102.md, says so.

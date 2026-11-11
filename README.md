@@ -71,7 +71,7 @@ sequenceDiagram
 워커는 |U|와 p 이미지를 그려 llama.cpp의 HTTP 서버인 llama-server에 보냅니다. 답은 이미지의 바탕이 된 배열과 함께
 기록합니다. 기본값인 동기 모드에서는 솔버가 답을 기다립니다. 마감 시간은 따로 정하지 않으면 120초입니다.
 
-요청은 한 번 또는 N단계마다 보냅니다. 답을 기다리는 요청은 한 번에 최대 8개입니다. MPI 실행은 필드를 마스터 rank로 모으고,
+요청은 한 번 또는 N단계마다 보냅니다. 답을 기다리는 요청은 기본으로 한 번에 1개이고, 설정하면 8개까지 늘릴 수 있습니다. MPI 실행은 필드를 마스터 rank로 모으고,
 3차원 격자는 평면 단면으로 그립니다. [llm_demo/README.md](Solver_Examples/PODFoam/llm_demo/README.md)는
 요청 모드 `observe`, `describe`, `sequence`, 이미지 방식 둘과 모든 설정을 설명합니다.
 

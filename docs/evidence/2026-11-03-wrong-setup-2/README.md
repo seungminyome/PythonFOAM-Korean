@@ -291,7 +291,8 @@ U 최소는 알려 준 속도로, p 색 막대의 p 최소와 p 최대는 알려
   기준선의 답. [contact-8000.png](contact-8000.png).
 - [pilot/](pilot/): 예비 실행 13개의 설계, 유동 점검, 가시성 측정, 모아 보기 이미지.
 - [test-set/](test-set/): 요청마다 해시를 적은 요청 매니페스트, 누출 점검, 정답의 SHA-256(매니페스트의 `truth_sha256`). 요청 자체는 파일 1,044개로 하나가 178\~233 KB, 모두 225 MB이며 영문 저장소의
-  [릴리스](https://github.com/seungminyome/PythonFOAM/releases/tag/wrong-setup-2-2026-11-03)에 있습니다.
+  [릴리스](https://github.com/seungminyome/PythonFOAM/releases/tag/wrong-setup-2-2026-11-03)에 있습니다. 릴리스에는 실행 케이스 60개와
+  작업 25107731의 서버 응답 파일도 있습니다.
 - [results/](results/): `run.json`, 서버 명령, 원래 답을 모두 담은 `metrics.jsonl` 여섯 개, 보고서, 이유.
   `runtime/`에는 llama.cpp 버전, GPU, 모델 파일 해시, gzip 사본의 서버 로그가 있습니다.
 - [jobs/](jobs/): 작업 스크립트 셋과 빌드 작업의 출력. [job/sacct.txt](job/sacct.txt)와 gzip 사본의

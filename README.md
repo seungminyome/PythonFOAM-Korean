@@ -124,7 +124,7 @@ python3 llm_demo/runtime.py stop
 관찰 기능은 `Solver_Examples/PODFoam/`의 `Python*.H` 훅과 `llm_demo/`에 있습니다. 영문 저장소의
 브랜치 `pr/podfoam-fix`는 관찰 기능 없이 솔버 변경과 연결 검증을 담고, `pr/podfoam-observer`는 훅과 관찰 기능을 더합니다. 두 브랜치
 모두 원본 PODFoam의 버그를 고칩니다. 원본 PODFoam에서는 SVD 구간마다 다음 스냅샷이 첫 스냅샷을
-덮어썼습니다. 이 버그의 수정은 `PODFoam_Debug`, `APMOSFoam`, `AEFoam`에도 들어 있고, 다른 예제의 코드는
+덮어썼습니다. 브랜치 `pr/podfoam-snapshot-copy`는 이 수정만 파일 넷에 담습니다. 이 버그의 수정은 `PODFoam_Debug`, `APMOSFoam`, `AEFoam`에도 들어 있고, 다른 예제의 코드는
 argonne-lcf/PythonFOAM과 같습니다. 버그 수정이 무엇을 바꾸는지는
 [11월 2일 보고서](docs/results-20261102.md)에 있습니다. [HOOKS.md](Solver_Examples/PODFoam/HOOKS.md)는
 선택형 훅 둘인 `analysis_func`와 `mesh_func`를 설명합니다.

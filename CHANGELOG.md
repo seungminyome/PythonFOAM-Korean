@@ -2,6 +2,16 @@
 
 날짜는 실행이나 변경이 있었던 날입니다. 기록된 실행에는 그 실행을 만든 코드 버전을 적었습니다.
 
+## 2026-11-11, 스냅샷 복사만 담은 작은 브랜치
+
+- 영문 저장소의 브랜치 `pr/podfoam-snapshot-copy`(`8d29128`, argonne-lcf/PythonFOAM `6fde869` 위의 커밋 둘)는
+  PODFoam, `PODFoam_Debug`, `APMOSFoam`, `AEFoam`의 `PythonComm.H`에 스냅샷 소유 복사만 넣습니다. 파일은
+  넷이고 파일마다 12줄이 늘어납니다.
+- 작업 25191171–25191174가 OpenFOAM 8, v2012, v2106, v2212에서 PODFoam을 `6fde869`와 이 브랜치에서
+  빌드했습니다. 원본에서는 모든 스냅샷 행렬의 첫 두 열이 같습니다. 브랜치에서는 다르고, 저장된 U와 p는
+  원본과 바이트까지 같습니다. 근거 자료
+  [2026-11-11-snapshot-copy](docs/evidence/2026-11-11-snapshot-copy/README.md).
+
 ## 2026-11-10, 잘못된 설정 시험 2의 내려받기, README 그림, 문장과 사실 점검
 
 - 영문 저장소의 릴리스 [wrong-setup-2-2026-11-03](https://github.com/seungminyome/PythonFOAM/releases/tag/wrong-setup-2-2026-11-03)에

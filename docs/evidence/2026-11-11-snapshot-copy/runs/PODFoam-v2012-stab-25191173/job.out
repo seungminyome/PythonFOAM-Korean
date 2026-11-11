@@ -1,0 +1,135 @@
+OUT=/cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/runs/PODFoam-v2012-stab-25191173 host=ttest02.cluster start=2026-11-11T15:11:56-07:00
+WM_PROJECT_VERSION=v2012
+python 3.11.16 numpy 2.4.6
+BUILD upstream ok
+binary 897976 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/runs/PODFoam-v2012-stab-25191173/bin-upstream/PODFoam
+--- recording controlDict:
+endTime 6e-6; deltaT 1e-7; writeControl    timeStep; writeInterval 20; adjustTimeStep no; maxCo           1; 
+simulationType laminar;
+21:internalField   uniform (32.2 0 0);
+recording exit 0 steps 61 snapshots 3
+--- copy controlDict:
+endTime 6e-6; deltaT 1e-7; writeControl    timeStep; writeInterval 20; adjustTimeStep no; maxCo           1; 
+simulationType laminar;
+21:internalField   uniform (32.2 0 0);
+copy exit 0 steps 61 snapshots 3
+BUILD ported ok
+binary 897976 /cluster/medbow/gscratch/syome/github_repos/pod-versions-20261030/small/runs/PODFoam-v2012-stab-25191173/bin-ported/PODFoam
+--- ported controlDict:
+endTime 6e-6; deltaT 1e-7; writeControl    timeStep; writeInterval 20; adjustTimeStep no; maxCo           1; 
+simulationType laminar;
+21:internalField   uniform (32.2 0 0);
+ported exit 0 steps 61 snapshots 3
+inner exit 0
+{
+ "solver": "PODFoam",
+ "version": "v2012",
+ "upstream": "6fde8698071b56f913c5e92c647f22ab38b26466",
+ "builds": {
+  "upstream": true,
+  "ported": true
+ },
+ "cross": {
+  "recording_col0_equals_copy_col1": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-3-rank0.npz:u": true,
+   "snapshots-3-rank0.npz:v": true,
+   "snapshots-3-rank0.npz:w": true
+  },
+  "recording_vs_copy_columns_from_1_identical": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-3-rank0.npz:u": true,
+   "snapshots-3-rank0.npz:v": true,
+   "snapshots-3-rank0.npz:w": true
+  },
+  "ported_equals_copy_whole_matrix": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-3-rank0.npz:u": true,
+   "snapshots-3-rank0.npz:v": true,
+   "snapshots-3-rank0.npz:w": true
+  },
+  "ported_vs_recording_columns_from_1_identical": {
+   "snapshots-1-rank0.npz:u": true,
+   "snapshots-1-rank0.npz:v": true,
+   "snapshots-1-rank0.npz:w": true,
+   "snapshots-2-rank0.npz:u": true,
+   "snapshots-2-rank0.npz:v": true,
+   "snapshots-2-rank0.npz:w": true,
+   "snapshots-3-rank0.npz:u": true,
+   "snapshots-3-rank0.npz:v": true,
+   "snapshots-3-rank0.npz:w": true
+  }
+ },
+ "written_fields": {
+  "recording_vs_copy": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "4e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "6e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ],
+  "recording_vs_ported": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "4e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "6e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ],
+  "copy_vs_ported": [
+   {
+    "time": "2e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "4e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   },
+   {
+    "time": "6e-06",
+    "U_identical_bytes": true,
+    "p_identical_bytes": true
+   }
+  ]
+ }
+}
+recording exit 0 steps 61 matrices 9 col0==col1 in 9 py_prints 57 tracebacks 0
+copy exit 0 steps 61 matrices 9 col0==col1 in 0 py_prints 57 tracebacks 0
+ported exit 0 steps 61 matrices 9 col0==col1 in 0 py_prints 57 tracebacks 0
+end=2026-11-11T15:13:25-07:00

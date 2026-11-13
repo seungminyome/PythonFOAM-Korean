@@ -1,9 +1,0 @@
-README: PODFoam hooks and the observer example
-
-Under PODFoam in Contents, after the validation pointer, a paragraph
-names HOOKS.md with the two optional functions and llm_demo/, the
-example module that asks a local vision-language model about the running
-solver. The hooks change neither U nor p, and with analysis_func the POD
-step collects a snapshot at every time step.
-
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

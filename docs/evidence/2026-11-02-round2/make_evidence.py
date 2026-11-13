@@ -28,6 +28,9 @@ Usage: make_evidence.py copy <evidence dir>       copies the records listed belo
                                                   (doc changes only; commits 1-5 kept) and its check
        make_evidence.py manifest <evidence dir>   writes manifest.json from what is there
 
+The folders final-branches/pr-docs-r7/ to pr-docs-r14/ were removed from the repository on 2026-11-12;
+the r7 to r14 modes below are kept as the record of how they were made.
+
 The manifest has the shape of docs/evidence/2026-10-30-versions/manifest.json: source_runs, scope, notes
 and one entry per file with path, source, kind (byte-preserved, gzip copy, derived, record), bytes and
 sha256. Files of kind "gzip copy" are gzip -9 copies (no name, mtime 0) of a solver or test log;
